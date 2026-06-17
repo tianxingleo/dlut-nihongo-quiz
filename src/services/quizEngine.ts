@@ -5,7 +5,8 @@ const cache = new Map<Category, Question[]>()
 export async function loadQuestionBank(category: Category = 'grammar'): Promise<Question[]> {
   const cached = cache.get(category)
   if (cached) return cached
-  const file = category === 'word' ? '/word-question-bank.json' : '/question-bank.json'
+  const base = import.meta.env.BASE_URL
+  const file = category === 'word' ? `${base}word-question-bank.json` : `${base}question-bank.json`
   const resp = await fetch(file)
   if (!resp.ok) throw new Error(`无法加载题库 ${file}: ${resp.status}`)
   const questions: Question[] = await resp.json()

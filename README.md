@@ -36,11 +36,11 @@
 
 | 首页 | 刷题 |
 |---|---|
-| <img src="docs/screenshots/home.png" width="400" alt="首页" /> | <img src="docs/screenshots/quiz.png" width="400" alt="刷题" /> |
+| <img src="docs/screenshots/home.png" width="600" alt="首页" /> | <img src="docs/screenshots/quiz.png" width="600" alt="刷题" /> |
 
 | 错题本 | 分析 |
 |---|---|
-| <img src="docs/screenshots/wrong.png" width="400" alt="错题本" /> | <img src="docs/screenshots/analysis.png" width="400" alt="分析" /> |
+| <img src="docs/screenshots/wrong.png" width="600" alt="错题本" /> | <img src="docs/screenshots/analysis.png" width="600" alt="分析" /> |
 
 ## 🚀 本地开发
 
