@@ -76,6 +76,12 @@ body::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Eliminate 300ms tap delay and double-tap zoom on touch */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
 }
 body {
   margin: 0;
@@ -86,12 +92,14 @@ button {
   font-family: var(--font-body);
   cursor: pointer;
   font-size: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
   transition: color 0.15s;
+  -webkit-tap-highlight-color: transparent;
 }
 a:hover {
   color: var(--accent-hover);
