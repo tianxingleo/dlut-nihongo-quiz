@@ -38,7 +38,7 @@ async function handleExport() {
   a.click()
   URL.revokeObjectURL(url)
   statusMsg.value = '导出成功'
-  setTimeout(() => statusMsg.value = '', 2000)
+  setTimeout(() => (statusMsg.value = ''), 2000)
 }
 
 function handleImport() {
@@ -55,7 +55,7 @@ function handleImport() {
     } catch {
       statusMsg.value = '导入失败，请检查文件格式'
     }
-    setTimeout(() => statusMsg.value = '', 3000)
+    setTimeout(() => (statusMsg.value = ''), 3000)
   }
   input.click()
 }
@@ -63,13 +63,13 @@ function handleImport() {
 async function handleClear() {
   if (!confirmClear.value) {
     confirmClear.value = true
-    setTimeout(() => confirmClear.value = false, 5000)
+    setTimeout(() => (confirmClear.value = false), 5000)
     return
   }
   await clearAllData()
   confirmClear.value = false
   statusMsg.value = '数据已清空'
-  setTimeout(() => statusMsg.value = '', 2000)
+  setTimeout(() => (statusMsg.value = ''), 2000)
 }
 
 const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
@@ -86,7 +86,9 @@ const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
         <span>{{ c.long }}</span>
         <span>{{ counts[c.key] || '—' }} 题</span>
       </div>
-      <div class="info-row total"><span>合计</span><span>{{ totalCount() }} 题</span></div>
+      <div class="info-row total">
+        <span>合计</span><span>{{ totalCount() }} 题</span>
+      </div>
       <div class="info-row"><span>版本</span><span>v0.3.0</span></div>
     </div>
 
@@ -115,8 +117,8 @@ const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
     <div class="section">
       <h2>快捷键</h2>
       <div class="shortcut-list">
-        <div class="shortcut"><kbd>A/B/C/D</kbd><span>选择选项</span></div>
-        <div class="shortcut"><kbd>E</kbd><span>多选第五选项</span></div>
+        <div class="shortcut"><kbd>A/B/C/D 或 1/2/3/4</kbd><span>选择选项</span></div>
+        <div class="shortcut"><kbd>E 或 5</kbd><span>多选第五选项</span></div>
         <div class="shortcut"><kbd>Enter</kbd><span>提交 / 下一题</span></div>
         <div class="shortcut"><kbd>N</kbd><span>下一题</span></div>
       </div>
@@ -137,40 +139,121 @@ const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
   </div>
 </template>
 <style scoped>
-.settings-page { max-width: 560px; margin: 0 auto; }
-.page-header { margin-bottom: 24px; }
-h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
+.settings-page {
+  max-width: 560px;
+  margin: 0 auto;
+}
+.page-header {
+  margin-bottom: 24px;
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+}
 
-.section { margin-bottom: 20px; padding: 18px 22px; border: 1px solid var(--border); background: var(--bg-card); }
-.section h2 { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text-primary); }
+.section {
+  margin-bottom: 20px;
+  padding: 18px 22px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.section h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
 
-.info-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; color: var(--text-secondary); }
-.info-row.total { border-top: 1px solid var(--border); margin-top: 4px; padding-top: 10px; font-weight: 600; color: var(--text-primary); }
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.info-row.total {
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+  padding-top: 10px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
 
 .toggle-row {
-  display: flex; justify-content: space-between; align-items: center;
-  cursor: pointer; padding: 6px 0; font-size: 14px; color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
   user-select: none;
 }
-.toggle-row:hover .toggle-state { border-color: var(--accent); }
+.toggle-row:hover .toggle-state {
+  border-color: var(--accent);
+}
 .toggle-state {
-  font-size: 12px; font-weight: 600; color: var(--accent);
-  padding: 3px 14px; border: 1px solid var(--border); transition: border-color .12s;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  padding: 3px 14px;
+  border: 1px solid var(--border);
+  transition: border-color 0.12s;
 }
 
-.action-row { display: flex; gap: 8px; margin-bottom: 8px; }
-.status { font-size: 13px; color: var(--accent); margin-top: 6px; }
+.action-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.status {
+  font-size: 13px;
+  color: var(--accent);
+  margin-top: 6px;
+}
 
-.shortcut-list { display: flex; flex-direction: column; gap: 6px; }
-.shortcut { display: flex; align-items: center; gap: 14px; font-size: 14px; }
+.shortcut-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.shortcut {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+}
 .shortcut kbd {
-  padding: 3px 8px; background: var(--bg-hover); font-family: var(--font-mono);
-  font-size: 12px; border: 1px solid var(--border); min-width: 64px; text-align: center;
+  padding: 3px 8px;
+  background: var(--bg-hover);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border: 1px solid var(--border);
+  min-width: 64px;
+  text-align: center;
 }
-.shortcut span { color: var(--text-secondary); }
+.shortcut span {
+  color: var(--text-secondary);
+}
 
-.about-text { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
-.about-links { margin-top: 12px; font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
-.about-links a { color: var(--accent); }
-.sep { color: var(--border); }
+.about-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.about-links {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.about-links a {
+  color: var(--accent);
+}
+.sep {
+  color: var(--border);
+}
 </style>

@@ -10,10 +10,11 @@ if (!jsonPath) {
 
 const questions = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
 
-const norm = (s) => (s || '')
-  .replace(/\s+/g, '')
-  .replace(/[，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>]/g, '')
-  .toLowerCase()
+const norm = (s) =>
+  (s || '')
+    .replace(/\s+/g, '')
+    .replace(/[，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>]/g, '')
+    .toLowerCase()
 
 // 按源文件分组
 const byFile = new Map()
@@ -39,7 +40,7 @@ for (const [file, qs] of byFile) {
     if (!byStem.has(k)) byStem.set(k, [])
     byStem.get(k).push(q)
   }
-  const stemDups = [...byStem.values()].filter(g => g.length > 1)
+  const stemDups = [...byStem.values()].filter((g) => g.length > 1)
   const stemExtra = stemDups.reduce((s, g) => s + g.length - 1, 0)
 
   // 2. 题干 + 答案 都相同（更严格的"真重复"）
@@ -50,7 +51,7 @@ for (const [file, qs] of byFile) {
     if (!byStemAns.has(k)) byStemAns.set(k, [])
     byStemAns.get(k).push(q)
   }
-  const stemAnsDups = [...byStemAns.values()].filter(g => g.length > 1)
+  const stemAnsDups = [...byStemAns.values()].filter((g) => g.length > 1)
   const stemAnsExtra = stemAnsDups.reduce((s, g) => s + g.length - 1, 0)
 
   console.log(`  题干相同 cluster: ${stemDups.length} (净重复 ${stemExtra})`)
@@ -65,7 +66,9 @@ for (const [file, qs] of byFile) {
     for (const g of stemDups.slice(0, 15)) {
       const first = g[0]
       const stem = first.stem
-      const sameAns = g.every(q => norm(q.answerText || q.answerKey) === norm(first.answerText || first.answerKey))
+      const sameAns = g.every(
+        (q) => norm(q.answerText || q.answerKey) === norm(first.answerText || first.answerKey),
+      )
       const ansMark = sameAns ? '✓答案同' : '⚠答案不同'
       console.log(`\n  [${ansMark}] 题干: ${stem.slice(0, 90)}${stem.length > 90 ? '…' : ''}`)
       console.log(`       答案: ${g[0].answerText || g[0].answerKey}`)

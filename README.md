@@ -22,14 +22,14 @@
 
 ## 📚 学科范围
 
-| 学科 | 题数 | 多选题 | 来源 | 用途 |
-|---|---:|---:|---|---|
-| 🇯🇵 日语语法 | 99 | 0 | 《大家的日语》第 26-36 课 | 大一下学期期末 |
-| 🇯🇵 日语单词 | 686 | 0 | 同上 | 汉字 / 假名互选 |
-| 🇨🇳 中国近现代史 | 2,921 | 838 | 课堂题库 + 纲要 + 习题集 | 近代史纲要期末 |
-| 🚩 党史 | 1,661 | 532 | 党史题库完整版 | 思政课复习 |
-| 🎖️ 军事理论 | 737 | 42 | 军理题库整理版 | 军训理论考核 |
-| **合计** | **6,104** | **1,412** | — | — |
+| 学科            |      题数 |    多选题 | 来源                      | 用途            |
+| --------------- | --------: | --------: | ------------------------- | --------------- |
+| 🇯🇵 日语语法     |        99 |         0 | 《大家的日语》第 26-36 课 | 大一下学期期末  |
+| 🇯🇵 日语单词     |       686 |         0 | 同上                      | 汉字 / 假名互选 |
+| 🇨🇳 中国近现代史 |     2,921 |       838 | 课堂题库 + 纲要 + 习题集  | 近代史纲要期末  |
+| 🚩 党史         |     1,661 |       532 | 党史题库完整版            | 思政课复习      |
+| 🎖️ 军事理论     |       737 |        42 | 军理题库整理版            | 军训理论考核    |
+| **合计**        | **6,104** | **1,412** | —                         | —               |
 
 ## 🎯 在线使用
 
@@ -39,12 +39,12 @@
 
 ## 📸 截图
 
-| 首页 | 刷题 |
-|---|---|
+| 首页                                                           | 刷题                                                           |
+| -------------------------------------------------------------- | -------------------------------------------------------------- |
 | <img src="docs/screenshots/home.png" width="600" alt="首页" /> | <img src="docs/screenshots/quiz.png" width="600" alt="刷题" /> |
 
-| 错题本 | 分析 |
-|---|---|
+| 错题本                                                            | 分析                                                               |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------ |
 | <img src="docs/screenshots/wrong.png" width="600" alt="错题本" /> | <img src="docs/screenshots/analysis.png" width="600" alt="分析" /> |
 
 ## 🚀 快速开始
@@ -60,27 +60,31 @@ npm run dev          # http://localhost:5173/
 
 常用脚本：
 
-| 命令 | 作用 |
-|---|---|
-| `npm run dev` | 启动开发服务器 |
-| `npm run build` | 生产构建（`base=/dlut-nihongo-quiz/`，含 `vue-tsc` 类型检查） |
-| `npm run preview` | 本地预览生产构建 |
-| `npm run parse:grammar` | 语法 md → JSON |
-| `npm run parse:words` | 单词 md → JSON |
-| `npm run parse:history` | 历史 md → JSON |
-| `npm run parse:party` | 党史 md → JSON |
-| `npm run parse:military` | 军事 md → JSON |
+| 命令                     | 作用                                                          |
+| ------------------------ | ------------------------------------------------------------- |
+| `npm run dev`            | 启动开发服务器                                                |
+| `npm run build`          | 生产构建（`base=/dlut-nihongo-quiz/`，含 `vue-tsc` 类型检查） |
+| `npm run preview`        | 本地预览生产构建                                              |
+| `npm run test`           | 单元测试（vitest）                                            |
+| `npm run parse:all`      | 一次性跑全部 5 个 parser                                      |
+| `npm run parse:grammar`  | 语法 md → JSON                                                |
+| `npm run parse:words`    | 单词 md → JSON                                                |
+| `npm run parse:history`  | 历史 md → JSON                                                |
+| `npm run parse:party`    | 党史 md → JSON                                                |
+| `npm run parse:military` | 军事 md → JSON                                                |
+| `npm run audit:banks`    | 题库 schema + 内部去重检查                                    |
+| `npm run format`         | Prettier 自动格式化                                           |
 
 > **不要手改 `public/*.json`** —— 它们是 parser 生成的。源在 `data/raw/` 下的 Markdown。
 
 ## 📖 深入文档
 
-| 文档 | 内容 |
-|---|---|
-| [项目结构](docs/project-structure.md) | 完整目录树、数据流、各模块职责 |
-| [题库维护](docs/question-bank.md) | 加题改题流程、Markdown 格式、多选/判断题写法、新增学科步骤 |
-| [部署](docs/deployment.md) | GitHub Pages + Actions、自定义域名、本地预览生产构建 |
-| [贡献指南](CONTRIBUTING.md) | Fork/PR 流程、代码风格、Commit 规范 |
+| 文档                                  | 内容                                                       |
+| ------------------------------------- | ---------------------------------------------------------- |
+| [项目结构](docs/project-structure.md) | 完整目录树、数据流、各模块职责                             |
+| [题库维护](docs/question-bank.md)     | 加题改题流程、Markdown 格式、多选/判断题写法、新增学科步骤 |
+| [部署](docs/deployment.md)            | GitHub Pages + Actions、自定义域名、本地预览生产构建       |
+| [贡献指南](CONTRIBUTING.md)           | Fork/PR 流程、代码风格、Commit 规范                        |
 
 ## 🤝 贡献
 

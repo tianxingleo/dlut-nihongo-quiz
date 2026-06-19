@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, watch, nextTick, onUnmounted } from 'vue'
 import { searchQuestions } from '../services/quizEngine'
+import { useActiveCategory } from '../services/categoryStore'
+import { getCategoryMeta } from '../config/categories'
 import { truncate } from '../utils/text'
 import type { Question } from '../types/question'
 
@@ -16,13 +18,15 @@ const emit = defineEmits<{
 const keyword = ref('')
 const results = ref<Question[]>([])
 const inputRef = ref<HTMLInputElement | null>(null)
+const scopeAll = ref(false)
+const activeCategory = useActiveCategory()
 let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
 function doSearch(val: string) {
   if (debounceTimer) clearTimeout(debounceTimer)
   debounceTimer = setTimeout(() => {
     if (val.trim()) {
-      results.value = searchQuestions(val.trim())
+      results.value = searchQuestions(val.trim(), scopeAll.value ? undefined : activeCategory.value)
     } else {
       results.value = []
     }
@@ -34,17 +38,21 @@ function handleKeydown(e: KeyboardEvent) {
 }
 
 watch(keyword, (val) => doSearch(val))
+watch(scopeAll, () => doSearch(keyword.value))
 
-watch(() => props.visible, (v) => {
-  if (v) {
-    document.addEventListener('keydown', handleKeydown)
-    nextTick(() => inputRef.value?.focus())
-  } else {
-    document.removeEventListener('keydown', handleKeydown)
-    keyword.value = ''
-    results.value = []
-  }
-})
+watch(
+  () => props.visible,
+  (v) => {
+    if (v) {
+      document.addEventListener('keydown', handleKeydown)
+      nextTick(() => inputRef.value?.focus())
+    } else {
+      document.removeEventListener('keydown', handleKeydown)
+      keyword.value = ''
+      results.value = []
+    }
+  },
+)
 
 onUnmounted(() => {
   document.removeEventListener('keydown', handleKeydown)
@@ -59,6 +67,8 @@ function onBackdropClick(e: MouseEvent) {
     emit('close')
   }
 }
+
+const scopeLabel = () => (scopeAll.value ? '全库' : getCategoryMeta(activeCategory.value).short)
 </script>
 <template>
   <div v-if="visible" class="search-backdrop" @click="onBackdropClick">
@@ -73,15 +83,31 @@ function onBackdropClick(e: MouseEvent) {
           autocomplete="off"
           spellcheck="false"
         />
+        <button
+          class="search-scope-btn"
+          :class="{ active: scopeAll }"
+          :title="
+            scopeAll
+              ? '当前在搜全部已加载学科，点击只搜当前学科'
+              : '当前只搜 ' + scopeLabel() + '，点击切到全库'
+          "
+          @click="scopeAll = !scopeAll"
+        >
+          {{ scopeAll ? '全库' : scopeLabel() }}
+        </button>
         <button class="search-close-btn" @click="emit('close')">✕</button>
       </div>
       <div class="search-body">
-        <div v-if="results.length > 0" class="search-results">
+        <div v-if="results.length > 0" class="search-results" role="listbox" aria-label="搜索结果">
           <div
             v-for="q in results"
             :key="q.id"
             class="search-result-item"
+            role="option"
+            :aria-label="`${q.groupTitle}：${q.stem.slice(0, 60)}`"
+            tabindex="0"
             @click="selectQuestion(q.id)"
+            @keydown.enter="selectQuestion(q.id)"
           >
             <div class="sr-id">{{ q.id }}</div>
             <div class="sr-content">
@@ -163,6 +189,30 @@ function onBackdropClick(e: MouseEvent) {
 
 .search-close-btn:hover {
   color: var(--text-primary);
+}
+
+.search-scope-btn {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-family: var(--font-body);
+  padding: 4px 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.12s;
+  min-width: 56px;
+}
+
+.search-scope-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.search-scope-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
 }
 
 .search-body {

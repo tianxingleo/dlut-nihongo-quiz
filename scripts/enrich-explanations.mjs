@@ -39,8 +39,14 @@ if (fs.existsSync(envPath)) {
   }
 }
 const TOKEN = envOverrides.ANTHROPIC_AUTH_TOKEN || process.env.ANTHROPIC_AUTH_TOKEN
-const BASE_URL = envOverrides.ANTHROPIC_BASE_URL || process.env.ANTHROPIC_BASE_URL || 'https://api.deepseek.com/anthropic'
-const MODEL = envOverrides.ANTHROPIC_DEFAULT_HAIKU_MODEL || process.env.ANTHROPIC_DEFAULT_HAIKU_MODEL || 'deepseek-v4-flash'
+const BASE_URL =
+  envOverrides.ANTHROPIC_BASE_URL ||
+  process.env.ANTHROPIC_BASE_URL ||
+  'https://api.deepseek.com/anthropic'
+const MODEL =
+  envOverrides.ANTHROPIC_DEFAULT_HAIKU_MODEL ||
+  process.env.ANTHROPIC_DEFAULT_HAIKU_MODEL ||
+  'deepseek-v4-flash'
 
 if (!TOKEN) {
   console.error('✗ ANTHROPIC_AUTH_TOKEN not set. Put it in .env (see .env.example).')
@@ -65,7 +71,12 @@ const force = argv.includes('--force')
 const onlyIdsIdx = argv.indexOf('--only-ids')
 const onlyIdsRaw = onlyIdsIdx >= 0 ? argv[onlyIdsIdx + 1] : ''
 const onlyIdsSet = onlyIdsRaw
-  ? new Set(onlyIdsRaw.split(',').map(s => parseInt(s.trim())).filter(n => Number.isFinite(n)))
+  ? new Set(
+      onlyIdsRaw
+        .split(',')
+        .map((s) => parseInt(s.trim()))
+        .filter((n) => Number.isFinite(n)),
+    )
   : null
 
 // 第N优先级 → Chinese numeral. Party/military use this in section headers.
@@ -85,14 +96,14 @@ const FILES = [
     hasPrioritySections: true,
     // party: **N. stem**\n\nA. xxx\n\n**答案**：B\n\n**解析**：...\n\n---
     qHdr: /^\*\*\s*(\d+)\s*[\.、]\s*(.+?)\s*\*\*\s*$/,
-    nextBoundary: l => /^\*\*\s*\d+\s*[\.、]/.test(l) || /^---\s*$/.test(l) || /^##\s/.test(l),
+    nextBoundary: (l) => /^\*\*\s*\d+\s*[\.、]/.test(l) || /^---\s*$/.test(l) || /^##\s/.test(l),
   },
   {
     name: 'military',
     path: 'data/raw/military/军理题库_按优先级整理.md',
     hasPrioritySections: true,
     qHdr: /^\*\*\s*(\d+)\s*[\.、]\s*(.+?)\s*\*\*\s*$/,
-    nextBoundary: l => /^\*\*\s*\d+\s*[\.、]/.test(l) || /^---\s*$/.test(l) || /^##\s/.test(l),
+    nextBoundary: (l) => /^\*\*\s*\d+\s*[\.、]/.test(l) || /^---\s*$/.test(l) || /^##\s/.test(l),
   },
   {
     name: 'history',
@@ -102,7 +113,7 @@ const FILES = [
     sectionEnd: null,
     // history: #### N. stem  OR  > #### N. stem
     qHdr: /^(>?\s*)?####\s+(\d+)\s*[\.、]\s*(.+?)\s*$/,
-    nextBoundary: l => {
+    nextBoundary: (l) => {
       const t = l.replace(/^>\s*/, '').trim()
       return /^####\s+\d+\s*[\.、]/.test(t) || /^---\s*$/.test(t) || /^##\s/.test(t)
     },
@@ -113,7 +124,7 @@ const FILES = [
     sectionStart: null,
     sectionEnd: null,
     qHdr: /^(>?\s*)?####\s+(\d+)\s*[\.、]\s*(.+?)\s*$/,
-    nextBoundary: l => {
+    nextBoundary: (l) => {
       const t = l.replace(/^>\s*/, '').trim()
       return /^####\s+\d+\s*[\.、]/.test(t) || /^---\s*$/.test(t) || /^##\s/.test(t)
     },
@@ -141,8 +152,14 @@ function findBlocks(lines, spec) {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]
-    if (spec.sectionStart && spec.sectionStart.test(line)) { inScope = true; continue }
-    if (spec.sectionEnd && spec.sectionEnd.test(line)) { inScope = false; continue }
+    if (spec.sectionStart && spec.sectionStart.test(line)) {
+      inScope = true
+      continue
+    }
+    if (spec.sectionEnd && spec.sectionEnd.test(line)) {
+      inScope = false
+      continue
+    }
     if (!inScope) continue
 
     const m = line.match(spec.qHdr)
@@ -160,11 +177,12 @@ function parseBlock(lines, block, spec) {
   const hdrLine = lines[block.hdrLineIdx]
   const hdrMatch = hdrLine.match(spec.qHdr)
   // For history: groups are [full, quotePrefix, num, stem]; for party/military: [full, num, stem]
-  let stem = spec.name === 'history' || spec.name === 'history_t0' || spec.name === 'history_t1'
-    ? hdrMatch[3].trim()
-    : hdrMatch[2].trim()
+  let stem =
+    spec.name === 'history' || spec.name === 'history_t0' || spec.name === 'history_t1'
+      ? hdrMatch[3].trim()
+      : hdrMatch[2].trim()
 
-  const body = lines.slice(block.bodyStartIdx, block.bodyEndIdx).map(l => l.replace(/^>\s*/, ''))
+  const body = lines.slice(block.bodyStartIdx, block.bodyEndIdx).map((l) => l.replace(/^>\s*/, ''))
 
   // T1 format: header is just "#### N. [来源：...]" — stem is on body lines.
   // Detect this when the captured stem is only metadata (no actual question text).
@@ -174,9 +192,12 @@ function parseBlock(lines, block, spec) {
     const parts = []
     for (let i = 0; i < body.length; i++) {
       const t = body[i].trim()
-      if (!t) { if (parts.length > 0) break; continue }
+      if (!t) {
+        if (parts.length > 0) break
+        continue
+      }
       if (/^\*\*\s*答案/.test(t)) break
-      if (/^[A-E][\.、）)?]/.test(t)) break          // start of options
+      if (/^[A-E][\.、）)?]/.test(t)) break // start of options
       parts.push(t)
     }
     if (parts.length > 0) stem = parts.join(' ').trim()
@@ -191,12 +212,24 @@ function parseBlock(lines, block, spec) {
     //   **答案**：X       (party / military — bold wraps label only)
     //   **答案：X**       (history T0 — bold wraps whole line)
     //   **答案**：X **    (rare mixed)
-    const m1 = t.match(/^\*\*\s*答案\s*\*\*\s*[：:]\s*(.+?)\s*$/)         // **答案**：X
-    const m2 = t.match(/^\*\*\s*答案\s*[：:]\s*(.+?)\s*\*\*\s*$/)         // **答案：X**
-    const m3 = t.match(/^\*\*\s*答案\s*\*\*\s*[：:]\s*(.+?)\s*\*\*\s*$/)  // **答案**：X **
-    if (m1) { answerIdx = i; answerText = m1[1].trim(); break }
-    if (m2) { answerIdx = i; answerText = m2[1].trim(); break }
-    if (m3) { answerIdx = i; answerText = m3[1].trim(); break }
+    const m1 = t.match(/^\*\*\s*答案\s*\*\*\s*[：:]\s*(.+?)\s*$/) // **答案**：X
+    const m2 = t.match(/^\*\*\s*答案\s*[：:]\s*(.+?)\s*\*\*\s*$/) // **答案：X**
+    const m3 = t.match(/^\*\*\s*答案\s*\*\*\s*[：:]\s*(.+?)\s*\*\*\s*$/) // **答案**：X **
+    if (m1) {
+      answerIdx = i
+      answerText = m1[1].trim()
+      break
+    }
+    if (m2) {
+      answerIdx = i
+      answerText = m2[1].trim()
+      break
+    }
+    if (m3) {
+      answerIdx = i
+      answerText = m3[1].trim()
+      break
+    }
   }
 
   if (answerIdx < 0) return null
@@ -207,10 +240,13 @@ function parseBlock(lines, block, spec) {
     const t = body[i].trim()
     if (!t) continue
     // Split line by inline options "A.x B.y C.z"
-    const parts = t.split(/(?=[A-E][\.\u3001\uff09)])/).map(s => s.trim()).filter(p => /^[A-E][\.、）)?]/.test(p))
+    const parts = t
+      .split(/(?=[A-E][\.\u3001\uff09)])/)
+      .map((s) => s.trim())
+      .filter((p) => /^[A-E][\.、）)?]/.test(p))
     for (const p of parts) {
       const m = p.match(/^([A-E])[\.、）)?]\s*(.+)$/)
-      if (m && !options.find(o => o.key === m[1])) options.push({ key: m[1], text: m[2].trim() })
+      if (m && !options.find((o) => o.key === m[1])) options.push({ key: m[1], text: m[2].trim() })
     }
   }
 
@@ -219,7 +255,10 @@ function parseBlock(lines, block, spec) {
   let expStartAbs = -1
   for (let i = block.bodyStartIdx + answerIdx + 1; i < block.bodyEndIdx; i++) {
     const t = lines[i].replace(/^>\s*/, '').trim()
-    if (/^\*\*解析/.test(t) && /[：:]/.test(t)) { expStartAbs = i; break }
+    if (/^\*\*解析/.test(t) && /[：:]/.test(t)) {
+      expStartAbs = i
+      break
+    }
   }
   // Explanation end = block.bodyEndIdx (next boundary) OR end of contiguous non-empty
   let expEndAbs = block.bodyEndIdx
@@ -244,8 +283,8 @@ function detectType(answerText, options) {
   if (/^(正确|错误|对|错)$/.test(cleaned)) return 'judgement'
   if (/^[A-E]+$/.test(cleaned)) return cleaned.length > 1 ? 'multi' : 'single'
   // Text answer — match against option text
-  const norm = s => s.replace(/[\.。、\s]/g, '').toLowerCase()
-  const match = options.find(o => norm(o.text) === norm(answerText))
+  const norm = (s) => s.replace(/[\.。、\s]/g, '').toLowerCase()
+  const match = options.find((o) => norm(o.text) === norm(answerText))
   if (match) return 'single'
   // Could be multi-text like "A、C、D" written out — try comma-split
   return 'single'
@@ -259,8 +298,8 @@ function normalizeAnswerLetter(answerText, options, type) {
   const cleaned = answerText.replace(/[\.。、\s]/g, '').toUpperCase()
   if (/^[A-E]+$/.test(cleaned)) return cleaned.split('').sort().join('')
   // Text answer → match option
-  const norm = s => s.replace(/[\.。、\s]/g, '').toLowerCase()
-  const match = options.find(o => norm(o.text) === norm(answerText))
+  const norm = (s) => s.replace(/[\.。、\s]/g, '').toLowerCase()
+  const match = options.find((o) => norm(o.text) === norm(answerText))
   return match ? match.key : cleaned
 }
 
@@ -268,11 +307,11 @@ function normalizeAnswerLetter(answerText, options, type) {
 function buildPrompt(q, categoryName) {
   const type = q.type
   const correctKey = q.correctKey
-  const correctOpts = [...correctKey].map(k => q.options.find(o => o.key === k)).filter(Boolean)
-  const wrongOpts = q.options.filter(o => !correctKey.includes(o.key))
+  const correctOpts = [...correctKey].map((k) => q.options.find((o) => o.key === k)).filter(Boolean)
+  const wrongOpts = q.options.filter((o) => !correctKey.includes(o.key))
 
-  const optLines = q.options.map(o => `${o.key}. ${o.text}`).join('\n')
-  const correctDesc = correctOpts.map(o => `${o.key}. ${o.text}`).join(' / ')
+  const optLines = q.options.map((o) => `${o.key}. ${o.text}`).join('\n')
+  const correctDesc = correctOpts.map((o) => `${o.key}. ${o.text}`).join(' / ')
 
   let template
   if (type === 'judgement') {
@@ -291,9 +330,15 @@ function buildPrompt(q, categoryName) {
 **正确答案**：<正确选项字母. 选项文本 — 一句话解释为什么对>
 
 **干扰项分析**：
-${wrongOpts.length > 0
-  ? wrongOpts.map(o => `- ${o.key}. ${o.text.length > 30 ? o.text.slice(0, 30) + '…' : o.text} — <为什么错，一句话>`).join('\n')
-  : '<无干扰项>'
+${
+  wrongOpts.length > 0
+    ? wrongOpts
+        .map(
+          (o) =>
+            `- ${o.key}. ${o.text.length > 30 ? o.text.slice(0, 30) + '…' : o.text} — <为什么错，一句话>`,
+        )
+        .join('\n')
+    : '<无干扰项>'
 }
 
 **拓展**：<1-2句相关背景，如时间、人物、影响>`
@@ -335,8 +380,8 @@ async function enrich(q, categoryName) {
         messages: [{ role: 'user', content: prompt }],
       })
       const text = (resp.content || [])
-        .filter(b => b.type === 'text')
-        .map(b => b.text)
+        .filter((b) => b.type === 'text')
+        .map((b) => b.text)
         .join('')
         .trim()
       if (isValidExplanation(text)) return text
@@ -357,7 +402,7 @@ async function enrich(q, categoryName) {
   return ''
 }
 
-const sleep = ms => new Promise(r => setTimeout(r, ms))
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 // ---------- Validate AI output ----------
 function isValidExplanation(text) {
@@ -381,7 +426,7 @@ function normalizeAiOutput(text) {
 
 // ---------- Idempotency ----------
 function isAlreadyEnriched(explanationLines) {
-  return explanationLines.some(l => /\*\*\s*考点\s*[：:]/.test(l.replace(/^>\s*/, '')))
+  return explanationLines.some((l) => /\*\*\s*考点\s*[：:]/.test(l.replace(/^>\s*/, '')))
 }
 
 // ---------- Main ----------
@@ -395,11 +440,13 @@ async function processFile(spec) {
   console.log(`\n=== ${spec.name} ===`)
   console.log(`  ${blocks.length} questions found in scope`)
 
-  let processed = 0, skipped = 0, failed = 0
+  let processed = 0,
+    skipped = 0,
+    failed = 0
   let targets = blocks
   if (onlyIdsSet) {
     targets = blocks.filter((_, i) => onlyIdsSet.has(i + 1))
-    console.log(`  --only-ids: ${[...onlyIdsSet].sort((a,b)=>a-b).join(',')}`)
+    console.log(`  --only-ids: ${[...onlyIdsSet].sort((a, b) => a - b).join(',')}`)
   } else if (limitFlag > 0) {
     targets = blocks.slice(0, limitFlag)
   }
@@ -407,7 +454,9 @@ async function processFile(spec) {
   // To avoid rewriting file after every question, collect replacements and apply once at end.
   // Track as: array of { startLine, endLine, newLines[] }
   const replacements = []
-  const concurrency = parseInt(envOverrides.ENRICH_CONCURRENCY || process.env.ENRICH_CONCURRENCY || '8')
+  const concurrency = parseInt(
+    envOverrides.ENRICH_CONCURRENCY || process.env.ENRICH_CONCURRENCY || '8',
+  )
   let cursor = 0
 
   async function worker() {
@@ -415,33 +464,56 @@ async function processFile(spec) {
       const myIdx = cursor++
       const block = targets[myIdx]
       const parsed = parseBlock(lines, block, spec)
-      if (!parsed) { skipped++; continue }
+      if (!parsed) {
+        skipped++
+        continue
+      }
       const type = detectType(parsed.answerText, parsed.options || [])
       // Skip fill-in-blank questions (no options AND not judgement). The parsers drop these too.
       const isFillInBlank = (parsed.options || []).length < 2 && type !== 'judgement'
       if (isFillInBlank) {
-        if (process.env.DEBUG_SKIP) console.log(`  [skip ${spec.name}#${myIdx + 1}] fill-in-blank opts=${parsed.options?.length} stem="${parsed.stem?.slice(0, 40) || ''}"`)
-        skipped++; continue
+        if (process.env.DEBUG_SKIP)
+          console.log(
+            `  [skip ${spec.name}#${myIdx + 1}] fill-in-blank opts=${parsed.options?.length} stem="${parsed.stem?.slice(0, 40) || ''}"`,
+          )
+        skipped++
+        continue
       }
       if (parsed.explanationLines.length === 0) {
         if (process.env.DEBUG_SKIP) console.log(`  [skip ${spec.name}#${myIdx + 1}] no explanation`)
-        skipped++; continue
+        skipped++
+        continue
       }
-      if (!force && isAlreadyEnriched(parsed.explanationLines)) { skipped++; continue }
+      if (!force && isAlreadyEnriched(parsed.explanationLines)) {
+        skipped++
+        continue
+      }
 
       const correctKey = normalizeAnswerLetter(parsed.answerText, parsed.options || [], type)
-      if (!correctKey) { skipped++; continue }
+      if (!correctKey) {
+        skipped++
+        continue
+      }
 
-      const categoryName = { party: '中国共产党党史', military: '高校军事理论', history: '中国近现代史纲要', history_t0: '中国近现代史纲要', history_t1: '中国近现代史纲要' }[spec.name]
+      const categoryName = {
+        party: '中国共产党党史',
+        military: '高校军事理论',
+        history: '中国近现代史纲要',
+        history_t0: '中国近现代史纲要',
+        history_t1: '中国近现代史纲要',
+      }[spec.name]
       const label = `[${spec.name}#${myIdx + 1}]`
 
       try {
-        const enriched = await enrich({
-          stem: parsed.stem,
-          options: parsed.options,
-          type,
-          correctKey,
-        }, categoryName)
+        const enriched = await enrich(
+          {
+            stem: parsed.stem,
+            options: parsed.options,
+            type,
+            correctKey,
+          },
+          categoryName,
+        )
 
         if (!isValidExplanation(enriched)) {
           console.log(`  ✗ ${label} invalid output: ${enriched.slice(0, 100)}`)
@@ -463,7 +535,7 @@ async function processFile(spec) {
           prefix = '**解析**：'
         }
 
-        const newLines = [prefix, ...normalized.split('\n').map(l => l.trimEnd())]
+        const newLines = [prefix, ...normalized.split('\n').map((l) => l.trimEnd())]
 
         replacements.push({ startLine: parsed.expStartAbs, endLine: parsed.expEndAbs, newLines })
 
@@ -488,13 +560,17 @@ async function processFile(spec) {
     fs.writeFileSync(abs, lines.join(eol), 'utf-8')
   }
 
-  console.log(`  ✓ enriched: ${processed} | skipped: ${skipped} | failed: ${failed} | written: ${replacements.length > 0}`)
+  console.log(
+    `  ✓ enriched: ${processed} | skipped: ${skipped} | failed: ${failed} | written: ${replacements.length > 0}`,
+  )
   return { processed, skipped, failed }
 }
 
 async function main() {
   console.log(`Model: ${MODEL}\nBase URL: ${BASE_URL}`)
-  const concurrency = parseInt(envOverrides.ENRICH_CONCURRENCY || process.env.ENRICH_CONCURRENCY || '8')
+  const concurrency = parseInt(
+    envOverrides.ENRICH_CONCURRENCY || process.env.ENRICH_CONCURRENCY || '8',
+  )
   const modeParts = []
   if (onlyIdsSet) modeParts.push(`only-ids=${onlyIdsRaw}`)
   else if (limitFlag > 0) modeParts.push(`limit=${limitFlag} per file`)
@@ -505,7 +581,7 @@ async function main() {
   console.log(`Mode: ${modeParts.join(' +')} (concurrency=${concurrency})`)
 
   const specs = onlyFlag
-    ? FILES.filter(s => s.name === onlyFlag || (s.aliases || []).includes(onlyFlag))
+    ? FILES.filter((s) => s.name === onlyFlag || (s.aliases || []).includes(onlyFlag))
     : FILES
   if (specs.length === 0) {
     console.error(`✗ no file matched --only ${onlyFlag}`)
@@ -522,10 +598,12 @@ async function main() {
   }
 
   console.log(`\n=== DONE ===`)
-  console.log(`Total enriched: ${summary.processed} | skipped: ${summary.skipped} | failed: ${summary.failed}`)
+  console.log(
+    `Total enriched: ${summary.processed} | skipped: ${summary.skipped} | failed: ${summary.failed}`,
+  )
 }
 
-main().catch(e => {
+main().catch((e) => {
   console.error('Fatal:', e)
   process.exit(1)
 })

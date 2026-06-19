@@ -1,0 +1,9 @@
+dist
+node_modules
+public/*.json
+data
+docs/screenshots
+package-lock.json
+repomix-output.xml
+*.png
+*.yml

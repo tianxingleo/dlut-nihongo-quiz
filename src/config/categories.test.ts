@@ -1,14 +1,25 @@
 import { describe, it, expect } from 'vitest'
-import { CATEGORIES, getCategoryMeta, NO_SHUFFLE_CATEGORIES, GROUPED_CATEGORIES } from './categories'
+import {
+  CATEGORIES,
+  getCategoryMeta,
+  NO_SHUFFLE_CATEGORIES,
+  GROUPED_CATEGORIES,
+} from './categories'
 
 describe('CATEGORIES config', () => {
   it('covers all 5 categories', () => {
-    expect(CATEGORIES.map(c => c.key).sort()).toEqual(['grammar', 'history', 'military', 'party', 'word'])
+    expect(CATEGORIES.map((c) => c.key).sort()).toEqual([
+      'grammar',
+      'history',
+      'military',
+      'party',
+      'word',
+    ])
   })
 
   it('every entry has a unique short label and bankFile', () => {
-    const shorts = new Set(CATEGORIES.map(c => c.short))
-    const files = new Set(CATEGORIES.map(c => c.bankFile))
+    const shorts = new Set(CATEGORIES.map((c) => c.short))
+    const files = new Set(CATEGORIES.map((c) => c.bankFile))
     expect(shorts.size).toBe(CATEGORIES.length)
     expect(files.size).toBe(CATEGORIES.length)
   })

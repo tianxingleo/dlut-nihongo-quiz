@@ -1,6 +1,6 @@
 {
   "name": "dlut-nihongo-quiz",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "大连理工大学国际信息与软件学院大一下《大家的日语》26-36课期末复习题库 (DLUT Japanese final-review quiz)",
   "author": "tianxingleo",
   "license": "Apache-2.0",
@@ -33,7 +33,11 @@
     "parse:grammar": "tsx scripts/parse-markdown.ts",
     "parse:history": "tsx scripts/parse-history-markdown.ts",
     "parse:party": "tsx scripts/parse-party-markdown.ts",
-    "parse:military": "tsx scripts/parse-military-markdown.ts"
+    "parse:military": "tsx scripts/parse-military-markdown.ts",
+    "parse:all": "npm run parse:grammar && npm run parse:words && npm run parse:history && npm run parse:party && npm run parse:military",
+    "audit:banks": "node scripts/audit-banks.mjs",
+    "format": "prettier --write \"src/**/*.{ts,vue,css}\" \"scripts/**/*.{ts,mjs}\" \"*.{json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,vue,css}\" \"scripts/**/*.{ts,mjs}\" \"*.{json,md}\""
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.105.0",
@@ -45,6 +49,7 @@
     "@types/node": "^24.12.3",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/tsconfig": "^0.9.1",
+    "prettier": "^3.8.4",
     "tsx": "^4.22.4",
     "typescript": "~6.0.2",
     "vite": "^8.0.12",

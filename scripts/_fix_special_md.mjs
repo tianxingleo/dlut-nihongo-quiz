@@ -11,13 +11,14 @@ if (!mdPath) {
   process.exit(1)
 }
 
-const norm = (s) => (s || '')
-  .replace(/\s+/g, '')
-  .replace(/\[来源[：:].*?\]/g, '')
-  .replace(/[（(]\s*[A-E]\s*[)）]/g, '')
-  .replace(/\s+([A-E])$/, '')
-  .replace(/[\\，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>—\-‐－]/g, '')
-  .toLowerCase()
+const norm = (s) =>
+  (s || '')
+    .replace(/\s+/g, '')
+    .replace(/\[来源[：:].*?\]/g, '')
+    .replace(/[（(]\s*[A-E]\s*[)）]/g, '')
+    .replace(/\s+([A-E])$/, '')
+    .replace(/[\\，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>—\-‐－]/g, '')
+    .toLowerCase()
 
 // 子标题模式：一/二/三/四/五 + 、 + 单选/多选/判断/填空 + 题
 const SUB_HDR = /^[一二三四五六]、(单项选择|单选|多项选择|多选|判断正误|判断|填空)题/
@@ -60,13 +61,22 @@ sections.push(cur)
 function splitBlocks(bodyLines) {
   const out = []
   let buf = []
-  const flush = () => { if (buf.length) { out.push({ type: 'gap', lines: buf }); buf = [] } }
+  const flush = () => {
+    if (buf.length) {
+      out.push({ type: 'gap', lines: buf })
+      buf = []
+    }
+  }
   let i = 0
   while (i < bodyLines.length) {
     const line = bodyLines[i]
     if (isQHdr(line)) {
       const hdrInfo = parseHdr(line)
-      if (!hdrInfo) { buf.push(line); i++; continue }
+      if (!hdrInfo) {
+        buf.push(line)
+        i++
+        continue
+      }
       flush()
       const qLines = [line]
       i++
@@ -92,15 +102,24 @@ function splitBlocks(bodyLines) {
       const text = qLines.join('\n')
       const ansMatch = text.match(/\*\*答案\*?\*?\s*[:：]\s*(.+?)\s*\*{0,2}\s*(\n|$)/)
       const answer = ansMatch ? ansMatch[1].replace(/\*+/g, '').trim() : ''
-      const expMatch = text.match(/\*\*解析\*?\*?\s*[:：]\s*\*{0,2}\s*([\s\S]+?)\s*(?:\n---|\n\*\*答案|\n$|$)/)
+      const expMatch = text.match(
+        /\*\*解析\*?\*?\s*[:：]\s*\*{0,2}\s*([\s\S]+?)\s*(?:\n---|\n\*\*答案|\n$|$)/,
+      )
       const explanation = expMatch ? expMatch[1].trim() : ''
       out.push({
-        type: 'q', lines: qLines, hdrStyle: hdrInfo.style,
-        stem, answer, explanation,
+        type: 'q',
+        lines: qLines,
+        hdrStyle: hdrInfo.style,
+        stem,
+        answer,
+        explanation,
         stemKey: norm(stem),
         ansKey: norm(answer),
       })
-    } else { buf.push(line); i++ }
+    } else {
+      buf.push(line)
+      i++
+    }
   }
   flush()
   return out
@@ -135,7 +154,7 @@ const conflictClusters = [] // {stem, refs: [{si, bi, answer, block}], winnerAns
 for (const [stemKey, refs] of globalCluster) {
   if (refs.length < 2) continue
   // 排除"子标题" cluster（已处理）
-  if (subHdrDeletions.some(d => refs.some(r => r.si === d.si && r.bi === d.bi))) continue
+  if (subHdrDeletions.some((d) => refs.some((r) => r.si === d.si && r.bi === d.bi))) continue
   // 检查答案是否一致
   const ansCounts = new Map()
   for (const r of refs) {
@@ -148,9 +167,12 @@ for (const [stemKey, refs] of globalCluster) {
   let winnerAns = ''
   let maxCount = 0
   for (const [a, c] of ansCounts) {
-    if (c > maxCount) { maxCount = c; winnerAns = a }
+    if (c > maxCount) {
+      maxCount = c
+      winnerAns = a
+    }
   }
-  const enriched = refs.map(r => {
+  const enriched = refs.map((r) => {
     const b = sections[r.si].blocks[r.bi]
     return { si: r.si, bi: r.bi, answer: b.answer, ansKey: b.ansKey, block: b }
   })
@@ -195,8 +217,8 @@ for (const d of subHdrDeletions) deleteSet.add(`${d.si}|${d.bi}`)
 
 for (const c of conflictClusters) {
   // 多数派里取第一条作为胜者，其余的（包括多数派里的其他副本）都删除
-  const winnerRef = c.refs.find(r => r.ansKey === c.winnerAns)
-  const loserAnswers = [...new Set(c.refs.filter(r => r !== winnerRef).map(r => r.answer))]
+  const winnerRef = c.refs.find((r) => r.ansKey === c.winnerAns)
+  const loserAnswers = [...new Set(c.refs.filter((r) => r !== winnerRef).map((r) => r.answer))]
   const note = `【存疑·原题库存在答案分歧：${loserAnswers.join(' / ')}】 `
   markSet.set(`${winnerRef.si}|${winnerRef.bi}`, note)
   for (const r of c.refs) {
@@ -230,7 +252,10 @@ for (let si = 0; si < sections.length; si++) {
     if (b.hdrStyle === 'bold') {
       b.lines[0] = oldFirst.replace(/^(\*\*\s*(?:【存疑[^】]*】\s*)?)\d+(\s*[\.、])/, `$1${qn}$2`)
     } else {
-      b.lines[0] = oldFirst.replace(/^((?:>\s*)?#{3,4}\s+(?:【存疑[^】]*】\s*)?)\d+(\s*[\.、])/, `$1${qn}$2`)
+      b.lines[0] = oldFirst.replace(
+        /^((?:>\s*)?#{3,4}\s+(?:【存疑[^】]*】\s*)?)\d+(\s*[\.、])/,
+        `$1${qn}$2`,
+      )
     }
   }
   sec.blocks = kept
@@ -245,4 +270,6 @@ for (const sec of sections) {
   }
 }
 fs.writeFileSync(mdPath, out.join('\n'), 'utf-8')
-console.log(`\n   ✅ 已写入 (删 ${subHdrDeletions.length + Array.from(deleteSet).length - subHdrDeletions.length} 题, 标记 ${markSet.size} 题)`)
+console.log(
+  `\n   ✅ 已写入 (删 ${subHdrDeletions.length + Array.from(deleteSet).length - subHdrDeletions.length} 题, 标记 ${markSet.size} 题)`,
+)

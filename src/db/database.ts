@@ -1,7 +1,10 @@
 import Dexie, { type Table } from 'dexie'
 import type { Attempt, QuestionStats, TagStats, Session } from '../types/question'
 
-export function createDefaultStats(questionId: string, overrides: Partial<QuestionStats> = {}): QuestionStats {
+export function createDefaultStats(
+  questionId: string,
+  overrides: Partial<QuestionStats> = {},
+): QuestionStats {
   return {
     questionId,
     attemptCount: 0,
@@ -42,7 +45,11 @@ export const db = new QuizDatabase()
 export async function getSetting<T = string>(key: string, defaultValue: T): Promise<T> {
   const entry = await db.settings.get(key)
   if (!entry) return defaultValue
-  try { return JSON.parse(entry.value) as T } catch { return entry.value as unknown as T }
+  try {
+    return JSON.parse(entry.value) as T
+  } catch {
+    return entry.value as unknown as T
+  }
 }
 
 export async function setSetting(key: string, value: unknown): Promise<void> {
@@ -68,15 +75,17 @@ export async function recordAttempt(a: Omit<Attempt, 'id'>): Promise<number> {
       masteryLevel: newMastery,
     })
   } else {
-    await db.questionStats.put(createDefaultStats(a.questionId, {
-      attemptCount: 1,
-      correctCount: a.isCorrect ? 1 : 0,
-      wrongCount: a.isCorrect ? 0 : 1,
-      lastSelectedKey: a.selectedKey,
-      lastCorrect: a.isCorrect,
-      lastAttemptAt: a.createdAt,
-      masteryLevel: a.isCorrect ? 2 : 1,
-    }))
+    await db.questionStats.put(
+      createDefaultStats(a.questionId, {
+        attemptCount: 1,
+        correctCount: a.isCorrect ? 1 : 0,
+        wrongCount: a.isCorrect ? 0 : 1,
+        lastSelectedKey: a.selectedKey,
+        lastCorrect: a.isCorrect,
+        lastAttemptAt: a.createdAt,
+        masteryLevel: a.isCorrect ? 2 : 1,
+      }),
+    )
   }
   return id
 }
@@ -86,24 +95,30 @@ export function createSession(input: Omit<Session, 'id'>): Session {
 }
 
 // --- Tag stats ---
+// 把整批 tag 的读改写包进单个事务：每题 3-5 个 tag 不再触发 3-5 个隐式事务。
 export async function updateTagStats(tags: string[], isCorrect: boolean): Promise<void> {
-  for (const tag of tags) {
-    const existing = await db.tagStats.get(tag)
-    if (existing) {
-      await db.tagStats.update(tag, {
-        attemptCount: existing.attemptCount + 1,
-        correctCount: existing.correctCount + (isCorrect ? 1 : 0),
-        wrongCount: existing.wrongCount + (isCorrect ? 0 : 1),
-      })
-    } else {
-      await db.tagStats.put({
+  if (tags.length === 0) return
+  await db.transaction('rw', db.tagStats, async () => {
+    const existing = await db.tagStats.bulkGet(tags)
+    const upserts = tags.map((tag, i) => {
+      const cur = existing[i]
+      if (cur) {
+        return {
+          tag,
+          attemptCount: cur.attemptCount + 1,
+          correctCount: cur.correctCount + (isCorrect ? 1 : 0),
+          wrongCount: cur.wrongCount + (isCorrect ? 0 : 1),
+        }
+      }
+      return {
         tag,
         attemptCount: 1,
         correctCount: isCorrect ? 1 : 0,
         wrongCount: isCorrect ? 0 : 1,
-      })
-    }
-  }
+      }
+    })
+    await db.tagStats.bulkPut(upserts)
+  })
 }
 
 // --- Export/Import ---
@@ -115,17 +130,63 @@ export async function exportData(): Promise<string> {
     db.sessions.toArray(),
     db.settings.toArray(),
   ])
-  return JSON.stringify({ version: 2, exportedAt: new Date().toISOString(), attempts, questionStats, tagStats, sessions, settings }, null, 2)
+  return JSON.stringify(
+    {
+      version: 2,
+      exportedAt: new Date().toISOString(),
+      attempts,
+      questionStats,
+      tagStats,
+      sessions,
+      settings,
+    },
+    null,
+    2,
+  )
 }
 
 export async function importData(json: string): Promise<void> {
-  const data = JSON.parse(json)
+  let data: unknown
+  try {
+    data = JSON.parse(json)
+  } catch {
+    throw new Error('备份文件不是有效的 JSON')
+  }
+  if (!data || typeof data !== 'object' || Array.isArray(data)) {
+    throw new Error('备份格式错误：根对象缺失')
+  }
+  const obj = data as Record<string, unknown>
+  if (typeof obj.version !== 'number') {
+    throw new Error('备份格式错误：缺少 version 字段')
+  }
+  // 已知表名 → 必须是数组（如果存在）。任何未知顶层字段直接忽略。
+  const tableKeys = ['attempts', 'questionStats', 'tagStats', 'sessions', 'settings'] as const
+  for (const k of tableKeys) {
+    if (k in obj && !Array.isArray(obj[k])) {
+      throw new Error(`备份格式错误：${k} 应为数组`)
+    }
+  }
   await db.transaction('rw', db.tables, async () => {
-    if (data.attempts) { await db.attempts.clear(); await db.attempts.bulkAdd(data.attempts) }
-    if (data.questionStats) { await db.questionStats.clear(); await db.questionStats.bulkPut(data.questionStats) }
-    if (data.tagStats) { await db.tagStats.clear(); await db.tagStats.bulkPut(data.tagStats) }
-    if (data.sessions) { await db.sessions.clear(); await db.sessions.bulkAdd(data.sessions) }
-    if (data.settings) { await db.settings.clear(); await db.settings.bulkPut(data.settings) }
+    if (obj.attempts) {
+      await db.attempts.clear()
+      await db.attempts.bulkAdd(obj.attempts as Attempt[])
+    }
+    if (obj.questionStats) {
+      await db.questionStats.clear()
+      await db.questionStats.bulkPut(obj.questionStats as QuestionStats[])
+    }
+    if (obj.tagStats) {
+      await db.tagStats.clear()
+      await db.tagStats.bulkPut(obj.tagStats as TagStats[])
+    }
+    if (obj.sessions) {
+      await db.sessions.clear()
+      await db.sessions.bulkAdd(obj.sessions as Session[])
+    }
+    if (obj.settings) {
+      await db.settings.clear()
+      await db.settings.bulkPut(obj.settings as { key: string; value: string }[])
+    }
   })
 }
 

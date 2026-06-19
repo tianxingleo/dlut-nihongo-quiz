@@ -19,13 +19,14 @@ if (!mdPath) {
   process.exit(1)
 }
 
-const norm = (s) => (s || '')
-  .replace(/\s+/g, '')
-  .replace(/\[来源[：:].*?\]/g, '') // 剥离 T1 的 [来源：...] 前缀
-  .replace(/[（(]\s*[A-E]\s*[)）]/g, '') // 剥离 T5 内联答案提示 "（C）"
-  .replace(/\s+([A-E])$/, '') // 末尾裸字母提示
-  .replace(/[\\，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>—\-‐－]/g, '')
-  .toLowerCase()
+const norm = (s) =>
+  (s || '')
+    .replace(/\s+/g, '')
+    .replace(/\[来源[：:].*?\]/g, '') // 剥离 T1 的 [来源：...] 前缀
+    .replace(/[（(]\s*[A-E]\s*[)）]/g, '') // 剥离 T5 内联答案提示 "（C）"
+    .replace(/\s+([A-E])$/, '') // 末尾裸字母提示
+    .replace(/[\\，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>—\-‐－]/g, '')
+    .toLowerCase()
 
 const raw = fs.readFileSync(mdPath, 'utf-8')
 const lines = raw.replace(/\r\n?/g, '\n').split('\n')
@@ -175,7 +176,7 @@ for (const [key, refs] of globalCluster) {
   if (refs.length < 2) continue
   // 先检查整个 cluster 答案是否一致
   const firstAns = norm(sections[refs[0].secIdx].blocks[refs[0].blockIdx].answer)
-  const allSame = refs.every(r => norm(sections[r.secIdx].blocks[r.blockIdx].answer) === firstAns)
+  const allSame = refs.every((r) => norm(sections[r.secIdx].blocks[r.blockIdx].answer) === firstAns)
   if (!allSame) {
     // 冲突，跳过；列出供用户裁决
     const stem = sections[refs[0].secIdx].blocks[refs[0].blockIdx].stem
@@ -188,7 +189,7 @@ for (const [key, refs] of globalCluster) {
     }
     conflicts.push({
       stem,
-      refs: refs.map(r => ({
+      refs: refs.map((r) => ({
         secIdx: r.secIdx + 1,
         answer: sections[r.secIdx].blocks[r.blockIdx].answer,
       })),
@@ -241,7 +242,7 @@ if (!apply) {
 }
 
 // 5) 实际写入
-const deleteSet = new Set(deletions.map(d => `${d.secIdx}|${d.blockIdx}`))
+const deleteSet = new Set(deletions.map((d) => `${d.secIdx}|${d.blockIdx}`))
 for (let si = 0; si < sections.length; si++) {
   const sec = sections[si]
   if (sec.kind !== 'section') continue

@@ -1,6 +1,6 @@
 import fs from 'fs'
 const report = JSON.parse(fs.readFileSync('data/processed/word-validation-report.json', 'utf-8'))
-const aSkips = report.skipped.filter(s => s.reason.startsWith('A '))
+const aSkips = report.skipped.filter((s) => s.reason.startsWith('A '))
 
 const fileMap = {
   '日语汉字单词选择题-第26-28课.md': 'data/raw/日语汉字单词选择题-第26-28课.md',
@@ -18,7 +18,7 @@ for (const s of aSkips) {
     const m = lines[i].match(pattern)
     if (m) {
       const head = m[1].split(/[（(]/)[0].split(/—/)[0].trim()
-      const kanjiOnly = [...head].filter(c => /[一-鿿]/.test(c))
+      const kanjiOnly = [...head].filter((c) => /[一-鿿]/.test(c))
       heads.push({ lesson: s.lesson, num: s.num, head, kanji: kanjiOnly.join('') })
       break
     }

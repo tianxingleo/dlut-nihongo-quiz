@@ -50,23 +50,21 @@ describe('shuffleQuestionOptions', () => {
   it('keeps the correct answer correct after relabeling A-D', () => {
     const q = baseQuestion()
     const shuffled = shuffleQuestionOptions(q)
-    const correctOpt = shuffled.options.find(o => o.key === shuffled.answerKey)
+    const correctOpt = shuffled.options.find((o) => o.key === shuffled.answerKey)
     expect(correctOpt).toBeDefined()
-    expect(correctOpt?.text).toBe(q.options.find(o => o.key === q.answerKey)?.text)
+    expect(correctOpt?.text).toBe(q.options.find((o) => o.key === q.answerKey)?.text)
   })
 
   it('relabels keys as A,B,C,D in order', () => {
     const q = baseQuestion()
     const shuffled = shuffleQuestionOptions(q)
-    expect(shuffled.options.map(o => o.key)).toEqual(['A', 'B', 'C', 'D'])
+    expect(shuffled.options.map((o) => o.key)).toEqual(['A', 'B', 'C', 'D'])
   })
 
   it('preserves the original option texts (as a multiset)', () => {
     const q = baseQuestion()
     const shuffled = shuffleQuestionOptions(q)
-    expect(shuffled.options.map(o => o.text).sort()).toEqual(
-      q.options.map(o => o.text).sort(),
-    )
+    expect(shuffled.options.map((o) => o.text).sort()).toEqual(q.options.map((o) => o.text).sort())
   })
 
   it('returns the question unchanged when multiAnswer is set', () => {

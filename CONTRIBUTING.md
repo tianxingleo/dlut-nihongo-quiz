@@ -18,23 +18,24 @@
 
 本项目支持 5 个学科，每个学科有自己的源目录和 parser：
 
-| 学科 | 源 md | Parser 命令 |
-|---|---|---|
-| 日语语法 | `data/raw/日语期末复习题目答案解析_题目选项在上版.md` | `npm run parse:grammar` |
-| 日语单词 | `data/raw/日语汉字单词选择题-第XX-YY课.md` | `npm run parse:words` |
-| 中国近现代史 | `data/raw/history/*.md` | `npm run parse:history` |
-| 党史 | `data/raw/party/*.md` | `npm run parse:party` |
-| 军事理论 | `data/raw/military/*.md` | `npm run parse:military` |
+| 学科         | 源 md                                                 | Parser 命令              |
+| ------------ | ----------------------------------------------------- | ------------------------ |
+| 日语语法     | `data/raw/日语期末复习题目答案解析_题目选项在上版.md` | `npm run parse:grammar`  |
+| 日语单词     | `data/raw/日语汉字单词选择题-第XX-YY课.md`            | `npm run parse:words`    |
+| 中国近现代史 | `data/raw/history/*.md`                               | `npm run parse:history`  |
+| 党史         | `data/raw/party/*.md`                                 | `npm run parse:party`    |
+| 军事理论     | `data/raw/military/*.md`                              | `npm run parse:military` |
 
 完整流程（单选 / 多选 / 判断三种题型的 Markdown 格式、验证报告、新增学科的步骤、跨文件去重说明）在 **[docs/question-bank.md](docs/question-bank.md)**。
 
 加题的快速 checklist：
 
 1. 编辑对应 md 文件
-2. 跑 `npm run parse:<category>`
+2. 跑 `npm run parse:<category>`（或一次跑全部：`npm run parse:all`）
 3. 检查 `data/processed/validation-report.json` 有没有报错
-4. `git add data/raw public/ data/processed/`
-5. commit 用 `content:` 前缀（见下方 Commit 规范）
+4. 跑 `npm run audit:banks` 确认 schema + 内部去重 OK
+5. `git add data/raw public/ data/processed/`
+6. commit 用 `content:` 前缀（见下方 Commit 规范）
 
 ## 💻 开发流程
 
@@ -51,8 +52,11 @@ npm run dev
 
 # 4. 改代码、加题目...
 
-# 5. 本地构建验证
-npm run build
+# 5. 本地全套验证（提交前都跑一遍）
+npm run test           # 单元测试（vitest）
+npm run audit:banks    # 题库 schema + 内部去重检查
+npm run format:check   # Prettier 风格检查
+npm run build          # 类型检查 + 生产构建
 
 # 6. 提交（参考下方 Commit 规范）
 git add ...
@@ -65,29 +69,30 @@ git push origin my-feature-branch
 ## 🎨 代码风格
 
 - TypeScript + Vue 3 `<script setup>`
-- 2 空格缩进
-- 单引号字符串
+- 2 空格缩进、单引号、无分号、行宽 100、`trailingComma: 'all'`
 - 文件末尾保留空行
 
-`.editorconfig` 已配置，主流编辑器会自动识别。
+`.editorconfig` + `.prettierrc.json` 已配置。提交前跑 `npm run format` 自动格式化；CI 会用 `format:check` 守护风格。
+
+**坑提醒**：Vue template 里的 `@click="..."` 如果含多条语句，请抽成 `<script setup>` 里的方法 —— Prettier 会把多语句 attribute 拆成多行，Vue 编译器解析不了。
 
 ## 📤 Commit 规范
 
 参考 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/)：
 
-| 前缀 | 用途 |
-|---|---|
-| `feat:` | 新功能（`feat: add fill-in-blank mode`） |
-| `fix:` | Bug 修复（`fix: wrong analysis chart on empty history`） |
-| `docs:` | 文档（`docs: update README screenshots`） |
-| `refactor:` | 重构 |
-| `chore:` | 杂项 |
-| `content:` | 题库内容变更（`content: add grammar questions for lesson 30`） |
+| 前缀        | 用途                                                           |
+| ----------- | -------------------------------------------------------------- |
+| `feat:`     | 新功能（`feat: add fill-in-blank mode`）                       |
+| `fix:`      | Bug 修复（`fix: wrong analysis chart on empty history`）       |
+| `docs:`     | 文档（`docs: update README screenshots`）                      |
+| `refactor:` | 重构                                                           |
+| `chore:`    | 杂项                                                           |
+| `content:`  | 题库内容变更（`content: add grammar questions for lesson 30`） |
 
 ## 🚦 PR 流程
 
 1. 从 `main` 拉新分支
-2. 改完跑一遍 `npm run build` 确保不破坏构建
+2. 改完跑一遍 `npm run test && npm run audit:banks && npm run format:check && npm run build` 确保四道关都过
 3. 填写 PR 模板
 4. 等待 CI 通过 + review
 

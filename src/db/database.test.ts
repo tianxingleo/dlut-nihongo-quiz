@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { createDefaultStats, createSession } from './database'
+import { createDefaultStats, createSession, importData } from './database'
 
 describe('createDefaultStats', () => {
   it('returns a QuestionStats with the given id and safe defaults', () => {
@@ -38,5 +38,32 @@ describe('createSession', () => {
     expect(sess.wrongCount).toBe(3)
     expect(sess.startedAt).toBe('2026-01-01T00:00:00.000Z')
     expect(sess.id).toBeUndefined()
+  })
+})
+
+describe('importData', () => {
+  // importData 内部会用真实 Dexie 表，这里只验证 schema 校验路径会尽早抛错，
+  // 不会触发到 db.transaction 那一步。
+  it('rejects invalid JSON', async () => {
+    await expect(importData('{ not json')).rejects.toThrow(/有效的 JSON/)
+  })
+
+  it('rejects non-object root', async () => {
+    await expect(importData('[]')).rejects.toThrow(/根对象/)
+    await expect(importData('"hello"')).rejects.toThrow(/根对象/)
+    await expect(importData('null')).rejects.toThrow(/根对象/)
+  })
+
+  it('rejects missing version field', async () => {
+    await expect(importData(JSON.stringify({ attempts: [] }))).rejects.toThrow(/version/)
+  })
+
+  it('rejects when a known table is not an array', async () => {
+    await expect(importData(JSON.stringify({ version: 2, attempts: 'oops' }))).rejects.toThrow(
+      /应为数组/,
+    )
+    await expect(importData(JSON.stringify({ version: 2, sessions: { a: 1 } }))).rejects.toThrow(
+      /应为数组/,
+    )
   })
 })

@@ -10,10 +10,11 @@ if (!jsonPath) {
 
 const questions = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
 
-const norm = (s) => (s || '')
-  .replace(/\s+/g, '')
-  .replace(/[，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>]/g, '')
-  .toLowerCase()
+const norm = (s) =>
+  (s || '')
+    .replace(/\s+/g, '')
+    .replace(/[，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>]/g, '')
+    .toLowerCase()
 
 // 按 groupId 分组
 const byGroup = new Map()
@@ -33,7 +34,7 @@ for (const [gid, qs] of [...byGroup.entries()].sort(([a], [b]) => a.localeCompar
     if (!byStem.has(k)) byStem.set(k, [])
     byStem.get(k).push(q)
   }
-  const dups = [...byStem.values()].filter(g => g.length > 1)
+  const dups = [...byStem.values()].filter((g) => g.length > 1)
   const extra = dups.reduce((s, g) => s + g.length - 1, 0)
   const unique = qs.length - extra
 
@@ -49,10 +50,14 @@ for (const [gid, qs] of [...byGroup.entries()].sort(([a], [b]) => a.localeCompar
   // 列出所有重复（最多 30 个 cluster）
   for (const g of dups.slice(0, 30)) {
     const first = g[0]
-    const sameAns = g.every(q => norm(q.answerText || q.answerKey) === norm(first.answerText || first.answerKey))
+    const sameAns = g.every(
+      (q) => norm(q.answerText || q.answerKey) === norm(first.answerText || first.answerKey),
+    )
     const ansMark = sameAns ? '✓' : '⚠答案不同'
     const stem = first.stem
-    console.log(`\n  [${ansMark}] (${g.length}x) ${stem.slice(0, 100)}${stem.length > 100 ? '…' : ''}`)
+    console.log(
+      `\n  [${ansMark}] (${g.length}x) ${stem.slice(0, 100)}${stem.length > 100 ? '…' : ''}`,
+    )
     for (const q of g) {
       const a = (q.answerText || q.answerKey || '').slice(0, 50)
       console.log(`     - ${q.id}  答案: ${a}`)

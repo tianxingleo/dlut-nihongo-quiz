@@ -1,9 +1,28 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { loadQuestionBank, getQuestionsByTag, shuffleArray, generateSessionId, toggleMultiSelect, isMultiAnswerCorrect } from '../services/quizEngine'
-import { recordAttempt, updateTagStats, createDefaultStats, db, createSession } from '../db/database'
-import { saveActiveSession, loadActiveSession, clearActiveSession, isSessionInProgress, type ActiveSession } from '../services/sessionResume'
+import {
+  loadQuestionBank,
+  getQuestionsByTag,
+  shuffleArray,
+  generateSessionId,
+  toggleMultiSelect,
+  isMultiAnswerCorrect,
+} from '../services/quizEngine'
+import {
+  recordAttempt,
+  updateTagStats,
+  createDefaultStats,
+  db,
+  createSession,
+} from '../db/database'
+import {
+  saveActiveSession,
+  loadActiveSession,
+  clearActiveSession,
+  isSessionInProgress,
+  type ActiveSession,
+} from '../services/sessionResume'
 import { useActiveCategory, loadActiveCategory, setActiveCategory } from '../services/categoryStore'
 import QuestionCard from '../components/QuestionCard.vue'
 import ProgressBar from '../components/ProgressBar.vue'
@@ -46,7 +65,7 @@ function snapshot(submittedNow: boolean): ActiveSession {
   return {
     sessionId: sessionId.value,
     mode: mode.value,
-    questionIds: questions.value.map(q => q.id),
+    questionIds: questions.value.map((q) => q.id),
     totalQuestions: questions.value.length,
     currentIndex: currentIndex.value,
     submitted: submittedNow,
@@ -89,20 +108,23 @@ function resolveMode(all: Question[]): {
     }
   }
 
-  let pool = groupFilter ? all.filter(q => q.groupId === groupFilter) : [...all]
+  let pool = groupFilter ? all.filter((q) => q.groupId === groupFilter) : [...all]
   if (idsParam) {
     const idSet = new Set(idsParam.split(','))
-    pool = pool.filter(q => idSet.has(q.id))
+    pool = pool.filter((q) => idSet.has(q.id))
   }
 
-  const poolMode: QuizMode =
-    idsParam ? (modeParam === 'untouched' ? 'untouched' : 'wrong')
-    : modeParam === 'untouched' ? 'untouched'
-    : ((modeParam as QuizMode) || 'sequential')
+  const poolMode: QuizMode = idsParam
+    ? modeParam === 'untouched'
+      ? 'untouched'
+      : 'wrong'
+    : modeParam === 'untouched'
+      ? 'untouched'
+      : (modeParam as QuizMode) || 'sequential'
 
   let displayMode: string = poolMode
   if (groupFilter) {
-    const groupTitle = all.find(q => q.groupId === groupFilter)?.groupTitle || groupFilter
+    const groupTitle = all.find((q) => q.groupId === groupFilter)?.groupTitle || groupFilter
     const action = idsParam ? (modeParam === 'untouched' ? '未做' : '错题') : poolMode
     displayMode = `${groupTitle} · ${action}`
   }
@@ -124,8 +146,8 @@ onMounted(async () => {
   if (route.query.resume === '1') {
     const saved = await loadActiveSession()
     if (isSessionInProgress(saved)) {
-      const map = new Map(all.map(q => [q.id, q] as const))
-      questions.value = saved.questionIds.map(id => map.get(id)!).filter(Boolean)
+      const map = new Map(all.map((q) => [q.id, q] as const))
+      questions.value = saved.questionIds.map((id) => map.get(id)!).filter(Boolean)
       sessionId.value = saved.sessionId
       mode.value = saved.mode
       correctCount.value = saved.correctCount
@@ -149,11 +171,13 @@ onMounted(async () => {
     finalPool = shuffleArray(pool)
   } else if (poolMode === 'weakness') {
     const stats = await db.questionStats.toArray()
-    const validIds = new Set(all.map(q => q.id))
-    const weakIds = stats.filter(s => validIds.has(s.questionId) && s.masteryLevel <= 2).map(s => s.questionId)
+    const validIds = new Set(all.map((q) => q.id))
+    const weakIds = stats
+      .filter((s) => validIds.has(s.questionId) && s.masteryLevel <= 2)
+      .map((s) => s.questionId)
     const weakSet = new Set(weakIds)
-    const priorityQuestions = weakIds.map(id => all.find(q => q.id === id)!).filter(Boolean)
-    const remaining = shuffleArray(all.filter(q => !weakSet.has(q.id)))
+    const priorityQuestions = weakIds.map((id) => all.find((q) => q.id === id)!).filter(Boolean)
+    const remaining = shuffleArray(all.filter((q) => !weakSet.has(q.id)))
     finalPool = [...priorityQuestions, ...remaining]
   } else if (poolMode === 'exam') {
     finalPool = shuffleArray([...all])
@@ -186,9 +210,31 @@ async function handleSubmit() {
   const isCorrect = q.multiAnswer
     ? isMultiAnswerCorrect(selectedKey.value, q.answerKey)
     : selectedKey.value === q.answerKey
-  if (isCorrect) correctCount.value++
-  else wrongList.value.push(q.id)
-  history.value.push({ questionId: q.id, selectedKey: selectedKey.value, isCorrect })
+
+  // 「回去改」的再提交：history[currentIndex] 已存在 —— 用差值更新 correctCount/wrongList，
+  // 避免一道题被双重计入。原 history 项被替换。
+  const existing = history.value[currentIndex.value]
+  if (existing) {
+    if (existing.isCorrect !== isCorrect) {
+      if (isCorrect) {
+        correctCount.value++
+        const idx = wrongList.value.indexOf(q.id)
+        if (idx >= 0) wrongList.value.splice(idx, 1)
+      } else {
+        correctCount.value = Math.max(0, correctCount.value - 1)
+        if (!wrongList.value.includes(q.id)) wrongList.value.push(q.id)
+      }
+    }
+    history.value[currentIndex.value] = {
+      questionId: q.id,
+      selectedKey: selectedKey.value,
+      isCorrect,
+    }
+  } else {
+    if (isCorrect) correctCount.value++
+    else wrongList.value.push(q.id)
+    history.value.push({ questionId: q.id, selectedKey: selectedKey.value, isCorrect })
+  }
 
   const elapsedMs = Date.now() - startTime.value
   startTime.value = Date.now()
@@ -206,13 +252,15 @@ async function handleSubmit() {
 
   await updateTagStats(q.tags, isCorrect)
 
-  await db.sessions.put(createSession({
-    mode: mode.value,
-    totalQuestions: questions.value.length,
-    correctCount: correctCount.value,
-    wrongCount: wrongList.value.length,
-    startedAt: startedAt.value || new Date().toISOString(),
-  }))
+  await db.sessions.put(
+    createSession({
+      mode: mode.value,
+      totalQuestions: questions.value.length,
+      correctCount: correctCount.value,
+      wrongCount: wrongList.value.length,
+      startedAt: startedAt.value || new Date().toISOString(),
+    }),
+  )
 
   await saveActiveSession(snapshot(true))
 }
@@ -232,12 +280,13 @@ async function handleNext() {
 }
 
 async function handlePrev() {
-  if (currentIndex.value <= 0 || history.value.length === 0) return
-  history.value.pop()
+  if (currentIndex.value <= 0) return
   currentIndex.value--
-  const prev = history.value[history.value.length - 1]
-  submitted.value = true
+  // 保留历史答案，但允许修改：submitted=false 让选项可点；handleSubmit 检测到 existing 后会替换。
+  const prev = history.value[currentIndex.value]
+  submitted.value = false
   selectedKey.value = prev ? prev.selectedKey : ''
+  startTime.value = Date.now()
 }
 
 async function handleBookmark() {
@@ -254,7 +303,10 @@ async function handleBookmark() {
 }
 
 watch(currentQuestion, async (q) => {
-  if (!q) { bookmarked.value = false; return }
+  if (!q) {
+    bookmarked.value = false
+    return
+  }
   const stat = await db.questionStats.get(q.id)
   bookmarked.value = stat?.isBookmarked ?? false
 })
@@ -264,6 +316,10 @@ function onKeydown(e: KeyboardEvent) {
   if (!submitted.value) {
     const k = e.key.toUpperCase()
     if (['A', 'B', 'C', 'D', 'E'].includes(k)) handleSelect(k)
+    else if (['1', '2', '3', '4', '5'].includes(e.key)) {
+      const keyIndex = Number(e.key) - 1
+      handleSelect(['A', 'B', 'C', 'D', 'E'][keyIndex])
+    }
     if (e.key === 'Enter' && selectedKey.value) handleSubmit()
   } else {
     if (e.key === 'Enter' || e.key === 'n' || e.key === 'N') handleNext()
@@ -291,19 +347,22 @@ async function restart() {
   await saveActiveSession(snapshot(false))
 }
 
-function goHome() { router.push('/home') }
+function goHome() {
+  router.push('/home')
+}
 </script>
 <template>
   <div class="quiz-page">
     <template v-if="!finished && currentQuestion">
-      <ProgressBar :current="progress.current" :total="progress.total" :correct="progress.correct" />
+      <ProgressBar
+        :current="progress.current"
+        :total="progress.total"
+        :correct="progress.correct"
+      />
       <div class="quiz-info">
         <span>{{ mode }}</span>
         <span class="timer">{{ formattedTime }}</span>
         <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题 · P 上一题</span>
-      </div>
-      <div v-if="submitted && currentIndex > 0" class="q-actions">
-        <button class="btn btn-outline" @click="handlePrev">上一题</button>
       </div>
       <QuestionCard
         :key="currentQuestion.id"
@@ -317,6 +376,7 @@ function goHome() { router.push('/home') }
         @select="handleSelect"
         @submit="handleSubmit"
         @next="handleNext"
+        @prev="handlePrev"
         @bookmark="handleBookmark"
       />
     </template>
@@ -334,7 +394,13 @@ function goHome() { router.push('/home') }
       <div class="finish-actions">
         <button class="btn btn-accent" @click="restart">再来一轮</button>
         <button class="btn btn-outline" @click="goHome">返回首页</button>
-        <button class="btn btn-outline" v-if="wrongList.length > 0" @click="router.push({ path: '/quiz', query: { ids: wrongList.join(',') } })">只刷错题</button>
+        <button
+          class="btn btn-outline"
+          v-if="wrongList.length > 0"
+          @click="router.push({ path: '/quiz', query: { ids: wrongList.join(',') } })"
+        >
+          只刷错题
+        </button>
       </div>
     </div>
 
@@ -342,25 +408,90 @@ function goHome() { router.push('/home') }
   </div>
 </template>
 <style scoped>
-.quiz-page { max-width: 760px; margin: 0 auto; }
-.quiz-info { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin: 8px 0 18px; }
-.timer { font-family: var(--font-mono); color: var(--text-secondary); }
-.q-actions { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; }
+.quiz-page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 8px 0 18px;
+}
+.timer {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
 
-.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
-.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn-accent:hover { background: var(--accent-hover); }
-.btn-outline { background: transparent; color: var(--text-primary); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn {
+  padding: 10px 22px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  transition: all 0.12s;
+}
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-accent:hover {
+  background: var(--accent-hover);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
-.finish-page { text-align: center; padding: 80px 20px; }
-.finish-page h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 24px; }
-.finish-stat { margin-bottom: 16px; }
-.finish-pct { font-family: var(--font-display); font-size: 80px; font-weight: 700; color: var(--accent); display: block; line-height: 1; }
-.finish-label { font-size: 16px; color: var(--text-secondary); display: block; margin-top: 8px; }
-.finish-details { margin-bottom: 32px; font-size: 15px; color: var(--text-secondary); }
-.finish-details p { margin: 4px 0; }
-.finish-actions { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.finish-page {
+  text-align: center;
+  padding: 80px 20px;
+}
+.finish-page h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.finish-stat {
+  margin-bottom: 16px;
+}
+.finish-pct {
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+}
+.finish-label {
+  font-size: 16px;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 8px;
+}
+.finish-details {
+  margin-bottom: 32px;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+.finish-details p {
+  margin: 4px 0;
+}
+.finish-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-.empty { text-align: center; padding: 80px 20px; color: var(--text-muted); }
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+}
 </style>

@@ -12,7 +12,7 @@ const spec = {
   sectionStart: /^##\s+第一优先级/,
   sectionEnd: /^##\s+第二优先级/,
   qHdr: /^\*\*\s*(\d+)\s*[\.、]\s*(.+?)\s*\*\*\s*$/,
-  nextBoundary: l => /^\*\*\s*\d+\s*[\.、]/.test(l) || /^---\s*$/.test(l) || /^##\s/.test(l),
+  nextBoundary: (l) => /^\*\*\s*\d+\s*[\.、]/.test(l) || /^---\s*$/.test(l) || /^##\s/.test(l),
 }
 
 const abs = path.resolve(ROOT, spec.path)
@@ -21,8 +21,14 @@ const lines = fs.readFileSync(abs, 'utf-8').split('\n')
 let inScope = false
 const blocks = []
 for (let i = 0; i < lines.length; i++) {
-  if (spec.sectionStart.test(lines[i])) { inScope = true; continue }
-  if (spec.sectionEnd.test(lines[i])) { inScope = false; continue }
+  if (spec.sectionStart.test(lines[i])) {
+    inScope = true
+    continue
+  }
+  if (spec.sectionEnd.test(lines[i])) {
+    inScope = false
+    continue
+  }
   if (!inScope) continue
   const m = lines[i].match(spec.qHdr)
   if (!m) continue

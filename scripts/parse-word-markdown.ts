@@ -37,7 +37,13 @@ function stripCorrectMark(text: string): { text: string; isCorrect: boolean } {
   return { text: text.trim(), isCorrect: false }
 }
 
-function parseEntryHeader(line: string): { num: number; headword: string; kanjiForm: string; kanaForm: string; translation: string } | null {
+function parseEntryHeader(line: string): {
+  num: number
+  headword: string
+  kanjiForm: string
+  kanaForm: string
+  translation: string
+} | null {
   const m = line.match(/^###\s+(\d+)\.\s+(.+)$/)
   if (!m) return null
   const num = parseInt(m[1], 10)
@@ -131,7 +137,12 @@ function parseFile(filePath: string, sourceFile: string): RawEntry[] {
     const subHeader = parseSubQuestionHeader(trimmed)
     if (subHeader) {
       if (currentSub && currentEntry) currentEntry.subs.push(currentSub)
-      currentSub = { subType: subHeader.subType, prompt: subHeader.prompt, options: [], answerKey: '' }
+      currentSub = {
+        subType: subHeader.subType,
+        prompt: subHeader.prompt,
+        options: [],
+        answerKey: '',
+      }
       continue
     }
 
@@ -169,28 +180,32 @@ interface EnrichedQuestion {
   headword: string
 }
 
-function buildQuestion(entry: RawEntry, sub: RawSubQuestion, position: number, sourceFile: string): EnrichedQuestion {
+function buildQuestion(
+  entry: RawEntry,
+  sub: RawSubQuestion,
+  position: number,
+  sourceFile: string,
+): EnrichedQuestion {
   const lesson = entry.lesson
   const idSuffix = sub.subType === 'kana-to-kanji' ? 'a' : 'b'
   const id = `w${lesson}-${String(entry.num).padStart(3, '0')}-${idSuffix}`
   const groupId = `w${lesson}`
   const groupTitle = `第${lesson}课`
 
-  const stem = sub.subType === 'kana-to-kanji'
-    ? `假名 → 汉字｜${sub.prompt}`
-    : `汉字 → 假名｜${sub.prompt}`
+  const stem =
+    sub.subType === 'kana-to-kanji' ? `假名 → 汉字｜${sub.prompt}` : `汉字 → 假名｜${sub.prompt}`
 
-  const options = sub.options.map(o => ({ key: o.key, text: o.text }))
-  const answerOpt = sub.options.find(o => o.key === sub.answerKey)
+  const options = sub.options.map((o) => ({ key: o.key, text: o.text }))
+  const answerOpt = sub.options.find((o) => o.key === sub.answerKey)
   const answerText = answerOpt?.text || ''
 
   const direction = sub.subType === 'kana-to-kanji' ? '汉字写法' : '假名读音'
   let explanation = `考察「${entry.headword}」的${direction}。中文意思：${entry.translation || '—'}。`
 
-  const wrongOpts = sub.options.filter(o => o.key !== sub.answerKey && o.annotation)
+  const wrongOpts = sub.options.filter((o) => o.key !== sub.answerKey && o.annotation)
   if (wrongOpts.length > 0) {
     const label = sub.subType === 'kana-to-kanji' ? '读音' : '对应的汉字'
-    const refs = wrongOpts.map(o => `${o.key}. ${o.text} → ${o.annotation}`)
+    const refs = wrongOpts.map((o) => `${o.key}. ${o.text} → ${o.annotation}`)
     explanation += ` 其他选项的${label}：${refs.join('；')}`
   }
 
@@ -218,15 +233,24 @@ function buildQuestion(entry: RawEntry, sub: RawSubQuestion, position: number, s
 }
 
 function hasDuplicateOptions(sub: RawSubQuestion): boolean {
-  const texts = sub.options.map(o => o.text)
+  const texts = sub.options.map((o) => o.text)
   return new Set(texts).size !== texts.length
 }
 
 function main() {
   const files = [
-    { path: path.resolve(__dirname, '../data/raw/日语汉字单词选择题-第26-28课.md'), label: '日语汉字单词选择题-第26-28课.md' },
-    { path: path.resolve(__dirname, '../data/raw/日语汉字单词选择题-第28-31课.md'), label: '日语汉字单词选择题-第28-31课.md' },
-    { path: path.resolve(__dirname, '../data/raw/日语汉字单词选择题-第32-36课.md'), label: '日语汉字单词选择题-第32-36课.md' },
+    {
+      path: path.resolve(__dirname, '../data/raw/日语汉字单词选择题-第26-28课.md'),
+      label: '日语汉字单词选择题-第26-28课.md',
+    },
+    {
+      path: path.resolve(__dirname, '../data/raw/日语汉字单词选择题-第28-31课.md'),
+      label: '日语汉字单词选择题-第28-31课.md',
+    },
+    {
+      path: path.resolve(__dirname, '../data/raw/日语汉字单词选择题-第32-36课.md'),
+      label: '日语汉字单词选择题-第32-36课.md',
+    },
   ]
 
   const questions: EnrichedQuestion[] = []
@@ -247,7 +271,12 @@ function main() {
 
     for (const entry of entries) {
       if (entry.subs.length !== 2) {
-        skipped.push({ file: f.label, lesson: entry.lesson, num: entry.num, reason: `子题数=${entry.subs.length}（期望 2）` })
+        skipped.push({
+          file: f.label,
+          lesson: entry.lesson,
+          num: entry.num,
+          reason: `子题数=${entry.subs.length}（期望 2）`,
+        })
         skippedEntries++
         continue
       }
@@ -257,17 +286,32 @@ function main() {
         const sub = entry.subs[si]
         const lbl = subLabels[si]
         if (sub.options.length !== 4) {
-          skipped.push({ file: f.label, lesson: entry.lesson, num: entry.num, reason: `${lbl} 选项数=${sub.options.length}` })
+          skipped.push({
+            file: f.label,
+            lesson: entry.lesson,
+            num: entry.num,
+            reason: `${lbl} 选项数=${sub.options.length}`,
+          })
           skippedEntries++
           continue
         }
         if (hasDuplicateOptions(sub)) {
-          skipped.push({ file: f.label, lesson: entry.lesson, num: entry.num, reason: `${lbl} 选项存在完全相同项` })
+          skipped.push({
+            file: f.label,
+            lesson: entry.lesson,
+            num: entry.num,
+            reason: `${lbl} 选项存在完全相同项`,
+          })
           skippedEntries++
           continue
         }
         if (!sub.answerKey) {
-          skipped.push({ file: f.label, lesson: entry.lesson, num: entry.num, reason: `${lbl} 缺少答案标记` })
+          skipped.push({
+            file: f.label,
+            lesson: entry.lesson,
+            num: entry.num,
+            reason: `${lbl} 缺少答案标记`,
+          })
           skippedEntries++
           continue
         }
@@ -277,7 +321,7 @@ function main() {
     }
   }
 
-  const ids = questions.map(q => q.id)
+  const ids = questions.map((q) => q.id)
   const dupIds = ids.filter((id, i) => ids.indexOf(id) !== i)
 
   const groups: Record<string, number[]> = {}
@@ -292,7 +336,8 @@ function main() {
   if (dupIds.length) reportLines.push(`⚠ 重复 ID: ${[...new Set(dupIds)].join(', ')}`)
   if (skipped.length > 0) {
     reportLines.push('--- 跳过明细 ---')
-    for (const s of skipped) reportLines.push(`  ${s.file} · 第${s.lesson}课 #${s.num}: ${s.reason}`)
+    for (const s of skipped)
+      reportLines.push(`  ${s.file} · 第${s.lesson}课 #${s.num}: ${s.reason}`)
   }
   reportLines.push('--- 题组分布 ---')
   for (const [gid, nums] of Object.entries(groups)) {
@@ -304,13 +349,21 @@ function main() {
   const reportPath = path.resolve(__dirname, '../data/processed/word-validation-report.json')
 
   fs.writeFileSync(outPath, JSON.stringify(questions, null, 2), 'utf-8')
-  fs.writeFileSync(reportPath, JSON.stringify({
-    report: reportLines,
-    generatedAt: new Date().toISOString(),
-    count: questions.length,
-    skippedCount: skippedEntries,
-    skipped,
-  }, null, 2), 'utf-8')
+  fs.writeFileSync(
+    reportPath,
+    JSON.stringify(
+      {
+        report: reportLines,
+        generatedAt: new Date().toISOString(),
+        count: questions.length,
+        skippedCount: skippedEntries,
+        skipped,
+      },
+      null,
+      2,
+    ),
+    'utf-8',
+  )
 
   console.log(reportLines.join('\n'))
   console.log(`\n输出: ${outPath} (${questions.length} 题)`)

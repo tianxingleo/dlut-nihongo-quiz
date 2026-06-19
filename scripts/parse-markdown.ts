@@ -18,9 +18,16 @@ interface RawQuestion {
 }
 
 const CHINESE_NUM_MAP: Record<string, string> = {
-  一: '01', 二: '02', 三: '03', 四: '04',
-  五: '05', 六: '06', 七: '07', 八: '08',
-  九: '09', 十: '10',
+  一: '01',
+  二: '02',
+  三: '03',
+  四: '04',
+  五: '05',
+  六: '06',
+  七: '07',
+  八: '08',
+  九: '09',
+  十: '10',
 }
 
 function tagQuestion(q: RawQuestion): { grammarPoints: string[]; tags: string[] } {
@@ -65,26 +72,53 @@ function tagQuestion(q: RawQuestion): { grammarPoints: string[]; tags: string[] 
     ['副词', /副词|たいてい|ちょうど|はっきり/],
     ['寒暄表达', /寒暄|それは大変|おかげさまで|お気をつけて/],
   ]
-  for (const [gp, re] of grammarMap) { if (re.test(full)) grammarPoints.push(gp) }
+  for (const [gp, re] of grammarMap) {
+    if (re.test(full)) grammarPoints.push(gp)
+  }
 
   const tagMap: [string, RegExp][] = [
-    ['ように', /ように/], ['ない形', /ない形|否定形/], ['目的表达', /为了|为了不/],
-    ['可能形', /可能形|可能动[词辭]/], ['ようになる', /ようになる/],
-    ['一段动词', /一段|二类/], ['五段动词', /五段|一类/],
-    ['どおりに', /[とど]おりに/], ['名词接续', /名词.*接|N\s*\+/],
-    ['に', /助词.*に|に.*固定|に.*搭配/], ['を', /助词.*を|を.*表示/],
-    ['が', /助词.*が|が.*主语/], ['で', /助词.*で|で.*表示/],
-    ['と', /助词.*と|と.*引用/], ['命令形', /命令形/], ['禁止形', /禁止形/],
-    ['てあります', /てあります/], ['他动词', /他动词/], ['状态', /状态/],
-    ['自动词', /自动词/], ['ている', /ている|状態/], ['ほうがいい', /ほうがいい/],
-    ['かもしれません', /かもしれません/], ['こそあど', /こそあど|[こそあど]んなに/],
-    ['后缀', /后缀|〜[家員士客]/], ['固定搭配', /固定搭配|固定常用|固定/],
-    ['场景表达', /场景|寒暄/], ['副词', /副词/], ['数量+しか', /しか/],
-    ['对比', /对比/], ['んです', /んです/], ['なかなか', /なかなか/],
-    ['てしまう', /てしまう/], ['存在句', /存在/], ['尊敬语', /敬語|礼貌|いただけ/],
-    ['easy', /基本|简单/], ['medium', /注意|需要|中等/], ['hard', /难|易错|重要|关键/],
+    ['ように', /ように/],
+    ['ない形', /ない形|否定形/],
+    ['目的表达', /为了|为了不/],
+    ['可能形', /可能形|可能动[词辭]/],
+    ['ようになる', /ようになる/],
+    ['一段动词', /一段|二类/],
+    ['五段动词', /五段|一类/],
+    ['どおりに', /[とど]おりに/],
+    ['名词接续', /名词.*接|N\s*\+/],
+    ['に', /助词.*に|に.*固定|に.*搭配/],
+    ['を', /助词.*を|を.*表示/],
+    ['が', /助词.*が|が.*主语/],
+    ['で', /助词.*で|で.*表示/],
+    ['と', /助词.*と|と.*引用/],
+    ['命令形', /命令形/],
+    ['禁止形', /禁止形/],
+    ['てあります', /てあります/],
+    ['他动词', /他动词/],
+    ['状态', /状态/],
+    ['自动词', /自动词/],
+    ['ている', /ている|状態/],
+    ['ほうがいい', /ほうがいい/],
+    ['かもしれません', /かもしれません/],
+    ['こそあど', /こそあど|[こそあど]んなに/],
+    ['后缀', /后缀|〜[家員士客]/],
+    ['固定搭配', /固定搭配|固定常用|固定/],
+    ['场景表达', /场景|寒暄/],
+    ['副词', /副词/],
+    ['数量+しか', /しか/],
+    ['对比', /对比/],
+    ['んです', /んです/],
+    ['なかなか', /なかなか/],
+    ['てしまう', /てしまう/],
+    ['存在句', /存在/],
+    ['尊敬语', /敬語|礼貌|いただけ/],
+    ['easy', /基本|简单/],
+    ['medium', /注意|需要|中等/],
+    ['hard', /难|易错|重要|关键/],
   ]
-  for (const [t, re] of tagMap) { if (re.test(full)) tags.push(t) }
+  for (const [t, re] of tagMap) {
+    if (re.test(full)) tags.push(t)
+  }
 
   return { grammarPoints: [...new Set(grammarPoints)], tags: [...new Set(tags)] }
 }
@@ -256,7 +290,7 @@ function parseMarkdown(filePath: string): RawQuestion[] {
         stem: cleanStem,
         options,
         answerKey,
-        answerText: answerText || options.find(o => o.key === answerKey)?.text || '',
+        answerText: answerText || options.find((o) => o.key === answerKey)?.text || '',
         translation,
         explanation: expSection,
       })
@@ -294,7 +328,11 @@ function main() {
       explanation: q.explanation,
       grammarPoints,
       tags,
-      source: { file: '日语期末复习题目答案解析_题目选项在上版.md', group: q.groupTitle, position: i + 1 },
+      source: {
+        file: '日语期末复习题目答案解析_题目选项在上版.md',
+        group: q.groupTitle,
+        position: i + 1,
+      },
       status: 'ready' as const,
     }
   })
@@ -302,17 +340,21 @@ function main() {
   const report: string[] = []
   report.push(`总题数: ${enriched.length}`)
 
-  const missingStem = enriched.filter(q => !q.stem)
-  const missingOptions = enriched.filter(q => q.options.length < 2)
-  const missingAnswer = enriched.filter(q => !q.answerKey)
-  const answerNotInOptions = enriched.filter(q => q.answerKey && !q.options.find(o => o.key === q.answerKey))
-  const ids = enriched.map(q => q.id)
+  const missingStem = enriched.filter((q) => !q.stem)
+  const missingOptions = enriched.filter((q) => q.options.length < 2)
+  const missingAnswer = enriched.filter((q) => !q.answerKey)
+  const answerNotInOptions = enriched.filter(
+    (q) => q.answerKey && !q.options.find((o) => o.key === q.answerKey),
+  )
+  const ids = enriched.map((q) => q.id)
   const dupIds = ids.filter((id, i) => ids.indexOf(id) !== i)
 
-  if (missingStem.length) report.push(`⚠ 缺题干: ${missingStem.map(q => q.id).join(', ')}`)
-  if (missingOptions.length) report.push(`⚠ 缺选项(${missingOptions.length}): ${missingOptions.map(q => q.id).join(', ')}`)
-  if (missingAnswer.length) report.push(`⚠ 缺答案: ${missingAnswer.map(q => q.id).join(', ')}`)
-  if (answerNotInOptions.length) report.push(`⚠ 答案不在选项中: ${answerNotInOptions.map(q => q.id).join(', ')}`)
+  if (missingStem.length) report.push(`⚠ 缺题干: ${missingStem.map((q) => q.id).join(', ')}`)
+  if (missingOptions.length)
+    report.push(`⚠ 缺选项(${missingOptions.length}): ${missingOptions.map((q) => q.id).join(', ')}`)
+  if (missingAnswer.length) report.push(`⚠ 缺答案: ${missingAnswer.map((q) => q.id).join(', ')}`)
+  if (answerNotInOptions.length)
+    report.push(`⚠ 答案不在选项中: ${answerNotInOptions.map((q) => q.id).join(', ')}`)
   if (dupIds.length) report.push(`⚠ 重复ID: ${dupIds.join(', ')}`)
 
   // Check groups
@@ -332,7 +374,11 @@ function main() {
   fs.writeFileSync(outPath, JSON.stringify(enriched, null, 2), 'utf-8')
   fs.writeFileSync(
     path.resolve(__dirname, '../data/processed/validation-report.json'),
-    JSON.stringify({ report, generatedAt: new Date().toISOString(), count: enriched.length }, null, 2),
+    JSON.stringify(
+      { report, generatedAt: new Date().toISOString(), count: enriched.length },
+      null,
+      2,
+    ),
     'utf-8',
   )
 

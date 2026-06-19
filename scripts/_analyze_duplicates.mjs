@@ -13,16 +13,21 @@ if (!jsonPath) {
 const questions = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
 
 // 归一化：去除空格、标点差异、统一大小写
-const norm = (s) => (s || '')
-  .replace(/\s+/g, '')
-  .replace(/[，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>]/g, '')
-  .toLowerCase()
+const norm = (s) =>
+  (s || '')
+    .replace(/\s+/g, '')
+    .replace(/[，。、；：！？""''（）()【】《》、,.;:!?'"[\]<>]/g, '')
+    .toLowerCase()
 
 const normStem = (q) => norm(q.stem)
 
 const normFull = (q) => {
   // 题干 + 选项 + 答案文本
-  const parts = [q.stem, ...(q.options || []).map(o => o.text).filter(Boolean), q.answerText || '']
+  const parts = [
+    q.stem,
+    ...(q.options || []).map((o) => o.text).filter(Boolean),
+    q.answerText || '',
+  ]
   return norm(parts.join('|'))
 }
 
@@ -37,7 +42,7 @@ for (const q of questions) {
   byKey.get(k).push(q)
 }
 
-const dupGroups = [...byKey.values()].filter(g => g.length > 1)
+const dupGroups = [...byKey.values()].filter((g) => g.length > 1)
 
 console.log(`\n=== ${jsonPath} ===`)
 console.log(`总题数: ${questions.length}`)
@@ -51,7 +56,7 @@ const crossGroupDup = [] // 跨组重复（如 single 和 p1 都有）
 const withinGroupDup = [] // 同组内重复
 
 for (const g of dupGroups) {
-  const groupSet = new Set(g.map(q => q.groupId))
+  const groupSet = new Set(g.map((q) => q.groupId))
   if (groupSet.size > 1) crossGroupDup.push(g)
   else withinGroupDup.push(g)
 }
@@ -68,7 +73,7 @@ console.log(`  净同组重复: ${withinGroupDup.reduce((s, g) => s + g.length -
 // 按 cluster 涉及的组对统计 top combinations
 const pairCount = new Map()
 for (const g of crossGroupDup) {
-  const groups = [...new Set(g.map(q => q.groupId))].sort()
+  const groups = [...new Set(g.map((q) => q.groupId))].sort()
   for (let i = 0; i < groups.length; i++) {
     for (let j = i + 1; j < groups.length; j++) {
       const key = `${groups[i]} ↔ ${groups[j]}`

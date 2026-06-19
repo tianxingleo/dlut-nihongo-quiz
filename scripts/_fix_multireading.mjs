@@ -1,11 +1,92 @@
 import fs from 'fs'
 
 // 56 个多音字题：把"也是合法读音"的干扰项替换成"真正错的假名"
-const dakuten = { か:'が', き:'ぎ', く:'ぐ', け:'げ', こ:'ご', さ:'ざ', し:'じ', す:'ず', せ:'ぜ', そ:'ぞ', た:'だ', ち:'ぢ', つ:'づ', て:'で', と:'ど', は:'ば', ひ:'び', ふ:'ぶ', へ:'べ', ほ:'ぼ' }
-const handaku = { は:'ぱ', ひ:'ぴ', ふ:'ぷ', へ:'ぺ', ほ:'ぽ' }
-const devoice = { 'が':'か', 'ぎ':'き', 'ぐ':'く', 'げ':'け', 'ご':'こ', 'ざ':'さ', 'じ':'し', 'ず':'す', 'ぜ':'せ', 'ぞ':'そ', 'だ':'た', 'ぢ':'ち', 'づ':'つ', 'で':'て', 'ど':'と', 'ば':'は', 'び':'ひ', 'ぶ':'ふ', 'べ':'へ', 'ぼ':'ほ', 'ぱ':'は', 'ぴ':'ひ', 'ぷ':'ふ', 'ぺ':'へ', 'ぽ':'ほ' }
-const consShift = { 'か':'た', 'き':'ち', 'く':'つ', 'け':'て', 'こ':'と', 'た':'さ', 'ち':'し', 'つ':'す', 'て':'せ', 'と':'そ', 'さ':'は', 'し':'ひ', 'す':'ふ', 'せ':'へ', 'そ':'ほ', 'は':'か', 'ひ':'き', 'ふ':'く', 'へ':'け', 'ほ':'こ', 'ま':'な', 'み':'に', 'む':'ぬ', 'め':'ね', 'も':'の', 'な':'ら', 'に':'り', 'ぬ':'る', 'ね':'れ', 'の':'ろ', 'ら':'や', 'り':'ゆ', 'る':'よ' }
-const vowelShift = { 'あ':'え', 'い':'あ', 'う':'い', 'え':'い', 'お':'う' }
+const dakuten = {
+  か: 'が',
+  き: 'ぎ',
+  く: 'ぐ',
+  け: 'げ',
+  こ: 'ご',
+  さ: 'ざ',
+  し: 'じ',
+  す: 'ず',
+  せ: 'ぜ',
+  そ: 'ぞ',
+  た: 'だ',
+  ち: 'ぢ',
+  つ: 'づ',
+  て: 'で',
+  と: 'ど',
+  は: 'ば',
+  ひ: 'び',
+  ふ: 'ぶ',
+  へ: 'べ',
+  ほ: 'ぼ',
+}
+const handaku = { は: 'ぱ', ひ: 'ぴ', ふ: 'ぷ', へ: 'ぺ', ほ: 'ぽ' }
+const devoice = {
+  が: 'か',
+  ぎ: 'き',
+  ぐ: 'く',
+  げ: 'け',
+  ご: 'こ',
+  ざ: 'さ',
+  じ: 'し',
+  ず: 'す',
+  ぜ: 'せ',
+  ぞ: 'そ',
+  だ: 'た',
+  ぢ: 'ち',
+  づ: 'つ',
+  で: 'て',
+  ど: 'と',
+  ば: 'は',
+  び: 'ひ',
+  ぶ: 'ふ',
+  べ: 'へ',
+  ぼ: 'ほ',
+  ぱ: 'は',
+  ぴ: 'ひ',
+  ぷ: 'ふ',
+  ぺ: 'へ',
+  ぽ: 'ほ',
+}
+const consShift = {
+  か: 'た',
+  き: 'ち',
+  く: 'つ',
+  け: 'て',
+  こ: 'と',
+  た: 'さ',
+  ち: 'し',
+  つ: 'す',
+  て: 'せ',
+  と: 'そ',
+  さ: 'は',
+  し: 'ひ',
+  す: 'ふ',
+  せ: 'へ',
+  そ: 'ほ',
+  は: 'か',
+  ひ: 'き',
+  ふ: 'く',
+  へ: 'け',
+  ほ: 'こ',
+  ま: 'な',
+  み: 'に',
+  む: 'ぬ',
+  め: 'ね',
+  も: 'の',
+  な: 'ら',
+  に: 'り',
+  ぬ: 'る',
+  ね: 'れ',
+  の: 'ろ',
+  ら: 'や',
+  り: 'ゆ',
+  る: 'よ',
+}
+const vowelShift = { あ: 'え', い: 'あ', う: 'い', え: 'い', お: 'う' }
 
 function generateKanaAlt(original, existingSet) {
   const candidates = []
@@ -44,25 +125,32 @@ function generateKanaAlt(original, existingSet) {
 }
 
 const questions = JSON.parse(fs.readFileSync('public/word-question-bank.json', 'utf-8'))
-const k2k = questions.filter(q => q.subType === 'kanji-to-kana')
+const k2k = questions.filter((q) => q.subType === 'kanji-to-kana')
 
 const toFix = []
 for (const q of k2k) {
   const m = q.explanation.match(/其他选项的对应的汉字[：:]\s*(.+)$/)
   if (!m) continue
-  const parts = m[1].split(/[；;]/).map(s => s.trim())
+  const parts = m[1].split(/[；;]/).map((s) => s.trim())
   const headKanji = q.headword.split(/[（(—]/)[0].trim()
-  const kanjiChars = [...headKanji].filter(c => /[一-鿿]/.test(c))
+  const kanjiChars = [...headKanji].filter((c) => /[一-鿿]/.test(c))
   const validAlts = []
   for (const p of parts) {
     const mm = p.match(/^([A-D])\.\s*(.+?)\s*→\s*(.+?)\s*$/)
     if (!mm) continue
-    const key = mm[1], optText = mm[2], refKanji = mm[3]
-    if (kanjiChars.some(k => refKanji.includes(k)) && !refKanji.includes('无') && !refKanji.includes('無')) {
+    const key = mm[1],
+      optText = mm[2],
+      refKanji = mm[3]
+    if (
+      kanjiChars.some((k) => refKanji.includes(k)) &&
+      !refKanji.includes('无') &&
+      !refKanji.includes('無')
+    ) {
       validAlts.push({ key, optText, refKanji })
     }
   }
-  if (validAlts.length > 0) toFix.push({ qid: q.id, qheadKanji: headKanji, qstem: q.stem, validAlts })
+  if (validAlts.length > 0)
+    toFix.push({ qid: q.id, qheadKanji: headKanji, qstem: q.stem, validAlts })
 }
 
 console.log(`需要修复的多音字歧义题: ${toFix.length}`)
@@ -94,32 +182,55 @@ for (const fix of toFix) {
 
   let lessonLineIdx = -1
   for (let i = 0; i < lines.length; i++) {
-    if (lines[i].match(new RegExp(`^##\\s+第${lesson}课`))) { lessonLineIdx = i; break }
+    if (lines[i].match(new RegExp(`^##\\s+第${lesson}课`))) {
+      lessonLineIdx = i
+      break
+    }
   }
-  if (lessonLineIdx < 0) { console.log(`  lesson not found`); continue }
+  if (lessonLineIdx < 0) {
+    console.log(`  lesson not found`)
+    continue
+  }
 
   let entryLineIdx = -1
   for (let i = lessonLineIdx + 1; i < lines.length; i++) {
     if (lines[i].match(/^##\s+第\d+课/)) break
     const em = lines[i].match(new RegExp(`^###\\s+${num}\\.\\s+`))
-    if (em) { entryLineIdx = i; break }
+    if (em) {
+      entryLineIdx = i
+      break
+    }
   }
-  if (entryLineIdx < 0) { console.log(`  entry #${num} not found`); continue }
-  console.log(`  entry at L${entryLineIdx+1}`)
+  if (entryLineIdx < 0) {
+    console.log(`  entry #${num} not found`)
+    continue
+  }
+  console.log(`  entry at L${entryLineIdx + 1}`)
 
   let subLineIdx = -1
   for (let i = entryLineIdx + 1; i < lines.length; i++) {
     if (lines[i].match(/^###\s+\d+\.\s+/)) break
     if (lines[i].match(/^##\s+第\d+课/)) break
     const sm = lines[i].match(/^\*\*([AB])\.\s*给汉字选假名/)
-    if (sm && sm[1] === subLetter) { subLineIdx = i; break }
+    if (sm && sm[1] === subLetter) {
+      subLineIdx = i
+      break
+    }
   }
-  if (subLineIdx < 0) { console.log(`  sub ${subLetter} not found`); continue }
-  console.log(`  sub at L${subLineIdx+1}`)
+  if (subLineIdx < 0) {
+    console.log(`  sub ${subLetter} not found`)
+    continue
+  }
+  console.log(`  sub at L${subLineIdx + 1}`)
 
   const opts = []
   for (let i = subLineIdx + 1; i < lines.length; i++) {
-    if (lines[i].match(/^\*\*[AB]\./) || lines[i].match(/^###\s+\d+\.\s+/) || lines[i].match(/^---/)) break
+    if (
+      lines[i].match(/^\*\*[AB]\./) ||
+      lines[i].match(/^###\s+\d+\.\s+/) ||
+      lines[i].match(/^---/)
+    )
+      break
     const om = lines[i].match(/^-\s+([A-D])[\.、\s]+(.+?)(\s*✅)?\s*$/)
     if (om) {
       let body = om[2].replace(/【.+?】/, '').trim()
@@ -127,7 +238,7 @@ for (const fix of toFix) {
     }
   }
 
-  const existingSet = new Set(opts.map(o => o.text))
+  const existingSet = new Set(opts.map((o) => o.text))
   let modified = false
   if (process.env.DEBUG && fix.qid === 'w26-002-b') {
     console.log(`DEBUG ${fix.qid}: lesson=${lesson} num=${num} sub=${subLetter}`)
@@ -136,7 +247,7 @@ for (const fix of toFix) {
     console.log(`  validAlts:`, fix.validAlts)
   }
   for (const va of fix.validAlts) {
-    const optIdx = opts.findIndex(o => o.key === va.key)
+    const optIdx = opts.findIndex((o) => o.key === va.key)
     if (optIdx < 0) continue
     const original = opts[optIdx].text
     existingSet.delete(original)
@@ -147,7 +258,14 @@ for (const fix of toFix) {
     lines[opts[optIdx].lineIdx] = `- ${va.key}. ${alt} ${newAnno}`
 
     totalFixed++
-    report.push({ file: file.split('/').pop(), line: opts[optIdx].lineIdx + 1, qid: fix.qid, from: original, to: alt, refKanji: va.refKanji })
+    report.push({
+      file: file.split('/').pop(),
+      line: opts[optIdx].lineIdx + 1,
+      qid: fix.qid,
+      from: original,
+      to: alt,
+      refKanji: va.refKanji,
+    })
     modified = true
   }
 

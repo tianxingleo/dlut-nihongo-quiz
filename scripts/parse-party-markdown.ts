@@ -60,10 +60,16 @@ const QUESTION_HDR = /^\*\*\s*(\d+)\s*[\.、]\s*(.+?)\s*\*\*\s*$/
 // Any markdown ## header — used to detect section boundaries (including ones we skip).
 const ANY_SECTION = /^#{2}\s+/
 
-function detectAnswerType(raw: string, options: { key: string; text: string }[]): { kind: 'single' | 'multi' | 'judgement'; normalized: string } {
+function detectAnswerType(
+  raw: string,
+  options: { key: string; text: string }[],
+): { kind: 'single' | 'multi' | 'judgement'; normalized: string } {
   const cleaned = raw.replace(/[\.。、\s]/g, '').toUpperCase()
   if (/^(正确|错误|对|错)$/.test(cleaned)) {
-    return { kind: 'judgement', normalized: cleaned === '对' ? '正确' : cleaned === '错' ? '错误' : cleaned }
+    return {
+      kind: 'judgement',
+      normalized: cleaned === '对' ? '正确' : cleaned === '错' ? '错误' : cleaned,
+    }
   }
   if (/^[A-E]+$/.test(cleaned)) {
     if (cleaned.length > 1) return { kind: 'multi', normalized: cleaned.split('').sort().join('') }
@@ -71,7 +77,7 @@ function detectAnswerType(raw: string, options: { key: string; text: string }[])
   }
   // Text answer — try matching against option text
   const norm = (s: string) => s.replace(/[\.。、\s]/g, '').toLowerCase()
-  const match = options.find(o => norm(o.text) === norm(raw))
+  const match = options.find((o) => norm(o.text) === norm(raw))
   if (match) return { kind: 'single', normalized: match.key }
   // Fallback: scan for letter run
   const letters = (cleaned.match(/[A-E]+/) || [''])[0]
@@ -98,7 +104,7 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
 
     // Section header detection
     if (spec.sections.length && ANY_SECTION.test(trimmed)) {
-      const sec = spec.sections.find(s => s.match.test(trimmed))
+      const sec = spec.sections.find((s) => s.match.test(trimmed))
       if (sec) {
         currentGroupId = `${spec.baseGroupId}-${sec.suffix}`
         currentGroupTitle = sec.title
@@ -113,11 +119,20 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
       continue
     }
 
-    if (skipMode) { i++; continue }
-    if (!currentGroupId) { i++; continue }
+    if (skipMode) {
+      i++
+      continue
+    }
+    if (!currentGroupId) {
+      i++
+      continue
+    }
 
     const hdr = trimmed.match(QUESTION_HDR)
-    if (!hdr) { i++; continue }
+    if (!hdr) {
+      i++
+      continue
+    }
 
     const stemFirstLine = hdr[2]
 
@@ -143,7 +158,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
     let j = 0
     while (j < body.length) {
       const line = body[j].trim()
-      if (!line) { j++; continue }
+      if (!line) {
+        j++
+        continue
+      }
 
       const ansMatch = line.match(/^\*\*答案\*\*\s*[:：]\s*(.+?)\s*$/)
       if (ansMatch) {
@@ -151,7 +169,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
         j++
         while (j < body.length) {
           const l2 = body[j].trim()
-          if (!l2) { j++; continue }
+          if (!l2) {
+            j++
+            continue
+          }
           if (/^\*\*答案/.test(l2)) break
           if (QUESTION_HDR.test(l2)) break
           if (ANY_SECTION.test(l2)) break
@@ -180,10 +201,13 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
       // Option line — supports both per-line and inline `A.x B.y C.z` styles
       if (/^[A-E][\.、）)]/.test(line)) {
         sawOption = true
-        const parts = line.split(/(?=[A-E][\.、）)])/).map(s => s.trim()).filter(p => /^[A-E][\.、）)]/.test(p))
+        const parts = line
+          .split(/(?=[A-E][\.、）)])/)
+          .map((s) => s.trim())
+          .filter((p) => /^[A-E][\.、）)]/.test(p))
         for (const p of parts) {
           const m = p.match(/^([A-E])[\.、）)]\s*(.+)$/)
-          if (m && !options.find(x => x.key === m[1])) {
+          if (m && !options.find((x) => x.key === m[1])) {
             options.push({ key: m[1], text: m[2].trim() })
           }
         }
@@ -204,9 +228,9 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
 
     // Validate answer letters exist in options
     if (kind === 'multi') {
-      if (![...normalized].every(k => options.find(o => o.key === k))) continue
+      if (![...normalized].every((k) => options.find((o) => o.key === k))) continue
     } else if (kind === 'single') {
-      if (!options.find(o => o.key === normalized)) continue
+      if (!options.find((o) => o.key === normalized)) continue
     }
 
     let finalOptions = options
@@ -216,23 +240,29 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
 
     if (kind === 'judgement') {
       // Find 正确/错误 in existing options; if not present, synthesize.
-      const correctOpt = options.find(o => /^(正确|对)$/.test(o.text))
-      const wrongOpt = options.find(o => /^(错误|错)$/.test(o.text))
+      const correctOpt = options.find((o) => /^(正确|对)$/.test(o.text))
+      const wrongOpt = options.find((o) => /^(错误|错)$/.test(o.text))
       if (correctOpt && wrongOpt) {
         answerKey = normalized === '正确' ? correctOpt.key : wrongOpt.key
         answerText = normalized
         finalOptions = options
       } else {
-        finalOptions = [{ key: 'A', text: '正确' }, { key: 'B', text: '错误' }]
+        finalOptions = [
+          { key: 'A', text: '正确' },
+          { key: 'B', text: '错误' },
+        ]
         answerKey = normalized === '正确' ? 'A' : 'B'
         answerText = normalized
       }
     } else if (kind === 'multi') {
       multiAnswer = true
       answerKey = normalized
-      answerText = options.filter(o => normalized.includes(o.key)).map(o => o.text).join(' / ')
+      answerText = options
+        .filter((o) => normalized.includes(o.key))
+        .map((o) => o.text)
+        .join(' / ')
     } else {
-      const matched = options.find(o => o.key === normalized)
+      const matched = options.find((o) => o.key === normalized)
       answerText = matched?.text || ''
     }
 
@@ -257,7 +287,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
 function extractExplicitTags(explanation: string): string[] {
   const m = explanation.match(/^\*\*标签\*\*\s*[：:]\s*(.+?)\s*$/m)
   if (!m) return []
-  return m[1].split(/[·,，、]/).map(t => t.trim()).filter(Boolean)
+  return m[1]
+    .split(/[·,，、]/)
+    .map((t) => t.trim())
+    .filter(Boolean)
 }
 
 function tagQuestion(q: RawQuestion): { tags: string[]; grammarPoints: string[] } {
@@ -270,7 +303,10 @@ function tagQuestion(q: RawQuestion): { tags: string[]; grammarPoints: string[] 
 
   const full = q.stem + ' ' + q.explanation
   const contentTags: [string, RegExp][] = [
-    ['党的指导思想', /党的指导思想|马克思列宁主义|毛泽东思想|邓小平理论|三个代表|科学发展观|习近平新时代中国特色社会主义思想/],
+    [
+      '党的指导思想',
+      /党的指导思想|马克思列宁主义|毛泽东思想|邓小平理论|三个代表|科学发展观|习近平新时代中国特色社会主义思想/,
+    ],
     ['党章知识', /党章|党员的[权利义务]|党的[中央基层纪律]组织|民主集中制/],
     ['党的性质宗旨', /党的性质|党的宗旨|先锋队|全心全意为人民服务/],
     ['党史重大事件', /南昌起义|秋收起义|长征|遵义会议|中共[一大二大三四十大]/],
@@ -315,7 +351,7 @@ function main() {
       grammarPoints,
       tags,
       source: {
-        file: FILES.find(f => q.groupId.startsWith(f.baseGroupId + '-'))?.file || '',
+        file: FILES.find((f) => q.groupId.startsWith(f.baseGroupId + '-'))?.file || '',
         group: q.groupTitle,
         position: i + 1,
       },
@@ -334,39 +370,75 @@ function main() {
     report.push(`  ${gid}: ${count}题`)
   }
 
-  const missingStem = enriched.filter(q => !q.stem)
-  const missingOptions = enriched.filter(q => q.options.length < 2)
-  const missingAnswer = enriched.filter(q => !q.answerKey)
-  const missingExplanation = enriched.filter(q => !q.explanation)
-  const answerNotInOptions = enriched.filter(q => {
-    if (q.multiAnswer) return ![...q.answerKey].every(k => q.options.find(o => o.key === k))
-    return !q.options.find(o => o.key === q.answerKey)
+  const missingStem = enriched.filter((q) => !q.stem)
+  const missingOptions = enriched.filter((q) => q.options.length < 2)
+  const missingAnswer = enriched.filter((q) => !q.answerKey)
+  const missingExplanation = enriched.filter((q) => !q.explanation)
+  const answerNotInOptions = enriched.filter((q) => {
+    if (q.multiAnswer) return ![...q.answerKey].every((k) => q.options.find((o) => o.key === k))
+    return !q.options.find((o) => o.key === q.answerKey)
   })
-  const ids = enriched.map(q => q.id)
+  const ids = enriched.map((q) => q.id)
   const dupIds = ids.filter((id, k) => ids.indexOf(id) !== k)
 
-  if (missingStem.length) report.push(`⚠ 缺题干(${missingStem.length}): ${missingStem.slice(0, 5).map(q => q.id).join(', ')}${missingStem.length > 5 ? ' …' : ''}`)
-  if (missingOptions.length) report.push(`⚠ 缺选项(${missingOptions.length}): ${missingOptions.slice(0, 5).map(q => q.id).join(', ')}${missingOptions.length > 5 ? ' …' : ''}`)
-  if (missingAnswer.length) report.push(`⚠ 缺答案: ${missingAnswer.map(q => q.id).join(', ')}`)
-  if (missingExplanation.length) report.push(`⚠ 缺解析(${missingExplanation.length}): ${missingExplanation.slice(0, 5).map(q => q.id).join(', ')}${missingExplanation.length > 5 ? ' …' : ''}`)
-  if (answerNotInOptions.length) report.push(`⚠ 答案不在选项中(${answerNotInOptions.length}): ${answerNotInOptions.slice(0, 5).map(q => q.id).join(', ')}${answerNotInOptions.length > 5 ? ' …' : ''}`)
+  if (missingStem.length)
+    report.push(
+      `⚠ 缺题干(${missingStem.length}): ${missingStem
+        .slice(0, 5)
+        .map((q) => q.id)
+        .join(', ')}${missingStem.length > 5 ? ' …' : ''}`,
+    )
+  if (missingOptions.length)
+    report.push(
+      `⚠ 缺选项(${missingOptions.length}): ${missingOptions
+        .slice(0, 5)
+        .map((q) => q.id)
+        .join(', ')}${missingOptions.length > 5 ? ' …' : ''}`,
+    )
+  if (missingAnswer.length) report.push(`⚠ 缺答案: ${missingAnswer.map((q) => q.id).join(', ')}`)
+  if (missingExplanation.length)
+    report.push(
+      `⚠ 缺解析(${missingExplanation.length}): ${missingExplanation
+        .slice(0, 5)
+        .map((q) => q.id)
+        .join(', ')}${missingExplanation.length > 5 ? ' …' : ''}`,
+    )
+  if (answerNotInOptions.length)
+    report.push(
+      `⚠ 答案不在选项中(${answerNotInOptions.length}): ${answerNotInOptions
+        .slice(0, 5)
+        .map((q) => q.id)
+        .join(', ')}${answerNotInOptions.length > 5 ? ' …' : ''}`,
+    )
   if (dupIds.length) report.push(`⚠ 重复ID: ${[...new Set(dupIds)].join(', ')}`)
 
   const byType: Record<string, number> = {}
   for (const q of enriched) byType[q.questionType] = (byType[q.questionType] || 0) + 1
-  report.push(`题型分布: ${Object.entries(byType).map(([k, v]) => `${k}=${v}`).join(', ')}`)
+  report.push(
+    `题型分布: ${Object.entries(byType)
+      .map(([k, v]) => `${k}=${v}`)
+      .join(', ')}`,
+  )
 
   report.push('✅ 校验完成')
 
   fs.writeFileSync(outPath, JSON.stringify(enriched, null, 2), 'utf-8')
   fs.mkdirSync(path.dirname(reportPath), { recursive: true })
-  fs.writeFileSync(reportPath, JSON.stringify({
-    report,
-    generatedAt: new Date().toISOString(),
-    count: enriched.length,
-    byGroup,
-    byType,
-  }, null, 2), 'utf-8')
+  fs.writeFileSync(
+    reportPath,
+    JSON.stringify(
+      {
+        report,
+        generatedAt: new Date().toISOString(),
+        count: enriched.length,
+        byGroup,
+        byType,
+      },
+      null,
+      2,
+    ),
+    'utf-8',
+  )
 
   console.log(report.join('\n'))
   console.log(`\n输出: ${outPath} (${enriched.length} 题)`)

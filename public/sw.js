@@ -17,16 +17,14 @@ function withScope(path) {
   return base + rel
 }
 
+// 仅预缓存壳资源（~10KB）。题库 JSON 走动态缓存：首次 fetch 时由 fetch handler
+// 写入 CACHE_NAME。这样首次访问只拉 ~10KB，切到某学科才缓存对应 JSON（最大 4MB），
+// 弱网/移动数据用户体验好很多。
 const ASSETS_TO_CACHE = [
   '',
   'index.html',
   'manifest.json',
   'favicon.svg',
-  'question-bank.json',
-  'word-question-bank.json',
-  'history-question-bank.json',
-  'party-question-bank.json',
-  'military-question-bank.json',
 ].map(withScope)
 
 self.addEventListener('install', (event) => {
@@ -47,6 +45,11 @@ self.addEventListener('activate', (event) => {
       )
     }).then(() => self.clients.claim()),
   )
+})
+
+// 让前端可以主动触发 skipWaiting（配合「新版本可用，立即生效」按钮）
+self.addEventListener('message', (event) => {
+  if (event.data === 'SKIP_WAITING') self.skipWaiting()
 })
 
 self.addEventListener('fetch', (event) => {

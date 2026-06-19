@@ -8,5 +8,5 @@ export function toggleMultiSelect(current: string, key: string): string {
 export function isMultiAnswerCorrect(selected: string, answer: string): boolean {
   const a = new Set(selected.split(''))
   const b = new Set(answer.split(''))
-  return a.size === b.size && [...a].every(x => b.has(x))
+  return a.size === b.size && [...a].every((x) => b.has(x))
 }

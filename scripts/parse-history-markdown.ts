@@ -27,19 +27,47 @@ interface FileSpec {
 }
 
 const FILES: FileSpec[] = [
-  { file: '刷题单1-核心必刷（T0）.md', baseGroupId: 't0', baseGroupTitle: '刷题单1：核心必刷（T0）' },
-  { file: '刷题单2-重点掌握（T1）.md', baseGroupId: 't1', baseGroupTitle: '刷题单2：重点掌握（T1）' },
-  { file: '刷题单3-常规巩固（T2）.md', baseGroupId: 't2', baseGroupTitle: '刷题单3：常规巩固（T2）' },
-  { file: '刷题单4-查漏补缺（T3）.md', baseGroupId: 't3', baseGroupTitle: '刷题单4：查漏补缺（T3）' },
+  {
+    file: '刷题单1-核心必刷（T0）.md',
+    baseGroupId: 't0',
+    baseGroupTitle: '刷题单1：核心必刷（T0）',
+  },
+  {
+    file: '刷题单2-重点掌握（T1）.md',
+    baseGroupId: 't1',
+    baseGroupTitle: '刷题单2：重点掌握（T1）',
+  },
+  {
+    file: '刷题单3-常规巩固（T2）.md',
+    baseGroupId: 't2',
+    baseGroupTitle: '刷题单3：常规巩固（T2）',
+  },
+  {
+    file: '刷题单4-查漏补缺（T3）.md',
+    baseGroupId: 't3',
+    baseGroupTitle: '刷题单4：查漏补缺（T3）',
+  },
   {
     file: '刷题单5-机考模拟（4套卷）.md',
     baseGroupId: 't5',
     baseGroupTitle: '机考模拟',
     subGroupMatcher: /^##\s+第([一二三四])套(?:\s|$)/,
   },
-  { file: '刷题单A-大工题库完整版.md', baseGroupId: 'hist-a', baseGroupTitle: '大工题库（完整版）' },
-  { file: '刷题单B-近代史习题集完整版.md', baseGroupId: 'hist-b', baseGroupTitle: '近代史习题集（完整版）' },
-  { file: '刷题单C-纲要分章题库完整版.md', baseGroupId: 'hist-c', baseGroupTitle: '纲要分章题库（完整版）' },
+  {
+    file: '刷题单A-大工题库完整版.md',
+    baseGroupId: 'hist-a',
+    baseGroupTitle: '大工题库（完整版）',
+  },
+  {
+    file: '刷题单B-近代史习题集完整版.md',
+    baseGroupId: 'hist-b',
+    baseGroupTitle: '近代史习题集（完整版）',
+  },
+  {
+    file: '刷题单C-纲要分章题库完整版.md',
+    baseGroupId: 'hist-c',
+    baseGroupTitle: '纲要分章题库（完整版）',
+  },
 ]
 
 const SUB_NUM_MAP: Record<string, string> = { 一: '1', 二: '2', 三: '3', 四: '4' }
@@ -56,9 +84,12 @@ function splitMultiOptionLine(line: string): string[] | null {
   // Detect "A、xxx B、yyy C、zzz" style (file C). Require at least 2 letter-prefixed segments.
   const trimmed = line.trim()
   if (!/^[A-E][\.、）)]/.test(trimmed)) return null
-  const parts = trimmed.split(/(?=[A-E][\.、）)])/).map(s => s.trim()).filter(Boolean)
+  const parts = trimmed
+    .split(/(?=[A-E][\.、）)])/)
+    .map((s) => s.trim())
+    .filter(Boolean)
   if (parts.length < 2) return null
-  if (!parts.every(p => /^[A-E][\.、）)]/.test(p))) return null
+  if (!parts.every((p) => /^[A-E][\.、）)]/.test(p))) return null
   return parts
 }
 
@@ -79,11 +110,17 @@ function cleanStem(stem: string): string {
   return s
 }
 
-function detectAnswerType(raw: string): { kind: 'single' | 'multi' | 'judgement'; normalized: string } {
+function detectAnswerType(raw: string): {
+  kind: 'single' | 'multi' | 'judgement'
+  normalized: string
+} {
   const cleaned = raw.replace(/[\.。、\s]/g, '').toUpperCase()
   // Judgement: 正确 / 错误 (or 对 / 错)
   if (/^(正确|错误|对|错)$/.test(cleaned)) {
-    return { kind: 'judgement', normalized: cleaned === '对' ? '正确' : cleaned === '错' ? '错误' : cleaned }
+    return {
+      kind: 'judgement',
+      normalized: cleaned === '对' ? '正确' : cleaned === '错' ? '错误' : cleaned,
+    }
   }
   if (/^[A-E]+$/.test(cleaned)) {
     const sorted = cleaned.split('').sort().join('')
@@ -128,7 +165,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
     }
 
     const hdr = trimmed.match(QUESTION_HDR)
-    if (!hdr) { i++; continue }
+    if (!hdr) {
+      i++
+      continue
+    }
 
     const num = parseInt(hdr[2])
     let stemFirstLine = hdr[3].trim()
@@ -157,7 +197,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
     let j = 0
     while (j < body.length) {
       const line = body[j].trim()
-      if (!line) { j++; continue }
+      if (!line) {
+        j++
+        continue
+      }
 
       const ansMatch = line.match(/^\*\*\s*答案\s*[:：]\s*(.+?)\s*\*\*/)
       if (ansMatch) {
@@ -166,7 +209,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
         // Look ahead for the explanation block. Strip stray bold markers around the capture.
         while (j < body.length) {
           const l2 = body[j].trim()
-          if (!l2) { j++; continue }
+          if (!l2) {
+            j++
+            continue
+          }
           if (/^\*\*\s*答案/.test(l2)) break
           if (QUESTION_HDR.test(l2)) break
           const expStart = l2.match(/^\*\*\s*解析\s*[:：]\s*\*{0,2}\s*(.*)$/)
@@ -194,10 +240,13 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
       // multiple options separated by spaces (file B/C style). Split uniformly.
       if (/^[A-E][\.、）)]/.test(line)) {
         sawOption = true
-        const parts = line.split(/(?=[A-E][\.、）)])/).map(s => s.trim()).filter(p => /^[A-E][\.、）)]/.test(p))
+        const parts = line
+          .split(/(?=[A-E][\.、）)])/)
+          .map((s) => s.trim())
+          .filter((p) => /^[A-E][\.、）)]/.test(p))
         for (const p of parts) {
           const o = parseOptionsFromLine(p)
-          if (o && !options.find(x => x.key === o.key)) options.push(o)
+          if (o && !options.find((x) => x.key === o.key)) options.push(o)
         }
         j++
         continue
@@ -222,7 +271,8 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
     if (kind !== 'judgement' && options.length === 0) continue
     if (!stem && options.length === 0) continue
     // Multi-choice with answer letters missing from options: source data is broken.
-    if (kind === 'multi' && ![...normalized].every(k => options.find(o => o.key === k))) continue
+    if (kind === 'multi' && ![...normalized].every((k) => options.find((o) => o.key === k)))
+      continue
 
     let finalOptions = options
     let answerKey = normalized
@@ -240,12 +290,12 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
       answerText = normalized
     } else if (kind === 'multi') {
       multiAnswer = true
-      answerKey = normalized  // e.g. "ABC"
-      const matched = options.filter(o => normalized.includes(o.key))
-      answerText = matched.map(o => o.text).join(' / ')
+      answerKey = normalized // e.g. "ABC"
+      const matched = options.filter((o) => normalized.includes(o.key))
+      answerText = matched.map((o) => o.text).join(' / ')
     } else {
       // single
-      const matched = options.find(o => o.key === normalized)
+      const matched = options.find((o) => o.key === normalized)
       answerText = matched?.text || ''
     }
 
@@ -272,13 +322,18 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
 function extractExplicitTags(explanation: string): string[] {
   const m = explanation.match(/^\*\*标签\*\*\s*[：:]\s*(.+?)\s*$/m)
   if (!m) return []
-  return m[1].split(/[·,，、]/).map(t => t.trim()).filter(Boolean)
+  return m[1]
+    .split(/[·,，、]/)
+    .map((t) => t.trim())
+    .filter(Boolean)
 }
 
 function tagQuestion(q: RawQuestion): { tags: string[]; grammarPoints: string[] } {
   // History questions don't use grammar-point tagging; derive chapter tag from groupTitle instead.
   const tags: string[] = []
-  const chapterMatch = q.groupTitle.match(/第([一二三四五六七八九十]+)套|第([一二三四五六七八九十]+)章/)
+  const chapterMatch = q.groupTitle.match(
+    /第([一二三四五六七八九十]+)套|第([一二三四五六七八九十]+)章/,
+  )
   if (chapterMatch) tags.push(`第${chapterMatch[1] || chapterMatch[2]}章`)
   if (q.multiAnswer) tags.push('多选题')
   if (q.questionType === 'judgement') tags.push('判断题')
@@ -345,7 +400,10 @@ function main() {
       grammarPoints,
       tags,
       source: {
-        file: FILES.find(f => q.groupId === f.baseGroupId || q.groupId.startsWith(f.baseGroupId + '-'))?.file || '',
+        file:
+          FILES.find(
+            (f) => q.groupId === f.baseGroupId || q.groupId.startsWith(f.baseGroupId + '-'),
+          )?.file || '',
         group: q.groupTitle,
         position: i + 1,
       },
@@ -365,43 +423,79 @@ function main() {
     report.push(`  ${gid}: ${count}题`)
   }
 
-  const missingStem = enriched.filter(q => !q.stem)
-  const missingOptions = enriched.filter(q => q.options.length < 2)
-  const missingAnswer = enriched.filter(q => !q.answerKey)
-  const missingExplanation = enriched.filter(q => !q.explanation)
-  const answerNotInOptions = enriched.filter(q => {
+  const missingStem = enriched.filter((q) => !q.stem)
+  const missingOptions = enriched.filter((q) => q.options.length < 2)
+  const missingAnswer = enriched.filter((q) => !q.answerKey)
+  const missingExplanation = enriched.filter((q) => !q.explanation)
+  const answerNotInOptions = enriched.filter((q) => {
     if (q.multiAnswer) {
       // Each letter of answerKey must be in options
-      return ![...q.answerKey].every(k => q.options.find(o => o.key === k))
+      return ![...q.answerKey].every((k) => q.options.find((o) => o.key === k))
     }
-    return !q.options.find(o => o.key === q.answerKey)
+    return !q.options.find((o) => o.key === q.answerKey)
   })
-  const ids = enriched.map(q => q.id)
+  const ids = enriched.map((q) => q.id)
   const dupIds = ids.filter((id, k) => ids.indexOf(id) !== k)
 
-  if (missingStem.length) report.push(`⚠ 缺题干(${missingStem.length}): ${missingStem.slice(0, 5).map(q => q.id).join(', ')}${missingStem.length > 5 ? ' …' : ''}`)
-  if (missingOptions.length) report.push(`⚠ 缺选项(${missingOptions.length}): ${missingOptions.slice(0, 5).map(q => q.id).join(', ')}${missingOptions.length > 5 ? ' …' : ''}`)
-  if (missingAnswer.length) report.push(`⚠ 缺答案: ${missingAnswer.map(q => q.id).join(', ')}`)
-  if (missingExplanation.length) report.push(`⚠ 缺解析(${missingExplanation.length}): ${missingExplanation.slice(0, 5).map(q => q.id).join(', ')}${missingExplanation.length > 5 ? ' …' : ''}`)
-  if (answerNotInOptions.length) report.push(`⚠ 答案不在选项中(${answerNotInOptions.length}): ${answerNotInOptions.slice(0, 5).map(q => q.id).join(', ')}${answerNotInOptions.length > 5 ? ' …' : ''}`)
+  if (missingStem.length)
+    report.push(
+      `⚠ 缺题干(${missingStem.length}): ${missingStem
+        .slice(0, 5)
+        .map((q) => q.id)
+        .join(', ')}${missingStem.length > 5 ? ' …' : ''}`,
+    )
+  if (missingOptions.length)
+    report.push(
+      `⚠ 缺选项(${missingOptions.length}): ${missingOptions
+        .slice(0, 5)
+        .map((q) => q.id)
+        .join(', ')}${missingOptions.length > 5 ? ' …' : ''}`,
+    )
+  if (missingAnswer.length) report.push(`⚠ 缺答案: ${missingAnswer.map((q) => q.id).join(', ')}`)
+  if (missingExplanation.length)
+    report.push(
+      `⚠ 缺解析(${missingExplanation.length}): ${missingExplanation
+        .slice(0, 5)
+        .map((q) => q.id)
+        .join(', ')}${missingExplanation.length > 5 ? ' …' : ''}`,
+    )
+  if (answerNotInOptions.length)
+    report.push(
+      `⚠ 答案不在选项中(${answerNotInOptions.length}): ${answerNotInOptions
+        .slice(0, 5)
+        .map((q) => q.id)
+        .join(', ')}${answerNotInOptions.length > 5 ? ' …' : ''}`,
+    )
   if (dupIds.length) report.push(`⚠ 重复ID: ${[...new Set(dupIds)].join(', ')}`)
 
   // Type breakdown
   const byType: Record<string, number> = {}
   for (const q of enriched) byType[q.questionType] = (byType[q.questionType] || 0) + 1
-  report.push(`题型分布: ${Object.entries(byType).map(([k, v]) => `${k}=${v}`).join(', ')}`)
+  report.push(
+    `题型分布: ${Object.entries(byType)
+      .map(([k, v]) => `${k}=${v}`)
+      .join(', ')}`,
+  )
 
   report.push('✅ 校验完成')
 
   fs.writeFileSync(outPath, JSON.stringify(enriched, null, 2), 'utf-8')
   fs.mkdirSync(path.dirname(reportPath), { recursive: true })
-  fs.writeFileSync(reportPath, JSON.stringify({
-    report,
-    generatedAt: new Date().toISOString(),
-    count: enriched.length,
-    byGroup,
-    byType,
-  }, null, 2), 'utf-8')
+  fs.writeFileSync(
+    reportPath,
+    JSON.stringify(
+      {
+        report,
+        generatedAt: new Date().toISOString(),
+        count: enriched.length,
+        byGroup,
+        byType,
+      },
+      null,
+      2,
+    ),
+    'utf-8',
+  )
 
   console.log(report.join('\n'))
   console.log(`\n输出: ${outPath} (${enriched.length} 题)`)

@@ -68,8 +68,12 @@ defineProps<{
 
 /* Shimmer animation */
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .sk-line,
@@ -94,14 +98,26 @@ defineProps<{
   margin-bottom: 8px;
 }
 
-.sk-line--xshort { width: 20%; }
-.sk-line--short { width: 30%; }
-.sk-line--medium { width: 55%; }
-.sk-line--long { width: 75%; }
-.sk-line--full { width: 90%; }
+.sk-line--xshort {
+  width: 20%;
+}
+.sk-line--short {
+  width: 30%;
+}
+.sk-line--medium {
+  width: 55%;
+}
+.sk-line--long {
+  width: 75%;
+}
+.sk-line--full {
+  width: 90%;
+}
 
 /* Progress bar skeleton (detail) */
-.sk-progress { margin-bottom: 16px; }
+.sk-progress {
+  margin-bottom: 16px;
+}
 .sk-bar {
   height: 4px;
   width: 100%;
@@ -130,7 +146,12 @@ defineProps<{
 }
 
 /* Options */
-.sk-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.sk-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
 
 .sk-option {
   display: flex;
@@ -161,8 +182,12 @@ defineProps<{
 }
 
 /* Card skeleton */
-.sk-card-header { margin-bottom: 16px; }
-.sk-card-body { margin-bottom: 20px; }
+.sk-card-header {
+  margin-bottom: 16px;
+}
+.sk-card-body {
+  margin-bottom: 20px;
+}
 .sk-card-stats {
   display: flex;
   gap: 12px;
@@ -178,7 +203,10 @@ defineProps<{
   flex-direction: column;
   gap: 6px;
 }
-.sk-card-actions { display: flex; gap: 8px; }
+.sk-card-actions {
+  display: flex;
+  gap: 8px;
+}
 .sk-btn {
   width: 100px;
   height: 36px;
@@ -186,7 +214,11 @@ defineProps<{
 }
 
 /* List skeleton */
-.sk-list { display: flex; flex-direction: column; gap: 6px; }
+.sk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
 .sk-row {
   display: flex;

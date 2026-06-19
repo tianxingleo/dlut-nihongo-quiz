@@ -16,7 +16,10 @@ const RAW_FILES = [
 ]
 
 console.log('=== 步骤 1: 重置 markdown ===')
-execSync('git checkout -- data/raw/日语汉字单词选择题-第26-28课.md data/raw/日语汉字单词选择题-第28-31课.md data/raw/日语汉字单词选择题-第32-36课.md', { stdio: 'inherit' })
+execSync(
+  'git checkout -- data/raw/日语汉字单词选择题-第26-28课.md data/raw/日语汉字单词选择题-第28-31课.md data/raw/日语汉字单词选择题-第32-36课.md',
+  { stdio: 'inherit' },
+)
 
 console.log('\n=== 步骤 2: 应用 annotations ===')
 execSync('npx tsx scripts/_apply_annotations.ts', { stdio: 'inherit' })
@@ -41,13 +44,19 @@ const lines = content.split(/\r?\n/)
 // 找到 #99
 let entry99Start = -1
 for (let i = 0; i < lines.length; i++) {
-  if (lines[i].match(/^###\s+99\.\s+/)) { entry99Start = i; break }
+  if (lines[i].match(/^###\s+99\.\s+/)) {
+    entry99Start = i
+    break
+  }
 }
 if (entry99Start >= 0) {
   // 找到下一个 --- 或下一个 ###
   let entry99End = lines.length
   for (let i = entry99Start + 1; i < lines.length; i++) {
-    if (lines[i].match(/^###\s+\d+\.\s+/) || lines[i].match(/^---/)) { entry99End = i; break }
+    if (lines[i].match(/^###\s+\d+\.\s+/) || lines[i].match(/^---/)) {
+      entry99End = i
+      break
+    }
   }
   // 替换 #99 整段
   const newEntry99 = [
