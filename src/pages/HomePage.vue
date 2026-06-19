@@ -54,7 +54,6 @@ async function refresh() {
   wrongIds.value = await getWrongQuestionIds(cat)
   untouchedIds.value = await getUntouchedQuestionIds(cat)
 
-  // Per-group stats for history view
   const groups = getAllGroups(cat)
   const next: typeof groupStats.value = {}
   for (const g of groups) {
@@ -123,23 +122,22 @@ async function discardSession() {
 }
 
 const titleText = computed(() => {
-  if (activeCategory.value === 'word') return '📖 日语单词题库'
-  if (activeCategory.value === 'history') return '🏛️ 中国近现代史刷题'
-  if (activeCategory.value === 'party') return '🚩 中国共产党党史刷题'
-  if (activeCategory.value === 'military') return '🎖️ 军事理论刷题'
-  return '📚 日语期末复习题库'
+  if (activeCategory.value === 'word') return '日语单词题库'
+  if (activeCategory.value === 'history') return '中国近现代史'
+  if (activeCategory.value === 'party') return '中国共产党党史'
+  if (activeCategory.value === 'military') return '军事理论'
+  return '日语期末复习题库'
 })
 const subtitleText = computed(() => {
-  if (activeCategory.value === 'word') return `${totalQuestions.value}题 · 第26-36课 · 汉字 ↔ 假名`
-  if (activeCategory.value === 'history') return `${totalQuestions.value}题 · 11个刷题单 · 完全独立 · 单选/多选/判断`
-  if (activeCategory.value === 'party') return `${totalQuestions.value}题 · 7个刷题单 · 单选/多选/判断 · 按题型与按优先级`
-  if (activeCategory.value === 'military') return `${totalQuestions.value}题 · 22个刷题单 · 单选/多选/判断 · 按章节与按优先级`
-  return `${totalQuestions.value}题 · 10大题组 · 智能复习系统`
+  if (activeCategory.value === 'word') return `${totalQuestions.value} 题 · 第26-36课 · 汉字 / 假名`
+  if (activeCategory.value === 'history') return `${totalQuestions.value} 题 · 11个刷题单 · 单选/多选/判断`
+  if (activeCategory.value === 'party') return `${totalQuestions.value} 题 · 7个刷题单 · 单选/多选/判断`
+  if (activeCategory.value === 'military') return `${totalQuestions.value} 题 · 22个刷题单 · 单选/多选/判断`
+  return `${totalQuestions.value} 题 · 10大题组 · 智能复习`
 })
 const tagSectionTitle = computed(() => activeCategory.value === 'word' ? '按课/标签复习' : '按语法标签复习')
-const weakSectionTitle = computed(() => activeCategory.value === 'word' ? '📊 薄弱课/标签（优先复习）' : '📊 薄弱语法点（优先复习）')
+const weakSectionTitle = computed(() => activeCategory.value === 'word' ? '薄弱课/标签' : '薄弱语法点')
 
-// Categories that use the "group-card grid" home view (vs the grammar/word tag-cloud view)
 const isGroupView = computed(() =>
   activeCategory.value === 'history' || activeCategory.value === 'party' || activeCategory.value === 'military',
 )
@@ -163,7 +161,6 @@ const groupViewList = computed(() => {
   const titles: Record<string, string> = {}
   for (const q of questions.value) titles[q.groupId] = q.groupTitle
   const groups = getAllGroups(cat)
-  // Preserve declared order; append any unexpected groups at the end so we never hide data.
   const seen = new Set<string>()
   const ordered = order
     .map(id => {
@@ -182,65 +179,73 @@ const groupViewList = computed(() => {
 })
 
 const groupViewSectionTitle = computed(() => {
-  if (activeCategory.value === 'party') return '选择刷题单（按题型 / 按优先级）'
-  if (activeCategory.value === 'military') return '选择刷题单（按章节 / 按优先级）'
-  return '选择刷题单'
+  if (activeCategory.value === 'party') return '刷题单（按题型 / 按优先级）'
+  if (activeCategory.value === 'military') return '刷题单（按章节 / 按优先级）'
+  return '刷题单'
 })
 const groupViewHint = computed(() => {
-  if (activeCategory.value === 'party') return '每个刷题单独立计分。"按题型"组（单选/多选/判断）与"按优先级"组（P1-P4）共享同一批题目，可任选一种节奏刷。'
-  if (activeCategory.value === 'military') return '每个刷题单独立计分。"按章节"组与"按优先级"组（P1-P4）共享同一批题目；P1 必考核心建议先刷。'
-  return '每个刷题单独立计分，互不影响。机考模拟按试卷拆成 4 个独立组。'
+  if (activeCategory.value === 'party') return '每单独立计分。「按题型」组与「按优先级」组共享同一批题目，可任选节奏。'
+  if (activeCategory.value === 'military') return '每单独立计分。「按章节」组与「按优先级」组共享同一批题目；P1 必考核心建议先刷。'
+  return '每单独立计分，互不影响。机考模拟按试卷拆成 4 个独立组。'
 })
 </script>
 <template>
   <div class="home">
-    <h1>{{ titleText }}</h1>
-    <p class="subtitle">{{ subtitleText }}</p>
+    <!-- Header -->
+    <header class="home-header">
+      <h1>{{ titleText }}</h1>
+      <p class="subtitle">{{ subtitleText }}</p>
+    </header>
 
+    <!-- Resume banner -->
     <div v-if="activeSession" class="resume-banner">
       <div class="resume-info">
-        <span class="resume-title">📌 继续上次</span>
-        <span class="resume-meta">第 {{ (activeSession.submitted ? activeSession.currentIndex + 1 : activeSession.currentIndex) + 1 }}/{{ activeSession.totalQuestions }} 题 · 模式：{{ activeSession.mode }}</span>
+        <span class="resume-title">继续上次</span>
+        <span class="resume-meta">第 {{ (activeSession.submitted ? activeSession.currentIndex + 1 : activeSession.currentIndex) + 1 }}/{{ activeSession.totalQuestions }} 题 · {{ activeSession.mode }}</span>
       </div>
       <div class="resume-actions">
-        <button class="resume-btn primary" @click="resumeSession">继续</button>
-        <button class="resume-btn ghost" @click="discardSession">放弃</button>
+        <button class="btn btn-accent" @click="resumeSession">继续</button>
+        <button class="btn btn-ghost" @click="discardSession">放弃</button>
       </div>
     </div>
 
+    <!-- Stats -->
     <div class="stats-row">
-      <StatCard label="今日推荐" :value="Math.max(5, wrongIds.length)" color="#f59e0b" sub="优先复习错题" />
-      <StatCard label="总进度" :value="`${doneCount}/${totalQuestions}`" color="#6366f1" sub="已做题 / 总题数" />
-      <StatCard label="总正确率" :value="totalAttempts ? Math.round(totalCorrect / totalAttempts * 100) + '%' : '--'" color="#22c55e" />
-      <StatCard label="最近正确率" :value="doneCount ? recentCorrectRate + '%' : '--'" color="#3b82f6" sub="近30题" />
-      <StatCard label="错题数" :value="wrongCount" color="#ef4444" sub="有待重刷" />
+      <StatCard label="待复习" :value="Math.max(5, wrongIds.length)" sub="优先复习错题" />
+      <StatCard label="总进度" :value="`${doneCount}/${totalQuestions}`" sub="已做 / 总题数" />
+      <StatCard label="总正确率" :value="totalAttempts ? Math.round(totalCorrect / totalAttempts * 100) + '%' : '--'" />
+      <StatCard label="近期正确率" :value="doneCount ? recentCorrectRate + '%' : '--'" sub="近30题" />
+      <StatCard label="错题数" :value="wrongCount" sub="有待重刷" />
     </div>
 
-    <div class="section">
+    <!-- Mastery bar -->
+    <section class="section">
       <h2>掌握程度</h2>
       <div class="mastery-bar">
-        <div class="seg mastered" :style="{ flex: mastery.mastered }" title="已掌握">{{ mastery.mastered }}</div>
-        <div class="seg learning" :style="{ flex: mastery.learning }" title="学习中">{{ mastery.learning }}</div>
-        <div class="seg weak" :style="{ flex: mastery.weak }" title="薄弱">{{ mastery.weak }}</div>
-        <div class="seg untouched" :style="{ flex: mastery.untouched }" title="未做">{{ mastery.untouched }}</div>
+        <div class="seg mastered" :style="{ flex: mastery.mastered }">{{ mastery.mastered }}</div>
+        <div class="seg learning" :style="{ flex: mastery.learning }">{{ mastery.learning }}</div>
+        <div class="seg weak" :style="{ flex: mastery.weak }">{{ mastery.weak }}</div>
+        <div class="seg untouched" :style="{ flex: mastery.untouched }">{{ mastery.untouched }}</div>
       </div>
       <div class="mastery-legend">
-        <span>🟢 已掌握</span><span>🔵 学习中</span><span>🟡 薄弱</span><span>⚪ 未做</span>
+        <span>已掌握</span><span>学习中</span><span>薄弱</span><span>未做</span>
       </div>
-    </div>
+    </section>
 
-    <div class="section" v-if="!isGroupView">
+    <!-- Quick actions (grammar/word) -->
+    <section class="section" v-if="!isGroupView">
       <h2>快速开始</h2>
       <div class="quick-actions">
-        <button class="action-btn primary" @click="startQuiz('sequential')">📖 顺序刷题</button>
-        <button class="action-btn" @click="startQuiz('random')">🎲 随机刷题</button>
-        <button class="action-btn" @click="startQuiz('untouched')" v-if="untouchedIds.length > 0">🆕 未做题 ({{ untouchedIds.length }})</button>
-        <button class="action-btn danger" @click="startQuiz('wrong')" v-if="wrongIds.length > 0">🔄 错题重刷 ({{ wrongIds.length }})</button>
-        <button class="action-btn" @click="startQuiz('weakness')">🎯 弱点突破</button>
+        <button class="btn btn-accent" @click="startQuiz('sequential')">顺序刷题</button>
+        <button class="btn btn-outline" @click="startQuiz('random')">随机刷题</button>
+        <button class="btn btn-outline" @click="startQuiz('untouched')" v-if="untouchedIds.length > 0">未做题 ({{ untouchedIds.length }})</button>
+        <button class="btn btn-outline danger" @click="startQuiz('wrong')" v-if="wrongIds.length > 0">错题重刷 ({{ wrongIds.length }})</button>
+        <button class="btn btn-outline" @click="startQuiz('weakness')">弱点突破</button>
       </div>
-    </div>
+    </section>
 
-    <div class="section" v-if="weakTags.length > 0 && !isGroupView">
+    <!-- Weak tags -->
+    <section class="section" v-if="weakTags.length > 0 && !isGroupView">
       <h2>{{ weakSectionTitle }}</h2>
       <div class="weak-list">
         <div v-for="w in weakTags.slice(0, 6)" :key="w.tag" class="weak-item" @click="startTagQuiz(w.tag)">
@@ -248,93 +253,135 @@ const groupViewHint = computed(() => {
             <span class="weak-tag">{{ w.tag }}</span>
             <span class="weak-rate">正确率 {{ w.correctRate }}%</span>
           </div>
-          <div class="weak-bar-bg"><div class="weak-bar" :style="{ width: w.correctRate + '%', background: w.correctRate < 50 ? '#ef4444' : w.correctRate < 70 ? '#f59e0b' : '#22c55e' }" /></div>
-          <span class="weak-arrow">→</span>
+          <div class="weak-bar-bg"><div class="weak-bar" :style="{ width: w.correctRate + '%', background: w.correctRate < 50 ? 'var(--wrong)' : w.correctRate < 70 ? 'var(--warning)' : 'var(--correct)' }" /></div>
+          <span class="weak-arrow">&rarr;</span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section" v-if="isGroupView">
+    <!-- Group cards (history/party/military) -->
+    <section class="section" v-if="isGroupView">
       <h2>{{ groupViewSectionTitle }}</h2>
       <p class="section-hint">{{ groupViewHint }}</p>
-      <div class="history-groups">
-        <div v-for="g in groupViewList" :key="g.groupId" class="history-card">
-          <div class="hc-header">
-            <span class="hc-title">{{ g.groupTitle }}</span>
-            <span class="hc-count">{{ (groupStats[g.groupId]?.total ?? g.count) }}题</span>
+      <div class="group-grid">
+        <div v-for="g in groupViewList" :key="g.groupId" class="group-card">
+          <div class="gc-header">
+            <span class="gc-title">{{ g.groupTitle }}</span>
+            <span class="gc-count">{{ (groupStats[g.groupId]?.total ?? g.count) }} 题</span>
           </div>
-          <div class="hc-stats">
+          <div class="gc-stats">
             <span>已做 <strong>{{ groupStats[g.groupId]?.done ?? 0 }}</strong></span>
-            <span>正确率 <strong>{{ groupStats[g.groupId] && groupStats[g.groupId].attempts ? Math.round(groupStats[g.groupId].correct / groupStats[g.groupId].attempts * 100) + '%' : '—' }}</strong></span>
+            <span>正确率 <strong>{{ groupStats[g.groupId] && groupStats[g.groupId].attempts ? Math.round(groupStats[g.groupId].correct / groupStats[g.groupId].attempts * 100) + '%' : '--' }}</strong></span>
             <span>错题 <strong>{{ groupStats[g.groupId]?.wrong ?? 0 }}</strong></span>
           </div>
-          <div class="hc-actions">
-            <button class="hc-btn primary" @click="startHistoryGroup(g.groupId, 'sequential')">📖 顺序</button>
-            <button class="hc-btn" @click="startHistoryGroup(g.groupId, 'random')">🎲 随机</button>
-            <button class="hc-btn danger" @click="startHistoryGroup(g.groupId, 'wrong')" :disabled="(groupStats[g.groupId]?.wrongIds.length ?? 0) === 0">🔄 错题 ({{ groupStats[g.groupId]?.wrongIds.length ?? 0 }})</button>
-            <button class="hc-btn" @click="startHistoryGroup(g.groupId, 'untouched')" :disabled="(groupStats[g.groupId]?.untouchedIds.length ?? 0) === 0">🆕 未做 ({{ groupStats[g.groupId]?.untouchedIds.length ?? 0 }})</button>
+          <div class="gc-actions">
+            <button class="btn btn-accent btn-sm" @click="startHistoryGroup(g.groupId, 'sequential')">顺序</button>
+            <button class="btn btn-outline btn-sm" @click="startHistoryGroup(g.groupId, 'random')">随机</button>
+            <button class="btn btn-outline btn-sm danger" @click="startHistoryGroup(g.groupId, 'wrong')" :disabled="(groupStats[g.groupId]?.wrongIds.length ?? 0) === 0">错题 ({{ groupStats[g.groupId]?.wrongIds.length ?? 0 }})</button>
+            <button class="btn btn-outline btn-sm" @click="startHistoryGroup(g.groupId, 'untouched')" :disabled="(groupStats[g.groupId]?.untouchedIds.length ?? 0) === 0">未做 ({{ groupStats[g.groupId]?.untouchedIds.length ?? 0 }})</button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section" v-if="!isGroupView">
+    <!-- Tag cloud (grammar/word) -->
+    <section class="section" v-if="!isGroupView">
       <h2>{{ tagSectionTitle }}</h2>
       <div class="tag-cloud">
         <TagBadge v-for="t in getAllTags(activeCategory).slice(0, 20)" :key="t.tag" :tag="t.tag" :clickable="true" @click="startTagQuiz(t.tag)" />
       </div>
-    </div>
+    </section>
   </div>
 </template>
 <style scoped>
-.home { max-width: 880px; margin: 0 auto; }
-h1 { font-size: 26px; margin-bottom: 4px; }
-.subtitle { color: var(--text-secondary); margin-bottom: 24px; }
-.resume-banner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px; margin-bottom: 20px; border-radius: 12px; background: rgba(99,102,241,.1); border: 1px solid var(--accent); }
-.resume-info { display: flex; flex-direction: column; gap: 4px; }
-.resume-title { font-weight: 700; color: var(--accent); font-size: 15px; }
-.resume-meta { font-size: 13px; color: var(--text-secondary); }
+.home { max-width: 900px; margin: 0 auto; }
+
+/* Header */
+.home-header { margin-bottom: 28px; }
+h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 4px; letter-spacing: 1px; }
+.subtitle { color: var(--text-secondary); font-size: 14px; }
+
+/* Resume banner */
+.resume-banner {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 14px 18px; margin-bottom: 24px; border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.resume-info { display: flex; flex-direction: column; gap: 2px; }
+.resume-title { font-weight: 600; font-size: 14px; }
+.resume-meta { font-size: 12px; color: var(--text-secondary); }
 .resume-actions { display: flex; gap: 8px; }
-.resume-btn { padding: 8px 18px; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all .2s; }
-.resume-btn.primary { background: var(--accent); color: #fff; border: none; }
-.resume-btn.primary:hover { filter: brightness(1.1); }
-.resume-btn.ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
-.resume-btn.ghost:hover { background: var(--bg-hover); }
-.stats-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
-.section { margin-bottom: 28px; }
-.section h2 { font-size: 18px; margin-bottom: 12px; color: var(--text-primary); }
-.mastery-bar { display: flex; height: 32px; border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
-.mastery-bar .seg { display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; min-width: 0; transition: flex .3s; }
-.mastered { background: #22c55e; } .learning { background: #3b82f6; } .weak { background: #f59e0b; } .untouched { background: #d4d4d8; }
-.mastery-legend { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); }
-.quick-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.action-btn { padding: 12px 24px; border-radius: 10px; border: 2px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 15px; cursor: pointer; transition: all .2s; }
-.action-btn:hover { border-color: var(--accent); }
-.action-btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-.action-btn.danger { background: #ef4444; color: #fff; border-color: #ef4444; }
-.weak-list { display: flex; flex-direction: column; gap: 8px; }
-.weak-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--bg-card); border-radius: 8px; cursor: pointer; transition: all .2s; }
-.weak-item:hover { background: var(--bg-hover); }
+
+/* Stats */
+.stats-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+
+/* Section */
+.section { margin-bottom: 32px; }
+.section h2 {
+  font-family: var(--font-display); font-size: 15px; font-weight: 600;
+  margin-bottom: 14px; color: var(--text-primary);
+}
+
+/* Mastery bar */
+.mastery-bar { display: flex; height: 24px; overflow: hidden; margin-bottom: 8px; }
+.mastery-bar .seg {
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 12px; color: #fff; min-width: 0;
+  transition: flex .4s ease;
+}
+.mastered { background: var(--correct); }
+.learning { background: #5a7d9a; }
+.weak { background: var(--warning); }
+.untouched { background: #c0bfbc; }
+.mastery-legend {
+  display: flex; gap: 20px; font-size: 12px; color: var(--text-muted);
+}
+
+/* Buttons */
+.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
+.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-outline { background: transparent; color: var(--text-primary); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-outline.danger { color: var(--wrong); border-color: rgba(196,69,54,.3); }
+.btn-outline.danger:hover { background: #fdf5f4; border-color: var(--wrong); }
+.btn-ghost { background: transparent; color: var(--text-secondary); font-size: 13px; }
+.btn-ghost:hover { background: var(--bg-hover); }
+.btn-sm { padding: 5px 12px; font-size: 12px; }
+.btn:disabled { opacity: .3; cursor: not-allowed; }
+
+/* Quick actions */
+.quick-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Weak list */
+.weak-list { display: flex; flex-direction: column; gap: 6px; }
+.weak-item {
+  display: flex; align-items: center; gap: 14px; padding: 10px 14px;
+  border: 1px solid var(--border); background: var(--bg-card);
+  cursor: pointer; transition: all .12s;
+}
+.weak-item:hover { border-color: var(--accent); }
 .weak-info { min-width: 140px; display: flex; flex-direction: column; }
 .weak-tag { font-weight: 600; font-size: 14px; }
 .weak-rate { font-size: 12px; color: var(--text-muted); }
-.weak-bar-bg { flex: 1; height: 6px; background: var(--bg-hover); border-radius: 3px; overflow: hidden; }
-.weak-bar { height: 100%; border-radius: 3px; transition: width .3s; }
+.weak-bar-bg { flex: 1; height: 4px; background: var(--bg-hover); overflow: hidden; }
+.weak-bar { height: 100%; transition: width .3s; }
 .weak-arrow { color: var(--text-muted); }
-.tag-cloud { display: flex; flex-wrap: wrap; gap: 4px; }
-.section-hint { color: var(--text-muted); font-size: 13px; margin-bottom: 16px; }
-.history-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
-.history-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
-.hc-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.hc-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
-.hc-count { font-size: 13px; color: var(--accent); white-space: nowrap; }
-.hc-stats { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); }
-.hc-stats strong { color: var(--text-primary); font-weight: 600; }
-.hc-actions { display: flex; flex-wrap: wrap; gap: 6px; }
-.hc-btn { padding: 6px 10px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg); color: var(--text-primary); font-size: 12px; cursor: pointer; transition: all .2s; }
-.hc-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--bg-hover); }
-.hc-btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-.hc-btn.danger { color: #ef4444; border-color: rgba(239,68,68,.4); }
-.hc-btn.danger:hover:not(:disabled) { background: rgba(239,68,68,.1); }
-.hc-btn:disabled { opacity: .35; cursor: not-allowed; }
+
+/* Tag cloud */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 2px; }
+
+/* Group grid */
+.section-hint { color: var(--text-muted); font-size: 13px; margin-bottom: 16px; line-height: 1.6; }
+.group-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.group-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  padding: 16px; display: flex; flex-direction: column; gap: 10px;
+}
+.gc-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.gc-title { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.gc-count { font-size: 13px; color: var(--text-muted); }
+.gc-stats { display: flex; gap: 16px; font-size: 13px; color: var(--text-secondary); }
+.gc-stats strong { color: var(--text-primary); font-weight: 600; }
+.gc-actions { display: flex; flex-wrap: wrap; gap: 6px; }
 </style>

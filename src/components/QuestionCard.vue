@@ -36,12 +36,8 @@ function handleSelect(key: string) {
 
 const optionLabels = ['A', 'B', 'C', 'D', 'E']
 
-function isSelected(key: string) {
-  return props.selectedKey.includes(key)
-}
+function isSelected(key: string) { return props.selectedKey.includes(key) }
 function isCorrectOption(key: string) {
-  // Multi-answer: only highlight options the user got right (selected & correct).
-  // Missed-correct options are flagged separately so the user can spot them.
   if (props.question.multiAnswer) {
     return props.submitted && props.question.answerKey.includes(key) && props.selectedKey.includes(key)
   }
@@ -70,9 +66,9 @@ const isCorrectOverall = computed(() => {
 })
 
 const subTypeLabel = computed(() => {
-  if (props.question.questionType === 'multi') return '多选题'
-  if (props.question.questionType === 'judgement') return '判断题'
-  if (props.question.questionType === 'single') return '单选题'
+  if (props.question.questionType === 'multi') return '多选'
+  if (props.question.questionType === 'judgement') return '判断'
+  if (props.question.questionType === 'single') return '单选'
   if (props.question.subType === 'kana-to-kanji') return '选汉字'
   if (props.question.subType === 'kanji-to-kana') return '选假名'
   return ''
@@ -88,55 +84,56 @@ const tagsSectionTitle = computed(() => props.question.category === 'word' ? '�
       <span class="q-sub" v-if="subTypeLabel">{{ subTypeLabel }}</span>
       <span class="q-mode">{{ mode }}</span>
     </div>
+
     <div class="q-stem" v-text="question.stem" />
-    <div class="q-hint" v-if="question.multiAnswer">（多选，请勾选所有正确选项）</div>
+    <div class="q-hint" v-if="question.multiAnswer">多选，请勾选所有正确选项</div>
+
     <div class="q-options">
       <button
         v-for="(opt, i) in question.options" :key="opt.key"
-        class="opt-btn"
-        :class="{
-          selected: isSelected(opt.key),
-          correct: isCorrectOption(opt.key),
-          wrong: isWrongOption(opt.key),
-          missed: isMissedOption(opt.key),
-          multi: !!question.multiAnswer,
-        }"
+        :class="[
+          'opt-btn',
+          {
+            selected: isSelected(opt.key),
+            correct: isCorrectOption(opt.key),
+            wrong: isWrongOption(opt.key),
+            missed: isMissedOption(opt.key),
+            multi: !!question.multiAnswer,
+          }
+        ]"
         @click="handleSelect(opt.key)"
         :disabled="submitted"
       >
         <span class="opt-key">{{ optionLabels[i] }}</span>
         <span class="opt-text">{{ opt.text }}</span>
-        <span v-if="isCorrectOption(opt.key)" class="opt-icon">✓</span>
-        <span v-if="isWrongOption(opt.key)" class="opt-icon">✗</span>
-        <span v-if="isMissedOption(opt.key)" class="opt-icon">·</span>
+        <span v-if="isCorrectOption(opt.key)" class="opt-icon c">&#10003;</span>
+        <span v-if="isWrongOption(opt.key)" class="opt-icon w">&#10007;</span>
+        <span v-if="isMissedOption(opt.key)" class="opt-icon m">&middot;</span>
       </button>
     </div>
+
     <div class="q-actions" v-if="!submitted">
-      <button class="btn btn-primary" :disabled="!canSubmit" @click="emit('submit')">
-        提交答案
-      </button>
+      <button class="btn btn-submit" :disabled="!canSubmit" @click="emit('submit')">提交答案</button>
     </div>
     <div class="q-actions" v-else>
-      <button class="btn btn-primary" @click="emit('next')">
-        {{ questionIndex >= totalQuestions - 1 ? '完成' : '下一题 →' }}
+      <button class="btn btn-submit" @click="emit('next')">
+        {{ questionIndex >= totalQuestions - 1 ? '完成' : '下一题' }}
       </button>
-      <button
-        class="btn btn-ghost bookmark-btn"
-        :class="{ 'bookmark-active': bookmarked }"
-        @click="emit('bookmark')"
-      >
-        {{ bookmarked ? '★ 已收藏' : '☆ 收藏' }}
+      <button class="btn btn-ghost" :class="{ 'bookmark-active': bookmarked }" @click="emit('bookmark')">
+        {{ bookmarked ? '已收藏' : '收藏' }}
       </button>
       <button class="btn btn-ghost" @click="showExplanation = !showExplanation">
         {{ showExplanation ? '收起解析' : '查看解析' }}
       </button>
     </div>
+
     <div class="q-result" v-if="submitted">
       <div class="result-line" :class="isCorrectOverall ? 'correct' : 'wrong'">
-        {{ isCorrectOverall ? '✅ 正确！' : '❌ 错误！' }}
-        正确答案：<strong>{{ question.answerKey }}<span v-if="question.answerText">. {{ question.answerText }}</span></strong>
+        <span class="result-badge">{{ isCorrectOverall ? '正确' : '错误' }}</span>
+        答案：<strong>{{ question.answerKey }}<span v-if="question.answerText">. {{ question.answerText }}</span></strong>
       </div>
     </div>
+
     <div class="q-explanation" v-if="submitted && showExplanation">
       <div class="exp-section" v-if="question.headword">
         <h4>词条</h4>
@@ -161,49 +158,74 @@ const tagsSectionTitle = computed(() => props.question.category === 'word' ? '�
 </template>
 <style scoped>
 .question-card {
-  background: var(--bg-card); border-radius: 14px; padding: 24px; max-width: 720px; margin: 0 auto;
+  background: var(--bg-card); border: 1px solid var(--border);
+  padding: 28px; max-width: 720px; margin: 0 auto;
 }
-.q-header { display: flex; gap: 10px; margin-bottom: 16px; font-size: 13px; align-items: center; }
-.q-id { color: var(--accent); font-weight: 700; }
+
+/* Header */
+.q-header { display: flex; gap: 12px; margin-bottom: 20px; font-size: 13px; align-items: center; }
+.q-id { color: var(--accent); font-weight: 600; font-family: var(--font-mono); }
 .q-group { color: var(--text-secondary); }
-.q-sub { padding: 2px 8px; border-radius: 6px; background: rgba(99,102,241,.1); color: #6366f1; font-size: 12px; }
-.q-mode { color: var(--text-muted); margin-left: auto; }
-.q-stem { font-size: 18px; line-height: 1.6; color: var(--text-primary); margin-bottom: 12px; }
-.q-hint { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
-.q-options { display: flex; flex-direction: column; gap: 10px; }
-.opt-btn {
-  display: flex; align-items: center; gap: 12px; padding: 14px 18px;
-  border: 2px solid var(--border); border-radius: 10px; background: var(--bg);
-  cursor: pointer; transition: all .2s; text-align: left; font-size: 15px; color: var(--text-primary);
+.q-sub {
+  padding: 1px 8px; border: 1px solid var(--border);
+  color: var(--text-secondary); font-size: 11px;
 }
-.opt-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--bg-hover); }
-.opt-btn.selected { border-color: var(--accent); background: rgba(99,102,241,.1); }
-.opt-btn.correct { border-color: #22c55e; background: rgba(34,197,94,.1); }
-.opt-btn.wrong { border-color: #ef4444; background: rgba(239,68,68,.1); }
-.opt-btn.missed { border-color: #f59e0b; background: rgba(245,158,11,.1); border-style: dashed; }
-.opt-key { width: 28px; height: 28px; border-radius: 50%; background: var(--bg-hover); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
-.opt-btn.multi .opt-key { border-radius: 6px; }
+.q-mode { color: var(--text-muted); margin-left: auto; }
+
+/* Stem */
+.q-stem { font-size: 18px; line-height: 1.7; color: var(--text-primary); margin-bottom: 14px; }
+.q-hint { font-size: 13px; color: var(--text-muted); margin-bottom: 18px; }
+
+/* Options */
+.q-options { display: flex; flex-direction: column; gap: 8px; }
+.opt-btn {
+  display: flex; align-items: center; gap: 14px; padding: 12px 16px;
+  border: 1px solid var(--border); background: var(--bg-card);
+  cursor: pointer; transition: all .12s; text-align: left; font-size: 15px;
+  color: var(--text-primary);
+  border-left: 3px solid transparent;
+}
+.opt-btn:hover:not(:disabled) { background: var(--bg-hover); }
+.opt-btn.selected { border-left-color: var(--accent); background: var(--bg-hover); }
+.opt-btn.correct { border-left-color: var(--correct); background: #f0f7f3; }
+.opt-btn.wrong { border-left-color: var(--wrong); background: #fdf5f4; }
+.opt-btn.missed { border-left-color: var(--warning); background: #fefdf6; border-left-style: dashed; }
+.opt-key {
+  width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 12px; flex-shrink: 0; color: var(--text-muted);
+  border: 1px solid var(--border); font-family: var(--font-mono);
+}
+.opt-btn.selected .opt-key { border-color: var(--accent); color: var(--accent); }
+.opt-btn.multi .opt-key { border-radius: 0; }
 .opt-text { flex: 1; }
-.opt-icon { font-weight: 700; font-size: 18px; }
-.correct .opt-icon { color: #22c55e; }
-.wrong .opt-icon { color: #ef4444; }
-.missed .opt-icon { color: #f59e0b; font-size: 24px; }
-.q-actions { display: flex; gap: 10px; margin-top: 20px; }
-.btn { padding: 10px 22px; border-radius: 8px; border: none; cursor: pointer; font-size: 15px; transition: all .2s; }
-.btn:disabled { opacity: .4; cursor: not-allowed; }
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover:not(:disabled) { filter: brightness(1.1); }
-.btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
-.btn-ghost:hover { background: var(--bg-hover); }
-.bookmark-btn.bookmark-active { color: #f59e0b; border-color: #f59e0b; background: rgba(245,158,11,.1); }
-.bookmark-btn.bookmark-active:hover { background: rgba(245,158,11,.18); }
-.q-result { margin-top: 16px; }
-.result-line { font-size: 16px; padding: 10px 16px; border-radius: 8px; }
-.result-line.correct { background: rgba(34,197,94,.1); color: #22c55e; }
-.result-line.wrong { background: rgba(239,68,68,.1); color: #ef4444; }
-.q-explanation { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+.opt-icon { font-weight: 700; font-size: 15px; min-width: 20px; text-align: center; }
+.opt-icon.c { color: var(--correct); }
+.opt-icon.w { color: var(--wrong); }
+.opt-icon.m { color: var(--warning); font-size: 20px; }
+
+/* Actions */
+.q-actions { display: flex; gap: 8px; margin-top: 22px; }
+.btn { padding: 9px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
+.btn:disabled { opacity: .35; cursor: not-allowed; }
+.btn-submit { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-submit:hover:not(:disabled) { background: var(--accent-hover); }
+.btn-ghost { background: transparent; color: var(--text-secondary); }
+.btn-ghost:hover { background: var(--bg-hover); color: var(--text-primary); }
+.bookmark-active { color: var(--warning); border-color: var(--warning); background: #fefdf6; }
+
+/* Result */
+.q-result { margin-top: 18px; }
+.result-line {
+  font-size: 15px; padding: 10px 14px; border-left: 3px solid;
+}
+.result-line.correct { border-left-color: var(--correct); background: #f0f7f3; color: var(--correct); }
+.result-line.wrong { border-left-color: var(--wrong); background: #fdf5f4; color: var(--wrong); }
+.result-badge { font-weight: 600; margin-right: 4px; }
+
+/* Explanation */
+.q-explanation { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
 .exp-section { margin-bottom: 14px; }
-.exp-section h4 { font-size: 14px; color: var(--accent); margin-bottom: 6px; }
-.exp-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; max-height: 400px; overflow-y: auto; }
+.exp-section h4 { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; font-weight: 600; }
+.exp-text { font-size: 14px; color: var(--text-secondary); line-height: 1.75; max-height: 420px; overflow-y: auto; }
 .tag-list { display: flex; flex-wrap: wrap; }
 </style>

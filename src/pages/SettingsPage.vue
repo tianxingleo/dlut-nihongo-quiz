@@ -37,7 +37,7 @@ async function handleExport() {
   a.download = `japanese-quiz-backup-${new Date().toISOString().slice(0, 10)}.json`
   a.click()
   URL.revokeObjectURL(url)
-  statusMsg.value = '✅ 导出成功'
+  statusMsg.value = '导出成功'
   setTimeout(() => statusMsg.value = '', 2000)
 }
 
@@ -51,9 +51,9 @@ function handleImport() {
     const text = await file.text()
     try {
       await importData(text)
-      statusMsg.value = '✅ 导入成功'
+      statusMsg.value = '导入成功'
     } catch {
-      statusMsg.value = '❌ 导入失败，请检查文件格式'
+      statusMsg.value = '导入失败，请检查文件格式'
     }
     setTimeout(() => statusMsg.value = '', 3000)
   }
@@ -68,13 +68,15 @@ async function handleClear() {
   }
   await clearAllData()
   confirmClear.value = false
-  statusMsg.value = '✅ 数据已清空'
+  statusMsg.value = '数据已清空'
   setTimeout(() => statusMsg.value = '', 2000)
 }
 </script>
 <template>
   <div class="settings-page">
-    <h1>⚙️ 设置</h1>
+    <header class="page-header">
+      <h1>设置</h1>
+    </header>
 
     <div class="section">
       <h2>题库信息</h2>
@@ -88,19 +90,19 @@ async function handleClear() {
       <h2>外观</h2>
       <div class="toggle-row" @click="toggleDark">
         <span>深色模式</span>
-        <span class="toggle" :class="{ on: darkMode }">{{ darkMode ? '🌙' : '☀️' }}</span>
+        <span class="toggle-state">{{ darkMode ? '开' : '关' }}</span>
       </div>
     </div>
 
     <div class="section">
       <h2>数据管理</h2>
       <div class="action-row">
-        <button @click="handleExport">📥 导出备份</button>
-        <button @click="handleImport">📤 导入备份</button>
+        <button class="btn btn-outline" @click="handleExport">导出备份</button>
+        <button class="btn btn-outline" @click="handleImport">导入备份</button>
       </div>
-      <div class="action-row danger-row">
-        <button class="danger" @click="handleClear">
-          {{ confirmClear ? '⚠️ 再次点击确认清空' : '🗑 清空所有数据' }}
+      <div class="action-row">
+        <button class="btn btn-outline danger" @click="handleClear">
+          {{ confirmClear ? '再次点击确认清空' : '清空所有数据' }}
         </button>
       </div>
       <p v-if="statusMsg" class="status">{{ statusMsg }}</p>
@@ -116,31 +118,45 @@ async function handleClear() {
     </div>
 
     <div class="section">
-      <router-link to="/">← 返回首页</router-link>
+      <router-link to="/">返回首页</router-link>
     </div>
   </div>
 </template>
 <style scoped>
-.settings-page { max-width: 600px; margin: 0 auto; }
-h1 { margin-bottom: 24px; }
-.section { margin-bottom: 24px; padding: 16px; background: var(--bg-card); border-radius: 10px; }
-.section h2 { font-size: 16px; margin-bottom: 12px; color: var(--text-primary); }
-.info-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; color: var(--text-secondary); }
-.toggle-row { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 8px 0; font-size: 14px; }
-.toggle { font-size: 22px; transition: transform .3s; }
-.toggle.on { transform: rotate(360deg); }
-.action-row { display: flex; gap: 10px; margin-bottom: 10px; }
-.action-row button { padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text-primary); cursor: pointer; font-size: 14px; transition: all .2s; }
-.action-row button:hover { background: var(--bg-hover); border-color: var(--accent); }
-button.danger { background: rgba(239,68,68,.1); color: #ef4444; border-color: #ef4444; }
-button.danger:hover { background: #ef4444; color: #fff; }
-.status { font-size: 14px; color: var(--accent); margin-top: 8px; }
+.settings-page { max-width: 560px; margin: 0 auto; }
+.page-header { margin-bottom: 24px; }
+h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
+
+.section { margin-bottom: 20px; padding: 18px 22px; border: 1px solid var(--border); background: var(--bg-card); }
+.section h2 { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text-primary); }
+
+.info-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; color: var(--text-secondary); }
+
+.toggle-row {
+  display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer; padding: 6px 0; font-size: 14px; color: var(--text-secondary);
+  user-select: none;
+}
+.toggle-row:hover .toggle-state { border-color: var(--accent); }
+.toggle-state {
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  padding: 3px 14px; border: 1px solid var(--border); transition: border-color .12s;
+}
+
+.action-row { display: flex; gap: 8px; margin-bottom: 8px; }
+.btn { padding: 9px 20px; border: 1px solid var(--border); font-size: 13px; transition: all .12s; }
+.btn-outline { background: transparent; color: var(--text-primary); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-outline.danger { color: var(--wrong); border-color: rgba(196,69,54,.3); }
+.btn-outline.danger:hover { background: #fdf5f4; border-color: var(--wrong); }
+
+.status { font-size: 13px; color: var(--accent); margin-top: 6px; }
+
 .shortcut-list { display: flex; flex-direction: column; gap: 6px; }
-.shortcut { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+.shortcut { display: flex; align-items: center; gap: 14px; font-size: 14px; }
 .shortcut kbd {
-  padding: 3px 8px; background: var(--bg-hover); border-radius: 4px; font-family: monospace;
-  font-size: 12px; border: 1px solid var(--border); min-width: 60px; text-align: center;
+  padding: 3px 8px; background: var(--bg-hover); font-family: var(--font-mono);
+  font-size: 12px; border: 1px solid var(--border); min-width: 64px; text-align: center;
 }
 .shortcut span { color: var(--text-secondary); }
-a { color: var(--accent); text-decoration: none; font-size: 14px; }
 </style>

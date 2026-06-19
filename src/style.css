@@ -1,39 +1,92 @@
+/*
+  墨彩 (Sumi-sai) — Japanese Ink on Paper
+  Zero-radius geometry. One vermillion accent. Monochrome base.
+  Serif display + clean sans body. Subtle paper texture.
+*/
+
 :root {
-  --accent: #6366f1;
-  --accent-hover: #4f46e5;
-  --bg: #f8fafc;
+  /* Ink & Paper */
+  --bg: #fafaf5;
   --bg-card: #ffffff;
-  --bg-hover: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --border: #e2e8f0;
-  --font: 'Inter', system-ui, -apple-system, sans-serif;
-  font-family: var(--font);
+  --bg-hover: #f4f3ed;
+  --text-primary: #1a1a18;
+  --text-secondary: #6b6b66;
+  --text-muted: #969690;
+  --border: #e2e0da;
+
+  /* Vermillion accent — the hanko seal. One per page. */
+  --accent: #c44536;
+  --accent-hover: #a3382b;
+
+  /* Semantic */
+  --correct: #2d6a4f;
+  --wrong: #c44536;
+  --warning: #b8860b;
+
+  /* Typography */
+  --font-display: 'Noto Serif SC', 'Songti SC', 'SimSun', 'Source Han Serif SC', serif;
+  --font-body: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+
+  font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-weight: 400;
   color: var(--text-primary);
   background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Paper texture overlay — subtle noise */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: .03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }
 
 [data-theme="dark"] {
-  --accent: #818cf8;
-  --bg: #0f172a;
-  --bg-card: #1e293b;
-  --bg-hover: #334155;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --border: #334155;
+  --accent: #d4836e;
+  --accent-hover: #c0705d;
+  --bg: #1a1a18;
+  --bg-card: #242421;
+  --bg-hover: #2e2e2a;
+  --text-primary: #e8e7e3;
+  --text-secondary: #a0a09a;
+  --text-muted: #6b6b64;
+  --border: #3a3a34;
+}
+
+[data-theme="dark"] body::before {
+  opacity: .05;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { margin: 0; min-height: 100vh; }
-button { font-family: inherit; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-input, select { font-family: inherit; }
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  font-size: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .15s;
+}
+a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+input, select { font-family: var(--font-body); }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 #app { min-height: 100vh; }

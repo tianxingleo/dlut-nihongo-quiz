@@ -59,7 +59,6 @@ onMounted(async () => {
   const all = await loadQuestionBank(cat)
   const groupFilter = route.query.group as string | undefined
 
-  // Resume path
   if (route.query.resume === '1') {
     const saved = await loadActiveSession()
     if (isSessionInProgress(saved)) {
@@ -78,7 +77,6 @@ onMounted(async () => {
     }
   }
 
-  // Determine mode and question set
   const modeParam = route.query.tag ? 'tag'
     : route.query.mode === 'untouched' ? 'untouched'
     : route.query.ids ? 'wrong'
@@ -255,8 +253,8 @@ function goHome() { router.push('/') }
     <template v-if="!finished && currentQuestion">
       <ProgressBar :current="progress.current" :total="progress.total" :correct="progress.correct" />
       <div class="quiz-info">
-        <span>模式：{{ mode }}</span>
-        <span>快捷键：A/B/C/D 选择 · Enter 提交/下一题 · N 下一题</span>
+        <span>{{ mode }}</span>
+        <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题</span>
       </div>
       <QuestionCard
         :key="currentQuestion.id"
@@ -273,34 +271,47 @@ function goHome() { router.push('/') }
         @bookmark="handleBookmark"
       />
     </template>
+
+    <!-- Finish screen -->
     <div v-else-if="finished" class="finish-page">
-      <h2>🎉 本轮完成！</h2>
-      <div class="finish-stats">
-        <div class="big-stat">{{ Math.round((correctCount / questions.length) * 100) }}%</div>
-        <div class="big-label">正确率</div>
-        <div class="detail">✅ {{ correctCount }} / {{ questions.length }} 题正确</div>
-        <div class="detail" v-if="wrongList.length > 0">❌ {{ wrongList.length }} 题做错</div>
+      <h2>本轮完成</h2>
+      <div class="finish-stat">
+        <span class="finish-pct">{{ Math.round((correctCount / questions.length) * 100) }}%</span>
+        <span class="finish-label">正确率</span>
+      </div>
+      <div class="finish-details">
+        <p>正确 {{ correctCount }} / {{ questions.length }} 题</p>
+        <p v-if="wrongList.length > 0">错误 {{ wrongList.length }} 题</p>
       </div>
       <div class="finish-actions">
-        <button class="btn btn-primary" @click="restart">再来一轮</button>
-        <button class="btn" @click="goHome">返回首页</button>
-        <button class="btn" v-if="wrongList.length > 0" @click="router.push({ path: '/quiz', query: { ids: wrongList.join(',') } })">只刷错题</button>
+        <button class="btn btn-accent" @click="restart">再来一轮</button>
+        <button class="btn btn-outline" @click="goHome">返回首页</button>
+        <button class="btn btn-outline" v-if="wrongList.length > 0" @click="router.push({ path: '/quiz', query: { ids: wrongList.join(',') } })">只刷错题</button>
       </div>
     </div>
+
     <div v-else class="empty">加载中...</div>
   </div>
 </template>
 <style scoped>
 .quiz-page { max-width: 760px; margin: 0 auto; }
-.quiz-info { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin: 8px 0 16px; }
-.finish-page { text-align: center; padding: 60px 20px; }
-.finish-page h2 { font-size: 28px; margin-bottom: 20px; }
-.finish-stats { margin-bottom: 32px; }
-.big-stat { font-size: 64px; font-weight: 800; color: var(--accent); }
-.big-label { font-size: 18px; color: var(--text-secondary); margin-bottom: 12px; }
-.detail { font-size: 16px; margin: 4px 0; }
-.finish-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.btn { padding: 12px 24px; border-radius: 10px; border: 2px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 15px; cursor: pointer; transition: all .2s; }
-.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn:hover { filter: brightness(1.1); }
+.quiz-info { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin: 8px 0 18px; }
+
+/* Finish */
+.finish-page { text-align: center; padding: 80px 20px; }
+.finish-page h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 24px; }
+.finish-stat { margin-bottom: 16px; }
+.finish-pct { font-family: var(--font-display); font-size: 80px; font-weight: 700; color: var(--accent); display: block; line-height: 1; }
+.finish-label { font-size: 16px; color: var(--text-secondary); display: block; margin-top: 8px; }
+.finish-details { margin-bottom: 32px; font-size: 15px; color: var(--text-secondary); }
+.finish-details p { margin: 4px 0; }
+.finish-actions { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+
+.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
+.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-outline { background: transparent; color: var(--text-primary); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+.empty { text-align: center; padding: 80px 20px; color: var(--text-muted); }
 </style>

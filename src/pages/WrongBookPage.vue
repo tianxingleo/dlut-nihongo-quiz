@@ -15,7 +15,6 @@ async function refreshList() {
   const cat = activeCategory.value
   const all = await loadQuestionBank(cat)
   const validIds = new Set(all.map(q => q.id))
-
   const allStats = await db.questionStats.toArray()
   const wrong = allStats.filter(s => s.wrongCount > 0 && validIds.has(s.questionId))
   wrongItems.value = wrong.map(s => {
@@ -49,21 +48,25 @@ async function clearWrong(questionId: string) {
 </script>
 <template>
   <div class="wrong-page">
-    <h1>错题本</h1>
+    <header class="page-header">
+      <h1>错题本</h1>
+    </header>
+
     <div class="toolbar">
       <div class="filters">
         <button :class="{ active: filter === 'all' }" @click="filter = 'all'">全部</button>
         <button :class="{ active: filter === 'recent' }" @click="filter = 'recent'">最近</button>
         <button :class="{ active: filter === 'most-wrong' }" @click="filter = 'most-wrong'">最多错</button>
       </div>
-      <button class="btn-primary" @click="goReview(filteredItems.map(i => i.questionId))" :disabled="filteredItems.length === 0">
+      <button class="btn btn-accent" @click="goReview(filteredItems.map(i => i.questionId))" :disabled="filteredItems.length === 0">
         一键重刷全部错题
       </button>
     </div>
-    <div v-if="filteredItems.length === 0" class="empty"><p>暂无错题，继续保持！</p></div>
-    <div class="wrong-list">
+
+    <div v-if="filteredItems.length === 0" class="empty">暂无错题，继续保持</div>
+    <div v-else class="wrong-list">
       <div v-for="item in filteredItems" :key="item.questionId" class="wrong-item">
-        <div class="wi-left">
+        <div class="wi-main">
           <span class="wi-id">{{ item.questionId }}</span>
           <span class="wi-stem">{{ item.stem.substring(0, 50) }}{{ item.stem.length > 50 ? '...' : '' }}</span>
           <span class="wi-group">{{ item.group }}</span>
@@ -74,8 +77,8 @@ async function clearWrong(questionId: string) {
           <span class="badge level">掌握 {{ '★'.repeat(item.stats.masteryLevel) }}</span>
         </div>
         <div class="wi-actions">
-          <button @click="goReview([item.questionId])">刷这题</button>
-          <button @click="clearWrong(item.questionId)">标记已掌握</button>
+          <button class="btn btn-outline btn-sm" @click="goReview([item.questionId])">刷这题</button>
+          <button class="btn btn-outline btn-sm" @click="clearWrong(item.questionId)">标记已掌握</button>
         </div>
       </div>
     </div>
@@ -83,26 +86,41 @@ async function clearWrong(questionId: string) {
 </template>
 <style scoped>
 .wrong-page { max-width: 860px; margin: 0 auto; }
-h1 { margin-bottom: 16px; }
+.page-header { margin-bottom: 24px; }
+h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
+
 .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; gap: 12px; flex-wrap: wrap; }
-.filters { display: flex; gap: 8px; }
-.filters button { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; font-size: 14px; transition: all .2s; }
+.filters { display: flex; gap: 4px; }
+.filters button {
+  padding: 6px 14px; border: 1px solid var(--border); background: var(--bg-card);
+  color: var(--text-secondary); font-size: 13px; transition: all .12s;
+}
+.filters button:hover { color: var(--text-primary); border-color: var(--text-primary); }
 .filters button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn-primary { padding: 10px 20px; border-radius: 8px; border: none; background: var(--accent); color: #fff; cursor: pointer; font-size: 14px; }
-.btn-primary:disabled { opacity: .4; }
-.empty { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
-.wrong-list { display: flex; flex-direction: column; gap: 10px; }
-.wrong-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--bg-card); border-radius: 10px; flex-wrap: wrap; }
-.wi-left { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 200px; }
-.wi-id { font-weight: 700; color: var(--accent); font-size: 13px; }
+
+.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
+.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-accent:disabled { opacity: .35; cursor: not-allowed; }
+.btn-outline { background: transparent; color: var(--text-secondary); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-sm { padding: 5px 14px; font-size: 12px; }
+
+.empty { text-align: center; padding: 80px 20px; color: var(--text-secondary); }
+
+.wrong-list { display: flex; flex-direction: column; gap: 6px; }
+.wrong-item {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  border: 1px solid var(--border); background: var(--bg-card); flex-wrap: wrap;
+}
+.wi-main { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 200px; }
+.wi-id { font-weight: 600; color: var(--accent); font-size: 13px; font-family: var(--font-mono); }
 .wi-stem { font-size: 14px; color: var(--text-primary); }
 .wi-group { font-size: 12px; color: var(--text-muted); }
 .wi-stats { display: flex; gap: 6px; }
-.badge { padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
-.badge.wrong { background: rgba(239,68,68,.1); color: #ef4444; }
-.badge.rate { background: rgba(245,158,11,.1); color: #f59e0b; }
-.badge.level { background: rgba(99,102,241,.1); color: #6366f1; }
+.badge { padding: 2px 8px; border: 1px solid var(--border); font-size: 11px; font-weight: 500; }
+.badge.wrong { border-color: rgba(196,69,54,.3); color: var(--wrong); }
+.badge.rate { border-color: rgba(184,134,11,.3); color: var(--warning); }
+.badge.level { border-color: var(--border); color: var(--text-secondary); }
 .wi-actions { display: flex; gap: 6px; }
-.wi-actions button { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--text-secondary); cursor: pointer; font-size: 13px; transition: all .2s; }
-.wi-actions button:hover { background: var(--bg-hover); border-color: var(--accent); }
 </style>

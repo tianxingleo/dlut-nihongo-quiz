@@ -97,7 +97,10 @@ const tagTabLabel = computed(() => activeCategory.value === 'word' ? '按课/标
 </script>
 <template>
   <div class="analysis-page">
-    <h1>📊 数据分析</h1>
+    <header class="page-header">
+      <h1>数据分析</h1>
+    </header>
+
     <div class="overview-cards">
       <div class="card"><span class="num">{{ overallStats.totalQuestions }}</span><span class="lbl">总题数</span></div>
       <div class="card"><span class="num">{{ overallStats.doneQuestions }}</span><span class="lbl">已做</span></div>
@@ -133,10 +136,10 @@ const tagTabLabel = computed(() => activeCategory.value === 'word' ? '按课/标
           <td>{{ t.attempts }}</td>
           <td :class="t.rate >= 70 ? 'green' : t.rate >= 40 ? 'yellow' : 'red'">{{ t.rate }}%</td>
           <td>
-            <span v-if="t.rate >= 80" class="status good">✅ 已掌握</span>
-            <span v-else-if="t.rate >= 50" class="status warn">🔄 需巩固</span>
-            <span v-else-if="t.attempts > 0" class="status bad">⚠ 优先复习</span>
-            <span v-else class="status">--</span>
+            <span v-if="t.rate >= 80" class="status good">已掌握</span>
+            <span v-else-if="t.rate >= 50" class="status warn">需巩固</span>
+            <span v-else-if="t.attempts > 0" class="status bad">优先复习</span>
+            <span v-else class="status na">--</span>
           </td>
         </tr>
       </tbody>
@@ -146,7 +149,7 @@ const tagTabLabel = computed(() => activeCategory.value === 'word' ? '按课/标
       <div v-for="w in topWrongQuestions" :key="w.id" class="wrong-row">
         <span class="w-id">{{ w.id }}</span>
         <span class="w-stem">{{ w.stem }}</span>
-        <span class="w-count">错{{ w.wrongCount }}次</span>
+        <span class="w-count">错 {{ w.wrongCount }} 次</span>
         <span class="w-rate">{{ w.rate }}%</span>
       </div>
       <p v-if="topWrongQuestions.length === 0" class="empty">暂无错题</p>
@@ -154,32 +157,49 @@ const tagTabLabel = computed(() => activeCategory.value === 'word' ? '按课/标
   </div>
 </template>
 <style scoped>
-.analysis-page { max-width: 880px; margin: 0 auto; }
-h1 { margin-bottom: 16px; }
-.overview-cards { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
-.card { background: var(--bg-card); border-radius: 10px; padding: 16px 20px; display: flex; flex-direction: column; min-width: 100px; flex: 1; }
-.num { font-size: 28px; font-weight: 700; color: var(--accent); }
-.lbl { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
-.tabs { display: flex; gap: 8px; margin-bottom: 16px; }
-.tabs button { padding: 8px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; font-size: 14px; transition: all .2s; }
+.analysis-page { max-width: 900px; margin: 0 auto; }
+.page-header { margin-bottom: 24px; }
+h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
+
+.overview-cards { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  padding: 16px 20px; display: flex; flex-direction: column; min-width: 100px; flex: 1;
+}
+.num { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--accent); line-height: 1.1; }
+.lbl { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+
+.tabs { display: flex; gap: 4px; margin-bottom: 18px; }
+.tabs button {
+  padding: 6px 16px; border: 1px solid var(--border); background: var(--bg-card);
+  color: var(--text-secondary); font-size: 13px; transition: all .12s;
+}
+.tabs button:hover { color: var(--text-primary); border-color: var(--text-primary); }
 .tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
 .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.data-table th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); color: var(--text-secondary); font-weight: 600; }
-.data-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
-.green { color: #22c55e; font-weight: 700; }
-.yellow { color: #f59e0b; font-weight: 700; }
-.red { color: #ef4444; font-weight: 700; }
-.mini-bar { width: 100px; height: 6px; background: var(--bg-hover); border-radius: 3px; overflow: hidden; }
-.mini-bar div { height: 100%; background: var(--accent); border-radius: 3px; }
-.status { font-size: 12px; padding: 2px 8px; border-radius: 6px; }
-.status.good { background: rgba(34,197,94,.1); color: #22c55e; }
-.status.warn { background: rgba(245,158,11,.1); color: #f59e0b; }
-.status.bad { background: rgba(239,68,68,.1); color: #ef4444; }
-.wrong-table { display: flex; flex-direction: column; gap: 8px; }
-.wrong-row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--bg-card); border-radius: 8px; font-size: 14px; }
-.w-id { font-weight: 700; color: var(--accent); min-width: 90px; }
+.data-table th { text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--border); color: var(--text-secondary); font-weight: 600; }
+.data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.green { color: var(--correct); font-weight: 600; }
+.yellow { color: var(--warning); font-weight: 600; }
+.red { color: var(--wrong); font-weight: 600; }
+.mini-bar { width: 100px; height: 4px; background: var(--bg-hover); overflow: hidden; }
+.mini-bar div { height: 100%; background: var(--accent); }
+
+.status { font-size: 12px; padding: 2px 8px; border: 1px solid var(--border); }
+.status.good { border-color: rgba(45,106,79,.3); color: var(--correct); }
+.status.warn { border-color: rgba(184,134,11,.3); color: var(--warning); }
+.status.bad { border-color: rgba(196,69,54,.3); color: var(--wrong); }
+.status.na { color: var(--text-muted); }
+
+.wrong-table { display: flex; flex-direction: column; gap: 6px; }
+.wrong-row {
+  display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+  border: 1px solid var(--border); background: var(--bg-card); font-size: 14px;
+}
+.w-id { font-weight: 600; color: var(--accent); font-family: var(--font-mono); min-width: 90px; }
 .w-stem { flex: 1; color: var(--text-primary); }
-.w-count { color: #ef4444; font-weight: 600; }
+.w-count { color: var(--wrong); font-weight: 600; }
 .w-rate { color: var(--text-secondary); }
-.empty { text-align: center; padding: 40px; color: var(--text-secondary); }
+.empty { text-align: center; padding: 60px; color: var(--text-secondary); }
 </style>

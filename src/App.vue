@@ -20,28 +20,28 @@ function switchCategory(cat: Category) {
 <template>
   <div class="app-shell">
     <nav class="nav">
-      <div class="nav-brand" @click="router.push('/')">日语题库</div>
+      <div class="nav-brand" @click="router.push('/')">题库</div>
       <div class="category-switch">
         <button
           :class="['cat-btn', { active: activeCategory === 'grammar' }]"
           @click="switchCategory('grammar')"
-        >📝 语法题</button>
+        >语法</button>
         <button
           :class="['cat-btn', { active: activeCategory === 'word' }]"
           @click="switchCategory('word')"
-        >📖 单词题</button>
+        >单词</button>
         <button
           :class="['cat-btn', { active: activeCategory === 'history' }]"
           @click="switchCategory('history')"
-        >📚 近代史</button>
+        >近代史</button>
         <button
           :class="['cat-btn', { active: activeCategory === 'party' }]"
           @click="switchCategory('party')"
-        >🚩 党史</button>
+        >党史</button>
         <button
           :class="['cat-btn', { active: activeCategory === 'military' }]"
           @click="switchCategory('military')"
-        >🎖️ 军事理论</button>
+        >军事理论</button>
       </div>
       <div class="nav-links">
         <router-link to="/">首页</router-link>
@@ -52,51 +52,59 @@ function switchCategory(cat: Category) {
       </div>
     </nav>
     <main class="main">
-      <RouterView />
+      <router-view v-slot="{ Component }">
+        <transition name="page-fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </main>
   </div>
 </template>
 <style scoped>
 .app-shell { min-height: 100vh; }
+
+/* Nav — thin bar, editorial feel */
 .nav {
-  display: flex; align-items: center; gap: 16px; padding: 0 20px;
-  height: 52px; background: var(--bg-card); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 14px; padding: 0 24px;
+  height: 44px; background: var(--bg-card); border-bottom: 1px solid var(--border);
   position: sticky; top: 0; z-index: 100;
   overflow: hidden;
 }
 .nav-brand {
-  font-size: 17px; font-weight: 700; cursor: pointer; color: var(--text-primary);
-  white-space: nowrap; flex-shrink: 0;
+  font-family: var(--font-display); font-size: 17px; font-weight: 700;
+  cursor: pointer; color: var(--text-primary); white-space: nowrap;
+  flex-shrink: 0; letter-spacing: 1px; user-select: none;
 }
-.category-switch { display: flex; gap: 4px; flex-shrink: 0; }
+.category-switch { display: flex; gap: 2px; flex-shrink: 0; }
 .cat-btn {
-  padding: 6px 12px; border-radius: 7px; border: 1px solid var(--border);
-  background: transparent; color: var(--text-secondary); font-size: 13px; cursor: pointer; transition: all .2s;
-  white-space: nowrap;
+  padding: 3px 8px; border: none; background: transparent;
+  color: var(--text-secondary); font-size: 13px; transition: color .15s;
+  white-space: nowrap; position: relative;
 }
-.cat-btn:hover { background: var(--bg-hover); }
-.cat-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-.nav-links { display: flex; gap: 2px; margin-left: auto; flex-shrink: 0; }
+.cat-btn:hover { color: var(--text-primary); }
+.cat-btn.active { color: var(--accent); font-weight: 500; }
+
+.nav-links { display: flex; gap: 4px; margin-left: auto; flex-shrink: 0; }
 .nav-links a {
-  padding: 7px 12px; border-radius: 7px; text-decoration: none; color: var(--text-secondary);
-  font-size: 13px; transition: all .2s; white-space: nowrap;
+  padding: 4px 8px; text-decoration: none; color: var(--text-secondary);
+  font-size: 13px; transition: color .15s; white-space: nowrap;
+  border-radius: 2px;
 }
-.nav-links a:hover, .nav-links a.router-link-active { background: var(--bg-hover); color: var(--accent); }
-.main { padding: 20px 24px; max-width: 1100px; margin: 0 auto; }
+.nav-links a:hover { color: var(--text-primary); background: var(--bg-hover); }
+.nav-links a.router-link-active { color: var(--accent); font-weight: 500; }
 
-@media (max-width: 600px) {
-  .nav { gap: 8px; padding: 0 12px; overflow-x: auto; }
+.main { padding: 32px 24px; max-width: 1100px; margin: 0 auto; }
+
+/* Page transition */
+.page-fade-enter-active, .page-fade-leave-active { transition: opacity .15s, transform .15s; }
+.page-fade-enter-from { opacity: 0; transform: translateY(4px); }
+.page-fade-leave-to { opacity: 0; transform: translateY(-4px); }
+
+@media (max-width: 640px) {
+  .nav { gap: 8px; padding: 0 14px; overflow-x: auto; }
   .nav-brand { font-size: 15px; }
-  .cat-btn { padding: 4px 8px; font-size: 12px; }
-  .nav-links { gap: 1px; }
-  .nav-links a { padding: 5px 8px; font-size: 12px; }
-  .main { padding: 16px; }
-}
-
-@media (max-width: 430px) {
-  .nav { gap: 6px; padding: 0 8px; }
-  .nav-brand { font-size: 14px; }
-  .cat-btn { padding: 3px 6px; font-size: 11px; }
-  .nav-links a { padding: 4px 6px; font-size: 11px; }
+  .cat-btn { padding: 2px 5px; font-size: 12px; }
+  .nav-links a { padding: 3px 5px; font-size: 12px; }
+  .main { padding: 20px 16px; }
 }
 </style>
