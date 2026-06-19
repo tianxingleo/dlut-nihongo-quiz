@@ -65,4 +65,4 @@ export interface Session {
   tagFilter?: string
 }
 
-export type QuizMode = 'sequential' | 'random' | 'wrong' | 'tag' | 'weakness' | 'exam'
+export type QuizMode = 'sequential' | 'random' | 'wrong' | 'untouched' | 'tag' | 'weakness' | 'exam'

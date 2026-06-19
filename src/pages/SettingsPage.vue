@@ -1,22 +1,20 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { exportData, importData, clearAllData, getSetting, setSetting } from '../db/database'
-import { loadQuestionBank } from '../services/quizEngine'
+import { getCategoryCounts } from '../services/quizEngine'
+import { CATEGORIES } from '../config/categories'
 import type { Category } from '../types/question'
 
 const darkMode = ref(false)
-const counts = ref<Record<string, number>>({})
+const counts = ref<Record<Category, number>>({} as Record<Category, number>)
 const statusMsg = ref('')
 const confirmClear = ref(false)
 
 onMounted(async () => {
   darkMode.value = await getSetting('darkMode', false)
   applyTheme()
-  const cats: Category[] = ['grammar', 'word', 'history', 'party', 'military']
-  for (const cat of cats) {
-    const qs = await loadQuestionBank(cat)
-    counts.value[cat] = qs.length
-  }
+  // 5 个分类并发加载，不再串行 await 5 次
+  counts.value = await getCategoryCounts()
 })
 
 function applyTheme() {
@@ -84,11 +82,10 @@ const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
 
     <div class="section">
       <h2>题库信息</h2>
-      <div class="info-row"><span>日语语法</span><span>{{ counts.grammar || '—' }} 题</span></div>
-      <div class="info-row"><span>日语单词</span><span>{{ counts.word || '—' }} 题</span></div>
-      <div class="info-row"><span>中国近现代史</span><span>{{ counts.history || '—' }} 题</span></div>
-      <div class="info-row"><span>中国共产党党史</span><span>{{ counts.party || '—' }} 题</span></div>
-      <div class="info-row"><span>军事理论</span><span>{{ counts.military || '—' }} 题</span></div>
+      <div v-for="c in CATEGORIES" :key="c.key" class="info-row">
+        <span>{{ c.long }}</span>
+        <span>{{ counts[c.key] || '—' }} 题</span>
+      </div>
       <div class="info-row total"><span>合计</span><span>{{ totalCount() }} 题</span></div>
       <div class="info-row"><span>版本</span><span>v0.3.0</span></div>
     </div>

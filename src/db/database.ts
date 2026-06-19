@@ -1,6 +1,22 @@
 import Dexie, { type Table } from 'dexie'
 import type { Attempt, QuestionStats, TagStats, Session } from '../types/question'
 
+export function createDefaultStats(questionId: string, overrides: Partial<QuestionStats> = {}): QuestionStats {
+  return {
+    questionId,
+    attemptCount: 0,
+    correctCount: 0,
+    wrongCount: 0,
+    lastSelectedKey: '',
+    lastCorrect: false,
+    lastAttemptAt: '',
+    masteryLevel: 0,
+    reviewDueAt: '',
+    isBookmarked: false,
+    ...overrides,
+  }
+}
+
 export class QuizDatabase extends Dexie {
   attempts!: Table<Attempt, number>
   questionStats!: Table<QuestionStats>
@@ -52,8 +68,7 @@ export async function recordAttempt(a: Omit<Attempt, 'id'>): Promise<number> {
       masteryLevel: newMastery,
     })
   } else {
-    await db.questionStats.put({
-      questionId: a.questionId,
+    await db.questionStats.put(createDefaultStats(a.questionId, {
       attemptCount: 1,
       correctCount: a.isCorrect ? 1 : 0,
       wrongCount: a.isCorrect ? 0 : 1,
@@ -61,11 +76,13 @@ export async function recordAttempt(a: Omit<Attempt, 'id'>): Promise<number> {
       lastCorrect: a.isCorrect,
       lastAttemptAt: a.createdAt,
       masteryLevel: a.isCorrect ? 2 : 1,
-      reviewDueAt: '',
-      isBookmarked: false,
-    })
+    }))
   }
   return id
+}
+
+export function createSession(input: Omit<Session, 'id'>): Session {
+  return { ...input }
 }
 
 // --- Tag stats ---

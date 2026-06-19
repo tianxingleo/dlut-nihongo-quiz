@@ -1,6 +1,6 @@
-import type { Category } from '../types/question'
+import type { Category, QuestionStats } from '../types/question'
 import { db } from '../db/database'
-import { loadQuestionBank } from './quizEngine'
+import { loadQuestionBank, getRelevantData } from './quizEngine'
 
 export interface Recommendation {
   tag: string
@@ -10,10 +10,22 @@ export interface Recommendation {
   priority: number
 }
 
-export async function getWeakTags(category: Category = 'grammar'): Promise<Recommendation[]> {
-  const allTagStats = await db.tagStats.toArray()
+// 错题统一口径：做错过 (wrongCount > 0) 且当前未恢复到掌握。
+// HomePage/WrongBook/复习队列都用这个，避免显示数和实际队列不匹配。
+export function isWrong(s: QuestionStats): boolean {
+  return s.wrongCount > 0 && (s.wrongCount >= s.correctCount || s.masteryLevel <= 2)
+}
 
-  const allQuestions = await loadQuestionBank(category)
+export async function getWeakTags(
+  category: Category = 'grammar',
+  _allStats?: QuestionStats[],
+): Promise<Recommendation[]> {
+  // tagStats 与 questionStats 不在同一张表，无法共享预扫描；保留可选参数仅为 API 对齐其他函数。
+  void _allStats
+  const [allTagStats, allQuestions] = await Promise.all([
+    db.tagStats.toArray(),
+    loadQuestionBank(category),
+  ])
   const tagsInBank = new Set<string>()
   for (const q of allQuestions) {
     for (const t of q.tags) tagsInBank.add(t)
@@ -21,7 +33,6 @@ export async function getWeakTags(category: Category = 'grammar'): Promise<Recom
   }
 
   const results: Recommendation[] = []
-
   for (const tagStat of allTagStats) {
     if (tagStat.attemptCount === 0) continue
     if (!tagsInBank.has(tagStat.tag)) continue
@@ -38,15 +49,13 @@ export async function getWeakTags(category: Category = 'grammar'): Promise<Recom
   return results.sort((a, b) => b.priority - a.priority).slice(0, 8)
 }
 
-export async function getReviewQueue(category: Category = 'grammar'): Promise<string[]> {
-  const allStats = await db.questionStats.toArray()
-
-  const allQuestions = await loadQuestionBank(category)
-  const validIds = new Set(allQuestions.map(q => q.id))
-
+export async function getReviewQueue(
+  category: Category = 'grammar',
+  allStats?: QuestionStats[],
+): Promise<string[]> {
+  const { stats } = await getRelevantData(category, allStats)
   const scored: { id: string; score: number }[] = []
-  for (const s of allStats) {
-    if (!validIds.has(s.questionId)) continue
+  for (const s of stats) {
     let score = 0
     if (s.masteryLevel <= 1) score += 10
     if (s.masteryLevel === 2) score += 5
@@ -54,40 +63,44 @@ export async function getReviewQueue(category: Category = 'grammar'): Promise<st
     if (s.wrongCount >= 2) score += s.wrongCount * 2
     if (s.reviewDueAt && new Date(s.reviewDueAt) <= new Date()) score += 5
     if (s.isBookmarked) score += 3
-    scored.push({ id: s.questionId, score })
+    if (score > 0) scored.push({ id: s.questionId, score })
   }
-
-  return scored.filter(x => x.score > 0).sort((a, b) => b.score - a.score).map(x => x.id)
+  return scored.sort((a, b) => b.score - a.score).map(x => x.id)
 }
 
-export async function getWrongQuestionIds(category: Category = 'grammar'): Promise<string[]> {
-  const stats = await db.questionStats.filter(s => s.wrongCount > s.correctCount || s.masteryLevel <= 2).toArray()
-
-  const allQuestions = await loadQuestionBank(category)
-  const validIds = new Set(allQuestions.map(q => q.id))
-  return stats.filter(s => validIds.has(s.questionId)).sort((a, b) => b.wrongCount - a.wrongCount).map(s => s.questionId)
+export async function getWrongQuestionIds(
+  category: Category = 'grammar',
+  allStats?: QuestionStats[],
+): Promise<string[]> {
+  const { stats } = await getRelevantData(category, allStats)
+  return stats
+    .filter(isWrong)
+    .sort((a, b) => b.wrongCount - a.wrongCount)
+    .map(s => s.questionId)
 }
 
-export async function getUntouchedQuestionIds(category: Category = 'grammar'): Promise<string[]> {
-
-  const all = await loadQuestionBank(category)
-  const stats = await db.questionStats.toArray()
-  const attempted = new Set(stats.filter(s => s.attemptCount > 0).map(s => s.questionId))
-  return all.filter(q => !attempted.has(q.id)).map(q => q.id)
+export async function getUntouchedQuestionIds(
+  category: Category = 'grammar',
+  allStats?: QuestionStats[],
+): Promise<string[]> {
+  const { questions, statsMap } = await getRelevantData(category, allStats)
+  return questions
+    .filter(q => !statsMap.has(q.id) || statsMap.get(q.id)!.attemptCount === 0)
+    .map(q => q.id)
 }
 
-export async function getMasterySummary(category: Category = 'grammar'): Promise<{ mastered: number; learning: number; weak: number; untouched: number }> {
-  const stats = await db.questionStats.toArray()
-
-  const allQuestions = await loadQuestionBank(category)
-  const validIds = new Set(allQuestions.map(q => q.id))
-  const relevantStats = stats.filter(s => validIds.has(s.questionId))
-  const total = allQuestions.length
-
-  const mastered = relevantStats.filter(s => s.masteryLevel >= 4).length
-  const learning = relevantStats.filter(s => s.masteryLevel === 2 || s.masteryLevel === 3).length
-  const weak = relevantStats.filter(s => s.masteryLevel <= 1).length
-  const untouched = total - relevantStats.filter(s => s.attemptCount > 0).length
-
-  return { mastered, learning, weak, untouched }
+export async function getMasterySummary(
+  category: Category = 'grammar',
+  allStats?: QuestionStats[],
+): Promise<{ mastered: number; learning: number; weak: number; untouched: number }> {
+  const { questions, stats } = await getRelevantData(category, allStats)
+  const total = questions.length
+  let mastered = 0, learning = 0, weak = 0, attempted = 0
+  for (const s of stats) {
+    if (s.masteryLevel >= 4) mastered++
+    else if (s.masteryLevel >= 2) learning++
+    else weak++
+    if (s.attemptCount > 0) attempted++
+  }
+  return { mastered, learning, weak, untouched: total - attempted }
 }

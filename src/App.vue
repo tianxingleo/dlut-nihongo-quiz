@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useActiveCategory, loadActiveCategory, setActiveCategory } from './services/categoryStore'
 import { getQuestionById } from './services/quizEngine'
+import { CATEGORIES } from './config/categories'
 import type { Category } from './types/question'
 import SearchOverlay from './components/SearchOverlay.vue'
 
@@ -10,6 +11,15 @@ const router = useRouter()
 const activeCategory = useActiveCategory()
 const searchOpen = ref(false)
 const mobileMenuOpen = ref(false)
+
+const navLinks = [
+  { to: '/', label: '首页' },
+  { to: '/home', label: '仪表盘' },
+  { to: '/quiz', label: '刷题' },
+  { to: '/wrong', label: '错题本' },
+  { to: '/analysis', label: '分析' },
+  { to: '/settings', label: '设置' },
+] as const
 
 onMounted(async () => {
   await loadActiveCategory()
@@ -43,33 +53,14 @@ function handleSearchNavigate(questionId: string) {
       <div class="nav-desktop">
         <div class="category-switch">
           <button
-            :class="['cat-btn', { active: activeCategory === 'grammar' }]"
-            @click="switchCategory('grammar')"
-          >语法</button>
-          <button
-            :class="['cat-btn', { active: activeCategory === 'word' }]"
-            @click="switchCategory('word')"
-          >单词</button>
-          <button
-            :class="['cat-btn', { active: activeCategory === 'history' }]"
-            @click="switchCategory('history')"
-          >近代史</button>
-          <button
-            :class="['cat-btn', { active: activeCategory === 'party' }]"
-            @click="switchCategory('party')"
-          >党史</button>
-          <button
-            :class="['cat-btn', { active: activeCategory === 'military' }]"
-            @click="switchCategory('military')"
-          >军事理论</button>
+            v-for="c in CATEGORIES"
+            :key="c.key"
+            :class="['cat-btn', { active: activeCategory === c.key }]"
+            @click="switchCategory(c.key)"
+          >{{ c.short }}</button>
         </div>
         <div class="nav-links">
-          <router-link to="/">首页</router-link>
-          <router-link to="/home">仪表盘</router-link>
-          <router-link to="/quiz">刷题</router-link>
-          <router-link to="/wrong">错题本</router-link>
-          <router-link to="/analysis">分析</router-link>
-          <router-link to="/settings">设置</router-link>
+          <router-link v-for="l in navLinks" :key="l.to" :to="l.to">{{ l.label }}</router-link>
           <button class="search-trigger" @click="searchOpen = true">⌕ 搜索</button>
         </div>
       </div>
@@ -80,42 +71,22 @@ function handleSearchNavigate(questionId: string) {
       </button>
     </nav>
 
-    <!-- Mobile menu -->
     <Transition name="nav-mobile">
       <div v-if="mobileMenuOpen" class="nav-mobile-backdrop" @click="mobileMenuOpen = false">
         <div class="nav-mobile-menu" @click.stop>
           <div class="nav-mobile-section">
             <div class="nav-mobile-section-title">导航</div>
-            <router-link to="/" @click="mobileMenuOpen = false">首页</router-link>
-            <router-link to="/home" @click="mobileMenuOpen = false">仪表盘</router-link>
-            <router-link to="/quiz" @click="mobileMenuOpen = false">刷题</router-link>
-            <router-link to="/wrong" @click="mobileMenuOpen = false">错题本</router-link>
-            <router-link to="/analysis" @click="mobileMenuOpen = false">分析</router-link>
-            <router-link to="/settings" @click="mobileMenuOpen = false">设置</router-link>
+            <router-link v-for="l in navLinks" :key="l.to" :to="l.to" @click="mobileMenuOpen = false">{{ l.label }}</router-link>
             <button class="mobile-search-trigger" @click="searchOpen = true; mobileMenuOpen = false">⌕ 搜索题目</button>
           </div>
           <div class="nav-mobile-section">
             <div class="nav-mobile-section-title">切换题库</div>
             <button
-              :class="{ active: activeCategory === 'grammar' }"
-              @click="switchCategory('grammar')"
-            >语法</button>
-            <button
-              :class="{ active: activeCategory === 'word' }"
-              @click="switchCategory('word')"
-            >单词</button>
-            <button
-              :class="{ active: activeCategory === 'history' }"
-              @click="switchCategory('history')"
-            >近代史</button>
-            <button
-              :class="{ active: activeCategory === 'party' }"
-              @click="switchCategory('party')"
-            >党史</button>
-            <button
-              :class="{ active: activeCategory === 'military' }"
-              @click="switchCategory('military')"
-            >军事理论</button>
+              v-for="c in CATEGORIES"
+              :key="c.key"
+              :class="{ active: activeCategory === c.key }"
+              @click="switchCategory(c.key)"
+            >{{ c.short }}</button>
           </div>
         </div>
       </div>
@@ -150,7 +121,6 @@ function handleSearchNavigate(questionId: string) {
 <style scoped>
 .app-shell { min-height: 100vh; display: flex; flex-direction: column; }
 
-/* Nav */
 .nav {
   display: flex; align-items: center; gap: 14px; padding: 0 24px;
   height: 44px; background: var(--bg-card); border-bottom: 1px solid var(--border);
@@ -158,12 +128,7 @@ function handleSearchNavigate(questionId: string) {
   overflow: hidden;
 }
 
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
+.nav-left { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 
 .nav-brand {
   font-family: var(--font-display); font-size: 17px; font-weight: 700;
@@ -172,28 +137,13 @@ function handleSearchNavigate(questionId: string) {
 }
 
 .nav-search-icon {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  font-size: 20px;
-  padding: 4px;
-  cursor: pointer;
-  line-height: 1;
+  display: none; background: none; border: none;
+  color: var(--text-secondary); font-size: 20px; padding: 4px;
+  cursor: pointer; line-height: 1;
 }
+.nav-search-icon:hover { color: var(--accent); }
 
-.nav-search-icon:hover {
-  color: var(--accent);
-}
-
-/* Desktop nav */
-.nav-desktop {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex: 1;
-  min-width: 0;
-}
+.nav-desktop { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
 
 .category-switch { display: flex; gap: 2px; flex-shrink: 0; }
 .cat-btn {
@@ -204,161 +154,72 @@ function handleSearchNavigate(questionId: string) {
 .cat-btn:hover { color: var(--text-primary); }
 .cat-btn.active { color: var(--accent); font-weight: 500; }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-left: auto;
-  flex-shrink: 0;
-}
-
+.nav-links { display: flex; align-items: center; gap: 4px; margin-left: auto; flex-shrink: 0; }
 .nav-links a,
 .nav-links button {
   padding: 4px 8px; text-decoration: none; color: var(--text-secondary);
-  font-size: 13px; transition: color .15s; white-space: nowrap;
-  border-radius: 2px;
+  font-size: 13px; transition: color .15s; white-space: nowrap; border-radius: 2px;
 }
-
 .nav-links a { background: transparent; border: none; cursor: pointer; font-family: inherit; }
 .nav-links a:hover { color: var(--text-primary); background: var(--bg-hover); }
 .nav-links a.router-link-active { color: var(--accent); font-weight: 500; }
 
 .search-trigger {
-  background: none;
-  border: 1px solid var(--border);
-  font-family: inherit;
-  font-size: 13px;
-  color: var(--text-muted);
-  padding: 3px 8px;
-  cursor: pointer;
-  transition: all .12s;
-  white-space: nowrap;
+  background: none; border: 1px solid var(--border); font-family: inherit;
+  font-size: 13px; color: var(--text-muted); padding: 3px 8px;
+  cursor: pointer; transition: all .12s; white-space: nowrap;
 }
+.search-trigger:hover { color: var(--accent); border-color: var(--accent); }
 
-.search-trigger:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-/* Hamburger */
 .nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 3px;
-  background: none;
-  border: none;
-  padding: 6px;
-  cursor: pointer;
-  margin-left: auto;
-  flex-shrink: 0;
+  display: none; flex-direction: column; gap: 3px; background: none;
+  border: none; padding: 6px; cursor: pointer; margin-left: auto; flex-shrink: 0;
 }
-
 .nav-hamburger span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: var(--text-primary);
-  transition: background .15s;
-  border-radius: 1px;
+  display: block; width: 18px; height: 2px; background: var(--text-primary);
+  transition: background .15s; border-radius: 1px;
 }
+.nav-hamburger:hover span { background: var(--accent); }
 
-.nav-hamburger:hover span {
-  background: var(--accent);
-}
-
-/* Mobile menu backdrop */
 .nav-mobile-backdrop {
-  position: fixed;
-  top: 44px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: 99;
+  position: fixed; top: 44px; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.25); z-index: 99;
 }
-
-.nav-mobile-menu {
-  background: var(--bg-card);
-  border-bottom: 1px solid var(--border);
-  padding: 8px 0;
-}
-
-.nav-mobile-section {
-  padding: 8px 16px;
-}
-
+.nav-mobile-menu { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 8px 0; }
+.nav-mobile-section { padding: 8px 16px; }
 .nav-mobile-section + .nav-mobile-section {
-  border-top: 1px solid var(--border);
-  padding-top: 12px;
-  margin-top: 4px;
+  border-top: 1px solid var(--border); padding-top: 12px; margin-top: 4px;
 }
-
 .nav-mobile-section-title {
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-size: 11px; color: var(--text-muted); letter-spacing: 1px;
+  margin-bottom: 8px; font-weight: 600; text-transform: uppercase;
 }
-
 .nav-mobile-section a,
 .nav-mobile-section button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 8px 12px;
-  font-size: 14px;
-  color: var(--text-primary);
-  text-decoration: none;
-  background: none;
-  border: none;
-  font-family: inherit;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: background .1s;
+  display: block; width: 100%; text-align: left; padding: 8px 12px;
+  font-size: 14px; color: var(--text-primary); text-decoration: none;
+  background: none; border: none; font-family: inherit; cursor: pointer;
+  border-radius: 2px; transition: background .1s;
 }
-
 .nav-mobile-section a:hover,
-.nav-mobile-section button:hover {
-  background: var(--bg-hover);
-}
-
+.nav-mobile-section button:hover { background: var(--bg-hover); }
 .nav-mobile-section a.router-link-active,
-.nav-mobile-section button.active {
-  color: var(--accent);
-  font-weight: 500;
-}
+.nav-mobile-section button.active { color: var(--accent); font-weight: 500; }
 
-.mobile-search-trigger {
-  color: var(--text-muted) !important;
-  margin-top: 4px;
-}
+.mobile-search-trigger { color: var(--text-muted) !important; margin-top: 4px; }
+.mobile-search-trigger:hover { color: var(--accent) !important; }
 
-.mobile-search-trigger:hover {
-  color: var(--accent) !important;
-}
-
-/* Mobile menu transition */
 .nav-mobile-enter-active,
-.nav-mobile-leave-active {
-  transition: opacity .12s;
-}
-
+.nav-mobile-leave-active { transition: opacity .12s; }
 .nav-mobile-enter-from,
-.nav-mobile-leave-to {
-  opacity: 0;
-}
+.nav-mobile-leave-to { opacity: 0; }
 
-/* Main */
 .main { flex: 1; padding: 32px 24px; max-width: 1100px; margin: 0 auto; width: 100%; }
 
-/* Page transition */
 .page-fade-enter-active, .page-fade-leave-active { transition: opacity .15s, transform .15s; }
 .page-fade-enter-from { opacity: 0; transform: translateY(4px); }
 .page-fade-leave-to { opacity: 0; transform: translateY(-4px); }
 
-/* Footer */
 .app-footer {
   padding: 20px 24px; border-top: 1px solid var(--border);
   background: var(--bg-card); margin-top: auto;
@@ -371,7 +232,6 @@ function handleSearchNavigate(questionId: string) {
 .footer-inner a:hover { color: var(--accent); text-decoration: none; }
 .footer-sep { color: var(--border); }
 
-/* Mobile breakpoint: hamburger mode */
 @media (max-width: 639px) {
   .nav { gap: 8px; padding: 0 12px; }
   .nav-hamburger { display: flex; }
@@ -382,7 +242,6 @@ function handleSearchNavigate(questionId: string) {
   .footer-inner { font-size: 12px; gap: 6px; }
 }
 
-/* Medium screens: overflow scroll fallback */
 @media (min-width: 640px) and (max-width: 768px) {
   .nav { gap: 8px; padding: 0 14px; overflow-x: auto; }
   .cat-btn { padding: 2px 5px; font-size: 12px; }

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { loadQuestionBank, getQuestionsByTag, shuffleArray, generateSessionId } from '../services/quizEngine'
-import { recordAttempt, updateTagStats, db } from '../db/database'
+import { loadQuestionBank, getQuestionsByTag, shuffleArray, generateSessionId, toggleMultiSelect, isMultiAnswerCorrect } from '../services/quizEngine'
+import { recordAttempt, updateTagStats, createDefaultStats, db, createSession } from '../db/database'
 import { saveActiveSession, loadActiveSession, clearActiveSession, isSessionInProgress, type ActiveSession } from '../services/sessionResume'
 import { useActiveCategory, loadActiveCategory, setActiveCategory } from '../services/categoryStore'
 import QuestionCard from '../components/QuestionCard.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import PageSkeleton from '../components/PageSkeleton.vue'
-import type { Question } from '../types/question'
+import type { Question, QuizMode } from '../types/question'
 
 const route = useRoute()
 const router = useRouter()
@@ -21,7 +21,7 @@ const submitted = ref(false)
 const sessionId = ref('')
 const correctCount = ref(0)
 const wrongList = ref<string[]>([])
-const mode = ref('sequential')
+const mode = ref('')
 const startTime = ref(0)
 const finished = ref(false)
 const bookmarked = ref(false)
@@ -70,6 +70,46 @@ function stopTimer() {
   }
 }
 
+// 把 query 解析成 { mode, pool, display }，避免在 onMounted 里反复覆盖 mode.value
+function resolveMode(all: Question[]): {
+  poolMode: QuizMode
+  displayMode: string
+  pool: Question[]
+} {
+  const tag = route.query.tag as string | undefined
+  const groupFilter = route.query.group as string | undefined
+  const idsParam = route.query.ids as string | undefined
+  const modeParam = route.query.mode as string | undefined
+
+  if (tag) {
+    return {
+      poolMode: 'tag',
+      displayMode: `tag: ${tag}`,
+      pool: getQuestionsByTag(tag, activeCategory.value),
+    }
+  }
+
+  let pool = groupFilter ? all.filter(q => q.groupId === groupFilter) : [...all]
+  if (idsParam) {
+    const idSet = new Set(idsParam.split(','))
+    pool = pool.filter(q => idSet.has(q.id))
+  }
+
+  const poolMode: QuizMode =
+    idsParam ? (modeParam === 'untouched' ? 'untouched' : 'wrong')
+    : modeParam === 'untouched' ? 'untouched'
+    : ((modeParam as QuizMode) || 'sequential')
+
+  let displayMode: string = poolMode
+  if (groupFilter) {
+    const groupTitle = all.find(q => q.groupId === groupFilter)?.groupTitle || groupFilter
+    const action = idsParam ? (modeParam === 'untouched' ? '未做' : '错题') : poolMode
+    displayMode = `${groupTitle} · ${action}`
+  }
+
+  return { poolMode, displayMode, pool }
+}
+
 onMounted(async () => {
   await loadActiveCategory()
   const queryCat = route.query.category as string | undefined
@@ -80,7 +120,6 @@ onMounted(async () => {
   }
   const cat = activeCategory.value
   const all = await loadQuestionBank(cat)
-  const groupFilter = route.query.group as string | undefined
 
   if (route.query.resume === '1') {
     const saved = await loadActiveSession()
@@ -102,61 +141,38 @@ onMounted(async () => {
     }
   }
 
-  const modeParam = route.query.tag ? 'tag'
-    : route.query.mode === 'untouched' ? 'untouched'
-    : route.query.ids ? 'wrong'
-    : route.query.mode || 'sequential'
+  const { poolMode, displayMode, pool } = resolveMode(all)
+  mode.value = displayMode
 
-  mode.value = modeParam as string
-
-  if (route.query.tag) {
-    questions.value = getQuestionsByTag(route.query.tag as string, cat)
-    mode.value = `tag: ${route.query.tag}`
-  } else {
-    let pool = groupFilter ? all.filter(q => q.groupId === groupFilter) : [...all]
-    if (route.query.ids) {
-      const idSet = new Set((route.query.ids as string).split(','))
-      pool = pool.filter(q => idSet.has(q.id))
-      mode.value = modeParam === 'untouched' ? 'untouched' : 'wrong'
-    }
-    if (groupFilter) {
-      const groupTitle = all.find(q => q.groupId === groupFilter)?.groupTitle || groupFilter
-      const action = route.query.ids ? (modeParam === 'untouched' ? '未做' : '错题') : modeParam
-      mode.value = `${groupTitle} · ${action}`
-    }
-    questions.value = pool
-  }
-
-  if (modeParam === 'random') {
-    questions.value = shuffleArray(questions.value)
-    if (!groupFilter) mode.value = 'random'
-  } else if (modeParam === 'weakness') {
+  let finalPool = pool
+  if (poolMode === 'random') {
+    finalPool = shuffleArray(pool)
+  } else if (poolMode === 'weakness') {
     const stats = await db.questionStats.toArray()
     const validIds = new Set(all.map(q => q.id))
     const weakIds = stats.filter(s => validIds.has(s.questionId) && s.masteryLevel <= 2).map(s => s.questionId)
+    const weakSet = new Set(weakIds)
     const priorityQuestions = weakIds.map(id => all.find(q => q.id === id)!).filter(Boolean)
-    const remaining = shuffleArray(all.filter(q => !weakIds.includes(q.id)))
-    questions.value = [...priorityQuestions, ...remaining]
-    if (!groupFilter) mode.value = 'weakness'
-  } else if (modeParam === 'exam') {
-    questions.value = shuffleArray([...all])
-    if (!groupFilter) mode.value = 'exam'
+    const remaining = shuffleArray(all.filter(q => !weakSet.has(q.id)))
+    finalPool = [...priorityQuestions, ...remaining]
+  } else if (poolMode === 'exam') {
+    finalPool = shuffleArray([...all])
   }
+  questions.value = finalPool
 
   sessionId.value = generateSessionId()
   startTime.value = Date.now()
   startedAt.value = new Date().toISOString()
   await saveActiveSession(snapshot(false))
   startTimer()
+
+  window.addEventListener('keydown', onKeydown)
 })
 
 function handleSelect(key: string) {
   if (submitted.value) return
   if (currentQuestion.value?.multiAnswer) {
-    const selected = new Set(selectedKey.value.split(''))
-    if (selected.has(key)) selected.delete(key)
-    else selected.add(key)
-    selectedKey.value = [...selected].sort().join('')
+    selectedKey.value = toggleMultiSelect(selectedKey.value, key)
   } else {
     selectedKey.value = key
   }
@@ -168,8 +184,7 @@ async function handleSubmit() {
 
   const q = currentQuestion.value
   const isCorrect = q.multiAnswer
-    ? new Set(selectedKey.value.split('')).size === new Set(q.answerKey.split('')).size
-      && [...selectedKey.value].every(k => q.answerKey.includes(k))
+    ? isMultiAnswerCorrect(selectedKey.value, q.answerKey)
     : selectedKey.value === q.answerKey
   if (isCorrect) correctCount.value++
   else wrongList.value.push(q.id)
@@ -191,33 +206,32 @@ async function handleSubmit() {
 
   await updateTagStats(q.tags, isCorrect)
 
-  await db.sessions.put({
-    sessionId: sessionId.value,
+  await db.sessions.put(createSession({
     mode: mode.value,
     totalQuestions: questions.value.length,
     correctCount: correctCount.value,
     wrongCount: wrongList.value.length,
     startedAt: startedAt.value || new Date().toISOString(),
-  } as any)
+  }))
 
   await saveActiveSession(snapshot(true))
 }
 
-function handleNext() {
+async function handleNext() {
   if (currentIndex.value >= questions.value.length - 1) {
     finished.value = true
     stopTimer()
-    clearActiveSession()
+    await clearActiveSession()
     return
   }
   currentIndex.value++
   selectedKey.value = ''
   submitted.value = false
   startTime.value = Date.now()
-  saveActiveSession(snapshot(false))
+  await saveActiveSession(snapshot(false))
 }
 
-function handlePrev() {
+async function handlePrev() {
   if (currentIndex.value <= 0 || history.value.length === 0) return
   history.value.pop()
   currentIndex.value--
@@ -235,18 +249,7 @@ async function handleBookmark() {
   if (stat) {
     await db.questionStats.update(q.id, { isBookmarked: next })
   } else {
-    await db.questionStats.put({
-      questionId: q.id,
-      attemptCount: 0,
-      correctCount: 0,
-      wrongCount: 0,
-      lastSelectedKey: '',
-      lastCorrect: false,
-      lastAttemptAt: '',
-      masteryLevel: 0,
-      reviewDueAt: '',
-      isBookmarked: next,
-    })
+    await db.questionStats.put(createDefaultStats(q.id, { isBookmarked: next }))
   }
 }
 
@@ -268,13 +271,12 @@ function onKeydown(e: KeyboardEvent) {
   }
 }
 
-onMounted(() => window.addEventListener('keydown', onKeydown))
 onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
   stopTimer()
 })
 
-function restart() {
+async function restart() {
   currentIndex.value = 0
   selectedKey.value = ''
   submitted.value = false
@@ -286,7 +288,7 @@ function restart() {
   questions.value = shuffleArray(questions.value)
   history.value = []
   elapsedTime.value = 0
-  saveActiveSession(snapshot(false))
+  await saveActiveSession(snapshot(false))
 }
 
 function goHome() { router.push('/home') }
@@ -319,7 +321,6 @@ function goHome() { router.push('/home') }
       />
     </template>
 
-    <!-- Finish screen -->
     <div v-else-if="finished" class="finish-page">
       <h2>本轮完成</h2>
       <div class="finish-stat">
@@ -352,7 +353,6 @@ function goHome() { router.push('/home') }
 .btn-outline { background: transparent; color: var(--text-primary); }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Finish */
 .finish-page { text-align: center; padding: 80px 20px; }
 .finish-page h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 24px; }
 .finish-stat { margin-bottom: 16px; }

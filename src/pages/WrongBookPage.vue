@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { loadQuestionBank, getQuestionById } from '../services/quizEngine'
+import { getRelevantData, getQuestionById } from '../services/quizEngine'
+import { isWrong } from '../services/reviewScheduler'
 import { db } from '../db/database'
 import { useActiveCategory, loadActiveCategory } from '../services/categoryStore'
+import { truncate } from '../utils/text'
 import type { QuestionStats } from '../types/question'
 
 const router = useRouter()
@@ -16,15 +18,13 @@ const confirmingId = ref<string | null>(null)
 let confirmTimeout: ReturnType<typeof setTimeout> | null = null
 
 async function refreshList() {
-  const cat = activeCategory.value
-  const all = await loadQuestionBank(cat)
-  const validIds = new Set(all.map(q => q.id))
-  const allStats = await db.questionStats.toArray()
-  const wrong = allStats.filter(s => s.wrongCount > 0 && validIds.has(s.questionId))
-  wrongItems.value = wrong.map(s => {
-    const q = getQuestionById(s.questionId)
-    return { questionId: s.questionId, stats: s, stem: q?.stem || '', group: q?.groupTitle || '' }
-  })
+  const { stats } = await getRelevantData(activeCategory.value)
+  wrongItems.value = stats
+    .filter(isWrong)
+    .map(s => {
+      const q = getQuestionById(s.questionId)
+      return { questionId: s.questionId, stats: s, stem: q?.stem || '', group: q?.groupTitle || '' }
+    })
 }
 
 onMounted(async () => {
@@ -95,7 +95,7 @@ function handleClearWrong(questionId: string) {
       <div v-for="item in pagedItems" :key="item.questionId" class="wrong-item">
         <div class="wi-main">
           <span class="wi-id">{{ item.questionId }}</span>
-          <span class="wi-stem">{{ item.stem.substring(0, 50) }}{{ item.stem.length > 50 ? '...' : '' }}</span>
+          <span class="wi-stem">{{ truncate(item.stem, 50) }}</span>
           <span class="wi-group">{{ item.group }}</span>
         </div>
         <div class="wi-stats">

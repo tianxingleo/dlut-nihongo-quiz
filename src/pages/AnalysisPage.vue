@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from 'vue'
-import { loadQuestionBank, getAllGrammarPoints } from '../services/quizEngine'
-import { db } from '../db/database'
+import { getRelevantData, getAllGrammarPoints, getQuestionById } from '../services/quizEngine'
 import { useActiveCategory, loadActiveCategory } from '../services/categoryStore'
+import { truncate } from '../utils/text'
 import PageSkeleton from '../components/PageSkeleton.vue'
 import type { QuestionStats, Question } from '../types/question'
 
@@ -14,11 +14,9 @@ const loading = ref(true)
 
 async function refresh() {
   loading.value = true
-  const cat = activeCategory.value
-  questions.value = await loadQuestionBank(cat)
-  const allStats = await db.questionStats.toArray()
-  const validIds = new Set(questions.value.map(q => q.id))
-  stats.value = allStats.filter(s => validIds.has(s.questionId))
+  const { questions: qs, stats: ss } = await getRelevantData(activeCategory.value)
+  questions.value = qs
+  stats.value = ss
   loading.value = false
 }
 
@@ -81,8 +79,8 @@ const tagAnalysis = computed(() => {
 const topWrongQuestions = computed(() => {
   const wrong = stats.value.filter(s => s.wrongCount > 0).sort((a, b) => b.wrongCount - a.wrongCount).slice(0, 10)
   return wrong.map(s => {
-    const q = questions.value.find(qq => qq.id === s.questionId)
-    return { id: s.questionId, stem: q?.stem?.substring(0, 50) || '', wrongCount: s.wrongCount, rate: s.attemptCount > 0 ? Math.round(s.correctCount / s.attemptCount * 100) : 0 }
+    const q = getQuestionById(s.questionId)
+    return { id: s.questionId, stem: truncate(q?.stem || '', 50), wrongCount: s.wrongCount, rate: s.attemptCount > 0 ? Math.round(s.correctCount / s.attemptCount * 100) : 0 }
   })
 })
 

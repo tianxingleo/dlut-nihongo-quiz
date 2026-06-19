@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick, onUnmounted } from 'vue'
 import { searchQuestions } from '../services/quizEngine'
+import { truncate } from '../utils/text'
 import type { Question } from '../types/question'
 
 const props = defineProps<{
@@ -85,7 +86,7 @@ function onBackdropClick(e: MouseEvent) {
             <div class="sr-id">{{ q.id }}</div>
             <div class="sr-content">
               <span class="sr-group">{{ q.groupTitle }}</span>
-              <span class="sr-stem">{{ q.stem.length > 60 ? q.stem.substring(0, 60) + '…' : q.stem }}</span>
+              <span class="sr-stem">{{ truncate(q.stem, 60) }}</span>
             </div>
           </div>
         </div>

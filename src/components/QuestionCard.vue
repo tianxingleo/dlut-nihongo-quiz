@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import type { Question } from '../types/question'
+import { toggleMultiSelect, isMultiAnswerCorrect } from '../utils/multiAnswer'
 import TagBadge from './TagBadge.vue'
 
 const props = defineProps<{
@@ -25,10 +26,7 @@ const showExplanation = ref(false)
 function handleSelect(key: string) {
   if (props.submitted) return
   if (props.question.multiAnswer) {
-    const selected = new Set(props.selectedKey.split(''))
-    if (selected.has(key)) selected.delete(key)
-    else selected.add(key)
-    emit('select', [...selected].sort().join(''))
+    emit('select', toggleMultiSelect(props.selectedKey, key))
   } else {
     emit('select', key)
   }
@@ -58,9 +56,7 @@ const canSubmit = computed(() => props.selectedKey.length > 0)
 
 const isCorrectOverall = computed(() => {
   if (props.question.multiAnswer) {
-    const a = new Set(props.selectedKey.split(''))
-    const b = new Set(props.question.answerKey.split(''))
-    return a.size === b.size && [...a].every(x => b.has(x))
+    return isMultiAnswerCorrect(props.selectedKey, props.question.answerKey)
   }
   return props.selectedKey === props.question.answerKey
 })

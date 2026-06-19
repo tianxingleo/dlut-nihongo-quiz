@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { loadQuestionBank } from '../services/quizEngine'
+import { getCategoryCounts } from '../services/quizEngine'
 import { loadActiveCategory, setActiveCategory } from '../services/categoryStore'
+import { CATEGORIES } from '../config/categories'
 import { db } from '../db/database'
 import type { Category } from '../types/question'
 
 const router = useRouter()
 
-const counts = ref<Record<string, number>>({})
+const counts = ref<Record<Category, number>>({} as Record<Category, number>)
 const totalDone = ref(0)
 const totalQuestions = ref(0)
 
 onMounted(async () => {
   await loadActiveCategory()
-  const cats: Category[] = ['grammar', 'word', 'history', 'party', 'military']
-  for (const cat of cats) {
-    const qs = await loadQuestionBank(cat)
-    counts.value[cat] = qs.length
-  }
-  totalQuestions.value = Object.values(counts.value).reduce((a, b) => a + b, 0)
-
-  const stats = await db.questionStats.toArray()
+  // 5 个分类并发加载
+  const [c, stats] = await Promise.all([
+    getCategoryCounts(),
+    db.questionStats.toArray(),
+  ])
+  counts.value = c
+  totalQuestions.value = Object.values(c).reduce((a, b) => a + b, 0)
   totalDone.value = stats.filter(s => s.attemptCount > 0).length
 })
 
@@ -34,13 +34,9 @@ function quickStart() {
   router.push('/home')
 }
 
-const subjects = [
-  { key: 'grammar' as Category, title: '日语语法', desc: '大家的日语 第26–36课 · 语法点辨析与填空', icon: '文' },
-  { key: 'word' as Category, title: '日语单词', desc: '汉字 ↔ 假名互选 · 课次标签分组', icon: '語' },
-  { key: 'history' as Category, title: '中国近现代史', desc: '11个刷题单 · 单选/多选/判断 · 机考模拟', icon: '史' },
-  { key: 'party' as Category, title: '中国共产党党史', desc: '7个刷题单 · 单选/多选/判断 · 优先级分层', icon: '党' },
-  { key: 'military' as Category, title: '军事理论', desc: '22个刷题单 · 按章节/按优先级 · 必考核心标注', icon: '军' },
-]
+const subjects = computed(() =>
+  CATEGORIES.map(c => ({ key: c.key, title: c.long, desc: c.desc, icon: c.icon })),
+)
 </script>
 
 <template>

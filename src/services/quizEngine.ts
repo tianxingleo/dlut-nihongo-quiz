@@ -1,11 +1,19 @@
-import type { Question, Category } from '../types/question'
+import type { Question, Category, QuestionStats } from '../types/question'
+import { CATEGORIES, NO_SHUFFLE_CATEGORIES, getCategoryMeta } from '../config/categories'
+import { isMultiAnswerCorrect, toggleMultiSelect } from '../utils/multiAnswer'
 
 const cache = new Map<Category, Question[]>()
 const groupsCache = new Map<Category, { groupId: string; groupTitle: string; count: number }[]>()
 const tagsCache = new Map<Category, { tag: string; count: number }[]>()
 const grammarPointsCache = new Map<Category, { point: string; count: number }[]>()
 
+const BANK_FILES: Record<Category, string> = CATEGORIES.reduce(
+  (acc, c) => { acc[c.key] = c.bankFile; return acc },
+  {} as Record<Category, string>,
+)
+
 export function shuffleQuestionOptions(q: Question): Question {
+  if (q.multiAnswer) return q
   const correctOpt = q.options.find(o => o.key === q.answerKey)
   if (!correctOpt) return q
   const shuffled = shuffleArray(q.options)
@@ -25,23 +33,13 @@ export async function loadQuestionBank(category: Category = 'grammar'): Promise<
   const cached = cache.get(category)
   if (cached) return cached
   const base = import.meta.env.BASE_URL
-  const file = category === 'word'
-    ? `${base}word-question-bank.json`
-    : category === 'history'
-      ? `${base}history-question-bank.json`
-      : category === 'party'
-        ? `${base}party-question-bank.json`
-        : category === 'military'
-          ? `${base}military-question-bank.json`
-          : `${base}question-bank.json`
+  const file = `${base}${BANK_FILES[category]}`
   const resp = await fetch(file)
   if (!resp.ok) throw new Error(`无法加载题库 ${file}: ${resp.status}`)
   const raw: Question[] = await resp.json()
-  // For history/party/military: do NOT shuffle options, because multi-answer scoring
-  // depends on the original key positions and the user's selected-key string match.
-  // Shuffling would also detach the answer text from the displayed letters.
-  const noShuffle = category === 'history' || category === 'party' || category === 'military'
-  const questions: Question[] = noShuffle
+  // history/party/military 选项固定位置：多答案判分依赖原始 key 与 selected 字符串匹配，
+  // 打乱会让选项字母与答案文字错位。
+  const questions: Question[] = NO_SHUFFLE_CATEGORIES.has(category)
     ? raw.map((q) => ({ ...q, category: q.category || category }))
     : raw.map((q) => shuffleQuestionOptions({ ...q, category: q.category || category }))
   cache.set(category, questions)
@@ -147,3 +145,32 @@ export function searchQuestions(keyword: string): Question[] {
   }
   return results.slice(0, 50)
 }
+
+export async function getCategoryCounts(): Promise<Record<Category, number>> {
+  const entries = await Promise.all(
+    CATEGORIES.map(async (c) => [c.key, (await loadQuestionBank(c.key)).length] as const),
+  )
+  return entries.reduce((acc, [k, n]) => { acc[k] = n; return acc }, {} as Record<Category, number>)
+}
+
+// 把"题库 + 该分类相关 stats"打包，调用方一次返回，避免各页面各扫一遍。
+export interface RelevantData {
+  questions: Question[]
+  stats: QuestionStats[]
+  statsMap: Map<string, QuestionStats>
+}
+
+export async function getRelevantData(
+  category: Category,
+  allStats?: QuestionStats[],
+): Promise<RelevantData> {
+  const [questions, stats] = await Promise.all([
+    loadQuestionBank(category),
+    allStats ?? import('../db/database').then(m => m.db.questionStats.toArray()),
+  ])
+  const validIds = new Set(questions.map(q => q.id))
+  const filtered = stats.filter(s => validIds.has(s.questionId))
+  return { questions, stats: filtered, statsMap: new Map(filtered.map(s => [s.questionId, s])) }
+}
+
+export { toggleMultiSelect, isMultiAnswerCorrect, getCategoryMeta }

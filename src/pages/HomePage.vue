@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { loadQuestionBank, getAllTags, getAllGroups } from '../services/quizEngine'
+import { loadQuestionBank, getAllTags, getAllGroups, getCategoryMeta } from '../services/quizEngine'
 import { getWeakTags, getMasterySummary, getWrongQuestionIds, getUntouchedQuestionIds } from '../services/reviewScheduler'
 import { db } from '../db/database'
 import { loadActiveSession, clearActiveSession, isSessionInProgress, type ActiveSession } from '../services/sessionResume'
 import { useActiveCategory, loadActiveCategory } from '../services/categoryStore'
+import { GROUPED_CATEGORIES } from '../config/categories'
 import StatCard from '../components/StatCard.vue'
 import TagBadge from '../components/TagBadge.vue'
 import PageSkeleton from '../components/PageSkeleton.vue'
 import type { Recommendation } from '../services/reviewScheduler'
-import type { Question } from '../types/question'
+import type { Question, QuestionStats, QuizMode } from '../types/question'
 
 const router = useRouter()
 const activeCategory = useActiveCategory()
@@ -32,36 +33,53 @@ const groupStats = ref<Record<string, { total: number; done: number; attempts: n
 async function refresh() {
   loading.value = true
   const cat = activeCategory.value
-  const all = await loadQuestionBank(cat)
+  // 一次拿到题库 + 全表 stats，所有下游函数共享同一份数据，避免重复扫描
+  const [all, allStatsArr] = await Promise.all([
+    loadQuestionBank(cat),
+    db.questionStats.toArray(),
+  ])
   questions.value = all
   totalQuestions.value = all.length
 
   const validIds = new Set(all.map(q => q.id))
-  const allStatsArr = await db.questionStats.toArray()
-  const statsMap = new Map(allStatsArr.map(s => [s.questionId, s]))
+  const statsMap = new Map<string, QuestionStats>()
+  const relevantStats: QuestionStats[] = []
+  for (const s of allStatsArr) {
+    if (!validIds.has(s.questionId)) continue
+    statsMap.set(s.questionId, s)
+    relevantStats.push(s)
+  }
 
   doneCount.value = 0
   totalAttempts.value = 0
   totalCorrect.value = 0
   wrongCount.value = 0
-  for (const [id, s] of statsMap) {
-    if (!validIds.has(id)) continue
+  for (const s of relevantStats) {
     if (s.attemptCount > 0) doneCount.value++
     totalAttempts.value += s.attemptCount
     totalCorrect.value += s.correctCount
     if (s.wrongCount > 0) wrongCount.value++
   }
 
-  const recentAll = await db.attempts.orderBy('id').reverse().limit(100).toArray()
+  // recent 正确率：取 attempts 反向，按当前 category 过滤后再切片，
+  // 避免 limit(100) 拿到的全是其他 category 导致"近期正确率"失真
+  const recentAll = await db.attempts.orderBy('id').reverse().limit(500).toArray()
   const recent = recentAll.filter(a => validIds.has(a.questionId)).slice(0, 30)
   recentCorrectRate.value = recent.length > 0
     ? Math.round((recent.filter(a => a.isCorrect).length / recent.length) * 100)
     : 0
 
-  weakTags.value = await getWeakTags(cat)
-  mastery.value = await getMasterySummary(cat)
-  wrongIds.value = await getWrongQuestionIds(cat)
-  untouchedIds.value = await getUntouchedQuestionIds(cat)
+  // 4 个 reviewScheduler 函数共用一份 stats，避免再扫 4 次
+  const [weak, mast, wrong, untouched] = await Promise.all([
+    getWeakTags(cat, allStatsArr),
+    getMasterySummary(cat, allStatsArr),
+    getWrongQuestionIds(cat, allStatsArr),
+    getUntouchedQuestionIds(cat, allStatsArr),
+  ])
+  weakTags.value = weak
+  mastery.value = mast
+  wrongIds.value = wrong
+  untouchedIds.value = untouched
 
   const groups = getAllGroups(cat)
   const next: typeof groupStats.value = {}
@@ -83,7 +101,7 @@ async function refresh() {
       attempts: gAttempts,
       correct: gCorrect,
       wrong: gWrong,
-      wrongIds: wrongIds.value.filter(id => groupIds.has(id)),
+      wrongIds: wrong.filter(id => groupIds.has(id)),
       untouchedIds: groupQs.filter(q => !statsMap.get(q.id) || statsMap.get(q.id)!.attemptCount === 0).map(q => q.id),
     }
   }
@@ -102,7 +120,7 @@ onMounted(async () => {
 
 watch(activeCategory, () => { refresh() })
 
-function startQuiz(mode: string) {
+function startQuiz(mode: QuizMode | 'weakness') {
   const params: Record<string, string> = { mode }
   if (mode === 'wrong' && wrongIds.value.length > 0) {
     params.ids = wrongIds.value.join(',')
@@ -137,43 +155,25 @@ async function discardSession() {
   activeSession.value = null
 }
 
-const titleText = computed(() => {
-  if (activeCategory.value === 'word') return '日语单词题库'
-  if (activeCategory.value === 'history') return '中国近现代史'
-  if (activeCategory.value === 'party') return '中国共产党党史'
-  if (activeCategory.value === 'military') return '军事理论'
-  return '日语期末复习题库'
-})
+const meta = computed(() => getCategoryMeta(activeCategory.value))
+const isGroupView = computed(() => GROUPED_CATEGORIES.has(activeCategory.value))
+const titleText = computed(() => meta.value.long === '日语语法' ? '日语期末复习题库' : meta.value.long)
 const subtitleText = computed(() => {
-  if (activeCategory.value === 'word') return `${totalQuestions.value} 题 · 第26-36课 · 汉字 / 假名`
-  if (activeCategory.value === 'history') return `${totalQuestions.value} 题 · 11个刷题单 · 单选/多选/判断`
-  if (activeCategory.value === 'party') return `${totalQuestions.value} 题 · 7个刷题单 · 单选/多选/判断`
-  if (activeCategory.value === 'military') return `${totalQuestions.value} 题 · 22个刷题单 · 单选/多选/判断`
-  return `${totalQuestions.value} 题 · 10大题组 · 智能复习`
+  const n = totalQuestions.value
+  const k = activeCategory.value
+  if (k === 'word') return `${n} 题 · 第26-36课 · 汉字 / 假名`
+  if (k === 'history') return `${n} 题 · 11个刷题单 · 单选/多选/判断`
+  if (k === 'party') return `${n} 题 · 7个刷题单 · 单选/多选/判断`
+  if (k === 'military') return `${n} 题 · 22个刷题单 · 单选/多选/判断`
+  return `${n} 题 · 10大题组 · 智能复习`
 })
 const tagSectionTitle = computed(() => activeCategory.value === 'word' ? '按课/标签复习' : '按语法标签复习')
 const weakSectionTitle = computed(() => activeCategory.value === 'word' ? '薄弱课/标签' : '薄弱语法点')
 
-const isGroupView = computed(() =>
-  activeCategory.value === 'history' || activeCategory.value === 'party' || activeCategory.value === 'military',
-)
-
-const GROUP_ORDER: Record<string, string[]> = {
-  history: ['t0', 't1', 't2', 't3', 't5-1', 't5-2', 't5-3', 't5-4', 'hist-a', 'hist-b', 'hist-c'],
-  party: ['party-single', 'party-multi', 'party-judge', 'party-p1', 'party-p2', 'party-p3', 'party-p4'],
-  military: [
-    'military-ch1', 'military-ch2', 'military-ch3', 'military-ch4', 'military-ch5',
-    'military-ch6', 'military-ch7', 'military-ch8', 'military-ch9', 'military-ch10',
-    'military-ch11', 'military-ch12', 'military-ch13', 'military-ch14', 'military-ch15',
-    'military-ch16', 'military-ch17', 'military-ch18',
-    'military-p1', 'military-p2', 'military-p3', 'military-p4',
-  ],
-}
-
 const groupViewList = computed(() => {
   const cat = activeCategory.value
-  if (cat !== 'history' && cat !== 'party' && cat !== 'military') return []
-  const order = GROUP_ORDER[cat]
+  if (!GROUPED_CATEGORIES.has(cat)) return []
+  const order = meta.value.groupOrder || []
   const titles: Record<string, string> = {}
   for (const q of questions.value) titles[q.groupId] = q.groupTitle
   const groups = getAllGroups(cat)
@@ -194,27 +194,17 @@ const groupViewList = computed(() => {
   return ordered
 })
 
-const groupViewSectionTitle = computed(() => {
-  if (activeCategory.value === 'party') return '刷题单（按题型 / 按优先级）'
-  if (activeCategory.value === 'military') return '刷题单（按章节 / 按优先级）'
-  return '刷题单'
-})
-const groupViewHint = computed(() => {
-  if (activeCategory.value === 'party') return '每单独立计分。「按题型」组与「按优先级」组共享同一批题目，可任选节奏。'
-  if (activeCategory.value === 'military') return '每单独立计分。「按章节」组与「按优先级」组共享同一批题目；P1 必考核心建议先刷。'
-  return '每单独立计分，互不影响。机考模拟按试卷拆成 4 个独立组。'
-})
+const groupViewSectionTitle = computed(() => meta.value.groupViewTitle || '刷题单')
+const groupViewHint = computed(() => meta.value.groupViewHint || '')
 </script>
 <template>
   <div v-if="loading" class="home"><PageSkeleton type="card" /></div>
   <div v-else class="home">
-    <!-- Header -->
     <header class="home-header">
       <h1>{{ titleText }}</h1>
       <p class="subtitle">{{ subtitleText }}</p>
     </header>
 
-    <!-- Resume banner -->
     <div v-if="activeSession" class="resume-banner">
       <div class="resume-info">
         <span class="resume-title">继续上次</span>
@@ -226,7 +216,6 @@ const groupViewHint = computed(() => {
       </div>
     </div>
 
-    <!-- Stats -->
     <div class="stats-row">
       <StatCard label="待复习" :value="Math.max(5, wrongIds.length)" sub="优先复习错题" />
       <StatCard label="总进度" :value="`${doneCount}/${totalQuestions}`" sub="已做 / 总题数" />
@@ -235,7 +224,6 @@ const groupViewHint = computed(() => {
       <StatCard label="错题数" :value="wrongCount" sub="有待重刷" />
     </div>
 
-    <!-- Mastery bar -->
     <section class="section">
       <h2>掌握程度</h2>
       <div class="mastery-bar">
@@ -249,19 +237,17 @@ const groupViewHint = computed(() => {
       </div>
     </section>
 
-    <!-- Quick actions (grammar/word) -->
     <section class="section" v-if="!isGroupView">
       <h2>快速开始</h2>
       <div class="quick-actions">
         <button class="btn btn-accent" @click="startQuiz('sequential')">顺序刷题</button>
         <button class="btn btn-outline" @click="startQuiz('random')">随机刷题</button>
-        <button class="btn btn-outline" @click="startQuiz('untouched')" v-if="untouchedIds.length > 0">未做题 ({{ untouchedIds.length }})</button>
-        <button class="btn btn-outline danger" @click="startQuiz('wrong')" v-if="wrongIds.length > 0">错题重刷 ({{ wrongIds.length }})</button>
+        <button class="btn btn-outline" v-if="untouchedIds.length > 0" @click="startQuiz('untouched')">未做题 ({{ untouchedIds.length }})</button>
+        <button class="btn btn-outline danger" v-if="wrongIds.length > 0" @click="startQuiz('wrong')">错题重刷 ({{ wrongIds.length }})</button>
         <button class="btn btn-outline" @click="startQuiz('weakness')">弱点突破</button>
       </div>
     </section>
 
-    <!-- Weak tags -->
     <section class="section" v-if="weakTags.length > 0 && !isGroupView">
       <h2>{{ weakSectionTitle }}</h2>
       <div class="weak-list">
@@ -276,7 +262,6 @@ const groupViewHint = computed(() => {
       </div>
     </section>
 
-    <!-- Group cards (history/party/military) -->
     <section class="section" v-if="isGroupView">
       <h2>{{ groupViewSectionTitle }}</h2>
       <p class="section-hint">{{ groupViewHint }}</p>
@@ -301,7 +286,6 @@ const groupViewHint = computed(() => {
       </div>
     </section>
 
-    <!-- Tag cloud (grammar/word) -->
     <section class="section" v-if="!isGroupView">
       <h2>{{ tagSectionTitle }}</h2>
       <div class="tag-cloud">
@@ -313,12 +297,10 @@ const groupViewHint = computed(() => {
 <style scoped>
 .home { max-width: 900px; margin: 0 auto; }
 
-/* Header */
 .home-header { margin-bottom: 28px; }
 h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 4px; letter-spacing: 1px; }
 .subtitle { color: var(--text-secondary); font-size: 14px; }
 
-/* Resume banner */
 .resume-banner {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   padding: 14px 18px; margin-bottom: 24px; border: 1px solid var(--border);
@@ -329,17 +311,14 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin
 .resume-meta { font-size: 12px; color: var(--text-secondary); }
 .resume-actions { display: flex; gap: 8px; }
 
-/* Stats */
 .stats-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
 
-/* Section */
 .section { margin-bottom: 32px; }
 .section h2 {
   font-family: var(--font-display); font-size: 15px; font-weight: 600;
   margin-bottom: 14px; color: var(--text-primary);
 }
 
-/* Mastery bar */
 .mastery-bar { display: flex; height: 24px; overflow: hidden; margin-bottom: 8px; }
 .mastery-bar .seg {
   display: flex; align-items: center; justify-content: center;
@@ -354,10 +333,8 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin
   display: flex; gap: 20px; font-size: 12px; color: var(--text-muted);
 }
 
-/* Quick actions */
 .quick-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
-/* Weak list */
 .weak-list { display: flex; flex-direction: column; gap: 6px; }
 .weak-item {
   display: flex; align-items: center; gap: 14px; padding: 10px 14px;
@@ -372,10 +349,8 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin
 .weak-bar { height: 100%; transition: width .3s; }
 .weak-arrow { color: var(--text-muted); }
 
-/* Tag cloud */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 2px; }
 
-/* Group grid */
 .section-hint { color: var(--text-muted); font-size: 13px; margin-bottom: 16px; line-height: 1.6; }
 .group-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
 .group-card {

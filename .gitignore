@@ -28,6 +28,23 @@ repomix-output.xml
 *.repomix.xml
 .playwright-mcp/
 
+# Design/iteration artifacts — not source of truth
+# - 截图与页面快照（home-final.png、quiz-page-snapshot.yml 等）
+*-snapshot.md
+*-snapshot.yml
+*-screenshot.png
+home-final.png
+quiz-final.png
+homepage-redesign.png
+homepage-v2.png
+quiz-redesign.png
+party-p1-enriched.png
+landing-page-screenshot.png
+home-page.yml
+mobile-nav.yml
+quiz-after-submit.yml
+quiz-prev-test.yml
+
 # Secrets — never commit
 .env
 .env.*
