@@ -1,6 +1,6 @@
 # 贡献指南
 
-感谢你对 dlut-nihongo-quiz 的兴趣！本文档介绍如何参与贡献。
+感谢你对 DLUT 多学科复习题库（dlut-nihongo-quiz）的兴趣！本文档介绍如何参与贡献。
 
 ## 🐛 报告 Bug / 提建议
 
@@ -14,35 +14,27 @@
 
 ## 📝 添加 / 修改题目
 
-题库的 single source of truth 是 Markdown 文件。
+题库的 single source of truth 是 `data/raw/` 下的 Markdown 文件。**永远不要直接编辑 `public/*.json`** —— 它们是 parser 生成的。
 
-### 语法题
+本项目支持 5 个学科，每个学科有自己的源目录和 parser：
 
-1. 编辑 `data/raw/日语期末复习题目答案解析_题目选项在上版.md`
-2. 题目格式：
+| 学科 | 源 md | Parser 命令 |
+|---|---|---|
+| 日语语法 | `data/raw/日语期末复习题目答案解析_题目选项在上版.md` | `npm run parse:grammar` |
+| 日语单词 | `data/raw/日语汉字单词选择题-第XX-YY课.md` | `npm run parse:words` |
+| 中国近现代史 | `data/raw/history/*.md` | `npm run parse:history` |
+| 党史 | `data/raw/party/*.md` | `npm run parse:party` |
+| 军事理论 | `data/raw/military/*.md` | `npm run parse:military` |
 
-   ```markdown
-   ### 第N题
+完整流程（单选 / 多选 / 判断三种题型的 Markdown 格式、验证报告、新增学科的步骤、跨文件去重说明）在 **[docs/question-bank.md](docs/question-bank.md)**。
 
-   [题目正文]
+加题的快速 checklist：
 
-   A. 选项A
-   B. 选项B
-   C. 选项C
-   D. 选项D
-
-   答案：B
-
-   解析：[详细解析]
-   ```
-
-3. 运行 `npm run parse:grammar`
-4. 检查 `data/processed/validation-report.json` 是否有报错
-5. 提交：`git add data/raw public/question-bank.json data/processed/validation-report.json`
-
-### 单词题
-
-类似流程，编辑 `data/raw/日语汉字单词选择题-第XX-YY课.md`，运行 `npm run parse:words`。
+1. 编辑对应 md 文件
+2. 跑 `npm run parse:<category>`
+3. 检查 `data/processed/validation-report.json` 有没有报错
+4. `git add data/raw public/ data/processed/`
+5. commit 用 `content:` 前缀（见下方 Commit 规范）
 
 ## 💻 开发流程
 
@@ -51,7 +43,7 @@
 git clone https://github.com/<your-name>/dlut-nihongo-quiz.git
 cd dlut-nihongo-quiz
 
-# 2. 安装依赖（需 Node.js 18+）
+# 2. 安装依赖（需 Node.js 18+，CI 使用 Node 24）
 npm install
 
 # 3. 启动 dev server
