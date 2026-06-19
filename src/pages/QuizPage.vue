@@ -7,6 +7,7 @@ import { saveActiveSession, loadActiveSession, clearActiveSession, isSessionInPr
 import { useActiveCategory, loadActiveCategory, setActiveCategory } from '../services/categoryStore'
 import QuestionCard from '../components/QuestionCard.vue'
 import ProgressBar from '../components/ProgressBar.vue'
+import PageSkeleton from '../components/PageSkeleton.vue'
 import type { Question } from '../types/question'
 
 const route = useRoute()
@@ -25,6 +26,9 @@ const startTime = ref(0)
 const finished = ref(false)
 const bookmarked = ref(false)
 const startedAt = ref('')
+const elapsedTime = ref(0)
+const timerInterval = ref<ReturnType<typeof setInterval> | null>(null)
+const history = ref<Array<{ questionId: string; selectedKey: string; isCorrect: boolean }>>([])
 
 const currentQuestion = computed(() => questions.value[currentIndex.value] || null)
 const progress = computed(() => ({
@@ -32,6 +36,11 @@ const progress = computed(() => ({
   total: questions.value.length,
   correct: correctCount.value,
 }))
+const formattedTime = computed(() => {
+  const mins = Math.floor(elapsedTime.value / 60)
+  const secs = elapsedTime.value % 60
+  return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
+})
 
 function snapshot(submittedNow: boolean): ActiveSession {
   return {
@@ -44,6 +53,20 @@ function snapshot(submittedNow: boolean): ActiveSession {
     correctCount: correctCount.value,
     wrongList: [...wrongList.value],
     startedAt: startedAt.value,
+  }
+}
+
+function startTimer() {
+  stopTimer()
+  timerInterval.value = setInterval(() => {
+    if (!finished.value) elapsedTime.value++
+  }, 1000)
+}
+
+function stopTimer() {
+  if (timerInterval.value) {
+    clearInterval(timerInterval.value)
+    timerInterval.value = null
   }
 }
 
@@ -73,6 +96,8 @@ onMounted(async () => {
       submitted.value = false
       selectedKey.value = ''
       startTime.value = Date.now()
+      history.value = []
+      startTimer()
       return
     }
   }
@@ -122,6 +147,7 @@ onMounted(async () => {
   startTime.value = Date.now()
   startedAt.value = new Date().toISOString()
   await saveActiveSession(snapshot(false))
+  startTimer()
 })
 
 function handleSelect(key: string) {
@@ -147,6 +173,7 @@ async function handleSubmit() {
     : selectedKey.value === q.answerKey
   if (isCorrect) correctCount.value++
   else wrongList.value.push(q.id)
+  history.value.push({ questionId: q.id, selectedKey: selectedKey.value, isCorrect })
 
   const elapsedMs = Date.now() - startTime.value
   startTime.value = Date.now()
@@ -179,6 +206,7 @@ async function handleSubmit() {
 function handleNext() {
   if (currentIndex.value >= questions.value.length - 1) {
     finished.value = true
+    stopTimer()
     clearActiveSession()
     return
   }
@@ -187,6 +215,15 @@ function handleNext() {
   submitted.value = false
   startTime.value = Date.now()
   saveActiveSession(snapshot(false))
+}
+
+function handlePrev() {
+  if (currentIndex.value <= 0 || history.value.length === 0) return
+  history.value.pop()
+  currentIndex.value--
+  const prev = history.value[history.value.length - 1]
+  submitted.value = true
+  selectedKey.value = prev ? prev.selectedKey : ''
 }
 
 async function handleBookmark() {
@@ -227,11 +264,15 @@ function onKeydown(e: KeyboardEvent) {
     if (e.key === 'Enter' && selectedKey.value) handleSubmit()
   } else {
     if (e.key === 'Enter' || e.key === 'n' || e.key === 'N') handleNext()
+    if ((e.key === 'P' || e.key === 'p') && currentIndex.value > 0) handlePrev()
   }
 }
 
 onMounted(() => window.addEventListener('keydown', onKeydown))
-onUnmounted(() => window.removeEventListener('keydown', onKeydown))
+onUnmounted(() => {
+  window.removeEventListener('keydown', onKeydown)
+  stopTimer()
+})
 
 function restart() {
   currentIndex.value = 0
@@ -243,10 +284,12 @@ function restart() {
   sessionId.value = generateSessionId()
   startedAt.value = new Date().toISOString()
   questions.value = shuffleArray(questions.value)
+  history.value = []
+  elapsedTime.value = 0
   saveActiveSession(snapshot(false))
 }
 
-function goHome() { router.push('/') }
+function goHome() { router.push('/home') }
 </script>
 <template>
   <div class="quiz-page">
@@ -254,7 +297,11 @@ function goHome() { router.push('/') }
       <ProgressBar :current="progress.current" :total="progress.total" :correct="progress.correct" />
       <div class="quiz-info">
         <span>{{ mode }}</span>
-        <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题</span>
+        <span class="timer">{{ formattedTime }}</span>
+        <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题 · P 上一题</span>
+      </div>
+      <div v-if="submitted && currentIndex > 0" class="q-actions">
+        <button class="btn btn-outline" @click="handlePrev">上一题</button>
       </div>
       <QuestionCard
         :key="currentQuestion.id"
@@ -290,12 +337,20 @@ function goHome() { router.push('/') }
       </div>
     </div>
 
-    <div v-else class="empty">加载中...</div>
+    <div v-else class="empty"><PageSkeleton type="detail" /></div>
   </div>
 </template>
 <style scoped>
 .quiz-page { max-width: 760px; margin: 0 auto; }
 .quiz-info { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin: 8px 0 18px; }
+.timer { font-family: var(--font-mono); color: var(--text-secondary); }
+.q-actions { display: flex; gap: 8px; justify-content: center; margin-bottom: 16px; }
+
+.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
+.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-outline { background: transparent; color: var(--text-primary); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
 /* Finish */
 .finish-page { text-align: center; padding: 80px 20px; }
@@ -306,12 +361,6 @@ function goHome() { router.push('/') }
 .finish-details { margin-bottom: 32px; font-size: 15px; color: var(--text-secondary); }
 .finish-details p { margin: 4px 0; }
 .finish-actions { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-
-.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
-.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn-accent:hover { background: var(--accent-hover); }
-.btn-outline { background: transparent; color: var(--text-primary); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
 .empty { text-align: center; padding: 80px 20px; color: var(--text-muted); }
 </style>

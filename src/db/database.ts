@@ -84,7 +84,6 @@ export async function updateTagStats(tags: string[], isCorrect: boolean): Promis
         attemptCount: 1,
         correctCount: isCorrect ? 1 : 0,
         wrongCount: isCorrect ? 0 : 1,
-        questionIds: [],
       })
     }
   }

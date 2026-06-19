@@ -2,20 +2,21 @@
 import { ref, onMounted } from 'vue'
 import { exportData, importData, clearAllData, getSetting, setSetting } from '../db/database'
 import { loadQuestionBank } from '../services/quizEngine'
+import type { Category } from '../types/question'
 
 const darkMode = ref(false)
-const grammarCount = ref(0)
-const wordCount = ref(0)
+const counts = ref<Record<string, number>>({})
 const statusMsg = ref('')
 const confirmClear = ref(false)
 
 onMounted(async () => {
   darkMode.value = await getSetting('darkMode', false)
   applyTheme()
-  const g = await loadQuestionBank('grammar')
-  const w = await loadQuestionBank('word')
-  grammarCount.value = g.length
-  wordCount.value = w.length
+  const cats: Category[] = ['grammar', 'word', 'history', 'party', 'military']
+  for (const cat of cats) {
+    const qs = await loadQuestionBank(cat)
+    counts.value[cat] = qs.length
+  }
 })
 
 function applyTheme() {
@@ -26,6 +27,7 @@ async function toggleDark() {
   darkMode.value = !darkMode.value
   await setSetting('darkMode', darkMode.value)
   applyTheme()
+  localStorage.setItem('quiz-dark-mode', darkMode.value ? 'true' : 'false')
 }
 
 async function handleExport() {
@@ -71,6 +73,8 @@ async function handleClear() {
   statusMsg.value = '数据已清空'
   setTimeout(() => statusMsg.value = '', 2000)
 }
+
+const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
 </script>
 <template>
   <div class="settings-page">
@@ -80,10 +84,13 @@ async function handleClear() {
 
     <div class="section">
       <h2>题库信息</h2>
-      <div class="info-row"><span>语法题</span><span>{{ grammarCount }} 题</span></div>
-      <div class="info-row"><span>单词题</span><span>{{ wordCount }} 题</span></div>
-      <div class="info-row"><span>合计</span><span>{{ grammarCount + wordCount }} 题</span></div>
-      <div class="info-row"><span>版本</span><span>v1.1</span></div>
+      <div class="info-row"><span>日语语法</span><span>{{ counts.grammar || '—' }} 题</span></div>
+      <div class="info-row"><span>日语单词</span><span>{{ counts.word || '—' }} 题</span></div>
+      <div class="info-row"><span>中国近现代史</span><span>{{ counts.history || '—' }} 题</span></div>
+      <div class="info-row"><span>中国共产党党史</span><span>{{ counts.party || '—' }} 题</span></div>
+      <div class="info-row"><span>军事理论</span><span>{{ counts.military || '—' }} 题</span></div>
+      <div class="info-row total"><span>合计</span><span>{{ totalCount() }} 题</span></div>
+      <div class="info-row"><span>版本</span><span>v0.3.0</span></div>
     </div>
 
     <div class="section">
@@ -112,13 +119,23 @@ async function handleClear() {
       <h2>快捷键</h2>
       <div class="shortcut-list">
         <div class="shortcut"><kbd>A/B/C/D</kbd><span>选择选项</span></div>
+        <div class="shortcut"><kbd>E</kbd><span>多选第五选项</span></div>
         <div class="shortcut"><kbd>Enter</kbd><span>提交 / 下一题</span></div>
         <div class="shortcut"><kbd>N</kbd><span>下一题</span></div>
       </div>
     </div>
 
     <div class="section">
-      <router-link to="/">返回首页</router-link>
+      <h2>关于</h2>
+      <p class="about-text">
+        本平台整合了日语语法词汇、中国近现代史、党史、军事理论等学科的期末复习题库。
+        支持多种刷题模式、智能错题本、掌握度分析，所有数据存储在浏览器本地，无需联网。
+      </p>
+      <p class="about-links">
+        <a href="https://github.com/tianxingleo/dlut-nihongo-quiz" target="_blank">GitHub 仓库</a>
+        <span class="sep">·</span>
+        <span>Apache-2.0</span>
+      </p>
     </div>
   </div>
 </template>
@@ -131,6 +148,7 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
 .section h2 { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: var(--text-primary); }
 
 .info-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; color: var(--text-secondary); }
+.info-row.total { border-top: 1px solid var(--border); margin-top: 4px; padding-top: 10px; font-weight: 600; color: var(--text-primary); }
 
 .toggle-row {
   display: flex; justify-content: space-between; align-items: center;
@@ -144,12 +162,6 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
 }
 
 .action-row { display: flex; gap: 8px; margin-bottom: 8px; }
-.btn { padding: 9px 20px; border: 1px solid var(--border); font-size: 13px; transition: all .12s; }
-.btn-outline { background: transparent; color: var(--text-primary); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-.btn-outline.danger { color: var(--wrong); border-color: rgba(196,69,54,.3); }
-.btn-outline.danger:hover { background: #fdf5f4; border-color: var(--wrong); }
-
 .status { font-size: 13px; color: var(--accent); margin-top: 6px; }
 
 .shortcut-list { display: flex; flex-direction: column; gap: 6px; }
@@ -159,4 +171,9 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
   font-size: 12px; border: 1px solid var(--border); min-width: 64px; text-align: center;
 }
 .shortcut span { color: var(--text-secondary); }
+
+.about-text { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+.about-links { margin-top: 12px; font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+.about-links a { color: var(--accent); }
+.sep { color: var(--border); }
 </style>

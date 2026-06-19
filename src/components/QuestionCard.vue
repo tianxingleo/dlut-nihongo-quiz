@@ -205,12 +205,9 @@ const tagsSectionTitle = computed(() => props.question.category === 'word' ? 'ца
 
 /* Actions */
 .q-actions { display: flex; gap: 8px; margin-top: 22px; }
-.btn { padding: 9px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
-.btn:disabled { opacity: .35; cursor: not-allowed; }
-.btn-submit { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-submit { padding: 9px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-submit:disabled { opacity: .35; cursor: not-allowed; }
 .btn-submit:hover:not(:disabled) { background: var(--accent-hover); }
-.btn-ghost { background: transparent; color: var(--text-secondary); }
-.btn-ghost:hover { background: var(--bg-hover); color: var(--text-primary); }
 .bookmark-active { color: var(--warning); border-color: var(--warning); background: #fefdf6; }
 
 /* Result */

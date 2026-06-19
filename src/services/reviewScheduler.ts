@@ -1,5 +1,6 @@
 import type { Category } from '../types/question'
 import { db } from '../db/database'
+import { loadQuestionBank } from './quizEngine'
 
 export interface Recommendation {
   tag: string
@@ -11,10 +12,8 @@ export interface Recommendation {
 
 export async function getWeakTags(category: Category = 'grammar'): Promise<Recommendation[]> {
   const allTagStats = await db.tagStats.toArray()
-  const allQuestionStats = await db.questionStats.toArray()
-  const { loadQuestionBank } = await import('./quizEngine')
+
   const allQuestions = await loadQuestionBank(category)
-  const validIds = new Set(allQuestions.map(q => q.id))
   const tagsInBank = new Set<string>()
   for (const q of allQuestions) {
     for (const t of q.tags) tagsInBank.add(t)
@@ -22,13 +21,10 @@ export async function getWeakTags(category: Category = 'grammar'): Promise<Recom
   }
 
   const results: Recommendation[] = []
-  const relevantQuestionIds = new Set(allQuestionStats.filter(s => validIds.has(s.questionId)).map(s => s.questionId))
 
   for (const tagStat of allTagStats) {
     if (tagStat.attemptCount === 0) continue
     if (!tagsInBank.has(tagStat.tag)) continue
-    const hasRelevantQuestion = (tagStat.questionIds || []).some(id => relevantQuestionIds.has(id))
-    if (!hasRelevantQuestion && tagStat.questionIds.length > 0) continue
     const rate = tagStat.correctCount / tagStat.attemptCount
     results.push({
       tag: tagStat.tag,
@@ -44,7 +40,7 @@ export async function getWeakTags(category: Category = 'grammar'): Promise<Recom
 
 export async function getReviewQueue(category: Category = 'grammar'): Promise<string[]> {
   const allStats = await db.questionStats.toArray()
-  const { loadQuestionBank } = await import('./quizEngine')
+
   const allQuestions = await loadQuestionBank(category)
   const validIds = new Set(allQuestions.map(q => q.id))
 
@@ -66,14 +62,14 @@ export async function getReviewQueue(category: Category = 'grammar'): Promise<st
 
 export async function getWrongQuestionIds(category: Category = 'grammar'): Promise<string[]> {
   const stats = await db.questionStats.filter(s => s.wrongCount > s.correctCount || s.masteryLevel <= 2).toArray()
-  const { loadQuestionBank } = await import('./quizEngine')
+
   const allQuestions = await loadQuestionBank(category)
   const validIds = new Set(allQuestions.map(q => q.id))
   return stats.filter(s => validIds.has(s.questionId)).sort((a, b) => b.wrongCount - a.wrongCount).map(s => s.questionId)
 }
 
 export async function getUntouchedQuestionIds(category: Category = 'grammar'): Promise<string[]> {
-  const { loadQuestionBank } = await import('./quizEngine')
+
   const all = await loadQuestionBank(category)
   const stats = await db.questionStats.toArray()
   const attempted = new Set(stats.filter(s => s.attemptCount > 0).map(s => s.questionId))
@@ -82,7 +78,7 @@ export async function getUntouchedQuestionIds(category: Category = 'grammar'): P
 
 export async function getMasterySummary(category: Category = 'grammar'): Promise<{ mastered: number; learning: number; weak: number; untouched: number }> {
   const stats = await db.questionStats.toArray()
-  const { loadQuestionBank } = await import('./quizEngine')
+
   const allQuestions = await loadQuestionBank(category)
   const validIds = new Set(allQuestions.map(q => q.id))
   const relevantStats = stats.filter(s => validIds.has(s.questionId))

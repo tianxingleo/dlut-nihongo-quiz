@@ -3,19 +3,23 @@ import { ref, onMounted, computed, watch } from 'vue'
 import { loadQuestionBank, getAllGrammarPoints } from '../services/quizEngine'
 import { db } from '../db/database'
 import { useActiveCategory, loadActiveCategory } from '../services/categoryStore'
+import PageSkeleton from '../components/PageSkeleton.vue'
 import type { QuestionStats, Question } from '../types/question'
 
 const activeCategory = useActiveCategory()
 const questions = ref<Question[]>([])
 const stats = ref<QuestionStats[]>([])
 const viewMode = ref<'groups' | 'tags' | 'wrong'>('groups')
+const loading = ref(true)
 
 async function refresh() {
+  loading.value = true
   const cat = activeCategory.value
   questions.value = await loadQuestionBank(cat)
   const allStats = await db.questionStats.toArray()
   const validIds = new Set(questions.value.map(q => q.id))
   stats.value = allStats.filter(s => validIds.has(s.questionId))
+  loading.value = false
 }
 
 onMounted(async () => {
@@ -26,12 +30,13 @@ onMounted(async () => {
 watch(activeCategory, () => { refresh() })
 
 const groupAnalysis = computed(() => {
+  const statsMap = new Map(stats.value.map(s => [s.questionId, s]))
   const map = new Map<string, { total: number; done: number; correct: number; wrong: number }>()
   for (const q of questions.value) {
     if (!map.has(q.groupId)) map.set(q.groupId, { total: 0, done: 0, correct: 0, wrong: 0 })
     const g = map.get(q.groupId)!
     g.total++
-    const s = stats.value.find(st => st.questionId === q.id)
+    const s = statsMap.get(q.id)
     if (s && s.attemptCount > 0) {
       g.done++
       g.correct += s.correctCount
@@ -58,11 +63,12 @@ const tagAnalysis = computed(() => {
     return true
   }).slice(0, 15)
 
+  const statsMap = new Map(stats.value.map(s => [s.questionId, s]))
   return deduped.map(p => {
     const qs = questions.value.filter(q => q.grammarPoints.includes(p.point) || q.tags.includes(p.point))
     let correct = 0; let total = 0
     for (const q of qs) {
-      const s = stats.value.find(st => st.questionId === q.id)
+      const s = statsMap.get(q.id)
       if (s && s.attemptCount > 0) {
         total += s.attemptCount
         correct += s.correctCount
@@ -96,7 +102,10 @@ const tagTableHeader = computed(() => activeCategory.value === 'word' ? '课/标
 const tagTabLabel = computed(() => activeCategory.value === 'word' ? '按课/标签' : '按语法标签')
 </script>
 <template>
-  <div class="analysis-page">
+  <div v-if="loading" class="analysis-page analysis-loading">
+    <PageSkeleton type="list" />
+  </div>
+  <div v-else class="analysis-page">
     <header class="page-header">
       <h1>数据分析</h1>
     </header>

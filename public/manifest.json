@@ -1,0 +1,16 @@
+{
+  "name": "DLUT 题库 · 期末复习平台",
+  "short_name": "题库",
+  "description": "日语语法词汇 · 近代史 · 党史 · 军事理论一体化期末复习平台",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fafaf5",
+  "theme_color": "#c44536",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

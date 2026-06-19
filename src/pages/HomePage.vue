@@ -8,11 +8,13 @@ import { loadActiveSession, clearActiveSession, isSessionInProgress, type Active
 import { useActiveCategory, loadActiveCategory } from '../services/categoryStore'
 import StatCard from '../components/StatCard.vue'
 import TagBadge from '../components/TagBadge.vue'
+import PageSkeleton from '../components/PageSkeleton.vue'
 import type { Recommendation } from '../services/reviewScheduler'
 import type { Question } from '../types/question'
 
 const router = useRouter()
 const activeCategory = useActiveCategory()
+const loading = ref(true)
 const questions = ref<Question[]>([])
 const totalQuestions = ref(0)
 const doneCount = ref(0)
@@ -28,20 +30,27 @@ const activeSession = ref<ActiveSession | null>(null)
 const groupStats = ref<Record<string, { total: number; done: number; attempts: number; correct: number; wrong: number; wrongIds: string[]; untouchedIds: string[] }>>({})
 
 async function refresh() {
+  loading.value = true
   const cat = activeCategory.value
   const all = await loadQuestionBank(cat)
   questions.value = all
   totalQuestions.value = all.length
 
   const validIds = new Set(all.map(q => q.id))
-  const stats = await db.questionStats.toArray()
-  const statsMap = new Map(stats.map(s => [s.questionId, s]))
-  const relevant = stats.filter(s => validIds.has(s.questionId))
+  const allStatsArr = await db.questionStats.toArray()
+  const statsMap = new Map(allStatsArr.map(s => [s.questionId, s]))
 
-  doneCount.value = relevant.filter(s => s.attemptCount > 0).length
-  totalAttempts.value = relevant.reduce((sum, s) => sum + s.attemptCount, 0)
-  totalCorrect.value = relevant.reduce((sum, s) => sum + s.correctCount, 0)
-  wrongCount.value = relevant.filter(s => s.wrongCount > 0).length
+  doneCount.value = 0
+  totalAttempts.value = 0
+  totalCorrect.value = 0
+  wrongCount.value = 0
+  for (const [id, s] of statsMap) {
+    if (!validIds.has(id)) continue
+    if (s.attemptCount > 0) doneCount.value++
+    totalAttempts.value += s.attemptCount
+    totalCorrect.value += s.correctCount
+    if (s.wrongCount > 0) wrongCount.value++
+  }
 
   const recentAll = await db.attempts.orderBy('id').reverse().limit(100).toArray()
   const recent = recentAll.filter(a => validIds.has(a.questionId)).slice(0, 30)
@@ -59,15 +68,21 @@ async function refresh() {
   for (const g of groups) {
     const groupQs = all.filter(q => q.groupId === g.groupId)
     const groupIds = new Set(groupQs.map(q => q.id))
-    const rel = relevant.filter(s => groupIds.has(s.questionId))
-    const attempts = rel.reduce((sum, s) => sum + s.attemptCount, 0)
-    const correct = rel.reduce((sum, s) => sum + s.correctCount, 0)
+    let gDone = 0, gAttempts = 0, gCorrect = 0, gWrong = 0
+    for (const id of groupIds) {
+      const s = statsMap.get(id)
+      if (!s) continue
+      if (s.attemptCount > 0) gDone++
+      gAttempts += s.attemptCount
+      gCorrect += s.correctCount
+      if (s.wrongCount > 0) gWrong++
+    }
     next[g.groupId] = {
       total: g.count,
-      done: rel.filter(s => s.attemptCount > 0).length,
-      attempts,
-      correct,
-      wrong: rel.filter(s => s.wrongCount > 0).length,
+      done: gDone,
+      attempts: gAttempts,
+      correct: gCorrect,
+      wrong: gWrong,
       wrongIds: wrongIds.value.filter(id => groupIds.has(id)),
       untouchedIds: groupQs.filter(q => !statsMap.get(q.id) || statsMap.get(q.id)!.attemptCount === 0).map(q => q.id),
     }
@@ -77,6 +92,7 @@ async function refresh() {
   const saved = await loadActiveSession()
   activeSession.value = isSessionInProgress(saved) ? saved : null
   if (saved && !isSessionInProgress(saved)) await clearActiveSession()
+  loading.value = false
 }
 
 onMounted(async () => {
@@ -190,7 +206,8 @@ const groupViewHint = computed(() => {
 })
 </script>
 <template>
-  <div class="home">
+  <div v-if="loading" class="home"><PageSkeleton type="card" /></div>
+  <div v-else class="home">
     <!-- Header -->
     <header class="home-header">
       <h1>{{ titleText }}</h1>
@@ -336,19 +353,6 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin
 .mastery-legend {
   display: flex; gap: 20px; font-size: 12px; color: var(--text-muted);
 }
-
-/* Buttons */
-.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
-.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn-accent:hover { background: var(--accent-hover); }
-.btn-outline { background: transparent; color: var(--text-primary); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-.btn-outline.danger { color: var(--wrong); border-color: rgba(196,69,54,.3); }
-.btn-outline.danger:hover { background: #fdf5f4; border-color: var(--wrong); }
-.btn-ghost { background: transparent; color: var(--text-secondary); font-size: 13px; }
-.btn-ghost:hover { background: var(--bg-hover); }
-.btn-sm { padding: 5px 12px; font-size: 12px; }
-.btn:disabled { opacity: .3; cursor: not-allowed; }
 
 /* Quick actions */
 .quick-actions { display: flex; gap: 8px; flex-wrap: wrap; }

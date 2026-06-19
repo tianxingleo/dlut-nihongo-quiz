@@ -1,17 +1,35 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
+<script>
+  (function() {
+    try {
+      var theme = localStorage.getItem('quiz-dark-mode');
+      if (theme === 'true') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch(e) {}
+  })();
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="大连理工大学国际信息与软件学院大一下学期《大家的日语》第26-36课期末复习题库：刷题、错题本、统计分析。" />
+    <meta name="description" content="DLUT 期末复习一体化平台：日语语法词汇、中国近现代史、党史、军事理论题库，支持智能错题本、掌握度分析与多种刷题模式。" />
     <meta name="author" content="tianxingleo" />
-    <title>日语题库 · DLUT Nihongo Quiz</title>
+    <meta name="theme-color" content="#fafaf5" />
+    <title>题库 · DLUT 期末复习平台</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="manifest" href="manifest.json" />
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        const base = document.querySelector('base')?.getAttribute('href') || '/'
+        navigator.serviceWorker.register(base + 'sw.js', { scope: '/' })
+      }
+    </script>
   </body>
 </html>

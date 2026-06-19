@@ -52,7 +52,6 @@ export interface TagStats {
   attemptCount: number
   correctCount: number
   wrongCount: number
-  questionIds: string[]
 }
 
 export interface Session {

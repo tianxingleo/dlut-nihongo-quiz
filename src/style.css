@@ -90,3 +90,18 @@ input, select { font-family: var(--font-body); }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 #app { min-height: 100vh; }
+
+/* Button utility classes */
+.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; cursor: pointer; }
+.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-accent:disabled { opacity: .35; cursor: not-allowed; }
+.btn-outline { background: transparent; color: var(--text-primary); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-outline.danger { color: var(--wrong); border-color: rgba(196,69,54,.3); }
+.btn-outline.danger:hover { background: #fdf5f4; border-color: var(--wrong); }
+.btn-ghost { background: transparent; color: var(--text-secondary); font-size: 13px; }
+.btn-ghost:hover { background: var(--bg-hover); }
+.btn-sm { padding: 5px 12px; font-size: 12px; }
+.btn-lg { padding: 12px 32px; font-size: 15px; }
+.btn:disabled { opacity: .35; cursor: not-allowed; }

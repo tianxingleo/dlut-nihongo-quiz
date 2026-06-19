@@ -10,6 +10,10 @@ const router = useRouter()
 const activeCategory = useActiveCategory()
 const wrongItems = ref<{ questionId: string; stats: QuestionStats; stem: string; group: string }[]>([])
 const filter = ref<'all' | 'recent' | 'most-wrong'>('all')
+const currentPage = ref(1)
+const pageSize = ref(20)
+const confirmingId = ref<string | null>(null)
+let confirmTimeout: ReturnType<typeof setTimeout> | null = null
 
 async function refreshList() {
   const cat = activeCategory.value
@@ -29,12 +33,20 @@ onMounted(async () => {
 })
 
 watch(activeCategory, () => { refreshList() })
+watch(filter, () => { currentPage.value = 1 })
 
 const filteredItems = computed(() => {
   let items = [...wrongItems.value]
   if (filter.value === 'most-wrong') items.sort((a, b) => b.stats.wrongCount - a.stats.wrongCount)
   if (filter.value === 'recent') items.sort((a, b) => new Date(b.stats.lastAttemptAt).getTime() - new Date(a.stats.lastAttemptAt).getTime())
   return items
+})
+
+const totalPages = computed(() => Math.ceil(filteredItems.value.length / pageSize.value))
+
+const pagedItems = computed(() => {
+  const start = (currentPage.value - 1) * pageSize.value
+  return filteredItems.value.slice(start, start + pageSize.value)
 })
 
 function goReview(ids: string[]) {
@@ -44,6 +56,21 @@ function goReview(ids: string[]) {
 async function clearWrong(questionId: string) {
   await db.questionStats.update(questionId, { wrongCount: 0, masteryLevel: 3 })
   await refreshList()
+}
+
+function handleClearWrong(questionId: string) {
+  if (confirmingId.value === questionId) {
+    if (confirmTimeout) clearTimeout(confirmTimeout)
+    confirmTimeout = null
+    confirmingId.value = null
+    clearWrong(questionId)
+  } else {
+    confirmingId.value = questionId
+    if (confirmTimeout) clearTimeout(confirmTimeout)
+    confirmTimeout = setTimeout(() => {
+      confirmingId.value = null
+    }, 3000)
+  }
 }
 </script>
 <template>
@@ -65,7 +92,7 @@ async function clearWrong(questionId: string) {
 
     <div v-if="filteredItems.length === 0" class="empty">暂无错题，继续保持</div>
     <div v-else class="wrong-list">
-      <div v-for="item in filteredItems" :key="item.questionId" class="wrong-item">
+      <div v-for="item in pagedItems" :key="item.questionId" class="wrong-item">
         <div class="wi-main">
           <span class="wi-id">{{ item.questionId }}</span>
           <span class="wi-stem">{{ item.stem.substring(0, 50) }}{{ item.stem.length > 50 ? '...' : '' }}</span>
@@ -78,9 +105,19 @@ async function clearWrong(questionId: string) {
         </div>
         <div class="wi-actions">
           <button class="btn btn-outline btn-sm" @click="goReview([item.questionId])">刷这题</button>
-          <button class="btn btn-outline btn-sm" @click="clearWrong(item.questionId)">标记已掌握</button>
+          <button
+            class="btn btn-sm"
+            :class="confirmingId === item.questionId ? 'btn-confirm' : 'btn-outline'"
+            @click="handleClearWrong(item.questionId)"
+          >{{ confirmingId === item.questionId ? '确认' : '标记已掌握' }}</button>
         </div>
       </div>
+    </div>
+
+    <div v-if="filteredItems.length > pageSize" class="pagination">
+      <button class="btn btn-outline btn-sm" :disabled="currentPage <= 1" @click="currentPage--">上一页</button>
+      <span class="page-info">第 {{ currentPage }}/{{ totalPages }} 页</span>
+      <button class="btn btn-outline btn-sm" :disabled="currentPage >= totalPages" @click="currentPage++">下一页</button>
     </div>
   </div>
 </template>
@@ -97,14 +134,6 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
 }
 .filters button:hover { color: var(--text-primary); border-color: var(--text-primary); }
 .filters button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
-.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn-accent:hover { background: var(--accent-hover); }
-.btn-accent:disabled { opacity: .35; cursor: not-allowed; }
-.btn-outline { background: transparent; color: var(--text-secondary); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-.btn-sm { padding: 5px 14px; font-size: 12px; }
 
 .empty { text-align: center; padding: 80px 20px; color: var(--text-secondary); }
 
@@ -123,4 +152,18 @@ h1 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
 .badge.rate { border-color: rgba(184,134,11,.3); color: var(--warning); }
 .badge.level { border-color: var(--border); color: var(--text-secondary); }
 .wi-actions { display: flex; gap: 6px; }
+
+.btn { padding: 10px 22px; border: 1px solid var(--border); font-size: 14px; transition: all .12s; }
+.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent:hover { background: var(--accent-hover); }
+.btn-accent:disabled { opacity: .35; cursor: not-allowed; }
+.btn-outline { background: transparent; color: var(--text-secondary); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-sm { padding: 5px 14px; font-size: 12px; }
+
+.btn-confirm { background: var(--wrong); color: #fff; border-color: var(--wrong); }
+.btn-confirm:hover { opacity: .85; }
+
+.pagination { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 24px; padding: 16px 0; }
+.page-info { font-size: 13px; color: var(--text-secondary); }
 </style>
