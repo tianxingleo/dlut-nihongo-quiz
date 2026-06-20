@@ -22,10 +22,69 @@ const emit = defineEmits<{
   next: []
   prev: []
   bookmark: []
+  'swipe-prev': []
+  'swipe-next': []
 }>()
 
 const showExplanation = ref(false)
 const shareStatus = ref<'' | 'copied' | 'unsupported'>('')
+
+const dragOffset = ref(0)
+const dragActive = ref(false)
+let dragStartX = 0
+let dragStartY = 0
+let dragPointer: number | null = null
+let dragHorizontal: boolean | null = null
+const SWIPE_THRESHOLD = 56
+const SWIPE_THRESHOLD_MOBILE = 40
+const DRAG_LOCK = 10
+
+function isMobile() {
+  return typeof window !== 'undefined' && window.matchMedia('(max-width: 480px)').matches
+}
+
+function onPointerDown(e: PointerEvent) {
+  if (e.pointerType === 'mouse' && e.button !== 0) return
+  dragStartX = e.clientX
+  dragStartY = e.clientY
+  dragPointer = e.pointerId
+  dragHorizontal = null
+  dragOffset.value = 0
+  dragActive.value = false
+}
+
+function onPointerMove(e: PointerEvent) {
+  if (dragPointer !== e.pointerId) return
+  const dx = e.clientX - dragStartX
+  const dy = e.clientY - dragStartY
+  if (dragHorizontal === null) {
+    if (Math.abs(dx) < DRAG_LOCK && Math.abs(dy) < DRAG_LOCK) return
+    dragHorizontal = Math.abs(dx) > Math.abs(dy)
+    if (dragHorizontal) {
+      dragActive.value = true
+      ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
+    } else {
+      dragPointer = null
+      return
+    }
+  }
+  if (!dragHorizontal) return
+  dragOffset.value = dx
+}
+
+function onPointerUp(e: PointerEvent) {
+  if (dragPointer !== e.pointerId) return
+  const wasActive = dragActive.value
+  const offset = dragOffset.value
+  dragPointer = null
+  dragActive.value = false
+  dragOffset.value = 0
+  if (!wasActive) return
+  const threshold = isMobile() ? SWIPE_THRESHOLD_MOBILE : SWIPE_THRESHOLD
+  if (Math.abs(offset) < threshold) return
+  if (offset > 0) emit('swipe-prev')
+  else emit('swipe-next')
+}
 
 async function handleShare() {
   const url = `${location.origin}${location.pathname}#/quiz?ids=${props.question.id}`
@@ -105,9 +164,25 @@ const subTypeLabel = computed(() => {
 })
 
 const tagsSectionTitle = computed(() => (props.question.category === 'word' ? '标签' : '考点'))
+
+const cardStyle = computed(() => ({
+  transform: dragOffset.value ? `translateX(${dragOffset.value}px)` : '',
+}))
+const dragOpacity = computed(() => {
+  if (!dragActive.value) return 1
+  return Math.max(0.45, 1 - Math.abs(dragOffset.value) / 320)
+})
 </script>
 <template>
-  <div class="question-card">
+  <div
+    class="question-card"
+    :class="{ dragging: dragActive }"
+    :style="[{ opacity: dragOpacity }, cardStyle]"
+    @pointerdown="onPointerDown"
+    @pointermove="onPointerMove"
+    @pointerup="onPointerUp"
+    @pointercancel="onPointerUp"
+  >
     <div class="q-header">
       <span class="q-id">{{ question.id }}</span>
       <span class="q-group">{{ question.groupTitle }}</span>
@@ -209,6 +284,12 @@ const tagsSectionTitle = computed(() => (props.question.category === 'word' ? '�
         <div class="exp-text" v-html="renderExplanation(question.explanation)" />
       </div>
     </div>
+
+    <div class="swipe-hint" aria-hidden="true">
+      <span class="swipe-arrow prev">‹</span>
+      <span class="swipe-label">左右滑动 / 拖拽题号 切换题目</span>
+      <span class="swipe-arrow next">›</span>
+    </div>
   </div>
 </template>
 <style scoped>
@@ -218,6 +299,19 @@ const tagsSectionTitle = computed(() => (props.question.category === 'word' ? '�
   padding: 28px;
   max-width: 720px;
   margin: 0 auto;
+  transition:
+    transform 0.22s ease,
+    opacity 0.22s ease;
+  touch-action: pan-y;
+  will-change: transform, opacity;
+}
+.question-card.dragging {
+  transition: none;
+  cursor: grabbing;
+  touch-action: none;
+}
+.question-card.dragging :where(.opt-btn, .btn, button) {
+  pointer-events: none;
 }
 
 /* Header */
@@ -254,6 +348,8 @@ const tagsSectionTitle = computed(() => (props.question.category === 'word' ? '�
   color: var(--text-primary);
   margin-bottom: 14px;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .q-stem :deep(strong) {
   font-weight: 700;
@@ -330,6 +426,9 @@ const tagsSectionTitle = computed(() => (props.question.category === 'word' ? '�
 }
 .opt-text {
   flex: 1;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 .opt-icon {
   font-weight: 700;
@@ -353,6 +452,7 @@ const tagsSectionTitle = computed(() => (props.question.category === 'word' ? '�
   display: flex;
   gap: 8px;
   margin-top: 22px;
+  flex-wrap: wrap;
 }
 .btn-submit {
   padding: 9px 22px;
@@ -425,5 +525,63 @@ const tagsSectionTitle = computed(() => (props.question.category === 'word' ? '�
 .tag-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .question-card {
+    padding: 18px 14px;
+  }
+  .q-header {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    font-size: 12px;
+  }
+  .q-stem {
+    font-size: 16px;
+  }
+  .opt-btn {
+    padding: 10px 12px;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .q-actions {
+    gap: 6px;
+  }
+  .q-actions .btn,
+  .btn-submit {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  .result-line {
+    font-size: 14px;
+  }
+}
+
+.swipe-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+.swipe-arrow {
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.6;
+  font-family: var(--font-mono);
+}
+.swipe-label {
+  opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+  .swipe-hint {
+    margin-top: 14px;
+  }
 }
 </style>

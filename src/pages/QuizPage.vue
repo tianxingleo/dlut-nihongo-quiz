@@ -7,6 +7,7 @@ import {
   shuffleArray,
   generateSessionId,
   isMultiAnswerCorrect,
+  filterVisibleQuestions,
 } from '../services/quizEngine'
 import {
   recordAttempt,
@@ -23,7 +24,9 @@ import {
   type ActiveSession,
 } from '../services/sessionResume'
 import { useActiveCategory, loadActiveCategory, setActiveCategory } from '../services/categoryStore'
+import { useHiddenSite } from '../composables/useHiddenSite'
 import QuestionCard from '../components/QuestionCard.vue'
+import QuestionNavigator from '../components/QuestionNavigator.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import PageSkeleton from '../components/PageSkeleton.vue'
 import type { Question, QuizMode } from '../types/question'
@@ -31,6 +34,7 @@ import type { Question, QuizMode } from '../types/question'
 const route = useRoute()
 const router = useRouter()
 const activeCategory = useActiveCategory()
+const { isUnlocked } = useHiddenSite()
 
 const questions = ref<Question[]>([])
 const currentIndex = ref(0)
@@ -47,6 +51,16 @@ const startedAt = ref('')
 const elapsedTime = ref(0)
 const timerInterval = ref<ReturnType<typeof setInterval> | null>(null)
 const history = ref<Array<{ questionId: string; selectedKey: string; isCorrect: boolean }>>([])
+const drafts = ref<Map<number, string>>(new Map())
+const slideDirection = ref<'slide-left' | 'slide-right'>('slide-left')
+
+type CellStatus = 'correct' | 'wrong' | 'draft' | 'unanswered'
+
+function statusOf(i: number): CellStatus {
+  const h = history.value[i]
+  if (h) return h.isCorrect ? 'correct' : 'wrong'
+  return drafts.value.has(i) ? 'draft' : 'unanswered'
+}
 
 const currentQuestion = computed(() => questions.value[currentIndex.value] || null)
 const progress = computed(() => ({
@@ -104,7 +118,7 @@ function resolveMode(all: Question[]): {
     return {
       poolMode: 'tag',
       displayMode: `tag: ${tag}`,
-      pool: getQuestionsByTag(tag, activeCategory.value),
+      pool: filterVisibleQuestions(getQuestionsByTag(tag, activeCategory.value), isUnlocked.value),
     }
   }
 
@@ -151,7 +165,8 @@ onMounted(async () => {
     }
   }
   const cat = activeCategory.value
-  const all = await loadQuestionBank(cat)
+  // 表站未解锁时剔除里站题（g11/g21–g28）。里站入口设了 subBank 后 isUnlocked 必为 true，no-op。
+  const all = filterVisibleQuestions(await loadQuestionBank(cat), isUnlocked.value)
 
   if (route.query.resume === '1') {
     const saved = await loadActiveSession()
@@ -240,8 +255,13 @@ async function handleSubmit() {
   } else {
     if (isCorrect) correctCount.value++
     else wrongList.value.push(q.id)
-    history.value.push({ questionId: q.id, selectedKey: selectedKey.value, isCorrect })
+    history.value[currentIndex.value] = {
+      questionId: q.id,
+      selectedKey: selectedKey.value,
+      isCorrect,
+    }
   }
+  drafts.value.delete(currentIndex.value)
 
   const elapsedMs = Date.now() - startTime.value
   startTime.value = Date.now()
@@ -272,6 +292,32 @@ async function handleSubmit() {
   await saveActiveSession(snapshot(true))
 }
 
+function saveCurrentDraft() {
+  if (!submitted.value && selectedKey.value) {
+    drafts.value.set(currentIndex.value, selectedKey.value)
+  } else if (submitted.value) {
+    drafts.value.delete(currentIndex.value)
+  }
+}
+
+async function jumpTo(i: number) {
+  if (i === currentIndex.value || i < 0 || i >= questions.value.length) return
+  saveCurrentDraft()
+  slideDirection.value = i > currentIndex.value ? 'slide-left' : 'slide-right'
+  currentIndex.value = i
+  const h = history.value[i]
+  submitted.value = false
+  selectedKey.value = h ? h.selectedKey : (drafts.value.get(i) ?? '')
+  startTime.value = Date.now()
+  await saveActiveSession(snapshot(false))
+}
+
+async function goOffset(delta: number) {
+  const next = currentIndex.value + delta
+  if (next < 0 || next >= questions.value.length) return
+  await jumpTo(next)
+}
+
 async function handleNext() {
   if (currentIndex.value >= questions.value.length - 1) {
     finished.value = true
@@ -279,21 +325,26 @@ async function handleNext() {
     await clearActiveSession()
     return
   }
-  currentIndex.value++
-  selectedKey.value = ''
-  submitted.value = false
-  startTime.value = Date.now()
-  await saveActiveSession(snapshot(false))
+  slideDirection.value = 'slide-left'
+  await jumpTo(currentIndex.value + 1)
 }
 
 async function handlePrev() {
   if (currentIndex.value <= 0) return
-  currentIndex.value--
-  // 保留历史答案，但允许修改：submitted=false 让选项可点；handleSubmit 检测到 existing 后会替换。
-  const prev = history.value[currentIndex.value]
-  submitted.value = false
-  selectedKey.value = prev ? prev.selectedKey : ''
-  startTime.value = Date.now()
+  slideDirection.value = 'slide-right'
+  await jumpTo(currentIndex.value - 1)
+}
+
+function handleSwipePrev() {
+  if (currentIndex.value <= 0) return
+  void handlePrev()
+}
+
+function handleSwipeNext() {
+  if (currentIndex.value >= questions.value.length - 1) {
+    return
+  }
+  void handleNext()
 }
 
 async function handleBookmark() {
@@ -350,6 +401,7 @@ async function restart() {
   startedAt.value = new Date().toISOString()
   questions.value = shuffleArray(questions.value)
   history.value = []
+  drafts.value.clear()
   elapsedTime.value = 0
   await saveActiveSession(snapshot(false))
 }
@@ -365,27 +417,39 @@ function goHome() {
         :current="progress.current"
         :total="progress.total"
         :correct="progress.correct"
+        :current-index="currentIndex"
+        @scrub="jumpTo"
+      />
+      <QuestionNavigator
+        :current-index="currentIndex"
+        :total="questions.length"
+        :status-of="statusOf"
+        @jump="jumpTo"
       />
       <div class="quiz-info">
         <span>{{ mode }}</span>
         <span class="timer">{{ formattedTime }}</span>
         <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题 · P 上一题</span>
       </div>
-      <QuestionCard
-        :key="currentQuestion.id"
-        :question="currentQuestion"
-        :selected-key="selectedKey"
-        :submitted="submitted"
-        :mode="mode"
-        :question-index="currentIndex"
-        :total-questions="questions.length"
-        :bookmarked="bookmarked"
-        @select="handleSelect"
-        @submit="handleSubmit"
-        @next="handleNext"
-        @prev="handlePrev"
-        @bookmark="handleBookmark"
-      />
+      <Transition :name="slideDirection" mode="out-in">
+        <QuestionCard
+          :key="currentQuestion.id"
+          :question="currentQuestion"
+          :selected-key="selectedKey"
+          :submitted="submitted"
+          :mode="mode"
+          :question-index="currentIndex"
+          :total-questions="questions.length"
+          :bookmarked="bookmarked"
+          @select="handleSelect"
+          @submit="handleSubmit"
+          @next="handleNext"
+          @prev="handlePrev"
+          @bookmark="handleBookmark"
+          @swipe-prev="handleSwipePrev"
+          @swipe-next="handleSwipeNext"
+        />
+      </Transition>
     </template>
 
     <div v-else-if="finished" class="finish-page">
@@ -425,6 +489,49 @@ function goHome() {
   font-size: 12px;
   color: var(--text-muted);
   margin: 8px 0 18px;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+/* slide transitions for question switching */
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition:
+    transform 0.26s cubic-bezier(0.22, 0.68, 0.25, 1),
+    opacity 0.22s ease;
+}
+.slide-left-enter-from {
+  transform: translateX(38px);
+  opacity: 0;
+}
+.slide-left-leave-to {
+  transform: translateX(-38px);
+  opacity: 0;
+}
+.slide-right-enter-from {
+  transform: translateX(-38px);
+  opacity: 0;
+}
+.slide-right-leave-to {
+  transform: translateX(38px);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-left-enter-active,
+  .slide-left-leave-active,
+  .slide-right-enter-active,
+  .slide-right-leave-active {
+    transition: opacity 0.12s ease;
+  }
+  .slide-left-enter-from,
+  .slide-left-leave-to,
+  .slide-right-enter-from,
+  .slide-right-leave-to {
+    transform: none;
+  }
 }
 .timer {
   font-family: var(--font-mono);
@@ -500,5 +607,33 @@ function goHome() {
   text-align: center;
   padding: 80px 20px;
   color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .quiz-page {
+    padding: 0 8px;
+  }
+  .quiz-info {
+    font-size: 11px;
+  }
+  .quiz-info span:nth-child(3) {
+    display: none;
+  }
+  .finish-page {
+    padding: 48px 16px;
+  }
+  .finish-page h2 {
+    font-size: 20px;
+  }
+  .finish-pct {
+    font-size: 56px;
+  }
+  .finish-details {
+    font-size: 14px;
+  }
+  .finish-actions .btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
 }
 </style>
