@@ -5,6 +5,15 @@ const path = require('path')
 const bankPath = path.join(__dirname, '..', 'public', 'question-bank.json')
 const existing = JSON.parse(fs.readFileSync(bankPath, 'utf-8'))
 
+// 阅读理解 Q78-Q80 share the same 花屋 (flower shop) passage. Embed it in
+// every stem so each question can stand alone on the quiz page.
+const HANAYA_ARTICLE = [
+  '最近、近所の花屋が閉店した。30年以上も「町の花屋さん」として愛着されてきた店だ。',
+  'この店がオープンしたのは、わたしがまだ小学校に入る前だった。わたしにとって、①店の思い出はそのまま子どものころの思い出と重なる。家族の誕生日や家にお客さんが来る時などには、母と一緒にこの店で花を買っていた。',
+  '小学校を卒業する時には、こんなことがあった。クラス全員でお金を出し合い、担任の先生に花束をおくることになった。「お礼の気持ちを表すために、見たことのないほど大きいのをおくろう」とわたしたちは話し合った。しかし、小学生のおこづかいの中集まったお金は少しだけだった。それで、②わたしたちはどきどきしながら、「大好きな先生にあげるから、できるだけ大きい花束を作ってください」とお願いした。おじさんは嫌な顔もしないで、特別大きなバラの花束を作ってくれた。',
+  '30年以上もきれいな花束を作り続け、あたたかい思い出を作ってくれたおじさんに、「ありがとう、お疲れ様でした。」と言いたい。',
+].join('\n\n')
+
 const newQuestions = [
   // ===== Q1-10: 汉字读音选择 =====
   {
@@ -1032,7 +1041,7 @@ const newQuestions = [
   },
   {
     id: 'g11-q79', groupId: 'g11', groupTitle: '2021年真题', numberInGroup: 79,
-    stem: '**「わたしたちはどきどきしながら」とあるが、どうしてどきどきしたのか。**\n（题干承接上题花屋文章）',
+    stem: `${HANAYA_ARTICLE}\n\n**「わたしたちはどきどきしながら」とあるが、どうしてどきどきしたのか。**`,
     options: [
       { key: 'A', text: '嫌そうな顔をしているおじさんに、無理なお願いをするから' },
       { key: 'B', text: 'もうすぐ閉店する花屋のおじさんに、無理なお願いをするから' },
@@ -1047,7 +1056,7 @@ const newQuestions = [
   },
   {
     id: 'g11-q80', groupId: 'g11', groupTitle: '2021年真题', numberInGroup: 80,
-    stem: '**この文章を書いた人が一番伝えたいことは何か。**\n（题干承接上题花屋文章）',
+    stem: `${HANAYA_ARTICLE}\n\n**この文章を書いた人が一番伝えたいことは何か。**`,
     options: [
       { key: 'A', text: '大好きだった花屋さんが閉店するので、さびしいと思う。' },
       { key: 'B', text: 'よい思い出を作ってくれた花屋のおじさんへの感謝の気持ち' },

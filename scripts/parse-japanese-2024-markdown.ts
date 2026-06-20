@@ -137,9 +137,81 @@ function tagQuestion(q: RawQuestion): { grammarPoints: string[]; tags: string[] 
   return { grammarPoints: [...new Set(grammarPoints)], tags: [...new Set(tags)] }
 }
 
+// Walk the raw markdown once and figure out which passage (文章) applies to
+// each question. Two patterns matter:
+//   1. 题组七 完形填空: a single shared article lives under `**文章：**`
+//      before any `### 第N题`. It applies to every question in the group.
+//   2. 题组八 阅读理解: each `### 文章（X）` block introduces a passage
+//      that applies to every subsequent question until the next `### 文章（Y）`.
+// Articles are prepended to question stems so the quiz page shows the full
+// passage instead of just the one-line prompt.
+function extractArticles(content: string): Map<number, string> {
+  const map = new Map<number, string>()
+  const lines = content.split('\n')
+  let currentArticle = ''
+  let inArticle = false
+
+  const flushTo = (qNum: number) => {
+    const body = currentArticle.trim()
+    if (body) map.set(qNum, body)
+  }
+
+  for (const raw of lines) {
+    const trimmed = raw.trim()
+
+    // Any ## header (new group, answer summary, etc.) resets the article.
+    if (/^##\s/.test(trimmed)) {
+      currentArticle = ''
+      inArticle = false
+      continue
+    }
+
+    // Shared article declaration: **文章：**
+    if (/^\*\*文章[：:]\*\*$/.test(trimmed)) {
+      inArticle = true
+      currentArticle = ''
+      continue
+    }
+
+    // Per-article declaration: ### 文章（X）
+    if (/^###\s+文章[（(]/.test(trimmed)) {
+      inArticle = true
+      currentArticle = ''
+      continue
+    }
+
+    // Question marker: attach current article (if any), keep it sticky so the
+    // next question without a new `### 文章` declaration inherits the same
+    // passage.
+    const qMatch = trimmed.match(/^###\s+第(\d+)题/)
+    if (qMatch) {
+      flushTo(parseInt(qMatch[1]))
+      inArticle = false
+      continue
+    }
+
+    // Horizontal rule ends the article body but keeps the accumulated text
+    // attached for the next question.
+    if (trimmed === '---') {
+      inArticle = false
+      continue
+    }
+
+    if (inArticle) {
+      // Preserve the original line (including blank lines) so markdown
+      // constructs like tables — which rely on consecutive `|...|` rows —
+      // survive into the rendered stem.
+      currentArticle += raw + '\n'
+    }
+  }
+
+  return map
+}
+
 function parseMarkdown(filePath: string): RawQuestion[] {
   const content = fs.readFileSync(filePath, 'utf-8')
   const questions: RawQuestion[] = []
+  const articleByQ = extractArticles(content)
 
   let currentGroupId = 'g00'
   let currentGroupTitle = ''
@@ -275,11 +347,13 @@ function parseMarkdown(filePath: string): RawQuestion[] {
     cleanStem = cleanStem.replace(/^[\s\n]+/, '').trim()
 
     if (cleanStem && options.length >= 2 && answerKey) {
+      const article = articleByQ.get(num)
+      const stemWithArticle = article ? `${article}\n\n${cleanStem}` : cleanStem
       questions.push({
         groupId: currentGroupId,
         groupTitle: currentGroupTitle,
         numberInGroup: num,
-        stem: cleanStem,
+        stem: stemWithArticle,
         options,
         answerKey,
         answerText: answerText || options.find((o) => o.key === answerKey)?.text || '',
