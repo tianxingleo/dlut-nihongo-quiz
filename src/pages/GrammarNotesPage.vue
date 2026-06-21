@@ -144,7 +144,7 @@ const subtitle = computed(() => {
     <header class="grammar-header">
       <div class="title-row">
         <h1>核心语法整理</h1>
-        <span class="meta-chip">第 26–36 课</span>
+        <span class="meta-chip">第 26–36 课 + 查漏补缺</span>
       </div>
       <p class="subtitle">{{ subtitle }}</p>
     </header>

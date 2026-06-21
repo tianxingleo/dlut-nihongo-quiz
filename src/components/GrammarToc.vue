@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
+
 interface TocItem {
   id: string
   text: string
   level: 2 | 3
 }
-defineProps<{
+
+interface TocSection {
+  item: TocItem
+  children: TocItem[]
+}
+
+const props = defineProps<{
   items: TocItem[]
   activeId: string
 }>()
@@ -12,25 +20,82 @@ defineProps<{
 const emit = defineEmits<{
   navigate: [id: string]
 }>()
+
+const collapsed = ref<Record<string, boolean>>({})
+
+const sections = computed<TocSection[]>(() => {
+  const result: TocSection[] = []
+  let current: TocSection | null = null
+  for (const item of props.items) {
+    if (item.level === 2) {
+      if (current) result.push(current)
+      current = { item, children: [] }
+    } else if (current) {
+      current.children.push(item)
+    }
+  }
+  if (current) result.push(current)
+  return result
+})
+
+function toggle(id: string) {
+  collapsed.value = { ...collapsed.value, [id]: !collapsed.value[id] }
+}
+
+function isActive(id: string) {
+  return props.activeId === id
+}
 </script>
 <template>
   <nav class="grammar-toc" aria-label="语法目录">
     <div class="toc-header">目录</div>
     <ul class="toc-list">
-      <li
-        v-for="item in items"
-        :key="item.id"
-        :class="['toc-item', `level-${item.level}`, { active: item.id === activeId }]"
-      >
-        <button
-          type="button"
-          class="toc-link"
-          :title="item.text"
-          @click="emit('navigate', item.id)"
+      <template v-for="section in sections" :key="section.item.id">
+        <li
+          :class="['toc-item', 'level-2', 'toc-section', { active: isActive(section.item.id) }]"
         >
-          {{ item.text }}
-        </button>
-      </li>
+          <div class="toc-section-head">
+            <button
+              type="button"
+              class="toc-link toc-parent"
+              :title="section.item.text"
+              @click="emit('navigate', section.item.id)"
+            >
+              {{ section.item.text }}
+            </button>
+            <button
+              v-if="section.children.length"
+              type="button"
+              class="toc-toggle"
+              :class="{ open: !collapsed[section.item.id] }"
+              @click.stop="toggle(section.item.id)"
+              :aria-label="collapsed[section.item.id] ? '展开' : '折叠'"
+            >
+              <span class="toggle-icon" />
+            </button>
+          </div>
+          <ul
+            v-if="section.children.length"
+            class="toc-children"
+            :class="{ collapsed: collapsed[section.item.id] }"
+          >
+            <li
+              v-for="child in section.children"
+              :key="child.id"
+              :class="['toc-item', 'level-3', { active: isActive(child.id) }]"
+            >
+              <button
+                type="button"
+                class="toc-link"
+                :title="child.text"
+                @click="emit('navigate', child.id)"
+              >
+                {{ child.text }}
+              </button>
+            </li>
+          </ul>
+        </li>
+      </template>
     </ul>
   </nav>
 </template>
@@ -58,6 +123,49 @@ const emit = defineEmits<{
 .toc-item {
   margin: 0;
 }
+
+.toc-section-head {
+  display: flex;
+  align-items: center;
+}
+.toc-parent {
+  flex: 1;
+  min-width: 0;
+}
+
+.toc-toggle {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  margin-right: 2px;
+  font-size: 10px;
+  line-height: 1;
+  transition: color 0.12s;
+}
+.toc-toggle:hover {
+  color: var(--text-primary);
+}
+.toggle-icon {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  transition: transform 0.15s;
+}
+.toc-toggle.open .toggle-icon {
+  transform: rotate(-180deg);
+}
+
 .toc-link {
   display: block;
   width: 100%;
@@ -83,10 +191,22 @@ const emit = defineEmits<{
   color: var(--text-primary);
   background: var(--bg-hover);
 }
+.toc-item.active > .toc-section-head > .toc-parent,
 .toc-item.active > .toc-link {
   color: var(--accent);
   font-weight: 500;
   border-left-color: var(--accent);
+}
+.toc-children {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  max-height: 600px;
+}
+.toc-children.collapsed {
+  max-height: 0;
 }
 .toc-item.level-3 > .toc-link {
   font-size: 12px;
