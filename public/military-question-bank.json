@@ -69,6 +69,58 @@
     "questionType": "judgement"
   },
   {
+    "id": "military-ch1-q00023",
+    "category": "military",
+    "groupId": "military-ch1",
+    "groupTitle": "军理 · 第一章 中国国防",
+    "numberInGroup": 23,
+    "stem": "公民的国防义务包括（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "服兵役"
+      },
+      {
+        "key": "B",
+        "text": "维护国家统一和安全"
+      },
+      {
+        "key": "C",
+        "text": "保护国防设施"
+      },
+      {
+        "key": "D",
+        "text": "保守国家军事机密"
+      },
+      {
+        "key": "E",
+        "text": "接受国防教育"
+      },
+      {
+        "key": "F",
+        "text": "协助国防活动"
+      }
+    ],
+    "answerKey": "ABCDEF",
+    "answerText": "服兵役 / 维护国家统一和安全 / 保护国防设施 / 保守国家军事机密 / 接受国防教育 / 协助国防活动",
+    "translation": "",
+    "explanation": "根据《国防法》，我国公民的国防义务主要包括：履行兵役义务、维护国家统一和安全、保护国防设施、保守国防秘密、接受国防教育、协助国防活动等。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题",
+      "国防",
+      "法律法规"
+    ],
+    "source": {
+      "file": "军理题库_整理版.md",
+      "group": "军理 · 第一章 中国国防",
+      "position": 3
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
     "id": "military-ch1-q00026",
     "category": "military",
     "groupId": "military-ch1",
@@ -98,7 +150,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第一章 中国国防",
-      "position": 3
+      "position": 4
     },
     "status": "ready",
     "multiAnswer": false,
@@ -132,7 +184,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第一章 中国国防",
-      "position": 4
+      "position": 5
     },
     "status": "ready",
     "multiAnswer": false,
@@ -166,7 +218,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第一章 中国国防",
-      "position": 5
+      "position": 6
     },
     "status": "ready",
     "multiAnswer": false,
@@ -200,7 +252,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第一章 中国国防",
-      "position": 6
+      "position": 7
     },
     "status": "ready",
     "multiAnswer": false,
@@ -234,7 +286,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第一章 中国国防",
-      "position": 7
+      "position": 8
     },
     "status": "ready",
     "multiAnswer": false,
@@ -269,7 +321,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第一章 中国国防",
-      "position": 8
+      "position": 9
     },
     "status": "ready",
     "multiAnswer": false,
@@ -303,7 +355,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第一章 中国国防",
-      "position": 9
+      "position": 10
     },
     "status": "ready",
     "multiAnswer": false,
@@ -339,7 +391,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第一章 中国国防",
-      "position": 10
+      "position": 11
     },
     "status": "ready",
     "multiAnswer": false,
@@ -374,11 +426,61 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 11
+      "position": 12
     },
     "status": "ready",
     "multiAnswer": false,
     "questionType": "judgement"
+  },
+  {
+    "id": "military-ch2-q00006",
+    "category": "military",
+    "groupId": "military-ch2",
+    "groupTitle": "军理 · 第二章 国家安全",
+    "numberInGroup": 6,
+    "stem": "属于传统安全范畴的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "政治安全"
+      },
+      {
+        "key": "B",
+        "text": "国土安全"
+      },
+      {
+        "key": "C",
+        "text": "军事安全"
+      },
+      {
+        "key": "D",
+        "text": "经济安全"
+      },
+      {
+        "key": "E",
+        "text": "文化安全"
+      },
+      {
+        "key": "F",
+        "text": "科技安全"
+      }
+    ],
+    "answerKey": "ABC",
+    "answerText": "政治安全 / 国土安全 / 军事安全",
+    "translation": "",
+    "explanation": "传统安全主要指涉及国家主权、领土完整、政权稳定的安全问题，即政治安全、国土安全、军事安全。经济安全、文化安全、科技安全等属于非传统安全范畴。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "军理题库_整理版.md",
+      "group": "军理 · 第二章 国家安全",
+      "position": 13
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
   },
   {
     "id": "military-ch2-q00014",
@@ -408,7 +510,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 12
+      "position": 14
     },
     "status": "ready",
     "multiAnswer": false,
@@ -442,7 +544,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 13
+      "position": 15
     },
     "status": "ready",
     "multiAnswer": false,
@@ -476,7 +578,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 14
+      "position": 16
     },
     "status": "ready",
     "multiAnswer": false,
@@ -510,7 +612,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 15
+      "position": 17
     },
     "status": "ready",
     "multiAnswer": false,
@@ -544,7 +646,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 16
+      "position": 18
     },
     "status": "ready",
     "multiAnswer": false,
@@ -578,7 +680,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 17
+      "position": 19
     },
     "status": "ready",
     "multiAnswer": false,
@@ -612,7 +714,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 18
+      "position": 20
     },
     "status": "ready",
     "multiAnswer": false,
@@ -646,7 +748,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 19
+      "position": 21
     },
     "status": "ready",
     "multiAnswer": false,
@@ -682,7 +784,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 20
+      "position": 22
     },
     "status": "ready",
     "multiAnswer": false,
@@ -716,7 +818,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 21
+      "position": 23
     },
     "status": "ready",
     "multiAnswer": false,
@@ -751,7 +853,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第二章 国家安全",
-      "position": 22
+      "position": 24
     },
     "status": "ready",
     "multiAnswer": false,
@@ -786,7 +888,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 23
+      "position": 25
     },
     "status": "ready",
     "multiAnswer": false,
@@ -820,7 +922,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 24
+      "position": 26
     },
     "status": "ready",
     "multiAnswer": false,
@@ -854,7 +956,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 25
+      "position": 27
     },
     "status": "ready",
     "multiAnswer": false,
@@ -888,7 +990,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 26
+      "position": 28
     },
     "status": "ready",
     "multiAnswer": false,
@@ -922,7 +1024,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 27
+      "position": 29
     },
     "status": "ready",
     "multiAnswer": false,
@@ -957,7 +1059,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 28
+      "position": 30
     },
     "status": "ready",
     "multiAnswer": false,
@@ -992,7 +1094,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 29
+      "position": 31
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1027,7 +1129,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 30
+      "position": 32
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1061,7 +1163,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第三章 军事思想",
-      "position": 31
+      "position": 33
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1095,7 +1197,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第四章 武装力量",
-      "position": 32
+      "position": 34
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1132,7 +1234,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第四章 武装力量",
-      "position": 33
+      "position": 35
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1166,7 +1268,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第五章 现代战争",
-      "position": 34
+      "position": 36
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1201,7 +1303,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第五章 现代战争",
-      "position": 35
+      "position": 37
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1236,7 +1338,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第五章 现代战争",
-      "position": 36
+      "position": 38
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1271,7 +1373,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第五章 现代战争",
-      "position": 37
+      "position": 39
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1306,7 +1408,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第五章 现代战争",
-      "position": 38
+      "position": 40
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1341,7 +1443,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第五章 现代战争",
-      "position": 39
+      "position": 41
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1376,7 +1478,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第五章 现代战争",
-      "position": 40
+      "position": 42
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1412,7 +1514,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第七章 判断题汇总",
-      "position": 41
+      "position": 43
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1446,7 +1548,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第七章 判断题汇总",
-      "position": 42
+      "position": 44
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1482,7 +1584,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第七章 判断题汇总",
-      "position": 43
+      "position": 45
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1516,7 +1618,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第七章 判断题汇总",
-      "position": 44
+      "position": 46
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1551,7 +1653,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十四章 电子战技术详解",
-      "position": 45
+      "position": 47
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1586,7 +1688,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 46
+      "position": 48
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1621,7 +1723,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 47
+      "position": 49
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1656,7 +1758,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 48
+      "position": 50
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1691,7 +1793,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 49
+      "position": 51
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1726,7 +1828,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 50
+      "position": 52
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1760,7 +1862,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 51
+      "position": 53
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1795,7 +1897,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 52
+      "position": 54
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1830,7 +1932,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 53
+      "position": 55
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1864,7 +1966,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 54
+      "position": 56
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1899,7 +2001,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 55
+      "position": 57
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1934,7 +2036,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 56
+      "position": 58
     },
     "status": "ready",
     "multiAnswer": false,
@@ -1969,7 +2071,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 · 第十七章 补充判断题",
-      "position": 57
+      "position": 59
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2016,7 +2118,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 58
+      "position": 60
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2070,7 +2172,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 59
+      "position": 61
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2118,7 +2220,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 60
+      "position": 62
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2165,7 +2267,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 61
+      "position": 63
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2212,7 +2314,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 62
+      "position": 64
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2260,7 +2362,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 63
+      "position": 65
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2307,7 +2409,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 64
+      "position": 66
     },
     "status": "ready",
     "multiAnswer": true,
@@ -2359,7 +2461,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 65
+      "position": 67
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2408,7 +2510,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 66
+      "position": 68
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2456,7 +2558,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 67
+      "position": 69
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2503,7 +2605,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 68
+      "position": 70
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2550,7 +2652,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 69
+      "position": 71
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2598,7 +2700,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 70
+      "position": 72
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2646,7 +2748,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 71
+      "position": 73
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2694,7 +2796,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 72
+      "position": 74
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2742,7 +2844,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 73
+      "position": 75
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2788,7 +2890,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 74
+      "position": 76
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2833,7 +2935,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 75
+      "position": 77
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2878,7 +2980,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 76
+      "position": 78
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2924,7 +3026,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 77
+      "position": 79
     },
     "status": "ready",
     "multiAnswer": false,
@@ -2973,7 +3075,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 78
+      "position": 80
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3019,7 +3121,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 79
+      "position": 81
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3068,7 +3170,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 80
+      "position": 82
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3115,7 +3217,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 81
+      "position": 83
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3164,7 +3266,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 82
+      "position": 84
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3212,7 +3314,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 83
+      "position": 85
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3261,7 +3363,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 84
+      "position": 86
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3309,7 +3411,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 85
+      "position": 87
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3357,7 +3459,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 86
+      "position": 88
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3404,7 +3506,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 87
+      "position": 89
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3454,7 +3556,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 88
+      "position": 90
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3504,7 +3606,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 89
+      "position": 91
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3550,7 +3652,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 90
+      "position": 92
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3596,7 +3698,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 91
+      "position": 93
     },
     "status": "ready",
     "multiAnswer": true,
@@ -3646,7 +3748,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 92
+      "position": 94
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3693,7 +3795,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 93
+      "position": 95
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3741,7 +3843,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 94
+      "position": 96
     },
     "status": "ready",
     "multiAnswer": true,
@@ -3787,7 +3889,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 95
+      "position": 97
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3835,7 +3937,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P1 · 必考核心",
-      "position": 96
+      "position": 98
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3883,7 +3985,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P2 · 高频重点",
-      "position": 97
+      "position": 99
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3931,7 +4033,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P2 · 高频重点",
-      "position": 98
+      "position": 100
     },
     "status": "ready",
     "multiAnswer": false,
@@ -3981,7 +4083,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P2 · 高频重点",
-      "position": 99
+      "position": 101
     },
     "status": "ready",
     "multiAnswer": true,
@@ -4029,7 +4131,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P2 · 高频重点",
-      "position": 100
+      "position": 102
     },
     "status": "ready",
     "multiAnswer": true,
@@ -4077,60 +4179,11 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P2 · 高频重点",
-      "position": 101
+      "position": 103
     },
     "status": "ready",
     "multiAnswer": false,
     "questionType": "single"
-  },
-  {
-    "id": "military-p2-q00006",
-    "category": "military",
-    "groupId": "military-p2",
-    "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 6,
-    "stem": "当前，中国周边面临的热点地区有（）。",
-    "options": [
-      {
-        "key": "A",
-        "text": "东海"
-      },
-      {
-        "key": "B",
-        "text": "南海"
-      },
-      {
-        "key": "C",
-        "text": "中国台湾"
-      },
-      {
-        "key": "D",
-        "text": "朝鲜半岛"
-      }
-    ],
-    "answerKey": "ABCD",
-    "answerText": "东海 / 南海 / 中国台湾 / 朝鲜半岛",
-    "translation": "",
-    "explanation": "**考点**：中国周边安全形势中的热点地区识别\n\n**标签**：周边安全 · 地缘热点 · 东海 · 南海 · 朝鲜半岛\n\n**正确答案**：A. 东海 — 中日钓鱼岛主权争端及海洋权益划分持续紧张，是当前热点。\nB. 南海 — 多国岛礁主权与海洋权益纠纷频发，域外大国介入加剧复杂性。\nC. 中国台湾 — 台海因“台独”势力与外部干涉面临严峻挑战，是核心利益热点。\nD. 朝鲜半岛 — 朝核问题、南北对峙及美韩军演持续引发区域紧张，属传统热点。\n\n**干扰项分析**：\n无干扰项\n\n**拓展**：上述热点涉及中国主权、安全与发展利益，需警惕美国“印太战略”下的联盟化介入，如美日澳菲在南海的联合行动及对台军售。",
-    "grammarPoints": [],
-    "tags": [
-      "多选题",
-      "周边安全",
-      "地缘热点",
-      "东海",
-      "南海",
-      "朝鲜半岛",
-      "国家安全",
-      "战略战术"
-    ],
-    "source": {
-      "file": "军理题库_整理版.md",
-      "group": "军理 P2 · 高频重点",
-      "position": 102
-    },
-    "status": "ready",
-    "multiAnswer": true,
-    "questionType": "multi"
   },
   {
     "id": "military-p2-q00007",
@@ -4138,59 +4191,6 @@
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
     "numberInGroup": 7,
-    "stem": "公民的国防义务包括（）。",
-    "options": [
-      {
-        "key": "A",
-        "text": "服兵役"
-      },
-      {
-        "key": "B",
-        "text": "维护国家统一和安全"
-      },
-      {
-        "key": "C",
-        "text": "保护国防设施"
-      },
-      {
-        "key": "D",
-        "text": "保守国家军事机密"
-      },
-      {
-        "key": "E",
-        "text": "接受国防教育"
-      }
-    ],
-    "answerKey": "ABCDE",
-    "answerText": "服兵役 / 维护国家统一和安全 / 保护国防设施 / 保守国家军事机密 / 接受国防教育",
-    "translation": "",
-    "explanation": "**考点**：公民国防义务的具体内容\n\n**标签**：公民国防义务 · 国防教育 · 兵役义务 · 保密义务 · 设施保护\n\n**正确答案**：A. 服兵役 — 宪法和兵役法规定依法服兵役是公民的基本国防义务。\nB. 维护国家统一和安全 — 宪法规定维护国家统一和全国各民族团结是公民义务，属于国防义务范畴。\nC. 保护国防设施 — 国防设施受法律保护，公民有不得破坏、侵占并协助保护的义务。\nD. 保守国家军事机密 — 保密法要求公民对军事机密严格保密，违反将承担法律责任。\nE. 接受国防教育 — 国防教育法明确公民接受国防教育是法定权利和义务，增强国防观念。\n\n**干扰项分析**：\n无干扰项\n\n**拓展**：我国《国防教育法》于2001年4月28日由第九届全国人大常委会通过，将公民接受国防教育上升为法律义务，与兵役、保密、设施保护等共同构成完整的国防义务体系。",
-    "grammarPoints": [],
-    "tags": [
-      "多选题",
-      "公民国防义务",
-      "国防教育",
-      "兵役义务",
-      "保密义务",
-      "设施保护",
-      "国防",
-      "法律法规"
-    ],
-    "source": {
-      "file": "军理题库_整理版.md",
-      "group": "军理 P2 · 高频重点",
-      "position": 103
-    },
-    "status": "ready",
-    "multiAnswer": true,
-    "questionType": "multi"
-  },
-  {
-    "id": "military-p2-q00008",
-    "category": "military",
-    "groupId": "military-p2",
-    "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 8,
     "stem": "战略支援部队包括（）等五大领域。",
     "options": [
       {
@@ -4241,11 +4241,11 @@
     "questionType": "multi"
   },
   {
-    "id": "military-p2-q00009",
+    "id": "military-p2-q00008",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 9,
+    "numberInGroup": 8,
     "stem": "信息化战争中，任何先进的武器系统，如果没有（）的支持，既无法发挥个体作战能力，也不能增强总体作战威力。",
     "options": [
       {
@@ -4289,11 +4289,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00010",
+    "id": "military-p2-q00009",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 10,
+    "numberInGroup": 9,
     "stem": "使用精确制导武器远距离、突然、准确地打击敌方目标的作战行动是（）。",
     "options": [
       {
@@ -4336,11 +4336,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00011",
+    "id": "military-p2-q00010",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 11,
+    "numberInGroup": 10,
     "stem": "电子战主要是争夺（）的控制权和使用权。",
     "options": [
       {
@@ -4384,11 +4384,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00012",
+    "id": "military-p2-q00011",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 12,
+    "numberInGroup": 11,
     "stem": "我国的武装力量组成正确的是（）。",
     "options": [
       {
@@ -4433,11 +4433,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00013",
+    "id": "military-p2-q00012",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 13,
+    "numberInGroup": 12,
     "stem": "陆军按照机动作战、立体攻防的战略要求，实现区域防卫型向（）转变。",
     "options": [
       {
@@ -4482,11 +4482,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00014",
+    "id": "military-p2-q00013",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 14,
+    "numberInGroup": 13,
     "stem": "国防法规所调整的是（）的各种社会关系。",
     "options": [
       {
@@ -4530,11 +4530,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00015",
+    "id": "military-p2-q00014",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 15,
+    "numberInGroup": 14,
     "stem": "1990年12月，江泽民明确提出了新时期军队建设的\"五句话\"总要求，除\"政治合格、军事过硬、作风优良、纪律严明\"之外，还有（）。",
     "options": [
       {
@@ -4577,11 +4577,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00016",
+    "id": "military-p2-q00015",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 16,
+    "numberInGroup": 15,
     "stem": "江泽民认为国防和军队建设要扭住的龙头是（）。",
     "options": [
       {
@@ -4624,11 +4624,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00017",
+    "id": "military-p2-q00016",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 17,
+    "numberInGroup": 16,
     "stem": "首次提出\"战争无非是政治通过另一种手段的继续\"著名论断的是（）。",
     "options": [
       {
@@ -4673,11 +4673,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00018",
+    "id": "military-p2-q00017",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 18,
+    "numberInGroup": 17,
     "stem": "\"空中战争论\"的先驱有（）。",
     "options": [
       {
@@ -4719,11 +4719,11 @@
     "questionType": "multi"
   },
   {
-    "id": "military-p2-q00019",
+    "id": "military-p2-q00018",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 19,
+    "numberInGroup": 18,
     "stem": "克劳塞维茨的《（）》是西方资产阶级军事理论的代表作。",
     "options": [
       {
@@ -4769,11 +4769,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00020",
+    "id": "military-p2-q00019",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 20,
+    "numberInGroup": 19,
     "stem": "19世纪的军事名著《战争艺术概论》的作者是（）。",
     "options": [
       {
@@ -4816,11 +4816,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00021",
+    "id": "military-p2-q00020",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 21,
+    "numberInGroup": 20,
     "stem": "1956年，毛泽东在最高国务会议上第一次提出了（）问题，强调国防工业生产要有两套设备，平时为民用生产，一旦有事，就可以把民用生产转化为军用生产。",
     "options": [
       {
@@ -4864,11 +4864,11 @@
     "questionType": "single"
   },
   {
-    "id": "military-p2-q00022",
+    "id": "military-p2-q00021",
     "category": "military",
     "groupId": "military-p2",
     "groupTitle": "军理 P2 · 高频重点",
-    "numberInGroup": 22,
+    "numberInGroup": 21,
     "stem": "信息化战争的基本特征包括哪些？",
     "options": [
       {
@@ -11004,52 +11004,6 @@
     "questionType": "single"
   },
   {
-    "id": "military-p4-q00085",
-    "category": "military",
-    "groupId": "military-p4",
-    "groupTitle": "军理 P4 · 补充巩固",
-    "numberInGroup": 85,
-    "stem": "属于传统安全范畴的是（）。",
-    "options": [
-      {
-        "key": "A",
-        "text": "政治安全"
-      },
-      {
-        "key": "B",
-        "text": "国土安全"
-      },
-      {
-        "key": "C",
-        "text": "军事安全"
-      },
-      {
-        "key": "D",
-        "text": "经济安全"
-      },
-      {
-        "key": "E",
-        "text": "文化安全"
-      }
-    ],
-    "answerKey": "ABC",
-    "answerText": "政治安全 / 国土安全 / 军事安全",
-    "translation": "",
-    "explanation": "传统安全主要指涉及国家主权、领土完整、政权稳定的安全问题，即政治安全、国土安全、军事安全。经济安全、文化安全、科技安全等属于非传统安全范畴。",
-    "grammarPoints": [],
-    "tags": [
-      "多选题"
-    ],
-    "source": {
-      "file": "军理题库_整理版.md",
-      "group": "军理 P4 · 补充巩固",
-      "position": 261
-    },
-    "status": "ready",
-    "multiAnswer": true,
-    "questionType": "multi"
-  },
-  {
     "id": "military-p4-q00086",
     "category": "military",
     "groupId": "military-p4",
@@ -11086,7 +11040,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 262
+      "position": 261
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11128,7 +11082,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 263
+      "position": 262
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11170,7 +11124,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 264
+      "position": 263
     },
     "status": "ready",
     "multiAnswer": true,
@@ -11213,7 +11167,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 265
+      "position": 264
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11255,7 +11209,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 266
+      "position": 265
     },
     "status": "ready",
     "multiAnswer": true,
@@ -11297,7 +11251,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 267
+      "position": 266
     },
     "status": "ready",
     "multiAnswer": true,
@@ -11340,7 +11294,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 268
+      "position": 267
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11383,7 +11337,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 269
+      "position": 268
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11425,7 +11379,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 270
+      "position": 269
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11467,7 +11421,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 271
+      "position": 270
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11509,7 +11463,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 272
+      "position": 271
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11551,7 +11505,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 273
+      "position": 272
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11594,7 +11548,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 274
+      "position": 273
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11636,7 +11590,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 275
+      "position": 274
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11678,7 +11632,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 276
+      "position": 275
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11721,7 +11675,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 277
+      "position": 276
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11763,7 +11717,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 278
+      "position": 277
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11806,7 +11760,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 279
+      "position": 278
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11849,7 +11803,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 280
+      "position": 279
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11892,7 +11846,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 281
+      "position": 280
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11935,7 +11889,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 282
+      "position": 281
     },
     "status": "ready",
     "multiAnswer": false,
@@ -11977,7 +11931,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 283
+      "position": 282
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12019,7 +11973,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 284
+      "position": 283
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12061,7 +12015,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 285
+      "position": 284
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12103,7 +12057,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 286
+      "position": 285
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12145,7 +12099,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 287
+      "position": 286
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12187,7 +12141,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 288
+      "position": 287
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12229,7 +12183,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 289
+      "position": 288
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12271,7 +12225,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 290
+      "position": 289
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12318,7 +12272,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 291
+      "position": 290
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12365,7 +12319,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 292
+      "position": 291
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12408,7 +12362,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 293
+      "position": 292
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12450,7 +12404,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 294
+      "position": 293
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12493,7 +12447,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 295
+      "position": 294
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12535,7 +12489,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 296
+      "position": 295
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12577,7 +12531,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 P4 · 补充巩固",
-      "position": 297
+      "position": 296
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12619,7 +12573,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 298
+      "position": 297
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12662,7 +12616,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 299
+      "position": 298
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12705,7 +12659,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 300
+      "position": 299
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12747,7 +12701,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 301
+      "position": 300
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12789,7 +12743,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 302
+      "position": 301
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12831,7 +12785,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 303
+      "position": 302
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12873,7 +12827,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 304
+      "position": 303
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12915,7 +12869,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 305
+      "position": 304
     },
     "status": "ready",
     "multiAnswer": false,
@@ -12957,7 +12911,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 306
+      "position": 305
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13001,7 +12955,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 307
+      "position": 306
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13043,7 +12997,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 308
+      "position": 307
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13085,7 +13039,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 309
+      "position": 308
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13127,7 +13081,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 310
+      "position": 309
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13169,7 +13123,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 311
+      "position": 310
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13211,7 +13165,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 312
+      "position": 311
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13253,7 +13207,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 313
+      "position": 312
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13295,7 +13249,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 314
+      "position": 313
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13338,7 +13292,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 315
+      "position": 314
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13380,7 +13334,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 316
+      "position": 315
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13423,7 +13377,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 317
+      "position": 316
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13465,7 +13419,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 318
+      "position": 317
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13509,7 +13463,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 319
+      "position": 318
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13551,7 +13505,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 320
+      "position": 319
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13593,7 +13547,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 321
+      "position": 320
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13637,7 +13591,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 322
+      "position": 321
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13680,7 +13634,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 323
+      "position": 322
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13722,7 +13676,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 单选题",
-      "position": 324
+      "position": 323
     },
     "status": "ready",
     "multiAnswer": false,
@@ -13755,10 +13709,30 @@
       {
         "key": "E",
         "text": "中国"
+      },
+      {
+        "key": "F",
+        "text": "南非"
+      },
+      {
+        "key": "G",
+        "text": "英国"
+      },
+      {
+        "key": "H",
+        "text": "日本"
+      },
+      {
+        "key": "I",
+        "text": "韩国"
+      },
+      {
+        "key": "J",
+        "text": "法国"
       }
     ],
-    "answerKey": "ACE",
-    "answerText": "美国 / 俄罗斯 / 中国",
+    "answerKey": "ACEGJ",
+    "answerText": "美国 / 俄罗斯 / 中国 / 英国 / 法国",
     "translation": "",
     "explanation": "联合国安理会五大常任理事国为中、美、俄、英、法。",
     "grammarPoints": [],
@@ -13768,7 +13742,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 325
+      "position": 324
     },
     "status": "ready",
     "multiAnswer": true,
@@ -13811,7 +13785,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 326
+      "position": 325
     },
     "status": "ready",
     "multiAnswer": true,
@@ -13853,7 +13827,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 327
+      "position": 326
     },
     "status": "ready",
     "multiAnswer": true,
@@ -13895,7 +13869,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 328
+      "position": 327
     },
     "status": "ready",
     "multiAnswer": true,
@@ -13928,10 +13902,18 @@
       {
         "key": "E",
         "text": "海岸警备队"
+      },
+      {
+        "key": "F",
+        "text": "潜艇部队"
+      },
+      {
+        "key": "G",
+        "text": "岸防兵部队"
       }
     ],
-    "answerKey": "ABD",
-    "answerText": "海军陆战队 / 水面舰艇部队 / 海军航空兵",
+    "answerKey": "ABDFG",
+    "answerText": "海军陆战队 / 水面舰艇部队 / 海军航空兵 / 潜艇部队 / 岸防兵部队",
     "translation": "",
     "explanation": "海军由水面舰艇、潜艇、航空兵、岸防兵、陆战队等组成。",
     "grammarPoints": [],
@@ -13942,7 +13924,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 329
+      "position": 328
     },
     "status": "ready",
     "multiAnswer": true,
@@ -13988,7 +13970,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 330
+      "position": 329
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14021,6 +14003,10 @@
       {
         "key": "E",
         "text": "北洋舰队"
+      },
+      {
+        "key": "F",
+        "text": "渤海舰队"
       }
     ],
     "answerKey": "ABC",
@@ -14034,7 +14020,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 331
+      "position": 330
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14076,7 +14062,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 332
+      "position": 331
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14109,10 +14095,22 @@
       {
         "key": "E",
         "text": "参加防空演习的义务"
+      },
+      {
+        "key": "F",
+        "text": "保护国防设施的义务"
+      },
+      {
+        "key": "G",
+        "text": "保守国防秘密的义务"
+      },
+      {
+        "key": "H",
+        "text": "协助国防活动的义务"
       }
     ],
-    "answerKey": "BCD",
-    "answerText": "兵役义务 / 参加民兵的义务 / 接受国防教育的义务",
+    "answerKey": "BCDFGH",
+    "answerText": "兵役义务 / 参加民兵的义务 / 接受国防教育的义务 / 保护国防设施的义务 / 保守国防秘密的义务 / 协助国防活动的义务",
     "translation": "",
     "explanation": "公民国防义务包括兵役、民兵、接受国防教育、保护国防设施、保守国防秘密、协助国防活动。",
     "grammarPoints": [],
@@ -14125,7 +14123,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 333
+      "position": 332
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14167,7 +14165,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 334
+      "position": 333
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14214,7 +14212,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 335
+      "position": 334
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14247,10 +14245,30 @@
       {
         "key": "E",
         "text": "朝鲜"
+      },
+      {
+        "key": "F",
+        "text": "韩国"
+      },
+      {
+        "key": "G",
+        "text": "加拿大"
+      },
+      {
+        "key": "H",
+        "text": "日本"
+      },
+      {
+        "key": "I",
+        "text": "印度"
+      },
+      {
+        "key": "J",
+        "text": "中国"
       }
     ],
-    "answerKey": "ACE",
-    "answerText": "美国 / 俄罗斯 / 朝鲜",
+    "answerKey": "ACEFHJ",
+    "answerText": "美国 / 俄罗斯 / 朝鲜 / 韩国 / 日本 / 中国",
     "translation": "",
     "explanation": "六方会谈国家为中、美、俄、日、朝、韩。",
     "grammarPoints": [],
@@ -14260,7 +14278,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 336
+      "position": 335
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14293,10 +14311,22 @@
       {
         "key": "E",
         "text": "领土完整"
+      },
+      {
+        "key": "F",
+        "text": "社会稳定"
+      },
+      {
+        "key": "G",
+        "text": "政权稳定"
+      },
+      {
+        "key": "H",
+        "text": "战争威胁"
       }
     ],
-    "answerKey": "BE",
-    "answerText": "国家主权 / 领土完整",
+    "answerKey": "BEGH",
+    "answerText": "国家主权 / 领土完整 / 政权稳定 / 战争威胁",
     "translation": "",
     "explanation": "传统安全涉及主权、领土、政权、战争威胁。\n\n注：原 PDF 答案为 BEGH，但按一般分类，应不包括 F（社会稳定）。此处尊重原 PDF。",
     "grammarPoints": [],
@@ -14306,7 +14336,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 337
+      "position": 336
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14348,7 +14378,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 338
+      "position": 337
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14390,7 +14420,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 339
+      "position": 338
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14423,6 +14453,10 @@
       {
         "key": "E",
         "text": "俄国"
+      },
+      {
+        "key": "F",
+        "text": "法国"
       }
     ],
     "answerKey": "BE",
@@ -14436,7 +14470,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 340
+      "position": 339
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14469,10 +14503,18 @@
       {
         "key": "E",
         "text": "制止、检举危害国防行为的权利"
+      },
+      {
+        "key": "F",
+        "text": "了解国防设施功能作用的权利"
+      },
+      {
+        "key": "G",
+        "text": "因国防活动的经济损失得到补偿的权利"
       }
     ],
-    "answerKey": "CE",
-    "answerText": "对国防建设提出建议的权利 / 制止、检举危害国防行为的权利",
+    "answerKey": "CEG",
+    "answerText": "对国防建设提出建议的权利 / 制止、检举危害国防行为的权利 / 因国防活动的经济损失得到补偿的权利",
     "translation": "",
     "explanation": "公民国防三项权利：建议权、制止检举权、补偿权。",
     "grammarPoints": [],
@@ -14484,7 +14526,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 341
+      "position": 340
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14517,10 +14559,22 @@
       {
         "key": "E",
         "text": "空降兵"
+      },
+      {
+        "key": "F",
+        "text": "网络防御部队"
+      },
+      {
+        "key": "G",
+        "text": "联保分队"
+      },
+      {
+        "key": "H",
+        "text": "高射炮兵"
       }
     ],
-    "answerKey": "ADE",
-    "answerText": "航空兵 / 雷达兵 / 空降兵",
+    "answerKey": "ADEH",
+    "answerText": "航空兵 / 雷达兵 / 空降兵 / 高射炮兵",
     "translation": "",
     "explanation": "空军主要由航空兵、高射炮兵、空降兵、雷达兵等组成。",
     "grammarPoints": [],
@@ -14528,6 +14582,60 @@
       "多选题",
       "武装力量",
       "军事技术"
+    ],
+    "source": {
+      "file": "军理题库_整理版.md",
+      "group": "军理 PDF · 多选题",
+      "position": 341
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "military-pdf-multi-q00027",
+    "category": "military",
+    "groupId": "military-pdf-multi",
+    "groupTitle": "军理 PDF · 多选题",
+    "numberInGroup": 27,
+    "stem": "当前，中国周边面临的热点地区有（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "东海"
+      },
+      {
+        "key": "B",
+        "text": "马六甲海峡"
+      },
+      {
+        "key": "C",
+        "text": "克什米尔"
+      },
+      {
+        "key": "D",
+        "text": "南海"
+      },
+      {
+        "key": "E",
+        "text": "缅甸"
+      },
+      {
+        "key": "F",
+        "text": "中国台湾"
+      },
+      {
+        "key": "G",
+        "text": "朝鲜半岛"
+      }
+    ],
+    "answerKey": "ADFG",
+    "answerText": "东海 / 南海 / 中国台湾 / 朝鲜半岛",
+    "translation": "",
+    "explanation": "中国周边热点：东海、南海、台湾、朝鲜半岛。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
     ],
     "source": {
       "file": "军理题库_整理版.md",
@@ -14828,10 +14936,22 @@
       {
         "key": "E",
         "text": "收复被占领土"
+      },
+      {
+        "key": "F",
+        "text": "履行国际主义义务"
+      },
+      {
+        "key": "G",
+        "text": "保护国家领土完整"
+      },
+      {
+        "key": "H",
+        "text": "保障国家安全"
       }
     ],
-    "answerKey": "BD",
-    "answerText": "捍卫国家主权 / 维护祖国统一",
+    "answerKey": "BDGH",
+    "answerText": "捍卫国家主权 / 维护祖国统一 / 保护国家领土完整 / 保障国家安全",
     "translation": "",
     "explanation": "国防目的包括捍卫主权、维护统一、保护领土、保障安全。",
     "grammarPoints": [],
@@ -14875,10 +14995,14 @@
       {
         "key": "E",
         "text": "国家"
+      },
+      {
+        "key": "F",
+        "text": "民族"
       }
     ],
-    "answerKey": "BDE",
-    "answerText": "利益集团 / 阶级 / 国家",
+    "answerKey": "BDEF",
+    "answerText": "利益集团 / 阶级 / 国家 / 民族",
     "translation": "",
     "explanation": "战略为利益集团、阶级、国家、民族服务。",
     "grammarPoints": [],
@@ -14890,6 +15014,49 @@
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
       "position": 350
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "military-pdf-multi-q00037",
+    "category": "military",
+    "groupId": "military-pdf-multi",
+    "groupTitle": "军理 PDF · 多选题",
+    "numberInGroup": 37,
+    "stem": "一般地，航天技术是由（）部分组成的？",
+    "options": [
+      {
+        "key": "A",
+        "text": "航天器技术"
+      },
+      {
+        "key": "B",
+        "text": "降落技术"
+      },
+      {
+        "key": "C",
+        "text": "航天测控技术"
+      },
+      {
+        "key": "D",
+        "text": "运载器技术"
+      }
+    ],
+    "answerKey": "ACD",
+    "answerText": "航天器技术 / 航天测控技术 / 运载器技术",
+    "translation": "",
+    "explanation": "航天技术由航天器、运载器、航天测控技术组成。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题",
+      "军事技术"
+    ],
+    "source": {
+      "file": "军理题库_整理版.md",
+      "group": "军理 PDF · 多选题",
+      "position": 351
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14931,7 +15098,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 351
+      "position": 352
     },
     "status": "ready",
     "multiAnswer": true,
@@ -14974,7 +15141,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 352
+      "position": 353
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15016,7 +15183,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 353
+      "position": 354
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15049,10 +15216,22 @@
       {
         "key": "E",
         "text": "依附型"
+      },
+      {
+        "key": "F",
+        "text": "自卫型"
+      },
+      {
+        "key": "G",
+        "text": "独立型"
+      },
+      {
+        "key": "H",
+        "text": "联盟型"
       }
     ],
-    "answerKey": "BD",
-    "answerText": "中立型 / 扩张型",
+    "answerKey": "BDFH",
+    "answerText": "中立型 / 扩张型 / 自卫型 / 联盟型",
     "translation": "",
     "explanation": "国防四种类型：自卫、联盟、中立、扩张。",
     "grammarPoints": [],
@@ -15063,7 +15242,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 354
+      "position": 355
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15096,10 +15275,14 @@
       {
         "key": "E",
         "text": "不需要宣布独立"
+      },
+      {
+        "key": "F",
+        "text": "不武"
       }
     ],
-    "answerKey": "BD",
-    "answerText": "不独 / 不统",
+    "answerKey": "BDF",
+    "answerText": "不独 / 不统 / 不武",
     "translation": "",
     "explanation": "\"三不\"为不统、不独、不武。",
     "grammarPoints": [],
@@ -15109,7 +15292,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 355
+      "position": 356
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15151,7 +15334,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 356
+      "position": 357
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15193,7 +15376,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 357
+      "position": 358
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15235,7 +15418,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 358
+      "position": 359
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15277,7 +15460,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 359
+      "position": 360
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15319,7 +15502,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 360
+      "position": 361
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15366,7 +15549,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 361
+      "position": 362
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15409,7 +15592,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 362
+      "position": 363
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15452,7 +15635,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 363
+      "position": 364
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15485,10 +15668,18 @@
       {
         "key": "E",
         "text": "监督权"
+      },
+      {
+        "key": "F",
+        "text": "行政权"
+      },
+      {
+        "key": "G",
+        "text": "宣战权"
       }
     ],
-    "answerKey": "BCDE",
-    "answerText": "立法权 / 任免权 / 决定权 / 监督权",
+    "answerKey": "BCDEF",
+    "answerText": "立法权 / 任免权 / 决定权 / 监督权 / 行政权",
     "translation": "",
     "explanation": "人大立法、决定、监督；主席任免；行政权属国务院。",
     "grammarPoints": [],
@@ -15499,7 +15690,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 364
+      "position": 365
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15541,7 +15732,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 365
+      "position": 366
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15574,6 +15765,10 @@
       {
         "key": "E",
         "text": "印度"
+      },
+      {
+        "key": "F",
+        "text": "澳大利亚"
       }
     ],
     "answerKey": "BD",
@@ -15587,7 +15782,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 366
+      "position": 367
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15630,7 +15825,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 367
+      "position": 368
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15663,10 +15858,30 @@
       {
         "key": "E",
         "text": "历史"
+      },
+      {
+        "key": "F",
+        "text": "军事"
+      },
+      {
+        "key": "G",
+        "text": "国际交往"
+      },
+      {
+        "key": "H",
+        "text": "外交"
+      },
+      {
+        "key": "I",
+        "text": "文化教育"
+      },
+      {
+        "key": "J",
+        "text": "科技"
       }
     ],
-    "answerKey": "BD",
-    "answerText": "政治 / 经济",
+    "answerKey": "BDFHJ",
+    "answerText": "政治 / 经济 / 军事 / 外交 / 科技",
     "translation": "",
     "explanation": "战略环境六要素：政治、经济、军事、外交、科技、地理。",
     "grammarPoints": [],
@@ -15677,7 +15892,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 多选题",
-      "position": 368
+      "position": 369
     },
     "status": "ready",
     "multiAnswer": true,
@@ -15712,7 +15927,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 369
+      "position": 370
     },
     "status": "ready",
     "multiAnswer": false,
@@ -15746,7 +15961,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 370
+      "position": 371
     },
     "status": "ready",
     "multiAnswer": false,
@@ -15780,7 +15995,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 371
+      "position": 372
     },
     "status": "ready",
     "multiAnswer": false,
@@ -15814,7 +16029,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 372
+      "position": 373
     },
     "status": "ready",
     "multiAnswer": false,
@@ -15848,7 +16063,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 373
+      "position": 374
     },
     "status": "ready",
     "multiAnswer": false,
@@ -15883,7 +16098,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 374
+      "position": 375
     },
     "status": "ready",
     "multiAnswer": false,
@@ -15918,7 +16133,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 375
+      "position": 376
     },
     "status": "ready",
     "multiAnswer": false,
@@ -15953,7 +16168,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 376
+      "position": 377
     },
     "status": "ready",
     "multiAnswer": false,
@@ -15987,7 +16202,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 377
+      "position": 378
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16022,7 +16237,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 378
+      "position": 379
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16056,7 +16271,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 379
+      "position": 380
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16091,7 +16306,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 380
+      "position": 381
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16126,7 +16341,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 381
+      "position": 382
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16161,7 +16376,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 382
+      "position": 383
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16196,7 +16411,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 383
+      "position": 384
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16231,7 +16446,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 384
+      "position": 385
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16266,7 +16481,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 385
+      "position": 386
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16300,7 +16515,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 386
+      "position": 387
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16334,7 +16549,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 387
+      "position": 388
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16368,7 +16583,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 388
+      "position": 389
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16403,7 +16618,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 389
+      "position": 390
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16438,7 +16653,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 390
+      "position": 391
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16472,7 +16687,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 391
+      "position": 392
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16506,7 +16721,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 392
+      "position": 393
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16540,7 +16755,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 393
+      "position": 394
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16574,7 +16789,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 394
+      "position": 395
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16608,7 +16823,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 395
+      "position": 396
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16643,7 +16858,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 396
+      "position": 397
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16678,7 +16893,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 397
+      "position": 398
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16713,7 +16928,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 398
+      "position": 399
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16748,7 +16963,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 399
+      "position": 400
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16782,7 +16997,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 400
+      "position": 401
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16817,7 +17032,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 401
+      "position": 402
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16851,7 +17066,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 402
+      "position": 403
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16886,7 +17101,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 403
+      "position": 404
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16920,7 +17135,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 404
+      "position": 405
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16956,7 +17171,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 405
+      "position": 406
     },
     "status": "ready",
     "multiAnswer": false,
@@ -16991,7 +17206,7 @@
     "source": {
       "file": "军理题库_整理版.md",
       "group": "军理 PDF · 判断题",
-      "position": 406
+      "position": 407
     },
     "status": "ready",
     "multiAnswer": false,

@@ -108,7 +108,7 @@ function detectAnswerType(
       normalized: cleaned === '对' ? '正确' : cleaned === '错' ? '错误' : cleaned,
     }
   }
-  if (/^[A-E]+$/.test(cleaned)) {
+  if (/^[A-J]+$/.test(cleaned)) {
     if (cleaned.length > 1) return { kind: 'multi', normalized: cleaned.split('').sort().join('') }
     return { kind: 'single', normalized: cleaned }
   }
@@ -128,7 +128,7 @@ function detectAnswerType(
     }
   }
   // Fallback: scan for letter run
-  const letters = (cleaned.match(/[A-E]+/) || [''])[0]
+  const letters = (cleaned.match(/[A-J]+/) || [''])[0]
   if (letters.length > 1) return { kind: 'multi', normalized: letters.split('').sort().join('') }
   if (letters.length === 1) return { kind: 'single', normalized: letters }
   // Text answer that doesn't match any option — this is a fill-in-blank / short-answer
@@ -280,14 +280,14 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
         break
       }
 
-      if (/^[A-E][\.、）)]/.test(line)) {
+      if (/^[A-J][\.、）)]/.test(line)) {
         sawOption = true
         const parts = line
-          .split(/(?=[A-E][\.、）)])/)
+          .split(/(?=[A-J][\.、）)])/)
           .map((s) => s.trim())
-          .filter((p) => /^[A-E][\.、）)]/.test(p))
+          .filter((p) => /^[A-J][\.、)]/.test(p))
         for (const p of parts) {
-          const m = p.match(/^([A-E])[\.、）)]\s*(.+)$/)
+          const m = p.match(/^([A-J])[\.、）)]\s*(.+)$/)
           if (m && !options.find((x) => x.key === m[1])) {
             options.push({ key: m[1], text: m[2].trim() })
           }
@@ -479,13 +479,18 @@ function main() {
   }
   const byStem = new Map<string, RawQuestion[]>()
   for (const q of deduped) {
-    const k = norm(q.stem)
+    // Key includes questionType so single & multi versions of the same stem are both kept
+    const k = norm(q.stem) + '|' + q.questionType
     if (!byStem.has(k)) byStem.set(k, [])
     byStem.get(k)!.push(q)
   }
   const keepSet = new Set<RawQuestion>()
   for (const qs of byStem.values()) {
     qs.sort((a, b) => {
+      // Prefer the version with more options (richer question) — this protects
+      // PDF versions that have extra distractors from being dropped in favor of
+      // shorter priority-list versions.
+      if (b.options.length !== a.options.length) return b.options.length - a.options.length
       const pa = groupPriority(a.groupId)
       const pb = groupPriority(b.groupId)
       if (pa !== pb) return pa - pb
