@@ -117,7 +117,7 @@ async function handleSearchNavigate(questionId: string) {
   if (q.category !== activeCategory.value) {
     await setActiveCategory(q.category)
   }
-  router.push({ path: '/quiz', query: { ids: questionId } })
+  router.push({ path: '/quiz', query: { ids: questionId, fresh: '1' } })
 }
 </script>
 <template>

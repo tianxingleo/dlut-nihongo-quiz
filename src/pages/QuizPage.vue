@@ -92,6 +92,21 @@ const wrongQuestions = computed(() => {
       selectedKey: history.value.find((h) => h.questionId === q.id)?.selectedKey || '',
     }))
 })
+// 根据进入刷题页的 query 算出入口签名，唯一标识"刷的是哪一批题"。
+// 直接刷新（URL 不带 resume=1）时用它匹配存盘会话，避免被初始状态覆盖。
+function computeEntryKey(): string {
+  const q = route.query
+  const parts = [
+    (q.category as string) || activeCategory.value,
+    (q.mode as string) || 'sequential',
+    (q.group as string) || '',
+    (q.groups as string) || '',
+    (q.tag as string) || '',
+    (q.ids as string) || '',
+    q.shuffle === '1' ? '1' : '',
+  ]
+  return parts.join('|')
+}
 
 function snapshot(submittedNow: boolean): ActiveSession {
   return {
@@ -104,6 +119,7 @@ function snapshot(submittedNow: boolean): ActiveSession {
     correctCount: correctCount.value,
     wrongList: [...wrongList.value],
     startedAt: startedAt.value,
+    entryKey: computeEntryKey(),
   }
 }
 
@@ -198,24 +214,36 @@ onMounted(async () => {
     const allStats = await db.questionStats.toArray()
     bookmarkCache.value = new Set(allStats.filter((s) => s.isBookmarked).map((s) => s.questionId))
 
-    if (route.query.resume === '1') {
-      const saved = await loadActiveSession()
-      if (isSessionInProgress(saved)) {
-        const map = new Map(all.map((q) => [q.id, q] as const))
-        questions.value = saved.questionIds.map((id) => map.get(id)!).filter(Boolean)
-        sessionId.value = saved.sessionId
-        mode.value = saved.mode
-        correctCount.value = saved.correctCount
-        wrongList.value = [...saved.wrongList]
-        startedAt.value = saved.startedAt
-        currentIndex.value = saved.submitted ? saved.currentIndex + 1 : saved.currentIndex
-        submitted.value = false
-        selectedKey.value = ''
-        startTime.value = Date.now()
-        history.value = []
-        startTimer()
-        return
-      }
+    // 恢复条件：从首页"继续上次"进来（resume=1），或直接刷新页面且存盘会话属于当前入口。
+    // fresh=1 表示用户从首页/错题本/搜索主动点入口要开新一轮，此时即使签名相同也不恢复（开新轮）。
+    // 后者（刷新自动恢复）避免了刷新后用初始状态（1/N）覆盖掉真实进度。
+    const saved = await loadActiveSession()
+    const explicitResume = route.query.resume === '1'
+    const wantsFresh = route.query.fresh === '1'
+    const sameEntry = !wantsFresh && saved?.entryKey != null && saved.entryKey === computeEntryKey()
+    if ((explicitResume || sameEntry) && isSessionInProgress(saved)) {
+      const map = new Map(all.map((q) => [q.id, q] as const))
+      questions.value = saved.questionIds.map((id) => map.get(id)!).filter(Boolean)
+      sessionId.value = saved.sessionId
+      mode.value = saved.mode
+      correctCount.value = saved.correctCount
+      wrongList.value = [...saved.wrongList]
+      startedAt.value = saved.startedAt
+      currentIndex.value = saved.submitted ? saved.currentIndex + 1 : saved.currentIndex
+      submitted.value = false
+      selectedKey.value = ''
+      startTime.value = Date.now()
+      history.value = []
+      startTimer()
+      window.addEventListener('keydown', onKeydown)
+      window.addEventListener('beforeunload', onBeforeUnload)
+      return
+    }
+
+    // 主动开新一轮：把 fresh 标记从 URL 抹掉，这样之后刷新（F5）能匹配 entryKey 自动恢复进度。
+    if (wantsFresh) {
+      const { fresh: _fresh, ...rest } = route.query
+      router.replace({ path: route.path, query: rest })
     }
 
     const { poolMode, displayMode, pool, shuffle } = resolveMode(all)

@@ -199,7 +199,7 @@ watch(isUnlocked, () => {
 })
 
 function startQuiz(mode: QuizMode | 'weakness', options?: { shuffle?: boolean }) {
-  const params: Record<string, string> = { mode }
+  const params: Record<string, string> = { mode, fresh: '1' }
   if (options?.shuffle) params.shuffle = '1'
   if (mode === 'wrong' && wrongIds.value.length > 0) {
     params.ids = wrongIds.value.join(',')
@@ -210,7 +210,7 @@ function startQuiz(mode: QuizMode | 'weakness', options?: { shuffle?: boolean })
 }
 
 function startTagQuiz(tag: string) {
-  router.push({ path: '/quiz', query: { tag } })
+  router.push({ path: '/quiz', query: { tag, fresh: '1' } })
 }
 
 function startHistoryGroup(
@@ -220,7 +220,7 @@ function startHistoryGroup(
 ) {
   const s = groupStats.value[groupId]
   if (!s) return
-  const params: Record<string, string> = { group: groupId, mode }
+  const params: Record<string, string> = { group: groupId, mode, fresh: '1' }
   if (options?.shuffle) params.shuffle = '1'
   if (mode === 'wrong' && s.wrongIds.length > 0) {
     params.ids = s.wrongIds.join(',')
@@ -325,7 +325,7 @@ function startSubBankFull(
 ) {
   const sb = currentSubBank.value
   if (!sb) return
-  const params: Record<string, string> = { mode, groups: sb.groupOrder.join(',') }
+  const params: Record<string, string> = { mode, groups: sb.groupOrder.join(','), fresh: '1' }
   if (options?.shuffle) params.shuffle = '1'
   if (mode === 'wrong') {
     const allWrong: string[] = []
