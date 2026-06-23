@@ -34,8 +34,10 @@ export function renderMarkdown(md: string): string {
     mdCache.set(md, cached)
     return cached
   }
-  const rawHtml = markdownRenderer.parse(md, { async: false }) as string
-  const result = sanitizeHtml(rawHtml)
+  const rawHtml = markdownRenderer.parse(md.trim(), { async: false }) as string
+  // 清理 marked 产生的空 <p> 标签（题干尾部换行等场景）
+  const cleaned = rawHtml.replace(/<p>\s*<\/p>/g, '').trim()
+  const result = sanitizeHtml(cleaned)
   // 超出上限时淘汰最旧（Map 迭代顺序即插入顺序，首条即最久未访问）
   if (mdCache.size >= CACHE.MAX_RENDER_CACHE) {
     const firstKey = mdCache.keys().next().value

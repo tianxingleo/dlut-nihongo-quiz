@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
-import { useRoute, useRouter, onBeforeRouteLeave } from 'vue-router'
+import { useRoute, useRouter, onBeforeRouteLeave, type RouteLocationRaw } from 'vue-router'
 import {
   loadQuestionBank,
   getQuestionsByTag,
@@ -66,7 +66,8 @@ const slideDirection = ref<'slide-left' | 'slide-right'>('slide-left')
 const showLeaveConfirm = ref(false)
 const showExplanation = ref(false)
 const loadError = ref('')
-let pendingNavigation: (() => void) | null = null
+let pendingNavigation: RouteLocationRaw | null = null
+let skipLeaveGuard = false
 let isDirty = false
 
 type CellStatus = 'correct' | 'wrong' | 'draft' | 'unanswered'
@@ -292,7 +293,9 @@ onMounted(async () => {
     const explicitResume = route.query.resume === '1'
     const wantsFresh = route.query.fresh === '1'
     const sameEntry = !wantsFresh && saved?.entryKey != null && saved.entryKey === computeEntryKey()
-    if ((explicitResume || sameEntry) && isSessionInProgress(saved)) {
+    // 无 query 参数直接进 /quiz（顶栏"刷题"、地址栏输入等）视为"继续上次"
+    const bareQuizEntry = Object.keys(route.query).length === 0
+    if (((explicitResume || sameEntry) && isSessionInProgress(saved)) || (bareQuizEntry && saved)) {
       const map = new Map(all.map((q) => [q.id, q] as const))
       questions.value = saved.questionIds.map((id) => map.get(id)!).filter(Boolean)
       sessionId.value = saved.sessionId
@@ -615,20 +618,24 @@ function onBeforeUnload(e: BeforeUnloadEvent) {
 }
 
 // 路由离开确认：自定义弹窗
-onBeforeRouteLeave((_to, _from, next) => {
-  if (finished.value || questions.value.length === 0) {
-    next()
-    return
+// 注意：不能用 next() 异步回调模式，在 Vue Router 4 中异步调用 next() 不可靠。
+// 改用 return false 取消导航 + 手动 router.push() 的模式。
+onBeforeRouteLeave((to) => {
+  if (skipLeaveGuard || finished.value || questions.value.length === 0) {
+    return true
   }
+  pendingNavigation = { path: to.path, query: to.query, hash: to.hash }
   showLeaveConfirm.value = true
-  pendingNavigation = () => next()
+  return false
 })
 
 function confirmLeave() {
   showLeaveConfirm.value = false
   if (pendingNavigation) {
-    pendingNavigation()
+    const target = pendingNavigation
     pendingNavigation = null
+    skipLeaveGuard = true
+    router.push(target)
   }
 }
 

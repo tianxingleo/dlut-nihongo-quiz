@@ -470,7 +470,10 @@ const dragOpacity = computed(() => {
   color: var(--text-primary);
 }
 .q-stem :deep(p) {
-  margin: 0 0 0.4em;
+  margin: 0;
+}
+.q-stem :deep(p + p) {
+  margin-top: 0.4em;
 }
 .q-hint {
   font-size: 13px;
