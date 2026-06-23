@@ -1,7 +1,10 @@
 /**
  * AI 服务层 - 处理与 AI API 的交互
  *
- * 使用 OpenAI 兼容格式，支持 DeepSeek、OpenAI 等多种提供商
+ * 支持两种 API 格式：
+ * 1. OpenAI 格式 - 适用于大多数 AI 服务（DeepSeek、OpenAI 等）
+ * 2. Anthropic 格式 - 适用于 Claude API 和 DeepSeek Anthropic 兼容端点
+ *
  * 所有 API 调用在本地进行，不经过任何中间服务器
  */
 import { getSetting } from '../db/database'
@@ -26,6 +29,9 @@ export class AIServiceError extends Error {
   }
 }
 
+/** API 格式类型 */
+type APIFormat = 'openai' | 'anthropic'
+
 /** 获取 AI 配置 */
 export async function getAIConfig(): Promise<AIConfig | null> {
   const config = await getSetting('aiConfig', null)
@@ -41,12 +47,67 @@ export async function isAIEnabled(): Promise<boolean> {
   return !!config?.apiKey
 }
 
-/** 构建请求头 */
-function buildHeaders(apiKey: string): Record<string, string> {
-  return {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${apiKey}`,
+/** 判断 API 格式 */
+function getAPIFormat(baseUrl: string): APIFormat {
+  if (baseUrl.includes('anthropic')) {
+    return 'anthropic'
   }
+  return 'openai'
+}
+
+/** 构建请求头 */
+function buildHeaders(apiKey: string, format: APIFormat): Record<string, string> {
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  }
+
+  if (format === 'anthropic') {
+    headers['x-api-key'] = apiKey
+    headers['anthropic-version'] = '2023-06-01'
+  } else {
+    headers['Authorization'] = `Bearer ${apiKey}`
+  }
+
+  return headers
+}
+
+/** 构建请求体 - OpenAI 格式 */
+function buildOpenAIBody(
+  model: string,
+  messages: Array<{ role: string; content: string }>,
+  maxTokens: number,
+  temperature: number,
+  stream: boolean,
+) {
+  return JSON.stringify({
+    model,
+    messages,
+    max_tokens: maxTokens,
+    temperature,
+    stream,
+  })
+}
+
+/** 构建请求体 - Anthropic 格式 */
+function buildAnthropicBody(
+  model: string,
+  systemPrompt: string,
+  userMessages: Array<{ role: string; content: string }>,
+  maxTokens: number,
+  temperature: number,
+  stream: boolean,
+) {
+  // Anthropic 格式将 system 单独提取，messages 只包含 user/assistant
+  const messages = userMessages.filter((m) => m.role !== 'system')
+
+  return JSON.stringify({
+    model,
+    max_tokens: maxTokens,
+    temperature,
+    system: systemPrompt,
+    messages,
+    stream,
+  })
 }
 
 /** 构建消息数组 */
@@ -71,26 +132,121 @@ function buildMessages(
   return messages
 }
 
+/** 解析 OpenAI 流式响应 */
+async function parseOpenAIStream(
+  reader: ReadableStreamDefaultReader<Uint8Array>,
+  callbacks: AIStreamCallbacks,
+): Promise<void> {
+  const decoder = new TextDecoder()
+  let fullText = ''
+  let buffer = ''
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+
+    buffer += decoder.decode(value, { stream: true })
+    const lines = buffer.split('\n')
+    buffer = lines.pop() || ''
+
+    for (const line of lines) {
+      const trimmed = line.trim()
+      if (!trimmed || !trimmed.startsWith('data: ')) continue
+
+      const data = trimmed.slice(6)
+      if (data === '[DONE]') continue
+
+      try {
+        const parsed = JSON.parse(data)
+        const content = parsed.choices?.[0]?.delta?.content
+        if (content) {
+          fullText += content
+          callbacks.onToken(content)
+        }
+      } catch {
+        // 忽略解析错误，继续处理下一行
+      }
+    }
+  }
+
+  callbacks.onComplete(fullText)
+}
+
+/** 解析 Anthropic 流式响应 */
+async function parseAnthropicStream(
+  reader: ReadableStreamDefaultReader<Uint8Array>,
+  callbacks: AIStreamCallbacks,
+): Promise<void> {
+  const decoder = new TextDecoder()
+  let fullText = ''
+  let buffer = ''
+
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+
+    buffer += decoder.decode(value, { stream: true })
+    const lines = buffer.split('\n')
+    buffer = lines.pop() || ''
+
+    for (const line of lines) {
+      const trimmed = line.trim()
+      if (!trimmed || !trimmed.startsWith('data: ')) continue
+
+      const data = trimmed.slice(6)
+
+      try {
+        const parsed = JSON.parse(data)
+        // Anthropic 流式响应格式
+        if (parsed.type === 'content_block_delta') {
+          const content = parsed.delta?.text
+          if (content) {
+            fullText += content
+            callbacks.onToken(content)
+          }
+        }
+      } catch {
+        // 忽略解析错误，继续处理下一行
+      }
+    }
+  }
+
+  callbacks.onComplete(fullText)
+}
+
 /** 发送流式请求 */
 export async function sendStreamRequest(
   config: AIConfig,
   messages: Array<{ role: string; content: string }>,
   callbacks: AIStreamCallbacks,
 ): Promise<void> {
-  const url = `${config.baseUrl.replace(/\/$/, '')}/v1/chat/completions`
+  const format = getAPIFormat(config.baseUrl)
+  const baseUrl = config.baseUrl.replace(/\/$/, '')
 
-  const body = JSON.stringify({
-    model: config.model,
-    messages,
-    max_tokens: config.maxTokens,
-    temperature: config.temperature,
-    stream: true,
-  })
+  let url: string
+  let body: string
+
+  if (format === 'anthropic') {
+    url = `${baseUrl}/v1/messages`
+    const systemPrompt = messages.find((m) => m.role === 'system')?.content || ''
+    const userMessages = messages.filter((m) => m.role !== 'system')
+    body = buildAnthropicBody(
+      config.model,
+      systemPrompt,
+      userMessages,
+      config.maxTokens,
+      config.temperature,
+      true,
+    )
+  } else {
+    url = `${baseUrl}/v1/chat/completions`
+    body = buildOpenAIBody(config.model, messages, config.maxTokens, config.temperature, true)
+  }
 
   try {
     const response = await fetch(url, {
       method: 'POST',
-      headers: buildHeaders(config.apiKey),
+      headers: buildHeaders(config.apiKey, format),
       body,
     })
 
@@ -113,48 +269,18 @@ export async function sendStreamRequest(
     }
 
     const reader = response.body.getReader()
-    const decoder = new TextDecoder()
-    let fullText = ''
-    let buffer = ''
 
-    while (true) {
-      const { done, value } = await reader.read()
-      if (done) break
-
-      buffer += decoder.decode(value, { stream: true })
-      const lines = buffer.split('\n')
-      buffer = lines.pop() || ''
-
-      for (const line of lines) {
-        const trimmed = line.trim()
-        if (!trimmed || !trimmed.startsWith('data: ')) continue
-
-        const data = trimmed.slice(6)
-        if (data === '[DONE]') continue
-
-        try {
-          const parsed = JSON.parse(data)
-          const content = parsed.choices?.[0]?.delta?.content
-          if (content) {
-            fullText += content
-            callbacks.onToken(content)
-          }
-        } catch {
-          // 忽略解析错误，继续处理下一行
-        }
-      }
+    if (format === 'anthropic') {
+      await parseAnthropicStream(reader, callbacks)
+    } else {
+      await parseOpenAIStream(reader, callbacks)
     }
-
-    callbacks.onComplete(fullText)
   } catch (error) {
     if (error instanceof AIServiceError) {
       callbacks.onError(error)
     } else if (error instanceof TypeError && error.message.includes('fetch')) {
       callbacks.onError(
-        new AIServiceError(
-          '网络连接失败，请检查网络设置和 API 地址',
-          'NETWORK_ERROR',
-        ),
+        new AIServiceError('网络连接失败，请检查网络设置和 API 地址', 'NETWORK_ERROR'),
       )
     } else {
       callbacks.onError(
@@ -230,23 +356,44 @@ export async function sendChatMessage(
 }
 
 /** 测试 API 连接 */
-export async function testConnection(config: AIConfig): Promise<{ success: boolean; message: string }> {
+export async function testConnection(
+  config: AIConfig,
+): Promise<{ success: boolean; message: string }> {
   try {
-    const testMessages = [
-      { role: 'system', content: '你是一个助手。' },
-      { role: 'user', content: '请回复"连接成功"这四个字。' },
-    ]
+    const format = getAPIFormat(config.baseUrl)
+    const baseUrl = config.baseUrl.replace(/\/$/, '')
 
-    const url = `${config.baseUrl.replace(/\/$/, '')}/v1/chat/completions`
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: buildHeaders(config.apiKey),
-      body: JSON.stringify({
+    let url: string
+    let headers: Record<string, string>
+    let body: string
+
+    if (format === 'anthropic') {
+      url = `${baseUrl}/v1/messages`
+      headers = buildHeaders(config.apiKey, format)
+      body = JSON.stringify({
         model: config.model,
-        messages: testMessages,
+        max_tokens: 50,
+        system: '你是一个助手。',
+        messages: [{ role: 'user', content: '请回复"连接成功"这四个字。' }],
+      })
+    } else {
+      url = `${baseUrl}/v1/chat/completions`
+      headers = buildHeaders(config.apiKey, format)
+      body = JSON.stringify({
+        model: config.model,
+        messages: [
+          { role: 'system', content: '你是一个助手。' },
+          { role: 'user', content: '请回复"连接成功"这四个字。' },
+        ],
         max_tokens: 50,
         temperature: 0,
-      }),
+      })
+    }
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers,
+      body,
     })
 
     if (!response.ok) {
@@ -257,7 +404,14 @@ export async function testConnection(config: AIConfig): Promise<{ success: boole
     }
 
     const data = await response.json()
-    const content = data.choices?.[0]?.message?.content || ''
+
+    // 根据格式解析响应
+    let content = ''
+    if (format === 'anthropic') {
+      content = data.content?.map((c: { text: string }) => c.text || '').join('') || ''
+    } else {
+      content = data.choices?.[0]?.message?.content || ''
+    }
 
     if (content.includes('连接成功')) {
       return { success: true, message: '连接成功' }
