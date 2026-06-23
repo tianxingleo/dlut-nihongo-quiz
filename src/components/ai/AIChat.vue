@@ -20,6 +20,14 @@ const { isLoading, currentResponse, error, conversationHistory, chat, clearHisto
 const userInput = ref('')
 const responseContainer = ref<HTMLDivElement | null>(null)
 const inputRef = ref<HTMLTextAreaElement | null>(null)
+const isNearBottom = ref(true)
+
+/** 判断滚动容器是否在底部附近（80px 容差） */
+function checkNearBottom() {
+  const el = responseContainer.value
+  if (!el) return
+  isNearBottom.value = el.scrollHeight - el.scrollTop - el.clientHeight < 80
+}
 
 // 合并历史消息和当前响应
 const displayMessages = computed(() => {
@@ -42,12 +50,12 @@ const displayMessages = computed(() => {
   return messages
 })
 
-// 自动滚动到底部
+// 流式传输时，仅当用户在底部附近才自动跟随滚动
 watch(
   displayMessages,
   async () => {
     await nextTick()
-    if (responseContainer.value) {
+    if (responseContainer.value && isNearBottom.value) {
       responseContainer.value.scrollTop = responseContainer.value.scrollHeight
     }
   },
@@ -75,6 +83,7 @@ async function handleSend() {
 
   userInput.value = ''
   clearError()
+  isNearBottom.value = true
 
   try {
     await chat(message, props.context)
@@ -108,7 +117,7 @@ function handleClear() {
             </div>
           </div>
 
-          <div class="ai-messages" ref="responseContainer">
+          <div class="ai-messages" ref="responseContainer" @scroll="checkNearBottom">
             <!-- 欢迎消息 -->
             <div v-if="displayMessages.length === 0" class="welcome-message">
               <div class="welcome-icon">AI</div>
@@ -126,7 +135,7 @@ function handleClear() {
                 {{ msg.role === 'user' ? '你' : 'AI' }}
               </div>
               <div class="message-content">
-                <div class="message-text" v-html="formatMessage(msg.content)"></div>
+                <div class="message-text markdown-body" v-html="formatMessage(msg.content)"></div>
                 <div v-if="msg.isStreaming" class="typing-indicator">
                   <span></span>
                   <span></span>
@@ -166,13 +175,11 @@ function handleClear() {
 </template>
 
 <script lang="ts">
+import { renderMarkdown } from '../../utils/renderMarkdown'
+
 /** 格式化消息文本 */
 function formatMessage(text: string): string {
-  return text
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/`(.*?)`/g, '<code>$1</code>')
-    .replace(/\n/g, '<br>')
+  return renderMarkdown(text)
 }
 </script>
 
@@ -362,6 +369,68 @@ function formatMessage(text: string): string {
 .message.user .message-text :deep(code) {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+.message-text :deep(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.message-text :deep(th),
+.message-text :deep(td) {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.message-text :deep(th) {
+  background: var(--bg-hover);
+  font-weight: 600;
+}
+
+.message-text :deep(tr:nth-child(even)) {
+  background: var(--bg-hover);
+}
+
+.message.user .message-text :deep(th),
+.message.user .message-text :deep(td) {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.message.user .message-text :deep(th) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.message.user .message-text :deep(tr:nth-child(even)) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.message-text :deep(ul),
+.message-text :deep(ol) {
+  padding-left: 20px;
+  margin: 6px 0;
+}
+
+.message-text :deep(li) {
+  margin: 3px 0;
+}
+
+.message-text :deep(pre) {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  padding: 10px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.message-text :deep(pre code) {
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .typing-indicator {

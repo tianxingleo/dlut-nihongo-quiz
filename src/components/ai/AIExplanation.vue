@@ -16,6 +16,14 @@ const { isLoading, currentResponse, error, explainQuestion, clearError, aiEnable
 
 const responseContainer = ref<HTMLDivElement | null>(null)
 const hasStarted = ref(false)
+const isNearBottom = ref(true)
+
+/** 判断滚动容器是否在底部附近（80px 容差） */
+function checkNearBottom() {
+  const el = responseContainer.value
+  if (!el) return
+  isNearBottom.value = el.scrollHeight - el.scrollTop - el.clientHeight < 80
+}
 
 // 当 request 变化时自动开始生成
 watch(
@@ -23,6 +31,7 @@ watch(
   async (newRequest) => {
     if (newRequest && props.visible && aiEnabled.value) {
       hasStarted.value = true
+      isNearBottom.value = true
       try {
         await explainQuestion(newRequest)
       } catch {
@@ -33,10 +42,10 @@ watch(
   { immediate: true },
 )
 
-// 自动滚动到底部
+// 流式传输时，仅当用户在底部附近才自动跟随滚动
 watch(currentResponse, async () => {
   await nextTick()
-  if (responseContainer.value) {
+  if (responseContainer.value && isNearBottom.value) {
     responseContainer.value.scrollTop = responseContainer.value.scrollHeight
   }
 })
@@ -63,7 +72,7 @@ function handleRetry() {
             <button class="close-btn" @click="handleClose">&times;</button>
           </div>
 
-          <div class="ai-content" ref="responseContainer">
+          <div class="ai-content" ref="responseContainer" @scroll="checkNearBottom">
             <!-- 加载状态 -->
             <div v-if="isLoading && !currentResponse" class="ai-loading">
               <div class="loading-spinner"></div>
@@ -78,7 +87,7 @@ function handleRetry() {
 
             <!-- 响应内容 -->
             <div v-else-if="currentResponse" class="ai-response">
-              <div class="response-text" v-html="formatResponse(currentResponse)"></div>
+              <div class="response-text markdown-body" v-html="formatResponse(currentResponse)"></div>
               <div v-if="isLoading" class="typing-indicator">
                 <span></span>
                 <span></span>
@@ -104,16 +113,11 @@ function handleRetry() {
 </template>
 
 <script lang="ts">
+import { renderMarkdown } from '../../utils/renderMarkdown'
+
 /** 格式化 AI 响应文本 */
 function formatResponse(text: string): string {
-  // 简单的 markdown 转换
-  return text
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/`(.*?)`/g, '<code>$1</code>')
-    .replace(/\n/g, '<br>')
-    .replace(/(\d+)\.\s/g, '<br><strong>$1.</strong> ')
-    .replace(/[-•]\s/g, '<br>• ')
+  return renderMarkdown(text)
 }
 </script>
 
@@ -232,6 +236,55 @@ function formatResponse(text: string): string {
   padding: 2px 6px;
   background: var(--bg-hover);
   border: 1px solid var(--border);
+}
+
+.ai-response :deep(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.ai-response :deep(th),
+.ai-response :deep(td) {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.ai-response :deep(th) {
+  background: var(--bg-hover);
+  font-weight: 600;
+}
+
+.ai-response :deep(tr:nth-child(even)) {
+  background: var(--bg-hover);
+}
+
+.ai-response :deep(ul),
+.ai-response :deep(ol) {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.ai-response :deep(li) {
+  margin: 4px 0;
+}
+
+.ai-response :deep(pre) {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  padding: 12px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+.ai-response :deep(pre code) {
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .typing-indicator {
