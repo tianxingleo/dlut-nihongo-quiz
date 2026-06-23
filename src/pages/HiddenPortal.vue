@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { ref, computed, nextTick, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { marked } from 'marked'
+import { Marked } from 'marked'
 import { useHiddenSite } from '../composables/useHiddenSite'
 import { setActiveCategory, setActiveSubBankKey } from '../services/categoryStore'
 import GrammarToc from '../components/GrammarToc.vue'
+import { sanitizeHtml } from '../utils/renderMarkdown'
 import rawNotes from '../content/grammar-notes.md?raw'
 
-marked.setOptions({ gfm: true, breaks: false })
+const markdownRenderer = new Marked({ gfm: true, breaks: false })
 
 const router = useRouter()
 const { isUnlocked, lock } = useHiddenSite()
@@ -60,10 +61,11 @@ function buildToc(markdown: string) {
 }
 
 function renderMarkdown(markdown: string): string {
-  const raw = marked.parse(markdown, { async: false }) as string
-  return raw.replace(/<(h[23])>([^<]+)<\/\1>/g, (_full, tag, text) => {
+  const raw = markdownRenderer.parse(markdown, { async: false }) as string
+  const withHeadingIds = raw.replace(/<(h[23])>([^<]+)<\/\1>/g, (_full, tag, text) => {
     return `<${tag} id="${slugify(text)}">${text}</${tag}>`
   })
+  return sanitizeHtml(withHeadingIds)
 }
 
 function openGrammar() {

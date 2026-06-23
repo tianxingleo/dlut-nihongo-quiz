@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
-import { marked } from 'marked'
+import { Marked } from 'marked'
 import markedKatex from 'marked-katex-extension'
 import GrammarToc from './GrammarToc.vue'
+import { sanitizeHtml } from '../utils/renderMarkdown'
 
 const props = withDefaults(
   defineProps<{
@@ -21,16 +22,13 @@ const props = withDefaults(
   },
 )
 
-if (props.enableKatex) {
-  marked.use(markedKatex({ throwOnError: false, nonStandard: true }))
-}
-
-marked.setOptions({
+const markdownRenderer = new Marked({
   gfm: true,
   breaks: false,
 })
 
 if (props.enableKatex) {
+  markdownRenderer.use(markedKatex({ throwOnError: false, nonStandard: true }))
   import('katex/dist/katex.min.css')
 }
 
@@ -78,11 +76,12 @@ function buildToc(markdown: string): TocItem[] {
 }
 
 function renderMarkdown(markdown: string): string {
-  const raw = marked.parse(markdown, { async: false }) as string
-  return raw.replace(/<(h[23])>([^<]+)<\/\1>/g, (_full, tag, text) => {
+  const raw = markdownRenderer.parse(markdown, { async: false }) as string
+  const withHeadingIds = raw.replace(/<(h[23])>([^<]+)<\/\1>/g, (_full, tag, text) => {
     const id = slugify(text)
     return `<${tag} id="${id}">${text}</${tag}>`
   })
+  return sanitizeHtml(withHeadingIds)
 }
 
 let observer: IntersectionObserver | null = null
