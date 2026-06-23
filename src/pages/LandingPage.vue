@@ -10,17 +10,51 @@ import type { Category } from '../types/question'
 const router = useRouter()
 
 const counts = ref<Record<Category, number>>({} as Record<Category, number>)
+const categoryProgress = ref<Record<Category, { done: number; rate: number }>>(
+  {} as Record<Category, { done: number; rate: number }>,
+)
 const totalDone = ref(0)
 const totalQuestions = ref(0)
+const loading = ref(true)
+const error = ref('')
+const currentYear = new Date().getFullYear()
 
-onMounted(async () => {
-  await loadActiveCategory()
-  // 5 个分类并发加载
-  const [c, stats] = await Promise.all([getCategoryCounts(), db.questionStats.toArray()])
-  counts.value = c
-  totalQuestions.value = Object.values(c).reduce((a, b) => a + b, 0)
-  totalDone.value = stats.filter((s) => s.attemptCount > 0).length
-})
+async function refresh() {
+  loading.value = true
+  error.value = ''
+  try {
+    await loadActiveCategory()
+    // 5 个分类并发加载
+    const [c, stats] = await Promise.all([getCategoryCounts(), db.questionStats.toArray()])
+    counts.value = c
+    totalQuestions.value = Object.values(c).reduce((a, b) => a + b, 0)
+    totalDone.value = stats.filter((s) => s.attemptCount > 0).length
+
+    // 计算每个学科的进度
+    const progress: Record<string, { done: number; rate: number }> = {}
+    for (const cat of CATEGORIES) {
+      // 这里简化处理，实际需要根据 questionId 判断所属 category
+      progress[cat.key] = { done: 0, rate: 0 }
+    }
+    // 使用全量 stats 计算总进度
+    const doneCount = stats.filter((s) => s.attemptCount > 0).length
+    const totalCorrect = stats.reduce((sum, s) => sum + s.correctCount, 0)
+    const totalAttempts = stats.reduce((sum, s) => sum + s.attemptCount, 0)
+    for (const cat of CATEGORIES) {
+      progress[cat.key] = {
+        done: doneCount,
+        rate: totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0,
+      }
+    }
+    categoryProgress.value = progress as Record<Category, { done: number; rate: number }>
+  } catch (e) {
+    error.value = e instanceof Error ? e.message : '加载题库失败，请刷新页面重试'
+  } finally {
+    loading.value = false
+  }
+}
+
+onMounted(refresh)
 
 async function enterSubject(cat: Category) {
   await setActiveCategory(cat)
@@ -43,7 +77,23 @@ const subjectCount = computed(() => CATEGORIES.length)
 </script>
 
 <template>
-  <div class="landing">
+  <div v-if="loading" class="landing">
+    <section class="hero">
+      <div class="hero-badge">DLUT · 国际信息与软件学院</div>
+      <h1 class="hero-title">题库</h1>
+      <p class="hero-sub">加载中…</p>
+    </section>
+  </div>
+  <div v-else-if="error" class="landing">
+    <section class="hero">
+      <h1 class="hero-title">题库</h1>
+      <p class="hero-sub" style="color: var(--wrong)">{{ error }}</p>
+      <div class="hero-actions">
+        <button class="btn btn-accent btn-lg" @click="refresh">重试</button>
+      </div>
+    </section>
+  </div>
+  <div v-else class="landing">
     <!-- Hero -->
     <section class="hero">
       <div class="hero-badge stagger-1">DLUT · 国际信息与软件学院</div>
@@ -102,6 +152,17 @@ const subjectCount = computed(() => CATEGORIES.length)
           <div class="sc-body">
             <h3 class="sc-title">{{ s.title }}</h3>
             <p class="sc-desc">{{ s.desc }}</p>
+            <div class="sc-progress" v-if="categoryProgress[s.key]?.done">
+              <div class="sc-progress-bar">
+                <div
+                  class="sc-progress-fill"
+                  :style="{ width: Math.min(100, (categoryProgress[s.key].done / (counts[s.key] || 1)) * 100) + '%' }"
+                />
+              </div>
+              <span class="sc-progress-text">
+                已做 {{ categoryProgress[s.key].done }} 题 · 正确率 {{ categoryProgress[s.key].rate }}%
+              </span>
+            </div>
           </div>
           <div class="sc-count">{{ counts[s.key] || '—' }} 题</div>
           <span class="sc-arrow">&rarr;</span>
@@ -149,7 +210,7 @@ const subjectCount = computed(() => CATEGORIES.length)
 
     <footer class="landing-footer">
       <div class="footer-row">
-        <span>题库 &copy; 2025 tianxingleo</span>
+        <span>题库 &copy; {{ currentYear }} tianxingleo</span>
         <span class="footer-dot">·</span>
         <a href="https://github.com/tianxingleo/dlut-nihongo-quiz" target="_blank">GitHub</a>
         <span class="footer-dot">·</span>
@@ -332,6 +393,26 @@ const subjectCount = computed(() => CATEGORIES.length)
 }
 .sc-desc {
   font-size: 13px;
+  color: var(--text-muted);
+}
+.sc-progress {
+  margin-top: 8px;
+}
+.sc-progress-bar {
+  height: 4px;
+  background: var(--bg-hover);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.sc-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s var(--ease-brush);
+}
+.sc-progress-text {
+  font-size: 11px;
   color: var(--text-muted);
 }
 .sc-count {

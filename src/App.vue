@@ -11,9 +11,12 @@ import {
 import { getQuestionById } from './services/quizEngine'
 import { COURSE_TREE } from './config/courseTree'
 import { useHiddenSite } from './composables/useHiddenSite'
+import { useAI } from './composables/useAI'
+import { UI } from './constants'
 import type { Category } from './types/question'
-import SearchOverlay from './components/SearchOverlay.vue'
-import TreeNav from './components/TreeNav.vue'
+import SearchOverlay from './components/layout/SearchOverlay.vue'
+import TreeNav from './components/layout/TreeNav.vue'
+import ToastContainer from './components/ui/ToastContainer.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -24,6 +27,7 @@ const searchOpen = ref(false)
 const drawerOpen = ref(false)
 
 const { isUnlocked, unlockProgress, startLongPress, cancelLongPress, lock } = useHiddenSite()
+const { initAI } = useAI()
 
 function exitHidden() {
   lock()
@@ -51,7 +55,10 @@ function onPressMove(e: MouseEvent | TouchEvent) {
     x = e.touches[0].clientX
     y = e.touches[0].clientY
   }
-  if (Math.abs(x - pressStartX) > 10 || Math.abs(y - pressStartY) > 10) {
+  if (
+    Math.abs(x - pressStartX) > UI.LONG_PRESS_MOVE_THRESHOLD ||
+    Math.abs(y - pressStartY) > UI.LONG_PRESS_MOVE_THRESHOLD
+  ) {
     cancelLongPress()
   }
 }
@@ -66,12 +73,16 @@ const navLinks = [
   { to: '/home', label: '仪表盘' },
   { to: '/quiz', label: '刷题' },
   { to: '/wrong', label: '错题本' },
+  { to: '/bookmarks', label: '收藏' },
+  { to: '/history', label: '历史' },
   { to: '/analysis', label: '分析' },
   { to: '/settings', label: '设置' },
 ] as const
 
 onMounted(async () => {
   await loadActiveCategory()
+  // 初始化 AI 功能
+  await initAI()
 })
 
 function navigateTo(path: string) {
@@ -231,6 +242,7 @@ async function handleSearchNavigate(questionId: string) {
     @close="searchOpen = false"
     @navigate="handleSearchNavigate"
   />
+  <ToastContainer />
 </template>
 <style scoped>
 .app-shell {

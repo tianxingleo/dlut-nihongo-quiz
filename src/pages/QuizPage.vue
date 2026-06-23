@@ -8,7 +8,6 @@ import {
   generateSessionId,
   isMultiAnswerCorrect,
   filterVisibleQuestions,
-  toggleMultiSelect,
 } from '../services/quizEngine'
 import {
   recordAttempt,
@@ -26,18 +25,20 @@ import {
 } from '../services/sessionResume'
 import { useActiveCategory, loadActiveCategory, setActiveCategory } from '../services/categoryStore'
 import { useHiddenSite } from '../composables/useHiddenSite'
-import QuestionCard from '../components/QuestionCard.vue'
-import QuestionNavigator from '../components/QuestionNavigator.vue'
-import ProgressBar from '../components/ProgressBar.vue'
-import PageSkeleton from '../components/PageSkeleton.vue'
+import QuestionCard from '../components/quiz/QuestionCard.vue'
+import QuestionNavigator from '../components/quiz/QuestionNavigator.vue'
+import ProgressBar from '../components/ui/ProgressBar.vue'
+import PageSkeleton from '../components/ui/PageSkeleton.vue'
 import { renderMarkdown, stripMarkdown } from '../utils/renderMarkdown'
 import { truncate } from '../utils/text'
+import { useAI } from '../composables/useAI'
 import type { Question, QuizMode, Category } from '../types/question'
 
 const route = useRoute()
 const router = useRouter()
 const activeCategory = useActiveCategory()
 const { isUnlocked } = useHiddenSite()
+const { initAI } = useAI()
 
 const questions = ref<Question[]>([])
 const currentIndex = ref(0)
@@ -47,6 +48,7 @@ const sessionId = ref('')
 const correctCount = ref(0)
 const wrongList = ref<string[]>([])
 const mode = ref('')
+const poolMode = ref<QuizMode>('sequential')
 const startTime = ref(0)
 const finished = ref(false)
 const bookmarked = ref(false)
@@ -54,12 +56,18 @@ const bookmarkCache = ref<Set<string>>(new Set())
 const startedAt = ref('')
 const elapsedTime = ref(0)
 const timerInterval = ref<ReturnType<typeof setInterval> | null>(null)
+const isExamMode = ref(false)
+const examTimeLimit = ref(60 * 60) // 默认 60 分钟（秒）
+const remainingTime = ref(0)
+const examTimerInterval = ref<ReturnType<typeof setInterval> | null>(null)
 const history = ref<Array<{ questionId: string; selectedKey: string; isCorrect: boolean }>>([])
 const drafts = ref<Map<number, string>>(new Map())
 const slideDirection = ref<'slide-left' | 'slide-right'>('slide-left')
 const showLeaveConfirm = ref(false)
+const showExplanation = ref(false)
 const loadError = ref('')
 let pendingNavigation: (() => void) | null = null
+let isDirty = false
 
 type CellStatus = 'correct' | 'wrong' | 'draft' | 'unanswered'
 
@@ -94,6 +102,15 @@ const wrongQuestions = computed(() => {
 })
 
 function snapshot(submittedNow: boolean): ActiveSession {
+  // 将 Map 转换为 Record 以便序列化
+  const draftsRecord: Record<number, string> = {}
+  drafts.value.forEach((value, key) => {
+    draftsRecord[key] = value
+  })
+
+  // 标记数据已保存，重置 dirty flag
+  isDirty = false
+
   return {
     sessionId: sessionId.value,
     mode: mode.value,
@@ -104,7 +121,15 @@ function snapshot(submittedNow: boolean): ActiveSession {
     correctCount: correctCount.value,
     wrongList: [...wrongList.value],
     startedAt: startedAt.value,
+    history: [...history.value],
+    elapsedSeconds: elapsedTime.value,
+    drafts: draftsRecord,
   }
+}
+
+// 标记数据已改变，需要保存
+function markDirty() {
+  isDirty = true
 }
 
 function startTimer() {
@@ -120,6 +145,50 @@ function stopTimer() {
     timerInterval.value = null
   }
 }
+
+function startExamTimer() {
+  if (!isExamMode.value) return
+  remainingTime.value = examTimeLimit.value
+  examTimerInterval.value = setInterval(() => {
+    remainingTime.value--
+    if (remainingTime.value <= 0) {
+      stopExamTimer()
+      // 时间到自动交卷
+      handleExamTimeUp()
+    }
+  }, 1000)
+}
+
+function stopExamTimer() {
+  if (examTimerInterval.value) {
+    clearInterval(examTimerInterval.value)
+    examTimerInterval.value = null
+  }
+}
+
+async function handleExamTimeUp() {
+  // 时间到，自动完成考试
+  finished.value = true
+  stopTimer()
+  stopExamTimer()
+  // 持久化 session 数据到数据库
+  await db.sessions.put(
+    createSession({
+      mode: mode.value,
+      totalQuestions: questions.value.length,
+      correctCount: correctCount.value,
+      wrongCount: wrongList.value.length,
+      startedAt: startedAt.value,
+    }),
+  )
+  await clearActiveSession()
+}
+
+const formattedRemainingTime = computed(() => {
+  const mins = Math.floor(remainingTime.value / 60)
+  const secs = remainingTime.value % 60
+  return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
+})
 
 // 把 query 解析成 { mode, pool, display, shuffle }，避免在 onMounted 里反复覆盖 mode.value
 function resolveMode(all: Question[]): {
@@ -186,6 +255,8 @@ function resolveMode(all: Question[]): {
 onMounted(async () => {
   try {
     await loadActiveCategory()
+    // 初始化 AI 功能
+    await initAI()
     const queryCat = route.query.category as Category | undefined
     if (queryCat && queryCat !== activeCategory.value) {
       await setActiveCategory(queryCat)
@@ -212,19 +283,29 @@ onMounted(async () => {
         submitted.value = false
         selectedKey.value = ''
         startTime.value = Date.now()
-        history.value = []
+        // 恢复 history、elapsedTime 和 drafts
+        history.value = saved.history || []
+        elapsedTime.value = saved.elapsedSeconds || 0
+        if (saved.drafts) {
+          const draftsMap = new Map<number, string>()
+          Object.entries(saved.drafts).forEach(([key, value]) => {
+            draftsMap.set(Number(key), value)
+          })
+          drafts.value = draftsMap
+        }
         startTimer()
         return
       }
     }
 
-    const { poolMode, displayMode, pool, shuffle } = resolveMode(all)
-    mode.value = displayMode
+    const resolved = resolveMode(all)
+    poolMode.value = resolved.poolMode
+    mode.value = resolved.displayMode
 
-    let finalPool = pool
-    if (poolMode === 'random') {
-      finalPool = shuffleArray(pool)
-    } else if (poolMode === 'weakness') {
+    let finalPool = resolved.pool
+    if (resolved.poolMode === 'random') {
+      finalPool = shuffleArray(resolved.pool)
+    } else if (resolved.poolMode === 'weakness') {
       const stats = await db.questionStats.toArray()
       const validIds = new Set(all.map((q) => q.id))
       const weakIds = stats
@@ -234,10 +315,11 @@ onMounted(async () => {
       const priorityQuestions = weakIds.map((id) => all.find((q) => q.id === id)!).filter(Boolean)
       const remaining = shuffleArray(all.filter((q) => !weakSet.has(q.id)))
       finalPool = [...priorityQuestions, ...remaining]
-    } else if (poolMode === 'exam') {
+    } else if (resolved.poolMode === 'exam') {
       finalPool = shuffleArray([...all])
-    } else if ((poolMode === 'untouched' || poolMode === 'wrong') && shuffle) {
-      finalPool = shuffleArray(pool)
+      isExamMode.value = true
+    } else if ((resolved.poolMode === 'untouched' || resolved.poolMode === 'wrong') && resolved.shuffle) {
+      finalPool = shuffleArray(resolved.pool)
     }
     questions.value = finalPool
 
@@ -245,11 +327,16 @@ onMounted(async () => {
     startTime.value = Date.now()
     startedAt.value = new Date().toISOString()
     await saveActiveSession(snapshot(false))
-    startTimer()
-
     window.addEventListener('keydown', onKeydown)
     window.addEventListener('beforeunload', onBeforeUnload)
+    startTimer()
+    if (isExamMode.value) {
+      startExamTimer()
+    }
   } catch (e) {
+    // 确保在错误路径上移除可能已添加的事件监听器
+    window.removeEventListener('keydown', onKeydown)
+    window.removeEventListener('beforeunload', onBeforeUnload)
     loadError.value = e instanceof Error ? e.message : '加载题库失败，请返回首页重试'
   }
 })
@@ -298,34 +385,40 @@ async function handleSubmit() {
     }
   }
   drafts.value.delete(currentIndex.value)
+  markDirty()
 
   const elapsedMs = Date.now() - startTime.value
   startTime.value = Date.now()
 
-  await recordAttempt({
-    questionId: q.id,
-    sessionId: sessionId.value,
-    selectedKey: selectedKey.value,
-    correctKey: q.answerKey,
-    isCorrect,
-    elapsedMs,
-    mode: mode.value,
-    createdAt: new Date().toISOString(),
-  })
-
-  await updateTagStats(q.tags, isCorrect)
-
-  await db.sessions.put(
-    createSession({
+  try {
+    await recordAttempt({
+      questionId: q.id,
+      sessionId: sessionId.value,
+      selectedKey: selectedKey.value,
+      correctKey: q.answerKey,
+      isCorrect,
+      elapsedMs,
       mode: mode.value,
-      totalQuestions: questions.value.length,
-      correctCount: correctCount.value,
-      wrongCount: wrongList.value.length,
-      startedAt: startedAt.value || new Date().toISOString(),
-    }),
-  )
+      createdAt: new Date().toISOString(),
+    })
 
-  await saveActiveSession(snapshot(true))
+    await updateTagStats(q.tags, isCorrect)
+
+    await db.sessions.put(
+      createSession({
+        mode: mode.value,
+        totalQuestions: questions.value.length,
+        correctCount: correctCount.value,
+        wrongCount: wrongList.value.length,
+        startedAt: startedAt.value || new Date().toISOString(),
+      }),
+    )
+
+    await saveActiveSession(snapshot(true))
+  } catch (e) {
+    console.error('保存答题记录失败:', e)
+    // 不影响用户继续答题，只记录错误
+  }
 }
 
 function saveCurrentDraft() {
@@ -339,6 +432,7 @@ function saveCurrentDraft() {
 function jumpTo(i: number) {
   if (i === currentIndex.value || i < 0 || i >= questions.value.length) return
   saveCurrentDraft()
+  markDirty()
   // Pre-render markdown before changing index so the new card's
   // synchronous marked.parse() doesn't block the transition frames.
   const target = questions.value[i]
@@ -352,7 +446,10 @@ function jumpTo(i: number) {
   selectedKey.value = h ? h.selectedKey : (drafts.value.get(i) ?? '')
   startTime.value = Date.now()
   requestAnimationFrame(() => {
-    saveActiveSession(snapshot(false))
+    // 只在数据真正改变时才保存
+    if (isDirty) {
+      saveActiveSession(snapshot(false))
+    }
   })
 }
 
@@ -414,24 +511,26 @@ function onKeydown(e: KeyboardEvent) {
   if (!submitted.value) {
     const k = e.key.toUpperCase()
     if (['A', 'B', 'C', 'D', 'E'].includes(k)) {
-      if (currentQuestion.value?.multiAnswer) {
-        selectedKey.value = toggleMultiSelect(selectedKey.value, k)
-      } else {
-        handleSelect(k)
-      }
+      handleSelect(k)
     } else if (['1', '2', '3', '4', '5'].includes(e.key)) {
       const keyIndex = Number(e.key) - 1
       const key = ['A', 'B', 'C', 'D', 'E'][keyIndex]
-      if (currentQuestion.value?.multiAnswer) {
-        selectedKey.value = toggleMultiSelect(selectedKey.value, key)
-      } else {
-        handleSelect(key)
-      }
+      handleSelect(key)
+    } else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault()
+      const keys = currentQuestion.value?.options.map((o) => o.key) || []
+      const idx = keys.indexOf(selectedKey.value)
+      const next =
+        e.key === 'ArrowDown'
+          ? keys[Math.min(idx + 1, keys.length - 1)]
+          : keys[Math.max(idx - 1, 0)]
+      if (next) handleSelect(next)
     }
     if (e.key === 'Enter' && selectedKey.value) handleSubmit()
   } else {
     if (e.key === 'Enter' || e.key === 'n' || e.key === 'N') handleNext()
     if ((e.key === 'P' || e.key === 'p') && currentIndex.value > 0) handlePrev()
+    if (e.key === 'e' || e.key === 'E') showExplanation.value = !showExplanation.value
   }
   // 书签快捷键（任何时候可用）
   if (e.key === 'b' || e.key === 'B') {
@@ -444,9 +543,12 @@ onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
   window.removeEventListener('beforeunload', onBeforeUnload)
   stopTimer()
+  stopExamTimer()
 })
 
 async function restart() {
+  stopTimer()
+  stopExamTimer()
   currentIndex.value = 0
   selectedKey.value = ''
   submitted.value = false
@@ -459,7 +561,15 @@ async function restart() {
   history.value = []
   drafts.value.clear()
   elapsedTime.value = 0
+  // 重置考试模式状态
+  if (isExamMode.value) {
+    remainingTime.value = examTimeLimit.value
+  }
   await saveActiveSession(snapshot(false))
+  startTimer()
+  if (isExamMode.value) {
+    startExamTimer()
+  }
 }
 
 function goHome() {
@@ -515,7 +625,18 @@ function cancelLeave() {
       <div class="quiz-info">
         <span>{{ mode }}</span>
         <span class="timer">{{ formattedTime }}</span>
-        <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题 · P 上一题 · B 书签</span>
+        <span v-if="isExamMode" class="exam-timer" :class="{ 'time-warning': remainingTime < 300 }">
+          剩余时间: {{ formattedRemainingTime }}
+        </span>
+        <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题 · P 上一题 · B 书签 · E 解析</span>
+      </div>
+      <!-- Sticky exam timer for long questions -->
+      <div
+        v-if="isExamMode"
+        class="sticky-exam-timer"
+        :class="{ 'time-warning': remainingTime < 300 }"
+      >
+        剩余时间: {{ formattedRemainingTime }}
       </div>
       <Transition :name="slideDirection" mode="out-in">
         <QuestionCard
@@ -527,6 +648,8 @@ function cancelLeave() {
           :question-index="currentIndex"
           :total-questions="questions.length"
           :bookmarked="bookmarked"
+          :show-explanation="showExplanation"
+          :category="activeCategory"
           @select="handleSelect"
           @submit="handleSubmit"
           @next="handleNext"
@@ -534,6 +657,7 @@ function cancelLeave() {
           @bookmark="handleBookmark"
           @swipe-prev="handleSwipePrev"
           @swipe-next="handleSwipeNext"
+          @update:show-explanation="showExplanation = $event"
         />
       </Transition>
     </template>
@@ -617,6 +741,55 @@ function cancelLeave() {
   margin: 8px 0 18px;
   flex-wrap: wrap;
   gap: 4px 12px;
+}
+
+.exam-timer {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--accent);
+  padding: 2px 8px;
+  border: 1px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.exam-timer.time-warning {
+  color: var(--wrong);
+  border-color: var(--wrong);
+  background: color-mix(in srgb, var(--wrong) 10%, transparent);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.sticky-exam-timer {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  z-index: 50;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--accent);
+  padding: 6px 12px;
+  border: 1px solid var(--accent);
+  background: var(--bg-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.sticky-exam-timer.time-warning {
+  color: var(--wrong);
+  border-color: var(--wrong);
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .sticky-exam-timer {
+    display: block;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 
 /* Slide transition — out-in mode with fast leave + smooth enter.
