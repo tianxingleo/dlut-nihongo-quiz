@@ -76,3 +76,20 @@ footer-check.png
 # One-off helper scripts (underscore prefix convention)
 scripts/_*.cjs
 scripts/_*.mjs
+scripts/_*.py
+scripts/__pycache__/
+
+# Root-level temp / analysis artifacts
+_*.json
+_*.txt
+_*.py
+ARCHITECTURE_PLAN.md
+digital-circuit.png
+
+# Dedup / analysis intermediates
+data/processed/*dedup*.jsonl
+data/processed/*dedup*.json
+data/processed/_*.json
+data/processed/_history-practice-overlap.json
+data/raw/_compare-history-practice.md
+data/raw/military/_original/
