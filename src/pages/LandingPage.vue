@@ -30,19 +30,39 @@ async function refresh() {
     totalQuestions.value = Object.values(c).reduce((a, b) => a + b, 0)
     totalDone.value = stats.filter((s) => s.attemptCount > 0).length
 
-    // 计算每个学科的进度
+    // 计算每个学科的进度：根据 questionId 前缀判断所属 category
+    // 前缀规则与 database.ts version 3 升级逻辑一致
     const progress: Record<string, { done: number; rate: number }> = {}
     for (const cat of CATEGORIES) {
-      // 这里简化处理，实际需要根据 questionId 判断所属 category
-      progress[cat.key] = { done: 0, rate: 0 }
-    }
-    // 使用全量 stats 计算总进度
-    const doneCount = stats.filter((s) => s.attemptCount > 0).length
-    const totalCorrect = stats.reduce((sum, s) => sum + s.correctCount, 0)
-    const totalAttempts = stats.reduce((sum, s) => sum + s.attemptCount, 0)
-    for (const cat of CATEGORIES) {
+      // 按 category 过滤 stats
+      const catStats = stats.filter((s) => {
+        const id = s.questionId || ''
+        switch (cat.key) {
+          case 'history':
+            return id.startsWith('hist-') || id.startsWith('hist')
+          case 'party':
+            return id.startsWith('party-') || id.startsWith('party')
+          case 'military':
+            return id.startsWith('mil-') || id.startsWith('mil')
+          case 'japanese2':
+            // 综合日语2：排除其他学科前缀
+            return (
+              !id.startsWith('hist-') &&
+              !id.startsWith('hist') &&
+              !id.startsWith('party-') &&
+              !id.startsWith('party') &&
+              !id.startsWith('mil-') &&
+              !id.startsWith('mil')
+            )
+          default:
+            return true
+        }
+      })
+      const done = catStats.filter((s) => s.attemptCount > 0).length
+      const totalCorrect = catStats.reduce((sum, s) => sum + s.correctCount, 0)
+      const totalAttempts = catStats.reduce((sum, s) => sum + s.attemptCount, 0)
       progress[cat.key] = {
-        done: doneCount,
+        done,
         rate: totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0,
       }
     }
