@@ -67,7 +67,7 @@ const pagedItems = computed(() => {
 })
 
 function goReview(ids: string[]) {
-  router.push({ path: '/quiz', query: { ids: ids.join(',') } })
+  router.push({ path: '/quiz', query: { ids: ids.join(','), fresh: '1' } })
 }
 
 async function clearWrong(questionId: string) {

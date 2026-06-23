@@ -1,5 +1,7 @@
+// @vitest-environment jsdom
 import { describe, it, expect } from 'vitest'
-import { stripMarkdown } from './renderMarkdown'
+import { marked } from 'marked'
+import { stripMarkdown, renderMarkdown, sanitizeHtml } from './renderMarkdown'
 
 describe('stripMarkdown', () => {
   it('removes bold markers', () => {
@@ -37,5 +39,48 @@ describe('stripMarkdown', () => {
   it('does not strip single asterisk inside words (not italic)', () => {
     // 单独的 * 不应被误删
     expect(stripMarkdown('a * b')).toBe('a * b')
+  })
+})
+
+describe('renderMarkdown (XSS sanitization)', () => {
+  it('strips <script> tags', () => {
+    const out = renderMarkdown('<script>alert(document.cookie)</script>')
+    expect(out).not.toContain('<script')
+    expect(out).not.toContain('alert(document.cookie)')
+  })
+
+  it('strips inline event handlers (onerror)', () => {
+    const out = renderMarkdown('题干 <img src=x onerror=alert(1)>')
+    expect(out).not.toContain('onerror')
+    expect(out).not.toContain('alert(1)')
+  })
+
+  it('strips javascript: URLs from links', () => {
+    const out = renderMarkdown('[x](javascript:alert(1))')
+    expect(out).not.toContain('javascript:')
+  })
+
+  it('preserves benign markdown formatting', () => {
+    const out = renderMarkdown('普通 **加粗** 文本')
+    expect(out).toContain('<strong>加粗</strong>')
+  })
+
+  it('is not affected by global marked options', () => {
+    marked.setOptions({ breaks: true })
+    try {
+      const out = renderMarkdown('isolated first line\nisolated second line')
+      expect(out).not.toContain('<br>')
+    } finally {
+      marked.setOptions({ breaks: false })
+    }
+  })
+})
+
+describe('sanitizeHtml', () => {
+  it('sanitizes HTML produced by custom markdown renderers', () => {
+    const out = sanitizeHtml('<h2 id="safe">Title</h2><img src=x onerror=alert(1)>')
+    expect(out).toContain('<h2 id="safe">Title</h2>')
+    expect(out).not.toContain('onerror')
+    expect(out).not.toContain('alert(1)')
   })
 })
