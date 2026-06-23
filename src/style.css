@@ -606,6 +606,19 @@ select {
   }
 }
 
+/* 注音 (ふりがな) */
+.markdown-body ruby {
+  ruby-align: center;
+}
+.markdown-body ruby rt {
+  font-size: 0.65em;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+.markdown-body ruby rp {
+  display: none;
+}
+
 /* Global mobile anti-overflow */
 @media (max-width: 480px) {
   body {

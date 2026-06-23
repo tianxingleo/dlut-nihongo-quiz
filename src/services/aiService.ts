@@ -339,7 +339,9 @@ export async function sendChatMessage(
   }
 
   let systemPrompt = AI_SYSTEM_PROMPTS.chat
-  if (context?.category) {
+  if (context?.category === 'notes') {
+    systemPrompt = AI_SYSTEM_PROMPTS.notes
+  } else if (context?.category) {
     systemPrompt += '\n\n' + AI_SYSTEM_PROMPTS.questionWithContext(context.category)
   }
 

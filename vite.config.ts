@@ -31,6 +31,12 @@ function swCacheVersionPlugin(): Plugin {
 export default defineConfig(({ mode }) => ({
   plugins: [vue(), swCacheVersionPlugin()],
   base: mode === 'production' ? '/dlut-nihongo-quiz/' : '/',
+  server: {
+    headers: {
+      // 防止 IDM 等下载管理器拦截 .gz 字典文件
+      'Content-Disposition': 'inline',
+    },
+  },
   define: {
     'import.meta.env.PACKAGE_VERSION': JSON.stringify(packageVersion),
   },

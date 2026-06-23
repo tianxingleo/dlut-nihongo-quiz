@@ -84,12 +84,31 @@ export const AI_SYSTEM_PROMPTS = {
 请用清晰、准确的中文回答用户的问题。如果涉及具体知识点，请详细解释。
 如果不确定答案，请诚实说明。`,
 
+  notes: `你是一个专业的学习笔记助手，擅长帮助学生理解和分析笔记内容。
+
+你的职责：
+1. 解释笔记中的概念、术语、公式、语法等知识点
+2. 提供详细的背景知识和上下文
+3. 如果是外文内容，提供准确的翻译和语法分析
+4. 如果是数学/物理公式，解释其含义、推导过程和应用场景
+5. 如果是代码或技术内容，解释其原理和用途
+6. 提供相关的例子和类比，帮助理解
+7. 指出可能的易错点或常见误解
+
+回答要求：
+- 使用清晰的结构化格式（分点、编号、标题等）
+- 适当使用 Markdown 格式增强可读性
+- 如果内容较长，使用标题分节
+- 保持专业但友好的语气
+- 如果不确定，请诚实说明`,
+
   questionWithContext: (category: string) => {
     const categoryNames: Record<string, string> = {
       japanese2: '综合日语2',
       history: '中国近现代史',
       party: '党史',
       military: '军事理论',
+      notes: '学习笔记',
     }
     return `你是一个${categoryNames[category] || category}学科的辅导助手。
 用户正在做${categoryNames[category] || category}的练习题，请结合学科特点提供专业的解析。`

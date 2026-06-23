@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
 import { Marked } from 'marked'
 import markedKatex from 'marked-katex-extension'
 import GrammarToc from './GrammarToc.vue'
 import { sanitizeHtml } from '../../utils/renderMarkdown'
+import { useTextSelection } from '../../composables/useTextSelection'
+import { useAI } from '../../composables/useAI'
+import { useFurigana } from '../../composables/useFurigana'
+import TextSelectionToolbar from '../ai/TextSelectionToolbar.vue'
+import NotesAIChat from '../ai/NotesAIChat.vue'
+import type { TextSelection } from '../../composables/useTextSelection'
 
 const props = withDefaults(
   defineProps<{
@@ -42,10 +48,49 @@ interface TocItem {
 }
 
 const html = ref<string>('')
+const rawHtml = ref<string>('') // 未添加注音的原始 HTML
 const toc = ref<TocItem[]>([])
 const activeId = ref<string>('')
 const mobileLesson = ref<string>('')
 const mobileLessons = ref<TocItem[]>([])
+
+// AI 相关状态
+const { aiEnabled } = useAI()
+const notesContentRef = ref<HTMLElement | null>(null)
+const { selection, isVisible: isToolbarVisible } = useTextSelection(notesContentRef)
+
+// 假名注音相关状态
+const {
+  furiganaEnabled,
+  isLoading: isFuriganaLoading,
+  toggle: toggleFurigana,
+  processHtml,
+} = useFurigana()
+
+// 笔记 AI 聊天状态
+const showNotesAI = ref(false)
+const aiMode = ref<'explain' | 'ask'>('ask')
+const currentSelection = ref<TextSelection | null>(null)
+
+/** 处理 AI 解释请求 */
+function handleExplain(sel: TextSelection) {
+  currentSelection.value = { ...sel }
+  aiMode.value = 'explain'
+  showNotesAI.value = true
+}
+
+/** 处理 AI 问答请求 */
+function handleAskAI(sel: TextSelection) {
+  currentSelection.value = { ...sel }
+  aiMode.value = 'ask'
+  showNotesAI.value = true
+}
+
+/** 关闭笔记 AI 聊天 */
+function closeNotesAI() {
+  showNotesAI.value = false
+  currentSelection.value = null
+}
 
 function slugify(text: string): string {
   return text
@@ -132,8 +177,14 @@ function onScroll() {
   }
 }
 
-onMounted(() => {
-  html.value = renderMarkdown(props.source)
+onMounted(async () => {
+  rawHtml.value = renderMarkdown(props.source)
+  // 如果假名注音已启用，立即应用
+  if (furiganaEnabled.value) {
+    html.value = await processHtml(rawHtml.value)
+  } else {
+    html.value = rawHtml.value
+  }
   toc.value = buildToc(props.source)
   mobileLessons.value = toc.value.filter((t) => t.level === 2)
   if (toc.value.length > 0) {
@@ -144,6 +195,16 @@ onMounted(() => {
     setupObserver()
     window.addEventListener('scroll', onScroll, { passive: true })
   })
+})
+
+// 监听注音开关变化，动态添加/移除注音
+watch(furiganaEnabled, async (enabled) => {
+  if (enabled) {
+    html.value = await processHtml(rawHtml.value)
+  } else {
+    html.value = rawHtml.value
+  }
+  nextTick(() => setupObserver())
 })
 
 onBeforeUnmount(() => {
@@ -164,6 +225,16 @@ const computedSubtitle = computed(() => {
       <div class="title-row">
         <h1>{{ title }}</h1>
         <span v-if="chip" class="meta-chip">{{ chip }}</span>
+        <button
+          class="furigana-toggle"
+          :class="{ active: furiganaEnabled, loading: isFuriganaLoading }"
+          :disabled="isFuriganaLoading"
+          :title="furiganaEnabled ? '关闭假名注音' : '开启假名注音'"
+          @click="toggleFurigana"
+        >
+          <span v-if="isFuriganaLoading" class="loading-spinner" />
+          <span v-else>{{ furiganaEnabled ? '假名 ✓' : '假名' }}</span>
+        </button>
       </div>
       <p class="subtitle">{{ computedSubtitle }}</p>
     </header>
@@ -183,8 +254,30 @@ const computedSubtitle = computed(() => {
       <aside class="notes-side">
         <GrammarToc :items="toc" :active-id="activeId" @navigate="navigateTo" />
       </aside>
-      <article class="notes-content markdown-body" v-html="html" />
+      <div class="notes-content-wrapper">
+        <article ref="notesContentRef" class="notes-content markdown-body" v-html="html" />
+
+        <!-- 文字选中浮动工具栏（仅在 AI 已配置时显示） -->
+        <TextSelectionToolbar
+          v-if="aiEnabled"
+          :selection="selection"
+          :visible="isToolbarVisible"
+          @ask-ai="handleAskAI"
+          @explain="handleExplain"
+          @close="isToolbarVisible = false"
+        />
+      </div>
     </div>
+
+    <!-- 笔记 AI 聊天组件（仅在 AI 已配置时显示） -->
+    <NotesAIChat
+      v-if="aiEnabled"
+      :visible="showNotesAI"
+      :note-title="title"
+      :selection="currentSelection"
+      :mode="aiMode"
+      @close="closeNotesAI"
+    />
 
     <div class="notes-footer-actions">
       <button class="btn btn-outline" @click="navigateTo(toc[0]?.id || '')">回到顶部</button>
@@ -219,6 +312,50 @@ h1 {
   border: 1px solid var(--accent);
   padding: 2px 8px;
   letter-spacing: 0.5px;
+}
+
+.furigana-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+.furigana-toggle:hover:not(:disabled) {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--bg-hover);
+}
+.furigana-toggle.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--bg-hover);
+}
+.furigana-toggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.loading-spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 .subtitle {
   font-size: 13px;
@@ -256,6 +393,10 @@ h1 {
   max-height: calc(100vh - 80px);
   overflow-y: auto;
   align-self: start;
+}
+.notes-content-wrapper {
+  position: relative;
+  min-width: 0;
 }
 .notes-content {
   min-width: 0;
