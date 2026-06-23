@@ -13,13 +13,7 @@ import type { AIConfig } from '../types/ai'
 
 const { showToast } = useToast()
 const { darkMode, dailyGoal, toggleDark, saveDailyGoal, applyTheme, loadSettings } = useSettings()
-const {
-  aiEnabled,
-  aiConfig,
-  saveAIConfig,
-  toggleAI,
-  testConnection: testAIConnection,
-} = useAI()
+const { aiEnabled, aiConfig, saveAIConfig, toggleAI, testConnection: testAIConnection } = useAI()
 const counts = ref<Record<Category, number>>({} as Record<Category, number>)
 const confirmClear = ref(false)
 const appVersion = import.meta.env.PACKAGE_VERSION || '0.0.0'
@@ -77,9 +71,9 @@ function handleImport() {
   // 导入前显示确认提示，支持选择导入模式
   const mode = confirm(
     '选择导入模式：\n\n' +
-    '【确定】= 覆盖模式（清空现有数据后导入）\n' +
-    '【取消】= 合并模式（保留现有数据，合并导入）\n\n' +
-    '注意：系统会在导入前自动备份当前数据。',
+      '【确定】= 覆盖模式（清空现有数据后导入）\n' +
+      '【取消】= 合并模式（保留现有数据，合并导入）\n\n' +
+      '注意：系统会在导入前自动备份当前数据。',
   )
 
   const input = document.createElement('input')
@@ -174,7 +168,9 @@ const totalCount = computed(() => Object.values(counts.value).reduce((a, b) => a
       <div class="info-row total">
         <span>合计</span><span>{{ totalCount }} 题</span>
       </div>
-      <div class="info-row"><span>版本</span><span>v{{ appVersion }}</span></div>
+      <div class="info-row">
+        <span>版本</span><span>v{{ appVersion }}</span>
+      </div>
     </div>
 
     <div class="section">
@@ -219,9 +215,7 @@ const totalCount = computed(() => Object.values(counts.value).reduce((a, b) => a
 
     <div class="section">
       <h2>AI 助手</h2>
-      <p class="ai-description">
-        配置 AI 后，可以在做题时获取详细解析，也可以进行自由问答。
-      </p>
+      <p class="ai-description">配置 AI 后，可以在做题时获取详细解析，也可以进行自由问答。</p>
 
       <div class="ai-toggle-row">
         <span>启用 AI 功能</span>
@@ -265,12 +259,7 @@ const totalCount = computed(() => Object.values(counts.value).reduce((a, b) => a
 
         <div class="form-group">
           <label for="ai-model">模型名称</label>
-          <input
-            id="ai-model"
-            v-model="aiForm.model"
-            type="text"
-            placeholder="deepseek-chat"
-          />
+          <input id="ai-model" v-model="aiForm.model" type="text" placeholder="deepseek-chat" />
           <span class="form-hint">DeepSeek: deepseek-chat | OpenAI: gpt-4o-mini</span>
         </div>
 
@@ -310,7 +299,11 @@ const totalCount = computed(() => Object.values(counts.value).reduce((a, b) => a
           </button>
         </div>
 
-        <div v-if="testResult" class="test-result" :class="testResult.success ? 'success' : 'error'">
+        <div
+          v-if="testResult"
+          class="test-result"
+          :class="testResult.success ? 'success' : 'error'"
+        >
           {{ testResult.message }}
         </div>
       </div>

@@ -42,10 +42,7 @@ async function refresh() {
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
     const startStr = thirtyDaysAgo.toISOString()
 
-    const recentAttempts = await db.attempts
-      .where('createdAt')
-      .aboveOrEqual(startStr)
-      .toArray()
+    const recentAttempts = await db.attempts.where('createdAt').aboveOrEqual(startStr).toArray()
 
     // 按时间正序保留（旧 → 新），让趋势图从左到右是时间推进
     attempts.value = recentAttempts
@@ -206,7 +203,9 @@ const speedAnalysis = computed(() => {
   const avgMs = Math.round(totalMs / validAttempts.length)
   const avgCorrectMs =
     correctAttempts.length > 0
-      ? Math.round(correctAttempts.reduce((sum, a) => sum + a.elapsedMs, 0) / correctAttempts.length)
+      ? Math.round(
+          correctAttempts.reduce((sum, a) => sum + a.elapsedMs, 0) / correctAttempts.length,
+        )
       : 0
   const avgWrongMs =
     wrongAttempts.length > 0
@@ -338,7 +337,10 @@ const heatmapData = computed(() => {
             <div class="mini-bar"><div :style="{ width: (g.done / g.total) * 100 + '%' }" /></div>
           </td>
           <td>
-            <button class="btn btn-outline btn-sm" @click="router.push({ path: '/quiz', query: { group: g.id } })">
+            <button
+              class="btn btn-outline btn-sm"
+              @click="router.push({ path: '/quiz', query: { group: g.id } })"
+            >
               刷题
             </button>
           </td>
@@ -372,7 +374,10 @@ const heatmapData = computed(() => {
             <span v-else class="status na">--</span>
           </td>
           <td>
-            <button class="btn btn-outline btn-sm" @click="router.push({ path: '/quiz', query: { tag: t.point } })">
+            <button
+              class="btn btn-outline btn-sm"
+              @click="router.push({ path: '/quiz', query: { tag: t.point } })"
+            >
               刷题
             </button>
           </td>
@@ -386,7 +391,10 @@ const heatmapData = computed(() => {
         <span class="w-stem">{{ w.stem }}</span>
         <span class="w-count">错 {{ w.wrongCount }} 次</span>
         <span class="w-rate">{{ w.rate }}%</span>
-        <button class="btn btn-outline btn-sm" @click="router.push({ path: '/quiz', query: { ids: w.id } })">
+        <button
+          class="btn btn-outline btn-sm"
+          @click="router.push({ path: '/quiz', query: { ids: w.id } })"
+        >
           刷这题
         </button>
       </div>
@@ -450,16 +458,16 @@ const heatmapData = computed(() => {
     </div>
 
     <div v-if="viewMode === 'speed'" class="speed-section">
-      <div v-if="speedAnalysis.avgMs === 0" class="empty">
-        暂无答题速度数据
-      </div>
+      <div v-if="speedAnalysis.avgMs === 0" class="empty">暂无答题速度数据</div>
       <div v-else class="speed-cards">
         <div class="speed-card">
           <span class="speed-num">{{ (speedAnalysis.avgMs / 1000).toFixed(1) }}s</span>
           <span class="speed-label">平均答题时间</span>
         </div>
         <div class="speed-card">
-          <span class="speed-num correct">{{ (speedAnalysis.avgCorrectMs / 1000).toFixed(1) }}s</span>
+          <span class="speed-num correct"
+            >{{ (speedAnalysis.avgCorrectMs / 1000).toFixed(1) }}s</span
+          >
           <span class="speed-label">正确题平均时间</span>
         </div>
         <div class="speed-card">
@@ -480,8 +488,11 @@ const heatmapData = computed(() => {
         </p>
         <p v-if="speedAnalysis.avgWrongMs > speedAnalysis.avgCorrectMs" class="speed-insight">
           💡 错误题平均耗时比正确题多
-          <strong>{{ ((speedAnalysis.avgWrongMs - speedAnalysis.avgCorrectMs) / 1000).toFixed(1) }}s</strong>，
-          建议对耗时较长的题目加强练习。
+          <strong
+            >{{
+              ((speedAnalysis.avgWrongMs - speedAnalysis.avgCorrectMs) / 1000).toFixed(1)
+            }}s</strong
+          >， 建议对耗时较长的题目加强练习。
         </p>
       </div>
     </div>

@@ -36,7 +36,12 @@ export function searchQuestions(keyword: string, category?: Category): Question[
 
   const lists: Question[][] = category
     ? [getQuestions(category)]
-    : [getQuestions('japanese2'), getQuestions('history'), getQuestions('party'), getQuestions('military')]
+    : [
+        getQuestions('japanese2'),
+        getQuestions('history'),
+        getQuestions('party'),
+        getQuestions('military'),
+      ]
 
   // 带评分的搜索结果
   const scoredResults: Array<{ question: Question; score: number }> = []

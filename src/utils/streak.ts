@@ -35,9 +35,7 @@ export function computeStreak(
 /**
  * 计算历史最长连续天数
  */
-export function computeLongestStreak(
-  timestamps: (string | undefined | null)[],
-): number {
+export function computeLongestStreak(timestamps: (string | undefined | null)[]): number {
   const days = new Set<string>()
   for (const ts of timestamps) {
     if (!ts) continue

@@ -159,7 +159,10 @@ function handleClearWrong(questionId: string) {
                   : 0
               }}%</span
             >
-            <span class="badge level">掌握 {{ '★'.repeat(Math.min(item.stats.masteryLevel, 5)) }}{{ '☆'.repeat(Math.max(0, 5 - item.stats.masteryLevel)) }}</span>
+            <span class="badge level"
+              >掌握 {{ '★'.repeat(Math.min(item.stats.masteryLevel, 5))
+              }}{{ '☆'.repeat(Math.max(0, 5 - item.stats.masteryLevel)) }}</span
+            >
           </div>
           <div class="wi-actions">
             <button class="btn btn-outline btn-sm" @click="goReview([item.questionId])">

@@ -187,9 +187,7 @@ function goReview(questionId: string) {
             </span>
           </div>
           <div class="hi-actions">
-            <button class="btn btn-outline btn-sm" @click="goReview(a.questionId)">
-              重做
-            </button>
+            <button class="btn btn-outline btn-sm" @click="goReview(a.questionId)">重做</button>
           </div>
         </div>
       </div>

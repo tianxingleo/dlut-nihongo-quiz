@@ -9,12 +9,7 @@
  */
 import { getSetting } from '../db/database'
 import { AI_DEFAULTS, AI_SYSTEM_PROMPTS } from '../types/ai'
-import type {
-  AIConfig,
-  AIMessage,
-  AIExplanationRequest,
-  AIStreamCallbacks,
-} from '../types/ai'
+import type { AIConfig, AIMessage, AIExplanationRequest, AIStreamCallbacks } from '../types/ai'
 
 /** AI 服务错误类型 */
 export class AIServiceError extends Error {
@@ -284,10 +279,7 @@ export async function sendStreamRequest(
       )
     } else {
       callbacks.onError(
-        new AIServiceError(
-          error instanceof Error ? error.message : '未知错误',
-          'UNKNOWN_ERROR',
-        ),
+        new AIServiceError(error instanceof Error ? error.message : '未知错误', 'UNKNOWN_ERROR'),
       )
     }
   }

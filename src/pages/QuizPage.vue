@@ -346,7 +346,10 @@ onMounted(async () => {
     } else if (resolved.poolMode === 'exam') {
       finalPool = shuffleArray([...all])
       isExamMode.value = true
-    } else if ((resolved.poolMode === 'untouched' || resolved.poolMode === 'wrong') && resolved.shuffle) {
+    } else if (
+      (resolved.poolMode === 'untouched' || resolved.poolMode === 'wrong') &&
+      resolved.shuffle
+    ) {
       finalPool = shuffleArray(resolved.pool)
     }
     questions.value = finalPool
@@ -816,8 +819,13 @@ function cancelLeave() {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 /* Slide transition — out-in mode with fast leave + smooth enter.

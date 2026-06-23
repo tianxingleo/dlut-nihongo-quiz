@@ -54,9 +54,7 @@ async function testWithAnthropicFormat() {
         model: MODEL,
         max_tokens: 100,
         system: '你是一个助手。',
-        messages: [
-          { role: 'user', content: '请回复"连接成功"这四个字。' },
-        ],
+        messages: [{ role: 'user', content: '请回复"连接成功"这四个字。' }],
       }),
     })
 
@@ -68,7 +66,7 @@ async function testWithAnthropicFormat() {
     }
 
     const data = await response.json()
-    const content = data.content?.map(c => c.text || '').join('') || ''
+    const content = data.content?.map((c) => c.text || '').join('') || ''
     console.log(`   ✅ 连接成功! AI 回复: "${content}"`)
     return content
   } catch (error) {
@@ -91,7 +89,7 @@ async function testWithOpenAIFormat() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
+        Authorization: `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         model: MODEL,
@@ -157,9 +155,7 @@ D. 辛亥革命
           model: MODEL,
           max_tokens: 500,
           system: systemPrompt,
-          messages: [
-            { role: 'user', content: userMessage },
-          ],
+          messages: [{ role: 'user', content: userMessage }],
         }),
       })
     } else {
@@ -171,7 +167,7 @@ D. 辛亥革命
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${API_KEY}`,
+          Authorization: `Bearer ${API_KEY}`,
         },
         body: JSON.stringify({
           model: MODEL,
@@ -193,7 +189,7 @@ D. 辛亥革命
     const data = await response.json()
     let content = ''
     if (isAnthropicFormat) {
-      content = data.content?.map(c => c.text || '').join('') || ''
+      content = data.content?.map((c) => c.text || '').join('') || ''
     } else {
       content = data.choices?.[0]?.message?.content || ''
     }
@@ -215,9 +211,9 @@ D. 辛亥革命
 }
 
 // 运行测试
-console.log('=' .repeat(60))
+console.log('='.repeat(60))
 console.log('🚀 开始 AI API 测试')
-console.log('=' .repeat(60))
+console.log('='.repeat(60))
 console.log('')
 
 let connectionResult = null
@@ -243,9 +239,9 @@ console.log('')
 const explanationResult = connectionResult ? await testExplanation() : false
 
 console.log('')
-console.log('=' .repeat(60))
+console.log('='.repeat(60))
 console.log('📊 测试结果汇总:')
-console.log('=' .repeat(60))
+console.log('='.repeat(60))
 console.log(`   API 连接: ${connectionResult ? '✅ 通过' : '❌ 失败'}`)
 console.log(`   题目解析: ${explanationResult ? '✅ 通过' : '❌ 失败'}`)
 console.log('')

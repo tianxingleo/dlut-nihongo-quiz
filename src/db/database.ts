@@ -205,10 +205,7 @@ export async function exportData(): Promise<string> {
   })
 }
 
-export async function importData(
-  json: string,
-  options: { merge?: boolean } = {},
-): Promise<void> {
+export async function importData(json: string, options: { merge?: boolean } = {}): Promise<void> {
   let data: unknown
   try {
     data = JSON.parse(json)
@@ -281,10 +278,18 @@ async function doMergeImport(data: Record<string, unknown>): Promise<void> {
             masteryLevel: Math.max(existing.masteryLevel, item.masteryLevel),
             isBookmarked: existing.isBookmarked || item.isBookmarked,
             // 保留最新的答题记录
-            lastSelectedKey: item.lastAttemptAt > existing.lastAttemptAt ? item.lastSelectedKey : existing.lastSelectedKey,
-            lastCorrect: item.lastAttemptAt > existing.lastAttemptAt ? item.lastCorrect : existing.lastCorrect,
-            lastAttemptAt: item.lastAttemptAt > existing.lastAttemptAt ? item.lastAttemptAt : existing.lastAttemptAt,
-            reviewDueAt: item.lastAttemptAt > existing.lastAttemptAt ? item.reviewDueAt : existing.reviewDueAt,
+            lastSelectedKey:
+              item.lastAttemptAt > existing.lastAttemptAt
+                ? item.lastSelectedKey
+                : existing.lastSelectedKey,
+            lastCorrect:
+              item.lastAttemptAt > existing.lastAttemptAt ? item.lastCorrect : existing.lastCorrect,
+            lastAttemptAt:
+              item.lastAttemptAt > existing.lastAttemptAt
+                ? item.lastAttemptAt
+                : existing.lastAttemptAt,
+            reviewDueAt:
+              item.lastAttemptAt > existing.lastAttemptAt ? item.reviewDueAt : existing.reviewDueAt,
           })
         } else {
           await db.questionStats.put(item)

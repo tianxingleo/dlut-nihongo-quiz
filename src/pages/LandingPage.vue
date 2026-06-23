@@ -156,11 +156,16 @@ const subjectCount = computed(() => CATEGORIES.length)
               <div class="sc-progress-bar">
                 <div
                   class="sc-progress-fill"
-                  :style="{ width: Math.min(100, (categoryProgress[s.key].done / (counts[s.key] || 1)) * 100) + '%' }"
+                  :style="{
+                    width:
+                      Math.min(100, (categoryProgress[s.key].done / (counts[s.key] || 1)) * 100) +
+                      '%',
+                  }"
                 />
               </div>
               <span class="sc-progress-text">
-                已做 {{ categoryProgress[s.key].done }} 题 · 正确率 {{ categoryProgress[s.key].rate }}%
+                已做 {{ categoryProgress[s.key].done }} 题 · 正确率
+                {{ categoryProgress[s.key].rate }}%
               </span>
             </div>
           </div>
