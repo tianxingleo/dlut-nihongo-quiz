@@ -1,8 +1,8 @@
 /**
  * 合并 word-question-bank.json 和 question-bank.json (grammar)
  * 为 japanese2-question-bank.json，统一 category 字段。
-*
-* 题目 id 前缀 (w* / g*) 本就不冲突，合并后 Dexie 历史记录可无损保留。
+ *
+ * 题目 id 前缀 (w* / g*) 本就不冲突，合并后 Dexie 历史记录可无损保留。
  *
  * 用法：npx tsx scripts/merge-japanese2-banks.ts
  */

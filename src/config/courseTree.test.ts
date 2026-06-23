@@ -57,9 +57,7 @@ describe('COURSE_TREE config', () => {
   })
 
   it('contains japanese2 group with word and grammar leaves', () => {
-    const jp2 = flatten(COURSE_TREE).find(
-      (n) => n.type === 'group' && n.key === 'japanese2-group',
-    )
+    const jp2 = flatten(COURSE_TREE).find((n) => n.type === 'group' && n.key === 'japanese2-group')
     expect(jp2, 'japanese2-group must exist').toBeDefined()
     expect(jp2!.children?.length).toBeGreaterThan(0)
     const leafKeys = jp2!.children!.map((c) => c.key)

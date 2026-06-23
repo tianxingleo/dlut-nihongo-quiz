@@ -21,6 +21,7 @@ import {
   isSessionInProgress,
   type ActiveSession,
 } from '../services/sessionResume'
+import { getDailyAttemptCount, getSetting } from '../db/database'
 import {
   useActiveCategory,
   loadActiveCategory,
@@ -46,6 +47,7 @@ const router = useRouter()
 const activeCategory = useActiveCategory()
 const { isUnlocked } = useHiddenSite()
 const loading = ref(true)
+const error = ref('')
 const questions = ref<Question[]>([])
 const totalQuestions = ref(0)
 const doneCount = ref(0)
@@ -59,6 +61,8 @@ const wrongIds = ref<string[]>([])
 const untouchedIds = ref<string[]>([])
 const activeSession = ref<ActiveSession | null>(null)
 const streak = ref(0)
+const dailyGoal = ref(30)
+const dailyDone = ref(0)
 const groupStats = ref<
   Record<
     string,
@@ -76,6 +80,8 @@ const groupStats = ref<
 
 async function refresh() {
   loading.value = true
+  error.value = ''
+  try {
   const cat = activeCategory.value
   const unlocked = isUnlocked.value
   // 一次拿到题库 + 全表 stats，所有下游函数共享同一份数据，避免重复扫描
@@ -166,7 +172,16 @@ async function refresh() {
   const saved = await loadActiveSession()
   activeSession.value = isSessionInProgress(saved) ? saved : null
   if (saved && !isSessionInProgress(saved)) await clearActiveSession()
+
+  // 每日目标
+  dailyGoal.value = await getSetting('dailyGoal', 30)
+  dailyDone.value = await getDailyAttemptCount()
+
   loading.value = false
+  } catch (e) {
+    loading.value = false
+    error.value = e instanceof Error ? e.message : '加载题库失败，请刷新页面重试'
+  }
 }
 
 onMounted(async () => {
@@ -225,6 +240,14 @@ async function discardSession() {
 }
 
 const meta = computed(() => getCategoryMeta(activeCategory.value))
+
+// 每日目标进度
+const dailyProgress = computed(() => {
+  const pct =
+    dailyGoal.value > 0 ? Math.min(100, Math.round((dailyDone.value / dailyGoal.value) * 100)) : 0
+  const color = pct >= 100 ? 'var(--correct)' : pct >= 60 ? 'var(--warning)' : 'var(--wrong)'
+  return { pct, color, done: dailyDone.value, goal: dailyGoal.value }
+})
 const activeSubBankKey = useActiveSubBankKey()
 const hasSubBanks = computed(() => {
   const sb = meta.value.subBanks
@@ -269,9 +292,7 @@ const subtitleText = computed(() => {
   if (k === 'military') return `${n} 题 · 22个刷题单 · 单选/多选/判断`
   return `${n} 题`
 })
-const tagSectionTitle = computed(() =>
-  isWordSubBank.value ? '按课/标签复习' : '按语法标签复习',
-)
+const tagSectionTitle = computed(() => (isWordSubBank.value ? '按课/标签复习' : '按语法标签复习'))
 // 标签云直接基于已过滤的 questions.value 计算，避开 getAllTags 的全量缓存，
 // 保证表站看不到「2021真题」「阅读理解」等里站专属 tag。
 const visibleTags = computed(() => {
@@ -284,9 +305,7 @@ const visibleTags = computed(() => {
     .sort((a, b) => b.count - a.count)
     .slice(0, 20)
 })
-const weakSectionTitle = computed(() =>
-  isWordSubBank.value ? '薄弱课/标签' : '薄弱语法点',
-)
+const weakSectionTitle = computed(() => (isWordSubBank.value ? '薄弱课/标签' : '薄弱语法点'))
 
 function selectSubBank(key: string) {
   setActiveSubBankKey(key)
@@ -376,6 +395,13 @@ const groupViewHint = computed(() => {
 </script>
 <template>
   <div v-if="loading" class="home"><PageSkeleton type="card" /></div>
+  <div v-else-if="error" class="home-error">
+    <div class="error-box">
+      <h2>加载失败</h2>
+      <p>{{ error }}</p>
+      <button class="btn btn-accent" @click="refresh">重试</button>
+    </div>
+  </div>
   <div v-else class="home">
     <header class="home-header">
       <div class="title-row">
@@ -403,6 +429,21 @@ const groupViewHint = computed(() => {
         <button class="btn btn-accent" @click="resumeSession">继续</button>
         <button class="btn btn-ghost" @click="discardSession">放弃</button>
       </div>
+    </div>
+
+    <!-- 每日目标进度 -->
+    <div class="daily-goal-bar">
+      <div class="dg-header">
+        <span class="dg-label">今日目标</span>
+        <span class="dg-count">{{ dailyProgress.done }}/{{ dailyProgress.goal }} 题</span>
+      </div>
+      <div class="dg-track">
+        <div
+          class="dg-fill"
+          :style="{ width: dailyProgress.pct + '%', background: dailyProgress.color }"
+        />
+      </div>
+      <p v-if="dailyProgress.pct >= 100" class="dg-complete">🎉 今日目标已达成！</p>
     </div>
 
     <div class="stats-row">
@@ -719,6 +760,48 @@ h1 {
 .resume-actions {
   display: flex;
   gap: 8px;
+}
+
+/* 每日目标进度条 */
+.daily-goal-bar {
+  margin-bottom: 24px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.dg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.dg-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+.dg-count {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+.dg-track {
+  height: 8px;
+  background: var(--bg-hover);
+  overflow: hidden;
+}
+.dg-fill {
+  height: 100%;
+  transition:
+    width 0.5s var(--ease-brush),
+    background 0.3s var(--ease-ink);
+}
+.dg-complete {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--correct);
+  font-weight: 600;
+  animation: fade-up 0.4s var(--ease-brush) both;
 }
 
 .stats-row {
@@ -1089,5 +1172,32 @@ h1 {
 .ge-sub {
   font-size: 13px;
   color: var(--text-secondary);
+}
+
+/* 错误状态 */
+.home-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+.error-box {
+  text-align: center;
+  padding: 48px 32px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  max-width: 400px;
+}
+.error-box h2 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.error-box p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
 }
 </style>

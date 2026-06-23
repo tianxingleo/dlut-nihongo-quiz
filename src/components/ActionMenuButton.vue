@@ -125,7 +125,6 @@ onUnmounted(() => {
   min-width: 100%;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
   box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.18);
   z-index: 50;
   padding: 4px;
@@ -141,7 +140,6 @@ onUnmounted(() => {
   text-align: left;
   background: transparent;
   border: 0;
-  border-radius: 4px;
   color: var(--text-primary);
   cursor: pointer;
   font: inherit;

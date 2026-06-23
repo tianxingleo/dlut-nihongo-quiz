@@ -1,5 +1,5 @@
 import type { Category, QuestionStats } from '../types/question'
-import { db } from '../db/database'
+import { db, INTERVAL_DAYS } from '../db/database'
 import { loadQuestionBank, getRelevantData, filterVisibleQuestions } from './quizEngine'
 
 export interface Recommendation {
@@ -17,15 +17,11 @@ export function isWrong(s: QuestionStats): boolean {
 }
 
 // 间隔重复：按 masteryLevel 查表得到下次到期天数。
-// 派生计算而非写入字段 —— recordAttempt 不再写 reviewDueAt，避免「字段漂移」类 bug。
-//   mastery 0/1（未做 / 刚答错）：1 天
-//   mastery 2（学习中）：3 天
-//   mastery 3（基本掌握）：7 天
-//   mastery 4（熟练）：14 天
-//   mastery 5（完全掌握）：30 天
-const INTERVAL_DAYS = [1, 1, 3, 7, 14, 30]
-
+// recordAttempt 会写入 reviewDueAt，此处优先使用数据库值，兜底派生计算（兼容旧数据）。
 export function deriveReviewDueAt(s: QuestionStats): string {
+  // 优先使用数据库中已存储的值（recordAttempt 会写入）
+  if (s.reviewDueAt) return s.reviewDueAt
+  // 兜底：兼容旧数据（reviewDueAt 为空时派生计算）
   if (!s.lastAttemptAt) return ''
   const days = INTERVAL_DAYS[s.masteryLevel] ?? 1
   return new Date(new Date(s.lastAttemptAt).getTime() + days * 86_400_000).toISOString()

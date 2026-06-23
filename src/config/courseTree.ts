@@ -90,9 +90,7 @@ export const COURSE_TREE: TreeNode[] = [
         type: 'group',
         key: 'four-histories',
         label: '四史',
-        children: [
-          { type: 'leaf', key: 'party', label: '党史', category: 'party', subBank: null },
-        ],
+        children: [{ type: 'leaf', key: 'party', label: '党史', category: 'party', subBank: null }],
       },
     ],
   },

@@ -51,9 +51,7 @@ function isActive(id: string) {
     <div class="toc-header">目录</div>
     <ul class="toc-list">
       <template v-for="section in sections" :key="section.item.id">
-        <li
-          :class="['toc-item', 'level-2', 'toc-section', { active: isActive(section.item.id) }]"
-        >
+        <li :class="['toc-item', 'level-2', 'toc-section', { active: isActive(section.item.id) }]">
           <div class="toc-section-head">
             <button
               type="button"

@@ -56,7 +56,30 @@ export async function setSetting(key: string, value: unknown): Promise<void> {
   await db.settings.put({ key, value: JSON.stringify(value) })
 }
 
+// --- 每日统计 ---
+export async function getDailyAttemptCount(date: Date = new Date()): Promise<number> {
+  const startOfDay = new Date(date)
+  startOfDay.setHours(0, 0, 0, 0)
+  const startStr = startOfDay.toISOString()
+
+  const endOfDay = new Date(date)
+  endOfDay.setHours(23, 59, 59, 999)
+  const endStr = endOfDay.toISOString()
+
+  // 使用 createdAt 索引范围查询，避免加载全表
+  return db.attempts.where('createdAt').between(startStr, endStr, true, true).count()
+}
+
 // --- Attempt helpers ---
+// 间隔重复天数表：mastery 0-5 对应的复习间隔天数
+export const INTERVAL_DAYS = [1, 1, 3, 7, 14, 30]
+
+function calcReviewDueAt(lastAttemptAt: string, masteryLevel: number): string {
+  if (!lastAttemptAt) return ''
+  const days = INTERVAL_DAYS[masteryLevel] ?? 1
+  return new Date(new Date(lastAttemptAt).getTime() + days * 86_400_000).toISOString()
+}
+
 export async function recordAttempt(a: Omit<Attempt, 'id'>): Promise<number> {
   const id = await db.attempts.add(a as Attempt)
   // Update question stats
@@ -73,8 +96,10 @@ export async function recordAttempt(a: Omit<Attempt, 'id'>): Promise<number> {
       lastCorrect: a.isCorrect,
       lastAttemptAt: a.createdAt,
       masteryLevel: newMastery,
+      reviewDueAt: calcReviewDueAt(a.createdAt, newMastery),
     })
   } else {
+    const initialMastery = a.isCorrect ? 2 : 1
     await db.questionStats.put(
       createDefaultStats(a.questionId, {
         attemptCount: 1,
@@ -83,7 +108,8 @@ export async function recordAttempt(a: Omit<Attempt, 'id'>): Promise<number> {
         lastSelectedKey: a.selectedKey,
         lastCorrect: a.isCorrect,
         lastAttemptAt: a.createdAt,
-        masteryLevel: a.isCorrect ? 2 : 1,
+        masteryLevel: initialMastery,
+        reviewDueAt: calcReviewDueAt(a.createdAt, initialMastery),
       }),
     )
   }

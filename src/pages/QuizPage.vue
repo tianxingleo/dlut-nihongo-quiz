@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute, useRouter, onBeforeRouteLeave } from 'vue-router'
 import {
   loadQuestionBank,
   getQuestionsByTag,
@@ -30,8 +30,9 @@ import QuestionCard from '../components/QuestionCard.vue'
 import QuestionNavigator from '../components/QuestionNavigator.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import PageSkeleton from '../components/PageSkeleton.vue'
-import { renderMarkdown } from '../utils/renderMarkdown'
-import type { Question, QuizMode } from '../types/question'
+import { renderMarkdown, stripMarkdown } from '../utils/renderMarkdown'
+import { truncate } from '../utils/text'
+import type { Question, QuizMode, Category } from '../types/question'
 
 const route = useRoute()
 const router = useRouter()
@@ -56,6 +57,9 @@ const timerInterval = ref<ReturnType<typeof setInterval> | null>(null)
 const history = ref<Array<{ questionId: string; selectedKey: string; isCorrect: boolean }>>([])
 const drafts = ref<Map<number, string>>(new Map())
 const slideDirection = ref<'slide-left' | 'slide-right'>('slide-left')
+const showLeaveConfirm = ref(false)
+const loadError = ref('')
+let pendingNavigation: (() => void) | null = null
 
 type CellStatus = 'correct' | 'wrong' | 'draft' | 'unanswered'
 
@@ -75,6 +79,18 @@ const formattedTime = computed(() => {
   const mins = Math.floor(elapsedTime.value / 60)
   const secs = elapsedTime.value % 60
   return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
+})
+
+const wrongQuestions = computed(() => {
+  const idSet = new Set(wrongList.value)
+  return questions.value
+    .filter((q) => idSet.has(q.id))
+    .map((q) => ({
+      id: q.id,
+      stem: truncate(stripMarkdown(q.stem), 80),
+      answerKey: q.answerKey,
+      selectedKey: history.value.find((h) => h.questionId === q.id)?.selectedKey || '',
+    }))
 })
 
 function snapshot(submittedNow: boolean): ActiveSession {
@@ -168,12 +184,11 @@ function resolveMode(all: Question[]): {
 }
 
 onMounted(async () => {
+  try {
   await loadActiveCategory()
-  const queryCat = route.query.category as string | undefined
-  if (queryCat === 'japanese2') {
-    if (queryCat !== activeCategory.value) {
-      await setActiveCategory(queryCat)
-    }
+  const queryCat = route.query.category as Category | undefined
+  if (queryCat && queryCat !== activeCategory.value) {
+    await setActiveCategory(queryCat)
   }
   const cat = activeCategory.value
   // 表站未解锁时剔除里站题（requireUnlock subBank 的 groupOrder）。里站入口设了 subBank 后 isUnlocked 必为 true，no-op。
@@ -233,6 +248,10 @@ onMounted(async () => {
   startTimer()
 
   window.addEventListener('keydown', onKeydown)
+  window.addEventListener('beforeunload', onBeforeUnload)
+  } catch (e) {
+    loadError.value = e instanceof Error ? e.message : '加载题库失败，请返回首页重试'
+  }
 })
 
 function handleSelect(key: string) {
@@ -414,10 +433,16 @@ function onKeydown(e: KeyboardEvent) {
     if (e.key === 'Enter' || e.key === 'n' || e.key === 'N') handleNext()
     if ((e.key === 'P' || e.key === 'p') && currentIndex.value > 0) handlePrev()
   }
+  // 书签快捷键（任何时候可用）
+  if (e.key === 'b' || e.key === 'B') {
+    e.preventDefault()
+    handleBookmark()
+  }
 }
 
 onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
+  window.removeEventListener('beforeunload', onBeforeUnload)
   stopTimer()
 })
 
@@ -440,6 +465,36 @@ async function restart() {
 function goHome() {
   router.push('/home')
 }
+
+// 答题离开确认：防止意外关闭/刷新
+function onBeforeUnload(e: BeforeUnloadEvent) {
+  if (finished.value || questions.value.length === 0) return
+  e.preventDefault()
+  return (e.returnValue = '')
+}
+
+// 路由离开确认：自定义弹窗
+onBeforeRouteLeave((_to, _from, next) => {
+  if (finished.value || questions.value.length === 0) {
+    next()
+    return
+  }
+  showLeaveConfirm.value = true
+  pendingNavigation = () => next()
+})
+
+function confirmLeave() {
+  showLeaveConfirm.value = false
+  if (pendingNavigation) {
+    pendingNavigation()
+    pendingNavigation = null
+  }
+}
+
+function cancelLeave() {
+  showLeaveConfirm.value = false
+  pendingNavigation = null
+}
 </script>
 <template>
   <div class="quiz-page">
@@ -460,7 +515,7 @@ function goHome() {
       <div class="quiz-info">
         <span>{{ mode }}</span>
         <span class="timer">{{ formattedTime }}</span>
-        <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题 · P 上一题</span>
+        <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题 · P 上一题 · B 书签</span>
       </div>
       <Transition :name="slideDirection" mode="out-in">
         <QuestionCard
@@ -504,9 +559,49 @@ function goHome() {
           只刷错题
         </button>
       </div>
+
+      <!-- 错题回顾 -->
+      <div v-if="wrongQuestions.length > 0" class="wrong-review">
+        <h3>错题回顾</h3>
+        <div class="wrong-list">
+          <div v-for="wq in wrongQuestions" :key="wq.id" class="wrong-item">
+            <span class="wrong-id">{{ wq.id }}</span>
+            <span class="wrong-stem">{{ wq.stem }}</span>
+            <span class="wrong-keys">
+              <span class="wk-selected">{{ wq.selectedKey }}</span>
+              <span class="wk-arrow">→</span>
+              <span class="wk-correct">{{ wq.answerKey }}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-else-if="loadError" class="quiz-error">
+      <div class="error-box">
+        <h2>加载失败</h2>
+        <p>{{ loadError }}</p>
+        <button class="btn btn-accent" @click="router.push('/home')">返回首页</button>
+      </div>
     </div>
 
     <div v-else class="empty"><PageSkeleton type="detail" /></div>
+
+    <!-- 离开确认弹窗 -->
+    <Teleport to="body">
+      <Transition name="modal-fade">
+        <div v-if="showLeaveConfirm" class="modal-overlay" @click.self="cancelLeave">
+          <div class="modal-box">
+            <h3>确认离开？</h3>
+            <p>答题进度已自动保存，但本轮答题数据可能不完整。</p>
+            <div class="modal-actions">
+              <button class="btn btn-outline" @click="cancelLeave">继续答题</button>
+              <button class="btn btn-accent" @click="confirmLeave">确认离开</button>
+            </div>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
   </div>
 </template>
 <style scoped>
@@ -572,35 +667,7 @@ function goHome() {
   color: var(--text-secondary);
 }
 
-.btn {
-  padding: 10px 22px;
-  border: 1px solid var(--border);
-  font-size: 14px;
-  transition:
-    background 0.18s var(--ease-ink),
-    color 0.18s var(--ease-ink),
-    border-color 0.18s var(--ease-ink),
-    transform 0.18s var(--ease-ink);
-}
-.btn:active:not(:disabled) {
-  transform: scale(0.97);
-}
-.btn-accent {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-.btn-accent:hover {
-  background: var(--accent-hover);
-}
-.btn-outline {
-  background: transparent;
-  color: var(--text-primary);
-}
-.btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
+/* .btn / .btn-accent / .btn-outline 样式已由全局 style.css 提供 */
 
 .finish-page {
   text-align: center;
@@ -652,10 +719,103 @@ function goHome() {
   animation-delay: 0.29s;
 }
 
+/* 错题回顾 */
+.wrong-review {
+  margin-top: 48px;
+  text-align: left;
+  animation: fade-up 0.5s var(--ease-brush) both;
+  animation-delay: 0.35s;
+}
+.wrong-review h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+.wrong-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.wrong-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: 13px;
+}
+.wrong-id {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  flex-shrink: 0;
+  min-width: 80px;
+}
+.wrong-stem {
+  flex: 1;
+  min-width: 0;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wrong-keys {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.wk-selected {
+  color: #c0392b;
+  font-weight: 600;
+}
+.wk-arrow {
+  color: var(--text-muted);
+}
+.wk-correct {
+  color: #27ae60;
+  font-weight: 600;
+}
+
 .empty {
   text-align: center;
   padding: 80px 20px;
   color: var(--text-muted);
+}
+
+/* 错误状态 */
+.quiz-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+.quiz-error .error-box {
+  text-align: center;
+  padding: 48px 32px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  max-width: 400px;
+}
+.quiz-error .error-box h2 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.quiz-error .error-box p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
 }
 
 @media (max-width: 480px) {
@@ -684,5 +844,51 @@ function goHome() {
     padding: 8px 16px;
     font-size: 13px;
   }
+}
+
+/* 离开确认弹窗 — Teleport 到 body，需用 :global() */
+:global(.modal-overlay) {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+:global(.modal-box) {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 28px 32px;
+  max-width: 400px;
+  width: 100%;
+}
+:global(.modal-box h3) {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+:global(.modal-box p) {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+:global(.modal-actions) {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+:global(.modal-fade-enter-active) {
+  transition: opacity 0.2s var(--ease-ink);
+}
+:global(.modal-fade-leave-active) {
+  transition: opacity 0.15s var(--ease-ink);
+}
+:global(.modal-fade-enter-from),
+:global(.modal-fade-leave-to) {
+  opacity: 0;
 }
 </style>

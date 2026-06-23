@@ -278,39 +278,7 @@ h1 {
   gap: 6px;
 }
 
-.btn {
-  padding: 10px 22px;
-  border: 1px solid var(--border);
-  font-size: 14px;
-  transition:
-    background 0.18s var(--ease-ink),
-    color 0.18s var(--ease-ink),
-    border-color 0.18s var(--ease-ink);
-}
-.btn-accent {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-.btn-accent:hover {
-  background: var(--accent-hover);
-}
-.btn-accent:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-.btn-outline {
-  background: transparent;
-  color: var(--text-secondary);
-}
-.btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.btn-sm {
-  padding: 5px 14px;
-  font-size: 12px;
-}
+/* .btn / .btn-accent / .btn-outline / .btn-sm 样式已由全局 style.css 提供 */
 
 .btn-confirm {
   background: var(--wrong);

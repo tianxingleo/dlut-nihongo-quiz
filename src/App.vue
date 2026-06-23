@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useActiveCategory, loadActiveCategory, setActiveCategory, setActiveSubBankKey, useActiveSubBankKey } from './services/categoryStore'
+import {
+  useActiveCategory,
+  loadActiveCategory,
+  setActiveCategory,
+  setActiveSubBankKey,
+  useActiveSubBankKey,
+} from './services/categoryStore'
 import { getQuestionById } from './services/quizEngine'
 import { COURSE_TREE } from './config/courseTree'
 import { useHiddenSite } from './composables/useHiddenSite'
@@ -76,6 +82,11 @@ function navigateTo(path: string) {
   router.push(path)
 }
 
+function openSearch() {
+  searchOpen.value = true
+  drawerOpen.value = false
+}
+
 async function onSelectLeaf(payload: {
   category: Category
   subBank: string | null
@@ -98,13 +109,13 @@ async function onSelectLeaf(payload: {
   router.push('/home')
 }
 
-function handleSearchNavigate(questionId: string) {
+async function handleSearchNavigate(questionId: string) {
   searchOpen.value = false
   drawerOpen.value = false
   const q = getQuestionById(questionId)
   if (!q) return
   if (q.category !== activeCategory.value) {
-    setActiveCategory(q.category)
+    await setActiveCategory(q.category)
   }
   router.push({ path: '/quiz', query: { ids: questionId } })
 }
@@ -160,9 +171,7 @@ function handleSearchNavigate(questionId: string) {
                   @click.prevent="navigateTo(l.to)"
                   >{{ l.label }}</a
                 >
-                <button class="mobile-search-trigger" @click="searchOpen = true; drawerOpen = false">
-                  ⌕ 搜索题目
-                </button>
+                <button class="mobile-search-trigger" @click="openSearch">⌕ 搜索题目</button>
               </div>
             </div>
             <div class="drawer-section">

@@ -15,7 +15,10 @@ function migrateLegacy(value: string | undefined): Category {
 
 export async function loadActiveCategory(): Promise<Category> {
   if (!loaded) {
-    const stored = await getSetting<string | undefined>('activeCategory', undefined as unknown as string)
+    const stored = await getSetting<string | undefined>(
+      'activeCategory',
+      undefined as unknown as string,
+    )
     activeCategory.value = migrateLegacy(stored)
     loaded = true
   }

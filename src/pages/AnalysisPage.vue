@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from 'vue'
 import { getRelevantData, getQuestionById } from '../services/quizEngine'
-import { useActiveCategory, loadActiveCategory, useActiveSubBankKey } from '../services/categoryStore'
+import {
+  useActiveCategory,
+  loadActiveCategory,
+  useActiveSubBankKey,
+} from '../services/categoryStore'
 import { useHiddenSite } from '../composables/useHiddenSite'
 import { db } from '../db/database'
 import { truncate } from '../utils/text'
@@ -16,7 +20,7 @@ const { isUnlocked } = useHiddenSite()
 const questions = ref<Question[]>([])
 const stats = ref<QuestionStats[]>([])
 const attempts = ref<Attempt[]>([])
-const viewMode = ref<'groups' | 'tags' | 'wrong' | 'trend'>('groups')
+const viewMode = ref<'groups' | 'tags' | 'wrong' | 'trend' | 'heatmap'>('groups')
 const loading = ref(true)
 
 async function refresh() {
@@ -76,21 +80,20 @@ const groupAnalysis = computed(() => {
 const tagAnalysis = computed(() => {
   // 候选列表基于已过滤的 questions.value，避开 getAllGrammarPoints 的全量缓存——
   // 否则表站会看到「被动形」「授受动词」等只在 requireUnlock subBank 出现的语法点。
-  const tagSource =
-    isWordSubBank.value
-      ? questions.value
-          .flatMap((q) => q.tags)
-          .filter((t) => t !== '单词')
-          .map((t) => ({ point: t, count: 0 }))
-      : (() => {
-          const counts = new Map<string, number>()
-          for (const q of questions.value) {
-            for (const gp of q.grammarPoints) counts.set(gp, (counts.get(gp) || 0) + 1)
-          }
-          return [...counts.entries()]
-            .sort((a, b) => b[1] - a[1])
-            .map(([point, count]) => ({ point, count }))
-        })()
+  const tagSource = isWordSubBank.value
+    ? questions.value
+        .flatMap((q) => q.tags)
+        .filter((t) => t !== '单词')
+        .map((t) => ({ point: t, count: 0 }))
+    : (() => {
+        const counts = new Map<string, number>()
+        for (const q of questions.value) {
+          for (const gp of q.grammarPoints) counts.set(gp, (counts.get(gp) || 0) + 1)
+        }
+        return [...counts.entries()]
+          .sort((a, b) => b[1] - a[1])
+          .map(([point, count]) => ({ point, count }))
+      })()
   const seen = new Set<string>()
   const deduped = tagSource
     .filter((p) => {
@@ -161,6 +164,36 @@ const trendDots = computed(() => {
   const rate = list.length > 0 ? Math.round((correct / list.length) * 100) : 0
   return { dots: list, correct, total: list.length, rate }
 })
+
+// 最近 30 天每日答题热力图：按日期聚合 attemptCount，分为 4 档强度。
+// 单次遍历 attempts 构建日期计数表，再映射到 30 天数组。
+const heatmapData = computed(() => {
+  const now = new Date()
+  // 单次遍历：将所有 attempts 按日期前缀归桶
+  const countByDate = new Map<string, number>()
+  for (const a of attempts.value) {
+    const day = a.createdAt.slice(0, 10)
+    countByDate.set(day, (countByDate.get(day) ?? 0) + 1)
+  }
+
+  const days: { date: string; label: string; count: number; level: number }[] = []
+  for (let i = 29; i >= 0; i--) {
+    const d = new Date(now)
+    d.setDate(d.getDate() - i)
+    const dateStr = d.toISOString().slice(0, 10)
+    const count = countByDate.get(dateStr) ?? 0
+    // 4 档：0=无，1=1-5题，2=6-15题，3=16+题
+    let level = 0
+    if (count >= 16) level = 3
+    else if (count >= 6) level = 2
+    else if (count >= 1) level = 1
+    days.push({ date: dateStr, label: `${d.getMonth() + 1}/${d.getDate()}`, count, level })
+  }
+
+  const totalActive = days.filter((d) => d.count > 0).length
+  const maxCount = Math.max(...days.map((d) => d.count), 0)
+  return { days, totalActive, maxCount }
+})
 </script>
 <template>
   <div v-if="loading" class="analysis-page analysis-loading">
@@ -201,6 +234,9 @@ const trendDots = computed(() => {
       </button>
       <button :class="{ active: viewMode === 'trend' }" @click="viewMode = 'trend'">
         答题趋势
+      </button>
+      <button :class="{ active: viewMode === 'heatmap' }" @click="viewMode = 'heatmap'">
+        每日活跃
       </button>
     </div>
 
@@ -290,6 +326,37 @@ const trendDots = computed(() => {
         <span class="leg correct">&bull;</span> 正确 <span class="leg wrong">&bull;</span> 错误
         <span class="leg hint">左 → 右 = 旧 → 新</span>
       </p>
+    </div>
+
+    <div v-if="viewMode === 'heatmap'" class="heatmap-section">
+      <p class="heatmap-summary">
+        近 30 天中有 <strong>{{ heatmapData.totalActive }}</strong> 天活跃，单日最高
+        <strong>{{ heatmapData.maxCount }}</strong> 题
+        <span v-if="heatmapData.totalActive === 0" class="empty-inline">
+          （当前学科还没有答题记录）
+        </span>
+      </p>
+      <div class="heatmap-grid" role="img" aria-label="近 30 天每日答题热力图">
+        <div
+          v-for="d in heatmapData.days"
+          :key="d.date"
+          :class="['heatmap-cell', `level-${d.level}`]"
+          :title="`${d.date} · ${d.count} 题`"
+        />
+      </div>
+      <div class="heatmap-labels">
+        <span v-for="d in heatmapData.days" :key="d.date" class="heatmap-label">
+          {{ d.label }}
+        </span>
+      </div>
+      <div class="heatmap-legend">
+        <span class="leg-label">少</span>
+        <span class="heatmap-cell level-0" />
+        <span class="heatmap-cell level-1" />
+        <span class="heatmap-cell level-2" />
+        <span class="heatmap-cell level-3" />
+        <span class="leg-label">多</span>
+      </div>
     </div>
   </div>
 </template>
@@ -507,6 +574,75 @@ h1 {
   font-size: 16px;
 }
 .trend-legend .leg.hint {
+  color: var(--text-muted);
+}
+
+.heatmap-section {
+  padding: 8px 0;
+}
+.heatmap-summary {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+.heatmap-summary strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 3px;
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+.heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  min-width: 0;
+  transition: background 0.18s var(--ease-ink);
+}
+.heatmap-cell.level-0 {
+  background: var(--bg-hover);
+}
+.heatmap-cell.level-1 {
+  background: rgba(74, 222, 128, 0.3);
+}
+.heatmap-cell.level-2 {
+  background: rgba(74, 222, 128, 0.6);
+}
+.heatmap-cell.level-3 {
+  background: rgba(74, 222, 128, 0.9);
+}
+.heatmap-labels {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 3px;
+  padding: 4px 12px 0;
+}
+.heatmap-label {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+.heatmap-legend .heatmap-cell {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+.heatmap-legend .leg-label {
+  font-size: 11px;
   color: var(--text-muted);
 }
 </style>

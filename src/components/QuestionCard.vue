@@ -248,7 +248,12 @@ const dragOpacity = computed(() => {
       >
         {{ bookmarked ? '已收藏' : '收藏' }}
       </button>
-      <button class="btn btn-ghost" @click="showExplanation = !showExplanation">
+      <button
+        class="btn btn-ghost"
+        :aria-expanded="showExplanation"
+        aria-controls="explanation-panel"
+        @click="showExplanation = !showExplanation"
+      >
         {{ showExplanation ? '收起解析' : '查看解析' }}
       </button>
       <button class="btn btn-ghost" :title="`分享本题（复制链接）`" @click="handleShare">
@@ -268,7 +273,7 @@ const dragOpacity = computed(() => {
       </div>
     </div>
 
-    <div class="q-explanation" v-if="submitted && showExplanation">
+    <div id="explanation-panel" class="q-explanation" v-if="submitted && showExplanation">
       <div class="exp-section" v-if="question.headword">
         <h4>词条</h4>
         <p>{{ question.headword }}</p>

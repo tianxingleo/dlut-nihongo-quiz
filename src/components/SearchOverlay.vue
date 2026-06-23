@@ -70,6 +70,17 @@ function onBackdropClick(e: MouseEvent) {
 }
 
 const scopeLabel = () => (scopeAll.value ? '全库' : getCategoryMeta(activeCategory.value).short)
+
+function highlightMatch(text: string, kw: string): string {
+  if (!kw.trim()) return escapeHtml(text)
+  const escaped = escapeHtml(text)
+  const kwEscaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  return escaped.replace(new RegExp(`(${kwEscaped})`, 'gi'), '<mark>$1</mark>')
+}
+
+function escapeHtml(s: string): string {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
 </script>
 <template>
   <div v-if="visible" class="search-backdrop" @click="onBackdropClick">
@@ -113,7 +124,7 @@ const scopeLabel = () => (scopeAll.value ? '全库' : getCategoryMeta(activeCate
             <div class="sr-id">{{ q.id }}</div>
             <div class="sr-content">
               <span class="sr-group">{{ q.groupTitle }}</span>
-              <span class="sr-stem">{{ truncate(stripMarkdown(q.stem), 60) }}</span>
+              <span class="sr-stem" v-html="highlightMatch(truncate(stripMarkdown(q.stem), 60), keyword)"></span>
             </div>
           </div>
         </div>
@@ -278,6 +289,11 @@ const scopeLabel = () => (scopeAll.value ? '全库' : getCategoryMeta(activeCate
   line-height: 1.5;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.sr-stem :deep(mark) {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent);
+  padding: 0 1px;
 }
 
 .search-empty,

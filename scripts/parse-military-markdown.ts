@@ -427,39 +427,39 @@ function main() {
   const DROP_IDS = new Set<string>([
     // Near-dup pairs identified by AI review (see data/processed/pdf-dedup-candidates.jsonl)
     'military-pdf-single-q00014', // ≈ military-p2-q00015
-    'military-pdf-multi-q00029',  // ≈ military-p4-q00090
+    'military-pdf-multi-q00029', // ≈ military-p4-q00090
     'military-pdf-single-q00027', // ≈ military-p1-q00014
     'military-pdf-single-q00024', // ≈ military-p1-q00036
     'military-pdf-single-q00019', // ≈ military-p4-q00087
-    'military-pdf-judge-q00045',  // ≈ military-ch2-q00037
+    'military-pdf-judge-q00045', // ≈ military-ch2-q00037
     'military-pdf-single-q00041', // ≈ military-p4-q00017
     'military-pdf-single-q00050', // ≈ military-p3-q00024
-    'military-pdf-judge-q00011',  // ≈ military-ch5-q00016
+    'military-pdf-judge-q00011', // ≈ military-ch5-q00016
     'military-pdf-single-q00062', // ≈ military-p4-q00063
-    'military-pdf-judge-q00029',  // ≈ military-ch5-q00010
-    'military-pdf-judge-q00031',  // ≈ military-ch17-q00013
+    'military-pdf-judge-q00029', // ≈ military-ch5-q00010
+    'military-pdf-judge-q00031', // ≈ military-ch17-q00013
     'military-pdf-single-q00022', // ≈ military-p1-q00029
-    'military-pdf-judge-q00021',  // ≈ military-ch3-q00009
-    'military-pdf-multi-q00009',  // ≈ military-p2-q00004
-    'military-pdf-judge-q00030',  // ≈ military-ch1-q00010
-    'military-ch7-q00004',        // ≈ military-ch1-q00017
-    'military-p3-q00052',         // ≈ military-p3-q00051
+    'military-pdf-judge-q00021', // ≈ military-ch3-q00009
+    'military-pdf-multi-q00009', // ≈ military-p2-q00004
+    'military-pdf-judge-q00030', // ≈ military-ch1-q00010
+    'military-ch7-q00004', // ≈ military-ch1-q00017
+    'military-p3-q00052', // ≈ military-p3-q00051
     'military-pdf-single-q00018', // ≈ military-p3-q00007
     'military-pdf-single-q00007', // ≈ military-p3-q00004
     'military-pdf-single-q00063', // ≈ military-p4-q00034
-    'military-ch17-q00001',       // ≈ military-ch5-q00023
-    'military-pdf-multi-q00021',  // ≈ military-p1-q00037
+    'military-ch17-q00001', // ≈ military-ch5-q00023
+    'military-pdf-multi-q00021', // ≈ military-p1-q00037
     'military-pdf-single-q00061', // ≈ military-p2-q00020
     'military-pdf-single-q00045', // ≈ military-p2-q00009
-    'military-pdf-multi-q00011',  // ≈ military-p2-q00003
-    'military-pdf-judge-q00014',  // ≈ military-ch17-q00005
+    'military-pdf-multi-q00011', // ≈ military-p2-q00003
+    'military-pdf-judge-q00014', // ≈ military-ch17-q00005
     'military-pdf-single-q00049', // ≈ military-p3-q00002
-    'military-pdf-multi-q00054',  // ≈ military-pdf-multi-q00006
-    'military-pdf-multi-q00007',  // ≈ military-p1-q00002
-    'military-ch5-q00035',        // ≈ military-p3-q00051 (最早制导武器)
+    'military-pdf-multi-q00054', // ≈ military-pdf-multi-q00006
+    'military-pdf-multi-q00007', // ≈ military-p1-q00002
+    'military-ch5-q00035', // ≈ military-p3-q00051 (最早制导武器)
     'military-pdf-single-q00070', // ≈ military-p1-q00039 (与中国接壤国家数)
-    'military-pdf-multi-q00041',  // ≈ military-p4-q00091 (胡锦涛80年建军传统)
-    'military-pdf-judge-q00035',  // ≈ military-p3-q00020 (九二共识，单选 vs 判断)
+    'military-pdf-multi-q00041', // ≈ military-p4-q00091 (胡锦涛80年建军传统)
+    'military-pdf-judge-q00035', // ≈ military-p3-q00020 (九二共识，单选 vs 判断)
   ])
   const deduped = all.filter((q) => {
     const id = `${q.groupId}-q${String(q.numberInGroup).padStart(5, '0')}`

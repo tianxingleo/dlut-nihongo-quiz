@@ -492,7 +492,11 @@ async function processFile(spec) {
         skipped++
         continue
       }
-      if (!force && parsed.explanationLines.length > 0 && isAlreadyEnriched(parsed.explanationLines)) {
+      if (
+        !force &&
+        parsed.explanationLines.length > 0 &&
+        isAlreadyEnriched(parsed.explanationLines)
+      ) {
         skipped++
         continue
       }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, nextTick } from 'vue'
+import { ref, computed, nextTick, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { marked } from 'marked'
 import { useHiddenSite } from '../composables/useHiddenSite'
@@ -98,6 +98,9 @@ function navigateTo(id: string) {
 }
 
 let observer: IntersectionObserver | null = null
+onUnmounted(() => {
+  if (observer) observer.disconnect()
+})
 function setupObserver() {
   if (observer) observer.disconnect()
   const headings = document.querySelectorAll<HTMLElement>(
@@ -119,8 +122,8 @@ function setupObserver() {
   headings.forEach((h) => observer!.observe(h))
 }
 
-function openQuiz(subBank: 'grammar-2021' | 'grammar-2024') {
-  setActiveCategory('japanese2')
+async function openQuiz(subBank: 'grammar-2021' | 'grammar-2024') {
+  await setActiveCategory('japanese2')
   setActiveSubBankKey(subBank)
   router.push('/quiz')
 }

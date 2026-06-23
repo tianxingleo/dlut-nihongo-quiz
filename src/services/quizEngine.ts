@@ -1,6 +1,7 @@
 import type { Question, Category, QuestionStats } from '../types/question'
 import { CATEGORIES, NO_SHUFFLE_CATEGORIES, getCategoryMeta } from '../config/categories'
 import { isMultiAnswerCorrect, toggleMultiSelect } from '../utils/multiAnswer'
+import { db } from '../db/database'
 
 const cache = new Map<Category, Question[]>()
 const groupsCache = new Map<Category, { groupId: string; groupTitle: string; count: number }[]>()
@@ -205,7 +206,7 @@ export async function getRelevantData(
 ): Promise<RelevantData> {
   const [allQuestions, stats] = await Promise.all([
     loadQuestionBank(category),
-    allStats ?? import('../db/database').then((m) => m.db.questionStats.toArray()),
+    allStats ?? db.questionStats.toArray(),
   ])
   const questions =
     options?.isUnlocked === false ? filterVisibleQuestions(allQuestions, false) : allQuestions

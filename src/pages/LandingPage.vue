@@ -22,8 +22,8 @@ onMounted(async () => {
   totalDone.value = stats.filter((s) => s.attemptCount > 0).length
 })
 
-function enterSubject(cat: Category) {
-  setActiveCategory(cat)
+async function enterSubject(cat: Category) {
+  await setActiveCategory(cat)
   router.push('/home')
 }
 
@@ -38,6 +38,8 @@ function goCalculusNotes() {
 const subjects = computed(() =>
   CATEGORIES.map((c) => ({ key: c.key, title: c.long, desc: c.desc, icon: c.icon })),
 )
+
+const subjectCount = computed(() => CATEGORIES.length)
 </script>
 
 <template>
@@ -46,7 +48,9 @@ const subjects = computed(() =>
     <section class="hero">
       <div class="hero-badge stagger-1">DLUT · 国际信息与软件学院</div>
       <h1 class="hero-title stagger-2">题库</h1>
-      <p class="hero-sub stagger-3">日语语法词汇 · 近代史 · 党史 · 军事理论<br />一体化期末复习平台</p>
+      <p class="hero-sub stagger-3">
+        日语语法词汇 · 近代史 · 党史 · 军事理论<br />一体化期末复习平台
+      </p>
       <p class="hero-desc stagger-4">
         覆盖 {{ totalQuestions.toLocaleString() }} 道题目，内置智能错题本、掌握度追踪、薄弱点分析。
         键盘驱动，高效刷题。
@@ -65,7 +69,7 @@ const subjects = computed(() =>
       </div>
       <div class="strip-divider" />
       <div class="strip-item">
-        <span class="strip-num">5</span>
+        <span class="strip-num">{{ subjectCount }}</span>
         <span class="strip-label">学科门类</span>
       </div>
       <div class="strip-divider" />

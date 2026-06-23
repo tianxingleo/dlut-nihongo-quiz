@@ -37,7 +37,11 @@ function clickLeaf(n: TreeNode) {
   if (n.type !== 'leaf') return
   if (n.requireUnlock && !props.isUnlocked) return
   if (n.route) {
-    emit('select-leaf', { category: n.category ?? props.activeCategory ?? 'japanese2', subBank: null, route: n.route })
+    emit('select-leaf', {
+      category: n.category ?? props.activeCategory ?? 'japanese2',
+      subBank: null,
+      route: n.route,
+    })
     return
   }
   if (!n.category) return

@@ -30,11 +30,16 @@
   --font-mono: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
 
   /* Animation curves — ink on washi paper */
-  --ease-ink: cubic-bezier(0.4, 0.0, 0.2, 1.0);       /* ink spreading: gradual settle */
-  --ease-brush: cubic-bezier(0.2, 0.0, 0.0, 1.0);      /* brush stroke: sharp entry, long tail */
-  --ease-page: cubic-bezier(0.33, 0.0, 0.1, 1.0);      /* page turn: very smooth deceleration */
-  --ease-stamp: cubic-bezier(0.6, 0.0, 0.4, 1.0);      /* hanko stamp: slight anticipation, firm stop */
-  --ease-drawer: cubic-bezier(0.22, 0.68, 0.25, 1.0);  /* drawer/slide: existing curve, kept for consistency */
+  --ease-ink: cubic-bezier(0.4, 0, 0.2, 1); /* ink spreading: gradual settle */
+  --ease-brush: cubic-bezier(0.2, 0, 0, 1); /* brush stroke: sharp entry, long tail */
+  --ease-page: cubic-bezier(0.33, 0, 0.1, 1); /* page turn: very smooth deceleration */
+  --ease-stamp: cubic-bezier(0.6, 0, 0.4, 1); /* hanko stamp: slight anticipation, firm stop */
+  --ease-drawer: cubic-bezier(
+    0.22,
+    0.68,
+    0.25,
+    1
+  ); /* drawer/slide: existing curve, kept for consistency */
 
   font-family: var(--font-body);
   font-size: 16px;
@@ -62,10 +67,14 @@ body::before {
   background:
     /* 法线光照层 —— feDiffuseLighting 将纤维噪声当作高度图，
        从左上角打光，亮面/暗面产生立体凹凸感，等效法线贴图 */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3E%3Cfilter id='paper3d' x='0%25' y='0%25' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.06' numOctaves='5' seed='3' result='bump'/%3E%3CfeColorMatrix in='bump' type='saturate' values='0' result='gray'/%3E%3CfeDiffuseLighting in='gray' surfaceScale='1.8' diffuseConstant='1.0' lighting-color='%23fffef8' result='lit'%3E%3CfeDistantLight azimuth='135' elevation='40'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper3d)'/%3E%3C/svg%3E") repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3E%3Cfilter id='paper3d' x='0%25' y='0%25' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.06' numOctaves='5' seed='3' result='bump'/%3E%3CfeColorMatrix in='bump' type='saturate' values='0' result='gray'/%3E%3CfeDiffuseLighting in='gray' surfaceScale='1.8' diffuseConstant='1.0' lighting-color='%23fffef8' result='lit'%3E%3CfeDistantLight azimuth='135' elevation='40'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper3d)'/%3E%3C/svg%3E")
+      repeat,
     /* 表面颗粒 —— 高频细微噪声，叠加在光照之上 */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' seed='11'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E") repeat;
-  background-size: 512px 512px, 200px 200px;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' seed='11'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E")
+      repeat;
+  background-size:
+    512px 512px,
+    200px 200px;
 }
 
 /* 边缘晕染 */
@@ -106,10 +115,14 @@ body::after {
   opacity: 0.18;
   background:
     /* 暗色法线光照 —— 暖黄微光从左上打来，黑纸上浮现纸纹凹凸 */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3E%3Cfilter id='paper3d-dark' x='0%25' y='0%25' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.06' numOctaves='5' seed='3' result='bump'/%3E%3CfeColorMatrix in='bump' type='saturate' values='0' result='gray'/%3E%3CfeDiffuseLighting in='gray' surfaceScale='2.0' diffuseConstant='1.0' lighting-color='%23d4c8b0' result='lit'%3E%3CfeDistantLight azimuth='135' elevation='35'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper3d-dark)'/%3E%3C/svg%3E") repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512'%3E%3Cfilter id='paper3d-dark' x='0%25' y='0%25' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.06' numOctaves='5' seed='3' result='bump'/%3E%3CfeColorMatrix in='bump' type='saturate' values='0' result='gray'/%3E%3CfeDiffuseLighting in='gray' surfaceScale='2.0' diffuseConstant='1.0' lighting-color='%23d4c8b0' result='lit'%3E%3CfeDistantLight azimuth='135' elevation='35'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper3d-dark)'/%3E%3C/svg%3E")
+      repeat,
     /* 表面颗粒 —— 同浅色模式 */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' seed='11'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E") repeat;
-  background-size: 512px 512px, 200px 200px;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' seed='11'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E")
+      repeat;
+  background-size:
+    512px 512px,
+    200px 200px;
 }
 
 [data-theme='dark'] body::after {
@@ -188,41 +201,95 @@ select {
 
 /* Keyframe animations */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes fade-down {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes ink-reveal {
-  from { opacity: 0; transform: scaleX(0.96); }
-  to   { opacity: 1; transform: scaleX(1); }
+  from {
+    opacity: 0;
+    transform: scaleX(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 @keyframes count-up {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes border-bleed {
-  0%   { border-color: var(--border); }
-  100% { border-color: var(--accent); }
+  0% {
+    border-color: var(--border);
+  }
+  100% {
+    border-color: var(--accent);
+  }
 }
 @keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Staggered entrance utility */
-.stagger-1 { animation: fade-up 0.5s var(--ease-brush) both; animation-delay: 0.05s; }
-.stagger-2 { animation: fade-up 0.5s var(--ease-brush) both; animation-delay: 0.12s; }
-.stagger-3 { animation: fade-up 0.5s var(--ease-brush) both; animation-delay: 0.19s; }
-.stagger-4 { animation: fade-up 0.5s var(--ease-brush) both; animation-delay: 0.26s; }
-.stagger-5 { animation: fade-up 0.5s var(--ease-brush) both; animation-delay: 0.33s; }
-.stagger-6 { animation: fade-up 0.5s var(--ease-brush) both; animation-delay: 0.40s; }
+.stagger-1 {
+  animation: fade-up 0.5s var(--ease-brush) both;
+  animation-delay: 0.05s;
+}
+.stagger-2 {
+  animation: fade-up 0.5s var(--ease-brush) both;
+  animation-delay: 0.12s;
+}
+.stagger-3 {
+  animation: fade-up 0.5s var(--ease-brush) both;
+  animation-delay: 0.19s;
+}
+.stagger-4 {
+  animation: fade-up 0.5s var(--ease-brush) both;
+  animation-delay: 0.26s;
+}
+.stagger-5 {
+  animation: fade-up 0.5s var(--ease-brush) both;
+  animation-delay: 0.33s;
+}
+.stagger-6 {
+  animation: fade-up 0.5s var(--ease-brush) both;
+  animation-delay: 0.4s;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .stagger-1, .stagger-2, .stagger-3,
-  .stagger-4, .stagger-5, .stagger-6 {
+  .stagger-1,
+  .stagger-2,
+  .stagger-3,
+  .stagger-4,
+  .stagger-5,
+  .stagger-6 {
     animation: none;
     opacity: 1;
     transform: none;

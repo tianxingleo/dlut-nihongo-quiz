@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { exportData, importData, clearAllData, getSetting, setSetting } from '../db/database'
 import { getCategoryCounts } from '../services/quizEngine'
 import { CATEGORIES } from '../config/categories'
@@ -9,9 +9,11 @@ const darkMode = ref(false)
 const counts = ref<Record<Category, number>>({} as Record<Category, number>)
 const statusMsg = ref('')
 const confirmClear = ref(false)
+const dailyGoal = ref(30)
 
 onMounted(async () => {
   darkMode.value = await getSetting('darkMode', false)
+  dailyGoal.value = await getSetting('dailyGoal', 30)
   applyTheme()
   // 5 个分类并发加载，不再串行 await 5 次
   counts.value = await getCategoryCounts()
@@ -25,7 +27,14 @@ async function toggleDark() {
   darkMode.value = !darkMode.value
   await setSetting('darkMode', darkMode.value)
   applyTheme()
-  localStorage.setItem('quiz-dark-mode', darkMode.value ? 'true' : 'false')
+}
+
+async function saveDailyGoal() {
+  const val = Math.max(1, Math.min(200, Math.round(dailyGoal.value)))
+  dailyGoal.value = val
+  await setSetting('dailyGoal', val)
+  statusMsg.value = '每日目标已更新'
+  setTimeout(() => (statusMsg.value = ''), 2000)
 }
 
 async function handleExport() {
@@ -72,7 +81,7 @@ async function handleClear() {
   setTimeout(() => (statusMsg.value = ''), 2000)
 }
 
-const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
+const totalCount = computed(() => Object.values(counts.value).reduce((a, b) => a + b, 0))
 </script>
 <template>
   <div class="settings-page">
@@ -87,7 +96,7 @@ const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
         <span>{{ counts[c.key] || '—' }} 题</span>
       </div>
       <div class="info-row total">
-        <span>合计</span><span>{{ totalCount() }} 题</span>
+        <span>合计</span><span>{{ totalCount }} 题</span>
       </div>
       <div class="info-row"><span>版本</span><span>v0.3.0</span></div>
     </div>
@@ -97,6 +106,25 @@ const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
       <div class="toggle-row" @click="toggleDark">
         <span>深色模式</span>
         <span class="toggle-state">{{ darkMode ? '开' : '关' }}</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>学习目标</h2>
+      <div class="goal-row">
+        <span>每日答题目标</span>
+        <div class="goal-input-group">
+          <input
+            v-model.number="dailyGoal"
+            type="number"
+            min="1"
+            max="200"
+            class="goal-input"
+            @change="saveDailyGoal"
+            @blur="saveDailyGoal"
+          />
+          <span class="goal-unit">题/天</span>
+        </div>
       </div>
     </div>
 
@@ -121,6 +149,8 @@ const totalCount = () => Object.values(counts.value).reduce((a, b) => a + b, 0)
         <div class="shortcut"><kbd>E 或 5</kbd><span>多选第五选项</span></div>
         <div class="shortcut"><kbd>Enter</kbd><span>提交 / 下一题</span></div>
         <div class="shortcut"><kbd>N</kbd><span>下一题</span></div>
+        <div class="shortcut"><kbd>P</kbd><span>上一题</span></div>
+        <div class="shortcut"><kbd>B</kbd><span>收藏题目</span></div>
       </div>
     </div>
 
@@ -213,6 +243,39 @@ h1 {
   font-size: 13px;
   color: var(--accent);
   margin-top: 6px;
+}
+
+.goal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.goal-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.goal-input {
+  width: 64px;
+  padding: 4px 8px;
+  font-size: 14px;
+  text-align: center;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  transition: border-color 0.18s var(--ease-ink);
+}
+.goal-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.goal-unit {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 .shortcut-list {

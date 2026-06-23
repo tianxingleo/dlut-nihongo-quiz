@@ -401,8 +401,8 @@ function main() {
   // AI-curated: questions to drop because they are answer-conflict duplicates
   // (same stem+type as another question in the same domain, but this version's answer is wrong)
   const DROP_WRONG_ANSWER = new Set<string>([
-    't2-q00090',  // "百日维新书改"答"高等学校"，正解"高等学堂"(t0-q00183)
-    't1-q00233',  // "三种建国方案"第三项"官僚资本主义方案"错，正解"工人阶级方案"(t3-q00087)
+    't2-q00090', // "百日维新书改"答"高等学校"，正解"高等学堂"(t0-q00183)
+    't1-q00233', // "三种建国方案"第三项"官僚资本主义方案"错，正解"工人阶级方案"(t3-q00087)
   ])
 
   const domains: string[][] = [PRIO_ORDER, ...UNIT_DOMAINS]
