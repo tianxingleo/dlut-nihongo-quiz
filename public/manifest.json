@@ -2,10 +2,12 @@
   "name": "DLUT 题库 · 期末复习平台",
   "short_name": "题库",
   "description": "日语语法词汇 · 近代史 · 党史 · 军事理论一体化期末复习平台",
-  "start_url": ".",
+  "start_url": "/dlut-nihongo-quiz/",
+  "scope": "/dlut-nihongo-quiz/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#fafaf5",
-  "theme_color": "#c44536",
+  "theme_color": "#fafaf5",
   "icons": [
     {
       "src": "favicon.svg",

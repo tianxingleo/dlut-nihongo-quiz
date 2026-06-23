@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MarkdownNotesPage from '../components/MarkdownNotesPage.vue'
+import MarkdownNotesPage from '../components/notes/MarkdownNotesPage.vue'
 import rawNotes from '../content/calculus-notes.md?raw'
 </script>
 <template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import type { TreeNode } from '../config/courseTree'
-import type { Category } from '../types/question'
+import type { TreeNode } from '../../config/courseTree'
+import type { Category } from '../../types/question'
 
 const props = defineProps<{
   nodes: TreeNode[]

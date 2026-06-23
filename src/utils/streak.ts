@@ -32,6 +32,74 @@ export function computeStreak(
   return streak
 }
 
+/**
+ * 计算历史最长连续天数
+ */
+export function computeLongestStreak(
+  timestamps: (string | undefined | null)[],
+): number {
+  const days = new Set<string>()
+  for (const ts of timestamps) {
+    if (!ts) continue
+    const d = new Date(ts)
+    if (isNaN(d.getTime())) continue
+    days.add(toLocalDateKey(d))
+  }
+  if (days.size === 0) return 0
+
+  // 将日期排序
+  const sortedDays = [...days].sort()
+  let longest = 1
+  let current = 1
+
+  for (let i = 1; i < sortedDays.length; i++) {
+    const prev = new Date(sortedDays[i - 1])
+    const curr = new Date(sortedDays[i])
+    const diffTime = curr.getTime() - prev.getTime()
+    const diffDays = diffTime / (1000 * 60 * 60 * 24)
+
+    if (diffDays === 1) {
+      current++
+      longest = Math.max(longest, current)
+    } else {
+      current = 1
+    }
+  }
+
+  return longest
+}
+
+/**
+ * 获取活跃日历数据（最近 N 天的活跃情况）
+ */
+export function getActiveDays(
+  timestamps: (string | undefined | null)[],
+  days: number = 30,
+): Array<{ date: string; active: boolean }> {
+  const activeDays = new Set<string>()
+  for (const ts of timestamps) {
+    if (!ts) continue
+    const d = new Date(ts)
+    if (isNaN(d.getTime())) continue
+    activeDays.add(toLocalDateKey(d))
+  }
+
+  const result: Array<{ date: string; active: boolean }> = []
+  const now = new Date()
+
+  for (let i = days - 1; i >= 0; i--) {
+    const date = new Date(now)
+    date.setDate(date.getDate() - i)
+    const dateKey = toLocalDateKey(date)
+    result.push({
+      date: dateKey,
+      active: activeDays.has(dateKey),
+    })
+  }
+
+  return result
+}
+
 function startOfLocalDay(d: Date): Date {
   const x = new Date(d)
   x.setHours(0, 0, 0, 0)

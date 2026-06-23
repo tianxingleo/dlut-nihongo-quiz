@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 type Status = 'correct' | 'wrong' | 'draft' | 'unanswered'
 
@@ -13,6 +13,26 @@ const props = defineProps<{
 const emit = defineEmits<{ jump: [index: number] }>()
 
 const isExpanded = ref(false)
+const currentPage = ref(0)
+const PAGE_SIZE = 100
+
+// 计算总页数
+const totalPages = computed(() => Math.ceil(props.total / PAGE_SIZE))
+
+// 当前页的题目范围
+const pageRange = computed(() => {
+  const start = currentPage.value * PAGE_SIZE
+  const end = Math.min(start + PAGE_SIZE, props.total)
+  return { start, end }
+})
+
+// 自动跳转到当前题目所在的页
+function scrollToCurrentPage() {
+  const targetPage = Math.floor(props.currentIndex / PAGE_SIZE)
+  if (targetPage !== currentPage.value) {
+    currentPage.value = targetPage
+  }
+}
 
 function labelAt(i: number): string {
   if (props.labels) return props.labels(i)
@@ -21,11 +41,18 @@ function labelAt(i: number): string {
 
 function toggleExpand() {
   isExpanded.value = !isExpanded.value
+  if (isExpanded.value) {
+    scrollToCurrentPage()
+  }
 }
 
 function pick(i: number) {
   emit('jump', i)
   isExpanded.value = false
+}
+
+function goToPage(page: number) {
+  currentPage.value = Math.max(0, Math.min(page, totalPages.value - 1))
 }
 </script>
 
@@ -58,22 +85,39 @@ function pick(i: number) {
             <span class="legend"><span class="dot s-unanswered"></span>未答</span>
           </span>
         </div>
+        <!-- 分页控制（仅在题目数量超过 PAGE_SIZE 时显示） -->
+        <div v-if="totalPages > 1" class="pagination">
+          <button class="page-btn" :disabled="currentPage <= 0" @click="goToPage(currentPage - 1)">
+            ‹
+          </button>
+          <span class="page-info">{{ currentPage + 1 }} / {{ totalPages }}</span>
+          <button
+            class="page-btn"
+            :disabled="currentPage >= totalPages - 1"
+            @click="goToPage(currentPage + 1)"
+          >
+            ›
+          </button>
+        </div>
         <div class="grid">
           <button
-            v-for="i in total"
-            :key="`g-${i - 1}`"
+            v-for="i in pageRange.end - pageRange.start"
+            :key="`g-${pageRange.start + i - 1}`"
             class="gcell"
-            :class="[`s-${statusOf(i - 1)}`, { active: i - 1 === currentIndex }]"
-            :aria-current="i - 1 === currentIndex ? 'true' : undefined"
-            @click="pick(i - 1)"
+            :class="[
+              `s-${statusOf(pageRange.start + i - 1)}`,
+              { active: pageRange.start + i - 1 === currentIndex },
+            ]"
+            :aria-current="pageRange.start + i - 1 === currentIndex ? 'true' : undefined"
+            @click="pick(pageRange.start + i - 1)"
           >
-            <span class="gnum">{{ labelAt(i - 1) }}</span>
+            <span class="gnum">{{ labelAt(pageRange.start + i - 1) }}</span>
             <span class="gmark">{{
-              statusOf(i - 1) === 'correct'
+              statusOf(pageRange.start + i - 1) === 'correct'
                 ? '✓'
-                : statusOf(i - 1) === 'wrong'
+                : statusOf(pageRange.start + i - 1) === 'wrong'
                   ? '✗'
-                  : statusOf(i - 1) === 'draft'
+                  : statusOf(pageRange.start + i - 1) === 'draft'
                     ? '·'
                     : ''
             }}</span>
@@ -202,6 +246,40 @@ function pick(i: number) {
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
   gap: 4px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.page-btn {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.18s var(--ease-ink),
+    color 0.18s var(--ease-ink);
+}
+.page-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.page-info {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
 }
 
 .gcell {

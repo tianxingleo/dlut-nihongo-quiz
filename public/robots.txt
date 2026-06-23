@@ -1,0 +1,12 @@
+# Robots.txt for DLUT 期末复习平台
+# https://tianxingleo.top/dlut-nihongo-quiz/
+
+User-agent: *
+Allow: /
+
+# 站点地图位置
+Sitemap: https://tianxingleo.top/dlut-nihongo-quiz/sitemap.xml
+
+# 禁止爬取 Service Worker 和 API 相关路径
+Disallow: /sw.js
+Disallow: /api/

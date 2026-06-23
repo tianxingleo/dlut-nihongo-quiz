@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 import { Marked } from 'marked'
 import { useHiddenSite } from '../composables/useHiddenSite'
 import { setActiveCategory, setActiveSubBankKey } from '../services/categoryStore'
-import GrammarToc from '../components/GrammarToc.vue'
+import GrammarToc from '../components/notes/GrammarToc.vue'
 import { sanitizeHtml } from '../utils/renderMarkdown'
 import rawNotes from '../content/grammar-notes.md?raw'
 

@@ -72,7 +72,11 @@ self.addEventListener('fetch', (event) => {
             caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone))
           }
           return response
-        }).catch(() => cached)
+        }).catch(() => {
+          // 导航请求：无缓存时回退到 index.html（SPA 壳），保证离线可访问
+          if (isDocument) return cached || caches.match(withScope('index.html'))
+          return cached
+        })
         return cached || network
       }),
     )

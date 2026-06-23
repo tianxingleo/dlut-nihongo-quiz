@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import { getRelevantData, getQuestionById } from '../services/quizEngine'
 import {
   useActiveCategory,
@@ -10,9 +11,10 @@ import { useHiddenSite } from '../composables/useHiddenSite'
 import { db } from '../db/database'
 import { truncate } from '../utils/text'
 import { stripMarkdown } from '../utils/renderMarkdown'
-import PageSkeleton from '../components/PageSkeleton.vue'
+import PageSkeleton from '../components/ui/PageSkeleton.vue'
 import type { QuestionStats, Question, Attempt } from '../types/question'
 
+const router = useRouter()
 const activeCategory = useActiveCategory()
 const activeSubBankKey = useActiveSubBankKey()
 const isWordSubBank = computed(() => activeSubBankKey.value === 'word')
@@ -20,23 +22,40 @@ const { isUnlocked } = useHiddenSite()
 const questions = ref<Question[]>([])
 const stats = ref<QuestionStats[]>([])
 const attempts = ref<Attempt[]>([])
-const viewMode = ref<'groups' | 'tags' | 'wrong' | 'trend' | 'heatmap'>('groups')
+const viewMode = ref<'groups' | 'tags' | 'wrong' | 'trend' | 'heatmap' | 'speed'>('groups')
 const loading = ref(true)
+const error = ref('')
 
 async function refresh() {
   loading.value = true
-  const [relevant, allAttempts] = await Promise.all([
-    getRelevantData(activeCategory.value, undefined, { isUnlocked: isUnlocked.value }),
-    db.attempts.toArray(),
-  ])
-  questions.value = relevant.questions
-  stats.value = relevant.stats
-  const validIds = new Set(relevant.questions.map((q) => q.id))
-  // 按时间正序保留（旧 → 新），让趋势图从左到右是时间推进
-  attempts.value = allAttempts
-    .filter((a) => validIds.has(a.questionId))
-    .sort((a, b) => a.id! - b.id!)
-  loading.value = false
+  error.value = ''
+  try {
+    const relevant = await getRelevantData(activeCategory.value, undefined, {
+      isUnlocked: isUnlocked.value,
+    })
+    questions.value = relevant.questions
+    stats.value = relevant.stats
+    const validIds = new Set(relevant.questions.map((q) => q.id))
+
+    // 使用索引查询最近 30 天的 attempts，避免加载全表
+    const thirtyDaysAgo = new Date()
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
+    const startStr = thirtyDaysAgo.toISOString()
+
+    const recentAttempts = await db.attempts
+      .where('createdAt')
+      .aboveOrEqual(startStr)
+      .toArray()
+
+    // 按时间正序保留（旧 → 新），让趋势图从左到右是时间推进
+    attempts.value = recentAttempts
+      .filter((a) => validIds.has(a.questionId))
+      .sort((a, b) => a.createdAt.localeCompare(b.createdAt))
+  } catch (e) {
+    error.value = e instanceof Error ? e.message : '加载分析数据失败，请刷新页面重试'
+  } finally {
+    loading.value = false
+  }
 }
 
 onMounted(async () => {
@@ -55,9 +74,13 @@ watch(isUnlocked, () => {
 
 const groupAnalysis = computed(() => {
   const statsMap = new Map(stats.value.map((s) => [s.questionId, s]))
-  const map = new Map<string, { total: number; done: number; correct: number; wrong: number }>()
+  const map = new Map<
+    string,
+    { total: number; done: number; correct: number; wrong: number; title: string }
+  >()
   for (const q of questions.value) {
-    if (!map.has(q.groupId)) map.set(q.groupId, { total: 0, done: 0, correct: 0, wrong: 0 })
+    if (!map.has(q.groupId))
+      map.set(q.groupId, { total: 0, done: 0, correct: 0, wrong: 0, title: q.groupTitle })
     const g = map.get(q.groupId)!
     g.total++
     const s = statsMap.get(q.id)
@@ -70,8 +93,11 @@ const groupAnalysis = computed(() => {
   return [...map.entries()]
     .map(([id, data]) => ({
       id,
-      title: questions.value.find((q) => q.groupId === id)?.groupTitle || id,
-      ...data,
+      title: data.title,
+      total: data.total,
+      done: data.done,
+      correct: data.correct,
+      wrong: data.wrong,
       rate: data.done > 0 ? Math.round((data.correct / (data.correct + data.wrong)) * 100) : 0,
     }))
     .sort((a, b) => a.id.localeCompare(b.id))
@@ -103,11 +129,19 @@ const tagAnalysis = computed(() => {
     })
     .slice(0, 15)
 
+  // 预构建 tag -> question[] 索引，避免对每个 tag 都执行 filter
+  const tagIndex = new Map<string, typeof questions.value>()
+  for (const q of questions.value) {
+    const allTags = [...q.grammarPoints, ...q.tags]
+    for (const tag of allTags) {
+      if (!tagIndex.has(tag)) tagIndex.set(tag, [])
+      tagIndex.get(tag)!.push(q)
+    }
+  }
+
   const statsMap = new Map(stats.value.map((s) => [s.questionId, s]))
   return deduped.map((p) => {
-    const qs = questions.value.filter(
-      (q) => q.grammarPoints.includes(p.point) || q.tags.includes(p.point),
-    )
+    const qs = tagIndex.get(p.point) || []
     let correct = 0
     let total = 0
     for (const q of qs) {
@@ -152,6 +186,38 @@ const overallStats = computed(() => {
     totalCorrect,
     overallRate: totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0,
   }
+})
+
+// 答题速度分析
+const speedAnalysis = computed(() => {
+  if (attempts.value.length === 0) {
+    return { avgMs: 0, avgCorrectMs: 0, avgWrongMs: 0, fastest: null, slowest: null }
+  }
+
+  const validAttempts = attempts.value.filter((a) => a.elapsedMs > 0 && a.elapsedMs < 300000) // 过滤异常值（>5分钟）
+  if (validAttempts.length === 0) {
+    return { avgMs: 0, avgCorrectMs: 0, avgWrongMs: 0, fastest: null, slowest: null }
+  }
+
+  const totalMs = validAttempts.reduce((sum, a) => sum + a.elapsedMs, 0)
+  const correctAttempts = validAttempts.filter((a) => a.isCorrect)
+  const wrongAttempts = validAttempts.filter((a) => !a.isCorrect)
+
+  const avgMs = Math.round(totalMs / validAttempts.length)
+  const avgCorrectMs =
+    correctAttempts.length > 0
+      ? Math.round(correctAttempts.reduce((sum, a) => sum + a.elapsedMs, 0) / correctAttempts.length)
+      : 0
+  const avgWrongMs =
+    wrongAttempts.length > 0
+      ? Math.round(wrongAttempts.reduce((sum, a) => sum + a.elapsedMs, 0) / wrongAttempts.length)
+      : 0
+
+  const sorted = [...validAttempts].sort((a, b) => a.elapsedMs - b.elapsedMs)
+  const fastest = sorted[0]
+  const slowest = sorted[sorted.length - 1]
+
+  return { avgMs, avgCorrectMs, avgWrongMs, fastest, slowest }
 })
 
 const tagTableHeader = computed(() => (isWordSubBank.value ? '课/标签' : '语法点'))
@@ -199,6 +265,12 @@ const heatmapData = computed(() => {
   <div v-if="loading" class="analysis-page analysis-loading">
     <PageSkeleton type="list" />
   </div>
+  <div v-else-if="error" class="analysis-page">
+    <div class="empty">
+      <p style="color: var(--wrong); margin-bottom: 12px">{{ error }}</p>
+      <button class="btn btn-accent btn-sm" @click="refresh">重试</button>
+    </div>
+  </div>
   <div v-else class="analysis-page">
     <header class="page-header">
       <h1>数据分析</h1>
@@ -238,6 +310,9 @@ const heatmapData = computed(() => {
       <button :class="{ active: viewMode === 'heatmap' }" @click="viewMode = 'heatmap'">
         每日活跃
       </button>
+      <button :class="{ active: viewMode === 'speed' }" @click="viewMode = 'speed'">
+        答题速度
+      </button>
     </div>
 
     <table v-if="viewMode === 'groups'" class="data-table">
@@ -248,6 +323,7 @@ const heatmapData = computed(() => {
           <th>已做</th>
           <th>正确率</th>
           <th>进度</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -261,6 +337,11 @@ const heatmapData = computed(() => {
           <td>
             <div class="mini-bar"><div :style="{ width: (g.done / g.total) * 100 + '%' }" /></div>
           </td>
+          <td>
+            <button class="btn btn-outline btn-sm" @click="router.push({ path: '/quiz', query: { group: g.id } })">
+              刷题
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -273,6 +354,7 @@ const heatmapData = computed(() => {
           <th>做题次数</th>
           <th>正确率</th>
           <th>状态</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -289,6 +371,11 @@ const heatmapData = computed(() => {
             <span v-else-if="t.attempts > 0" class="status bad">优先复习</span>
             <span v-else class="status na">--</span>
           </td>
+          <td>
+            <button class="btn btn-outline btn-sm" @click="router.push({ path: '/quiz', query: { tag: t.point } })">
+              刷题
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -299,6 +386,9 @@ const heatmapData = computed(() => {
         <span class="w-stem">{{ w.stem }}</span>
         <span class="w-count">错 {{ w.wrongCount }} 次</span>
         <span class="w-rate">{{ w.rate }}%</span>
+        <button class="btn btn-outline btn-sm" @click="router.push({ path: '/quiz', query: { ids: w.id } })">
+          刷这题
+        </button>
       </div>
       <p v-if="topWrongQuestions.length === 0" class="empty">暂无错题</p>
     </div>
@@ -356,6 +446,43 @@ const heatmapData = computed(() => {
         <span class="heatmap-cell level-2" />
         <span class="heatmap-cell level-3" />
         <span class="leg-label">多</span>
+      </div>
+    </div>
+
+    <div v-if="viewMode === 'speed'" class="speed-section">
+      <div v-if="speedAnalysis.avgMs === 0" class="empty">
+        暂无答题速度数据
+      </div>
+      <div v-else class="speed-cards">
+        <div class="speed-card">
+          <span class="speed-num">{{ (speedAnalysis.avgMs / 1000).toFixed(1) }}s</span>
+          <span class="speed-label">平均答题时间</span>
+        </div>
+        <div class="speed-card">
+          <span class="speed-num correct">{{ (speedAnalysis.avgCorrectMs / 1000).toFixed(1) }}s</span>
+          <span class="speed-label">正确题平均时间</span>
+        </div>
+        <div class="speed-card">
+          <span class="speed-num wrong">{{ (speedAnalysis.avgWrongMs / 1000).toFixed(1) }}s</span>
+          <span class="speed-label">错误题平均时间</span>
+        </div>
+      </div>
+      <div v-if="speedAnalysis.fastest && speedAnalysis.slowest" class="speed-details">
+        <p>
+          最快答题：
+          <strong>{{ (speedAnalysis.fastest.elapsedMs / 1000).toFixed(1) }}s</strong>
+          （{{ speedAnalysis.fastest.isCorrect ? '正确' : '错误' }}）
+        </p>
+        <p>
+          最慢答题：
+          <strong>{{ (speedAnalysis.slowest.elapsedMs / 1000).toFixed(1) }}s</strong>
+          （{{ speedAnalysis.slowest.isCorrect ? '正确' : '错误' }}）
+        </p>
+        <p v-if="speedAnalysis.avgWrongMs > speedAnalysis.avgCorrectMs" class="speed-insight">
+          💡 错误题平均耗时比正确题多
+          <strong>{{ ((speedAnalysis.avgWrongMs - speedAnalysis.avgCorrectMs) / 1000).toFixed(1) }}s</strong>，
+          建议对耗时较长的题目加强练习。
+        </p>
       </div>
     </div>
   </div>
@@ -597,6 +724,16 @@ h1 {
   background: var(--bg-card);
   border: 1px solid var(--border);
 }
+
+@media (max-width: 480px) {
+  .heatmap-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+  .heatmap-labels {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
 .heatmap-cell {
   aspect-ratio: 1;
   border-radius: 2px;
@@ -644,5 +781,59 @@ h1 {
 .heatmap-legend .leg-label {
   font-size: 11px;
   color: var(--text-muted);
+}
+
+.speed-section {
+  padding: 8px 0;
+}
+.speed-cards {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.speed-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  flex: 1;
+}
+.speed-num {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.speed-num.correct {
+  color: var(--correct);
+}
+.speed-num.wrong {
+  color: var(--wrong);
+}
+.speed-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.speed-details {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.speed-details strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.speed-insight {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
 }
 </style>

@@ -3,7 +3,15 @@ defineProps<{ tag: string; active?: boolean; clickable?: boolean }>()
 defineEmits<{ click: [tag: string] }>()
 </script>
 <template>
-  <span class="tag-badge" :class="{ active, clickable }" @click="clickable && $emit('click', tag)">
+  <span
+    class="tag-badge"
+    :class="{ active, clickable }"
+    :role="clickable ? 'button' : undefined"
+    :tabindex="clickable ? 0 : undefined"
+    @click="clickable && $emit('click', tag)"
+    @keydown.enter="clickable && $emit('click', tag)"
+    @keydown.space.prevent="clickable && $emit('click', tag)"
+  >
     {{ tag }}
   </span>
 </template>

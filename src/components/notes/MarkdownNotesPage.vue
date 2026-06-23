@@ -3,7 +3,7 @@ import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { Marked } from 'marked'
 import markedKatex from 'marked-katex-extension'
 import GrammarToc from './GrammarToc.vue'
-import { sanitizeHtml } from '../utils/renderMarkdown'
+import { sanitizeHtml } from '../../utils/renderMarkdown'
 
 const props = withDefaults(
   defineProps<{
@@ -29,6 +29,9 @@ const markdownRenderer = new Marked({
 
 if (props.enableKatex) {
   markdownRenderer.use(markedKatex({ throwOnError: false, nonStandard: true }))
+}
+
+if (props.enableKatex) {
   import('katex/dist/katex.min.css')
 }
 

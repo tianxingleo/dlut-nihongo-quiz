@@ -1,5 +1,6 @@
 import type { Category, QuestionStats } from '../types/question'
-import { db, INTERVAL_DAYS } from '../db/database'
+import { db } from '../db/database'
+import { INTERVAL_DAYS, SCORING } from '../constants'
 import { loadQuestionBank, getRelevantData, filterVisibleQuestions } from './quizEngine'
 
 export interface Recommendation {
@@ -16,15 +17,59 @@ export function isWrong(s: QuestionStats): boolean {
   return s.wrongCount > 0 && (s.wrongCount >= s.correctCount || s.masteryLevel <= 2)
 }
 
-// 间隔重复：按 masteryLevel 查表得到下次到期天数。
+// 间隔重复：按 masteryLevel 和历史正确率动态计算下次到期天数。
 // recordAttempt 会写入 reviewDueAt，此处优先使用数据库值，兜底派生计算（兼容旧数据）。
 export function deriveReviewDueAt(s: QuestionStats): string {
   // 优先使用数据库中已存储的值（recordAttempt 会写入）
   if (s.reviewDueAt) return s.reviewDueAt
   // 兜底：兼容旧数据（reviewDueAt 为空时派生计算）
   if (!s.lastAttemptAt) return ''
-  const days = INTERVAL_DAYS[s.masteryLevel] ?? 1
+  const days = calcIntervalDays(s)
   return new Date(new Date(s.lastAttemptAt).getTime() + days * 86_400_000).toISOString()
+}
+
+// 根据 masteryLevel 和历史正确率动态计算复习间隔天数（简化版 SM-2 算法）
+function calcIntervalDays(s: QuestionStats): number {
+  const base = INTERVAL_DAYS[s.masteryLevel] ?? 1
+  // 如果没有答题记录，使用基础间隔
+  if (s.attemptCount === 0) return base
+
+  // 计算简易因子（EF）- 类似 SM-2 算法
+  // EF 根据连续正确次数和正确率动态调整
+  const correctRate = s.correctCount / s.attemptCount
+  const consecutiveCorrect = estimateConsecutiveCorrect(s)
+
+  // 基础 EF 值（1.0 = 标准间隔，>1.0 延长，<1.0 缩短）
+  let ef = 1.0
+
+  // 根据正确率调整 EF
+  if (correctRate >= 0.9) {
+    ef *= 1.6 // 高正确率，显著延长间隔
+  } else if (correctRate >= 0.7) {
+    ef *= 1.3 // 中高正确率，适度延长
+  } else if (correctRate >= 0.5) {
+    ef *= 1.0 // 中等正确率，保持基础
+  } else {
+    ef *= 0.6 // 低正确率，缩短间隔
+  }
+
+  // 根据连续正确次数进一步调整
+  if (consecutiveCorrect >= 5) {
+    ef *= 1.2 // 连续正确多次，额外延长
+  } else if (consecutiveCorrect >= 3) {
+    ef *= 1.1
+  }
+
+  // 应用 EF 到基础间隔
+  return Math.max(1, Math.round(base * ef))
+}
+
+// 估算连续正确次数（基于 lastCorrect 和 masteryLevel）
+function estimateConsecutiveCorrect(s: QuestionStats): number {
+  if (!s.lastCorrect) return 0
+  // 如果上次答对，根据 masteryLevel 估算连续正确次数
+  // masteryLevel 越高，连续正确次数越多
+  return Math.max(1, s.masteryLevel)
 }
 
 export function isReviewDue(s: QuestionStats, now: Date = new Date()): boolean {
@@ -34,11 +79,9 @@ export function isReviewDue(s: QuestionStats, now: Date = new Date()): boolean {
 
 export async function getWeakTags(
   category: Category = 'japanese2',
-  _allStats?: QuestionStats[],
   options?: { isUnlocked?: boolean },
 ): Promise<Recommendation[]> {
-  // tagStats 与 questionStats 不在同一张表，无法共享预扫描；保留可选参数仅为 API 对齐其他函数。
-  void _allStats
+  // tagStats 与 questionStats 不在同一张表，无法共享预扫描
   const [allTagStats, allQuestions] = await Promise.all([
     db.tagStats.toArray(),
     loadQuestionBank(category),
@@ -76,12 +119,12 @@ export async function getReviewQueue(
   const scored: { id: string; score: number }[] = []
   for (const s of stats) {
     let score = 0
-    if (s.masteryLevel <= 1) score += 10
-    if (s.masteryLevel === 2) score += 5
-    if (!s.lastCorrect && s.attemptCount > 0) score += 8
-    if (s.wrongCount >= 2) score += s.wrongCount * 2
-    if (isReviewDue(s)) score += 5
-    if (s.isBookmarked) score += 3
+    if (s.masteryLevel <= 1) score += SCORING.LOW_MASTERY
+    if (s.masteryLevel === 2) score += SCORING.MEDIUM_MASTERY
+    if (!s.lastCorrect && s.attemptCount > 0) score += SCORING.LAST_WRONG
+    if (s.wrongCount >= 2) score += s.wrongCount * SCORING.WRONG_MULTIPLIER
+    if (isReviewDue(s)) score += SCORING.REVIEW_DUE
+    if (s.isBookmarked) score += SCORING.BOOKMARKED
     if (score > 0) scored.push({ id: s.questionId, score })
   }
   return scored.sort((a, b) => b.score - a.score).map((x) => x.id)

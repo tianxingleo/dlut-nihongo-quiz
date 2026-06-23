@@ -44,6 +44,53 @@ if ('serviceWorker' in navigator) {
 
 function showUpdateToast(onAccept: () => void) {
   if (document.getElementById('sw-update-toast')) return
+
+  // 创建样式元素，使用 CSS 变量以支持暗色/亮色模式
+  const style = document.createElement('style')
+  style.textContent = `
+    #sw-update-toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: var(--bg-card, #1a1a18);
+      color: var(--text-primary, #fafaf5);
+      padding: 10px 14px;
+      border: 1px solid var(--accent, #c44536);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: inherit;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: slide-up 0.3s ease-out;
+    }
+    #sw-update-toast button {
+      background: var(--accent, #c44536);
+      color: #fff;
+      border: none;
+      padding: 5px 12px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+    #sw-update-toast button:hover {
+      background: var(--accent-hover, #a83828);
+    }
+    @keyframes slide-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  `
+  document.head.appendChild(style)
+
   const toast = document.createElement('div')
   toast.id = 'sw-update-toast'
   toast.setAttribute('role', 'alert')
@@ -53,31 +100,8 @@ function showUpdateToast(onAccept: () => void) {
   btn.addEventListener('click', () => {
     onAccept()
     toast.remove()
+    style.remove()
   })
   toast.appendChild(btn)
-  Object.assign(toast.style, {
-    position: 'fixed',
-    bottom: '20px',
-    right: '20px',
-    zIndex: '9999',
-    background: '#1a1a18',
-    color: '#fafaf5',
-    padding: '10px 14px',
-    border: '1px solid #c44536',
-    fontSize: '13px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-    fontFamily: 'inherit',
-  } as Partial<CSSStyleDeclaration>)
-  Object.assign(btn.style, {
-    background: '#c44536',
-    color: '#fff',
-    border: 'none',
-    padding: '5px 12px',
-    cursor: 'pointer',
-    fontFamily: 'inherit',
-    fontSize: '13px',
-  } as Partial<CSSStyleDeclaration>)
   document.body.appendChild(toast)
 }

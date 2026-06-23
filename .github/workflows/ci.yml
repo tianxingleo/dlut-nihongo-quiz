@@ -25,6 +25,9 @@ jobs:
       - name: Test
         run: npm run test
 
+      - name: Check formatting
+        run: npm run format:check
+
       - name: Audit question banks
         run: npm run audit:banks
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 首页/落地页 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 主页 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/home</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 答题页面 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/quiz</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 错题本 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/wrong</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 收藏本 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/bookmarks</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 学习分析 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/analysis</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 设置 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/settings</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 日语语法笔记 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/grammar-notes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 微积分笔记 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/calculus-notes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 数字电路笔记 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/digital-circuit-notes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 物理笔记 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/physics-notes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 听说笔记 -->
+  <url>
+    <loc>https://tianxingleo.top/dlut-nihongo-quiz/listening-speaking-notes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

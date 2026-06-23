@@ -37,13 +37,14 @@
     "parse:japanese2024": "tsx scripts/parse-japanese-2024-markdown.ts",
     "parse:japanese2021": "node scripts/add-2021-exam.cjs",
     "merge:japanese2": "tsx scripts/merge-japanese2-banks.ts",
-    "parse:all": "npm run parse:grammar && npm run parse:japanese2024 && npm run parse:japanese2021 && npm run parse:words && npm run merge:japanese2 && npm run parse:history && npm run parse:party && npm run parse:military",
+    "parse:all": "npm run parse:grammar && npm run parse:japanese2024 && npm run parse:japanese2021 && npm run parse:words && npm run merge:japanese2 && npm run parse:history && npm run parse:party && npm run parse:military && npm run generate:meta",
+    "generate:meta": "node scripts/generate-meta.mjs",
     "audit:banks": "node scripts/audit-banks.mjs",
     "format": "prettier --write \"src/**/*.{ts,vue,css}\" \"scripts/**/*.{ts,mjs}\" \"*.{json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,vue,css}\" \"scripts/**/*.{ts,mjs}\" \"*.{json,md}\""
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.105.0",
+    "@types/dompurify": "^3.0.5",
     "dexie": "^4.4.4",
     "dompurify": "^3.4.11",
     "katex": "^0.17.0",
@@ -53,6 +54,7 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.105.0",
     "@types/node": "^24.12.3",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/tsconfig": "^0.9.1",

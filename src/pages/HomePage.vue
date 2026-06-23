@@ -13,6 +13,7 @@ import {
   getMasterySummary,
   getWrongQuestionIds,
   getUntouchedQuestionIds,
+  getReviewQueue,
 } from '../services/reviewScheduler'
 import { db } from '../db/database'
 import {
@@ -29,11 +30,12 @@ import {
   useActiveSubBankKey,
 } from '../services/categoryStore'
 import { GROUPED_CATEGORIES } from '../config/categories'
+import { STORAGE_KEYS } from '../constants'
 import { computeStreak } from '../utils/streak'
-import StatCard from '../components/StatCard.vue'
-import TagBadge from '../components/TagBadge.vue'
-import PageSkeleton from '../components/PageSkeleton.vue'
-import ActionMenuButton from '../components/ActionMenuButton.vue'
+import StatCard from '../components/ui/StatCard.vue'
+import TagBadge from '../components/ui/TagBadge.vue'
+import PageSkeleton from '../components/ui/PageSkeleton.vue'
+import ActionMenuButton from '../components/ui/ActionMenuButton.vue'
 import type { Recommendation } from '../services/reviewScheduler'
 import type { Question, QuestionStats, QuizMode } from '../types/question'
 
@@ -59,6 +61,7 @@ const weakTags = ref<Recommendation[]>([])
 const mastery = ref({ mastered: 0, learning: 0, weak: 0, untouched: 0 })
 const wrongIds = ref<string[]>([])
 const untouchedIds = ref<string[]>([])
+const reviewDueIds = ref<string[]>([])
 const activeSession = ref<ActiveSession | null>(null)
 const streak = ref(0)
 const dailyGoal = ref(30)
@@ -126,17 +129,19 @@ async function refresh() {
         ? Math.round((recent.filter((a) => a.isCorrect).length / recent.length) * 100)
         : 0
 
-    // 4 个 reviewScheduler 函数共用一份 stats，避免再扫 4 次
-    const [weak, mast, wrong, untouched] = await Promise.all([
-      getWeakTags(cat, allStatsArr, { isUnlocked: unlocked }),
+    // 5 个 reviewScheduler 函数共用一份 stats，避免再扫 5 次
+    const [weak, mast, wrong, untouched, reviewQueue] = await Promise.all([
+      getWeakTags(cat, { isUnlocked: unlocked }),
       getMasterySummary(cat, allStatsArr, { isUnlocked: unlocked }),
       getWrongQuestionIds(cat, allStatsArr, { isUnlocked: unlocked }),
       getUntouchedQuestionIds(cat, allStatsArr, { isUnlocked: unlocked }),
+      getReviewQueue(cat, allStatsArr, { isUnlocked: unlocked }),
     ])
     weakTags.value = weak
     mastery.value = mast
     wrongIds.value = wrong
     untouchedIds.value = untouched
+    reviewDueIds.value = reviewQueue
 
     const groups = getAllGroups(cat)
     const next: typeof groupStats.value = {}
@@ -174,7 +179,7 @@ async function refresh() {
     if (saved && !isSessionInProgress(saved)) await clearActiveSession()
 
     // 每日目标
-    dailyGoal.value = await getSetting('dailyGoal', 30)
+    dailyGoal.value = await getSetting(STORAGE_KEYS.DAILY_GOAL, 30)
     dailyDone.value = await getDailyAttemptCount()
 
     loading.value = false
@@ -198,10 +203,12 @@ watch(isUnlocked, () => {
   refresh()
 })
 
-function startQuiz(mode: QuizMode | 'weakness', options?: { shuffle?: boolean }) {
-  const params: Record<string, string> = { mode, fresh: '1' }
+function startQuiz(mode: QuizMode | 'weakness' | 'review', options?: { shuffle?: boolean }) {
+  const params: Record<string, string> = { mode: mode === 'review' ? 'wrong' : mode, fresh: '1' }
   if (options?.shuffle) params.shuffle = '1'
-  if (mode === 'wrong' && wrongIds.value.length > 0) {
+  if (mode === 'review' && reviewDueIds.value.length > 0) {
+    params.ids = reviewDueIds.value.join(',')
+  } else if (mode === 'wrong' && wrongIds.value.length > 0) {
     params.ids = wrongIds.value.join(',')
   } else if (mode === 'untouched' && untouchedIds.value.length > 0) {
     params.ids = untouchedIds.value.join(',')
@@ -434,7 +441,7 @@ const groupViewHint = computed(() => {
     <!-- 每日目标进度 -->
     <div class="daily-goal-bar">
       <div class="dg-header">
-        <span class="dg-label">今日目标</span>
+        <span class="dg-label">今日目标 <span class="dg-hint">（跨学科合计）</span></span>
         <span class="dg-count">{{ dailyProgress.done }}/{{ dailyProgress.goal }} 题</span>
       </div>
       <div class="dg-track">
@@ -447,7 +454,8 @@ const groupViewHint = computed(() => {
     </div>
 
     <div class="stats-row">
-      <StatCard label="待复习" :value="wrongIds.length" sub="错题重刷优先" />
+      <StatCard label="待复习" :value="reviewDueIds.length" sub="间隔重复到期" />
+      <StatCard label="错题数" :value="wrongIds.length" sub="错题重刷优先" />
       <StatCard label="总进度" :value="`${doneCount}/${totalQuestions}`" sub="已做 / 总题数" />
       <StatCard
         label="总正确率"
@@ -458,7 +466,6 @@ const groupViewHint = computed(() => {
         :value="doneCount ? recentCorrectRate + '%' : '--'"
         sub="近30题"
       />
-      <StatCard label="错题数" :value="wrongCount" sub="有待重刷" />
     </div>
 
     <section class="section">
@@ -481,6 +488,12 @@ const groupViewHint = computed(() => {
       <div class="quick-actions">
         <button class="btn btn-accent" @click="startQuiz('sequential')">顺序刷题</button>
         <button class="btn btn-outline" @click="startQuiz('random')">随机刷题</button>
+        <ActionMenuButton
+          v-if="reviewDueIds.length > 0"
+          :label="`待复习 (${reviewDueIds.length})`"
+          :items="ORDER_ITEMS"
+          @select="(shuffle) => startQuiz('review', { shuffle })"
+        />
         <ActionMenuButton
           v-if="untouchedIds.length > 0"
           :label="`未做题 (${untouchedIds.length})`"
@@ -779,6 +792,11 @@ h1 {
   font-weight: 600;
   font-size: 14px;
   color: var(--text-primary);
+}
+.dg-hint {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--text-muted);
 }
 .dg-count {
   font-size: 13px;

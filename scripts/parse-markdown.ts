@@ -384,6 +384,13 @@ function main() {
 
   console.log(report.join('\n'))
   console.log(`\n输出: ${outPath} (${enriched.length} 题)`)
+
+  // 校验报告有 warning 时返回非零退出码，让 CI 能捕获问题
+  const hasWarnings = report.some((line) => line.startsWith('⚠'))
+  if (hasWarnings) {
+    console.error('\n❌ 校验报告中存在 warning，退出码 1')
+    process.exit(1)
+  }
 }
 
 main()

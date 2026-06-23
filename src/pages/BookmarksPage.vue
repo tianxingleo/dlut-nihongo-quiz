@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { getRelevantData, getQuestionById } from '../services/quizEngine'
-import { isWrong } from '../services/reviewScheduler'
 import { db } from '../db/database'
 import { useActiveCategory, loadActiveCategory } from '../services/categoryStore'
 import { useHiddenSite } from '../composables/useHiddenSite'
@@ -13,16 +12,14 @@ import type { QuestionStats } from '../types/question'
 const router = useRouter()
 const activeCategory = useActiveCategory()
 const { isUnlocked } = useHiddenSite()
-const wrongItems = ref<{ questionId: string; stats: QuestionStats; stem: string; group: string }[]>(
-  [],
-)
-const filter = ref<'all' | 'recent' | 'most-wrong'>('all')
+const bookmarkItems = ref<
+  { questionId: string; stats: QuestionStats; stem: string; group: string }[]
+>([])
+const filter = ref<'all' | 'recent' | 'mastered'>('all')
 const currentPage = ref(1)
 const pageSize = ref(20)
-const confirmingId = ref<string | null>(null)
 const loading = ref(true)
 const error = ref('')
-let confirmTimeout: ReturnType<typeof setTimeout> | null = null
 
 async function refreshList() {
   loading.value = true
@@ -31,17 +28,19 @@ async function refreshList() {
     const { stats } = await getRelevantData(activeCategory.value, undefined, {
       isUnlocked: isUnlocked.value,
     })
-    wrongItems.value = stats.filter(isWrong).map((s) => {
-      const q = getQuestionById(s.questionId)
-      return {
-        questionId: s.questionId,
-        stats: s,
-        stem: q?.stem || '',
-        group: q?.groupTitle || '',
-      }
-    })
+    bookmarkItems.value = stats
+      .filter((s) => s.isBookmarked)
+      .map((s) => {
+        const q = getQuestionById(s.questionId)
+        return {
+          questionId: s.questionId,
+          stats: s,
+          stem: q?.stem || '',
+          group: q?.groupTitle || '',
+        }
+      })
   } catch (e) {
-    error.value = e instanceof Error ? e.message : '加载错题数据失败，请刷新页面重试'
+    error.value = e instanceof Error ? e.message : '加载收藏数据失败，请刷新页面重试'
   } finally {
     loading.value = false
   }
@@ -52,13 +51,6 @@ onMounted(async () => {
   await refreshList()
 })
 
-onUnmounted(() => {
-  if (confirmTimeout) {
-    clearTimeout(confirmTimeout)
-    confirmTimeout = null
-  }
-})
-
 watch(activeCategory, () => {
   refreshList()
 })
@@ -66,18 +58,19 @@ watch(activeCategory, () => {
 watch(isUnlocked, () => {
   refreshList()
 })
+
 watch(filter, () => {
   currentPage.value = 1
 })
 
 const filteredItems = computed(() => {
-  let items = [...wrongItems.value]
-  if (filter.value === 'most-wrong') items.sort((a, b) => b.stats.wrongCount - a.stats.wrongCount)
+  let items = [...bookmarkItems.value]
   if (filter.value === 'recent')
     items.sort(
       (a, b) =>
         new Date(b.stats.lastAttemptAt).getTime() - new Date(a.stats.lastAttemptAt).getTime(),
     )
+  if (filter.value === 'mastered') items = items.filter((i) => i.stats.masteryLevel >= 4)
   return items
 })
 
@@ -89,33 +82,26 @@ const pagedItems = computed(() => {
 })
 
 function goReview(ids: string[]) {
-  router.push({ path: '/quiz', query: { ids: ids.join(','), fresh: '1' } })
+  router.push({ path: '/quiz', query: { ids: ids.join(',') } })
 }
 
-async function clearWrong(questionId: string) {
-  await db.questionStats.update(questionId, { wrongCount: 0, masteryLevel: 3 })
-  await refreshList()
-}
-
-function handleClearWrong(questionId: string) {
-  if (confirmingId.value === questionId) {
-    if (confirmTimeout) clearTimeout(confirmTimeout)
-    confirmTimeout = null
-    confirmingId.value = null
-    clearWrong(questionId)
-  } else {
-    confirmingId.value = questionId
-    if (confirmTimeout) clearTimeout(confirmTimeout)
-    confirmTimeout = setTimeout(() => {
-      confirmingId.value = null
-    }, 3000)
+async function toggleBookmark(questionId: string) {
+  const stat = await db.questionStats.get(questionId)
+  if (stat) {
+    await db.questionStats.update(questionId, { isBookmarked: !stat.isBookmarked })
+    await refreshList()
   }
+}
+
+function getMasteryStars(level: number): string {
+  return '★'.repeat(level) + '☆'.repeat(5 - level)
 }
 </script>
 <template>
-  <div class="wrong-page">
+  <div class="bookmarks-page">
     <header class="page-header">
-      <h1>错题本</h1>
+      <h1>我的收藏</h1>
+      <p class="page-subtitle">收藏的题目便于集中复习</p>
     </header>
 
     <div v-if="loading" class="empty">加载中…</div>
@@ -128,8 +114,8 @@ function handleClearWrong(questionId: string) {
         <div class="filters">
           <button :class="{ active: filter === 'all' }" @click="filter = 'all'">全部</button>
           <button :class="{ active: filter === 'recent' }" @click="filter = 'recent'">最近</button>
-          <button :class="{ active: filter === 'most-wrong' }" @click="filter = 'most-wrong'">
-            最多错
+          <button :class="{ active: filter === 'mastered' }" @click="filter = 'mastered'">
+            已掌握
           </button>
         </div>
         <button
@@ -137,40 +123,36 @@ function handleClearWrong(questionId: string) {
           @click="goReview(filteredItems.map((i) => i.questionId))"
           :disabled="filteredItems.length === 0"
         >
-          一键重刷全部错题
+          刷全部收藏
         </button>
       </div>
 
-      <div v-if="filteredItems.length === 0" class="empty">暂无错题，继续保持</div>
-      <div v-else class="wrong-list">
-        <div v-for="item in pagedItems" :key="item.questionId" class="wrong-item">
-          <div class="wi-main">
-            <span class="wi-id">{{ item.questionId }}</span>
-            <span class="wi-stem">{{ truncate(stripMarkdown(item.stem), 50) }}</span>
-            <span class="wi-group">{{ item.group }}</span>
+      <div v-if="filteredItems.length === 0" class="empty">
+        <p>暂无收藏题目</p>
+        <p class="empty-hint">在答题时点击「收藏」按钮即可添加</p>
+      </div>
+      <div v-else class="bookmark-list">
+        <div v-for="item in pagedItems" :key="item.questionId" class="bookmark-item">
+          <div class="bi-main">
+            <span class="bi-id">{{ item.questionId }}</span>
+            <span class="bi-stem">{{ truncate(stripMarkdown(item.stem), 50) }}</span>
+            <span class="bi-group">{{ item.group }}</span>
           </div>
-          <div class="wi-stats">
-            <span class="badge wrong">错 {{ item.stats.wrongCount }} 次</span>
-            <span class="badge rate"
-              >正确率
-              {{
-                item.stats.attemptCount
-                  ? Math.round((item.stats.correctCount / item.stats.attemptCount) * 100)
-                  : 0
-              }}%</span
-            >
-            <span class="badge level">掌握 {{ '★'.repeat(Math.min(item.stats.masteryLevel, 5)) }}{{ '☆'.repeat(Math.max(0, 5 - item.stats.masteryLevel)) }}</span>
+          <div class="bi-stats">
+            <span class="badge mastery">
+              {{ getMasteryStars(item.stats.masteryLevel) }}
+            </span>
+            <span class="badge rate" v-if="item.stats.attemptCount > 0">
+              正确率
+              {{ Math.round((item.stats.correctCount / item.stats.attemptCount) * 100) }}%
+            </span>
           </div>
-          <div class="wi-actions">
+          <div class="bi-actions">
             <button class="btn btn-outline btn-sm" @click="goReview([item.questionId])">
               刷这题
             </button>
-            <button
-              class="btn btn-sm"
-              :class="confirmingId === item.questionId ? 'btn-confirm' : 'btn-outline'"
-              @click="handleClearWrong(item.questionId)"
-            >
-              {{ confirmingId === item.questionId ? '确认' : '标记已掌握' }}
+            <button class="btn btn-ghost btn-sm" @click="toggleBookmark(item.questionId)">
+              取消收藏
             </button>
           </div>
         </div>
@@ -193,7 +175,7 @@ function handleClearWrong(questionId: string) {
   </div>
 </template>
 <style scoped>
-.wrong-page {
+.bookmarks-page {
   max-width: 860px;
   margin: 0 auto;
 }
@@ -204,6 +186,11 @@ h1 {
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 700;
+  margin-bottom: 4px;
+}
+.page-subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
 }
 
 .toolbar {
@@ -244,13 +231,18 @@ h1 {
   padding: 80px 20px;
   color: var(--text-secondary);
 }
+.empty-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
 
-.wrong-list {
+.bookmark-list {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-.wrong-item {
+.bookmark-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -259,28 +251,28 @@ h1 {
   background: var(--bg-card);
   flex-wrap: wrap;
 }
-.wi-main {
+.bi-main {
   display: flex;
   align-items: center;
   gap: 12px;
   flex: 1;
   min-width: 200px;
 }
-.wi-id {
+.bi-id {
   font-weight: 600;
   color: var(--accent);
   font-size: 13px;
   font-family: var(--font-mono);
 }
-.wi-stem {
+.bi-stem {
   font-size: 14px;
   color: var(--text-primary);
 }
-.wi-group {
+.bi-group {
   font-size: 12px;
   color: var(--text-muted);
 }
-.wi-stats {
+.bi-stats {
   display: flex;
   gap: 6px;
 }
@@ -290,32 +282,18 @@ h1 {
   font-size: 11px;
   font-weight: 500;
 }
-.badge.wrong {
-  border-color: rgba(196, 69, 54, 0.3);
-  color: var(--wrong);
+.badge.mastery {
+  border-color: rgba(76, 175, 80, 0.3);
+  color: var(--correct);
+  letter-spacing: 1px;
 }
 .badge.rate {
   border-color: rgba(184, 134, 11, 0.3);
   color: var(--warning);
 }
-.badge.level {
-  border-color: var(--border);
-  color: var(--text-secondary);
-}
-.wi-actions {
+.bi-actions {
   display: flex;
   gap: 6px;
-}
-
-/* .btn / .btn-accent / .btn-outline / .btn-sm 样式已由全局 style.css 提供 */
-
-.btn-confirm {
-  background: var(--wrong);
-  color: #fff;
-  border-color: var(--wrong);
-}
-.btn-confirm:hover {
-  opacity: 0.85;
 }
 
 .pagination {

@@ -116,8 +116,9 @@ function cleanStem(stem: string): string {
 }
 
 function detectAnswerType(raw: string): {
-  kind: 'single' | 'multi' | 'judgement'
+  kind: 'single' | 'multi' | 'judgement' | 'skip'
   normalized: string
+  reason?: string
 } {
   const cleaned = raw.replace(/[\.。、\s]/g, '').toUpperCase()
   // Judgement: 正确 / 错误 (or 对 / 错)
@@ -137,7 +138,8 @@ function detectAnswerType(raw: string): {
   const letters = (cleaned.match(/[A-J]+/) || [''])[0]
   if (letters.length > 1) return { kind: 'multi', normalized: letters.split('').sort().join('') }
   if (letters.length === 1) return { kind: 'single', normalized: letters }
-  return { kind: 'judgement', normalized: '错误' }
+  // 无法识别的答案格式——跳过，避免产生错误的判断题数据
+  return { kind: 'skip', normalized: '', reason: 'unrecognized-answer' }
 }
 
 function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
@@ -270,6 +272,9 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
 
     // Detect type early so we can synthesize options for judgement questions.
     const { kind, normalized } = detectAnswerType(answerRaw)
+
+    // 跳过无法识别答案格式的题目（如填空/简答）
+    if (kind === 'skip') continue
 
     // Drop entries where source md lost the options AND the answer is a bare letter
     // (can't reconstruct). Judgement-type entries get synthesised options below.
@@ -568,6 +573,13 @@ function main() {
 
   console.log(report.join('\n'))
   console.log(`\n输出: ${outPath} (${enriched.length} 题)`)
+
+  // 校验报告有 warning 时返回非零退出码，让 CI 能捕获问题
+  const hasWarnings = report.some((line) => line.startsWith('⚠'))
+  if (hasWarnings) {
+    console.error('\n❌ 校验报告中存在 warning，退出码 1')
+    process.exit(1)
+  }
 }
 
 main()

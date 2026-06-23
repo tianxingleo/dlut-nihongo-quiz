@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref, watch, nextTick, onUnmounted } from 'vue'
-import { searchQuestions } from '../services/quizEngine'
-import { useActiveCategory } from '../services/categoryStore'
-import { getCategoryMeta } from '../config/categories'
-import { truncate } from '../utils/text'
-import { stripMarkdown } from '../utils/renderMarkdown'
-import type { Question } from '../types/question'
+import { searchQuestions } from '../../services/quizEngine'
+import { useActiveCategory } from '../../services/categoryStore'
+import { getCategoryMeta } from '../../config/categories'
+import { UI } from '../../constants'
+import { escapeHtml } from '../../utils/html'
+import { truncate } from '../../utils/text'
+import { stripMarkdown } from '../../utils/renderMarkdown'
+import type { Question } from '../../types/question'
 
 const props = defineProps<{
   visible: boolean
@@ -31,7 +33,7 @@ function doSearch(val: string) {
     } else {
       results.value = []
     }
-  }, 300)
+  }, UI.SEARCH_DEBOUNCE_MS)
 }
 
 function handleKeydown(e: KeyboardEvent) {
@@ -77,14 +79,10 @@ function highlightMatch(text: string, kw: string): string {
   const kwEscaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   return escaped.replace(new RegExp(`(${kwEscaped})`, 'gi'), '<mark>$1</mark>')
 }
-
-function escapeHtml(s: string): string {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-}
 </script>
 <template>
   <div v-if="visible" class="search-backdrop" @click="onBackdropClick">
-    <div class="search-panel">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="搜索题目">
       <div class="search-input-wrap">
         <span class="search-icon">⌕</span>
         <input
@@ -107,7 +105,7 @@ function escapeHtml(s: string): string {
         >
           {{ scopeAll ? '全库' : scopeLabel() }}
         </button>
-        <button class="search-close-btn" @click="emit('close')">✕</button>
+        <button class="search-close-btn" aria-label="关闭搜索" @click="emit('close')">✕</button>
       </div>
       <div class="search-body">
         <div v-if="results.length > 0" class="search-results" role="listbox" aria-label="搜索结果">

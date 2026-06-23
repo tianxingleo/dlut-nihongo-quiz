@@ -61,9 +61,22 @@ let dragHorizontal: boolean | null = null
 const isMobile =
   typeof window !== 'undefined' ? window.matchMedia('(max-width: 480px)').matches : false
 
+/** 检查鼠标点击位置是否在可选择文字的元素上（题干、选项文本、解析等） */
+function isOnSelectableText(target: EventTarget | null): boolean {
+  if (!(target instanceof HTMLElement)) return false
+  const el = target.closest(
+    '.q-stem, .q-stem *, .opt-text, .opt-text *, .q-explanation, .q-explanation *, p, span, li',
+  )
+  if (!el) return false
+  const cs = window.getComputedStyle(el)
+  return cs.userSelect !== 'none'
+}
+
 function onPointerDown(e: PointerEvent) {
   if (props.submitted) return
   if (e.pointerType === 'mouse' && e.button !== 0) return
+  // 鼠标点击可选择文字区域时，跳过拖拽手势，让浏览器处理文字选择
+  if (e.pointerType === 'mouse' && isOnSelectableText(e.target)) return
   dragStartX = e.clientX
   dragStartY = e.clientY
   dragPointer = e.pointerId

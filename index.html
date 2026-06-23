@@ -1,26 +1,117 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-<script>
-  (function() {
-    try {
-      var theme = localStorage.getItem('quiz-dark-mode');
-      if (theme === 'true') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    } catch(e) {}
-  })();
-</script>
+    <script>
+      // GitHub Pages SPA 重定向处理
+      // 从 404.html 重定向过来时，解析路径并恢复真实 URL
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash,
+          )
+        }
+      })(window.location)
+    </script>
+    <script>
+      // 暗色模式初始化（防止闪烁）
+      try {
+        var theme = localStorage.getItem('quiz-dark-mode')
+        if (theme === 'true') {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        }
+      } catch (e) {}
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="DLUT 期末复习一体化平台：日语语法词汇、中国近现代史、党史、军事理论题库，支持智能错题本、掌握度分析与多种刷题模式。" />
+
+    <!-- 基础 SEO -->
+    <title>DLUT 期末复习平台 · 日语 · 近代史 · 党史 · 军理题库</title>
+    <meta
+      name="description"
+      content="大连理工大学期末复习一体化平台：综合日语2（单词+语法）、中国近现代史、党史、军事理论题库，5800+ 道真题，支持智能错题本、掌握度分析、间隔复习与多种刷题模式。"
+    />
+    <meta
+      name="keywords"
+      content="DLUT,大连理工大学,期末复习,题库,日语,综合日语2,中国近现代史,党史,军事理论,刷题,错题本"
+    />
     <meta name="author" content="tianxingleo" />
     <meta name="theme-color" content="#fafaf5" />
-    <title>题库 · DLUT 期末复习平台</title>
+    <link
+      rel="canonical"
+      href="https://tianxingleo.top/dlut-nihongo-quiz/"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://tianxingleo.top/dlut-nihongo-quiz/"
+    />
+    <meta property="og:title" content="DLUT 期末复习平台 · 日语 · 近代史 · 党史 · 军理题库" />
+    <meta
+      property="og:description"
+      content="大连理工大学期末复习一体化平台：综合日语2（单词+语法）、中国近现代史、党史、军事理论题库，5800+ 道真题，支持智能错题本、掌握度分析、间隔复习与多种刷题模式。"
+    />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="DLUT 期末复习平台" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:url"
+      content="https://tianxingleo.top/dlut-nihongo-quiz/"
+    />
+    <meta name="twitter:title" content="DLUT 期末复习平台 · 日语 · 近代史 · 党史 · 军理题库" />
+    <meta
+      name="twitter:description"
+      content="大连理工大学期末复习一体化平台：综合日语2（单词+语法）、中国近现代史、党史、军事理论题库，5800+ 道真题。"
+    />
+
+    <!-- 结构化数据 (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "DLUT 期末复习平台",
+        "url": "https://tianxingleo.top/dlut-nihongo-quiz/",
+        "description": "大连理工大学期末复习一体化平台：综合日语2（单词+语法）、中国近现代史、党史、军事理论题库，5800+ 道真题，支持智能错题本、掌握度分析、间隔复习与多种刷题模式。",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "CNY"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "tianxingleo"
+        },
+        "inLanguage": "zh-CN",
+        "browserRequirements": "Requires modern browser with ES2022 support"
+      }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- 字体预加载 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="manifest" href="manifest.json" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="app"></div>
