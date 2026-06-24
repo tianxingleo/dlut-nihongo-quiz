@@ -148,11 +148,7 @@ export async function recordAttempt(
         reviewDueAt: calcReviewDueAt(a.createdAt, newMastery),
       })
     } else {
-      const initialMastery = a.isCorrect
-        ? options?.wrongRedo
-          ? 3
-          : 2
-        : 1
+      const initialMastery = a.isCorrect ? (options?.wrongRedo ? 3 : 2) : 1
       await db.questionStats.put(
         createDefaultStats(a.questionId, {
           attemptCount: 1,

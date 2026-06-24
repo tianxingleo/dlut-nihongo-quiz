@@ -7,6 +7,8 @@ const props = defineProps<{
   correct: number
   /** 0-based index of current question (defaults to current-1) */
   currentIndex?: number
+  /** Number of questions answered so far (for accuracy calculation) */
+  answered?: number
 }>()
 
 const emit = defineEmits<{ scrub: [idx: number] }>()
@@ -27,6 +29,12 @@ const previewIdx = computed(() => {
   return Math.max(0, Math.min(props.total - 1, raw))
 })
 const previewLabel = computed(() => `第 ${previewIdx.value + 1} 题 / 共 ${props.total} 题`)
+
+const accuracy = computed(() => {
+  const answered = props.answered ?? 0
+  if (answered === 0) return null
+  return Math.round((props.correct / answered) * 100)
+})
 
 function ratioFromX(clientX: number): number {
   const el = trackRef.value
@@ -88,6 +96,7 @@ function onPointerUp(_e: PointerEvent) {
       <span class="total">{{ total }}</span>
       <span class="sep sep-dot">·</span>
       <span class="correct">对 {{ correct }}</span>
+      <span v-if="accuracy !== null" class="accuracy">({{ accuracy }}%)</span>
     </span>
   </div>
 </template>
@@ -213,6 +222,10 @@ function onPointerUp(_e: PointerEvent) {
 }
 .progress-text .sep-dot {
   margin: 0 6px 0 8px;
+}
+.progress-text .accuracy {
+  color: var(--text-muted);
+  margin-left: 4px;
 }
 
 @media (max-width: 480px) {

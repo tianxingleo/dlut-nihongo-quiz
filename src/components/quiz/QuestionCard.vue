@@ -295,9 +295,7 @@ const dragOpacity = computed(() => {
         <button class="hint-btn" @click="clearSelection">清除</button>
       </span>
     </div>
-    <div class="q-hint" v-if="isFillQuestion">
-      填空题，请输入答案
-    </div>
+    <div class="q-hint" v-if="isFillQuestion">填空题，请输入答案</div>
 
     <!-- 填空题输入框 -->
     <div v-if="isFillQuestion" class="fill-input-container">

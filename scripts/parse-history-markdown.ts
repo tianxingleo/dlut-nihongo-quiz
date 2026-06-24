@@ -115,7 +115,10 @@ function cleanStem(stem: string): string {
   return s
 }
 
-function detectAnswerType(raw: string, isFillBlank: boolean = false): {
+function detectAnswerType(
+  raw: string,
+  isFillBlank: boolean = false,
+): {
   kind: 'single' | 'multi' | 'judgement' | 'fill' | 'skip'
   normalized: string
   reason?: string
@@ -186,8 +189,14 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
     }
 
     // 检测其他题型部分（结束填空题）
-    if (isFillBlankSection && (trimmed === '### 单选题' || trimmed === '### 多选题' || trimmed === '### 判断题' ||
-        trimmed.match(/^###\s+(单选题|多选题|判断题)/) || trimmed.match(/^##\s+第[一二三四五六七八九十]+章/))) {
+    if (
+      isFillBlankSection &&
+      (trimmed === '### 单选题' ||
+        trimmed === '### 多选题' ||
+        trimmed === '### 判断题' ||
+        trimmed.match(/^###\s+(单选题|多选题|判断题)/) ||
+        trimmed.match(/^##\s+第[一二三四五六七八九十]+章/))
+    ) {
       isFillBlankSection = false
     }
 
@@ -211,8 +220,15 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
       if (spec.subGroupMatcher && spec.subGroupMatcher.test(s)) break
       if (QUESTION_HDR.test(t)) break
       // 检测下一个题型部分（结束填空题）
-      if (t === '### 填空题' || t === '### 单选题' || t === '### 多选题' || t === '### 判断题' ||
-          t.match(/^###\s+(填空题|单选题|多选题|判断题)/) || t.match(/^##\s+第[一二三四五六七八九十]+章/)) break
+      if (
+        t === '### 填空题' ||
+        t === '### 单选题' ||
+        t === '### 多选题' ||
+        t === '### 判断题' ||
+        t.match(/^###\s+(填空题|单选题|多选题|判断题)/) ||
+        t.match(/^##\s+第[一二三四五六七八九十]+章/)
+      )
+        break
       body.push(s)
       i++
     }
@@ -366,9 +382,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
     const stem = cleanStem(stemParts.join(' '))
 
     // 检查是否是判断题（选项为"正确"和"错误"）
-    const isJudgementOptions = options.length === 2 &&
-      options.some(o => o.text === '正确') &&
-      options.some(o => o.text === '错误')
+    const isJudgementOptions =
+      options.length === 2 &&
+      options.some((o) => o.text === '正确') &&
+      options.some((o) => o.text === '错误')
 
     // Detect type early so we can synthesize options for judgement questions.
     let { kind, normalized } = detectAnswerType(answerRaw)
@@ -376,7 +393,7 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
     // 如果选项是"正确"和"错误"，且答案是 A 或 B，则识别为判断题
     if (isJudgementOptions && /^[AB]$/.test(answerRaw.trim().toUpperCase())) {
       kind = 'judgement'
-      const correctOption = options.find(o => o.key === answerRaw.trim().toUpperCase())
+      const correctOption = options.find((o) => o.key === answerRaw.trim().toUpperCase())
       normalized = correctOption?.text || '正确'
     }
 

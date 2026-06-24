@@ -84,6 +84,7 @@ const progress = computed(() => ({
   current: currentIndex.value + (submitted.value ? 1 : 0),
   total: questions.value.length,
   correct: correctCount.value,
+  answered: history.value.length,
 }))
 const formattedTime = computed(() => {
   const mins = Math.floor(elapsedTime.value / 60)
@@ -666,6 +667,7 @@ function cancelLeave() {
         :current="progress.current"
         :total="progress.total"
         :correct="progress.correct"
+        :answered="progress.answered"
         :current-index="currentIndex"
         @scrub="jumpTo"
       />
@@ -739,7 +741,10 @@ function cancelLeave() {
           class="btn btn-outline"
           v-if="wrongList.length > 0"
           @click="
-            router.push({ path: '/quiz', query: { ids: wrongList.join(','), redo: '1', fresh: '1' } })
+            router.push({
+              path: '/quiz',
+              query: { ids: wrongList.join(','), redo: '1', fresh: '1' },
+            })
           "
         >
           重做错题
