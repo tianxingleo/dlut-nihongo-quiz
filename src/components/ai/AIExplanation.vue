@@ -87,7 +87,10 @@ function handleRetry() {
 
             <!-- 响应内容 -->
             <div v-else-if="currentResponse" class="ai-response">
-              <div class="response-text markdown-body" v-html="formatResponse(currentResponse)"></div>
+              <div
+                class="response-text markdown-body"
+                v-html="formatResponse(currentResponse)"
+              ></div>
               <div v-if="isLoading" class="typing-indicator">
                 <span></span>
                 <span></span>

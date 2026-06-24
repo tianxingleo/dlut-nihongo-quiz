@@ -1,6 +1,4 @@
-/**
- * 文字选中浮动工具栏 - 选中文字后显示AI图标，点击可呼出AI对话
- */
+/** * 文字选中浮动工具栏 - 选中文字后显示AI图标，点击可呼出AI对话 */
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { TextSelection } from '../../composables/useTextSelection'
@@ -96,19 +94,11 @@ function handleExplain(e: Event) {
       <div class="toolbar-content">
         <div class="toolbar-preview">{{ textPreview }}</div>
         <div class="toolbar-actions">
-          <button
-            class="toolbar-btn"
-            @click="handleExplain"
-            title="AI 解释选中内容"
-          >
+          <button class="toolbar-btn" @click="handleExplain" title="AI 解释选中内容">
             <span class="btn-icon">✦</span>
             <span class="btn-text">解释</span>
           </button>
-          <button
-            class="toolbar-btn"
-            @click="handleAskAI"
-            title="向 AI 提问"
-          >
+          <button class="toolbar-btn" @click="handleAskAI" title="向 AI 提问">
             <span class="btn-icon">💬</span>
             <span class="btn-text">问答</span>
           </button>
@@ -195,11 +185,15 @@ function handleExplain(e: Event) {
 }
 
 .toolbar-fade-enter-active {
-  transition: opacity 0.12s var(--ease-ink), transform 0.12s var(--ease-ink);
+  transition:
+    opacity 0.12s var(--ease-ink),
+    transform 0.12s var(--ease-ink);
 }
 
 .toolbar-fade-leave-active {
-  transition: opacity 0.08s var(--ease-ink), transform 0.08s var(--ease-ink);
+  transition:
+    opacity 0.08s var(--ease-ink),
+    transform 0.08s var(--ease-ink);
 }
 
 .toolbar-fade-enter-from,

@@ -20,16 +20,18 @@ export interface TextSelection {
 }
 
 /** 从选中文字中提取上下文 */
-function extractContext(range: Range, maxChars: number = 200): {
+function extractContext(
+  range: Range,
+  maxChars: number = 200,
+): {
   contextBefore: string
   contextAfter: string
   parentText: string
   sectionTitle: string
 } {
   const container = range.commonAncestorContainer
-  const parentElement = container.nodeType === Node.TEXT_NODE
-    ? container.parentElement
-    : container as HTMLElement
+  const parentElement =
+    container.nodeType === Node.TEXT_NODE ? container.parentElement : (container as HTMLElement)
 
   if (!parentElement) {
     return { contextBefore: '', contextAfter: '', parentText: '', sectionTitle: '' }

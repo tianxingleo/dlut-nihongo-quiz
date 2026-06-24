@@ -1,7 +1,4 @@
-/**
- * 笔记 AI 聊天组件 - 专门用于笔记页面的AI问答
- * 支持选中文字作为上下文，提供更精准的解答
- */
+/** * 笔记 AI 聊天组件 - 专门用于笔记页面的AI问答 * 支持选中文字作为上下文，提供更精准的解答 */
 <script setup lang="ts">
 import { ref, watch, nextTick, computed } from 'vue'
 import { useAI } from '../../composables/useAI'
@@ -165,7 +162,12 @@ watch(
       savedSelection.value = props.selection || null
 
       // 只有 AI 已配置且是解释模式时才自动提问
-      if (aiEnabled.value && savedSelection.value && props.mode === 'explain' && !hasAutoAsked.value) {
+      if (
+        aiEnabled.value &&
+        savedSelection.value &&
+        props.mode === 'explain' &&
+        !hasAutoAsked.value
+      ) {
         hasAutoAsked.value = true
         await nextTick()
         const question = buildInitialQuestion()
@@ -202,7 +204,8 @@ async function handleSend() {
 
   // 检查 AI 是否配置
   if (!aiEnabled.value) {
-    localError.value = '⚠️ AI 功能未配置。请先在设置页面配置 AI API，然后启用 AI 功能后即可使用笔记 AI 助手。'
+    localError.value =
+      '⚠️ AI 功能未配置。请先在设置页面配置 AI API，然后启用 AI 功能后即可使用笔记 AI 助手。'
     userInput.value = ''
     return
   }
@@ -277,7 +280,11 @@ function quickAsk(question: string) {
             <div v-if="displayMessages.length === 0" class="welcome-message">
               <div class="welcome-icon">✦</div>
               <p>我是笔记 AI 助手，可以帮你理解笔记中的内容。</p>
-              <p class="hint">{{ savedSelection ? '正在为你解释选中的内容...' : '你可以问我任何关于笔记的问题。' }}</p>
+              <p class="hint">
+                {{
+                  savedSelection ? '正在为你解释选中的内容...' : '你可以问我任何关于笔记的问题。'
+                }}
+              </p>
 
               <!-- 快捷提问 -->
               <div v-if="!savedSelection" class="quick-questions">
@@ -303,10 +310,7 @@ function quickAsk(question: string) {
                 {{ msg.role === 'user' ? '你' : 'AI' }}
               </div>
               <div class="message-content">
-                <div
-                  class="message-text markdown-body"
-                  v-html="formatMessage(msg.content)"
-                />
+                <div class="message-text markdown-body" v-html="formatMessage(msg.content)" />
                 <div v-if="msg.isStreaming" class="typing-indicator">
                   <span />
                   <span />
@@ -328,7 +332,15 @@ function quickAsk(question: string) {
             <!-- 错误状态 -->
             <div v-if="error || localError" class="error-message">
               <p>{{ localError || error }}</p>
-              <button class="btn btn-outline" @click="localError = null; clearError()">关闭</button>
+              <button
+                class="btn btn-outline"
+                @click="
+                  localError = null
+                  clearError()
+                "
+              >
+                关闭
+              </button>
             </div>
           </div>
 
@@ -336,16 +348,14 @@ function quickAsk(question: string) {
             <textarea
               ref="inputRef"
               v-model="userInput"
-              :placeholder="savedSelection ? '继续提问...' : '输入你的问题... (Enter 发送，Shift+Enter 换行)'"
+              :placeholder="
+                savedSelection ? '继续提问...' : '输入你的问题... (Enter 发送，Shift+Enter 换行)'
+              "
               rows="2"
               :disabled="isLoading"
               @keydown="handleKeydown"
             />
-            <button
-              class="send-btn"
-              :disabled="!userInput.trim() || isLoading"
-              @click="handleSend"
-            >
+            <button class="send-btn" :disabled="!userInput.trim() || isLoading" @click="handleSend">
               {{ isLoading ? '生成中...' : '发送' }}
             </button>
           </div>
