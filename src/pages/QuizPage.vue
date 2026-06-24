@@ -223,6 +223,7 @@ function resolveMode(all: Question[]): {
   const idsParam = route.query.ids as string | undefined
   const modeParam = route.query.mode as string | undefined
   const shuffle = route.query.shuffle === '1'
+  const questionTypeFilter = route.query.questionType as string | undefined
 
   if (tag) {
     return {
@@ -246,6 +247,9 @@ function resolveMode(all: Question[]): {
     const idSet = new Set(idsParam.split(','))
     pool = pool.filter((q) => idSet.has(q.id))
   }
+  if (questionTypeFilter) {
+    pool = pool.filter((q) => q.questionType === questionTypeFilter)
+  }
 
   const poolMode: QuizMode = idsParam
     ? modeParam === 'untouched'
@@ -259,14 +263,26 @@ function resolveMode(all: Question[]): {
   const suffix = shuffle && isFilteredMode ? ' · 随机' : ''
   const actionLabel = isFilteredMode ? (poolMode === 'untouched' ? '未做' : '错题') : poolMode
 
+  const questionTypeLabel =
+    questionTypeFilter === 'judgement'
+      ? '判断题'
+      : questionTypeFilter === 'multi'
+        ? '多选题'
+        : questionTypeFilter === 'single'
+          ? '单选题'
+          : questionTypeFilter === 'fill'
+            ? '填空题'
+            : ''
+  const typeSuffix = questionTypeLabel ? ` · ${questionTypeLabel}` : ''
+
   let displayMode: string
   if (groupsParam) {
-    displayMode = `套题 · ${actionLabel}${suffix}`
+    displayMode = `套题 · ${actionLabel}${suffix}${typeSuffix}`
   } else if (groupFilter) {
     const groupTitle = all.find((q) => q.groupId === groupFilter)?.groupTitle || groupFilter
-    displayMode = `${groupTitle} · ${actionLabel}${suffix}`
+    displayMode = `${groupTitle} · ${actionLabel}${suffix}${typeSuffix}`
   } else {
-    displayMode = `${actionLabel}${suffix}`
+    displayMode = `${actionLabel}${suffix}${typeSuffix}`
   }
 
   return { poolMode, displayMode, pool, shuffle }

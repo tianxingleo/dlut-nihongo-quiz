@@ -223,12 +223,13 @@ function startTagQuiz(tag: string) {
 function startHistoryGroup(
   groupId: string,
   mode: 'sequential' | 'random' | 'wrong' | 'untouched',
-  options?: { shuffle?: boolean },
+  options?: { shuffle?: boolean; questionType?: string },
 ) {
   const s = groupStats.value[groupId]
   if (!s) return
   const params: Record<string, string> = { group: groupId, mode, fresh: '1' }
   if (options?.shuffle) params.shuffle = '1'
+  if (options?.questionType) params.questionType = options.questionType
   if (mode === 'wrong' && s.wrongIds.length > 0) {
     params.ids = s.wrongIds.join(',')
   } else if (mode === 'untouched' && s.untouchedIds.length > 0) {
@@ -672,6 +673,12 @@ const groupViewHint = computed(() => {
             </button>
             <button class="btn btn-outline btn-sm" @click="startHistoryGroup(g.groupId, 'random')">
               随机
+            </button>
+            <button
+              class="btn btn-outline btn-sm"
+              @click="startHistoryGroup(g.groupId, 'sequential', { questionType: 'judgement' })"
+            >
+              判断题
             </button>
             <ActionMenuButton
               variant="danger"
