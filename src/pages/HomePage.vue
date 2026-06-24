@@ -22,7 +22,7 @@ import {
   isSessionInProgress,
   type ActiveSession,
 } from '../services/sessionResume'
-import { getDailyAttemptCount, getSetting } from '../db/database'
+import { getDailyAttemptCount, getSetting, resetQuestionStats } from '../db/database'
 import {
   useActiveCategory,
   loadActiveCategory,
@@ -244,6 +244,34 @@ function resumeSession() {
 async function discardSession() {
   await clearActiveSession()
   activeSession.value = null
+}
+
+// --- 重置题单 ---
+const confirmingGroupId = ref<string | null>(null)
+let confirmTimeout: ReturnType<typeof setTimeout> | null = null
+
+async function resetGroupStats(groupId: string) {
+  const groupQs = questions.value.filter((q) => q.groupId === groupId)
+  const questionIds = groupQs.map((q) => q.id)
+  // 收集该题单涉及的所有标签
+  const tags = [...new Set(groupQs.flatMap((q) => q.tags))]
+  await resetQuestionStats(questionIds, tags)
+  await refresh()
+}
+
+function handleResetGroup(groupId: string) {
+  if (confirmingGroupId.value === groupId) {
+    if (confirmTimeout) clearTimeout(confirmTimeout)
+    confirmTimeout = null
+    confirmingGroupId.value = null
+    resetGroupStats(groupId)
+  } else {
+    confirmingGroupId.value = groupId
+    if (confirmTimeout) clearTimeout(confirmTimeout)
+    confirmTimeout = setTimeout(() => {
+      confirmingGroupId.value = null
+    }, 3000)
+  }
 }
 
 const meta = computed(() => getCategoryMeta(activeCategory.value))
@@ -660,6 +688,14 @@ const groupViewHint = computed(() => {
               :disabled="(groupStats[g.groupId]?.untouchedIds.length ?? 0) === 0"
               @select="(shuffle) => startHistoryGroup(g.groupId, 'untouched', { shuffle })"
             />
+            <button
+              class="btn btn-sm"
+              :class="confirmingGroupId === g.groupId ? 'btn-confirm' : 'btn-ghost'"
+              :disabled="(groupStats[g.groupId]?.done ?? 0) === 0"
+              @click="handleResetGroup(g.groupId)"
+            >
+              {{ confirmingGroupId === g.groupId ? '确认重置' : '重置' }}
+            </button>
           </div>
         </div>
       </div>
@@ -1130,6 +1166,14 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+}
+.btn-confirm {
+  background: var(--wrong);
+  color: #fff;
+  border-color: var(--wrong);
+}
+.btn-confirm:hover {
+  opacity: 0.85;
 }
 
 .grammar-entry-card {

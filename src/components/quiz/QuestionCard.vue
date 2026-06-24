@@ -39,6 +39,10 @@ const showAIExplanation = ref(false)
 const showAIChat = ref(false)
 const aiExplanationRequest = ref<AIExplanationRequest | null>(null)
 
+// 填空题相关
+const fillAnswer = ref('')
+const isFillQuestion = computed(() => props.question.questionType === 'fill')
+
 const showExplanation = ref(props.showExplanation ?? false)
 const shareStatus = ref<'' | 'copied' | 'unsupported'>('')
 
@@ -149,6 +153,11 @@ function handleSelect(key: string) {
   }
 }
 
+function handleFillInput() {
+  if (props.submitted) return
+  emit('select', fillAnswer.value.trim())
+}
+
 function selectAll() {
   if (props.submitted) return
   const allKeys = props.question.options.map((o) => o.key).join('')
@@ -217,10 +226,21 @@ function isMissedOption(key: string) {
   )
 }
 
-const canSubmit = computed(() => props.selectedKey.length > 0)
+const canSubmit = computed(() => {
+  if (isFillQuestion.value) {
+    return fillAnswer.value.trim().length > 0
+  }
+  return props.selectedKey.length > 0
+})
 const renderedStem = computed(() => renderMarkdown(props.question.stem))
 
 const isCorrectOverall = computed(() => {
+  if (isFillQuestion.value) {
+    // 填空题：忽略大小写和首尾空格进行比较
+    const userAnswer = fillAnswer.value.trim().toLowerCase()
+    const correctAnswer = props.question.answerText.trim().toLowerCase()
+    return userAnswer === correctAnswer
+  }
   if (props.question.multiAnswer) {
     return isMultiAnswerCorrect(props.selectedKey, props.question.answerKey)
   }
@@ -275,8 +295,26 @@ const dragOpacity = computed(() => {
         <button class="hint-btn" @click="clearSelection">清除</button>
       </span>
     </div>
+    <div class="q-hint" v-if="isFillQuestion">
+      填空题，请输入答案
+    </div>
 
+    <!-- 填空题输入框 -->
+    <div v-if="isFillQuestion" class="fill-input-container">
+      <input
+        v-model="fillAnswer"
+        type="text"
+        class="fill-input"
+        placeholder="请输入答案..."
+        :disabled="submitted"
+        @input="handleFillInput"
+        @keyup.enter="emit('submit')"
+      />
+    </div>
+
+    <!-- 选择题选项 -->
     <div
+      v-else
       class="q-options"
       :role="question.multiAnswer ? 'group' : 'radiogroup'"
       :aria-label="question.multiAnswer ? '多选选项（可多选）' : '单选选项'"
@@ -356,10 +394,16 @@ const dragOpacity = computed(() => {
     <div class="q-result" v-if="submitted">
       <div class="result-line" :class="isCorrectOverall ? 'correct' : 'wrong'">
         <span class="result-badge">{{ isCorrectOverall ? '正确' : '错误' }}</span>
-        答案：<strong
-          >{{ question.answerKey
-          }}<span v-if="question.answerText">. {{ question.answerText }}</span></strong
-        >
+        <template v-if="isFillQuestion">
+          答案：<strong>{{ question.answerText }}</strong>
+          <span v-if="!isCorrectOverall" class="your-answer">（你的答案：{{ fillAnswer }}）</span>
+        </template>
+        <template v-else>
+          答案：<strong
+            >{{ question.answerKey
+            }}<span v-if="question.answerText">. {{ question.answerText }}</span></strong
+          >
+        </template>
       </div>
     </div>
 
@@ -782,5 +826,39 @@ const dragOpacity = computed(() => {
 
 .ai-btn:hover {
   background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* 填空题输入框 */
+.fill-input-container {
+  margin: 16px 0;
+}
+.fill-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 16px;
+  transition:
+    border-color 0.18s var(--ease-ink),
+    box-shadow 0.18s var(--ease-ink);
+}
+.fill-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.fill-input:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.fill-input::placeholder {
+  color: var(--text-muted);
+}
+.your-answer {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-secondary);
 }
 </style>

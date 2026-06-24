@@ -116,19 +116,31 @@ function calcReviewDueAt(lastAttemptAt: string, masteryLevel: number): string {
   return new Date(new Date(lastAttemptAt).getTime() + days * 86_400_000).toISOString()
 }
 
-export async function recordAttempt(a: Omit<Attempt, 'id'>): Promise<number> {
+export async function recordAttempt(
+  a: Omit<Attempt, 'id'>,
+  options?: { wrongRedo?: boolean },
+): Promise<number> {
   return db.transaction('rw', db.attempts, db.questionStats, async () => {
     const id = await db.attempts.add(a as Attempt)
     // Update question stats
     const stat = await db.questionStats.get(a.questionId)
     if (stat) {
-      const newMastery = a.isCorrect
-        ? Math.min(5, stat.masteryLevel < 1 ? 2 : stat.masteryLevel + 1)
-        : 1
+      let newMastery: number
+      let newWrongCount: number
+      if (options?.wrongRedo && a.isCorrect) {
+        // 重做错题模式：答对时直接清零 wrongCount、提升 masteryLevel
+        newWrongCount = 0
+        newMastery = Math.max(3, Math.min(5, stat.masteryLevel + 1))
+      } else {
+        newMastery = a.isCorrect
+          ? Math.min(5, stat.masteryLevel < 1 ? 2 : stat.masteryLevel + 1)
+          : 1
+        newWrongCount = stat.wrongCount + (a.isCorrect ? 0 : 1)
+      }
       await db.questionStats.update(a.questionId, {
         attemptCount: stat.attemptCount + 1,
         correctCount: stat.correctCount + (a.isCorrect ? 1 : 0),
-        wrongCount: stat.wrongCount + (a.isCorrect ? 0 : 1),
+        wrongCount: newWrongCount,
         lastSelectedKey: a.selectedKey,
         lastCorrect: a.isCorrect,
         lastAttemptAt: a.createdAt,
@@ -136,12 +148,16 @@ export async function recordAttempt(a: Omit<Attempt, 'id'>): Promise<number> {
         reviewDueAt: calcReviewDueAt(a.createdAt, newMastery),
       })
     } else {
-      const initialMastery = a.isCorrect ? 2 : 1
+      const initialMastery = a.isCorrect
+        ? options?.wrongRedo
+          ? 3
+          : 2
+        : 1
       await db.questionStats.put(
         createDefaultStats(a.questionId, {
           attemptCount: 1,
           correctCount: a.isCorrect ? 1 : 0,
-          wrongCount: a.isCorrect ? 0 : 1,
+          wrongCount: 0,
           lastSelectedKey: a.selectedKey,
           lastCorrect: a.isCorrect,
           lastAttemptAt: a.createdAt,
@@ -345,6 +361,28 @@ async function doImportTables(data: Record<string, unknown>): Promise<void> {
     if (data.settings) {
       await db.settings.clear()
       await db.settings.bulkPut(data.settings as { key: string; value: string }[])
+    }
+  })
+}
+
+/**
+ * 清空指定题目集合的答题记录和统计（用于"重置题单"功能）。
+ * @param questionIds 需要重置的题目 ID 列表
+ * @param affectedTags 这些题目涉及的标签（用于清理 tagStats），由调用方从 Question 对象中收集
+ */
+export async function resetQuestionStats(
+  questionIds: string[],
+  affectedTags?: string[],
+): Promise<void> {
+  if (questionIds.length === 0) return
+  await db.transaction('rw', db.attempts, db.questionStats, db.tagStats, async () => {
+    // 删除 attempts
+    await db.attempts.where('questionId').anyOf(questionIds).delete()
+    // 删除 questionStats
+    await db.questionStats.bulkDelete(questionIds)
+    // 清理受影响的 tagStats（如有提供）
+    if (affectedTags && affectedTags.length > 0) {
+      await db.tagStats.bulkDelete(affectedTags)
     }
   })
 }

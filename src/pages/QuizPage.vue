@@ -57,6 +57,7 @@ const startedAt = ref('')
 const elapsedTime = ref(0)
 const timerInterval = ref<ReturnType<typeof setInterval> | null>(null)
 const isExamMode = ref(false)
+const wrongRedo = ref(false)
 const examTimeLimit = ref(60 * 60) // 默认 60 分钟（秒）
 const remainingTime = ref(0)
 const examTimerInterval = ref<ReturnType<typeof setInterval> | null>(null)
@@ -141,6 +142,7 @@ function snapshot(submittedNow: boolean): ActiveSession {
     elapsedSeconds: elapsedTime.value,
     drafts: draftsRecord,
     entryKey: computeEntryKey(),
+    wrongRedo: wrongRedo.value,
   }
 }
 
@@ -292,6 +294,7 @@ onMounted(async () => {
     const saved = await loadActiveSession()
     const explicitResume = route.query.resume === '1'
     const wantsFresh = route.query.fresh === '1'
+    wrongRedo.value = route.query.redo === '1'
     const sameEntry = !wantsFresh && saved?.entryKey != null && saved.entryKey === computeEntryKey()
     // 无 query 参数直接进 /quiz（顶栏"刷题"、地址栏输入等）视为"继续上次"
     const bareQuizEntry = Object.keys(route.query).length === 0
@@ -310,6 +313,7 @@ onMounted(async () => {
       // 恢复 history、elapsedTime 和 drafts（AI 辅助功能相关）
       history.value = saved.history || []
       elapsedTime.value = saved.elapsedSeconds || 0
+      wrongRedo.value = saved.wrongRedo || false
       if (saved.drafts) {
         const draftsMap = new Map<number, string>()
         Object.entries(saved.drafts).forEach(([key, value]) => {
@@ -386,9 +390,17 @@ async function handleSubmit() {
   submitted.value = true
 
   const q = currentQuestion.value
-  const isCorrect = q.multiAnswer
-    ? isMultiAnswerCorrect(selectedKey.value, q.answerKey)
-    : selectedKey.value === q.answerKey
+  let isCorrect: boolean
+  if (q.questionType === 'fill') {
+    // 填空题：忽略大小写和首尾空格进行比较
+    const userAnswer = selectedKey.value.trim().toLowerCase()
+    const correctAnswer = q.answerText.trim().toLowerCase()
+    isCorrect = userAnswer === correctAnswer
+  } else if (q.multiAnswer) {
+    isCorrect = isMultiAnswerCorrect(selectedKey.value, q.answerKey)
+  } else {
+    isCorrect = selectedKey.value === q.answerKey
+  }
 
   // 「回去改」的再提交：history[currentIndex] 已存在 —— 用差值更新 correctCount/wrongList，
   // 避免一道题被双重计入。原 history 项被替换。
@@ -425,16 +437,19 @@ async function handleSubmit() {
   startTime.value = Date.now()
 
   try {
-    await recordAttempt({
-      questionId: q.id,
-      sessionId: sessionId.value,
-      selectedKey: selectedKey.value,
-      correctKey: q.answerKey,
-      isCorrect,
-      elapsedMs,
-      mode: mode.value,
-      createdAt: new Date().toISOString(),
-    })
+    await recordAttempt(
+      {
+        questionId: q.id,
+        sessionId: sessionId.value,
+        selectedKey: selectedKey.value,
+        correctKey: q.answerKey,
+        isCorrect,
+        elapsedMs,
+        mode: mode.value,
+        createdAt: new Date().toISOString(),
+      },
+      { wrongRedo: wrongRedo.value },
+    )
 
     await updateTagStats(q.tags, isCorrect)
 
@@ -719,6 +734,15 @@ function cancelLeave() {
           @click="router.push({ path: '/quiz', query: { ids: wrongList.join(',') } })"
         >
           只刷错题
+        </button>
+        <button
+          class="btn btn-outline"
+          v-if="wrongList.length > 0"
+          @click="
+            router.push({ path: '/quiz', query: { ids: wrongList.join(','), redo: '1', fresh: '1' } })
+          "
+        >
+          重做错题
         </button>
       </div>
 
