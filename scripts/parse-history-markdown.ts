@@ -548,7 +548,7 @@ function main() {
     for (const q of inDomain) {
       const normStem = q.stem
         .replace(/\s+/g, '')
-        .replace(/[，。、；：！？""''（）()【】《》、,.;:!?"'[\]<>—－·…]/g, '')
+        .replace(/[，。、；：！？“”‘’""''（）()【】《》、,.;:!?"'[\]<>—－·…]/g, '')
         .toLowerCase()
       const k = normStem + '|' + q.questionType
       if (!byKey.has(k)) byKey.set(k, [])

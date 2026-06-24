@@ -1,10 +1,10 @@
 {
   "report": [
-    "总题数: 3018",
+    "总题数: 2982",
     "  hist-a: 697题",
     "  hist-b: 454题",
     "  hist-c: 591题",
-    "  hist-d: 415题",
+    "  hist-d: 379题",
     "  t0: 312题",
     "  t1: 223题",
     "  t2: 121题",
@@ -13,12 +13,11 @@
     "  t5-2: 15题",
     "  t5-3: 18题",
     "  t5-4: 15题",
-    "⚠ 缺解析(93): hist-d-q00001, hist-d-q00002, hist-d-q00003, hist-d-q00004, hist-d-q00005 …",
-    "题型分布: single=1243, judgement=755, multi=859, fill=161",
+    "题型分布: single=1218, judgement=755, multi=848, fill=161",
     "✅ 校验完成"
   ],
-  "generatedAt": "2026-06-24T05:13:22.039Z",
-  "count": 3018,
+  "generatedAt": "2026-06-24T06:48:41.493Z",
+  "count": 2982,
   "byGroup": {
     "t0": 312,
     "t1": 223,
@@ -31,12 +30,12 @@
     "hist-a": 697,
     "hist-b": 454,
     "hist-c": 591,
-    "hist-d": 415
+    "hist-d": 379
   },
   "byType": {
-    "single": 1243,
+    "single": 1218,
     "judgement": 755,
-    "multi": 859,
+    "multi": 848,
     "fill": 161
   }
 }
