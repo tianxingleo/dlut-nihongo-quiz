@@ -198,6 +198,11 @@ function handleClose() {
   emit('close')
 }
 
+function dismissError() {
+  localError.value = null
+  clearError()
+}
+
 async function handleSend() {
   const message = userInput.value.trim()
   if (!message || isLoading.value) return
@@ -332,15 +337,7 @@ function quickAsk(question: string) {
             <!-- 错误状态 -->
             <div v-if="error || localError" class="error-message">
               <p>{{ localError || error }}</p>
-              <button
-                class="btn btn-outline"
-                @click="
-                  localError = null
-                  clearError()
-                "
-              >
-                关闭
-              </button>
+              <button class="btn btn-outline" @click="dismissError">关闭</button>
             </div>
           </div>
 
