@@ -676,9 +676,9 @@ const groupViewHint = computed(() => {
             </button>
             <button
               class="btn btn-outline btn-sm"
-              @click="startHistoryGroup(g.groupId, 'sequential', { questionType: 'judgement' })"
+              @click="startHistoryGroup(g.groupId, 'sequential', { questionType: 'fill' })"
             >
-              判断题
+              填空题
             </button>
             <ActionMenuButton
               variant="danger"
