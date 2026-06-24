@@ -15,7 +15,7 @@ interface RawQuestion {
   answerText: string
   explanation: string
   multiAnswer: boolean
-  questionType: 'single' | 'multi' | 'judgement'
+  questionType: 'single' | 'multi' | 'judgement' | 'fill'
 }
 
 interface FileSpec {
@@ -115,11 +115,16 @@ function cleanStem(stem: string): string {
   return s
 }
 
-function detectAnswerType(raw: string): {
-  kind: 'single' | 'multi' | 'judgement' | 'skip'
+function detectAnswerType(raw: string, isFillBlank: boolean = false): {
+  kind: 'single' | 'multi' | 'judgement' | 'fill' | 'skip'
   normalized: string
   reason?: string
 } {
+  // 如果明确是填空题，直接返回 fill 类型
+  if (isFillBlank) {
+    return { kind: 'fill', normalized: raw.trim() }
+  }
+
   const cleaned = raw.replace(/[\.。、\s]/g, '').toUpperCase()
   // Judgement: 正确 / 错误 (or 对 / 错)
   if (/^(正确|错误|对|错)$/.test(cleaned)) {
@@ -150,6 +155,7 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
   let currentGroupId = spec.baseGroupId
   let currentGroupTitle = spec.baseGroupTitle
   let counter = 0
+  let isFillBlankSection = false
 
   const lines = content.split('\n')
   let i = 0
@@ -166,9 +172,23 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
         currentGroupId = `${spec.baseGroupId}-${n}`
         currentGroupTitle = `${spec.baseGroupTitle} 第${sub[1]}套`
         counter = 0
+        isFillBlankSection = false
         i++
         continue
       }
+    }
+
+    // 检测填空题部分
+    if (trimmed === '### 填空题' || trimmed.match(/^###\s+填空题\s*$/)) {
+      isFillBlankSection = true
+      i++
+      continue
+    }
+
+    // 检测其他题型部分（结束填空题）
+    if (isFillBlankSection && (trimmed === '### 单选题' || trimmed === '### 多选题' || trimmed === '### 判断题' ||
+        trimmed.match(/^###\s+(单选题|多选题|判断题)/) || trimmed.match(/^##\s+第[一二三四五六七八九十]+章/))) {
+      isFillBlankSection = false
     }
 
     const hdr = trimmed.match(QUESTION_HDR)
@@ -190,8 +210,83 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
       if (t === '---') break
       if (spec.subGroupMatcher && spec.subGroupMatcher.test(s)) break
       if (QUESTION_HDR.test(t)) break
+      // 检测下一个题型部分（结束填空题）
+      if (t === '### 填空题' || t === '### 单选题' || t === '### 多选题' || t === '### 判断题' ||
+          t.match(/^###\s+(填空题|单选题|多选题|判断题)/) || t.match(/^##\s+第[一二三四五六七八九十]+章/)) break
       body.push(s)
       i++
+    }
+
+    // 填空题特殊处理：不需要选项，直接从题干中提取答案
+    if (isFillBlankSection) {
+      // 填空题的答案在 body 中的 **答案：xxx** 格式
+      let answerRaw = ''
+      let explanation = ''
+      const stemParts: string[] = [stemFirstLine]
+
+      let j = 0
+      while (j < body.length) {
+        const line = body[j].trim()
+        if (!line) {
+          j++
+          continue
+        }
+
+        const ansMatch = line.match(/^\*\*\s*答案\s*[:：]\s*(.+?)\s*\*\*/)
+        if (ansMatch) {
+          answerRaw = ansMatch[1].trim()
+          j++
+          // Look ahead for the explanation block
+          while (j < body.length) {
+            const l2 = body[j].trim()
+            if (!l2) {
+              j++
+              continue
+            }
+            if (/^\*\*\s*答案/.test(l2)) break
+            if (QUESTION_HDR.test(l2)) break
+            const expStart = l2.match(/^\*\*\s*解析\s*[:：]\s*\*{0,2}\s*(.*)$/)
+            if (expStart) {
+              explanation = expStart[1].trim().replace(/^\*{1,2}\s*/, '')
+              j++
+              while (j < body.length) {
+                const l3 = body[j].trim()
+                if (/^\*\*\s*答案/.test(l3)) break
+                if (QUESTION_HDR.test(l3)) break
+                explanation += '\n' + l3
+                j++
+              }
+              explanation = explanation.replace(/\n{3,}/g, '\n\n').replace(/[\s\n]+$/, '')
+              break
+            }
+            explanation += (explanation ? '\n' : '') + l2.replace(/^\*\*(.+?)\*\*$/, '$1')
+            j++
+          }
+          break
+        }
+
+        // 非答案行加入题干
+        stemParts.push(line)
+        j++
+      }
+
+      if (!answerRaw) continue
+
+      const stem = cleanStem(stemParts.join(' '))
+      counter++
+      out.push({
+        groupId: currentGroupId,
+        groupTitle: currentGroupTitle,
+        numberInGroup: counter,
+        stem,
+        options: [], // 填空题没有选项
+        answerKey: 'FILL', // 填空题使用特殊标记
+        answerText: answerRaw,
+        explanation: explanation.trim(),
+        multiAnswer: false,
+        questionType: 'fill',
+      })
+      continue
     }
 
     // Walk body: stem / options / answer / explanation
@@ -270,15 +365,27 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
 
     const stem = cleanStem(stemParts.join(' '))
 
+    // 检查是否是判断题（选项为"正确"和"错误"）
+    const isJudgementOptions = options.length === 2 &&
+      options.some(o => o.text === '正确') &&
+      options.some(o => o.text === '错误')
+
     // Detect type early so we can synthesize options for judgement questions.
-    const { kind, normalized } = detectAnswerType(answerRaw)
+    let { kind, normalized } = detectAnswerType(answerRaw)
+
+    // 如果选项是"正确"和"错误"，且答案是 A 或 B，则识别为判断题
+    if (isJudgementOptions && /^[AB]$/.test(answerRaw.trim().toUpperCase())) {
+      kind = 'judgement'
+      const correctOption = options.find(o => o.key === answerRaw.trim().toUpperCase())
+      normalized = correctOption?.text || '正确'
+    }
 
     // 跳过无法识别答案格式的题目（如填空/简答）
     if (kind === 'skip') continue
 
     // Drop entries where source md lost the options AND the answer is a bare letter
     // (can't reconstruct). Judgement-type entries get synthesised options below.
-    if (kind !== 'judgement' && options.length === 0) continue
+    if (kind !== 'judgement' && kind !== 'fill' && options.length === 0) continue
     if (!stem && options.length === 0) continue
     // Multi-choice with answer letters missing from options: source data is broken.
     if (kind === 'multi' && ![...normalized].every((k) => options.find((o) => o.key === k)))
@@ -303,6 +410,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
       answerKey = normalized // e.g. "ABC"
       const matched = options.filter((o) => normalized.includes(o.key))
       answerText = matched.map((o) => o.text).join(' / ')
+    } else if (kind === 'fill') {
+      // 填空题
+      answerKey = 'FILL'
+      answerText = normalized
     } else {
       // single
       const matched = options.find((o) => o.key === normalized)
@@ -348,6 +459,7 @@ function tagQuestion(q: RawQuestion): { tags: string[]; grammarPoints: string[] 
   if (q.multiAnswer) tags.push('多选题')
   if (q.questionType === 'judgement') tags.push('判断题')
   if (q.questionType === 'single') tags.push('单选题')
+  if (q.questionType === 'fill') tags.push('填空题')
 
   for (const t of extractExplicitTags(q.explanation)) tags.push(t)
 
@@ -498,10 +610,14 @@ function main() {
   }
 
   const missingStem = enriched.filter((q) => !q.stem)
-  const missingOptions = enriched.filter((q) => q.options.length < 2)
+  // 填空题不需要选项，排除在外
+  const missingOptions = enriched.filter((q) => q.questionType !== 'fill' && q.options.length < 2)
   const missingAnswer = enriched.filter((q) => !q.answerKey)
-  const missingExplanation = enriched.filter((q) => !q.explanation)
+  // 填空题不需要解析，排除在外
+  const missingExplanation = enriched.filter((q) => q.questionType !== 'fill' && !q.explanation)
   const answerNotInOptions = enriched.filter((q) => {
+    // 填空题不需要选项匹配
+    if (q.questionType === 'fill') return false
     if (q.multiAnswer) {
       // Each letter of answerKey must be in options
       return ![...q.answerKey].every((k) => q.options.find((o) => o.key === k))
