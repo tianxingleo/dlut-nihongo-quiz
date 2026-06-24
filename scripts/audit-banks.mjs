@@ -71,7 +71,8 @@ for (const name of BANKS) {
         schemaIssues++
       }
     }
-    if (!Array.isArray(q.options) || q.options.length < 2) {
+    // 填空题不需要选项
+    if (q.questionType !== 'fill' && (!Array.isArray(q.options) || q.options.length < 2)) {
       if (schemaIssues < 10) fail(name, `题 ${q.id} options 不是数组或少于 2 项`)
       schemaIssues++
     }

@@ -83,6 +83,14 @@ scripts/__pycache__/
 _*.json
 _*.txt
 _*.py
+temp_*.json
+temp_*.txt
+
+# One-off add/extract scripts
+scripts/add-fill-blank-questions.mjs
+scripts/add-missing-history-questions.mjs
+scripts/add-missing-judgement.mjs
+scripts/extract-docx-questions.mjs
 ARCHITECTURE_PLAN.md
 digital-circuit.png
 
