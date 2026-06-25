@@ -91,6 +91,13 @@ scripts/add-fill-blank-questions.mjs
 scripts/add-missing-history-questions.mjs
 scripts/add-missing-judgement.mjs
 scripts/extract-docx-questions.mjs
+
+# One-off debug/analysis scripts
+scripts/check-truncated-options.mjs
+scripts/debug-dedup.mjs
+scripts/find-truncated-options.mjs
+scripts/generate-explanations.mjs
+scripts/supplement-explanations.mjs
 ARCHITECTURE_PLAN.md
 digital-circuit.png
 
