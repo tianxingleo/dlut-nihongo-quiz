@@ -89,6 +89,20 @@ const FILES: FileSpec[] = [
       { match: /^##\s+第三部分/, suffix: 'pdf-judge', title: '军理 PDF · 判断题' },
     ],
   },
+  {
+    file: 'new_questions/军理题库_新单选题.md',
+    baseGroupId: 'military',
+    sections: [
+      { match: /^##\s+第一部分/, suffix: 'new-single', title: '军理 新单选题' },
+    ],
+  },
+  {
+    file: 'new_questions/军理题库_新多选题.md',
+    baseGroupId: 'military',
+    sections: [
+      { match: /^##\s+第一部分/, suffix: 'new-multi', title: '军理 新多选题' },
+    ],
+  },
 ]
 
 const QUESTION_HDR = /^\*\*\s*(\d+)\s*[\.、]\s*(.+?)\s*\*\*\s*$/
