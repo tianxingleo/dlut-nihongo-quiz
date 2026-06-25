@@ -99,6 +99,11 @@ const FILES: FileSpec[] = [
     baseGroupId: 'military',
     sections: [{ match: /^##\s+第一部分/, suffix: 'new-multi', title: '军理 新多选题' }],
   },
+  {
+    file: 'new_questions/军理题库_填空题.md',
+    baseGroupId: 'military',
+    sections: [{ match: /^##\s+第一部分/, suffix: 'fill', title: '军理 填空题' }],
+  },
 ]
 
 const QUESTION_HDR = /^\*\*\s*(\d+)\s*[\.、]\s*(.+?)\s*\*\*\s*$/
@@ -108,7 +113,7 @@ const CHAPTER_HDR = /^##\s+([一二三四五六七八九十]+)、\s*(.+?)\s*$/
 function detectAnswerType(
   raw: string,
   options: { key: string; text: string }[],
-): { kind: 'single' | 'multi' | 'judgement' | 'skip'; normalized: string; reason?: string } {
+): { kind: 'single' | 'multi' | 'judgement' | 'fill' | 'skip'; normalized: string; reason?: string } {
   // Strip anything in/after parens (e.g. "错误（实质错误——…）" → "错误")
   const stripped = raw.replace(/[（(].*$/, '').trim()
   const cleaned = stripped.replace(/[\.。、\s]/g, '').toUpperCase()
@@ -142,8 +147,10 @@ function detectAnswerType(
   if (letters.length > 1) return { kind: 'multi', normalized: letters.split('').sort().join('') }
   if (letters.length === 1) return { kind: 'single', normalized: letters }
   // Text answer that doesn't match any option — this is a fill-in-blank / short-answer
-  // question that doesn't fit the choice/judgement model. Skip it rather than fabricating
-  // a bogus judgement with default answer "错误".
+  // question. If no options, treat as fill question.
+  if (options.length === 0) {
+    return { kind: 'fill', normalized: stripped }
+  }
   return { kind: 'skip', normalized: '', reason: 'short-answer-text' }
 }
 
@@ -323,8 +330,8 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
     // Skip short-answer / fill-in-blank questions that don't fit choice/judgement.
     if (kind === 'skip') continue
 
-    // Skip pure fill-in-blank questions (no options + non-judgement answer)
-    if (options.length < 2 && kind !== 'judgement') continue
+    // Skip questions with no options that are not judgement or fill
+    if (options.length < 2 && kind !== 'judgement' && kind !== 'fill') continue
 
     if (kind === 'multi') {
       if (![...normalized].every((k) => options.find((o) => o.key === k))) continue
@@ -359,6 +366,10 @@ function parseFile(spec: FileSpec, rawDir: string): RawQuestion[] {
         .filter((o) => normalized.includes(o.key))
         .map((o) => o.text)
         .join(' / ')
+    } else if (kind === 'fill') {
+      // 填空题：答案就是文本内容
+      answerKey = normalized
+      answerText = normalized
     } else {
       const matched = options.find((o) => o.key === normalized)
       answerText = matched?.text || ''
@@ -549,10 +560,13 @@ function main() {
   }
 
   const missingStem = enriched.filter((q) => !q.stem)
-  const missingOptions = enriched.filter((q) => q.options.length < 2)
+  // 填空题不需要选项，跳过选项检查
+  const missingOptions = enriched.filter((q) => q.questionType !== 'fill' && q.options.length < 2)
   const missingAnswer = enriched.filter((q) => !q.answerKey)
   const missingExplanation = enriched.filter((q) => !q.explanation)
+  // 填空题的答案不需要在选项中
   const answerNotInOptions = enriched.filter((q) => {
+    if (q.questionType === 'fill') return false
     if (q.multiAnswer) return ![...q.answerKey].every((k) => q.options.find((o) => o.key === k))
     return !q.options.find((o) => o.key === q.answerKey)
   })
