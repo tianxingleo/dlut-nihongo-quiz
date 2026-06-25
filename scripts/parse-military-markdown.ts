@@ -407,6 +407,7 @@ function tagQuestion(q: RawQuestion): { tags: string[]; grammarPoints: string[] 
   if (q.multiAnswer) tags.push('多选题')
   if (q.questionType === 'judgement') tags.push('判断题')
   if (q.questionType === 'single') tags.push('单选题')
+  if (q.questionType === 'fill') tags.push('填空题')
 
   for (const t of extractExplicitTags(q.explanation)) tags.push(t)
 
@@ -437,6 +438,7 @@ function main() {
   const all: RawQuestion[] = []
   for (const spec of FILES) {
     const parsed = parseFile(spec, rawDir)
+    console.log(`Parsed ${spec.file}: ${parsed.length} questions`)
     all.push(...parsed)
   }
 

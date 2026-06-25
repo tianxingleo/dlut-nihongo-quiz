@@ -1,6 +1,6 @@
 {
   "report": [
-    "总题数: 682",
+    "总题数: 752",
     "  military-ch1: 31题",
     "  military-ch12: 1题",
     "  military-ch14: 1题",
@@ -16,6 +16,7 @@
     "  military-ch7: 4题",
     "  military-ch8: 8题",
     "  military-ch9: 3题",
+    "  military-fill: 70题",
     "  military-new-multi: 50题",
     "  military-new-single: 71题",
     "  military-p1: 43题",
@@ -25,12 +26,12 @@
     "  military-pdf-judge: 38题",
     "  military-pdf-multi: 46题",
     "  military-pdf-single: 27题",
-    "⚠ 缺解析(146): military-p4-q00091, military-pdf-judge-q00003, military-pdf-judge-q00004, military-pdf-judge-q00008, military-pdf-judge-q00009 …",
-    "题型分布: fill=154, judgement=95, multi=116, single=317",
+    "⚠ 缺解析(25): military-p4-q00091, military-pdf-judge-q00003, military-pdf-judge-q00004, military-pdf-judge-q00008, military-pdf-judge-q00009 …",
+    "题型分布: fill=224, judgement=95, multi=116, single=317",
     "✅ 校验完成"
   ],
-  "generatedAt": "2026-06-25T11:46:26.045Z",
-  "count": 682,
+  "generatedAt": "2026-06-25T12:40:12.300Z",
+  "count": 752,
   "byGroup": {
     "military-ch1": 31,
     "military-ch2": 24,
@@ -55,10 +56,11 @@
     "military-pdf-multi": 46,
     "military-pdf-judge": 38,
     "military-new-single": 71,
-    "military-new-multi": 50
+    "military-new-multi": 50,
+    "military-fill": 70
   },
   "byType": {
-    "fill": 154,
+    "fill": 224,
     "judgement": 95,
     "multi": 116,
     "single": 317
