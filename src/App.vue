@@ -157,9 +157,31 @@ async function handleSearchNavigate(questionId: string) {
           >{{ l.label }}</a
         >
         <button class="search-trigger" @click="searchOpen = true">⌕ 搜索</button>
+        <a
+          class="github-star-btn"
+          href="https://github.com/tianxingleo/dlut-nihongo-quiz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+            <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" />
+          </svg>
+          <span>Star</span>
+        </a>
       </div>
       <div class="nav-right-mobile">
         <button class="nav-search-icon" @click="searchOpen = true" aria-label="搜索">⌕</button>
+        <a
+          class="github-star-btn-mobile"
+          href="https://github.com/tianxingleo/dlut-nihongo-quiz"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Star"
+        >
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor">
+            <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" />
+          </svg>
+        </a>
       </div>
     </nav>
 
@@ -365,9 +387,48 @@ async function handleSearchNavigate(questionId: string) {
   border-color: var(--accent);
 }
 
+/* GitHub Star 按钮 */
+.github-star-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s var(--ease-ink);
+  white-space: nowrap;
+}
+.github-star-btn:hover {
+  border-color: var(--accent);
+  background: var(--bg-hover);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.github-star-btn svg {
+  flex-shrink: 0;
+}
+.github-star-btn-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  padding: 4px;
+  transition: color 0.18s var(--ease-ink);
+}
+.github-star-btn-mobile:hover {
+  color: var(--accent);
+}
+
 .nav-right-mobile {
   display: none;
   margin-left: auto;
+  align-items: center;
+  gap: 8px;
 }
 .nav-search-icon {
   background: none;
