@@ -26,6 +26,13 @@ dlut-nihongo-quiz/
 │   ├── parse-party-markdown.ts       # 党史
 │   └── parse-military-markdown.ts    # 军事
 │
+├── pdf-ocr/                  # PDF 试卷 → 题库 md 的导入工具（Python，见 README）
+│   ├── README.md                       # 目录速查
+│   ├── 1_render.py … 7_import.py        # S1 渲染 / S2 双路 OCR / S3 比对 / S4 成文 /
+│   │                                   # S5 契约门禁 / S6 发布(含 --unpublish) / S7 批量导入
+│   ├── work/                           # 中间产物（页图、逐页 JSON、报告、AI 缓存；gitignore）
+│   └── tests/                          # 8 个离线验收脚本（不联网、0 token）
+│
 ├── public/                   # 解析后的 JSON 题库（运行时读取，自动生成）
 │   ├── japanese2-question-bank.json  # 综合日语2 963 题（单词 + 语法）
 │   ├── history-question-bank.json    # 历史 2872 题
@@ -84,6 +91,8 @@ dlut-nihongo-quiz/
 ## 数据流
 
 ```
+PDF 试卷 ──[ pdf-ocr/7_import.py ]──▶ data/raw/<分类>/<分类>.md
+                                            │
 data/raw/*.md  ──[ npm run parse:* ]──▶  public/*-question-bank.json
                                               │
                                               ▼
@@ -96,6 +105,8 @@ data/raw/*.md  ──[ npm run parse:* ]──▶  public/*-question-bank.json
 - `data/raw/` 是**唯一可信源**，永远不要手改 `public/*.json`
 - 每个 parser 都会输出验证报告到 `data/processed/`，发现格式错误时会非零退出
 - 前端首次加载时把 JSON 灌进 IndexedDB，后续读本地，离线可用
+- 来自 PDF 的题库由 `pdf-ocr/` 生成（S1→S6 + S7 批量），用法见
+  [PDF 试卷导入工具](pdf-ocr-import-guide.md)；中间产物都在 `pdf-ocr/work/`，不入库
 
 ## 学科分类（Category）
 

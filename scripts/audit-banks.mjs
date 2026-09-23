@@ -21,6 +21,14 @@ const BANKS = [
   'computer-2024-final-question-bank.json',
   'computer-c-exam-question-bank.json',
   'computer-midterms-question-bank.json',
+  'computer-2026-midterm-question-bank.json',
+  'principles-of-marxism-1-question-bank.json',
+  'marxism-1-question-bank.json',
+  'marxism-2-question-bank.json',
+  'marxism-3-question-bank.json',
+  'marxism-6-question-bank.json',
+  'marxism-5-question-bank.json',
+  'marxism-7-question-bank.json',
 ]
 
 const REQUIRED_FIELDS = ['id', 'groupId', 'stem', 'options', 'answerKey', 'explanation']

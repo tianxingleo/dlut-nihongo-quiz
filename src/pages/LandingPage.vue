@@ -4,15 +4,33 @@ import { useRoute, useRouter } from 'vue-router'
 import { getCategoryCounts } from '../services/quizEngine'
 import { loadActiveCategory, setActiveCategory } from '../services/categoryStore'
 import { CATEGORIES } from '../config/categories'
+import { ENTRIES, findEntry, entryOfCategory } from '../config/entries'
 import { db } from '../db/database'
 import type { Category } from '../types/question'
+import type { CategoryMeta } from '../config/categories'
 
 const router = useRouter()
 const route = useRoute()
-const selectingComputerPaper = computed(() => route.name === 'computer-organization')
-const computerPapers = CATEGORIES.filter((c) => c.key.startsWith('computer-'))
-const computerQuestionCount = computed(() =>
-  computerPapers.reduce((sum, c) => sum + (counts.value[c.key] || 0), 0),
+/** 当前是不是某个入口的二级页（路由 `/<入口 key>`，入口清单在 src/config/entries.ts） */
+const currentEntry = computed(() => findEntry(route.params.entryKey as string | undefined))
+/** 该入口下的试卷，顺序就是 entries.ts 里 `papers` 的顺序 */
+const entryPapers = computed(() =>
+  (currentEntry.value?.papers ?? [])
+    .map((key) => CATEGORIES.find((c) => c.key === key))
+    .filter((c): c is CategoryMeta => Boolean(c)),
+)
+const entryQuestionCount = computed(() =>
+  entryPapers.value.reduce((sum, c) => sum + (counts.value[c.key] || 0), 0),
+)
+/** 第一层的入口卡（题数实时汇总各入口下的试卷） */
+const entryCards = computed(() =>
+  ENTRIES.map((entry) => ({
+    key: entry.key,
+    name: entry.name,
+    icon: entry.icon,
+    desc: entry.desc || `${entry.papers.length} 份试卷 · 按卷选择题单 · 答案解析`,
+    questions: entry.papers.reduce((sum, key) => sum + (counts.value[key] || 0), 0),
+  })),
 )
 
 const counts = ref<Record<Category, number>>({} as Record<Category, number>)
@@ -97,18 +115,18 @@ function goCalculusNotes() {
 }
 
 const subjects = computed(() =>
-  (selectingComputerPaper.value
-    ? computerPapers
-    : CATEGORIES.filter((c) => !c.key.startsWith('computer-'))
-  ).map((c) => ({
-    key: c.key,
-    title: selectingComputerPaper.value ? c.short : c.long,
-    desc: c.desc,
-    icon: c.icon,
-  })),
+  (currentEntry.value ? entryPapers.value : CATEGORIES.filter((c) => !entryOfCategory(c.key))).map(
+    (c) => ({
+      key: c.key,
+      title: currentEntry.value ? c.short : c.long,
+      desc: c.desc,
+      icon: c.icon,
+    }),
+  ),
 )
 
-const subjectCount = CATEGORIES.length - computerPapers.length + 2 // 计算机组成学科 + 微积分笔记
+// 第一层的卡片数：不归属任何入口的学科 + 各入口 + 微积分笔记
+const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + ENTRIES.length + 1
 </script>
 
 <template>
@@ -130,11 +148,11 @@ const subjectCount = CATEGORIES.length - computerPapers.length + 2 // 计算机�
   </div>
   <div v-else class="landing">
     <!-- Hero -->
-    <header v-if="selectingComputerPaper" class="paper-header">
+    <header v-if="currentEntry" class="paper-header">
       <RouterLink class="btn btn-ghost" to="/">← 返回学科首页</RouterLink>
-      <h1>计算机组成（软国际）</h1>
+      <h1>{{ currentEntry.name }}</h1>
       <p>
-        {{ computerPapers.length }} 份试卷 · {{ computerQuestionCount }} 题，选择试卷后进入题单。
+        {{ entryPapers.length }} 份试卷 · {{ entryQuestionCount }} 题，选择试卷后进入题单。
       </p>
     </header>
     <section v-else class="hero">
@@ -167,7 +185,7 @@ const subjectCount = CATEGORIES.length - computerPapers.length + 2 // 计算机�
     </section>
 
     <!-- Stats strip -->
-    <section v-if="!selectingComputerPaper" class="stats-strip">
+    <section v-if="!currentEntry" class="stats-strip">
       <div class="strip-item">
         <span class="strip-num">{{ totalQuestions.toLocaleString() }}</span>
         <span class="strip-label">题库总量</span>
@@ -191,10 +209,10 @@ const subjectCount = CATEGORIES.length - computerPapers.length + 2 // 计算机�
 
     <!-- Subject cards -->
     <section class="subjects">
-      <h2>{{ selectingComputerPaper ? '选择试卷' : '选择学科，开始复习' }}</h2>
+      <h2>{{ currentEntry ? '选择试卷' : '选择学科，开始复习' }}</h2>
       <div class="subject-grid">
         <div
-          v-if="!selectingComputerPaper"
+          v-if="!currentEntry"
           class="subject-card calculus-card"
           @click="goCalculusNotes"
         >
@@ -206,19 +224,23 @@ const subjectCount = CATEGORIES.length - computerPapers.length + 2 // 计算机�
           <div class="sc-count">18 课</div>
           <span class="sc-arrow">&rarr;</span>
         </div>
-        <RouterLink
-          v-if="!selectingComputerPaper"
-          class="subject-card subject-link"
-          to="/computer-organization"
-        >
-          <div class="sc-icon">组</div>
-          <div class="sc-body">
-            <h3 class="sc-title">计算机组成（软国际）</h3>
-            <p class="sc-desc">{{ computerPapers.length }} 份试卷 · 按卷选择题单 · 答案解析</p>
-          </div>
-          <div class="sc-count">{{ computerQuestionCount }} 题</div>
-          <span class="sc-arrow">&rarr;</span>
-        </RouterLink>
+        <!-- 入口卡：清单与顺序都由 src/config/entries.ts 决定 -->
+        <template v-if="!currentEntry">
+          <RouterLink
+            v-for="e in entryCards"
+            :key="e.key"
+            class="subject-card subject-link"
+            :to="`/${e.key}`"
+          >
+            <div class="sc-icon">{{ e.icon }}</div>
+            <div class="sc-body">
+              <h3 class="sc-title">{{ e.name }}</h3>
+              <p class="sc-desc">{{ e.desc }}</p>
+            </div>
+            <div class="sc-count">{{ e.questions }} 题</div>
+            <span class="sc-arrow">&rarr;</span>
+          </RouterLink>
+        </template>
         <div v-for="s in subjects" :key="s.key" class="subject-card" @click="enterSubject(s.key)">
           <div class="sc-icon">{{ s.icon }}</div>
           <div class="sc-body">
@@ -248,7 +270,7 @@ const subjectCount = CATEGORIES.length - computerPapers.length + 2 // 计算机�
     </section>
 
     <!-- Features -->
-    <section v-if="!selectingComputerPaper" class="features">
+    <section v-if="!currentEntry" class="features">
       <h2>功能一览</h2>
       <div class="feature-grid">
         <div class="feature-card">
@@ -279,7 +301,7 @@ const subjectCount = CATEGORIES.length - computerPapers.length + 2 // 计算机�
     </section>
 
     <!-- Footer CTA -->
-    <section v-if="!selectingComputerPaper" class="cta">
+    <section v-if="!currentEntry" class="cta">
       <h2>准备好了吗？</h2>
       <p>选择一个学科，开始高效刷题。</p>
       <button class="btn btn-accent btn-lg" @click="quickStart">进入仪表盘</button>

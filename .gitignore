@@ -60,6 +60,8 @@ CLAUDE.md
 # Brainstorming/planning docs (internal, not user-facing)
 docs/superpowers/
 .superpowers/
+# PR 草稿与提交说明（只留本地，不进库）
+docs/pr/
 
 # Dev screenshots and notes (grammar/quiz iteration artifacts)
 /grammar-*.md
@@ -87,7 +89,17 @@ docs/screenshots/*-fixed.png
 scripts/_*.cjs
 scripts/_*.mjs
 scripts/_*.py
-scripts/__pycache__/
+pdf-ocr/_*.py
+# 但 pdf-ocr/_common.py 是**正式模块**（所有脚本共用），别被上面那条顺手忽略掉
+!pdf-ocr/_common.py
+# pytest 缓存
+.pytest_cache/
+# Python 字节码缓存（不限层级）
+__pycache__/
+
+# pdf-ocr 工作流：中间产物（页图 / 每页 JSON / manifest / 报告）都留在工具目录里，
+# 只有最终结果 data/raw/<分类名>/<分类名>.md 才入库
+/pdf-ocr/work/
 
 # Root-level temp / analysis artifacts
 /_*.json

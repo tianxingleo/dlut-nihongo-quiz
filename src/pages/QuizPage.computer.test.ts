@@ -39,6 +39,9 @@ vi.mock('../services/sessionResume', () => ({
   loadActiveSession: async () => mocks.savedSession,
   clearActiveSession: async () => {},
   isSessionInProgress: (session: ActiveSession | null) => !!session,
+  // 与真实实现同构：学科 + 子题库/题单 + 标签（不含练习方式）
+  buildPaperKey: (parts: { category?: string; groups?: string; group?: string; tag?: string }) =>
+    [parts.category || '', parts.groups || parts.group || 'all', parts.tag || ''].join('|'),
 }))
 vi.mock('../composables/useAI', async () => {
   const { ref } = await import('vue')

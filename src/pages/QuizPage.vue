@@ -22,6 +22,7 @@ import {
   loadActiveSession,
   clearActiveSession,
   isSessionInProgress,
+  buildPaperKey,
   type ActiveSession,
 } from '../services/sessionResume'
 import { useActiveCategory, loadActiveCategory, setActiveCategory } from '../services/categoryStore'
@@ -121,6 +122,17 @@ function computeEntryKey(): string {
   return parts.join('|')
 }
 
+// 这次刷的是哪份试卷（学科 + 子题库/题单 + 标签），决定记录存到哪一条、和谁互不干扰。
+function computePaperKey(): string {
+  const q = route.query
+  return buildPaperKey({
+    category: (q.category as string) || activeCategory.value,
+    groups: (q.groups as string) || '',
+    group: (q.group as string) || '',
+    tag: (q.tag as string) || '',
+  })
+}
+
 function snapshot(submittedNow: boolean): ActiveSession {
   // 将 Map 转换为 Record 以便序列化
   const draftsRecord: Record<number, string> = {}
@@ -145,6 +157,7 @@ function snapshot(submittedNow: boolean): ActiveSession {
     elapsedSeconds: elapsedTime.value,
     drafts: draftsRecord,
     entryKey: computeEntryKey(),
+    paperKey: computePaperKey(),
     wrongRedo: wrongRedo.value,
   }
 }
@@ -205,7 +218,8 @@ async function handleExamTimeUp() {
       startedAt: startedAt.value,
     }),
   )
-  await clearActiveSession()
+  // 只清掉这份试卷的记录，别的试卷的进度保留
+  await clearActiveSession(computePaperKey())
 }
 
 const formattedRemainingTime = computed(() => {
@@ -300,10 +314,12 @@ async function tryRestoreSession(all: Question[]): Promise<boolean> {
   const allStats = await db.questionStats.toArray()
   bookmarkCache.value = new Set(allStats.filter((s) => s.isBookmarked).map((s) => s.questionId))
 
-  // 恢复条件：从首页"继续上次"进来（resume=1），或直接刷新页面且存盘会话属于当前入口。
+  // 恢复条件：从首页"继续上次"进来（resume=1，并带上那条记录所属的 paperKey），
+  // 或直接刷新页面且存盘会话属于当前入口。
   // fresh=1 表示用户从首页/错题本/搜索主动点入口要开新一轮，此时即使签名相同也不恢复（开新轮）。
   // 后者（刷新自动恢复）避免了刷新后用初始状态（1/N）覆盖掉真实进度。
-  const saved = await loadActiveSession()
+  const resumePaper = (route.query.paper as string) || ''
+  const saved = await loadActiveSession(resumePaper || computePaperKey())
   const explicitResume = route.query.resume === '1'
   const wantsFresh = route.query.fresh === '1'
   wrongRedo.value = route.query.redo === '1'
@@ -393,6 +409,12 @@ onMounted(async () => {
     const queryCat = route.query.category as Category | undefined
     if (queryCat && queryCat !== activeCategory.value) {
       await setActiveCategory(queryCat)
+    }
+    // 从首页"继续上次"进来时带着 paperKey（学科就在第一段），据此切学科，
+    // 避免在别的学科里加载题库、续到不对的卷子上。
+    const paperCat = ((route.query.paper as string) || '').split('|')[0] as Category | ''
+    if (paperCat && paperCat !== activeCategory.value) {
+      await setActiveCategory(paperCat)
     }
     const cat = activeCategory.value
     // 表站未解锁时剔除里站题（requireUnlock subBank 的 groupOrder）。里站入口设了 subBank 后 isUnlocked 必为 true，no-op。
@@ -542,7 +564,7 @@ function handleNext() {
   if (currentIndex.value >= questions.value.length - 1) {
     finished.value = true
     stopTimer()
-    clearActiveSession()
+    clearActiveSession(computePaperKey())
     return
   }
   slideDirection.value = 'slide-left'

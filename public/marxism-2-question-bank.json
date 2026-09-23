@@ -1,0 +1,1012 @@
+[
+  {
+    "id": "marxism-2-q001",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 1,
+    "stem": "划分唯物史观与唯心史观的根本标准是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "是否承认阶级斗争"
+      },
+      {
+        "key": "B",
+        "text": "是否承认社会历史的规律性"
+      },
+      {
+        "key": "C",
+        "text": "是否承认社会意识的能动作用"
+      },
+      {
+        "key": "D",
+        "text": "是否承认社会存在决定社会意识"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "是否承认社会存在决定社会意识",
+    "translation": "",
+    "explanation": "唯物史观坚持社会存在决定社会意识，唯心史观则否认这一点，这是二者的根本分野；A、B、C都不是划分标准。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 1
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q002",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 2,
+    "stem": "唯物辩证法的对立统一规律揭示了事物发展的（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "方向和道路"
+      },
+      {
+        "key": "B",
+        "text": "形式和状态"
+      },
+      {
+        "key": "C",
+        "text": "结构和功能"
+      },
+      {
+        "key": "D",
+        "text": "源泉和动力"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "源泉和动力",
+    "translation": "",
+    "explanation": "对立统一规律揭示事物发展的源泉和动力；质量互变规律揭示形式和状态，否定之否定规律揭示方向和道路。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 2
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q003",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 3,
+    "stem": "价值规律是商品经济的基本规律，它的作用是通过（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "生产者之间的竞争实现的"
+      },
+      {
+        "key": "B",
+        "text": "消费者之间的竞争实现的"
+      },
+      {
+        "key": "C",
+        "text": "生产者和消费者之间的竞争实现的"
+      },
+      {
+        "key": "D",
+        "text": "价格机制、竞争机制实现的"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "价格机制、竞争机制实现的",
+    "translation": "",
+    "explanation": "价值规律通过价格围绕价值上下波动以及市场竞争来调节资源配置和生产，A、B、C把竞争主体割裂开来，说法不全面。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 3
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q004",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 4,
+    "stem": "全部马克思主义学说的理论基石是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "科学社会主义"
+      },
+      {
+        "key": "B",
+        "text": "马克思主义哲学"
+      },
+      {
+        "key": "C",
+        "text": "马克思主义政治经济学"
+      },
+      {
+        "key": "D",
+        "text": "无产阶级革命的学说"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "马克思主义哲学",
+    "translation": "",
+    "explanation": "马克思主义哲学（辩证唯物主义和历史唯物主义）是全部马克思主义学说的理论基础，科学社会主义是其核心。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 4
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q005",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 5,
+    "stem": "唯物辩证法认为，事物发展的规律是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "思维对事物本质的概括和反映"
+      },
+      {
+        "key": "B",
+        "text": "用来整理感性材料的思维形式"
+      },
+      {
+        "key": "C",
+        "text": "事物内在的本质的稳定的联系"
+      },
+      {
+        "key": "D",
+        "text": "事物联系和发展的基本环节"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "事物联系和发展的基本环节",
+    "translation": "",
+    "explanation": "规律是事物运动过程中固有的、本质的、必然的、稳定的联系，不以人的意志为转移，A、B把它归结为主观形式。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 5
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q006",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 6,
+    "stem": "唯物辩证法的总特征是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "联系的观点和发展的观点"
+      },
+      {
+        "key": "B",
+        "text": "矛盾的对立面又统一又斗争的观点"
+      },
+      {
+        "key": "C",
+        "text": "唯物辩证法的范畴体系"
+      },
+      {
+        "key": "D",
+        "text": "运动和静止辩证统一的观点"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "联系的观点和发展的观点",
+    "translation": "",
+    "explanation": "联系的观点和发展的观点是唯物辩证法的总特征；对立统一规律是其实质和核心，B、C、D都不是总特征。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 6
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q007",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 7,
+    "stem": "法国科学家巴斯德说：\"在观察事物之际，机遇偏爱有准备的头脑。\"意指（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "人们对每一件事情都要细心观察"
+      },
+      {
+        "key": "B",
+        "text": "人们在认识事物时要有理性的指导"
+      },
+      {
+        "key": "C",
+        "text": "人们获得感性经验的重要性"
+      },
+      {
+        "key": "D",
+        "text": "人们要充分发挥主观能动性"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "人们在认识事物时要有理性的指导",
+    "translation": "",
+    "explanation": "「有准备的头脑」强调理性认识、理论准备的指导作用，即观察事物时要有理性指导，故选B。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 7
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q008",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 8,
+    "stem": "一种认识是不是真理，要看它（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "能否满足人的需要"
+      },
+      {
+        "key": "B",
+        "text": "能否被多数人认可"
+      },
+      {
+        "key": "C",
+        "text": "能否付诸实践"
+      },
+      {
+        "key": "D",
+        "text": "能否在实践中最终取得预期效果"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "能否在实践中最终取得预期效果",
+    "translation": "",
+    "explanation": "检验真理的唯一标准是实践及其取得的预期效果；满足需要、多数人认可都不是真理标准，认识本身也不能检验自己。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 8
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "OCR 冲突：number（A 路「第8题=「一种认识是不是真理，要看它」；卷面把巴斯德名言题重复印了两个第7题」/ B 路「第8题=巴斯德名言题（与第7题题干、选项完全相同）；「真理」题为第9题」）",
+      "OCR 冲突：options.B（A 路「能否被多数人认可」/ B 路「能否被大多数人认可」）"
+    ]
+  },
+  {
+    "id": "marxism-2-q009",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 9,
+    "stem": "国家垄断资本主义的产生和发展，从根本上说是（ ） C 垄断统治加强的结果 D 生产社会化和资本主义私人占有制之间的矛盾发展的结果",
+    "options": [
+      {
+        "key": "A",
+        "text": "国内市场竞争的结果"
+      },
+      {
+        "key": "B",
+        "text": "国际竞争激烈化的结果"
+      },
+      {
+        "key": "C",
+        "text": "垄断统治加强的结果"
+      },
+      {
+        "key": "D",
+        "text": "生产社会化和资本主义私人占有制之间的矛盾发展的结果"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "生产社会化和资本主义私人占有制之间的矛盾发展的结果",
+    "translation": "",
+    "explanation": "根本原因在于生产社会化与资本主义私人占有之间矛盾的发展，即资本主义基本矛盾。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 9
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「国家垄断资本主义的产生和发展，从根本上说是（ ）  A. 国内市场竞争的结果  B. 国际竞争激烈化的结果」/ B 路「一种认识是不是真理，要看它（ ）  A. 能否满足人的需要  B. 能否被大多数人认可  C. 能否付诸实践  D. 能否在实践中最终取得预期效果」）",
+      "页首片段已并入（39 字），请与页图核对"
+    ]
+  },
+  {
+    "id": "marxism-2-q010",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 10,
+    "stem": "古人说：“白马非马”这种说法的错误在于割裂了（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "矛盾的斗争性和同一性的关系"
+      },
+      {
+        "key": "B",
+        "text": "矛盾的普遍性和特殊性的关系"
+      },
+      {
+        "key": "C",
+        "text": "主要矛盾和次要矛盾的关系"
+      },
+      {
+        "key": "D",
+        "text": "矛盾的主要方面和次要方面的关系"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "矛盾的普遍性和特殊性的关系",
+    "translation": "",
+    "explanation": "“白马”是特殊，“马”是普遍，该说法把普遍与特殊割裂，故选B（矛盾的普遍性和特殊性的关系）。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 10
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q011",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 11,
+    "stem": "社会主义实现由空想到科学发展的标志是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "《共产党宣言》的发表"
+      },
+      {
+        "key": "B",
+        "text": "“共产主义者同盟”的建立"
+      },
+      {
+        "key": "C",
+        "text": "空想社会主义理想的破灭"
+      },
+      {
+        "key": "D",
+        "text": "无产阶级革命的胜利"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "《共产党宣言》的发表",
+    "translation": "",
+    "explanation": "《共产党宣言》的发表标志着科学社会主义的诞生，社会主义由空想变为科学，选A。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 11
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q012",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 12,
+    "stem": "劳动力商品的使用价值的特点是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "能够转移自身价值"
+      },
+      {
+        "key": "B",
+        "text": "能够创造比自身价值更大的价值"
+      },
+      {
+        "key": "C",
+        "text": "随使用价值消失，价值也消失"
+      },
+      {
+        "key": "D",
+        "text": "只是生产商品的使用价值"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "能够创造比自身价值更大的价值",
+    "translation": "",
+    "explanation": "劳动力商品的使用价值能创造出比自身价值更大的价值，这正是剩余价值的源泉，选B。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 12
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q013",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 13,
+    "stem": "“防微杜渐”的哲学依据是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "对立统一规律"
+      },
+      {
+        "key": "B",
+        "text": "否定之否定规律"
+      },
+      {
+        "key": "C",
+        "text": "质量互变规律"
+      },
+      {
+        "key": "D",
+        "text": "矛盾普遍性和特殊性辩证关系原理"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "质量互变规律",
+    "translation": "",
+    "explanation": "防微杜渐强调量的积累达到一定程度必然引起质变，依据是质量互变规律，选C。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 13
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q014",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 14,
+    "stem": "资本主义的生产过程是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "劳动过程和价值增殖过程的统一"
+      },
+      {
+        "key": "B",
+        "text": "劳动过程和价值形成过程的统一"
+      },
+      {
+        "key": "C",
+        "text": "价值形成过程和价值增殖过程的统一"
+      },
+      {
+        "key": "D",
+        "text": "价值转移过程和价值形成过程的统一"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "劳动过程和价值增殖过程的统一",
+    "translation": "",
+    "explanation": "资本主义生产过程具有二重性，是劳动过程和价值增殖过程的统一，选A；B是一般商品生产过程。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 14
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q015",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 15,
+    "stem": "商品的本质属性是：（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "使用价值"
+      },
+      {
+        "key": "B",
+        "text": "交换价值"
+      },
+      {
+        "key": "C",
+        "text": "价值"
+      },
+      {
+        "key": "D",
+        "text": "价格"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "价值",
+    "translation": "",
+    "explanation": "价值是凝结在商品中的无差别人类劳动，是商品的社会属性即本质属性；使用价值是自然属性，选C。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 15
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-2-q016",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 16,
+    "stem": "在商品经济运行中，价值、价格和供求三者之间的关系是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "价格受供求关系影响，围绕价格上下波动"
+      },
+      {
+        "key": "B",
+        "text": "价格受价值影响，随供求关系变化而变化"
+      },
+      {
+        "key": "C",
+        "text": "价格由价值决定，反映价值并反映供求关系"
+      },
+      {
+        "key": "D",
+        "text": "价格由价值决定，反映价值，但不反映供求关系"
+      },
+      {
+        "key": "E",
+        "text": "价格由价值决定，受供求关系影响并制约供求关系"
+      }
+    ],
+    "answerKey": "CE",
+    "answerText": "价格由价值决定，反映价值并反映供求关系、价格由价值决定，受供求关系影响并制约供求关系",
+    "translation": "",
+    "explanation": "价值决定价格，价格随供求变化并制约供求，C、E正确；A错在“围绕价格波动”，B、D表述有误。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 16
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "multi",
+    "multiAnswer": true,
+    "reviewNotes": [
+      "OCR 冲突：options.A（多项选择题第1题）（A 路「价格受供求关系影响，围绕价格上下波动」/ B 路「价格受供求关系影响，围绕价格上下波动（B路自报应改为「围绕价值上下波动」）」）"
+    ]
+  },
+  {
+    "id": "marxism-2-q017",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 17,
+    "stem": "资本主义社会生产剩余价值的最基本的方法是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "绝对剩余价值生产"
+      },
+      {
+        "key": "B",
+        "text": "一般剩余价值生产"
+      },
+      {
+        "key": "C",
+        "text": "相对剩余价值生产"
+      },
+      {
+        "key": "D",
+        "text": "超额剩余价值生产"
+      },
+      {
+        "key": "E",
+        "text": "劳动力价值的生产"
+      }
+    ],
+    "answerKey": "AC",
+    "answerText": "绝对剩余价值生产、相对剩余价值生产",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 17
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "needs_review",
+    "questionType": "multi",
+    "multiAnswer": true,
+    "reviewNotes": [
+      "OCR 冲突：stem（多项选择题第2题）（A 路「资本主义社会生产剩余价值的最基本的方法是（ ）」/ B 路「资本主义生产剩余价值的最基本的方法是（ ）」）",
+      "OCR 冲突：options.B（多项选择题第2题）（A 路「一般剩余价值生产」/ B 路「一般剩余价值生产（相对剩余价值生产）」）"
+    ]
+  },
+  {
+    "id": "marxism-2-q018",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 18,
+    "stem": "马克思主义产生的直接理论渊源是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "德国古典哲学"
+      },
+      {
+        "key": "B",
+        "text": "英国古典政治经济学"
+      },
+      {
+        "key": "C",
+        "text": "法国空想社会主义"
+      },
+      {
+        "key": "D",
+        "text": "法国启蒙思想"
+      },
+      {
+        "key": "E",
+        "text": "英国的经验论和欧洲大陆的唯理论"
+      }
+    ],
+    "answerKey": "ABC",
+    "answerText": "德国古典哲学、英国古典政治经济学、法国空想社会主义",
+    "translation": "",
+    "explanation": "马克思主义的直接理论来源是德国古典哲学、英国古典政治经济学和法国空想社会主义，选A、B、C。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 18
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-2-q019",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 19,
+    "stem": "社会主义发展史上的几次飞跃（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "19世纪中叶，社会主义从空想到科学的发展"
+      },
+      {
+        "key": "B",
+        "text": "20世纪初，社会主义从理论到制度的建立"
+      },
+      {
+        "key": "C",
+        "text": "社会主义从一国实践发展到多国实践"
+      },
+      {
+        "key": "D",
+        "text": "推动社会进步的力量"
+      },
+      {
+        "key": "E",
+        "text": "社会的物质文明与精神文明建设"
+      }
+    ],
+    "answerKey": "ABC",
+    "answerText": "19世纪中叶，社会主义从空想到科学的发展、20世纪初，社会主义从理论到制度的建立、社会主义从一国实践发展到多国实践",
+    "translation": "",
+    "explanation": "社会主义发展史上的三次飞跃即A、B、C所述；D、E与“飞跃”无关，疑为卷面误排。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 19
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "multi",
+    "multiAnswer": true,
+    "reviewNotes": [
+      "模型标记待复核（置信度 high）"
+    ]
+  },
+  {
+    "id": "marxism-2-q020",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 20,
+    "stem": "辩证的否定是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "事物的外在否定"
+      },
+      {
+        "key": "B",
+        "text": "对旧事物的全盘否定"
+      },
+      {
+        "key": "C",
+        "text": "主观任意的否定"
+      },
+      {
+        "key": "D",
+        "text": "既克服又保留"
+      },
+      {
+        "key": "E",
+        "text": "事物的发展环节和联系环节的统一"
+      }
+    ],
+    "answerKey": "DE",
+    "answerText": "既克服又保留、事物的发展环节和联系环节的统一",
+    "translation": "",
+    "explanation": "辩证否定是事物的自我否定，既克服又保留，是发展环节与联系环节的统一，选D、E。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 20
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-2-q021",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 21,
+    "stem": "在知识经济时代，创造价值的是劳动，而不是知识。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "社会存在和社会意识辩证关系原理：5分 社会存在决定社会意识（适当阐述） 1分 社会意识反映社会存在（适当阐述）。1分 社会意识一旦产生就具有相对独立性，即它在反映社会存在的同时，还有自己的发展形式和规律。主要表现在：三个方面 3分 首先，社会意识与社会存在发展的不平衡性。 其次，社会意识内部各种形式之间相互影响且各有其历史的继承性。 最后，社会意识对社会存在的能动的反作用。 或者 五个方面 3分 第一，社会意识的发展与社会存在的发展具有不完全同步性 第二，社会意识的发展与社会经济的发展有不平衡性 第三，社会意识具有历史继承性 第四，社会意识各种形式间相互影响和相互制约 第五，最突出表现社会意识对社会存在具有能动的反作用 必要性和重要性：5分 正确而充分地发挥社会意识的能动作用，有赖于社会文化建设特别是先进文化的建设。文化是人类社会特有的现象。文化之中蕴含着人类的智慧、价值追求和审美情趣。举凡适应先进生产力发展要求、代表人民群众的长远利益、顺应人类文明发展趋势的文化都能起到促进社会进步和发展的作用。在人类历史发展中，先进文化是有效地解决人类社会生存和发展中各种矛盾的精神武器；在现代，文化与经济和政治相互交融，在综合国力竞争中的地位和作用越来越突出。在当代中国，加强文化建设，充分发挥先进社会意识的能动作用，就要发展和建设中国特色社会主义文化，为我国和全人类的文明进步作出更大贡献。 注：不一定按照原话回答，只要意思对即可。",
+    "translation": "",
+    "explanation": "正确。劳动是价值的唯一源泉，知识本身不创造价值；知识只有通过劳动者的劳动、提高劳动生产率，才能间接影响价值创造。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 21
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "fill"
+  },
+  {
+    "id": "marxism-2-q022",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 22,
+    "stem": "社会实践是检验认识真理性的唯一标准。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "对2分 真理的本性：主观和客观相符合（适当阐述） 2分 实践的特点：直接现实性 1分 注：不一定按照原话回答，只要意思对即可。",
+    "translation": "",
+    "explanation": "正确。真理是主观认识与客观实际的符合，只有把认识付诸社会实践并取得成功，才能检验其真理性；实践具有直接现实性。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 22
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "fill"
+  },
+  {
+    "id": "marxism-2-q023",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 23,
+    "stem": "五、案例分析题。（共10分） 远未成为历史的马克思 镜头一：马克思被西方媒体评为“千年风云人物” 《光明日报》1999年12月30日载：在千年交替之际，西方媒体纷纷推出自己评选的千年风云人物，马克思主义的创始人、无产阶级的伟大导师卡尔·马克思在多家西方媒体评选千年风云人物的活动中名列第一或第二。 镜头二：马克思被德国民众评为“最伟大的德国人” 2003年9月，德国德意志电视二台进行了名为“最伟大的德国人”的调查。11月28日公布的最终的投票结果是：西德战后第一位总理康拉德·阿登纳位居第一、德国基督教新教创始人马丁·路德位居第二，位居第三的是卡尔·马克思。前3名的得票总数分别为：阿登纳57万，马丁·路德52万，马克思50万。 镜头三：马克思被英国媒体评为“全球最伟大的哲学家” 2005年6月，英国广播公司（BBC）广播四频道就“谁是现今英国人心中最伟大的哲学家？”展开调查。最终马克思以27.93%的得票率脱颖而出，被评为最伟大的哲学家。 镜头四：《共产党宣言》入选“改变美国的20本书” 由美国最大连锁书店巴诺（Barnes & Noble）出资创办的《图书》（Book）杂志在其2003年7-8月合刊中，公布了该刊评选出的“改变美国的20本书”。该刊称，他们的初衷是寻找使美国之所以成为美国和美国人之所以成为美国人的书，或者说，是塑造美国性格，让美国人与众不同的书。美国建国前和距今25年之内的作品均不在选择之列。最终《共产党宣言》、《汤姆叔叔的小屋》和“垮掉的一代”的诗歌圣经《嚎叫》共同入选了“改变美国的20本书”。此次入选的20本书中，非美国人的著作仅有三本，分别是《共产党宣言》、《梦的解析》和《就业、利息和货币通论》，但它们无一不是对今日历史影响至为重大的作品。 思考题：\n人类社会过去1000年的历史画卷中，曾出现过灿若繁星般的思想大师，为什么马克思能够在历次评选中高居榜首？",
+    "options": [],
+    "answerKey": "",
+    "answerText": "对2分 劳动是创造价值的唯一源泉。（适当阐述） 2分 知识是生产要素，只有并入生产过程中，才能对劳动发生作用，但不是创造价值的源泉。1分",
+    "translation": "",
+    "explanation": "评分标准：对2分 劳动是创造价值的唯一源泉。（适当阐述） 2分 知识是生产要素，只有并入生产过程中，才能对劳动发生作用，但不是创造价值的源泉。1分",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 23
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "printed",
+    "status": "ready",
+    "questionType": "fill"
+  },
+  {
+    "id": "marxism-2-q024",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 24,
+    "stem": "五、案例分析题。（共10分） 远未成为历史的马克思 镜头一：马克思被西方媒体评为“千年风云人物” 《光明日报》1999年12月30日载：在千年交替之际，西方媒体纷纷推出自己评选的千年风云人物，马克思主义的创始人、无产阶级的伟大导师卡尔·马克思在多家西方媒体评选千年风云人物的活动中名列第一或第二。 镜头二：马克思被德国民众评为“最伟大的德国人” 2003年9月，德国德意志电视二台进行了名为“最伟大的德国人”的调查。11月28日公布的最终的投票结果是：西德战后第一位总理康拉德·阿登纳位居第一、德国基督教新教创始人马丁·路德位居第二，位居第三的是卡尔·马克思。前3名的得票总数分别为：阿登纳57万，马丁·路德52万，马克思50万。 镜头三：马克思被英国媒体评为“全球最伟大的哲学家” 2005年6月，英国广播公司（BBC）广播四频道就“谁是现今英国人心中最伟大的哲学家？”展开调查。最终马克思以27.93%的得票率脱颖而出，被评为最伟大的哲学家。 镜头四：《共产党宣言》入选“改变美国的20本书” 由美国最大连锁书店巴诺（Barnes & Noble）出资创办的《图书》（Book）杂志在其2003年7-8月合刊中，公布了该刊评选出的“改变美国的20本书”。该刊称，他们的初衷是寻找使美国之所以成为美国和美国人之所以成为美国人的书，或者说，是塑造美国性格，让美国人与众不同的书。美国建国前和距今25年之内的作品均不在选择之列。最终《共产党宣言》、《汤姆叔叔的小屋》和“垮掉的一代”的诗歌圣经《嚎叫》共同入选了“改变美国的20本书”。此次入选的20本书中，非美国人的著作仅有三本，分别是《共产党宣言》、《梦的解析》和《就业、利息和货币通论》，但它们无一不是对今日历史影响至为重大的作品。 思考题：\n在东欧剧变、苏联解体、世界社会主义运动出现严重曲折的情况下，马克思先后被评为“千年风云人物”、“最伟大的德国人”和“最伟大的哲学家”给我们什么启示？",
+    "options": [],
+    "answerKey": "",
+    "answerText": "马克思主义具有科学性、实践性和革命性（与时俱进的理论品质、马克思主义学说对人类社会社会发展具有或产生了巨大的促进作用）4分",
+    "translation": "",
+    "explanation": "绝对剩余价值靠延长工作日，相对剩余价值靠提高劳动生产率，二者是剩余价值生产基本方法；超额属相对，其余非基本分类。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 24
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "fill"
+  },
+  {
+    "id": "marxism-2-q025",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 25,
+    "stem": "五、案例分析题。（共10分） 远未成为历史的马克思 镜头一：马克思被西方媒体评为“千年风云人物” 《光明日报》1999年12月30日载：在千年交替之际，西方媒体纷纷推出自己评选的千年风云人物，马克思主义的创始人、无产阶级的伟大导师卡尔·马克思在多家西方媒体评选千年风云人物的活动中名列第一或第二。 镜头二：马克思被德国民众评为“最伟大的德国人” 2003年9月，德国德意志电视二台进行了名为“最伟大的德国人”的调查。11月28日公布的最终的投票结果是：西德战后第一位总理康拉德·阿登纳位居第一、德国基督教新教创始人马丁·路德位居第二，位居第三的是卡尔·马克思。前3名的得票总数分别为：阿登纳57万，马丁·路德52万，马克思50万。 镜头三：马克思被英国媒体评为“全球最伟大的哲学家” 2005年6月，英国广播公司（BBC）广播四频道就“谁是现今英国人心中最伟大的哲学家？”展开调查。最终马克思以27.93%的得票率脱颖而出，被评为最伟大的哲学家。 镜头四：《共产党宣言》入选“改变美国的20本书” 由美国最大连锁书店巴诺（Barnes & Noble）出资创办的《图书》（Book）杂志在其2003年7-8月合刊中，公布了该刊评选出的“改变美国的20本书”。该刊称，他们的初衷是寻找使美国之所以成为美国和美国人之所以成为美国人的书，或者说，是塑造美国性格，让美国人与众不同的书。美国建国前和距今25年之内的作品均不在选择之列。最终《共产党宣言》、《汤姆叔叔的小屋》和“垮掉的一代”的诗歌圣经《嚎叫》共同入选了“改变美国的20本书”。此次入选的20本书中，非美国人的著作仅有三本，分别是《共产党宣言》、《梦的解析》和《就业、利息和货币通论》，但它们无一不是对今日历史影响至为重大的作品。 思考题：\n《共产党宣言》为何能入选“改变美国的20本书”？",
+    "options": [],
+    "answerKey": "",
+    "answerText": "《共产党宣言》具有科学性，对美国社会发展产生重大影响。2分 注：不一定按照原话回答，只要意思对即可。",
+    "translation": "",
+    "explanation": "评分标准：《共产党宣言》具有科学性，对美国社会发展产生重大影响。2分 注：不一定按照原话回答，只要意思对即可。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 25
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "printed",
+    "status": "ready",
+    "questionType": "fill"
+  },
+  {
+    "id": "marxism-2-q026",
+    "category": "marxism-2",
+    "groupId": "marxism-2-g01",
+    "groupTitle": "原理概论（闭卷）",
+    "numberInGroup": 26,
+    "stem": "三、论述题。（共10分）\n运用社会存在和社会意识的辩证关系的原理，说明加强社会主义先进文化建设的必要性和重要性。\n三、论述题。（共10分）」）",
+    "options": [],
+    "answerKey": "",
+    "answerText": "马克思主义没有过时，坚持和发展马克思主义。认真学习马克思主义，把马克思主义作为行动指南。4分",
+    "translation": "",
+    "explanation": "评分标准：马克思主义没有过时，坚持和发展马克思主义。认真学习马克思主义，把马克思主义作为行动指南。4分",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-2.md",
+      "group": "原理概论（闭卷）",
+      "position": 26
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "printed",
+    "status": "needs_review",
+    "questionType": "fill",
+    "reviewNotes": [
+      "OCR 冲突：stem.header（A 路「得分　　　三、论述题。（共10分）」/ B 路「得分　　　（）"
+    ]
+  }
+]

@@ -7,6 +7,14 @@ export type Category =
   | 'computer-2024-final'
   | 'computer-c-exam'
   | 'computer-midterms'
+  | 'computer-2026-midterm'
+  | 'principles-of-marxism-1'
+  | 'marxism-1'
+  | 'marxism-2'
+  | 'marxism-3'
+  | 'marxism-6'
+  | 'marxism-5'
+  | 'marxism-7'
 
 export interface SubBankMeta {
   key: string
@@ -41,6 +49,8 @@ export interface Question {
   }
   status: 'ready' | 'needs_review'
   answerProvenance?: 'none' | 'printed' | 'handwritten' | 'generated'
+  /** 解析的来源：卷面印的 / AI 生成的 / 没有（S3 产出，见 docs §8.5） */
+  explanationSource?: 'printed' | 'generated' | 'none'
   reviewNotes?: string[]
   sourceNotes?: string[]
   subType?: 'kana-to-kanji' | 'kanji-to-kana'
@@ -111,6 +121,8 @@ export interface ActiveSession {
   // 进入刷题页的入口签名（category/mode/group 等 query 的拼接）。
   // 直接刷新页面（无 resume=1）时，用它判断存盘会话是否属于当前入口，从而自动恢复进度。
   entryKey?: string
+  // 这条记录属于哪份试卷（学科 + 子题库/题单 + 标签）。不同试卷的记录分开存，互不覆盖。
+  paperKey?: string
   // 重做错题模式：答对时立即清零 wrongCount、提升 masteryLevel
   wrongRedo?: boolean
 }

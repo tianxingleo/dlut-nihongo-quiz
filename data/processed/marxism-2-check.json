@@ -1,0 +1,16 @@
+{
+  "category": "marxism-2",
+  "md": "data/raw/marxism-2/marxism-2.md",
+  "md_sha256": "bcfd597fc412ffff7d3be6cd1480aa1f446d74f2609be60f03b02769026fb783",
+  "checked_at": "2026-09-23T15:32:43+08:00",
+  "exit_code": 2,
+  "passed": true,
+  "questions": 26,
+  "groups": 1,
+  "parser_kept": 26,
+  "parser_dropped": 0,
+  "hard_errors": [],
+  "warnings": [
+    "带待复核标记 9 处"
+  ]
+}

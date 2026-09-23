@@ -1,0 +1,596 @@
+{
+  "category": "principles-of-marxism-1",
+  "source": "data/raw/principles-of-marxism-1/principles-of-marxism-1.md",
+  "questions": 345,
+  "groups": [
+    "绪论"
+  ],
+  "s5": {
+    "checkedAt": "2026-09-23T01:41:27+08:00",
+    "exitCode": 2,
+    "warnings": [
+      "会被解析端丢弃的题 58 道（占 14.4%） —— 按「丢弃 < 1/5 可上传」放行；这些题不会上站，逐条原因见 report.md 的「字段不完整」表",
+      "带待复核标记 224 处"
+    ]
+  },
+  "explanationSource": {
+    "printed": 0,
+    "generated": 104,
+    "none": 241
+  },
+  "needsReview": [
+    {
+      "id": "principles-of-marxism-1-q008",
+      "notes": [
+        "页首片段已并入（23 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q011",
+      "notes": [
+        "OCR 冲突：options.A（A 路「机器大工业取代场手工业」/ B 路「机器大工业取代工场手工业」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q019",
+      "notes": [
+        "OCR 冲突：options.A（A 路「人工捣毁机器烧毁厂房」/ B 路「工人捣毁机器烧毁厂房」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q025",
+      "notes": [
+        "OCR 冲突：stem（A 路「马克思主义哲学吸取的费尔马哈哲学中的“基本内核”是：」/ B 路「马克思主义哲学吸取的费尔巴哈哲学中的“基本内核”是：」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q026",
+      "notes": [
+        "页首片段已并入（61 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q031",
+      "notes": [
+        "OCR 冲突：stem（判断题9）（A 路「生产关系起决定作用的是生产资料的所有制形式。」/ B 路「生产关系中所起决定作用的是生产资料的所有制形式。」）",
+        "OCR 冲突：stem（选择题9）（A 路「形成商品价值的抽象劳动是：」/ B 路「形成商品价值的抽象劳动是：（」）",
+        "疑似跨页断题，未能自动拼接",
+        "选项不足 2 个（0）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q032",
+      "notes": [
+        "页首片段已并入（93 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q037",
+      "notes": [
+        "OCR 冲突：options.B（A 路「人的差别主要取决于后天的的主观努力程度」/ B 路「人的差别主要取决于后天的主观努力程度」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q039",
+      "notes": [
+        "OCR 冲突：stem（A 路「二元论的错误在于： ( )」/ B 路「二元论的错误在于：」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q041",
+      "notes": [
+        "OCR 冲突：stem（A 路「商品经济得以产生的历史条件有： ( )」/ B 路「商品经济得以产生的历史条件有：」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q069",
+      "notes": [
+        "页首片段已并入（32 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q070",
+      "notes": [
+        "页首片段已并入（73 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q074",
+      "notes": [
+        "OCR 冲突：options.C（A 路「改革只在社会主义社会里存在」/ B 路「改革只存在于社会主义社会里存在」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q137",
+      "notes": [
+        "OCR 冲突：options.B（A 路「至多是考察了杰出人物、领袖人物或其他重要历史人物在历史变迁中的作用，而没有能客观地说明人民群众创造历史的活动及其意义」/ B 路「至多是考察了杰出人物、领袖人物或其他重要历史人物在历史变迁中的作用，而没能客观地说明人民群众创造历史的活动及其意义」）",
+        "OCR 冲突：options.C（A 路「看到了科学技术对人类社会发展的积极作用，没有看其消极的影响」/ B 路「看到了科学技术对人类社会发展的积极作用，没有看到其消极的影响」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q144",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q146",
+      "notes": [
+        "OCR 冲突：stem（A 路「“社会上一旦有技术上的需要，则这种需要会比十所大学更能把科学推向前进。”这句话最好地说明：（ ）」/ B 路「\"社会上一旦有技术上的需要，则这种需要会比十所大学更能把科学推向前进。\"这句话最好地说明：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q147",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q151",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q156",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q157",
+      "notes": [
+        "OCR 冲突：stem（A 路「马克思说：“无论哪一种社会形态，在它所能容纳的全部生产力发挥出来以前，是决不会灭亡的；而新的更高的生产关系，在它存在的物质条件在旧社会的胞胎里成熟」/ B 路「马克思说：“无论哪一种社会形态，在它所能容纳的全部生产力发挥出来以前，是决不会灭亡的；而新的更高的生产关系，在它的物质存在条件在旧社会的胎胞里成熟」）",
+        "页首片段已并入（124 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q158",
+      "notes": [
+        "OCR 冲突：stem（A 路「“物体是不依赖我们思想的东西，与空间的某个部分相合或具有同样的广延。”这种物质观是：（ ）」/ B 路「\"物体是不依赖我们思想的东西，与空间的某个部分相合或具有同样的广延。\"这种物质观是：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q159",
+      "notes": [
+        "OCR 冲突：options.D（A 路「认识的“源”与“流”的关系」/ B 路「认识的\"源\"与\"流\"的关系」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q161",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q164",
+      "notes": [
+        "OCR 冲突：stem（A 路「“从物到感觉和思想”与“从思想和感觉到物”的对立，属于：（ ）」/ B 路「\"从物到感觉和思想\"与\"从思想和感觉到物\"的对立，属于：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q166",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q169",
+      "notes": [
+        "OCR 冲突：stem（A 路「马克思指出：“观念的东西不外是移入人的头脑并在人的头脑中改造过的物质的东西而已。”这表明：（ ）」/ B 路「马克思指出：\"观念的东西不外是移入人的头脑并在人的头脑中改造过的物质的东西而已。\"这表明：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q173",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q175",
+      "notes": [
+        "OCR 冲突：stem（A 路「马克思指出：“如果物没有用，那么其中包含的劳动也就没有用，不能算作劳动，因此不形成价值。”这段话说明：」/ B 路「马克思指出：\"如果物没有用，那么其中包含的劳动也就没有用，不能算作劳动，因此不形成价值。\"这段话说明：」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q176",
+      "notes": [
+        "OCR 冲突：options.D（A 路「交换价值是价值的表观形式」/ B 路「交换价值是价值的表现形式」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q177",
+      "notes": [
+        "OCR 冲突：stem（A 路「鲁迅说过：“天才们无论怎样说大话，还是不能凭空创造，描神画鬼，毫无对证，本可以专靠神思，所谓‘天马行空’地挥写了。然而他们写出来的却是三只眼、长颈子，也就是在正常的人体身上增加一只眼，拉长了脖子二三尺而已。”这段话说明，人们头脑中的鬼神观念：（ ）」/ B 路「鲁迅说过：\"天才们无论怎样说大话，还是不能凭空创造，描神画鬼，毫无对证，本可以专靠神思，所谓'天马行空'地挥写了。然而他们写出来的却是三只眼、长颈子，也就是在正常的人体身上增加一只眼，拉长了脖子二三尺而已。\"这段话说明，人们头脑中的鬼神观念：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q179",
+      "notes": [
+        "OCR 冲突：options.B（A 路「认识是不朽的灵魂对“理念世界的回忆”」/ B 路「认识是不朽的灵魂对\"理念世界的回忆\"」）",
+        "页首片段已并入（31 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q181",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q183",
+      "notes": [
+        "OCR 冲突：stem（A 路「马克思说：“一切商品对它们的所有者是非使用价值，对它们的非所有者是使用价值。”这句话表明：」/ B 路「马克思说：\"一切商品对它们的所有者是非使用价值，对它们的非所有者是使用价值。\"这句话表明：」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q187",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q189",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q195",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q197",
+      "notes": [
+        "页首片段已并入（101 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q203",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q204",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q206",
+      "notes": [
+        "OCR 冲突：options.A（A 路「人类社会的发展是合规规律性与合目的性的统一」/ B 路「人类社会的发展是合规律性与合目的性的统一」）",
+        "疑似跨页断题，未能自动拼接",
+        "答案 ACD 不在选项里"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q211",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q212",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q216",
+      "notes": [
+        "OCR 冲突：stem（A 路「“坐地日行八万里，巡天遥看一千河”，这一诗句包含的哲理是：（ ）」/ B 路「\"坐地日行八万里，巡天遥看一千河\"，这一诗句包含的哲理是：（ ）」）",
+        "页首片段已并入（30 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q218",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q219",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q222",
+      "notes": [
+        "OCR 冲突：options.B（A 路「自觉地促进社会生产关系变革」/ B 路「自发地促进社会生产关系变革」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q225",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q226",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q227",
+      "notes": [
+        "OCR 冲突：options.C（A 路「生产中人与人的关系」/ B 路「在生产中人与人的关系」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q232",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q233",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q236",
+      "notes": [
+        "页首片段已并入（94 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q238",
+      "notes": [
+        "OCR 冲突：options.D（A 路「（无此行，A～C 后即结束）」/ B 路「D. [图片中未显示]」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q239",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q240",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q242",
+      "notes": [
+        "OCR 冲突：options.C（A 路「复杂劳动为尺度的」/ B 路「个别劳动为尺度的」）",
+        "OCR 冲突：options.D（A 路「个别劳动为尺度的」/ B 路「社会必要劳动为尺度的」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q245",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q246",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q251",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q252",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q262",
+      "notes": [
+        "OCR 冲突：options.A（A 路「形而上学唯物主义的观点」/ B 路「形而上学的观点」）",
+        "OCR 冲突：stem（A 路「……而是凭借少量的事实的启发，通过创造性联想……」/ B 路「……而是凭借少量的事实启发，通过创造性联想……」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q263",
+      "notes": [
+        "页首片段已并入（33 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q268",
+      "notes": [
+        "OCR 冲突：options.A（A 路「意识形态」/ B 路「社会意识形态」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q274",
+      "notes": [
+        "OCR 冲突：options.C（A 路「商品经济社会的共同存在的现象」/ B 路「商品经济社会共同存在的现象」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q283",
+      "notes": [
+        "OCR 冲突：options.C（A 路「有何种种政体就有何种种国体」/ B 路「有何种政体就有何种国体」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q292",
+      "notes": [
+        "OCR 冲突：stem（A 路「……中国大部分地区由封建社会未资本主义社会直接过渡到社会主义社会，而西藏、云南等部分小少数民族地区却直接由奴隶社会直接进入社会主义社会。」/ B 路「……中国大部分地区由封建社会未经过资本主义社会直接过渡到社会主义社会，而西藏、云南等部分少数民族地区却直接由奴隶社会直接进入社会主义社会。」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q293",
+      "notes": [
+        "页首片段已并入（59 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q297",
+      "notes": [
+        "OCR 冲突：stem（A 路「31、剩余价值的源泉是：」/ B 路「31、剩余价值的源泉是：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q301",
+      "notes": [
+        "OCR 冲突：stem（A 路「32、资本主义生产方式的绝对规律是：」/ B 路「32、资本主义生产方式的绝对规律是：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q305",
+      "notes": [
+        "OCR 冲突：stem（A 路「33、\"纺纱机是纺棉花的机器。只有在一定的关系下，它才成为资本。\"可见，资本从本质上讲是：」/ B 路「33、“纺纱机是纺棉花的机器。只有在一定的关系下，它才成为资本。”可见，资本从本质上讲是：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q309",
+      "notes": [
+        "OCR 冲突：stem（A 路「34、马克思区分不变资本和可变资本的依据是：」/ B 路「34、马克思区分不变资本和可变资本的依据是：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q311",
+      "notes": [
+        "OCR 冲突：options.A（A 路「主观唯心主义真理论」/ B 路「主观唯心主义真理观」）",
+        "OCR 冲突：options.B（A 路「辩证唯物主义真理论」/ B 路「辩证唯物主义真理观」）",
+        "OCR 冲突：options.D（A 路「形而上学真理论」/ B 路「形而上学真理理论」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q312",
+      "notes": [
+        "页首片段已并入（51 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q313",
+      "notes": [
+        "OCR 冲突：stem（A 路「35、马克思把在剩余价值生产中以生产资料形式存在的资本称为：」/ B 路「35、马克思把在剩余价值生产中以生产资料形式存在的资本称为：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q317",
+      "notes": [
+        "OCR 冲突：stem（A 路「36、用来购买劳动力的资本称为：」/ B 路「36、用来购买劳动力的资本称为：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q318",
+      "notes": [
+        "页首片段已并入（36 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q321",
+      "notes": [
+        "OCR 冲突：stem（A 路「37、生产成本掩盖了资本主义的剥削，是因为抹杀了：」/ B 路「37、生产成本掩盖了资本主义的剥削，是因为抹杀了：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q325",
+      "notes": [
+        "OCR 冲突：stem（A 路「38、以劳动力形式存在的的那部分资本被称为可变资本是因为：」/ B 路「38、以劳动力形式存在的的那部分资本被称为可变资本是因为：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q327",
+      "notes": [
+        "OCR 冲突：stem（A 路「“当一个杰出的老科学家说什么是不可能的时候，他差不多总是对的；但当他说什么是不可能的时，他差不多总是错的。”这一名言的哲学意蕴是：（ ）」/ B 路「“当一个杰出的老科学家说什么是不可能的时候，他差不多总是对的；但当他说什么是不可能的时候，他差不多总是错的。”这一名言的哲学意蕴是：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q329",
+      "notes": [
+        "OCR 冲突：stem（A 路「39、生产剩余价值的两种基本方法是：」/ B 路「39、生产剩余价值的两种基本方法是：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q333",
+      "notes": [
+        "OCR 冲突：stem（A 路「40、促使资本家竞相改进技术的直接动因是：」/ B 路「40、促使资本家竞相改进技术的直接动因是：（ ）」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q337",
+      "notes": [
+        "页首片段已并入（70 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q339",
+      "notes": [
+        "页首片段已并入（34 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q341",
+      "notes": [
+        "OCR 冲突：options.D（A 路「先进的机器设备」/ B 路「工人剩余劳动创造的全部价值」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q356",
+      "notes": [
+        "页首片段已并入（51 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q366",
+      "notes": [
+        "页首片段已并入（51 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q374",
+      "notes": [
+        "OCR 冲突：options.D（A 路「人在规律面前是无所谓作为的」/ B 路「人在规律面前是无所谓为的」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q378",
+      "notes": [
+        "OCR 冲突：options.B（A 路「自然规律自发地盲目地起作用，社会规律是通过人们有意识地活动来实现的」/ B 路「自然规律自发地盲目地起作用，社会规律是通过人们有意识的活动来实现的」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q382",
+      "notes": [
+        "OCR 冲突：stem（A 路「……在劳动者的表象中存在着，……」/ B 路「……在劳动者的表象中存在著，……」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q386",
+      "notes": [
+        "OCR 冲突：options.D（A 路「劳动力转移的生产资料价值和新创造的价值的比例」/ B 路「劳动力转移的生产资料价值和新创造的价值比例」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q388",
+      "notes": [
+        "OCR 冲突：options.D（A 路「社会化生产和生产资料资本主义私人占有的矛盾」/ B 路「生产社会化和生产资料资本主义私人占有的矛盾」）"
+      ]
+    },
+    {
+      "id": "principles-of-marxism-1-q392",
+      "notes": [
+        "OCR 冲突：options.B（A 路「生产不足的经济危机；」/ B 路「生产不足的经济危机」）"
+      ]
+    }
+  ],
+  "numberGaps": [
+    "74→76",
+    "83→137",
+    "234→236",
+    "284→286",
+    "384→386",
+    "399→401"
+  ]
+}

@@ -1,0 +1,1302 @@
+[
+  {
+    "id": "marxism-7-q001",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 1,
+    "stem": "马克思主义理论三个组成部分思想的第一次综合表述是在（ ）中",
+    "options": [
+      {
+        "key": "A",
+        "text": "《德意志意识形态》"
+      },
+      {
+        "key": "B",
+        "text": "《关于费尔巴哈的提纲》"
+      },
+      {
+        "key": "C",
+        "text": "《共产党宣言》"
+      },
+      {
+        "key": "D",
+        "text": "《资本论》"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "《共产党宣言》",
+    "translation": "",
+    "explanation": "《共产党宣言》第一次全面系统阐述马克思主义三个组成部分，标志马克思主义诞生。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 1
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q002",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 2,
+    "stem": "唯物辩证法的观点和总特征是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "世界统一于物质"
+      },
+      {
+        "key": "B",
+        "text": "矛盾的普遍性"
+      },
+      {
+        "key": "C",
+        "text": "联系的观点和发展的观点"
+      },
+      {
+        "key": "D",
+        "text": "对立统一规律"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "联系的观点和发展的观点",
+    "translation": "",
+    "explanation": "联系的观点和发展的观点是唯物辩证法的总特征；对立统一规律是其实质与核心。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 2
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q003",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 3,
+    "stem": "质量互变规律揭示了事物发展的（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "方向和道路"
+      },
+      {
+        "key": "B",
+        "text": "形式和状态"
+      },
+      {
+        "key": "C",
+        "text": "结构和功能"
+      },
+      {
+        "key": "D",
+        "text": "源泉和动力"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "形式和状态",
+    "translation": "",
+    "explanation": "质量互变规律揭示事物发展的形式和状态；否定之否定揭示方向道路，对立统一揭示源泉动力。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 3
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q004",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 4,
+    "stem": "西周史伯有句名言：\"和实生物，同则不继\"，这句话反映的是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "矛盾的普遍性和特殊性的辩证关系"
+      },
+      {
+        "key": "B",
+        "text": "矛盾的同一性和斗争性的辩证关系"
+      },
+      {
+        "key": "C",
+        "text": "矛盾的地位和作用不平衡"
+      },
+      {
+        "key": "D",
+        "text": "两点论和重点论的统一"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "矛盾的同一性和斗争性的辩证关系",
+    "translation": "",
+    "explanation": "“和”指不同事物对立统一、相互结合而产生新事物，体现矛盾同一性和斗争性的辩证关系。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 4
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q005",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 5,
+    "stem": "马克思恩格斯在谈到空想社会主义的时代局限性时指出：空想社会主义的不成熟的理论，\"是同不成熟的资本主义生产状况、不成熟的阶级状况相适应的。解决问题的办法还隐藏在不发达的经济关系中，所以只能从头脑中产生出来。\"这一分析主要运用了（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "阶级分析法"
+      },
+      {
+        "key": "B",
+        "text": "历史分析法"
+      },
+      {
+        "key": "C",
+        "text": "矛盾分析法"
+      },
+      {
+        "key": "D",
+        "text": "群众路线的方法"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "历史分析法",
+    "translation": "",
+    "explanation": "把空想社会主义放到不成熟的资本主义生产状况和阶级状况中考察，属于历史分析法。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 5
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q006",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 6,
+    "stem": "区分不变资本与可变资本的依据是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "资本在剩余价值实现中所起的不同作用"
+      },
+      {
+        "key": "B",
+        "text": "资本的价值周转方式的不同"
+      },
+      {
+        "key": "C",
+        "text": "资本在剩余价值生产中所起的不同作用"
+      },
+      {
+        "key": "D",
+        "text": "资本的价值补偿方式的不同"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "资本在剩余价值生产中所起的不同作用",
+    "translation": "",
+    "explanation": "不变资本不改变价值量，可变资本带来剩余价值，区分依据是在剩余价值生产中的作用。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 6
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q007",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 7,
+    "stem": "社会存在是指社会的物质生活条件，它有多方面的内容，其中最能集中体现人类社会性质的是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "社会形态"
+      },
+      {
+        "key": "B",
+        "text": "地理环境"
+      },
+      {
+        "key": "C",
+        "text": "人口因素"
+      },
+      {
+        "key": "D",
+        "text": "生产方式"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "生产方式",
+    "translation": "",
+    "explanation": "生产方式是社会历史发展的决定力量，集中体现人类社会物质生活条件及其性质。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 7
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q008",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 8,
+    "stem": "劳动力商品的使用价值的特点是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "能够转移自身价值"
+      },
+      {
+        "key": "B",
+        "text": "能够创造比自身价值更大的价值"
+      },
+      {
+        "key": "C",
+        "text": "随使用价值消失，价值也消失"
+      },
+      {
+        "key": "D",
+        "text": "只是生产商品的使用价值"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "能够创造比自身价值更大的价值",
+    "translation": "",
+    "explanation": "劳动力使用价值的特殊性在于能创造出大于自身价值的价值，即剩余价值。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 8
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q009",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 9,
+    "stem": "辩证的否定是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "事物的内在否定"
+      },
+      {
+        "key": "B",
+        "text": "对旧事物的全盘否定"
+      },
+      {
+        "key": "C",
+        "text": "主观任意的否定"
+      },
+      {
+        "key": "D",
+        "text": "既克服又保留"
+      },
+      {
+        "key": "E",
+        "text": "事物的发展环节和联系环节的统一"
+      }
+    ],
+    "answerKey": "ADE",
+    "answerText": "事物的内在否定、既克服又保留、事物的发展环节和联系环节的统一",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 9
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-7-q010",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 10,
+    "stem": "同一棵大树，在木匠的眼中是木材，画家看到的是色彩和色调，植物学家看到的是它的形态特征，这是由于（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "人的感觉受理性指导"
+      },
+      {
+        "key": "B",
+        "text": "理性认识是感性认识的基础"
+      },
+      {
+        "key": "C",
+        "text": "意识建构认识对象"
+      },
+      {
+        "key": "D",
+        "text": "已有的认识影响感觉活动"
+      },
+      {
+        "key": "E",
+        "text": "人的认识具有能动性"
+      }
+    ],
+    "answerKey": "ACDE",
+    "answerText": "人的感觉受理性指导、意识建构认识对象、已有的认识影响感觉活动、人的认识具有能动性",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 10
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-7-q011",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 11,
+    "stem": "唯物史观认为，现实的人在本质上是一切社会关系的总和。它表明（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "人的本质属性是社会属性"
+      },
+      {
+        "key": "B",
+        "text": "人的本质属性表现在各种社会关系中"
+      },
+      {
+        "key": "C",
+        "text": "人的本质是变化、发展的"
+      },
+      {
+        "key": "D",
+        "text": "个人与社会是统一的"
+      },
+      {
+        "key": "E",
+        "text": "具有不同社会属性的个人或群体在历史发展中的作用是不同的"
+      }
+    ],
+    "answerKey": "ABCDE",
+    "answerText": "人的本质属性是社会属性、人的本质属性表现在各种社会关系中、人的本质是变化、发展的、个人与社会是统一的、具有不同社会属性的个人或群体在历史发展中的作用是不同的",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 11
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-7-q012",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 12,
+    "stem": "矛盾分析法包含广泛而深刻的内容，（ ）都是矛盾分析法的具体体现。",
+    "options": [
+      {
+        "key": "A",
+        "text": "分析矛盾特殊性的方法"
+      },
+      {
+        "key": "B",
+        "text": "\"两点论\"与\"重点论\"相结合的方法"
+      },
+      {
+        "key": "C",
+        "text": "抓关键、看主流的方法"
+      },
+      {
+        "key": "D",
+        "text": "批判与继承相统一的方法"
+      },
+      {
+        "key": "E",
+        "text": "在对立中把握同一与在同一中把握对立的方法"
+      }
+    ],
+    "answerKey": "ABCDE",
+    "answerText": "分析矛盾特殊性的方法、\"两点论\"与\"重点论\"相结合的方法、抓关键、看主流的方法、批判与继承相统一的方法、在对立中把握同一与在同一中把握对立的方法",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 12
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-7-q013",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 13,
+    "stem": "关于《共产党宣言》的七篇序言，下列表述正确的是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "阐明了贯穿《宣言》的基本思想是唯物史观"
+      },
+      {
+        "key": "B",
+        "text": "强调了《宣言》的任务就是宣告现代资产阶级所有制必然灭亡"
+      },
+      {
+        "key": "C",
+        "text": "结合各个国家的不同条件，指明了无产阶级革命和民族解放运动的前进方向"
+      },
+      {
+        "key": "D",
+        "text": "指出不管情况发生多大的变化，《宣言》所阐述的一般原理整个说来是完全正确的，而这些原理的实际运用，随时随地都要以当时的历史条件为转移"
+      },
+      {
+        "key": "E",
+        "text": "这七篇序言对于我们全面深刻地把握《宣言》的理论精髓具有极其重要的意义"
+      }
+    ],
+    "answerKey": "ABCDE",
+    "answerText": "阐明了贯穿《宣言》的基本思想是唯物史观、强调了《宣言》的任务就是宣告现代资产阶级所有制必然灭亡、结合各个国家的不同条件，指明了无产阶级革命和民族解放运动的前进方向、指出不管情况发生多大的变化，《宣言》所阐述的一般原理整个说来是完全正确的，而这些原理的实际运用，随时随地都要以当时的历史条件为转移、这七篇序言对于我们全面深刻地把握《宣言》的理论精髓具有极其重要的意义",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 13
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "needs_review",
+    "questionType": "multi",
+    "multiAnswer": true,
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「指出不管情况发生多大的变化，《宣言》所阐述的一般原理整个说来是完全正确的，而这些原理的实际运用，随时随地都要以当时的历史条件为转移」/ B 路「指出不管情况发生多大的变化，《宣言》所阐述的一般原理整个说来是完全正确的，而这些原理的实际运用，随时随地都要以受时的历史条件为转移」）"
+    ]
+  },
+  {
+    "id": "marxism-7-q014",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 14,
+    "stem": "人民群众和英雄人物共同创造历史。（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 14
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "ready",
+    "questionType": "judgement"
+  },
+  {
+    "id": "marxism-7-q015",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 15,
+    "stem": "《共产党宣言》是无产阶级运动的革命纲领，因此通篇都能看出对资本主义和资产阶级的批判。（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 15
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "ready",
+    "questionType": "judgement"
+  },
+  {
+    "id": "marxism-7-q016",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 16,
+    "stem": "因为政治上层建筑是在一定的意识形态指导下建立的，所以意识形态在上层建筑中居主导地位。（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 16
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "ready",
+    "questionType": "judgement"
+  },
+  {
+    "id": "marxism-7-q017",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 17,
+    "stem": "国家垄断资本主义的产生是垄断资本主义生产关系的部分质变。（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 17
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "ready",
+    "questionType": "judgement"
+  },
+  {
+    "id": "marxism-7-q018",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 18,
+    "stem": "\"无人工厂\"的出现说明科学技术已成为独立的剩余价值源泉。（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 18
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "needs_review",
+    "questionType": "judgement",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「指出不管情况发生多大的变化，《宣言》所阐述的一般原理整个说来是完全正确的，而这些原理的实际运用，随时随地都要以当时的历史条件为转移」/ B 路「指出不管情况发生多大的变化，《宣言》所阐述的一般原理整个说来是完全正确的，而这些原理的实际运用，随时随地都要以受时的历史条件为转移」）"
+    ]
+  },
+  {
+    "id": "marxism-7-q019",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 19,
+    "stem": "出星系大爆炸的新信息，比如超新星爆发，黑洞和中子星的融合。\n**等待了50年的新发现**\n引力波无法通过电磁辐射直接观测，它与宇宙中物质的相互作用也极为微弱，因此连爱因斯坦都认为引力波在任何能想象的情况下都可以忽略，是很难测量的。探测引力波在很长一段时间内被视为“不可能完成的任务”。但科学家们依然对此充满着好奇，希望能够找到引力波，补上广义相对论讨论缺少的这块“拼图”。\n20世纪60年代，美国马里兰大学的约瑟夫·韦伯（Joseph Weber）认为寻找引力波需要的技术条件可能已经具备，并试图寻找合适的探测方法但未能成功。20世纪90年代，麻省理工学院物理学教授雷纳·韦斯（Rainer Weiss）领导的“激光干涉引力波天文台”项目得到了美国国家科学基金的资助。2015年9月14日，天文台的两台探测器同时观测到了引力波信号。科学家们花了几个月的时间进行验证，最终确认探测到的就是引力波信号，并于2016年2月11日正式公布。\n这个信号来自双黑洞系统的合并。在两个黑洞相互接近绕转的过程中，会不断朝外辐射引力波，而引力波的辐射会把两个黑洞之间的引力势能降低，所以两个黑洞的距离会变小。随着两个黑洞的距离变小，它们之间相互绕转的频率会变得更快，最终两个黑洞碰撞并合在了一起。这一过程会放出大量的引力波能量，其威力相当惊人，整个空间都在颤动。这一颤动也在13亿年后传到了地球——这就是科学家目前探测到的引力波。\n引力波探测的成功，为人类观察宇宙提供了一个崭新的窗口。可以预计，未来更多的双黑洞事件，会让我们更清晰地了解黑洞附近的时空几何，更令人期待的是，一些未知源的引力波也可能被探测到。\n2016年6月16日凌晨，美国和欧洲的两个引力波探测项目的研究人员在美国加利福尼亚州圣迭戈宣布，他们“非常清晰”地再次直接探测到“时空涟漪”——引力波的存在。\n第一个引力波事件因为只持续了0.2秒，因此这些信号是否就是引力波，在科技界也引起了一些争议。第二次观测到引力波事件更加有力地回应了质疑。因为这次筛选数据的方法和第一次很不一样，对两个事件的互相印证起到很重要的作用。第一次引力波事件的信号很短，但很强，在数据中非常突出，研究人员比较容易发现。但第二次两个黑洞的质量比较小，引力波的信号强度低了很多，但也正因为它们质量小，并合的过程慢一些，信号持续时间比较长。两次明确探测到引力波信号表明，引力波并非偶然事件，未来将有可能继续探测到中子星等其他天体在碰撞过程中产生的引力波。\n引力波直接探测的实现，有力地证明了引力波的真实存在，爱因斯坦的广义相对论预言由此最终得以验证。\n2017年10月16日晚22时，包括我国在内的多国科学家宣布，人类第一次直接探测到来自双中子星合并的引力波，并同时“看到”由这一壮观宇宙事件发出的电磁信号。\n引力波的最终证实说明了什么？运用所学马克思主义基本原理予以分析。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "1. 共计10分。 引力波的最终证实说明了实践是检验真理的唯一标准。（2分） 这一标准是由真理的本性和实践的特点决定的。（2分）真理的本性即主观同客观的符合。从真理的本性来看，它要求必须有一个把主观与客观联系起来的“桥梁”和“纽带”。（3分）从实践的特点来看，实践是人们改造世界的客观物质性活动，具有直接现实性特点。（3分）",
+    "translation": "",
+    "explanation": "得分点：实践是检验真理的唯一标准；科学实践证实引力波理论，体现认识能动性和真理绝对性与相对性统一。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 19
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "fill",
+    "reviewNotes": [
+      "OCR 冲突：stem（材料第三段末句）（A 路「最终两个黑洞碰撞并合在了一起。」/ B 路「最终两个黑洞碰撞并合在了一起了。」）",
+      "OCR 冲突：stem（小标题「等待了50年的新发现」与栏目标题「思考讨论」的加粗）（A 路「等待了50年的新发现 / 思考讨论（无加粗）」/ B 路「**等待了50年的新发现** / **思考讨论**（加粗）」）"
+    ]
+  },
+  {
+    "id": "marxism-7-q020",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 20,
+    "stem": "引力波的发现最终证实了广义相对论的正确性。广义相对论是否就是终极真理呢？为什么？",
+    "options": [],
+    "answerKey": "",
+    "answerText": "2. 共计10分。 不是。（2分）因为真理具有绝对性和相对性，但不存在终极真理。真理的绝对性和相对性是辩证统一的。（2分）一方面，真理的绝对性和相对性是互相依存、互相包含。任何真理都既是绝对的、又是相对的。（3分）另一方面，真理的相对性不断向真理的绝对性转化。（3分） 注：要求给两次分数或踩点给分。不一定按照原话回答，只要结合案例分析意思对即可。",
+    "translation": "",
+    "explanation": "不是终极真理。真理是绝对性与相对性统一，认识随实践无限发展；广义相对论仍需继续接受检验和发展。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 20
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "fill",
+    "reviewNotes": [
+      "模型标记待复核（置信度 high）"
+    ]
+  },
+  {
+    "id": "marxism-7-q021",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 21,
+    "stem": "习近平总书记在\"纪念马克思诞辰200周年\"大会上的讲话中指出：\"学习马克思，就要学习和实践马克思主义关于坚守人民立场的思想。人民性是马克思主义最鲜明的品格。我们要始终把人民立场作为根本立场，把为人民谋幸福作为根本使命，坚持全心全意为人民服务的根本宗旨，贯彻群众路线，尊重人民主体地位和首创精神，始终保持同人民群众的血肉联系，凝聚起众志成城的磅礴力量，团结带领人民共同创造历史伟业。\"人民群众在历史发展中起到什么作用？结合所学马克思主义基本原理，谈一谈你对坚持以人民为中心重要性的认识？",
+    "options": [],
+    "answerKey": "",
+    "answerText": "答：人民群众是社会历史实践的主体，在创造历史中起决定性的作用。人民群众创造历史的作用是同社会基本矛盾运动推动社会前进的过程相一致的。人民群众的总体意愿和行动代表了历史发展的方向，人民群众的社会实践最终决定历史发展的结局。 人民群众是社会物质财富的创造者。人民群众是社会精神财富的创造者。人民群众是社会变革的决定力量。人民群众创造历史的活动受到一定社会历史条件的制约。10分 以习近平同志为核心的党中央提出坚持以人民为中心的思想，创造性地运用和发展了唯物史观关于人民群众创造历史的基本原理。坚持以人民为中心的思想，鲜明地体现了马克思主义政党的政治立场和执政理念，体现了共产党人的价值取向和工作导向。坚持以人民为中心的思想，站在时代和历史的高度，总结和概括了人民群众在中国特色社会主义实践中的伟大创造作用和主体地位，充分反映和顺应了人民群众的根本利益诉求，深刻阐明了中国共产党作为执政党的历史使命，进一步明确了实现人民对美好生活向往的奋斗目标。10分 注：要求给两次小分或踩点给分。不一定按照原话回答，只要答对意思即可。",
+    "translation": "",
+    "explanation": "得分点：人民群众是历史主体和创造者，决定历史结局；坚持以人民为中心是唯物史观和党的宗旨要求，是力量源泉。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 21
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "fill"
+  },
+  {
+    "id": "marxism-7-q023",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 23,
+    "stem": "荀子说：“天行有常，不为尧存，不为桀亡。”这是一种（　）观点",
+    "options": [
+      {
+        "key": "A",
+        "text": "宿命论"
+      },
+      {
+        "key": "B",
+        "text": "唯意志论"
+      },
+      {
+        "key": "C",
+        "text": "机械唯物论"
+      },
+      {
+        "key": "D",
+        "text": "朴素唯物论"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "朴素唯物论",
+    "translation": "",
+    "explanation": "荀子承认天行有常即自然规律客观，不因尧桀改变，属古代朴素唯物论；非宿命论、唯意志论或机械唯物论。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 22
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q024",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 24,
+    "stem": "否认思维和存在的同一性的哲学是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "唯心主义"
+      },
+      {
+        "key": "B",
+        "text": "唯物主义"
+      },
+      {
+        "key": "C",
+        "text": "二元论"
+      },
+      {
+        "key": "D",
+        "text": "不可知论"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "不可知论",
+    "translation": "",
+    "explanation": "思维和存在同一性指思维能否认识存在；否认可知性即不可知论；二元论不等同于直接否认同一性。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 23
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q025",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 25,
+    "stem": "马克思主义的活的灵魂是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "一切从实际出发"
+      },
+      {
+        "key": "B",
+        "text": "主观能动性和客观规律性相统一"
+      },
+      {
+        "key": "C",
+        "text": "具体问题具体分析"
+      },
+      {
+        "key": "D",
+        "text": "实践是检验真理的唯一标准"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "具体问题具体分析",
+    "translation": "",
+    "explanation": "列宁称具体问题具体分析是马克思主义活的灵魂；一切从实际出发是根本要求，实践标准是真理观。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 24
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q026",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 26,
+    "stem": "人类社会的基本矛盾是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "社会存在和社会意识之间的矛盾"
+      },
+      {
+        "key": "B",
+        "text": "社会物质生产和社会精神生产之间的矛盾"
+      },
+      {
+        "key": "C",
+        "text": "生产和消费之间的矛盾"
+      },
+      {
+        "key": "D",
+        "text": "生产力和生产关系、经济基础和上层建筑之间的矛盾"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "生产力和生产关系、经济基础和上层建筑之间的矛盾",
+    "translation": "",
+    "explanation": "人类社会基本矛盾是生产力与生产关系、经济基础与上层建筑两对矛盾；A只讲社会存在与意识关系。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 25
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q027",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 27,
+    "stem": "商品的价值量由生产商品的社会必要劳动时间决定，它在（　）中实现",
+    "options": [
+      {
+        "key": "A",
+        "text": "同类商品的生产者之间的竞争"
+      },
+      {
+        "key": "B",
+        "text": "不同商品的生产者之间的竞争"
+      },
+      {
+        "key": "C",
+        "text": "商品生产者和消费者之间的竞争"
+      },
+      {
+        "key": "D",
+        "text": "商品生产者和销售者之间的竞争"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "同类商品的生产者之间的竞争",
+    "translation": "",
+    "explanation": "社会必要劳动时间由部门内部同类生产者竞争形成并决定价值量；不同部门竞争形成平均利润和生产价格。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 26
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q028",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 28,
+    "stem": "垄断价格形成后，价值规律改变了（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "内容"
+      },
+      {
+        "key": "B",
+        "text": "作用"
+      },
+      {
+        "key": "C",
+        "text": "表现形式"
+      },
+      {
+        "key": "D",
+        "text": "作用后果"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "表现形式",
+    "translation": "",
+    "explanation": "垄断价格形成后价值规律仍支配价格，只是价格波动表现为垄断价格，故改变的是表现形式而非内容作用。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 27
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q029",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 29,
+    "stem": "列宁得出社会主义可能在一国或数国首先取得胜利的结论，依据是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "资本主义必然灭亡、社会主义和共产主义必然胜利的规律"
+      },
+      {
+        "key": "B",
+        "text": "帝国主义时代资本主义政治经济发展不平衡的规律"
+      },
+      {
+        "key": "C",
+        "text": "资本主义国家无产阶级与资产阶级斗争的规律"
+      },
+      {
+        "key": "D",
+        "text": "无产阶级是最先进、最革命的阶级的原理"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "帝国主义时代资本主义政治经济发展不平衡的规律",
+    "translation": "",
+    "explanation": "列宁依据帝国主义时代资本主义政治经济发展不平衡规律，认为社会主义可在薄弱环节一国或数国首先胜利。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 28
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q030",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 30,
+    "stem": "“有用就是真理”这句话违背了（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "真理的绝对性"
+      },
+      {
+        "key": "B",
+        "text": "真理的相对性"
+      },
+      {
+        "key": "C",
+        "text": "真理的客观性"
+      },
+      {
+        "key": "D",
+        "text": "真理的价值性"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "真理的客观性",
+    "translation": "",
+    "explanation": "“有用即真理”以主观效用代替客观标准，违背真理的客观性；真理有用因其正确，非因有用才真理。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 29
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q031",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 31,
+    "stem": "资本积累的源泉是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "雇佣工人的劳动"
+      },
+      {
+        "key": "B",
+        "text": "资本家的储蓄"
+      },
+      {
+        "key": "C",
+        "text": "剩余价值"
+      },
+      {
+        "key": "D",
+        "text": "科学技术"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "剩余价值",
+    "translation": "",
+    "explanation": "资本积累是剩余价值资本化，源泉是剩余价值；雇佣劳动创造剩余价值，储蓄和科技不是积累源泉。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 30
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q032",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 32,
+    "stem": "未来共产主义社会是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "独立国家联合体"
+      },
+      {
+        "key": "B",
+        "text": "独立个人联合体"
+      },
+      {
+        "key": "C",
+        "text": "自由组织联合体"
+      },
+      {
+        "key": "D",
+        "text": "自由人的联合体"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "自由人的联合体",
+    "translation": "",
+    "explanation": "共产主义社会是自由人的联合体，《宣言》称每个人自由发展是一切人自由发展的条件；非国家联合体或独立个人联合体。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 31
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q033",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 33,
+    "stem": "《共产党宣言》核心的基本思想是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "每一个历史时代的经济生产以及必然由此产生的社会结构，是该时代政治历史和精神历史赖以确立的基础"
+      },
+      {
+        "key": "B",
+        "text": "革命是推动阶级社会发展的直接动力"
+      },
+      {
+        "key": "C",
+        "text": "资产阶级必然灭亡无产阶级必然胜利"
+      },
+      {
+        "key": "D",
+        "text": "建立共产主义社会是马克思主义最崇高的社会理想"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "每一个历史时代的经济生产以及必然由此产生的社会结构，是该时代政治历史和精神历史赖以确立的基础",
+    "translation": "",
+    "explanation": "《宣言》序言概括核心基本思想为唯物史观：经济生产及社会结构是政治和精神历史基础；其余非核心基本思想。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 32
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-7-q034",
+    "category": "marxism-7",
+    "groupId": "marxism-7-g01",
+    "groupTitle": "马克思主义基本原理（A）",
+    "numberInGroup": 34,
+    "stem": "生产力中最活跃的因素是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "生产资料"
+      },
+      {
+        "key": "B",
+        "text": "劳动对象"
+      },
+      {
+        "key": "C",
+        "text": "劳动者"
+      },
+      {
+        "key": "D",
+        "text": "科学技术"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "劳动者",
+    "translation": "",
+    "explanation": "劳动者是生产力中最活跃的主导因素；生产工具是客观尺度，科学技术是渗透性要素而非最活跃因素。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-7.md",
+      "group": "马克思主义基本原理（A）",
+      "position": 33
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  }
+]

@@ -489,7 +489,8 @@ export async function clearAllData(): Promise<void> {
     await db.questionStats.clear()
     await db.tagStats.clear()
     await db.sessions.clear()
-    // 清除 settings 中的 activeSession，避免恢复不存在的会话
+    // 清除会话记录（按试卷分开存的那张表 + 旧版单条），避免恢复不存在的会话
     await db.settings.delete('activeSession')
+    await db.settings.delete('activeSessions')
   })
 }
