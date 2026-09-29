@@ -1,0 +1,17 @@
+{
+  "category": "principles-of-marxism-1",
+  "md": "data/raw/principles-of-marxism-1/principles-of-marxism-1.md",
+  "md_sha256": "5bd493a714def58e491677bfede3cdf1d7393b550ae298e5f9859564778d110e",
+  "checked_at": "2026-09-23T01:41:27+08:00",
+  "exit_code": 2,
+  "passed": true,
+  "questions": 403,
+  "groups": 1,
+  "parser_kept": 345,
+  "parser_dropped": 58,
+  "hard_errors": [],
+  "warnings": [
+    "会被解析端丢弃的题 58 道（占 14.4%） —— 按「丢弃 < 1/5 可上传」放行；这些题不会上站，逐条原因见 report.md 的「字段不完整」表",
+    "带待复核标记 224 处"
+  ]
+}

@@ -11,7 +11,10 @@ export interface SettingsMap {
   activeCategory: Category
   darkMode: boolean
   dailyGoal: number
+  /** 旧版全站单条会话记录，仅用于迁移读取，迁移后置空 */
   activeSession: import('./question').ActiveSession | null
+  /** 按「学科 + 子题库/题单」分开存的会话记录表：paperKey → 未完成的会话 */
+  activeSessions: Record<string, import('./question').ActiveSession>
   aiConfig: AIConfig | null
   aiEnabled: boolean
 }

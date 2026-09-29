@@ -18,9 +18,20 @@ const banks = [
   { key: 'history', file: 'history-question-bank.json' },
   { key: 'party', file: 'party-question-bank.json' },
   { key: 'military', file: 'military-question-bank.json' },
-  ...['computer-2021-final', 'computer-2024-final', 'computer-c-exam', 'computer-midterms'].map(
-    (key) => ({ key, file: `${key}-question-bank.json` }),
-  ),
+  ...[
+    'computer-2021-final',
+    'computer-2024-final',
+    'computer-2026-midterm',
+    'computer-c-exam',
+    'computer-midterms',
+    'marxism-1',
+    'marxism-2',
+    'marxism-3',
+    'marxism-5',
+    'marxism-6',
+    'marxism-7',
+    'principles-of-marxism-1',
+  ].map((key) => ({ key, file: `${key}-question-bank.json` })),
 ]
 
 const meta = {}

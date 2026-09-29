@@ -1,0 +1,38 @@
+{
+  "category": "marxism-3",
+  "source": "data/raw/marxism-3/marxism-3.md",
+  "questions": 26,
+  "groups": [
+    "马克思主义基本原理概论"
+  ],
+  "s5": {
+    "checkedAt": "2026-09-23T15:32:50+08:00",
+    "exitCode": 2,
+    "warnings": [
+      "会被解析端丢弃的题 1 道（占 3.7%） —— 按「丢弃 < 1/5 可上传」放行；这些题不会上站，逐条原因见 report.md 的「字段不完整」表",
+      "带待复核标记 3 处"
+    ]
+  },
+  "explanationSource": {
+    "printed": 6,
+    "generated": 20,
+    "none": 0
+  },
+  "needsReview": [
+    {
+      "id": "marxism-3-q003",
+      "notes": [
+        "OCR 冲突：options.B（A 路「矛盾的对面立又统一又斗争的观点」/ B 路「矛盾的对面又统一又斗争的观点」）"
+      ]
+    },
+    {
+      "id": "marxism-3-q008",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    }
+  ],
+  "numberGaps": [
+    "15→17"
+  ]
+}

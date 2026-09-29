@@ -1,0 +1,43 @@
+{
+  "category": "marxism-1",
+  "source": "data/raw/marxism-1/marxism-1.md",
+  "questions": 22,
+  "groups": [
+    "大连理工大学"
+  ],
+  "s5": {
+    "checkedAt": "2026-09-23T15:32:31+08:00",
+    "exitCode": 2,
+    "warnings": [
+      "会被解析端丢弃的题 4 道（占 15.4%） —— 按「丢弃 < 1/5 可上传」放行；这些题不会上站，逐条原因见 report.md 的「字段不完整」表",
+      "带待复核标记 8 处"
+    ]
+  },
+  "explanationSource": {
+    "printed": 0,
+    "generated": 22,
+    "none": 0
+  },
+  "needsReview": [
+    {
+      "id": "marxism-1-q008",
+      "notes": [
+        "OCR 冲突：options.D（A 路「历史唯物主义的观点」/ B 路「历史唯物论的观点」）",
+        "OCR 冲突：answerKey（A 路「D（两路卷末答案汇总：6-10 DDDCD，第8题为 D）」/ B 路「C（B 路在第8题题干后标注“答案：C”）」）"
+      ]
+    },
+    {
+      "id": "marxism-1-q009",
+      "notes": [
+        "页首片段已并入（23 字），请与页图核对"
+      ]
+    },
+    {
+      "id": "marxism-1-q014",
+      "notes": [
+        "OCR 冲突：options.D（A 路「生产社会化和资本主义私人占有制之间矛盾发展的结果」/ B 路「生产社会化和资本主义私人占有之间矛盾发展的结果」）"
+      ]
+    }
+  ],
+  "numberGaps": []
+}

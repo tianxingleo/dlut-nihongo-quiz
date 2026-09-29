@@ -1,0 +1,905 @@
+[
+  {
+    "id": "marxism-1-q001",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 1,
+    "stem": "马克思主义认为，物质的唯一特性是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "实体性"
+      },
+      {
+        "key": "B",
+        "text": "客观的规律性"
+      },
+      {
+        "key": "C",
+        "text": "内部的矛盾性"
+      },
+      {
+        "key": "D",
+        "text": "客观实在性"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "客观实在性",
+    "translation": "",
+    "explanation": "物质的唯一特性是客观实在性；实体性、规律性、矛盾性都是物质的表现或属性，不是“唯一特性”。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 1
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q002",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 2,
+    "stem": "\"心诚则灵，心不诚则不灵\"的说法是（ ）的观点",
+    "options": [
+      {
+        "key": "A",
+        "text": "主张物质和意识具有统一性的辩证唯物主义"
+      },
+      {
+        "key": "B",
+        "text": "主张思想就是物质的庸俗唯物主义"
+      },
+      {
+        "key": "C",
+        "text": "认为世界是绝对精神外化的客观唯心主义"
+      },
+      {
+        "key": "D",
+        "text": "夸大了意识能动作用的唯心主义"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "夸大了意识能动作用的唯心主义",
+    "translation": "",
+    "explanation": "该说法把“心诚”当作灵验与否的根源，无限夸大意识能动作用，属主观唯心主义。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 2
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q003",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 3,
+    "stem": "\"一把钥匙开一把锁\"，这句话强调的是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "要承认事物的客观性"
+      },
+      {
+        "key": "B",
+        "text": "要承认事物运动的规律性"
+      },
+      {
+        "key": "C",
+        "text": "要注重分析矛盾的普遍性"
+      },
+      {
+        "key": "D",
+        "text": "要注重分析矛盾的特殊性"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "要注重分析矛盾的特殊性",
+    "translation": "",
+    "explanation": "不同锁有不同结构，需用不同钥匙，说明矛盾各有其特殊性，要具体问题具体分析。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 3
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q004",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 4,
+    "stem": "社会历史的基本问题是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "人类社会发展的总趋势是什么的问题"
+      },
+      {
+        "key": "B",
+        "text": "社会存在和社会意识的关系问题"
+      },
+      {
+        "key": "C",
+        "text": "人类社会发展的根本动力是什么的问题"
+      },
+      {
+        "key": "D",
+        "text": "物质资料生产与人口自身生产关系问题"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "社会存在和社会意识的关系问题",
+    "translation": "",
+    "explanation": "社会存在与社会意识的关系问题是社会历史观的基本问题，是划分历史唯物主义与历史唯心主义的标准。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 4
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q005",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 5,
+    "stem": "未来学家尼葛洛庞蒂说：\"预测未来的最好办法就是把它创造出来。\"从认识与实践的关系看，这句话对我们的启示是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "认识总是滞后于实践"
+      },
+      {
+        "key": "B",
+        "text": "实践是认识的先导"
+      },
+      {
+        "key": "C",
+        "text": "实践高于认识"
+      },
+      {
+        "key": "D",
+        "text": "实践与认识是合一的"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "实践是认识的先导",
+    "translation": "",
+    "explanation": "按卷面答案 B：实践是认识的先导，认识依赖并服务于实践，“把未来创造出来”正体现实践对认识的引领。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 5
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q006",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 6,
+    "stem": "一种认识是不是真理，要看它（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "能否满足人的需要"
+      },
+      {
+        "key": "B",
+        "text": "能否被多数人认可"
+      },
+      {
+        "key": "C",
+        "text": "能否付诸实践"
+      },
+      {
+        "key": "D",
+        "text": "能否在实践中最终取得预期效果"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "能否在实践中最终取得预期效果",
+    "translation": "",
+    "explanation": "检验真理的唯一标准是实践，即看认识能否在实践中达到预期效果；满足需要、多数人认可都不是标准。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 6
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q007",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 7,
+    "stem": "\"人都是自私的\"的观点错误在于它（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "不符合\"人之初，性本善\"的观点"
+      },
+      {
+        "key": "B",
+        "text": "违背人有追求自由、平等、幸福的观点"
+      },
+      {
+        "key": "C",
+        "text": "把人的自然属性当作人的本质"
+      },
+      {
+        "key": "D",
+        "text": "违背了\"人的本质在其现实性上是一切社会关系的总和\"的科学论断"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "违背了\"人的本质在其现实性上是一切社会关系的总和\"的科学论断",
+    "translation": "",
+    "explanation": "人的本质在其现实性上是一切社会关系的总和，自私是后天社会关系的产物，该观点把自然属性当成本质，故错误。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 7
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q008",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 8,
+    "stem": "\"任何英雄人物的历史作用都不能超出他们所处的历史条件所许可的范围\"。这种看法是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "宿命论的观点"
+      },
+      {
+        "key": "B",
+        "text": "机械论的观点"
+      },
+      {
+        "key": "C",
+        "text": "历史循环论的观点"
+      },
+      {
+        "key": "D",
+        "text": "历史唯物主义的观点"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "历史唯物主义的观点",
+    "translation": "",
+    "explanation": "该观点承认杰出人物的历史作用受社会历史条件制约，符合历史唯物主义关于个人历史作用受条件限制的原理。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 8
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「历史唯物主义的观点」/ B 路「历史唯物论的观点」）",
+      "OCR 冲突：answerKey（A 路「D（两路卷末答案汇总：6-10 DDDCD，第8题为 D）」/ B 路「C（B 路在第8题题干后标注“答案：C”）」）"
+    ]
+  },
+  {
+    "id": "marxism-1-q009",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 9,
+    "stem": "商品的本质属性是（ ） A.使用价值 B.交换价值 C.价值 D.价格",
+    "options": [
+      {
+        "key": "A",
+        "text": "使用价值"
+      },
+      {
+        "key": "B",
+        "text": "交换价值"
+      },
+      {
+        "key": "C",
+        "text": "价值"
+      },
+      {
+        "key": "D",
+        "text": "价格"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "价值",
+    "translation": "",
+    "explanation": "价值是凝结的无差别人类劳动，体现商品生产者交换劳动的社会关系，是商品的社会属性；使用价值是自然属性，交换价值、价格是其表现。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 9
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "页首片段已并入（23 字），请与页图核对"
+    ]
+  },
+  {
+    "id": "marxism-1-q010",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 10,
+    "stem": "马克思通过对资本主义生产中价值增值过程分析，把雇佣工人劳动时间分为( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "生产使用价值时间和生产价值时间"
+      },
+      {
+        "key": "B",
+        "text": "生产生产资料价值时间和生产剩余价值时间"
+      },
+      {
+        "key": "C",
+        "text": "转移旧价值时间和创造新价值时间"
+      },
+      {
+        "key": "D",
+        "text": "再生产劳动力价值时间和生产剩余价值时间"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "再生产劳动力价值时间和生产剩余价值时间",
+    "translation": "",
+    "explanation": "雇佣工人劳动时间分为必要劳动时间和剩余劳动时间，即再生产劳动力价值时间和生产剩余价值时间；D准确，其余混淆价值转移与增殖。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 10
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q011",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 11,
+    "stem": "正确反映资本家对工人剥削程度的是( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "剩余价值量的多少"
+      },
+      {
+        "key": "B",
+        "text": "工人工资的多少"
+      },
+      {
+        "key": "C",
+        "text": "剩余价值率的高低"
+      },
+      {
+        "key": "D",
+        "text": "利润率的高低"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "剩余价值率的高低",
+    "translation": "",
+    "explanation": "剩余价值率=m/v，即剩余劳动时间/必要劳动时间，直接反映剥削程度；剩余价值量还受工人人数影响，工资、利润率不直接反映。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 11
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q012",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 12,
+    "stem": "资本主义再生产过程的实质是( )的统一",
+    "options": [
+      {
+        "key": "A",
+        "text": "劳动过程和价值形成过程"
+      },
+      {
+        "key": "B",
+        "text": "劳动过程和价值增殖过程"
+      },
+      {
+        "key": "C",
+        "text": "物质资料再生产与资本主义生产关系再生产"
+      },
+      {
+        "key": "D",
+        "text": "物质资料再生产与劳动力再生产"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "劳动过程和价值增殖过程",
+    "translation": "",
+    "explanation": "资本主义生产以价值增殖为目的，故是劳动过程与价值增殖过程的统一；A缺增殖，C是再生产内容表述，D不完整。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 12
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q013",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 13,
+    "stem": "资本主义经济危机呈现出周期性的原因在于( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "资本主义基本矛盾"
+      },
+      {
+        "key": "B",
+        "text": "资本主义基本矛盾运动的特点"
+      },
+      {
+        "key": "C",
+        "text": "资本主义基本矛盾的不断加深"
+      },
+      {
+        "key": "D",
+        "text": "资本主义再生产的周期性"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "资本主义基本矛盾运动的特点",
+    "translation": "",
+    "explanation": "经济危机根源于资本主义基本矛盾，但其周期性由基本矛盾运动特点决定：危机暂时强制缓和矛盾，之后又激化，故呈周期爆发。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 13
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q014",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 14,
+    "stem": "国家垄断资本主义的产生和发展，从根本上说是( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "国内市场竞争的结果"
+      },
+      {
+        "key": "B",
+        "text": "国际竞争激化的结果"
+      },
+      {
+        "key": "C",
+        "text": "垄断统治加强的结果"
+      },
+      {
+        "key": "D",
+        "text": "生产社会化和资本主义私人占有制之间矛盾发展的结果"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "生产社会化和资本主义私人占有制之间矛盾发展的结果",
+    "translation": "",
+    "explanation": "国家垄断资本主义是私人垄断与国家政权结合，根本原因是生产社会化与资本主义私人占有制矛盾发展，迫使国家干预经济。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 14
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「生产社会化和资本主义私人占有制之间矛盾发展的结果」/ B 路「生产社会化和资本主义私人占有之间矛盾发展的结果」）"
+    ]
+  },
+  {
+    "id": "marxism-1-q015",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 15,
+    "stem": "社会主义实现由空想到科学发展的标志是( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "《共产党宣言》的发表"
+      },
+      {
+        "key": "B",
+        "text": "\"共产主义者同盟\"的建立"
+      },
+      {
+        "key": "C",
+        "text": "空想社会主义理论的破灭"
+      },
+      {
+        "key": "D",
+        "text": "无产阶级革命的胜利"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "《共产党宣言》的发表",
+    "translation": "",
+    "explanation": "1848年《共产党宣言》发表，系统阐述科学社会主义，标志社会主义从空想发展为科学；B是组织条件，C、D不是标志。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 15
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "marxism-1-q016",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 16,
+    "stem": "马克思主义认识论认为，认识的辩证过程是( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "从相对真理到绝对真理的发展"
+      },
+      {
+        "key": "B",
+        "text": "从间接经验到直接经验的转化"
+      },
+      {
+        "key": "C",
+        "text": "实践——认识——实践的无限循环"
+      },
+      {
+        "key": "D",
+        "text": "从抽象到具体再到抽象的上升运动"
+      },
+      {
+        "key": "E",
+        "text": "从感性认识到理性认识，再从理性认识到实践"
+      }
+    ],
+    "answerKey": "ACE",
+    "answerText": "从相对真理到绝对真理的发展、实践——认识——实践的无限循环、从感性认识到理性认识，再从理性认识到实践",
+    "translation": "",
+    "explanation": "认识过程包括感性到理性、理性到实践，实践—认识—实践无限循环，真理由相对向绝对发展；B颠倒经验，D方向错。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 16
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-1-q017",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 17,
+    "stem": "经济基础和上层建筑的辩证关系主要表现在( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "上层建筑不能先于经济基础产生"
+      },
+      {
+        "key": "B",
+        "text": "上层建筑的变化决定经济基础的变化"
+      },
+      {
+        "key": "C",
+        "text": "经济基础决定上层建筑的产生、性质和发展变化"
+      },
+      {
+        "key": "D",
+        "text": "上层建筑反作用于经济基础并为它服务"
+      },
+      {
+        "key": "E",
+        "text": "经济基础与上层建筑相互作用构成矛盾运动"
+      }
+    ],
+    "answerKey": "CDE",
+    "answerText": "经济基础决定上层建筑的产生、性质和发展变化、上层建筑反作用于经济基础并为它服务、经济基础与上层建筑相互作用构成矛盾运动",
+    "translation": "",
+    "explanation": "经济基础决定上层建筑的产生、性质与变化；上层建筑反作用并服务经济基础；二者相互作用构成矛盾运动。A、B均颠倒决定关系。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 17
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-1-q018",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 18,
+    "stem": "马克思恩格斯最重要的理论贡献是( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "辩证法"
+      },
+      {
+        "key": "B",
+        "text": "劳动价值论"
+      },
+      {
+        "key": "C",
+        "text": "唯物史观"
+      },
+      {
+        "key": "D",
+        "text": "剩余价值学说"
+      },
+      {
+        "key": "E",
+        "text": "唯心史观"
+      }
+    ],
+    "answerKey": "CD",
+    "answerText": "唯物史观、剩余价值学说",
+    "translation": "",
+    "explanation": "唯物史观和剩余价值学说使社会主义从空想变科学，是马恩两大发现；辩证法与劳动价值论有贡献但非最重要，E错误。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 18
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-1-q019",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 19,
+    "stem": "资本主义社会生产剩余价值最基本的方法是( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "绝对剩余价值生产"
+      },
+      {
+        "key": "B",
+        "text": "一般剩余价值生产"
+      },
+      {
+        "key": "C",
+        "text": "相对剩余价值生产"
+      },
+      {
+        "key": "D",
+        "text": "超额剩余价值生产"
+      },
+      {
+        "key": "E",
+        "text": "劳动力价值的生产"
+      }
+    ],
+    "answerKey": "AC",
+    "answerText": "绝对剩余价值生产、相对剩余价值生产",
+    "translation": "",
+    "explanation": "剩余价值生产两种基本方法：绝对剩余价值靠延长工作日，相对剩余价值靠提高劳动生产率；超额剩余价值属相对剩余价值范畴。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 19
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-1-q020",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 20,
+    "stem": "下列态度中，违背辩证法的否定观的有( )",
+    "options": [
+      {
+        "key": "A",
+        "text": "对传统文化批判地继承的态度"
+      },
+      {
+        "key": "B",
+        "text": "对传统文化全盘继承的态度"
+      },
+      {
+        "key": "C",
+        "text": "对外国文化有分析、有批判的借鉴和吸收的态度"
+      },
+      {
+        "key": "D",
+        "text": "对外国文化照搬照抄的态度"
+      },
+      {
+        "key": "E",
+        "text": "对传统文化和外国文化全盘抛弃的态度"
+      }
+    ],
+    "answerKey": "BDE",
+    "answerText": "对传统文化全盘继承的态度、对外国文化照搬照抄的态度、对传统文化和外国文化全盘抛弃的态度",
+    "translation": "",
+    "explanation": "辩证法否定是扬弃，既克服又保留。全盘继承、照搬照抄、全盘抛弃都否认分析批判，属形而上学否定观；ACE正确。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 20
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "multi",
+    "multiAnswer": true
+  },
+  {
+    "id": "marxism-1-q021",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 21,
+    "stem": "三、辨析题。运用马克思主义的基本原理，判断下列各题的对错，并说明理由。\n社会实践是检验认识真理性的唯一标准",
+    "options": [],
+    "answerKey": "",
+    "answerText": "给一次小分即可 对 2分 这是由真理的本性和实践的特点决定的。 真理的本性：主观和客观相符合 实践的特点：直接现实性。3分",
+    "translation": "",
+    "explanation": "正确。真理的本性和实践的特点决定了只有实践才能把主观认识同客观实际联系起来加以比较、对照，检验认识是否具有真理性；实践是检验认识真理性的唯一标准。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 21
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "fill"
+  },
+  {
+    "id": "marxism-1-q022",
+    "category": "marxism-1",
+    "groupId": "marxism-1-g01",
+    "groupTitle": "大连理工大学",
+    "numberInGroup": 22,
+    "stem": "相对生产过剩是资本主义经济危机爆发的根本原因",
+    "options": [],
+    "answerKey": "",
+    "answerText": "错 2分 资本主义基本矛盾是资本主义经济危机爆发的根本原因。2分 生产的社会化和生产资料的资本主义私人占有制是资本主义基本矛盾。1分 注：不一定按照原话回答，只要意思对即可。",
+    "translation": "",
+    "explanation": "错误。生产相对过剩是资本主义经济危机的本质特征或直接表现，其根本原因是生产社会化和生产资料资本主义私人占有之间的矛盾。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "marxism-1.md",
+      "group": "大连理工大学",
+      "position": 22
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "fill"
+  }
+]

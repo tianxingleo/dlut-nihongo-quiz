@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute, RouterLink } from 'vue-router'
 import {
   useActiveCategory,
@@ -17,10 +17,15 @@ import type { Category } from './types/question'
 import SearchOverlay from './components/layout/SearchOverlay.vue'
 import TreeNav from './components/layout/TreeNav.vue'
 import ToastContainer from './components/ui/ToastContainer.vue'
+import { routeEntryKey } from './utils/routeEntry'
 
 const router = useRouter()
 const route = useRoute()
 const routeKey = ref(0)
+// 同路径但入口参数变了（例如刷题页完成页的「只刷错题」再进 /quiz）必须重挂载页面组件，
+// 否则组件被复用、onMounted 不再执行，按钮点了没反应。
+// routeEntryKey 会把 fresh 排除掉，避免组件挂载后自己抹掉 fresh 时又触发一次重挂载。
+const routeEntry = computed(() => routeEntryKey(route.query))
 const activeCategory = useActiveCategory()
 const activeSubBank = useActiveSubBankKey()
 const searchOpen = ref(false)
@@ -227,7 +232,7 @@ async function handleSearchNavigate(questionId: string) {
     <main class="main" id="main-content">
       <router-view v-slot="{ Component }">
         <transition name="page-fade" mode="out-in">
-          <component :is="Component" :key="routeKey" />
+          <component :is="Component" :key="`${routeKey}:${routeEntry}`" />
         </transition>
       </router-view>
     </main>

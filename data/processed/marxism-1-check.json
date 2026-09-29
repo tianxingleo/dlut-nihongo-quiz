@@ -1,0 +1,17 @@
+{
+  "category": "marxism-1",
+  "md": "data/raw/marxism-1/marxism-1.md",
+  "md_sha256": "1374c3c30e354a544a827c3e3b2c461fefd3cf25c12bbb5419428196a107c3b9",
+  "checked_at": "2026-09-23T15:32:31+08:00",
+  "exit_code": 2,
+  "passed": true,
+  "questions": 26,
+  "groups": 1,
+  "parser_kept": 22,
+  "parser_dropped": 4,
+  "hard_errors": [],
+  "warnings": [
+    "会被解析端丢弃的题 4 道（占 15.4%） —— 按「丢弃 < 1/5 可上传」放行；这些题不会上站，逐条原因见 report.md 的「字段不完整」表",
+    "带待复核标记 8 处"
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "category": "marxism-6",
+  "source": "data/raw/marxism-6/marxism-6.md",
+  "questions": 34,
+  "groups": [
+    "马克思主义基本原理"
+  ],
+  "s5": {
+    "checkedAt": "2026-09-23T15:35:52+08:00",
+    "exitCode": 2,
+    "warnings": [
+      "会被解析端丢弃的题 5 道（占 12.8%） —— 按「丢弃 < 1/5 可上传」放行；这些题不会上站，逐条原因见 report.md 的「字段不完整」表",
+      "带待复核标记 32 处"
+    ]
+  },
+  "explanationSource": {
+    "printed": 3,
+    "generated": 31,
+    "none": 0
+  },
+  "needsReview": [
+    {
+      "id": "marxism-6-q001",
+      "notes": [
+        "OCR 冲突：number（A 路「五」/ B 路「（未标注）」）",
+        "OCR 冲突：stem（A 路「对于加快建设建设同样也能够适用」/ B 路「对于加快经济建设同样也能够适用」）",
+        "OCR 冲突：stem（A 路「决放出颗更大的」/ B 路「决意放出一颗更大的」）",
+        "OCR 冲突：stem（A 路「从城管和三乐两个大队」/ B 路「从城关和三乐两个大队」）",
+        "OCR 冲突：stem（A 路「红旗公社城管大队」/ B 路「红旗公社城关大队」）",
+        "OCR 冲突：stem（A 路「就将喷雾器改成小型的热风机」/ B 路「就将喷雾器改装成小型的热风机」）",
+        "OCR 冲突：stem（A 路「催交征购粮仍没有放」/ B 路「催征征购粮仍没有放」）",
+        "疑似跨页断题，未能自动拼接"
+      ]
+    },
+    {
+      "id": "marxism-6-q002",
+      "notes": [
+        "OCR 冲突：options.D（A 路「客观现实性」/ B 路「客观实在性」）"
+      ]
+    },
+    {
+      "id": "marxism-6-q017",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q018",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q019",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q020",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q021",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q022",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q023",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q024",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q025",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q026",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "marxism-6-q027",
+      "notes": [
+        "OCR 冲突：stem（A 路「坚持解放思想和实事求是是有机统一」/ B 路「坚持解放思想和实事求是相统一」）"
+      ]
+    },
+    {
+      "id": "marxism-6-q033",
+      "notes": [
+        "OCR 冲突：stem（A 路「恩格斯认为，全部哲学，特别是近代哲学的重大基本问题是（ ）」/ B 路「恩格斯认为，全部哲学，特别是近代哲学的重大的基本问题是（ ）」）"
+      ]
+    }
+  ],
+  "numberGaps": [
+    "11→17"
+  ]
+}

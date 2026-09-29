@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useHiddenSite } from '../composables/useHiddenSite'
 import {
@@ -17,10 +17,10 @@ import {
 } from '../services/reviewScheduler'
 import { db } from '../db/database'
 import {
-  loadActiveSession,
   clearActiveSession,
-  isSessionInProgress,
-  type ActiveSession,
+  pickSessionForScope,
+  pruneInactiveSessions,
+  type ActiveSessionMap,
 } from '../services/sessionResume'
 import { getDailyAttemptCount, getSetting, resetQuestionStats } from '../db/database'
 import {
@@ -62,7 +62,13 @@ const mastery = ref({ mastered: 0, learning: 0, weak: 0, untouched: 0 })
 const wrongIds = ref<string[]>([])
 const untouchedIds = ref<string[]>([])
 const reviewDueIds = ref<string[]>([])
-const activeSession = ref<ActiveSession | null>(null)
+/** 所有未完成的会话记录：paperKey → 会话（不同试卷分开存） */
+const activeSessionMap = ref<ActiveSessionMap>({})
+/** 当前展示的那条记录属于哪份试卷 */
+const activeSessionKey = ref('')
+const activeSession = computed(() =>
+  activeSessionKey.value ? (activeSessionMap.value[activeSessionKey.value] ?? null) : null,
+)
 const streak = ref(0)
 const dailyGoal = ref(30)
 const dailyDone = ref(0)
@@ -80,6 +86,93 @@ const groupStats = ref<
     }
   >
 >({})
+
+/** 掌握程度四段的顺序与中文名，进度条与下方标尺共用 */
+const MASTERY_FIELDS = [
+  { key: 'mastered', label: '已掌握' },
+  { key: 'learning', label: '学习中' },
+  { key: 'weak', label: '薄弱' },
+  { key: 'untouched', label: '未做' },
+] as const
+
+/** 标尺单行高度，以及同行相邻标签之间要求的最小水平间距（px） */
+const RULER_ROW_HEIGHT = 18
+const RULER_LABEL_GAP = 10
+
+/** 估算标签渲染宽度：全角字 12px、数字等半角 7px、空格 3.5px（对应 12px 字号），略高估更安全 */
+function estimateLabelWidth(label: string, value: number): number {
+  let width = 0
+  for (const ch of `${label} ${value}`) {
+    width += ch === ' ' ? 3.5 : ch.charCodeAt(0) > 0xff ? 12 : 7
+  }
+  return width
+}
+
+/**
+ * 给标尺标签分行：先按分段占比算出每个标签的中心点，若与同行上一个标签挨得太近，
+ * 就落到下一行，避免过窄的相邻分段把两个数字挤在一起。
+ * width <= 0（还没测量到标尺宽度）时全部放在第一行。
+ */
+function layoutMasteryRuler<T extends { label: string; value: number }>(
+  items: T[],
+  width: number,
+): { items: (T & { row: number; top: number })[]; height: number } {
+  if (!items.length) return { items: [], height: 0 }
+  if (width <= 0) {
+    return { items: items.map((item) => ({ ...item, row: 0, top: 0 })), height: RULER_ROW_HEIGHT }
+  }
+  const total = items.reduce((sum, item) => sum + item.value, 0)
+  const rowRight: number[] = []
+  let placed = 0
+  const laid = items.map((item) => {
+    const center = total > 0 ? ((placed + item.value / 2) / total) * width : 0
+    const half = estimateLabelWidth(item.label, item.value) / 2
+    let row = rowRight.findIndex((right) => right + RULER_LABEL_GAP <= center - half)
+    if (row < 0) {
+      row = rowRight.length
+      rowRight.push(Number.NEGATIVE_INFINITY)
+    }
+    rowRight[row] = center + half
+    placed += item.value
+    return { ...item, row, top: row * RULER_ROW_HEIGHT }
+  })
+  return { items: laid, height: rowRight.length * RULER_ROW_HEIGHT }
+}
+
+/** 标尺实际像素宽度，用于分行判定；ResizeObserver 让它在容器宽度变化后跟着更新 */
+const rulerEl = ref<HTMLElement | null>(null)
+const rulerWidth = ref(0)
+let rulerObserver: ResizeObserver | null = null
+
+watch(rulerEl, (el) => {
+  rulerObserver?.disconnect()
+  rulerObserver = null
+  if (!el) return
+  rulerWidth.value = el.clientWidth
+  if (typeof ResizeObserver === 'undefined') return
+  rulerObserver = new ResizeObserver((entries) => {
+    const width = entries[0]?.contentRect.width ?? 0
+    if (width !== rulerWidth.value) rulerWidth.value = width
+  })
+  rulerObserver.observe(el)
+})
+
+onBeforeUnmount(() => rulerObserver?.disconnect())
+
+/**
+ * 标尺只列出数量大于 0 的分段：每个槽与同名进度条分段共用同一 flex 权重，
+ * 所以数字落在自己色块正下方；数量为 0 的分段没有色块可依附，标签也就不显示。
+ */
+const masteryRuler = computed(() =>
+  layoutMasteryRuler(
+    MASTERY_FIELDS.map((field) => ({
+      key: field.key,
+      label: field.label,
+      value: mastery.value[field.key],
+    })).filter((item) => item.value > 0),
+    rulerWidth.value,
+  ),
+)
 
 async function refresh() {
   loading.value = true
@@ -174,9 +267,14 @@ async function refresh() {
     }
     groupStats.value = next
 
-    const saved = await loadActiveSession()
-    activeSession.value = isSessionInProgress(saved) ? saved : null
-    if (saved && !isSessionInProgress(saved)) await clearActiveSession()
+    // 会话记录按试卷分开存：这里只挑「当前正在看的这套题」的那条来展示
+    const sessions = await pruneInactiveSessions()
+    const picked = pickSessionForScope(sessions, {
+      category: cat,
+      groups: currentSubBank.value?.groupOrder ?? null,
+    })
+    activeSessionMap.value = sessions
+    activeSessionKey.value = picked?.key ?? ''
 
     // 每日目标
     dailyGoal.value = await getSetting(STORAGE_KEYS.DAILY_GOAL, 30)
@@ -234,13 +332,36 @@ function startGroupQuiz(
 }
 
 function resumeSession() {
-  router.push({ path: '/quiz', query: { resume: '1' } })
+  router.push({ path: '/quiz', query: { resume: '1', paper: activeSessionKey.value } })
 }
 
-async function discardSession() {
-  await clearActiveSession()
-  activeSession.value = null
+/** 有存盘会话就续上；没有就当新练习开始：随机顺序、从头开始 */
+function continueOrStart() {
+  if (activeSession.value) resumeSession()
+  else startQuiz('random')
 }
+
+/** 只清掉当前这套题的记录，别的试卷的进度不受影响 */
+async function discardSession() {
+  const key = activeSessionKey.value
+  if (!key) return
+  await clearActiveSession(key)
+  const next = { ...activeSessionMap.value }
+  delete next[key]
+  activeSessionMap.value = next
+  activeSessionKey.value = ''
+}
+
+/** 当前这条记录属于哪套题，用于卡片上标明「继续的是哪一份」 */
+const activeSessionPaper = computed(() => {
+  const key = activeSessionKey.value
+  if (!key) return ''
+  const [, set = '', tag = ''] = key.split('|')
+  const sub = meta.value.subBanks?.find((s) => s.groupOrder.join(',') === set)
+  const group = set && set !== 'all' ? questions.value.find((q) => q.groupId === set) : null
+  const title = sub ? sub.name : (group?.groupTitle ?? '')
+  return [title, tag].filter(Boolean).join(' · ')
+})
 
 // --- 重置题单 ---
 const confirmingGroupId = ref<string | null>(null)
@@ -436,13 +557,14 @@ const groupViewHint = computed(() => {
     </div>
   </div>
   <div v-else class="home">
+    <!-- 计算机组成各套卷的返回入口：贴在 main 左上角（见 App.vue 的 .main 定位上下文），不占文档流 -->
+    <RouterLink
+      v-if="activeCategory.startsWith('computer-')"
+      class="btn btn-ghost corner-back"
+      to="/computer-organization"
+      >← 计算机组成（软国际） · 选择试卷</RouterLink
+    >
     <header class="home-header">
-      <RouterLink
-        v-if="activeCategory.startsWith('computer-')"
-        class="btn btn-ghost"
-        to="/computer-organization"
-        >← 计算机组成（软国际） · 选择试卷</RouterLink
-      >
       <div class="title-row">
         <h1>{{ titleText }}</h1>
         <span v-if="streak > 0" class="streak-chip" :title="`最近 ${streak} 天连续答题`"
@@ -452,11 +574,12 @@ const groupViewHint = computed(() => {
       <p class="subtitle">{{ subtitleText }}</p>
     </header>
 
-    <div v-if="activeSession" class="resume-banner">
+    <!-- 有存盘会话就是「继续上次」，没有就退化成「开始练习」：随机顺序、从头开始 -->
+    <div class="resume-banner">
       <div class="resume-info">
-        <span class="resume-title">继续上次</span>
-        <span class="resume-meta"
-          >第
+        <span class="resume-title">{{ activeSession ? '继续上次' : '开始练习' }}</span>
+        <span v-if="activeSession" class="resume-meta"
+          >{{ activeSessionPaper ? activeSessionPaper + ' · ' : '' }}第
           {{
             (activeSession.submitted
               ? activeSession.currentIndex + 1
@@ -465,8 +588,10 @@ const groupViewHint = computed(() => {
         >
       </div>
       <div class="resume-actions">
-        <button class="btn btn-accent" @click="resumeSession">继续</button>
-        <button class="btn btn-ghost" @click="discardSession">放弃</button>
+        <button class="btn btn-accent" @click="continueOrStart">
+          {{ activeSession ? '继续' : '开始' }}
+        </button>
+        <button v-if="activeSession" class="btn btn-ghost" @click="discardSession">放弃</button>
       </div>
     </div>
 
@@ -502,16 +627,28 @@ const groupViewHint = computed(() => {
 
     <section class="section">
       <h2>掌握程度</h2>
+      <!-- 数量为 0 的分段不渲染；数字统一放到色块正下方的标尺里 -->
       <div class="mastery-bar">
-        <div class="seg mastered" :style="{ flex: mastery.mastered }">{{ mastery.mastered }}</div>
-        <div class="seg learning" :style="{ flex: mastery.learning }">{{ mastery.learning }}</div>
-        <div class="seg weak" :style="{ flex: mastery.weak }">{{ mastery.weak }}</div>
-        <div class="seg untouched" :style="{ flex: mastery.untouched }">
-          {{ mastery.untouched }}
-        </div>
+        <div v-if="mastery.mastered > 0" class="seg mastered" :style="{ flex: mastery.mastered }" />
+        <div v-if="mastery.learning > 0" class="seg learning" :style="{ flex: mastery.learning }" />
+        <div v-if="mastery.weak > 0" class="seg weak" :style="{ flex: mastery.weak }" />
+        <div
+          v-if="mastery.untouched > 0"
+          class="seg untouched"
+          :style="{ flex: mastery.untouched }"
+        />
       </div>
-      <div class="mastery-legend">
-        <span>已掌握</span><span>学习中</span><span>薄弱</span><span>未做</span>
+      <div ref="rulerEl" class="mastery-ruler" :style="{ height: masteryRuler.height + 'px' }">
+        <div
+          v-for="item in masteryRuler.items"
+          :key="item.key"
+          class="mr-slot"
+          :style="{ flex: item.value }"
+        >
+          <span class="mr-label" :style="{ top: item.top + 'px' }"
+            >{{ item.label }} <strong>{{ item.value }}</strong></span
+          >
+        </div>
       </div>
     </section>
 
@@ -760,6 +897,21 @@ const groupViewHint = computed(() => {
   margin: 0 auto;
 }
 
+/* 贴在页面主体（导航栏下方）的左上角，滚动时固定不动：
+   left 与导航栏、main 的水平内边距对齐；z-index 低于导航的 100。
+   边框与字色都不覆盖，沿用 .btn / .btn-ghost 的默认值；背景保持透明，尺寸为放大后的规格。 */
+.home .btn.corner-back {
+  position: fixed;
+  top: 56px;
+  left: 24px;
+  z-index: 90;
+  padding: 10px 16px;
+  font-size: 15px;
+  line-height: 1.2;
+  white-space: nowrap;
+  background: transparent;
+}
+
 .home-header {
   margin-bottom: 28px;
 }
@@ -890,12 +1042,6 @@ h1 {
   margin-bottom: 8px;
 }
 .mastery-bar .seg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 12px;
-  color: #fff;
   min-width: 0;
   transition: flex 0.55s var(--ease-brush);
 }
@@ -911,11 +1057,28 @@ h1 {
 .untouched {
   background: #c0bfbc;
 }
-.mastery-legend {
+/* 数字标尺：与 .mastery-bar 同为整宽 flex 行，各槽按相同权重定位，
+   所以每个数字正好居中在自己色块正下方；行高由 JS 按需要的行数给出。 */
+.mastery-ruler {
+  position: relative;
   display: flex;
-  gap: 20px;
   font-size: 12px;
   color: var(--text-muted);
+}
+.mastery-ruler .mr-slot {
+  position: relative;
+  min-width: 0;
+}
+.mastery-ruler .mr-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 18px;
+  white-space: nowrap;
+}
+.mastery-ruler strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .quick-actions {

@@ -1,0 +1,1646 @@
+[
+  {
+    "id": "computer-2026-midterm-q001",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 1,
+    "stem": "8 ビットの符号なし 2 進数 01101001 を 10 進数に直せ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "101"
+      },
+      {
+        "key": "B",
+        "text": "105"
+      },
+      {
+        "key": "C",
+        "text": "109"
+      },
+      {
+        "key": "D",
+        "text": "113"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "105",
+    "translation": "将 8 位无符号二进制数 01101001 转换为十进制数。",
+    "explanation": "01101001=64+32+8+1=105，故选 B。A 项漏算高位，C、D 项数值均对不上各位权值之和。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 1
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q002",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 2,
+    "stem": "8 ビットの符号なし 2 進数 10110110 を 16 進数に直せ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "A6"
+      },
+      {
+        "key": "B",
+        "text": "B9"
+      },
+      {
+        "key": "C",
+        "text": "B6"
+      },
+      {
+        "key": "D",
+        "text": "D6"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "B6",
+    "translation": "将 8 位无符号二进制数 10110110 转换为十六进制数。",
+    "explanation": "每 4 位一组：1011=B，0110=6，故为 B6，选 C。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 2
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q003",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 3,
+    "stem": "10 進数 173 を 8 ビットの符号なし 2 進数に直せ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "10101101"
+      },
+      {
+        "key": "B",
+        "text": "10110101"
+      },
+      {
+        "key": "C",
+        "text": "10011101"
+      },
+      {
+        "key": "D",
+        "text": "11001011"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "10101101",
+    "translation": "将十进制数 173 转换为 8 位无符号二进制数。",
+    "explanation": "173=128+32+8+4+1=10101101，选 A；B 为 181，C 为 157，D 为 203。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 3
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q004",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 4,
+    "stem": "16 進数 6D を 8 ビットの 2 進数に直せ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "01110110"
+      },
+      {
+        "key": "B",
+        "text": "11010110"
+      },
+      {
+        "key": "C",
+        "text": "01101011"
+      },
+      {
+        "key": "D",
+        "text": "01101101"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "01101101",
+    "translation": "将十六进制数 6D 转换为 8 位二进制数。",
+    "explanation": "6=0110，D=1101，合为 01101101，选 D。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 4
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q005",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 5,
+    "stem": "8 ビットの 2 の補数 11011011 を 10 進数に直せ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "-35"
+      },
+      {
+        "key": "B",
+        "text": "-37"
+      },
+      {
+        "key": "C",
+        "text": "-39"
+      },
+      {
+        "key": "D",
+        "text": "-41"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "-37",
+    "translation": "将 8 位补码 11011011 转换为十进制数。",
+    "explanation": "最高位为 1 表示负数：取反得 00100100=36，加 1 得 37，故真值为 -37，选 B。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 5
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q006",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 6,
+    "stem": "10 進数 -45 を 8 ビットの 2 の補数で表せ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "11010010"
+      },
+      {
+        "key": "B",
+        "text": "00101101"
+      },
+      {
+        "key": "C",
+        "text": "11010011"
+      },
+      {
+        "key": "D",
+        "text": "10110011"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "11010011",
+    "translation": "用 8 位补码表示十进制数 -45。",
+    "explanation": "45=00101101，取反得 11010010，加 1 得 11010011，选 C。B 是 +45 的原码。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 6
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q007",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 7,
+    "stem": "2 の補数表現の 4 ビット符号付き 2 進数 1101 を、8 ビットに符号拡張せよ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "00001101"
+      },
+      {
+        "key": "B",
+        "text": "11010000"
+      },
+      {
+        "key": "C",
+        "text": "11110101"
+      },
+      {
+        "key": "D",
+        "text": "11111101"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "11111101",
+    "translation": "将 4 位补码有符号二进制数 1101 符号扩展为 8 位。",
+    "explanation": "1101 为负数，符号扩展在高位补 4 个 1，得 11111101，选 D。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 7
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q008",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 8,
+    "stem": "2 の補数表現の 8 ビット符号付き 2 進数 10010110 を、16 ビットに符号拡張せよ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "1111111110010110"
+      },
+      {
+        "key": "B",
+        "text": "0000000010010110"
+      },
+      {
+        "key": "C",
+        "text": "1001011011111111"
+      },
+      {
+        "key": "D",
+        "text": "1111111100010110"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "1111111110010110",
+    "translation": "将 8 位补码有符号二进制数 10010110 符号扩展为 16 位。",
+    "explanation": "最高位为 1（负数），高位补 8 个 1 得 1111111110010110，选 A。B 是零扩展，错误。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 8
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「111111110010110」/ B 路「1111111100010110」）"
+    ]
+  },
+  {
+    "id": "computer-2026-midterm-q009",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 9,
+    "stem": "2 の補数表現の 8 ビット符号付き 2 進数 11010110 を右に 1 ビット算術シフトせよ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "01101011"
+      },
+      {
+        "key": "B",
+        "text": "11110101"
+      },
+      {
+        "key": "C",
+        "text": "11101011"
+      },
+      {
+        "key": "D",
+        "text": "10101100"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "11101011",
+    "translation": "将 8 位补码有符号二进制数 11010110 算术右移 1 位。",
+    "explanation": "算术右移符号位保持为 1，数据位右移：1 11010110 → 11101011，选 C。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 9
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q010",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 10,
+    "stem": "8ビットの00110101を左に3ビット論理シフトせよ.",
+    "options": [
+      {
+        "key": "A",
+        "text": "10101000"
+      },
+      {
+        "key": "B",
+        "text": "11010100"
+      },
+      {
+        "key": "C",
+        "text": "10100000"
+      },
+      {
+        "key": "D",
+        "text": "01101010"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "10101000",
+    "translation": "把8位的00110101向左逻辑移位3位。",
+    "explanation": "逻辑左移3位：00110101 后补3个0，取低8位得10101000。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 10
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q011",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 11,
+    "stem": "計算機の資源を管理し、プログラムの実行環境を提供する基本ソフトウェアはどれか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "リンカ"
+      },
+      {
+        "key": "B",
+        "text": "OS"
+      },
+      {
+        "key": "C",
+        "text": "アセンブラ"
+      },
+      {
+        "key": "D",
+        "text": "アプリケーション"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "OS",
+    "translation": "管理计算机资源、提供程序执行环境的基本软件是哪一个？",
+    "explanation": "管理硬件资源、提供程序运行环境的是操作系统（OS）；链接器、汇编器、应用软件均不负责资源管理。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 11
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q012",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 12,
+    "stem": "実行可能ファイルを主記憶に読み込み、プログラムの実行開始を準備するソフトウェアはどれか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "コンパイラ"
+      },
+      {
+        "key": "B",
+        "text": "リンカ"
+      },
+      {
+        "key": "C",
+        "text": "アセンブラ"
+      },
+      {
+        "key": "D",
+        "text": "ローダ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ローダ",
+    "translation": "把可执行文件读入主存、为程序开始执行做准备的是哪个软件？",
+    "explanation": "把可执行文件装入主存并做好运行准备的是加载器（ローダ）。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 12
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q013",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 13,
+    "stem": "命令による演算の対象となるデータや、その指定を何というか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "オペランド"
+      },
+      {
+        "key": "B",
+        "text": "オペレータ"
+      },
+      {
+        "key": "C",
+        "text": "リンカ"
+      },
+      {
+        "key": "D",
+        "text": "クロック"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "オペランド",
+    "translation": "指令运算所作用的数据及其指定称为什么？",
+    "explanation": "指令中运算对象的数据或其指定称为操作数（オペランド）；オペレータ指运算符。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 13
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q014",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 14,
+    "stem": "CPU内部で、演算対象の値を直接保持する小容量の記憶領域はどれか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "HDD"
+      },
+      {
+        "key": "B",
+        "text": "主記憶"
+      },
+      {
+        "key": "C",
+        "text": "レジスタ"
+      },
+      {
+        "key": "D",
+        "text": "光ディスク"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "レジスタ",
+    "translation": "CPU内部直接保存运算对象数值的小容量存储区是哪一个？",
+    "explanation": "CPU内部直接保存运算数据的小容量存储区是寄存器。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 14
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q015",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 15,
+    "stem": "MIPS命令addi $t0, $t1, 12における定数12の指定方式はどれか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "間接アドレッシング"
+      },
+      {
+        "key": "B",
+        "text": "即値アドレッシング"
+      },
+      {
+        "key": "C",
+        "text": "PC相対アドレッシング"
+      },
+      {
+        "key": "D",
+        "text": "レジスタアドレッシング"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "即値アドレッシング",
+    "translation": "MIPS指令addi $t0, $t1, 12中常数12的指定方式是哪种？",
+    "explanation": "addi的第三个字段12直接写在指令中作为常数，属于立即寻址（即値アドレッシング）。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 15
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q016",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 16,
+    "stem": "関数呼出し時にスタック領域の確保・解放に合わせて更新するレジスタはどれか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "プログラムカウンタ"
+      },
+      {
+        "key": "B",
+        "text": "命令レジスタ"
+      },
+      {
+        "key": "C",
+        "text": "スタックポインタ"
+      },
+      {
+        "key": "D",
+        "text": "ゼロレジスタ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "スタックポインタ",
+    "translation": "函数调用时随栈区分配与释放而更新的寄存器是哪一个？",
+    "explanation": "栈区的分配与释放通过更新栈指针（スタックポインタ）$sp 完成。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 16
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q017",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 17,
+    "stem": "32ビット値0x12345678の各バイトを、低いアドレスから78、56、34、12の順に格納する方式はどれか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "リトルエンディアン"
+      },
+      {
+        "key": "B",
+        "text": "ビッグエンディアン"
+      },
+      {
+        "key": "C",
+        "text": "RISC"
+      },
+      {
+        "key": "D",
+        "text": "CISC"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "リトルエンディアン",
+    "translation": "把32位值0x12345678的各字节按低地址到高地址依次存为78、56、34、12的方式是哪种？",
+    "explanation": "低位字节放在低地址（78先于12），是小端（リトルエンディアン）方式。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 17
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q018",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 18,
+    "stem": "アセンブリ言語の命令を機械語に変換するソフトウェアはどれか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "コンパイラ"
+      },
+      {
+        "key": "B",
+        "text": "ローダ"
+      },
+      {
+        "key": "C",
+        "text": "リンカ"
+      },
+      {
+        "key": "D",
+        "text": "アセンブラ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "アセンブラ",
+    "translation": "把汇编语言指令转换为机器语言的软件是哪一个？",
+    "explanation": "把汇编语言指令翻译成机器语言的是汇编器（アセンブラ）。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 18
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q019",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 19,
+    "stem": "高級言語のソースプログラムを、実行前に機械語やアセンブリ言語などへ翻訳するソフトウェアはどれか.",
+    "options": [
+      {
+        "key": "A",
+        "text": "インタプリタ"
+      },
+      {
+        "key": "B",
+        "text": "コンパイラ"
+      },
+      {
+        "key": "C",
+        "text": "リンカ"
+      },
+      {
+        "key": "D",
+        "text": "ローダ"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "コンパイラ",
+    "translation": "在运行前把高级语言源程序翻译成机器语言或汇编语言等的软件是哪一个？",
+    "explanation": "在执行前把高级语言源程序整体翻译为机器语言/汇编语言的是编译器；解释器是边解释边执行。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 19
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q020",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 20,
+    "stem": "MIPSのベースアドレッシングでは、実効アドレスは、ベースレジスタの値に、命令中の16ビットの定数を符号拡張した値を加えて求める.",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "在MIPS的基址寻址中，有效地址由基址寄存器的值加上指令中16位常数符号扩展后的值求得。",
+    "explanation": "基址寻址的有效地址=基址寄存器值+符号扩展后的16位常数，叙述正确。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 20
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q021",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 21,
+    "stem": "同じプログラムを同じ動的命令数・同じ平均CPIで実行するなら、クロック周波数が2倍になるとCPU実行時間は半分になる.",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "若同一程序以相同的动态指令数和相同的平均CPI执行，则时钟频率变为2倍时CPU执行时间减半。",
+    "explanation": "CPU时间=指令数×CPI÷时钟频率，指令数与CPI不变时频率翻倍，执行时间减半。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 21
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q022",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 22,
+    "stem": "move $t0, $t1 は MIPS の疑似命令であり、addu $t0, $t1, $zeroなどで実現できる。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "move $t0, $t1 是 MIPS 的伪指令，可以用 addu $t0, $t1, $zero 等实现。",
+    "explanation": "move 是伪指令，寄存器间传送可由 addu $t0, $t1, $zero 实现（$t1+0），故说法正确，选 A。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 22
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q023",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 23,
+    "stem": "MIPS の R 形形式命令には、16 ビットの即値フィールドがある。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "MIPS 的 R 形指令中含有 16 位立即数字段。",
+    "explanation": "R 型指令字段为 rs/rt/rd/shamt/funct，没有立即数字段（立即数只在 I 型指令中），故错误，选 B。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 23
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「MIPS の R 形形式令には、16 ビットの即値フィールドがある。」/ B 路「MIPS の R 形形式命令には、16 ビットの即値フィールドがある。」）"
+    ]
+  },
+  {
+    "id": "computer-2026-midterm-q024",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 24,
+    "stem": "SRAM は記憶内容を保持するために、周期的なリフレッシュを必要とする。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "SRAM 为了保持存储内容，需要周期性刷新。",
+    "explanation": "SRAM 用触发器存储，不需刷新；需要周期性刷新的是 DRAM，故错误，选 B。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 24
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q025",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 25,
+    "stem": "4 バイト = ______ ビット。",
+    "options": [
+      {
+        "key": "A",
+        "text": "16"
+      },
+      {
+        "key": "B",
+        "text": "32"
+      },
+      {
+        "key": "C",
+        "text": "64"
+      },
+      {
+        "key": "D",
+        "text": "128"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "32",
+    "translation": "4 字节 = ______ 位。",
+    "explanation": "1 字节 = 8 位，4×8 = 32 位。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 25
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "OCR 冲突：groupTitle（A 路「四、数值转换题（共 5 题）」/ B 路「四、数値転換題（共 5 題）」）"
+    ]
+  },
+  {
+    "id": "computer-2026-midterm-q026",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 26,
+    "stem": "1000 メガバイト = 1 ______ バイト。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ギガ"
+      },
+      {
+        "key": "B",
+        "text": "テラ"
+      },
+      {
+        "key": "C",
+        "text": "ミリ"
+      },
+      {
+        "key": "D",
+        "text": "キロ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ギガ",
+    "translation": "1000 兆字节 = 1 ______ 字节。",
+    "explanation": "1000 MB = 1 GB（ギガ），MB 的上一级是 GB。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 26
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q027",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 27,
+    "stem": "3 MB = ______ バイト。",
+    "options": [
+      {
+        "key": "A",
+        "text": "3,000,000"
+      },
+      {
+        "key": "B",
+        "text": "3,072"
+      },
+      {
+        "key": "C",
+        "text": "3,145,728"
+      },
+      {
+        "key": "D",
+        "text": "300,000"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "3,145,728",
+    "translation": "3 MB = ______ 字节。",
+    "explanation": "1 MB = 1024×1024 = 1,048,576 字节，3 MB = 3,145,728 字节。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 27
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q028",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 28,
+    "stem": "5 マイクロ秒 = ______ ナノ秒。",
+    "options": [
+      {
+        "key": "A",
+        "text": "50"
+      },
+      {
+        "key": "B",
+        "text": "500"
+      },
+      {
+        "key": "C",
+        "text": "5,000,000"
+      },
+      {
+        "key": "D",
+        "text": "5,000"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "5,000",
+    "translation": "5 微秒 = ______ 纳秒。",
+    "explanation": "1 微秒 = 1000 纳秒，5×1000 = 5000 纳秒。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 28
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q029",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 29,
+    "stem": "2 ミリ秒 = 2000 ______ 秒。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ナノ"
+      },
+      {
+        "key": "B",
+        "text": "マイクロ"
+      },
+      {
+        "key": "C",
+        "text": "ピコ"
+      },
+      {
+        "key": "D",
+        "text": "キロ"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "マイクロ",
+    "translation": "2 毫秒 = 2000 ______ 秒。",
+    "explanation": "1 毫秒 = 1000 微秒，故 2 毫秒 = 2000 微秒（マイクロ秒）。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 29
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q030",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 30,
+    "stem": "以下は C 言語と対応する MIPS コードの空欄を A～D で答えよ。配列 a の先頭アドレスは $s0、int 型変数 b、i の値は $s1、$s2 に保持する。1 要素は 4 バイト。範囲外参照・オーバーフローは起こらない。ソースコード：\n```\na[35] = b - a[i];\n```\nアセンブリコード：\n```\nsll $t0, $s2, (31)\n(30) $t0, $t0, $s0\nlw $t1, 0((32))\n(33) $t1, (34), $t1\nsw $t1, 72($s0)\n```\n(30) の選択肢：",
+    "options": [
+      {
+        "key": "A",
+        "text": "add"
+      },
+      {
+        "key": "B",
+        "text": "sll"
+      },
+      {
+        "key": "C",
+        "text": "lw"
+      },
+      {
+        "key": "D",
+        "text": "sub"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "add",
+    "translation": "以下 C 语言与对应 MIPS 代码的空栏请用 A～D 作答。数组 a 的首地址存于 $s0，int 型变量 b、i 的值存于 $s1、$s2，每个元素占 4 字节，不发生越界访问与溢出。源代码：a[35] = b - a[i]; 汇编代码：…… (30) 的选项：",
+    "explanation": "要把 i×4（$t0）与数组首地址 $s0 相加得到 a[i] 的地址，故用 add。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 30
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "OCR 冲突：groupTitle（A 路「五、题组一」/ B 路「五、題組一」）",
+      "OCR 冲突：stem（A 路「アセンブリコード：（代码块不带行号）」/ B 路「アセンブリコード：（代码块带 1～5 行号）」）"
+    ]
+  },
+  {
+    "id": "computer-2026-midterm-q031",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 31,
+    "stem": "以下は C 言語と対応する MIPS コードの空欄を A～D で答えよ。配列 a の先頭アドレスは $s0、int 型変数 b、i の値は $s1、$s2 に保持する。1 要素は 4 バイト。範囲外参照・オーバーフローは起こらない。ソースコード：\n```\na[35] = b - a[i];\n```\nアセンブリコード：\n```\nsll $t0, $s2, (31)\n(30) $t0, $t0, $s0\nlw $t1, 0((32))\n(33) $t1, (34), $t1\nsw $t1, 72($s0)\n```\n(31) の選択肢：",
+    "options": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "2"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "2",
+    "translation": "(31) 的选项：",
+    "explanation": "int 占 4 字节，i 乘 4 即左移 2 位，故移位量为 2。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 31
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q032",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 32,
+    "stem": "以下は C 言語と対応する MIPS コードの空欄を A～D で答えよ。配列 a の先頭アドレスは $s0、int 型変数 b、i の値は $s1、$s2 に保持する。1 要素は 4 バイト。範囲外参照・オーバーフローは起こらない。ソースコード：\n```\na[35] = b - a[i];\n```\nアセンブリコード：\n```\nsll $t0, $s2, (31)\n(30) $t0, $t0, $s0\nlw $t1, 0((32))\n(33) $t1, (34), $t1\nsw $t1, 72($s0)\n```\n(32) の選択肢：",
+    "options": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "$s0"
+      },
+      {
+        "key": "C",
+        "text": "$t2"
+      },
+      {
+        "key": "D",
+        "text": "$t0"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "$t0",
+    "translation": "(32) 的选项：",
+    "explanation": "a[i] 的地址已由前两条指令算出并存于 $t0，故取 lw $t1, 0($t0)。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 32
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q033",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 33,
+    "stem": "以下は C 言語と対応する MIPS コードの空欄を A～D で答えよ。配列 a の先頭アドレスは $s0、int 型変数 b、i の値は $s1、$s2 に保持する。1 要素は 4 バイト。範囲外参照・オーバーフローは起こらない。ソースコード：\n```\na[35] = b - a[i];\n```\nアセンブリコード：\n```\nsll $t0, $s2, (31)\n(30) $t0, $t0, $s0\nlw $t1, 0((32))\n(33) $t1, (34), $t1\nsw $t1, 72($s0)\n```\n(33) の選択肢：",
+    "options": [
+      {
+        "key": "A",
+        "text": "add"
+      },
+      {
+        "key": "B",
+        "text": "lw"
+      },
+      {
+        "key": "C",
+        "text": "addi"
+      },
+      {
+        "key": "D",
+        "text": "sub"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "sub",
+    "translation": "(33) 的选项：",
+    "explanation": "计算 b - a[i]：$s1 存 b，被减数在前，故为 sub $t1, $s1, $t1。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 33
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q034",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 34,
+    "stem": "以下は C 言語と対応する MIPS コードの空欄を A～D で答えよ。配列 a の先頭アドレスは $s0、int 型変数 b、i の値は $s1、$s2 に保持する。1 要素は 4 バイト。範囲外参照・オーバーフローは起こらない。ソースコード：\n```\na[35] = b - a[i];\n```\nアセンブリコード：\n```\nsll $t0, $s2, (31)\n(30) $t0, $t0, $s0\nlw $t1, 0((32))\n(33) $t1, (34), $t1\nsw $t1, 72($s0)\n```\n(34)の選択肢:",
+    "options": [
+      {
+        "key": "A",
+        "text": "$s2"
+      },
+      {
+        "key": "B",
+        "text": "$s1"
+      },
+      {
+        "key": "C",
+        "text": "$s0"
+      },
+      {
+        "key": "D",
+        "text": "$zero"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$s1",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 34
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ]
+  },
+  {
+    "id": "computer-2026-midterm-q035",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 35,
+    "stem": "以下は C 言語と対応する MIPS コードの空欄を A～D で答えよ。配列 a の先頭アドレスは $s0、int 型変数 b、i の値は $s1、$s2 に保持する。1 要素は 4 バイト。範囲外参照・オーバーフローは起こらない。ソースコード：\n```\na[35] = b - a[i];\n```\nアセンブリコード：\n```\nsll $t0, $s2, (31)\n(30) $t0, $t0, $s0\nlw $t1, 0((32))\n(33) $t1, (34), $t1\nsw $t1, 72($s0)\n```\n(35)の選択肢:",
+    "options": [
+      {
+        "key": "A",
+        "text": "72"
+      },
+      {
+        "key": "B",
+        "text": "9"
+      },
+      {
+        "key": "C",
+        "text": "18"
+      },
+      {
+        "key": "D",
+        "text": "36"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "18",
+    "translation": "",
+    "explanation": "",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 35
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "none",
+    "status": "needs_review",
+    "questionType": "single",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ]
+  },
+  {
+    "id": "computer-2026-midterm-q036",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 36,
+    "stem": "以下はC言語で記述されたステートメントと、それを変換したアセンブリコードである。これについて、以下の各問にA~Dの記号で答えよ。\n```\n1 bne $s3, $s4, Else\n2 add $s0, $s1, $s2\n3 addi $s0, $s0, 1\n4 j Exit\n5 Else: sub $s0, $s1, $s2\n6 Exit:\n```\n各命令を2進数に直したとき、下線部**Else**が対応するフィールドの値を10進数で表現したものはどれか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "8"
+      },
+      {
+        "key": "D",
+        "text": "12"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "3",
+    "translation": "",
+    "explanation": "bneはPC相対分岐。Elseは5番目の命令でアドレス1024+4×4=1040、PC+4=1028より、(1040−1028)/4=3。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 36
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q037",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 37,
+    "stem": "以下はC言語で記述されたステートメントと、それを変換したアセンブリコードである。これについて、以下の各問にA~Dの記号で答えよ。\n```\n1 bne $s3, $s4, Else\n2 add $s0, $s1, $s2\n3 addi $s0, $s0, 1\n4 j Exit\n5 Else: sub $s0, $s1, $s2\n6 Exit:\n```\n各命令を2進数に直したとき、下線部**Exit**が対応する絶対アドレスの値を10進数で表現したものはどれか。ただし、先頭のbne命令はメモリアドレス1024番地から始まっているものとする。",
+    "options": [
+      {
+        "key": "A",
+        "text": "1044"
+      },
+      {
+        "key": "B",
+        "text": "1029"
+      },
+      {
+        "key": "C",
+        "text": "261"
+      },
+      {
+        "key": "D",
+        "text": "256"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "1044",
+    "translation": "",
+    "explanation": "Exitは6番目の命令なので、先頭1024番地から5命令分進み、1024+5×4=1044。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 37
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q038",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 38,
+    "stem": "swは何形式か。",
+    "options": [
+      {
+        "key": "A",
+        "text": "R形式"
+      },
+      {
+        "key": "B",
+        "text": "I形式"
+      },
+      {
+        "key": "C",
+        "text": "J形式"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "I形式",
+    "translation": "",
+    "explanation": "swはベースレジスタ+即値オフセットでアドレスを指定するストア命令なのでI形式。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 38
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q039",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 39,
+    "stem": "subは何形式か。",
+    "options": [
+      {
+        "key": "A",
+        "text": "R形式"
+      },
+      {
+        "key": "B",
+        "text": "I形式"
+      },
+      {
+        "key": "C",
+        "text": "J形式"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "R形式",
+    "translation": "",
+    "explanation": "subは3つのレジスタだけで演算する命令で、即値やアドレスを含まないためR形式。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 39
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q040",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 40,
+    "stem": "bneは何形式か。",
+    "options": [
+      {
+        "key": "A",
+        "text": "R形式"
+      },
+      {
+        "key": "B",
+        "text": "I形式"
+      },
+      {
+        "key": "C",
+        "text": "J形式"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "I形式",
+    "translation": "",
+    "explanation": "bneは2つのレジスタ比較にPC相対の即値オフセットを伴う分岐命令なのでI形式。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 40
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  },
+  {
+    "id": "computer-2026-midterm-q041",
+    "category": "computer-2026-midterm",
+    "groupId": "computer-2026-midterm-g01",
+    "groupTitle": "计算机组织与结构（软国）2026年",
+    "numberInGroup": 41,
+    "stem": "jrは何形式か。",
+    "options": [
+      {
+        "key": "A",
+        "text": "R形式"
+      },
+      {
+        "key": "B",
+        "text": "I形式"
+      },
+      {
+        "key": "C",
+        "text": "J形式"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "R形式",
+    "translation": "",
+    "explanation": "jrはレジスタの値をPCに書き戻すジャンプで、レジスタのみを指定するためR形式。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "computer-2026-midterm.md",
+      "group": "计算机组织与结构（软国）2026年",
+      "position": 41
+    },
+    "answerProvenance": "printed",
+    "explanationSource": "generated",
+    "status": "ready",
+    "questionType": "single"
+  }
+]

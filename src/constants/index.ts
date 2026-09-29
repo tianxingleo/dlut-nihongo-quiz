@@ -7,7 +7,10 @@
 
 // ─── 存储键 ────────────────────────────────────────────────
 export const STORAGE_KEYS = {
+  /** 旧版全站单条会话记录，仅用于迁移读取 */
   ACTIVE_SESSION: 'activeSession',
+  /** 按「学科 + 子题库/题单」分开存的会话记录表：paperKey → 会话 */
+  ACTIVE_SESSIONS: 'activeSessions',
   HIDDEN_SITE_UNLOCKED: 'hidden-site-unlocked',
   DARK_MODE: 'darkMode',
   DAILY_GOAL: 'dailyGoal',

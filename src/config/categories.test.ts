@@ -11,12 +11,20 @@ describe('CATEGORIES config', () => {
     expect(CATEGORIES.map((c) => c.key).sort()).toEqual([
       'computer-2021-final',
       'computer-2024-final',
+      'computer-2026-midterm',
       'computer-c-exam',
       'computer-midterms',
       'history',
       'japanese2',
+      'marxism-1',
+      'marxism-2',
+      'marxism-3',
+      'marxism-5',
+      'marxism-6',
+      'marxism-7',
       'military',
       'party',
+      'principles-of-marxism-1',
     ])
   })
 
