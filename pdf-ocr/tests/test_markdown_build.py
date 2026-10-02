@@ -17,6 +17,10 @@ sys.path.insert(0, str(TOOL))
 
 import _common as c  # noqa: E402
 
+# **Windows 控制台默认 GBK**：本文件会把 S5 的输出（含 `✓`/`✗`）再打一遍，
+# 不钉 UTF-8 就会在打印那一行 `UnicodeEncodeError` 崩掉（测试明明过了却报失败）。
+c.setup_stdio()
+
 SANDBOX = c.TOOL_ROOT / "work" / ".tmp" / "p4"
 if SANDBOX.exists():
     shutil.rmtree(SANDBOX)

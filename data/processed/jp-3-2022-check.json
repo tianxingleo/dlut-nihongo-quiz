@@ -1,0 +1,21 @@
+{
+  "category": "jp-3-2022",
+  "md": "data/raw/jp-3-2022/jp-3-2022.md",
+  "md_sha256": "a7dbf93bdba6b3ee5c9d09290a1289425301c185d86749cb0fc7181fcc8ffb5e",
+  "checked_at": "2026-10-02T20:51:49+08:00",
+  "exit_code": 2,
+  "passed": true,
+  "questions": 80,
+  "groups": 1,
+  "parser_kept": 79,
+  "parser_dropped": 1,
+  "ai_answers": 36,
+  "ai_answer_ratio": 0.4557,
+  "hard_errors": [],
+  "warnings": [
+    "题号缺口 2 处：30→46, 80→86",
+    "会被解析端丢弃的题 1 道（占 1.2%） —— 按「丢弃 < 1/5 可上传」放行；这些题不会上站，逐条原因见 report.md 的「字段不完整」表",
+    "带待复核标记 16 处",
+    "AI 推得的答案 36 题（占可收下题目的 46%）—— 题库里这些题是 `answerProvenance: 'generated'` + `status: 'needs_review'`"
+  ]
+}

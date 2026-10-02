@@ -72,6 +72,15 @@ SCHEMA_BLOCK = """请输出如下 JSON（键名固定）：
    没有选项的题（填空/简答）options 给 []，answerKey 给 ""，答案写在 answerText。
    **同一页不要重复输出同一道题**：题干与选项都一样的两条，只保留一条（后面那条不要写）。
 5) 两路都没写清的内容不要编造；宁可在 explanation 里留空 + needs_review=true。
+5b) **`<u>…</u>` 标记必须原样保留**：它是 OCR 标出的"卷面上被下划线划住的文字"，
+   网页靠它上色（阅读/词汇题真正考的那几个词）。照抄，不要改写、不要删、不要换成别的写法；
+   两路标的范围不一致时按 1) 进 conflicts[]（field 写 stem）。
+5c) **假名 / 汉字照抄，不许"顺手规范化"**：某一路写假名、另一路写汉字时，
+   **不要统一成汉字**（那是 OCR 的错，不是让人改的地方）—— 这种不一致进 conflicts[] 并
+   标 needs_review，chosen 取**更接近卷面**的那个（汉字读音题里往往就是假名那一路）。
+   助词/送假名同理：「は」不要写成「葉」、「いる」不要写成「居る」。
+5d) **`<u>…</u>` 只采信 A 路**（逐字转写那一路）：B 路标的 `<u>` 一律**不要**写进 stem；
+   A 路没标就不要加。（S3 事后会按 A 路确定性重贴一遍，你写错了也会被纠正。）
 6) **公共题干（题组导言 / 代码块 / 表格）与它下面的小题**：
    a. 一个题组的小题共用一段导言时（如「以下は…空欄を A～D で答えよ」+ 代码块），
       把这段导言**原样**抄到该题组**第一道小题的 stem 开头**（保留换行和 ``` 代码围栏）。
@@ -170,6 +179,90 @@ def structural_diffs(review_a: dict, review_b: dict) -> list[dict]:
 
 
 # ── 题号覆盖 / 题数匹配的确定性兜底 ──────────────────────────────────────
+# ── 下划线标记：**只认 A 路**（用户要求）──────────────────────────────────
+#
+# A 路是"逐字转写保版面"，它的 `<u>…</u>` 更贴像素；B 路（按题结构化）标记数量实测差 2~3 倍
+# （第 1 页 53 vs 19、第 3 页 0 vs 12）—— 与其让模型"商量"，不如**按 A 路确定性重贴**：
+# 把合并后题干里的标记全去掉，再把 A 路标过的段落贴回去；A 路没标的一律不标。
+UNDERLINE_SPAN = re.compile(r"<u>(.*?)</u>", re.S)
+
+
+def a_underline_spans(review: dict) -> list[str]:
+    """某一路转写里的下划线内容（长的优先，避免短词先吃掉长词的一部分）。"""
+    text = str((review or {}).get("transcription_md") or "")
+    spans = [span.strip() for span in UNDERLINE_SPAN.findall(text)]
+    unique = [span for span in dict.fromkeys(spans) if span]
+    return sorted(unique, key=len, reverse=True)
+
+
+def enforce_underlines(
+    questions: list[dict],
+    review_a: dict,
+    review_b: dict,
+    notes: list[str],
+    scan_spans: list[str] | None = None,
+) -> dict:
+    """按两路的下划线标记重贴 `<u>`：**扫描趟最优先，其次 B 路（qwen），再用 A 路补齐**。
+
+    来源优先级（用户要求 + 实测）：`page-00N.underlines.json`（S2b 专用扫描，任务单一最稳）
+    > B 路（qwen） > A 路。各来源独有的标记都保留（并集），长的先贴（避免短词切开长词）；
+    所有来源都没标的 `<u>` 一律去掉。
+    """
+    spans_scan = [str(x).strip() for x in (scan_spans or []) if str(x).strip()]
+    spans_b = a_underline_spans(review_b)
+    spans_a = a_underline_spans(review_a)
+    ordered = [span for span in dict.fromkeys(spans_scan + spans_b + spans_a) if span]
+    allowed = set(ordered)
+    used_scan: set[str] = set()
+    used_b: set[str] = set()
+    used_a: set[str] = set()
+    dropped = 0
+    for q in questions:
+        stem = str(q.get("stem") or "")
+        if not stem:
+            continue
+        dropped += sum(1 for span in UNDERLINE_SPAN.findall(stem) if span.strip() not in allowed)
+        marked = UNDERLINE_SPAN.sub(r"\1", stem)
+        for span in sorted(ordered, key=len, reverse=True):
+            if span in marked:
+                marked = marked.replace(span, f"<u>{span}</u>", 1)
+                if span in spans_scan:
+                    used_scan.add(span)
+                elif span in spans_b:
+                    used_b.add(span)
+                else:
+                    used_a.add(span)
+        q["stem"] = marked
+    used = used_scan | used_b | used_a
+    missing = [span for span in ordered if span not in used]
+    marks = sum(len(UNDERLINE_SPAN.findall(str(q.get("stem") or ""))) for q in questions)
+    notes.append(
+        f"下划线：扫描趟 {len(spans_scan)} 处 / B 路(qwen) {len(spans_b)} 处 / A 路 {len(spans_a)} 处 → "
+        f"贴上 {marks} 处（扫描 {len(used_scan)}、B {len(used_b)}、A 补 {len(used_a)}），"
+        f"去掉都没标的 {dropped} 处"
+    )
+    if missing:
+        notes.append(
+            f"下划线里有 {len(missing)} 处在合并题干里找不到（如「{missing[0][:16]}」），已跳过"
+        )
+    return {
+        "marks": marks,
+        "from_scan": len(used_scan),
+        "from_b": len(used_b),
+        "from_a": len(used_a),
+        "scan_total": len(spans_scan),
+        "a_total": len(spans_a),
+        "b_total": len(spans_b),
+        "b_only_dropped": dropped,
+        "a_missing": missing[:20],
+    }
+
+
+def enforce_underline_from_a(questions: list[dict], review_a: dict, notes: list[str]) -> dict:
+    """兼容旧调用：只有 A 路时的行为（B 路为空）。"""
+    return enforce_underlines(questions, review_a, {}, notes)
+
+
 def _as_int(value) -> int | None:
     try:
         return int(str(value).strip())
@@ -790,6 +883,15 @@ def merge_one_page(
                     "json_truncated": repair.get("truncated", False),
                 },
             )
+            # **下划线**：两路都算，**B 路（qwen）优先**，A 路补齐（用户要求）。
+            # 确定性重贴，不指望模型自觉（实测两路标记数差很多）。
+            merged["underline"] = enforce_underlines(
+                merged.get("questions") or [],
+                reviews.get("a") or {},
+                reviews.get("b") or {},
+                notes,
+            )
+            merged["notes"] = notes
             # 题号覆盖 / 题数匹配兜底：与"两路 OCR 自己声明的题号范围"对账
             coverage = coverage_diffs(reviews, merged.get("questions") or [])
             if coverage:
@@ -821,7 +923,12 @@ def main() -> int:
         "--pages",
         help="只处理这些页，如 1-3,7（页码从 1 开始；写 0-3 也接受，0 视为起点；默认全部）",
     )
-    parser.add_argument("--timeout", type=int, default=180, help="单次请求超时秒数，默认 180")
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=300,
+        help="单次请求超时秒数，默认 300（整页比对输出很长，180 常在快完成时被判成卡死重试）",
+    )
     parser.add_argument("--max-retries", type=int, default=3, help="每页最大尝试次数，默认 3")
     parser.add_argument(
         "--max-tokens",
@@ -937,6 +1044,23 @@ def main() -> int:
             )
             calls_made += 1
             spent += c.usage_tokens(merge["call"].get("usage"))
+            # **专用下划线扫描（S2b）的结果优先级最高**：`page-00N.underlines.json` 存在时，
+            # 用它 + 两路转写里的 `<u>` 重贴一遍（优先级：扫描 > B(qwen) > A）。
+            scan_path = pages_dir / f"page-{number:03d}.underlines.json"
+            if scan_path.exists() and (merge.get("questions") or []):
+                spans = [
+                    str(item).strip()
+                    for item in ((c.read_json(scan_path) or {}).get("underlines") or [])
+                    if str(item).strip()
+                ]
+                if spans:
+                    merge["underline"] = enforce_underlines(
+                        merge["questions"],
+                        reviews.get("a") or {},
+                        reviews.get("b") or {},
+                        merge.setdefault("notes", []),
+                        scan_spans=spans,
+                    )
             c.write_json_atomic(target, merge)
             question_count = len(merge["questions"])
             conflict_count = len(merge["conflicts"])

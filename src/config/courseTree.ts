@@ -182,6 +182,32 @@ export const COURSE_TREE: TreeNode[] = [
       },
     ],
   },
+  {
+    type: 'group',
+    key: 'jp-3-group',
+    label: '综合日语3',
+    icon: '组',
+    children: [
+      {
+        type: 'leaf',
+        key: 'jp-3-2022',
+        label: '期末 2022',
+        category: 'jp-3-2022',
+      },
+      {
+        type: 'leaf',
+        key: 'jp-3-2024',
+        label: '期末 2024',
+        category: 'jp-3-2024',
+      },
+      {
+        type: 'leaf',
+        key: 'jp-3',
+        label: '学习通期中',
+        category: 'jp-3',
+      },
+    ],
+  },
 ]
 
 export function findLeafByKey(key: string): TreeNode | undefined {

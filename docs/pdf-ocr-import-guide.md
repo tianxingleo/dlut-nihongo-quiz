@@ -32,23 +32,40 @@ python pdf-ocr/7_import.py --folder "C:\Users\me\Desktop\马" --entry "马克思
 
 ## 2. 它把文件放在哪
 
-| 路径                                                                                     | 是什么                                      | 进 git 吗           |
-| ---------------------------------------------------------------------------------------- | ------------------------------------------- | ------------------- |
-| `pdf-ocr/work/<分类名>/pages/*.png`                                                      | S1 渲染的页图                               | ✗（`work/` 已忽略） |
-| `pdf-ocr/work/<分类名>/pages/page-00N.{a,b}.review.json`                                 | S2 两路 OCR 的逐页转写                      | ✗                   |
-| `pdf-ocr/work/<分类名>/pages/page-00N.merge.json`                                        | S3 比对提取后的逐页题目                     | ✗                   |
-| `pdf-ocr/work/<分类名>/{transcription.md,report.md,paper-review.json,explanations.json}` | 转写稿 / 报告 / AI 缓存                     | ✗                   |
-| `data/raw/<分类名>/<分类名>.md`                                                          | **唯一入库产物**（题库 md）                 | ✓                   |
-| `data/processed/<分类名>-check.json`                                                     | S5 契约校验结论（发布门禁凭据）             | ✓                   |
-| `data/processed/<分类名>-validation-report.json`                                         | S6 生成的校验报告                           | ✓                   |
-| `public/<分类名>-question-bank.json`                                                     | 站点实际加载的题库                          | ✓                   |
-| `public/_meta.json`                                                                      | 首页题数（由 `npm run generate:meta` 重建） | ✓                   |
+| 路径                                                                                     | 是什么                                                   | 进 git 吗           |
+| ---------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------- |
+| `pdf-ocr/work/<分类名>/pages/*.png`                                                      | S1 渲染/转码出来的页图（**图片输入时这里通常没有文件**） | ✗（`work/` 已忽略） |
+| `pdf-ocr/work/<分类名>/sources/page-00N.jpg`                                             | **复制进来的原图**（图片输入才有；OCR 只读这份副本）     | ✗（`work/` 已忽略） |
+| `pdf-ocr/work/<分类名>/pages/page-00N.{a,b}.review.json`                                 | S2 两路 OCR 的逐页转写                                   | ✗                   |
+| `pdf-ocr/work/<分类名>/pages/page-00N.merge.json`                                        | S3 比对提取后的逐页题目                                  | ✗                   |
+| `pdf-ocr/work/<分类名>/{transcription.md,report.md,paper-review.json,explanations.json}` | 转写稿 / 报告 / AI 缓存                                  | ✗                   |
+| `data/raw/<分类名>/<分类名>.md`                                                          | **唯一入库产物**（题库 md）                              | ✓                   |
+| `data/processed/<分类名>-check.json`                                                     | S5 契约校验结论（发布门禁凭据）                          | ✓                   |
+| `data/processed/<分类名>-validation-report.json`                                         | S6 生成的校验报告                                        | ✓                   |
+| `public/<分类名>-question-bank.json`                                                     | 站点实际加载的题库                                       | ✓                   |
+| `public/_meta.json`                                                                      | 首页题数（由 `npm run generate:meta` 重建）              | ✓                   |
 
-**源 PDF 不入库**：工具只读它，不复制、不提交。想重跑就把 PDF 留在原目录。
+**源文件不入库**：工具只读它一次，不提交。PDF 留在原目录即可；图片会被**复制**进工作目录（见下）。
+
+**输入按文件头识别**（不只看后缀 —— 扫描 App 常导出没有后缀的文件）：
+
+| 传入                                                           | 会被当成                               | 页序                                 |
+| -------------------------------------------------------------- | -------------------------------------- | ------------------------------------ |
+| `.pdf`                                                         | 每一页算一页（**这一步真在"拆 PDF"**） | 按 PDF 页序                          |
+| 图片文件（png / jpeg / webp / bmp / gif / tiff / pnm / jp2 …） | 一张算一页                             | 命令行顺序                           |
+| 文件夹                                                         | 里面的图片拼成**一份**连续文档         | **自然序**（`IMG_2` 在 `IMG_10` 前） |
+| 多个输入混着传                                                 | 按命令行顺序拼页（PDF 展开成它的各页） | 参数顺序                             |
+
+**图片不"拆"也不就地引用，而是复制进工作目录**：原图按页序复制成 `work/<分类>/sources/page-00N.<ext>`
+（`shutil.copy2`，逐字节一致），OCR 只读这份副本 —— 所以**源文件夹之后可以随便挪走/删掉**。
+`png` / `jpeg` 复制后不转码（照片转 PNG 常常大三倍，白占磁盘）；只有两种情况才转一张 PNG：
+① 格式端点不认（bmp / gif / tiff / psd / pnm / jp2…）；② 给了 `--max-side` 且原图确实超了 —— 转出来的放 `pages/`。
+每页读哪个文件记在 manifest 的 `page_files` 里（相对工作目录），S2 照着它取；老 manifest 没有这个字段时
+仍退回 `pages/page-NNN.png`。副本已存在且大小一致就跳过复制（续跑），`--force` 才重写。
 
 **每份卷一个独立目录**：分类名（= 目录名 = 题库 key）默认按下面规则推：
 
-1. 文件名能压出 ASCII（且含字母）→ 用它，例如 `2024A.pdf` → 分类 `2024a`；
+1. 名字能压出 ASCII（且含字母）→ 用它，例如 `2024A.pdf` → 分类 `2024a`；
 2. 压不出来（纯中文，如 `马原试卷5_0_1790064454702.pdf`）→ `<前缀>-<序号>`，序号是它在文件夹里的排序位置，例如 `marxism-5`。前缀 = `--category-prefix`，默认 = `--entry-key`。
 
 卡片标题 = 文件名去掉平台噪声（`_0_1790064454702`、结尾的 `(1)` 下载后缀）。
@@ -59,7 +76,7 @@ python pdf-ocr/7_import.py --folder "C:\Users\me\Desktop\马" --entry "马克思
 
 | 步  | 脚本            | 作用                                                                             | 花钱 |
 | --- | --------------- | -------------------------------------------------------------------------------- | ---- |
-| S1  | `1_render.py`   | PDF → 每页 PNG                                                                   | 0    |
+| S1  | `1_render.py`   | PDF / 图片 / 图片文件夹 → 每页 PNG                                               | 0    |
 | S2  | `2_ocr.py`      | 每页两路 OCR（StepFun + DeepSeek），逐页写 `*.review.json`                       | 💰💰 |
 | S3  | `3_merge.py`    | 两路比对 → 逐页 `*.merge.json`（字段规范化：答案/题型）                          | 💰   |
 | S4  | `4_build_md.py` | 汇总成 `data/raw/<分类>/<分类>.md` + 报告；答案表/评分标准贴回、AI 终审、AI 解析 | 💰💰 |
@@ -71,6 +88,7 @@ python pdf-ocr/7_import.py --folder "C:\Users\me\Desktop\马" --entry "马克思
 
 ```bash
 python pdf-ocr/1_render.py "试卷.pdf" --category my-paper --dpi 200
+python pdf-ocr/1_render.py .\扫描件\ --category my-paper --max-side 2600   # 一叠扫描图当一份卷
 python pdf-ocr/4_build_md.py --category my-paper --force        # 只重做 md
 python pdf-ocr/5_check.py --category my-paper                   # 看门禁结论
 python pdf-ocr/6_publish.py --category my-paper --entry "某个入口" --entry-key some-entry --paper "试卷卡名" --position 3
@@ -80,24 +98,61 @@ python pdf-ocr/6_publish.py --category my-paper --entry "某个入口" --entry-k
 
 ## 4. 批量导入（`7_import.py`）全部参数
 
-| 参数                         | 说明                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------------ |
-| `--folder <目录>`            | **必填**，装着 PDF 的文件夹（不递归子目录）                                          |
-| `--entry <名字>`             | 入口名，默认 = 文件夹名                                                              |
-| `--entry-key <key>`          | 路由 key（`/<key>`）。中文入口名推不出 key，**必须显式给**                           |
-| `--entry-icon <字>`          | 入口图标，1 个字（如 `马`）                                                          |
-| `--entry-desc <文字>`        | 入口卡副标题，默认自动「N 份试卷 · M 题」                                            |
-| `--paper-prefix <前缀>`      | 卡片标题前缀（默认空 = 就用文件名）                                                  |
-| `--category-prefix <前缀>`   | 分类名前缀，默认 = `--entry-key`                                                     |
-| `--dpi <数字>`               | S1 渲染分辨率，默认 200                                                              |
-| `--only <子串>[,<子串>…]`    | **只跑文件名含这些子串的卷**（补跑单卷用）。分类名与卡片序号仍按全量计划算，不会错位 |
-| `--from-step <1-6>`          | 从第几步开始（断点续跑）                                                             |
-| `--only-step <1-6>`          | 只跑这一步                                                                           |
-| `--force`                    | 让 S1 覆盖已有页图 / 让 S4 覆盖已有 md                                               |
-| `--stop-on-error`            | 某份失败就停下（**默认是继续跑下一份**）                                             |
-| `--no-build` / `--no-verify` | S6 跳过 `vite build` / 跳过 `vue-tsc` + 题库审计                                     |
-| `--dry-run`                  | 只列计划，不执行                                                                     |
-| `--quiet`                    | 只打印每份卷的完成行                                                                 |
+| 参数                         | 说明                                                                                  |
+| ---------------------------- | ------------------------------------------------------------------------------------- |
+| `--folder <目录>`            | **必填**，装着 PDF / 图片的文件夹（不递归子目录）                                     |
+| `--entry <名字>`             | 入口名，默认 = 文件夹名                                                               |
+| `--entry-key <key>`          | 路由 key（`/<key>`）。中文入口名推不出 key，**必须显式给**                            |
+| `--entry-icon <字>`          | 入口图标，1 个字（如 `马`）                                                           |
+| `--entry-desc <文字>`        | 入口卡副标题，默认自动「N 份试卷 · M 题」                                             |
+| `--paper-prefix <前缀>`      | 卡片标题前缀（默认空 = 就用文件名）                                                   |
+| `--category-prefix <前缀>`   | 分类名前缀，默认 = `--entry-key`                                                      |
+| `--dpi <数字>`               | S1 的 PDF 渲染分辨率，默认 200（图片按原始像素）                                      |
+| `--max-side <像素>`          | 图片最长边超过它就按 2 的幂缩小，默认 0 = 不缩（手机拍照 / 扫描件常用 2600 省 token） |
+| `--images one\|each`         | 图片怎么分组：`one`（默认）整夹图片当一份卷的连续页；`each` 一张图一份卷              |
+| `--only <子串>[,<子串>…]`    | **只跑名字含这些子串的卷**（补跑单卷用）。分类名与卡片序号仍按全量计划算，不会错位    |
+| `--answers paper\|ai\|auto`  | 答案从哪来，默认 `auto`：卷面答案覆盖率 <50% 时自动用 AI 解题（见 §5.5）             |
+| `--solve-passes 1\|2`        | AI 解题跑几路，默认 2 = 两路交叉校验；`1` 省钱但没人验证                              |
+| `--refresh-answers`          | 重跑 AI 解题（默认复用 `work/<分类>/ai-answers.json`，重跑不重复花钱）                |
+| `--allow-ai-answers`         | 允许发布「AI 推得的答案 > 1/2」的卷子（默认拒发，见 §7）                              |
+| `--from-step <1-6>`          | 从第几步开始（断点续跑）                                                              |
+| `--only-step <1-6>`          | 只跑这一步                                                                            |
+| `--force`                    | 让 S1 覆盖已有页图 / 让 S4 覆盖已有 md                                                |
+| `--stop-on-error`            | 某份失败就停下（**默认是继续跑下一份**）                                              |
+| `--no-build` / `--no-verify` | S6 跳过 `vite build` / 跳过 `vue-tsc` + 题库审计                                      |
+| `--dry-run`                  | 只列计划，不执行                                                                      |
+| `--quiet`                    | 只打印每份卷的完成行                                                                  |
+
+### 图片输入（扫描件 / 手机拍照 / 截图）
+
+不用先转 PDF：直接丢图片，或者丢一个装着图片的文件夹。**格式与分组都自动判断**。
+
+```bash
+# 一个文件夹的扫描图 = 一份卷的连续页（最常见：扫描 App 一次导出一叠 IMG_*.jpg）
+python pdf-ocr/7_import.py --folder "C:\Users\me\Desktop\扫描件" --entry "某门课" --entry-key some-course
+
+# 手机拍的照偏大 → 最长边缩到 2600 再 OCR（省 token；按 2 的幂缩，不会拉花）
+python pdf-ocr/7_import.py --folder "C:\Users\me\Desktop\照片" --entry "某门课" --entry-key some-course --max-side 2600
+
+# 一张图就是一份卷
+python pdf-ocr/7_import.py --folder "C:\Users\me\Desktop\单页卷" --entry "某门课" --entry-key some-course --images each
+
+# 只调 S1（比如先看看页序对不对）
+python pdf-ocr/1_render.py .\扫描件\ --category my-paper --max-side 2600
+```
+
+细则：
+
+- **页序按自然序**：`IMG_2` 会排在 `IMG_10` **前面**（同一份卷的页序错了整卷就乱）。
+- 识别**看文件头**不看后缀，所以没有后缀、`.dat`、`.bin` 的扫描件也能吃；不认识的文件会被忽略并在摘要里报一行。
+- **原图复制进 `work/<分类>/sources/page-00N.<ext>`**，之后**源文件夹可以随便挪走/删掉**（重跑 S1 会重新复制；
+  副本大小一致就跳过）。支持的格式由 MuPDF 解码：png / jpeg / webp / bmp / gif / tiff / pnm / jp2 / psd / tga …
+  `png` 与 `jpeg` 复制后不转码；其余格式先转 PNG 放 `pages/`。解不开的只影响那一页，其余页照常跑（退出码 3，日志里有文件名）。
+- `--dpi` 只对 PDF 生效；图片默认**原始像素**，要缩就用 `--max-side`（只缩不放，按 2 的幂）。
+- 混着传也行：`1_render.py 卷子.pdf 附加页.jpg` → 3 页（PDF 2 页 + 图片 1 页），manifest 里 `kind` 记 `mixed`，
+  `page_files` 里 PDF 那两页是渲染出来的 `pages/page-00N.png`、图片那页是 `sources/page-00N.png`。
+- manifest 里会多记 `kind`（pdf / image / mixed）、`format`、`sources`（这份卷由哪些文件组成）、
+  `page_files`（每页 OCR 读哪个文件）、`page_files_copied`（复制了几页原图）、`max_side`。
 
 ### 典型用法
 
@@ -114,6 +169,38 @@ python pdf-ocr/7_import.py --folder .\inbox --entry "马克思主义原理" --en
 # 从第 3 步开始（S1/S2 不用重跑）
 python pdf-ocr/7_import.py --folder .\inbox --entry "马克思主义原理" --entry-key marxism --from-step 3
 ```
+
+### 没有答案的卷子：让 AI 把答案解出来（`--answers ai`）
+
+有些卷子**卷面一道答案都没印**（题和答案册分开、只扫了题、或者本来是没答案的练习题）。
+这时流水线默认只会告诉你"这些题缺答案、会被丢弃"。加 `--answers ai`（或默认的 `auto`）就让它
+**把答案解出来**：
+
+```bash
+# 一个文件夹全是没有答案的卷子（auto 会自动判定：覆盖率 <50% 就走 AI 解题）
+python pdf-ocr/7_import.py --folder .\无答案的卷子 --entry "某门课" --entry-key some-course
+
+# 强制每一份都用 AI 解（卷面有答案的题一律不动）
+python pdf-ocr/7_import.py --folder .\inbox --entry "某门课" --entry-key some-course --answers ai
+
+# 只想先看 AI 解得对不对（不花钱重跑别的）：单独跑 S4
+python pdf-ocr/4_build_md.py --category some-course-1 --answers ai --force
+```
+
+它是怎么保证"不乱猜"的：
+
+- **只解客观题**（有 ≥2 个选项的题）。主观题没有选项，字母答案无从校验 → 不碰，答案仍以评分标准为准。
+- **两路交叉校验**：A 路按选项字母答；B 路把**选项顺序打乱**、要求答"选项原文"。
+  两路一致才定案；不一致时**采用 A 路但标 low 并写进 `report.md`**（宁留一道标红的题，不丢题）。
+- **答案来源如实标记**：md 里每题多一行 `> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）`，
+  解析端据此落成 `answerProvenance: 'generated'` + `status: 'needs_review'` + 一条 `reviewNotes`
+  （**数据里**分得清"印的答案"和"推的答案"；站上目前还没有对应徽章）。
+- **发布门禁**：整卷 AI 推得答案超过 1/2 → S5 直接拒发（`exit 3`），要发得显式加 `--allow-ai-answers`。
+- **花钱很少**：答案与 `work/<分类>/ai-answers.json` 一起缓存，重跑不再请求；`--refresh-answers` 才重问。
+  按题号 + 题干指纹命中 —— md 重新生成过（题干变了）会自动重解。
+
+人工怎么核对：看 `work/<分类>/report.md` 的「AI 推答案（卷面没有印答案的客观题）」一节
+（推得多少题、两路是否一致、被拒的是哪几道），或者直接在站上筛「待复核」。
 
 ---
 
@@ -160,8 +247,9 @@ S7 结束时会给一行三桶汇总：
 
 `5_check.py` 用**解析端同一套口径**离线复算一遍 md，然后：
 
-- **硬错误**（拒绝发布，退出码 3）：会被解析端丢弃的题 **> 总数的 1/5**、重复题号、题型非法…
-- **警告**（放行，退出码 2）：丢弃 < 1/5、带"待复核"标记、题号缺口…
+- **硬错误**（拒绝发布，退出码 3）：会被解析端丢弃的题 **> 总数的 1/5**、重复题号、题型非法、
+  **AI 推得的答案 > 可收下题目的 1/2**（要发得显式加 `--allow-ai-answers`）…
+- **警告**（放行，退出码 2）：丢弃 < 1/5、带"待复核"标记、题号缺口、有 AI 推得的答案但没超过 1/2…
 
 "会被解析端丢弃"就三种：题干为空、**既没有 ≥2 个选项、也没有答案文本**、答案不在选项里。所以一条铁律：
 
@@ -195,16 +283,20 @@ python pdf-ocr/6_publish.py --unpublish --category marxism-4 --purge
 
 ## 9. 常见问题
 
-| 现象                         | 原因 / 处理                                                                                                                                             |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 卡片不出现                   | S5 没过（看 `<分类>-check.json` 的 `hard_errors`）或 S6 没跑完（看 `entries.ts` / `categories.ts` 里有没有这个 key）                                    |
-| 大量"缺答案"                 | 答案页没被识别（标题里没有"参考答案"时按内容判），或答案页格式是不印题号的裸字母块 —— 看 `report.md` 的"答案来源"与"贴不出去"两个小节                   |
-| 判断题答案不显示             | 卷面答案是 `√`/`×`。工具会把 `√→正确`、`×→错误` 写成文本，并补 `A. 正确 / B. 错误` 两个选项                                                             |
-| 答案出现在题干里             | 该整页应是答案页：`report.md` 会记 `answer_region_rejected`（导言/材料里出现答案块会被拒）                                                              |
-| 侧栏出现好几个同名分组       | 老版本的自动分组每份卷新建一个组；现在按组名复用，历史数据可手工合并或重跑 S6                                                                           |
-| 题号缺口 `18→21`             | 卷面本身就跳号，或 OCR 丢题；`report.md` 有"答案表里有、题目里没有的题号"表                                                                             |
-| 某卷被内容审核拦（HTTP 451） | S2 会重试（默认 `--max-retries 3`）；仍不过就 `⊘ 放弃本卷`，数据不发布。想救：换模型 / 降 `--dpi` / 人工补该页的 `page-00N.{a,b}.review.json` 后重跑 S3 |
-| `npm run dev` 说找不到文件   | 仓库根目录是 `dlut-nihongo-quiz/`（外层同名目录还有个空 `.git`，别在里面跑）                                                                            |
+| 现象                         | 原因 / 处理                                                                                                                                                                            |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 卡片不出现                   | S5 没过（看 `<分类>-check.json` 的 `hard_errors`）或 S6 没跑完（看 `entries.ts` / `categories.ts` 里有没有这个 key）                                                                   |
+| 手机拍的照片怎么导入         | 直接丢进一个文件夹跑 `--folder`：默认**整夹图片 = 一份卷的连续页**（自然序），原图会被复制进 `work/<分类>/sources/`。太大加 `--max-side 2600` 省 token；一张图一份卷加 `--images each` |
+| 扫描件没有后缀 / 是 `.dat`   | 照样能导入 —— 输入**按文件头识别**，不看后缀；真认不出的文件会跳过并在日志里报一行                                                                                                     |
+| OCR 某页特别慢 / 老超时      | 先别调大超时：S2 现在**默认流式**，只有"120s 一个字节都没有"才判失败（`--idle-timeout`）。若某页稳定要 10 分钟以上，多半是模型不适合这种密排页 → 换模型（见下一行）或降 `--dpi 150` |
+| 想换 OCR 模型 / 换供应商     | `.env` 里加 `OCR_BASE_URL` / `OCR_MODEL` / `OCR_API_KEY` 三项（缺的项回退到 `STEPFUN_*`）。注意套餐入口 `/step_plan/…` 实测只有 `step-3.7-flash`、`step-5-preview` 能看图；专用视觉模型（`qwen-vl-max` / `glm-4v` / `gpt-4o-mini`）要走各自的标准入口。临时试一次也可以：`--model` / `--base-url` |
+| 大量"缺答案"                 | 答案页没被识别（标题里没有"参考答案"时按内容判），或答案页格式是不印题号的裸字母块 —— 看 `report.md` 的"答案来源"与"贴不出去"两个小节。**卷面真没有答案**就用 `--answers ai`（见 §5.5） |
+| 判断题答案不显示             | 卷面答案是 `√`/`×`。工具会把 `√→正确`、`×→错误` 写成文本，并补 `A. 正确 / B. 错误` 两个选项                                                                                            |
+| 答案出现在题干里             | 该整页应是答案页：`report.md` 会记 `answer_region_rejected`（导言/材料里出现答案块会被拒）                                                                                             |
+| 侧栏出现好几个同名分组       | 老版本的自动分组每份卷新建一个组；现在按组名复用，历史数据可手工合并或重跑 S6                                                                                                          |
+| 题号缺口 `18→21`             | 卷面本身就跳号，或 OCR 丢题；`report.md` 有"答案表里有、题目里没有的题号"表                                                                                                            |
+| 某卷被内容审核拦（HTTP 451） | S2 会重试（默认 `--max-retries 3`）；仍不过就 `⊘ 放弃本卷`，数据不发布。想救：换模型 / 降 `--dpi` / 人工补该页的 `page-00N.{a,b}.review.json` 后重跑 S3                                |
+| `npm run dev` 说找不到文件   | 仓库根目录是 `dlut-nihongo-quiz/`（外层同名目录还有个空 `.git`，别在里面跑）                                                                                                           |
 
 ---
 

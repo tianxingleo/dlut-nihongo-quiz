@@ -18,6 +18,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -26,6 +27,92 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import _common as c  # noqa: E402
+
+
+def post_ocr(
+    url: str,
+    payload: dict,
+    api_key: str | None,
+    *,
+    timeout: int,
+    idle_timeout: int,
+    stream: bool,
+) -> dict:
+    """发一次 OCR 请求（**默认流式**），返回与 `c.post_json` 同形状的响应。
+
+    为什么要流式：非流式请求**只有一个总超时** —— 一页输出长（实测成功的一次 50~150s，
+    最重的第 2 页更久）就可能被判成"卡死"重试，而重试发的是同一个重请求、结果一样；
+    真正的死连接又要在那儿干等 300s。流式下 `requests` 的读超时是**两次数据之间的间隔**：
+    只要服务端在持续吐字就不会超时，真卡住（默认 120s 一个字节都没有）才判失败。
+    """
+    import requests  # 局部导入：只有真正调 API 才需要
+
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    body = dict(payload)
+    if stream:
+        body["stream"] = True
+        body["stream_options"] = {"include_usage": True}
+    try:
+        response = requests.post(
+            url,
+            json=body,
+            headers=headers,
+            timeout=(30, idle_timeout) if stream else timeout,
+            stream=stream,
+        )
+    except Exception as exc:  # noqa: BLE001 - 网络/超时
+        raise c.ApiError(f"{type(exc).__name__}: {exc}", retryable=True) from exc
+
+    if response.status_code != 200:
+        text = (response.text or "")[:200]
+        retryable = (
+            response.status_code == 429
+            or response.status_code >= 500
+            or response.status_code == 451
+            or "censorship_blocked" in text
+        )
+        raise c.ApiError(f"HTTP {response.status_code}：{text}", retryable=retryable)
+    if not stream:
+        return response.json()
+
+    content: list[str] = []
+    reasoning: list[str] = []
+    usage: dict = {}
+    finish = ""
+    try:
+        for line in response.iter_lines(decode_unicode=False):
+            if not line or not line.startswith(b"data: "):
+                continue
+            raw = line[6:].strip()
+            if raw == b"[DONE]":
+                break
+            try:
+                data = json.loads(raw)
+            except Exception:  # noqa: BLE001 - 单个坏分片不影响整体
+                continue
+            if isinstance(data.get("usage"), dict):
+                usage = data["usage"]
+            for choice in data.get("choices") or []:
+                delta = choice.get("delta") or {}
+                if isinstance(delta.get("content"), str):
+                    content.append(delta["content"])
+                if isinstance(delta.get("reasoning_content"), str):
+                    reasoning.append(delta["reasoning_content"])
+                if choice.get("finish_reason"):
+                    finish = str(choice["finish_reason"])
+    finally:
+        response.close()
+    return {
+        "choices": [
+            {
+                "message": {"content": "".join(content), "reasoning_content": "".join(reasoning)},
+                "finish_reason": finish,
+            }
+        ],
+        "usage": usage,
+    }
 
 # ── 两路提示词（适度异构）─────────────────────────────────────────────────
 # 系统提示词与 schema 对两路**完全一致**，保证结果可以逐字段比对。
@@ -82,7 +169,23 @@ SCHEMA_BLOCK = """请输出如下 JSON（键名固定；没有的填空字符串
 - 卷面**跳号**（如 7 后面直接是 9）时同样照抄，并在 uncertain[] 里说明。
 - 为什么：后续是**按题号**把参考答案贴回每一道题的。你一旦重编号，卷面上真正印着的那道题
   就会被挤掉（实测：卷面把「7.」印了两遍，两路都读成 7、8 再跳到 9，卷面真正的第 8 题
-  在两路里都不见了 —— 整卷答案跟着错位）。"""
+  在两路里都不见了 —— 整卷答案跟着错位）。
+
+【下划线（硬要求）】
+- 卷面上**被下划线划住的文字**，在 transcription_md 里用 `<u>文字</u>` 包起来 ——
+  这才是阅读/词汇题真正考的那几个词，网页上要靠它标色。
+- **只包被划住的那几个字**，不要整句都包；**没被划线的字一个都不要加**；
+  填空用的空白横线（下面没有字的线）**不算**下划线，照原样转写即可。
+- 拿不准就别加（宁可少标）。
+
+【假名照抄（硬要求）】
+- 卷面上写的是**假名**（ひらがな / カタカナ），就**照抄假名**；写的是**汉字**，就照抄汉字。
+  **绝对不要把假名"顺手改成"汉字，也不要把汉字改成假名** —— 哪怕你觉得改成汉字才"正确"。
+  （实测踩过：卷面「一等賞をじゅしょうした」里的「じゅしょう」是本题要考的读音，
+   被改成「受賞」后这道汉字读音题就作废了 —— 选项里印的就是 受賞 / 受状 / 獲得 / 後賞。）
+- 助词、送假名一律照抄：「は」「が」「を」「に」「いる」「ください」不要写成「葉」「居る」这种。
+- `corrections[]` 只收**同一种文字**的明显误识别（如「並んで」被读成「並んで」以外的错字）；
+  **把假名改成汉字不算 corrections**，请按原样转写。"""
 
 # 两路各自的侧重（只有这里不同）
 PASS_EMPHASIS = {
@@ -195,6 +298,9 @@ def normalize_review(
             "endpoint": cfg.get("base_url"),
             "elapsed_ms": elapsed_ms,
             "usage": usage if isinstance(usage, dict) else {},
+            # 这一路标出了几处下划线（`<u>…</u>`）—— S4 会把它统计进 report，
+            # 用来跟"本地像素检测到的下划线条数"对账（差太多就说明模型漏标了）
+            "underline_marks": c.underline_marks(raw.get("transcription_md")),
             **(call_meta or {}),
         },
     }
@@ -211,6 +317,8 @@ def ocr_one_pass(
     timeout: int,
     max_retries: int,
     max_tokens: int,
+    idle_timeout: int = 120,
+    stream: bool = True,
 ) -> dict:
     stage = f"{c.STAGES[2]}-{pass_key.upper()}"
     payload = build_payload(cfg.get("model"), png, pass_key, max_tokens)
@@ -225,8 +333,13 @@ def ocr_one_pass(
             else build_payload(cfg.get("model"), png, pass_key, max_tokens, RETRY_NOTE)
         )
         try:
-            response = c.post_json(
-                str(cfg["base_url"]), attempt_payload, cfg.get("api_key"), timeout=timeout
+            response = post_ocr(
+                str(cfg["base_url"]),
+                attempt_payload,
+                cfg.get("api_key"),
+                timeout=timeout,
+                idle_timeout=idle_timeout,
+                stream=stream,
             )
             text, text_field = c.response_text_ex(response)
             finish_reason = c.response_finish_reason(response)
@@ -268,6 +381,18 @@ def ocr_one_pass(
                     f"当前 --max-tokens={max_tokens} 已是端点允许的上限，"
                     f"若转写确实缺末尾内容，说明是模型侧生成长度限制，需要拆页处理"
                 )
+            # **空转写 = 白跑**：换模型后实测遇到过"HTTP 200、finish_reason=stop，但
+            # transcription_md 空、question_ranges 也空"的回复 —— 以前会被当成成功收下，
+            # 结果合并阶段大批题**题干为空**（实测 25/89 被 S5 判为丢弃）。
+            # 这里当可重试失败处理（已跑满重试次数时仍收下，免得整页硬失败）。
+            if not str(review["transcription_md"]).strip() and not review["question_ranges"]:
+                message = (
+                    f"第 {number} 页 OCR-{pass_key.upper()} 返回了**空转写**"
+                    f"（transcription_md 与 question_ranges 都为空），判定为无效回复"
+                )
+                if attempt < max_retries:
+                    raise c.ApiError(message + "，将重试", retryable=True)
+                c.warn(message + "；已跑满重试次数，仍按原样落盘（这一路等于没有内容）")
             return review
         except c.ApiError as exc:
             last_error = str(exc)
@@ -298,15 +423,51 @@ def main() -> int:
         action="store_true",
         help="两路 OCR 串行跑（默认并行：两路互不依赖，并行不花钱、墙钟时间减半）",
     )
-    parser.add_argument("--timeout", type=int, default=180, help="单次请求超时秒数，默认 180")
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=300,
+        help="非流式单次请求超时秒数，默认 300（--no-stream 时才用）",
+    )
+    parser.add_argument(
+        "--idle-timeout",
+        type=int,
+        default=120,
+        help="流式下**两次数据之间的间隔**上限，默认 120s —— 只要服务端在吐字就不算超时"
+        "（长输出不会被掐死），真卡住 120s 一个字节都没有才判失败",
+    )
+    parser.add_argument(
+        "--model",
+        help="临时换 OCR 模型（覆盖 .env 的 STEPFUN_MODEL，只影响本次运行）。"
+        "同一个账号下可用的视觉模型：step-1o-turbo-vision（专用视觉、一般更快）、"
+        "step-3.5-flash、step-5-preview 等；用 `python pdf-ocr/_models.py` 可列出全部",
+    )
+    parser.add_argument(
+        "--base-url",
+        help="临时换 OCR 端点（覆盖 .env 的 STEPFUN_BASE_URL，只影响本次运行）。"
+        "换非套餐模型时要用标准入口 https://api.stepfun.com/v1/chat/completions"
+        "（.env 里的 /step_plan/… 只服务套餐内的模型，换模型会 404）",
+    )
+    parser.add_argument(
+        "--api-key",
+        help="临时换密钥（一般不用：key 会按端点自动选 —— stepfun.com 用 STEPFUN_API_KEY，"
+        "其它端点用 OCR_API_KEY）",
+    )
+    parser.add_argument(
+        "--no-stream",
+        action="store_true",
+        help="关掉流式（退回旧的「一个总超时」行为，一般只在排查端点兼容性时用）",
+    )
     parser.add_argument("--max-retries", type=int, default=3, help="每页每路最大尝试次数，默认 3")
     parser.add_argument(
         "--max-tokens",
         type=int,
-        default=c.DEFAULT_MAX_TOKENS["ocr"],
+        default=None,
         help=(
-            f"单次响应 token 上限，默认 {c.DEFAULT_MAX_TOKENS['ocr']}"
-            f"（= 自设上限 {c.MAX_TOKENS_CEILING['ocr']}，防止密排页转写被截断成非法 JSON）"
+            "单次响应 token 上限；默认**按最终端点**给：StepFun 套餐入口 1e7"
+            "（它是推理模型，思维链会吃掉大量额度，给小了会 finish_reason=length、正文为空），"
+            f"通用/网关 {c.MAX_TOKENS_CEILING_CUSTOM}（qwen 系列只允许 [1, 32768]）。"
+            "可用环境变量 OCR_MAX_TOKENS 覆盖"
         ),
     )
     parser.add_argument(
@@ -327,7 +488,6 @@ def main() -> int:
 
     c.setup_stdio()
     c.set_quiet(args.quiet)
-    c.check_max_tokens("ocr", args.max_tokens)
 
     category = c.safe_name(args.category)
     work_dir = c.WORK_ROOT / category
@@ -339,9 +499,48 @@ def main() -> int:
     cfg = c.ocr_config()
     if not cfg.get("api_key"):
         c.fail(
-            "缺少 STEPFUN_API_KEY：请在仓库根 .env 里填 STEPFUN_API_KEY（可选 STEPFUN_BASE_URL/STEPFUN_MODEL）",
+            "缺少 OCR 密钥：在仓库根 .env 里填 STEPFUN_API_KEY（默认走 StepFun 套餐入口），"
+            "或改用别的视觉模型：填 OCR_BASE_URL / OCR_MODEL / OCR_API_KEY 三项（见 .env.example）",
             1,
         )
+    if args.model:
+        # `--model` 只覆盖本次运行（不动 .env），方便逐个模型试：
+        #   python pdf-ocr/2_ocr.py --category X --pages 2 --model step-1o-turbo-vision
+        cfg["model"] = args.model
+        c.always(f"[配置] 本次用 --model 覆盖模型：{args.model}")
+    if args.base_url:
+        # 实测：`.env` 里的 `/step_plan/v1/chat/completions` 是**套餐专用**入口，
+        # 换别的模型会 404（model_invalid）；要用 step-1o-turbo-vision 这类模型得走标准入口
+        # `https://api.stepfun.com/v1/chat/completions`。这里允许临时覆盖。
+        cfg["base_url"] = args.base_url
+        c.always(f"[配置] 本次用 --base-url 覆盖端点：{args.base_url}")
+    if args.api_key:
+        cfg["api_key"] = args.api_key
+    else:
+        # **按最终端点重新选 key**：切回 stepfun.com 时不能再用网关的 key（否则 401）
+        cfg["api_key"] = c.ocr_key_for(str(cfg.get("base_url") or ""))
+
+    # **max_tokens 上限随供应商变**：StepFun 套餐入口不校验（默认 1e7），而 OpenAI 兼容网关 /
+    # qwen 系列只允许 [1, 32768]，超了每一页都报 `HTTP 400 Range of max_tokens …`（实测踩过）。
+    # 这里按实际端点自动收到上限，并把生效值说清楚（而不是让用户自己猜）。
+    # **max_tokens 上限随端点变**，而且默认值也必须跟着变：
+    #   * StepFun 套餐入口：模型是推理模型，思维链会吃掉几万 token → 默认给 1e7（给小了正文为空）；
+    #   * OpenAI 兼容网关 / qwen：只允许 [1, 32768]，给大了直接 HTTP 400（实测踩过）。
+    ocr_ceiling = (
+        c.MAX_TOKENS_CEILING["ocr"]
+        if "stepfun.com" in str(cfg.get("base_url") or "")
+        else c.MAX_TOKENS_CEILING_CUSTOM
+    )
+    if args.max_tokens is None:
+        args.max_tokens = ocr_ceiling
+        c.always(f"[配置] max_tokens 默认 {ocr_ceiling}（按端点选）")
+    elif args.max_tokens > ocr_ceiling:
+        c.warn(
+            f"当前端点（{cfg.get('base_url')}）的 max_tokens 上限是 {ocr_ceiling}，"
+            f"已把 --max-tokens {args.max_tokens} 收到 {ocr_ceiling}（超了会 HTTP 400）"
+        )
+        args.max_tokens = ocr_ceiling
+    c.check_max_tokens("ocr", args.max_tokens, ocr_ceiling)
 
     passes = [p.strip().lower() for p in args.passes.split(",") if p.strip()]
     unknown = [p for p in passes if p not in PASS_EMPHASIS]
@@ -380,10 +579,12 @@ def main() -> int:
         )
 
     for index, number in enumerate(pages, start=1):
-        png = pages_dir / f"page-{number:03d}.png"
+        # 页图不一定是渲染出来的 PNG：图片输入时 S1 **不拆 PDF、只复制原图**，
+        # 这里按 manifest 的 page_files 取（sources/page-00N.jpg 或 pages/page-00N.png）
+        png = c.page_source(document, work_dir, number)
         if not png.exists():
-            errors.append(f"page {number}: 缺页图 {png.name}（先跑 S1）")
-            c.progress(c.STAGES[2], index, len(pages), "✗", 0, f"缺页图 {png.name}")
+            errors.append(f"page {number}: 缺图 {png}（PDF 先跑 S1；图片输入时重跑 S1 会重新复制原图）")
+            c.progress(c.STAGES[2], index, len(pages), "✗", 0, f"缺图 {png.name}")
             c.page_done(index, len(pages), ["OCR ✗"])
             continue
 
@@ -416,7 +617,7 @@ def main() -> int:
             """跑一路并落盘（可能在子线程里跑；写盘用的是原子改名，线程安全）。"""
             review = ocr_one_pass(
                 cfg, png, number, pass_key, index, len(pages), args.timeout,
-                args.max_retries, args.max_tokens,
+                args.max_retries, args.max_tokens, args.idle_timeout, not args.no_stream,
             )
             c.write_json_atomic(target, review)
             return review
@@ -449,13 +650,14 @@ def main() -> int:
                 spent += c.usage_tokens(review["call"].get("usage"))
                 size_kb = target.stat().st_size / 1024
                 ranges = ",".join(review["question_ranges"]) or "-"
+                marks = int(review["call"].get("underline_marks") or 0)
                 c.progress(
                     stage,
                     index,
                     len(pages),
                     "✓",
                     review["call"]["elapsed_ms"],
-                    f"{size_kb:.1f}KB q={ranges}",
+                    f"{size_kb:.1f}KB q={ranges} 下划线={marks}",
                 )
                 parts.append(f"OCR-{pass_key.upper()} ✓")
             else:
@@ -513,6 +715,13 @@ def main() -> int:
         f"[完成] 两路 OCR 完成 {len(ocr_done)}/{len(pages)} 页 → "
         f"{(pages_dir).relative_to(c.REPO_ROOT)}"
     )
+    marked_total = sum(
+        int((c.read_json(pages_dir / f"page-{n:03d}.{p}.review.json") or {}).get("call", {}).get("underline_marks") or 0)
+        for n in ocr_done
+        for p in passes
+        if (pages_dir / f"page-{n:03d}.{p}.review.json").exists()
+    )
+    c.always(f"[下划线] 两路共标出 {marked_total} 处 `<u>…</u>`（卷面下划线，网页上会标色）")
     c.always(
         f"[用量] 本次调用 {calls_made} 次 / {c.human_tokens(spent)} tok；"
         f"该分类累计 {usage['calls']} 次 / {c.human_tokens(int(usage['tokens']))} tok"

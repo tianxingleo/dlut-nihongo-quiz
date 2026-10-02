@@ -1,0 +1,3375 @@
+[
+  {
+    "id": "jp-3-2022-q001",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 1,
+    "stem": "一、______の言葉の読み方として最もよいものを、A・B・C・D から一つ選びなさい。（0.5×30=15）\n私の趣味は花を育てることです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いくてる"
+      },
+      {
+        "key": "B",
+        "text": "そだてる"
+      },
+      {
+        "key": "C",
+        "text": "あわてる"
+      },
+      {
+        "key": "D",
+        "text": "たてる"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "そだてる",
+    "translation": "我的爱好是养花。",
+    "explanation": "「育てる」读作「そだてる」。A「いくてる」、C「あわてる（慌てる）」、D「たてる（立てる）」读音与原词不符。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 1
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q002",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 2,
+    "stem": "<u>不思議</u>な事件が起きました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ふしぎ"
+      },
+      {
+        "key": "B",
+        "text": "ぶしき"
+      },
+      {
+        "key": "C",
+        "text": "ふじぎ"
+      },
+      {
+        "key": "D",
+        "text": "ぶじぎ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ふしぎ",
+    "translation": "发生了不可思议的事件。",
+    "explanation": "「不思議」读作「ふしぎ」。B、D将「ふ」浊化为「ぶ」，C将「し」浊化为「じ」，均误。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 2
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q003",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 3,
+    "stem": "古い建物が<u>倒れた</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おそれた"
+      },
+      {
+        "key": "B",
+        "text": "たおれた"
+      },
+      {
+        "key": "C",
+        "text": "こわれた"
+      },
+      {
+        "key": "D",
+        "text": "やぶれた"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "たおれた",
+    "translation": "古老的建筑物倒塌了。",
+    "explanation": "「倒れた」读作「たおれた」。A「おそれた（恐れた）」、C「こわれた（壊れた）」、D「やぶれた（破れた）」都是别的词。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 3
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q004",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 4,
+    "stem": "事故の原因が<u>複雑</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ふうさつ"
+      },
+      {
+        "key": "B",
+        "text": "ふうざつ"
+      },
+      {
+        "key": "C",
+        "text": "ふくさつ"
+      },
+      {
+        "key": "D",
+        "text": "ふくざつ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ふくざつ",
+    "translation": "事故的原因很复杂。",
+    "explanation": "「複雑」读作「ふくざつ」，注意「ふく」不是长音「ふう」，且「ざ」要浊化。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 4
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q005",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 5,
+    "stem": "学校へ行く<u>途中</u>、かわいい猫を見ました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "とうちゅう"
+      },
+      {
+        "key": "B",
+        "text": "とちゅう"
+      },
+      {
+        "key": "C",
+        "text": "とうじゅう"
+      },
+      {
+        "key": "D",
+        "text": "とじゅう"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "とちゅう",
+    "translation": "去学校的途中，看到了一只可爱的猫。",
+    "explanation": "「途中」读作「とちゅう」，「と」不读长音，「ち」不浊化。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 5
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q006",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 6,
+    "stem": "中村さんの<u>到着する</u>時間が分かりますか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "とうつく"
+      },
+      {
+        "key": "B",
+        "text": "つく"
+      },
+      {
+        "key": "C",
+        "text": "とうちゃく"
+      },
+      {
+        "key": "D",
+        "text": "ちゃく"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "とうちゃく",
+    "translation": "你知道中村先生到达的时间吗？",
+    "explanation": "「到着」读作「とうちゃく」，是「到」＋「着」两个汉字音读的组合，不能只读「つく」「ちゃく」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 6
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q007",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 7,
+    "stem": "ボランティアが<u>お年寄り</u>の面倒を見ている。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ねんより"
+      },
+      {
+        "key": "B",
+        "text": "としより"
+      },
+      {
+        "key": "C",
+        "text": "ねんとり"
+      },
+      {
+        "key": "D",
+        "text": "としとり"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "としより",
+    "translation": "志愿者在照顾老人。",
+    "explanation": "「お年寄り」读作「おとしより」，「年寄り」训读为「としより」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 7
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q008",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 8,
+    "stem": "空港は市内からずいぶん<u>離れた</u>所にある。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おそれた"
+      },
+      {
+        "key": "B",
+        "text": "わかれた"
+      },
+      {
+        "key": "C",
+        "text": "おくれた"
+      },
+      {
+        "key": "D",
+        "text": "はなれた"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "はなれた",
+    "translation": "机场位于离市区相当远的地方。",
+    "explanation": "「離れた」读作「はなれた」。A「恐れた」、B「別れた」、C「遅れた」读音与词义均不同。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 8
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q009",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 9,
+    "stem": "英語は<u>一言も</u>話せない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ひとこと"
+      },
+      {
+        "key": "B",
+        "text": "ひとごと"
+      },
+      {
+        "key": "C",
+        "text": "いちごと"
+      },
+      {
+        "key": "D",
+        "text": "ひとげん"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ひとこと",
+    "translation": "英语一句话也说不了。",
+    "explanation": "「一言」读作「ひとこと」，表示「一句话」；B「ひとごと」是「他人事」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 9
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q010",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 10,
+    "stem": "箱の<u>中身</u>は何か、分かりません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ちゅうみ"
+      },
+      {
+        "key": "B",
+        "text": "ちゅうしん"
+      },
+      {
+        "key": "C",
+        "text": "なかしん"
+      },
+      {
+        "key": "D",
+        "text": "なかみ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "なかみ",
+    "translation": "不知道箱子里装的是什么。",
+    "explanation": "「中身」读作「なかみ」，是训读复合词；B「ちゅうしん」是「中心」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 10
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q011",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 11,
+    "stem": "あの店の前にたくさんの人が<u>並んで</u>います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "およんで"
+      },
+      {
+        "key": "B",
+        "text": "たのんで"
+      },
+      {
+        "key": "C",
+        "text": "さけんで"
+      },
+      {
+        "key": "D",
+        "text": "ならんで"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ならんで",
+    "translation": "那家店前排着很多人。",
+    "explanation": "「並んで」读作「ならんで」。A「泳いで」、B「頼んで」、C「叫んで」均非原词。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 11
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q012",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 12,
+    "stem": "レモンジュースに蜂蜜を少し<u>混ぜる</u>とおいしくなる。",
+    "options": [
+      {
+        "key": "A",
+        "text": "わざる"
+      },
+      {
+        "key": "B",
+        "text": "まぜる"
+      },
+      {
+        "key": "C",
+        "text": "ばせる"
+      },
+      {
+        "key": "D",
+        "text": "こんぜる"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "まぜる",
+    "translation": "在柠檬汁里加一点蜂蜜会更好喝。",
+    "explanation": "「混ぜる」读作「まぜる」。选项D卷面作「こんぜる」，属明显的干扰项写法。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 12
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q013",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 13,
+    "stem": "あの国は石油を<u>輸出</u>している。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ゆうにゅう"
+      },
+      {
+        "key": "B",
+        "text": "ゆにゅう"
+      },
+      {
+        "key": "C",
+        "text": "ゆうしゅつ"
+      },
+      {
+        "key": "D",
+        "text": "ゆしゅつ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ゆしゅつ",
+    "translation": "那个国家出口石油。",
+    "explanation": "「輸出」读作「ゆしゅつ」，与「輸入（ゆにゅう）」相对；A、B是「輸入」的读法，C多加长音。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 13
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.A（A 路「ゆうにゆう」/ B 路「ゆうにゅう」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q014",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 14,
+    "stem": "頭を下げて<u>謝る</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "たのまる"
+      },
+      {
+        "key": "B",
+        "text": "かんしゃる"
+      },
+      {
+        "key": "C",
+        "text": "あやまる"
+      },
+      {
+        "key": "D",
+        "text": "しゃする"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "あやまる",
+    "translation": "低下头道歉。",
+    "explanation": "「謝る」读作「あやまる」，意为道歉；B「かんしゃる」与「感謝」混淆，为干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 14
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q015",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 15,
+    "stem": "汗をかいたので、のどが渇いた 汗をかいたので、のどが<u>渇いた</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かわいた"
+      },
+      {
+        "key": "B",
+        "text": "あるいた"
+      },
+      {
+        "key": "C",
+        "text": "いそいた"
+      },
+      {
+        "key": "D",
+        "text": "うごいた"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "かわいた",
+    "translation": "因为出汗了，所以口渴。",
+    "explanation": "本页末尾只出现该句题干，题号与选项被下方黑色横线遮挡／被页边界截断，无法确认，需从后续页面拼接。 「渇いた」读作「かわいた」。B「歩いた」、C「急いた」、D「動いた」都是形式相近的干扰项。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 15
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 low）"
+    ],
+    "explanationSource": "printed",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q016",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 16,
+    "stem": "小林さんは薬を飲むのを<u>嫌がる</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きらがる"
+      },
+      {
+        "key": "B",
+        "text": "ほしがる"
+      },
+      {
+        "key": "C",
+        "text": "けんがる"
+      },
+      {
+        "key": "D",
+        "text": "いやがる"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "いやがる",
+    "translation": "",
+    "explanation": "「嫌がる」读作「いやがる」。A「嫌う」是「きらう」，B 是「欲しがる」，均为干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 16
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q017",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 17,
+    "stem": "子どもの顔は涙で<u>濡れて</u>いた。",
+    "options": [
+      {
+        "key": "A",
+        "text": "うれて"
+      },
+      {
+        "key": "B",
+        "text": "おれて"
+      },
+      {
+        "key": "C",
+        "text": "ぬれて"
+      },
+      {
+        "key": "D",
+        "text": "それて"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ぬれて",
+    "translation": "",
+    "explanation": "「濡れて」读作「ぬれて」。A「売れて」、B「折れて」、D「逸れて」为形近干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 17
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q018",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 18,
+    "stem": "悩みを解決する方法はない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "あやみ"
+      },
+      {
+        "key": "B",
+        "text": "たのみ"
+      },
+      {
+        "key": "C",
+        "text": "なやみ"
+      },
+      {
+        "key": "D",
+        "text": "たのしみ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "なやみ",
+    "translation": "",
+    "explanation": "「悩み」读作「なやみ」。B「頼み」是「たのみ」，D「楽しみ」是「たのしみ」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 18
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q019",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 19,
+    "stem": "今日の宿題は新しい単語を<u>覚える</u>ことだ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おそえる"
+      },
+      {
+        "key": "B",
+        "text": "おぼえる"
+      },
+      {
+        "key": "C",
+        "text": "おくえる"
+      },
+      {
+        "key": "D",
+        "text": "ほそえる"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "おぼえる",
+    "translation": "",
+    "explanation": "「覚える」读作「おぼえる」。A「教える」是「おしえる」，D 为「細える」的错读，均为干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 19
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q020",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 20,
+    "stem": "子どもが滑って<u>転んだ</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "およんだ"
+      },
+      {
+        "key": "B",
+        "text": "はこんだ"
+      },
+      {
+        "key": "C",
+        "text": "てんだ"
+      },
+      {
+        "key": "D",
+        "text": "ころんだ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ころんだ",
+    "translation": "",
+    "explanation": "「転んだ」读作「ころんだ」。A「泳いだ」、B「運んだ」为同结尾的干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 20
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q021",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 21,
+    "stem": "この書類を彼に<u><u>渡して</u>ください</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "わたして"
+      },
+      {
+        "key": "B",
+        "text": "かえして"
+      },
+      {
+        "key": "C",
+        "text": "なおして"
+      },
+      {
+        "key": "D",
+        "text": "こわして"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "わたして",
+    "translation": "",
+    "explanation": "「渡して」读作「わたして」。B「返して」、C「直して」、D「壊して」都是形近干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 21
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q022",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 22,
+    "stem": "ワット先生はとても<u><u>厳しい</u>です</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "さびしい"
+      },
+      {
+        "key": "B",
+        "text": "たのしい"
+      },
+      {
+        "key": "C",
+        "text": "うれしい"
+      },
+      {
+        "key": "D",
+        "text": "きびしい"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "きびしい",
+    "translation": "",
+    "explanation": "「厳しい」读作「きびしい」。A「寂しい」、B「楽しい」、C「嬉しい」为同结尾形容词干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 22
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q023",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 23,
+    "stem": "うまくいくかどうか、<u>実験</u>してみます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しけん"
+      },
+      {
+        "key": "B",
+        "text": "じっけん"
+      },
+      {
+        "key": "C",
+        "text": "じつけん"
+      },
+      {
+        "key": "D",
+        "text": "じつげん"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "じっけん",
+    "translation": "",
+    "explanation": "「実験」读作「じっけん」，含促音。A「試験」是「しけん」，D「実現」是「じつげん」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 23
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q024",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 24,
+    "stem": "彼女は<u>化粧</u>がうまい。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かしょう"
+      },
+      {
+        "key": "B",
+        "text": "かしゅう"
+      },
+      {
+        "key": "C",
+        "text": "けしょう"
+      },
+      {
+        "key": "D",
+        "text": "けしゅう"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "けしょう",
+    "translation": "",
+    "explanation": "「化粧」读作「けしょう」，「化」在此读「け」。其余为拗音/长音干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 24
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q025",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 25,
+    "stem": "<u><u>目上</u>の人</u>に対して、敬語を使います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "もくじょう"
+      },
+      {
+        "key": "B",
+        "text": "めじょう"
+      },
+      {
+        "key": "C",
+        "text": "もくうえ"
+      },
+      {
+        "key": "D",
+        "text": "めうえ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "めうえ",
+    "translation": "",
+    "explanation": "「目上」读作「めうえ」，是训读组合。A、C 误用音读「もく」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 25
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q026",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 26,
+    "stem": "<u>湿気</u>が多くて気持ちが悪い。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しき"
+      },
+      {
+        "key": "B",
+        "text": "しつき"
+      },
+      {
+        "key": "C",
+        "text": "しっけ"
+      },
+      {
+        "key": "D",
+        "text": "しつけ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "しっけ",
+    "translation": "",
+    "explanation": "「湿気」读作「しっけ」，也读「しっき」，促音后接「け」。D「しつけ」是「躾」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 26
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q027",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 27,
+    "stem": "テストが終わって、今は<u>結果発表</u>を待っている。",
+    "options": [
+      {
+        "key": "A",
+        "text": "けっか"
+      },
+      {
+        "key": "B",
+        "text": "けいか"
+      },
+      {
+        "key": "C",
+        "text": "けっか"
+      },
+      {
+        "key": "D",
+        "text": "げつか"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "けっか",
+    "translation": "",
+    "explanation": "「結果発表」＝けっかはっぴょう，「結果」读作「けっか」。B「経過」是「けいか」。注：卷面 C 项与 A 项同为「けっか」，两路 OCR 均如此转写，疑为印刷重复，无法确定 C 项原貌。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 27
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q028",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 28,
+    "stem": "サングラスをかけて、目を守る。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しゅうる"
+      },
+      {
+        "key": "B",
+        "text": "まもる"
+      },
+      {
+        "key": "C",
+        "text": "たもる"
+      },
+      {
+        "key": "D",
+        "text": "さわる"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "まもる",
+    "translation": "",
+    "explanation": "「守る」读作「まもる」。C「保つ」是「たもつ」，D「触る」是「さわる」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 28
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q029",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 29,
+    "stem": "最近は<u>景気</u>がよくなった。",
+    "options": [
+      {
+        "key": "A",
+        "text": "けいしき"
+      },
+      {
+        "key": "B",
+        "text": "けしき"
+      },
+      {
+        "key": "C",
+        "text": "けいき"
+      },
+      {
+        "key": "D",
+        "text": "けいけ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "けいき",
+    "translation": "",
+    "explanation": "「景気」读作「けいき」。B「景色」是「けしき」，A「形式」是「けいしき」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 29
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q030",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 30,
+    "stem": "<u>ラッシュアワー</u>を<u>避けて</u>早めに出勤する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "うけて"
+      },
+      {
+        "key": "B",
+        "text": "さけて"
+      },
+      {
+        "key": "C",
+        "text": "とけて"
+      },
+      {
+        "key": "D",
+        "text": "やけて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "さけて",
+    "translation": "",
+    "explanation": "「避けて」读作「さけて」。A「受けて」、C「溶けて」、D「焼けて」为形近干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 30
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q046",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 46,
+    "stem": "四、（　）に入れるのに最もよいものを、A・B・C・Dから一つ選びなさい。（1×10=10）\n弟はいつも両親（　）心配させています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "が"
+      },
+      {
+        "key": "B",
+        "text": "の"
+      },
+      {
+        "key": "C",
+        "text": "を"
+      },
+      {
+        "key": "D",
+        "text": "に"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "を",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n「両親を心配させている」是使役句，对象用「を」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 31
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q047",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 47,
+    "stem": "あと10分ぐらい（　）終わりそうですから、少々お待ちください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "が"
+      },
+      {
+        "key": "B",
+        "text": "で"
+      },
+      {
+        "key": "C",
+        "text": "か"
+      },
+      {
+        "key": "D",
+        "text": "に"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "で",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n表示所需时间完成用「あと10分ぐらいで」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 32
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q048",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 48,
+    "stem": "（電車を降りて気が付いた）あ、しまった。電車の中（　）傘を忘れてしまいました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "が"
+      },
+      {
+        "key": "B",
+        "text": "に"
+      },
+      {
+        "key": "C",
+        "text": "か"
+      },
+      {
+        "key": "D",
+        "text": "で"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n把东西忘在某处用「電車の中に傘を忘れた」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 33
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「（電車を降りて気が付いた）あ、しまった。電車の中（　）傘を忘れてしまいました。」/ B 路「（電車を降りて気が付いた）あ、しまった。電車の中（　）傘を忘れてしました。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q049",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 49,
+    "stem": "森先生（　）パーティー（　）ご招待したいと思います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を/で"
+      },
+      {
+        "key": "B",
+        "text": "に/へ"
+      },
+      {
+        "key": "C",
+        "text": "と/を"
+      },
+      {
+        "key": "D",
+        "text": "を/に"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "を/に",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n邀请某人去某会用「人を～にご招待する」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 34
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q050",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 50,
+    "stem": "交差点（　）人が集まっていますね。事故のようです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "が"
+      },
+      {
+        "key": "B",
+        "text": "の"
+      },
+      {
+        "key": "C",
+        "text": "に"
+      },
+      {
+        "key": "D",
+        "text": "で"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n人聚集在某地点的存续状态用「交差点に人が集まっている」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 35
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q051",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 51,
+    "stem": "願書は青（　）黒のペンで書いてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "と"
+      },
+      {
+        "key": "B",
+        "text": "で"
+      },
+      {
+        "key": "C",
+        "text": "を"
+      },
+      {
+        "key": "D",
+        "text": "か"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "か",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n二者选一用「青か黒のペン」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 36
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q052",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 52,
+    "stem": "最近は夜10時（　）過ぎると、ほんとうに寒くなります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を"
+      },
+      {
+        "key": "B",
+        "text": "に"
+      },
+      {
+        "key": "C",
+        "text": "から"
+      },
+      {
+        "key": "D",
+        "text": "まで"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "を",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n经过某时间点用「10時を過ぎる」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 37
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q053",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 53,
+    "stem": "私はパワー電気（　）勤めております。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を"
+      },
+      {
+        "key": "B",
+        "text": "に"
+      },
+      {
+        "key": "C",
+        "text": "で"
+      },
+      {
+        "key": "D",
+        "text": "と"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n在某公司工作用「会社に勤める」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 38
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q054",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 54,
+    "stem": "これはプレゼント（　）ちょうどいいです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "が"
+      },
+      {
+        "key": "B",
+        "text": "で"
+      },
+      {
+        "key": "C",
+        "text": "に"
+      },
+      {
+        "key": "D",
+        "text": "から"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n适合做某物用「プレゼントにちょうどいい」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 39
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q055",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 55,
+    "stem": "私は毎日犬（　）散歩（　）連れて行ってやります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を/で"
+      },
+      {
+        "key": "B",
+        "text": "に/へ"
+      },
+      {
+        "key": "C",
+        "text": "を/に"
+      },
+      {
+        "key": "D",
+        "text": "と/に"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "を/に",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n带狗去散步的固定说法是「犬を散歩に連れて行く」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 40
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q056",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 56,
+    "stem": "読解・空欄補充\n五、次の文の（　）に入れるのに最もよいものを、A・B・C・Dから一つ選びなさい。（1×25=25）\n医者に煙草を（　）ように言われたが、なかなかやめられない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "やめる"
+      },
+      {
+        "key": "B",
+        "text": "やめない"
+      },
+      {
+        "key": "C",
+        "text": "やめた"
+      },
+      {
+        "key": "D",
+        "text": "やめ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "やめる",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n「～ように言われた」表示被要求做某事，肯定为「やめる」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 41
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q057",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 57,
+    "stem": "読解・空欄補充\n「ノートパソコン売り場はどこですか。」\n「2階に（　）。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "おります"
+      },
+      {
+        "key": "B",
+        "text": "ございます"
+      },
+      {
+        "key": "C",
+        "text": "いらっしゃる"
+      },
+      {
+        "key": "D",
+        "text": "います"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ございます",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n对客人礼貌说明场所在二楼用「ございます」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 42
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q058",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 58,
+    "stem": "読解・空欄補充\n悩んでいる時は、誰かに話を（　）気持ちが楽になる場合もある。",
+    "options": [
+      {
+        "key": "A",
+        "text": "聞いてあげることは"
+      },
+      {
+        "key": "B",
+        "text": "聞いてもらうことで"
+      },
+      {
+        "key": "C",
+        "text": "聞いてくれることに"
+      },
+      {
+        "key": "D",
+        "text": "聞いてやることが"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "聞いてもらうことで",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n请别人听自己说话用「話を聞いてもらうことで」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 43
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q059",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 59,
+    "stem": "読解・空欄補充\n病気が早く治る（　）病院に行って薬をもらいました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ために"
+      },
+      {
+        "key": "B",
+        "text": "ように"
+      },
+      {
+        "key": "C",
+        "text": "には"
+      },
+      {
+        "key": "D",
+        "text": "ため"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ように",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n非意志性变化「病気が早く治る」后接目的用「ように」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 44
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q060",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 60,
+    "stem": "読解・空欄補充\n（電話で）\n男：「営業部の山下さんをお願いしたいのですが。」\n女：「申し訳ありません。山下はただいま会議で席を外しております。戻りましたら、こちらからお電話（　　）。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "いたしましょうか"
+      },
+      {
+        "key": "B",
+        "text": "申しましょうか"
+      },
+      {
+        "key": "C",
+        "text": "くださいませんか"
+      },
+      {
+        "key": "D",
+        "text": "いただきませんか"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "いたしましょうか",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n表示我方主动回电的谦让说法是「こちらからお電話いたしましょうか」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 45
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q061",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 61,
+    "stem": "読解・空欄補充\n山田：「機会があったら、青木さんの歌を（　　）ください。」\n青木：「はい。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "聞いて"
+      },
+      {
+        "key": "B",
+        "text": "聞けて"
+      },
+      {
+        "key": "C",
+        "text": "聞かせて"
+      },
+      {
+        "key": "D",
+        "text": "聞かれて"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "聞かせて",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n请对方让自己听歌用「聞かせてください」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 46
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q062",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 62,
+    "stem": "読解・空欄補充\n実家がパン屋だったので、私は休みの日も親に店の掃除などを（　　）ことが多く、友達とはほとんど遊べなかった。",
+    "options": [
+      {
+        "key": "A",
+        "text": "手伝える"
+      },
+      {
+        "key": "B",
+        "text": "手伝われる"
+      },
+      {
+        "key": "C",
+        "text": "手伝わせる"
+      },
+      {
+        "key": "D",
+        "text": "手伝わされる"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "手伝わされる",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n被迫帮家里干活用使役被动「手伝わされる」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 47
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q063",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 63,
+    "stem": "読解・空欄補充\n大学を卒業して働き始めたころは、「どんなに忙しくても、お客様には疲れた顔を（　　）」と先輩によく注意された。",
+    "options": [
+      {
+        "key": "A",
+        "text": "見せないために"
+      },
+      {
+        "key": "B",
+        "text": "見えないこと"
+      },
+      {
+        "key": "C",
+        "text": "見せないように"
+      },
+      {
+        "key": "D",
+        "text": "見えないもの"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "見せないように",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n注意不要露出疲态用「見せないように」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 48
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q064",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 64,
+    "stem": "読解・空欄補充\nM社に入社すると、新入社員は、まず電話の応対の練習を2週間（　　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "させられるそうだ"
+      },
+      {
+        "key": "B",
+        "text": "させるつもりだ"
+      },
+      {
+        "key": "C",
+        "text": "させられたままだ"
+      },
+      {
+        "key": "D",
+        "text": "させているところだ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "させられるそうだ",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n新员工被迫练习，传闻表达用「させられるそうだ」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 49
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q065",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 65,
+    "stem": "読解・空欄補充\n「駅前に新しい本屋ができたんだけど、知ってる？」\n「えっ、本屋ができたの？それは（　　）。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "知っていない"
+      },
+      {
+        "key": "B",
+        "text": "知らなかった"
+      },
+      {
+        "key": "C",
+        "text": "知らないでした"
+      },
+      {
+        "key": "D",
+        "text": "知っている"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "知らなかった",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n刚知道新信息时说「それは知らなかった」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 50
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q066",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 66,
+    "stem": "読解・空欄補充\n「田中さんが来週帰国するけど、お土産を贈らないといけないね。」\n「そうですよね。何（　　）。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "をしましょうか"
+      },
+      {
+        "key": "B",
+        "text": "でしましょうか"
+      },
+      {
+        "key": "C",
+        "text": "にしましょうか"
+      },
+      {
+        "key": "D",
+        "text": "になりましょうか"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "にしましょうか",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n决定选什么礼物用「何にしましょうか」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 51
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「になりますしょうか」/ B 路「になりましょうか」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q067",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 67,
+    "stem": "読解・空欄補充\n私、来月結婚することに（　　）。ぜひ来てください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おきました"
+      },
+      {
+        "key": "B",
+        "text": "する"
+      },
+      {
+        "key": "C",
+        "text": "なりました"
+      },
+      {
+        "key": "D",
+        "text": "なる"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "なりました",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n宣布已经定下结婚用「結婚することになりました」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 52
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q068",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 68,
+    "stem": "読解・空欄補充\n私の気持ちは、きっとあなたには分からないだろうし、あなたに分かって（　　）もない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ほしい"
+      },
+      {
+        "key": "B",
+        "text": "もらいたい"
+      },
+      {
+        "key": "C",
+        "text": "あげたく"
+      },
+      {
+        "key": "D",
+        "text": "ほしく"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ほしく",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n「分かってほしくもない」表示不希望对方理解。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 53
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q069",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 69,
+    "stem": "読解・空欄補充\nパーティーに出席（　　）すみません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "できないで"
+      },
+      {
+        "key": "B",
+        "text": "できて"
+      },
+      {
+        "key": "C",
+        "text": "できなくて"
+      },
+      {
+        "key": "D",
+        "text": "でき"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "できなくて",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n道歉不能出席用「出席できなくてすみません」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 54
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q070",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 70,
+    "stem": "読解・空欄補充\nこのケーキはどう見ても（　　）そうです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おいしい"
+      },
+      {
+        "key": "B",
+        "text": "おいしくない"
+      },
+      {
+        "key": "C",
+        "text": "おいしくなさ"
+      },
+      {
+        "key": "D",
+        "text": "おいしかった"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "おいしくなさ",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n从外观看起来不好吃用「おいしくなさそうです」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 55
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q071",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 71,
+    "stem": "読解・空欄補充\n「ここに駐車してもいいですか。」\n「すみませんが、ここには駐車してはいけない（　　）。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "ことにします"
+      },
+      {
+        "key": "B",
+        "text": "ことにしています"
+      },
+      {
+        "key": "C",
+        "text": "ことになります"
+      },
+      {
+        "key": "D",
+        "text": "ことになっています"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ことになっています",
+    "translation": "",
+    "explanation": "「～てはいけないことになっています」表示按规定不允许停车。A/B 是个人决定或习惯，C 表变化结果，均不合“规定”语境。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 56
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q072",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 72,
+    "stem": "読解・空欄補充\n恥ずかしくて聞いていられない（　　）話を彼らは大声でしている。",
+    "options": [
+      {
+        "key": "A",
+        "text": "みたい"
+      },
+      {
+        "key": "B",
+        "text": "ように"
+      },
+      {
+        "key": "C",
+        "text": "ような"
+      },
+      {
+        "key": "D",
+        "text": "そう"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ような",
+    "translation": "",
+    "explanation": "「聞いていられないような話」＝让人听不下去的话。修饰名词「話」要用「ような」；「みたい」需接「な」，「ように」后接动词，D 意思不符。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 57
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q073",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 73,
+    "stem": "読解・空欄補充\nこの曲は、私には難しすぎて、とても（　　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "弾けそうにない"
+      },
+      {
+        "key": "B",
+        "text": "弾きそうだ"
+      },
+      {
+        "key": "C",
+        "text": "弾くそうだ"
+      },
+      {
+        "key": "D",
+        "text": "弾けそうではない"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "弾けそうにない",
+    "translation": "",
+    "explanation": "「とても」与否定推测「～そうにない」呼应：太难了，根本弹不了。B 与「とても」矛盾，C 表传闻且接续错，D 说法不自然。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 58
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q074",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 74,
+    "stem": "読解・空欄補充\n（メールで）\n森です。先日お話があったスピーチの件なんですが、ぜひわたしに（　　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "やっていただけないでしょうか"
+      },
+      {
+        "key": "B",
+        "text": "やらせていただけないでしょうか"
+      },
+      {
+        "key": "C",
+        "text": "やってもよろしいでしょうか"
+      },
+      {
+        "key": "D",
+        "text": "やらせてもらおうか"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "やらせていただけないでしょうか",
+    "translation": "",
+    "explanation": "请对方允许自己做某事，用使役形＋「～ていただけないでしょうか」：能否让我来做。A 是请对方做，C 语气不当，D 不妥。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 59
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q075",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 75,
+    "stem": "読解・空欄補充\n窓を（　　）桜の花が見えました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "開けて"
+      },
+      {
+        "key": "B",
+        "text": "開けるなら"
+      },
+      {
+        "key": "C",
+        "text": "開ければ"
+      },
+      {
+        "key": "D",
+        "text": "開けたら"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "開けたら",
+    "translation": "",
+    "explanation": "「開けたら」表一打开窗就（偶然）看见花，与后项「見えました」相合。「開ければ」后项多表恒常条件，A 接续不对，B 表假设话题。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 60
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q076",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 76,
+    "stem": "読解・空欄補充\n（医者が患者の額を触って）熱が（　　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ありそうですよね"
+      },
+      {
+        "key": "B",
+        "text": "あるようですね"
+      },
+      {
+        "key": "C",
+        "text": "あるらしいですね"
+      },
+      {
+        "key": "D",
+        "text": "あるそうですよね"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "あるようですね",
+    "translation": "",
+    "explanation": "医生摸额头后作推测：「あるようですね」＝好像发烧了。A 说法不自然，C「らしい」多用于传闻，D「そうです」表传闻。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 61
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q077",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 77,
+    "stem": "読解・空欄補充\n（　　）勉強しても、なかなか漢字が覚えられない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いくつ"
+      },
+      {
+        "key": "B",
+        "text": "どちら"
+      },
+      {
+        "key": "C",
+        "text": "どれ"
+      },
+      {
+        "key": "D",
+        "text": "どんなに"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "どんなに",
+    "translation": "",
+    "explanation": "「どんなに～ても」＝无论多么……都……。どんなに勉強しても覚えられない。A/B/C 均不能与「～ても」搭配表让步。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 62
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q078",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 78,
+    "stem": "読解・空欄補充\n（レストランで）\n山田：「7時に予約をした山田ですが。」\n店員：「山田様ですね。お席にご案内（　　）。どうぞこちらへ。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "くださいます"
+      },
+      {
+        "key": "B",
+        "text": "いたします"
+      },
+      {
+        "key": "C",
+        "text": "なさいます"
+      },
+      {
+        "key": "D",
+        "text": "参ります"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "いたします",
+    "translation": "",
+    "explanation": "「ご案内いたします」是自谦语，用于店员自己的动作。A、C 是尊敬语，用于对方；D「参ります」只表去/来，不用于“带路”。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 63
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q079",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 79,
+    "stem": "読解・空欄補充\nせっかく来てくださった（　　）、お待たせしてすみません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "から"
+      },
+      {
+        "key": "B",
+        "text": "のに"
+      },
+      {
+        "key": "C",
+        "text": "に"
+      },
+      {
+        "key": "D",
+        "text": "ので"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "のに",
+    "translation": "",
+    "explanation": "「せっかく来てくださったのに」＝好不容易您来了，却让您等了。のに表逆接带遗憾语气；から/ので表原因，に接续不符。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 64
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q080",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 80,
+    "stem": "読解・空欄補充\n李先生の住所（　　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "存じておりますか"
+      },
+      {
+        "key": "B",
+        "text": "ご存知ですか"
+      },
+      {
+        "key": "C",
+        "text": "存じていますか"
+      },
+      {
+        "key": "D",
+        "text": "ご存知しますか"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ご存知ですか",
+    "translation": "",
+    "explanation": "询问对方的住址要用尊敬语「ご存知ですか」。A、C 是谦让语，用于自己；D「ご存知しますか」说法本身错误。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 65
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q086",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 86,
+    "stem": "読解・空欄補充\n七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。（2×5=10 分）\n―来月、先生を<u>86</u>、パーティーをするんですが、どこかいい店を知りませんか。\n―どんな店がいいんですか。\n―静かで、料理がおいしいところがいいんですか。\n―ねだんが<u>87</u>。\n―ええ、いいです。\n―大学の近くにおいしいタイ料理のレストランがありますよ。\n―でも、タイ料理は辛いでしょう。先生は<u>88</u>。\n―じゃあ、「あおつき」はどうでしょうか。日本料理の店です。広くて静かで、とてもおいしいです。<u>89</u>、駅<u>90</u>近いし便利ですよ。\n―それはいいですね。電話番号を知っていますか。\n―今はちょっと…。うちに帰ればわかります。\n―じゃあ、今晩電話しますから、教えてください。\n（下線部 86 に入れるもの）",
+    "options": [
+      {
+        "key": "A",
+        "text": "お呼びになって"
+      },
+      {
+        "key": "B",
+        "text": "お呼びして"
+      },
+      {
+        "key": "C",
+        "text": "お呼びくださって"
+      },
+      {
+        "key": "D",
+        "text": "お呼びなさって"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "お呼びして",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n我方谦逊地说邀请老师用「先生をお呼びして」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 66
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q087",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 87,
+    "stem": "読解・空欄補充\n七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。（2×5=10 分）\n―来月、先生を<u>86</u>、パーティーをするんですが、どこかいい店を知りませんか。\n―どんな店がいいんですか。\n―静かで、料理がおいしいところがいいんですか。\n―ねだんが<u>87</u>。\n―ええ、いいです。\n―大学の近くにおいしいタイ料理のレストランがありますよ。\n―でも、タイ料理は辛いでしょう。先生は<u>88</u>。\n―じゃあ、「あおつき」はどうでしょうか。日本料理の店です。広くて静かで、とてもおいしいです。<u>89</u>、駅<u>90</u>近いし便利ですよ。\n―それはいいですね。電話番号を知っていますか。\n―今はちょっと…。うちに帰ればわかります。\n―じゃあ、今晩電話しますから、教えてください。\n（下線部 86 に入れるもの）\n読解・空欄補充\n―ねだんが<u>87</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "少し高いとできますか"
+      },
+      {
+        "key": "B",
+        "text": "少し高くてもかまいませんか"
+      },
+      {
+        "key": "C",
+        "text": "少し高かったらいいですか"
+      },
+      {
+        "key": "D",
+        "text": "少し高ければなりませんか"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "少し高くてもかまいませんか",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n询问稍微贵一点是否也没关系用「少し高くてもかまいませんか」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 67
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q088",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 88,
+    "stem": "読解・空欄補充\n七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。（2×5=10 分）\n―来月、先生を<u>86</u>、パーティーをするんですが、どこかいい店を知りませんか。\n―どんな店がいいんですか。\n―静かで、料理がおいしいところがいいんですか。\n―ねだんが<u>87</u>。\n―ええ、いいです。\n―大学の近くにおいしいタイ料理のレストランがありますよ。\n―でも、タイ料理は辛いでしょう。先生は<u>88</u>。\n―じゃあ、「あおつき」はどうでしょうか。日本料理の店です。広くて静かで、とてもおいしいです。<u>89</u>、駅<u>90</u>近いし便利ですよ。\n―それはいいですね。電話番号を知っていますか。\n―今はちょっと…。うちに帰ればわかります。\n―じゃあ、今晩電話しますから、教えてください。\n（下線部 86 に入れるもの）\n読解・空欄補充\n―でも、タイ料理は辛いでしょう。先生は<u>88</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "辛い料理しか"
+      },
+      {
+        "key": "B",
+        "text": "辛いから大好きですよ"
+      },
+      {
+        "key": "C",
+        "text": "辛い料理を食べますよ"
+      },
+      {
+        "key": "D",
+        "text": "辛いのはあまり…"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "辛いのはあまり…",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n承接“泰国菜辣”，老师不太喜欢辣，故选「辛いのはあまり…」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 68
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q089",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 89,
+    "stem": "読解・空欄補充\n七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。（2×5=10 分）\n―来月、先生を<u>86</u>、パーティーをするんですが、どこかいい店を知りませんか。\n―どんな店がいいんですか。\n―静かで、料理がおいしいところがいいんですか。\n―ねだんが<u>87</u>。\n―ええ、いいです。\n―大学の近くにおいしいタイ料理のレストランがありますよ。\n―でも、タイ料理は辛いでしょう。先生は<u>88</u>。\n―じゃあ、「あおつき」はどうでしょうか。日本料理の店です。広くて静かで、とてもおいしいです。<u>89</u>、駅<u>90</u>近いし便利ですよ。\n―それはいいですね。電話番号を知っていますか。\n―今はちょっと…。うちに帰ればわかります。\n―じゃあ、今晩電話しますから、教えてください。\n（下線部 86 に入れるもの）\n読解・空欄補充\n―じゃあ、「あおつき」はどうでしょうか。日本料理の店です。広くて静かで、とてもおいしいです。<u>89</u>、駅<u>90</u>近いし便利ですよ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "それに"
+      },
+      {
+        "key": "B",
+        "text": "それほど"
+      },
+      {
+        "key": "C",
+        "text": "それには"
+      },
+      {
+        "key": "D",
+        "text": "それでは"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "それに",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n追加优点用「それに」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 69
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q090",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 90,
+    "stem": "読解・空欄補充\n七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。（2×5=10 分）\n―来月、先生を<u>86</u>、パーティーをするんですが、どこかいい店を知りませんか。\n―どんな店がいいんですか。\n―静かで、料理がおいしいところがいいんですか。\n―ねだんが<u>87</u>。\n―ええ、いいです。\n―大学の近くにおいしいタイ料理のレストランがありますよ。\n―でも、タイ料理は辛いでしょう。先生は<u>88</u>。\n―じゃあ、「あおつき」はどうでしょうか。日本料理の店です。広くて静かで、とてもおいしいです。<u>89</u>、駅<u>90</u>近いし便利ですよ。\n―それはいいですね。電話番号を知っていますか。\n―今はちょっと…。うちに帰ればわかります。\n―じゃあ、今晩電話しますから、教えてください。\n（下線部 86 に入れるもの）\n読解・空欄補充\n―じゃあ、「あおつき」はどうでしょうか。日本料理の店です。広くて静かで、とてもおいしいです。<u>89</u>、駅<u>90</u>近いし便利ですよ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "まで"
+      },
+      {
+        "key": "B",
+        "text": "と"
+      },
+      {
+        "key": "C",
+        "text": "から"
+      },
+      {
+        "key": "D",
+        "text": "も"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "も",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\nAI 两路解题结果不一致（A=D / B=C），暂采用 A，请人工确认。“车站也近”用「駅も近いし」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 70
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q091",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 91,
+    "stem": "読解・空欄補充\n（一）\n和 子：お母様、お友達がりんごを送ってくれたので少し持ってまいりました。\n夫の母：あら、ピカピカしていて立派なりんごねえ。あの青森の方でしょ？台風はどうだったのかしら。\n和 子：ええ、私も心配していたんですけれど、大丈夫だったみたいですよ。あの、これ、すごくおいしいですよ。お母様、もっと召し上がれるようならまた持ってきますので、おっしゃってくださいね。\n夫の母：そうねえ、お隣にも差し上げようかしら。お世話になっているから。\n91. 会話と内容が合っているものはどれですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "和子は夫の母と一緒に住んでいる"
+      },
+      {
+        "key": "B",
+        "text": "夫の母はリンゴを隣の人におげたい"
+      },
+      {
+        "key": "C",
+        "text": "青森に今台風が来ている"
+      },
+      {
+        "key": "D",
+        "text": "和子の友だちは病気だった"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "夫の母はリンゴを隣の人におげたい。",
+    "translation": "",
+    "explanation": "母亲说お隣にも差し上げようかしら，想把苹果送给邻居。A未提同住，C台风已过，D朋友没生病。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 71
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「また持ってきます」/ B 路「また持ってきてます」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q092",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 92,
+    "stem": "読解・空欄補充\n（二）\nこれは劉さんが友達のマリさんに書いたメールである。\nマリさん\nこんにちは。\n来週の日曜日、午前10時から午後5時まで、市民センターで「国民文化祭・鹿児島2022」があります。一緒に行きませんか。絵や写真の展覧会や、いろいろな国の文化紹介が行われます。\n文化紹介は午後1時からで、茶わん作り、ブラジルのダンス、ギョーザ作りなどは、私たちも参加できるそうです。私は茶わんを作ってみたいのですが、マリさんもどうですか。\nそのあとは、近くにあるケーキがおいしい喫茶店へ行きませんか。もし、マリさんが見たければ、展覧会を見てもいいですよ。\n劉\n92. このメールによると、劉さんは来週の日曜日、マリさんと一緒に、どうしたいですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "茶わん作りに参加して、そのあとで喫茶店に行きたい"
+      },
+      {
+        "key": "B",
+        "text": "茶わん作りに参加して、そのあとで展覧会を見たい"
+      },
+      {
+        "key": "C",
+        "text": "茶わん作りに参加して、喫茶店に行って、そのあとで展覧会を見たい"
+      },
+      {
+        "key": "D",
+        "text": "茶わん作りに参加して、展覧会を見て、そのあとで喫茶店に行きたい"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "茶わん作りに参加して、そのあとで喫茶店に行きたい。",
+    "translation": "",
+    "explanation": "邮件说文化介绍后去附近咖啡店，若マリ想看展覧会也可以去；先做茶わん作り，再咖啡店，展覧会可选。故选A。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 72
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q093",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 93,
+    "stem": "読解・空欄補充\n山田図書館では、本の貸し出しのほかに毎月第３土曜日に「おもちゃ病院」を開いています。「おもちゃ病院」では、壊れたり動かなくなったりしてしまったおもちゃを、プロが無料で修理します。直すのに時間がかかる場合は、預かってゆっくり修理することもあります。大事なおもちゃを渡すのが不安そうなこどもには「ちょっと重い病気だから入院しないとね」と言うと、安心して渡してくれます。\nこの「おもちゃ病院」について、正しい説明はどれですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おもちゃもいっしょに「入院」できるので、子どもたちが入院するとき安心する"
+      },
+      {
+        "key": "B",
+        "text": "動かなくなったり壊れたりしたおもちゃは、その場で直るものだけ修理してくれる"
+      },
+      {
+        "key": "C",
+        "text": "すぐ直せない物は、預かって直してくれることもあり、その場合もお金はかからない"
+      },
+      {
+        "key": "D",
+        "text": "山田図書館は第３土曜日におもちゃ病院になるので、一日中、本を借りられない"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "すぐ直せない物は、預かって直してくれることもあり、その場合もお金はかからない。",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n文中说需要时间时可以先收下慢慢修，且修理免费。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 73
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「直すのに時間がかかる場合は、予かってゆっくり修理することもあります。」/ B 路「直すのに時間がかかる場合は、預かってゆっくり修理することもあります。」）",
+      "OCR 冲突：options.C（A 路「すぐ直せない物は、予かって直してくれることもあり、その場合もお金はかからない。」/ B 路「すぐ直せない物は、預かって直してくれることもあり、その場合もお金はかからない。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q094",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 94,
+    "stem": "読解・空欄補充\n風邪を引くと、咳が出たり熱が出たりする。以前は、熱が出ると熱を下げるために注射をしたり、咳が出ると咳止めの薬を飲んだりしたものだ。しかし、近年、風邪の治療に対する考え方がちょっと変わってきた。\n熱が出ても、無理にそれを下げることはしないほうがよいと言われるようになった。なぜなら、風邪の原因であるウイルスは熱に弱く、そのウイルスを退治（治好）しようとして体が熱くなるからだ。こういう時、無理に熱を下げてしまうと、ウイルスは逆に活発（活躍）になってしまい、（　①　）ということが分かってきたのだ。\n咳についても同じようなことが言える。ウイルスを早く体内から追い出そう（赶出）とするために咳が出るのだ。だから、薬で咳を押えて（抑制）しまうのは逆効果になるということだ。\nつまり、風邪の薬はできるだけ飲まないほうがよいのである。熱は下がるまで待ち、咳も出るのは仕方がない。そのうちに自然に治る。とはいえ、高い熱や咳で苦しむのはつらい。やはり、風邪にはかからないようにしたいものである。\n（　①　）に入る言葉として最も適当なものはどれですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "病気がひどくなる"
+      },
+      {
+        "key": "B",
+        "text": "熱が下がらない"
+      },
+      {
+        "key": "C",
+        "text": "ウイルスが体内から出る"
+      },
+      {
+        "key": "D",
+        "text": "風邪を引きてしまう"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "病気がひどくなる",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n强行退烧反而不利于消灭病毒，会使病情加重。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 74
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「ウイルスは逆に活発（活発）になって」/ B 路「ウイルスは逆に活発（活躍）になって」）",
+      "OCR 冲突：stem（A 路「ウイルスは逆に活発（活発）になってしまう、（　①　）ということが分かってきたのだ。」/ B 路「ウイルスは逆に活発（活躍）になってしまい、（　①　）ということが分かってきたのだ。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q096",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 96,
+    "stem": "読解・空欄補充\n①\n利用人数　最大100名\n利用料金　1時間1,000円\n料理　1人2,000円から（必ず料理を注文してください）\n交通　三浦駅から徒歩30分、無料駐車場あり\n②花の家：バラの花で有名な西公園の中にあります\n利用時間　11：30～20：00（定休日：木曜日、祝日の場合は水曜日）\n利用人数　10～50名\n利用料金　無料\n料理　1人1,500円から（飲み物だけの注文でも利用できます）\n交通　三浦駅から徒歩15分、西公園に駐車場（有料）あり\n③レストラン海　パーティールーム：カラオケが無料で利用できます\n利用時間　11：00～22：00（定休日：火曜日）、利用は4時間まで\n利用人数　10～30名\n利用料金　無料\n料理　1人3,000円から（必ず料理を注文してください）\n交通　三浦駅から徒歩10分、無料駐車場（15台）あり\n④市民センター：コンサートにも使えます\n利用時間　10：00～21：00（定休日：月曜日）、利用は4時間まで\n利用人数　最大40名\n利用料金　1時間1,000円\n料理　注文できません（必要な場合は利用者がご用意ください）\n交通　三浦駅から徒歩20分（市役所のとなり）、市役所に駐車場（有料）あり\n林さんは、来週の木曜日の午後に読書クラブの活動を行う会場を探している。参加者は30名程度で、料理は必要ないので、飲み物だけ買って持って行きたい。林さんの希望に合う会場はいくつありますか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "1つ"
+      },
+      {
+        "key": "B",
+        "text": "2つ"
+      },
+      {
+        "key": "C",
+        "text": "3つ"
+      },
+      {
+        "key": "D",
+        "text": "4つ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "1つ",
+    "translation": "林先生/女士正在寻找下周周四下午举办读书会活动的会场。参加者约30人，不需要餐食，只想买饮料带过去。符合林先生/女士希望的会场有几个？",
+    "explanation": "②周四休息；①③必须点餐，不能只带饮料；④周四可租、容纳40人、不能点餐可自带饮品，只此一处符合，故选A。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 75
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「首行直接为「利用人数　最大100名」，无①标记」/ B 路「「①」单独成行，其后为「利用人数　最大100名」」）",
+      "OCR 冲突：stem（A 路「时刻用全角冒号：11：30～20：00／11：00～22：00／10：00～21：00」/ B 路「时刻用半角冒号：11:30～20:00／11:00～22:00／10:00～21:00」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q097",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 97,
+    "stem": "読解・空欄補充\n①\n利用人数　最大100名\n利用料金　1時間1,000円\n料理　1人2,000円から（必ず料理を注文してください）\n交通　三浦駅から徒歩30分、無料駐車場あり\n②花の家：バラの花で有名な西公園の中にあります\n利用時間　11：30～20：00（定休日：木曜日、祝日の場合は水曜日）\n利用人数　10～50名\n利用料金　無料\n料理　1人1,500円から（飲み物だけの注文でも利用できます）\n交通　三浦駅から徒歩15分、西公園に駐車場（有料）あり\n③レストラン海　パーティールーム：カラオケが無料で利用できます\n利用時間　11：00～22：00（定休日：火曜日）、利用は4時間まで\n利用人数　10～30名\n利用料金　無料\n料理　1人3,000円から（必ず料理を注文してください）\n交通　三浦駅から徒歩10分、無料駐車場（15台）あり\n④市民センター：コンサートにも使えます\n利用時間　10：00～21：00（定休日：月曜日）、利用は4時間まで\n利用人数　最大40名\n利用料金　1時間1,000円\n料理　注文できません（必要な場合は利用者がご用意ください）\n交通　三浦駅から徒歩20分（市役所のとなり）、市役所に駐車場（有料）あり\n読解・空欄補充\n舞さんは、友達から「交流会の会場を探してほしい」と下のメモを渡された。友達の\n希望に合う会場はどれですか\n1　来週の土曜日のお昼\n2　人数は20人ぐらい\n3　三浦駅から歩いて20分以内\n4　料理は2,000円以内で会場で注文したい",
+    "options": [
+      {
+        "key": "A",
+        "text": "①"
+      },
+      {
+        "key": "B",
+        "text": "②"
+      },
+      {
+        "key": "C",
+        "text": "③"
+      },
+      {
+        "key": "D",
+        "text": "④"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "②",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n②花の家周六中午营业、可容纳20人、料理1,500日元起可在店内订购，符合希望；①交通步行30分且料理2,000日元起，③料理不可订购。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 76
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "疑似跨页断题，未能自动拼接",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q098",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 98,
+    "stem": "読解・空欄補充\n私は旅行が好きだ。友達と一緒に行くのも楽しいが、それより、一人で行くほうがいい。\n一人で行けば、自分の行きたいところへ行って、ゆっくり見ることができる。友達に急が\nされて、見たいものが見られないのはとても残念だ。\n友達にこう言うと、友達は「一人で行っても、全然おもしろくないよ。誰も話す人がい\nないのは寂しいから」と言った。確かにそうかもしれない。何かすばらしいものを見たら、\n誰かに自分の気持ちを伝えたくなる。その時、そばに誰もいなかったら寂しいだろう。\nしかし、私は今までよく一人で旅行してきたが、寂しいと思ったことはない。話したい\nときは誰でもいいから、近くにいる人と話すことにしている。知らない人と話すのは旅行\nの一番楽しいことだと思う。\n98. この人はどんな旅行が好きですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "知らない人と行く旅行"
+      },
+      {
+        "key": "B",
+        "text": "友達と楽しく行く旅行"
+      },
+      {
+        "key": "C",
+        "text": "一人で寂しく行く旅行"
+      },
+      {
+        "key": "D",
+        "text": "一人でゆっくり行く旅行"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "一人でゆっくり行く旅行",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n文中说比起和朋友一起，更喜欢一个人去，可以自由去想去的地方慢慢看。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 77
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q099",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 99,
+    "stem": "読解・空欄補充\n私は旅行が好きだ。友達と一緒に行くのも楽しいが、それより、一人で行くほうがいい。\n一人で行けば、自分の行きたいところへ行って、ゆっくり見ることができる。友達に急が\nされて、見たいものが見られないのはとても残念だ。\n友達にこう言うと、友達は「一人で行っても、全然おもしろくないよ。誰も話す人がい\nないのは寂しいから」と言った。確かにそうかもしれない。何かすばらしいものを見たら、\n誰かに自分の気持ちを伝えたくなる。その時、そばに誰もいなかったら寂しいだろう。\nしかし、私は今までよく一人で旅行してきたが、寂しいと思ったことはない。話したい\nときは誰でもいいから、近くにいる人と話すことにしている。知らない人と話すのは旅行\nの一番楽しいことだと思う。\n読解・空欄補充\n99. 旅行ですばらしいものを見たとき、この人はどうしますか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "友達と話す"
+      },
+      {
+        "key": "B",
+        "text": "近くの人と話す"
+      },
+      {
+        "key": "C",
+        "text": "手紙を書く"
+      },
+      {
+        "key": "D",
+        "text": "写真を撮る"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "近くの人と話す",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n文中说想说话时就和附近的人说话，看到精彩东西想传达时也是和近くの人说话。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 78
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2022-q100",
+    "category": "jp-3-2022",
+    "groupId": "jp-3-2022-g01",
+    "groupTitle": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+    "numberInGroup": 100,
+    "stem": "読解・空欄補充\n私は旅行が好きだ。友達と一緒に行くのも楽しいが、それより、一人で行くほうがいい。\n一人で行けば、自分の行きたいところへ行って、ゆっくり見ることができる。友達に急が\nされて、見たいものが見られないのはとても残念だ。\n友達にこう言うと、友達は「一人で行っても、全然おもしろくないよ。誰も話す人がい\nないのは寂しいから」と言った。確かにそうかもしれない。何かすばらしいものを見たら、\n誰かに自分の気持ちを伝えたくなる。その時、そばに誰もいなかったら寂しいだろう。\nしかし、私は今までよく一人で旅行してきたが、寂しいと思ったことはない。話したい\nときは誰でもいいから、近くにいる人と話すことにしている。知らない人と話すのは旅行\nの一番楽しいことだと思う。\n読解・空欄補充\n100. この人によると、旅行で一番楽しいことは何ですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "友達と楽しく話すこと"
+      },
+      {
+        "key": "B",
+        "text": "すばらしい景色を見ること"
+      },
+      {
+        "key": "C",
+        "text": "知らない人と話すこと"
+      },
+      {
+        "key": "D",
+        "text": "旅行の後で手紙を書くこと"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "知らない人と話すこと",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n文中明确说“知らない人と話すのは旅行の一番楽しいことだ”。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2022.md",
+      "group": "七、次の文章を読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。",
+      "position": 79
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  }
+]

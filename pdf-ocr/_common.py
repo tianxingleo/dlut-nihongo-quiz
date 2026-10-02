@@ -43,6 +43,14 @@ STAGES = {1: "S1/4 渲染", 2: "S2/4 OCR", 3: "S3/4 比对提取", 4: "S4/4 汇�
 # questionType 的合法值 = `src/types/question.ts` 里的联合类型（`other` 不是合法值）。
 QUIZ_TYPES = ("single", "multi", "judgement", "fill")
 
+# ── AI 推答案：md 里的可见标记（S4 写，S5 与站点解析端读）──────────
+#
+# 卷面确实没印答案时，S4 可以用 `--answers ai` 让模型把答案解出来。推出来的答案
+# **必须区别于卷面答案**：md 里带这一行，`scripts/parse-computer-paper.ts` 认这行 →
+# `answerProvenance: 'generated'` + `status: 'needs_review'`（解析端还要求 explanation 非空）。
+# 改文案要两边一起改，否则 AI 答案会被当成卷面答案混进题库。
+AI_ANSWER_NOTE = "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）"
+
 # 卷面大题标题（"二、多项选择题"）比模型逐题猜的题型可靠得多：实测 Principles-of-Marxism
 # 第二大题写着「二、多项选择题」、每题 5 个选项，模型却逐题给了 `single`，站上就变单选。
 # 顺序有意义 —— 先判"多项选择"，再判"单项选择"。
@@ -95,24 +103,40 @@ def is_placeholder_stem(text) -> bool:
 DEFAULT_MAX_TOKENS = {"ocr": 10_000_000, "merge": 393_216}
 MAX_TOKENS_CEILING = {"ocr": 10_000_000, "merge": 393_216}
 
+# **换供应商时 max_tokens 的上限会变**：StepFun 套餐入口不校验（本项目自设 1e7），
+# 而 OpenAI 兼容网关 / qwen 系列只允许 [1, 32768] —— 超了直接
+# `HTTP 400 Range of max_tokens should be [1, 32768]`（实测踩过）。
+# 所以 OCR 阶段的默认值与上限**按当前供应商给**；可用 `OCR_MAX_TOKENS` 覆盖。
+MAX_TOKENS_CEILING_CUSTOM = 32768
 
-def check_max_tokens(stage_key: str, value: int) -> int:
+
+def ocr_max_tokens() -> tuple[int, int]:
+    """OCR 阶段的 (默认 max_tokens, 上限)：套餐入口给 1e7，通用/网关给 32768。"""
+    if ocr_config().get("provider") == "custom":
+        value = int(env("OCR_MAX_TOKENS") or MAX_TOKENS_CEILING_CUSTOM)
+        return value, value
+    return DEFAULT_MAX_TOKENS["ocr"], MAX_TOKENS_CEILING["ocr"]
+
+
+def check_max_tokens(stage_key: str, value: int, ceiling: int | None = None) -> int:
     """把 --max-tokens 挡在端点校验之前。
 
     否则一旦设超，就会变成"每一页都报一次 HTTP 400"（DeepSeek 是 4xx，不重试但照样刷屏）。
+    `ceiling` 由调用方按供应商传入（见 `ocr_max_tokens()`）。
     """
-    ceiling = MAX_TOKENS_CEILING[stage_key]
+    ceiling = int(ceiling or MAX_TOKENS_CEILING[stage_key])
     if value < 1:
         fail(f"--max-tokens 必须 ≥ 1（收到 {value}）", 1)
     if value > ceiling:
         why = (
             "DeepSeek 的合法区间是 [1, 393216]"
             if stage_key == "merge"
-            else "StepFun 侧不校验，这里按 10,000,000 自设上限"
+            else f"当前 OCR 供应商（{ocr_config().get('provider')}）上限就是 {ceiling}"
         )
         fail(
             f"--max-tokens {value} 超出本阶段上限 {ceiling}（{why}）；"
-            f"用默认值 {DEFAULT_MAX_TOKENS[stage_key]} 即可，不需要设得更大",
+            f"用默认值 {ocr_max_tokens()[0] if stage_key == 'ocr' else DEFAULT_MAX_TOKENS[stage_key]}"
+            f" 即可，不需要设得更大",
             1,
         )
     return value
@@ -125,10 +149,20 @@ def is_timeout(message: str) -> bool:
 
 
 def timeout_hint() -> str:
-    """超时是偶发的服务端卡顿，重试通常就过 —— 明确写出来，免得看到 180s 就手动中断。"""
+    """超时了先别慌、也别急着调大 —— 说清"重试通常就过"和"连续超时该查什么"。
+
+    实测（jp-3 63 页卷 126 次调用 + 期末 2024 卷）：**成功**的一次要 50~150s（标了下划线之后
+    输出更长，明显比之前的 20~100s 慢）；**卡住的**连接则一个字节都不回，重试之后又能在
+    1~2 分钟内成功。所以：偶发一次超时 → 交给重试；连续两三次都超时 → 是链路问题，
+    继续调大 --timeout 只会让每次白等更久。
+    """
     return (
-        "[提示] 这是服务端偶发卡住（本 PDF 正常单页 30~45s），不是参数/密钥问题；"
-        "脚本会自动重试，重试一般 30s 内就返回，不用手动中断"
+        "[提示] 这一次超时不代表失败，脚本会自动重试（重试常在 1~2 分钟内成功）。"
+        "实测：成功的一次要 50~150s（标下划线后输出更长），而卡住的连接整段时间一个字节都不回。"
+        "若**连续两三次**都超时，多半是链路问题：给 api.stepfun.com 配直连"
+        "（PowerShell：$env:NO_PROXY='api.stepfun.com' 可临时绕过系统代理）、换代理节点、"
+        "加 --sequential（别让两路一起卡）、或降 --dpi 减小上传体积；"
+        "继续调大 --timeout 对死连接没用，只会让每次白等更久"
     )
 
 
@@ -300,11 +334,55 @@ def env(name: str, default: str | None = None) -> str | None:
     return DEFAULTS.get(name, default)
 
 
+def ocr_key_for(base_url: str) -> str | None:
+    """**按最终端点**选密钥：`stepfun.com` 用 STEPFUN_API_KEY，其它用 OCR_API_KEY。
+
+    实测踩过的坑：`.env` 里 `OCR_*` 指向网关（key 是 `sk-ws-…`）之后，再用
+    `--base-url https://api.stepfun.com/step_plan/...` 把端点切回 StepFun 时，
+    仍会拿网关的 key 去请求 StepFun → `HTTP 401 Incorrect API key provided`。
+    端点决定用哪个 key，就不会再撞这个坑。
+    """
+    if "stepfun.com" in str(base_url or ""):
+        return env("STEPFUN_API_KEY") or env("OCR_API_KEY")
+    if "deepseek.com" in str(base_url or ""):
+        # 实测 deepseek-flash **能吃图**（image_tokens 有计费、能描述图里的内容），
+        # 所以也可以拿它当 OCR/A 路模型；走官方端点时用 DEEPSEEK_API_KEY。
+        return env("DEEPSEEK_API_KEY") or env("OCR_API_KEY")
+    return env("OCR_API_KEY") or env("STEPFUN_API_KEY")
+
+
 def ocr_config() -> dict[str, str | None]:
+    """OCR（视觉）模型配置：默认走 StepFun 套餐入口，也可以用 `OCR_*` 换成**专用视觉模型**。
+
+    套餐入口（`/step_plan/…`）实测只有 `step-3.7-flash`、`step-5-preview` 支持图片输入，
+    没有专用视觉模型；想换 qwen-vl-max / glm-4v / gpt-4o-mini / Gemini Flash 这类，
+    只要在 `.env` 里加三行（OpenAI 兼容接口都能直接吃）：
+
+        OCR_BASE_URL=https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+        OCR_MODEL=qwen-vl-max
+        OCR_API_KEY=sk-xxxx
+
+    只要写了 `OCR_MODEL` 或 `OCR_BASE_URL` 就走这套（三项独立覆盖，缺的项回退到 STEPFUN_*）。
+    """
+    base = env("OCR_BASE_URL")
+    model = env("OCR_MODEL")
+    if model or base:
+        base_effective = base or env("STEPFUN_BASE_URL") or ""
+        key = env("OCR_API_KEY")
+        if not key and "stepfun.com" in base_effective:
+            # 同一个供应商只换模型（如 step-5-preview）：沿用 StepFun 的 key
+            key = env("STEPFUN_API_KEY")
+        return {
+            "base_url": base or env("STEPFUN_BASE_URL"),
+            "model": model,
+            "api_key": key,
+            "provider": "custom",
+        }
     return {
         "base_url": env("STEPFUN_BASE_URL"),
         "model": env("STEPFUN_MODEL"),
         "api_key": env("STEPFUN_API_KEY"),
+        "provider": "stepfun",
     }
 
 
@@ -388,11 +466,12 @@ def call_with_retry(
     raise last or ApiError("未知错误")
 
 
-def image_data_url(png: Path) -> str:
-    """把页图编码成 OpenAI 兼容接口用的 data URL。"""
+def image_data_url(path: Path) -> str:
+    """把页图编码成 OpenAI 兼容接口用的 data URL（MIME 按文件头选，原图也能直接送）。"""
     import base64
 
-    return "data:image/png;base64," + base64.b64encode(png.read_bytes()).decode("ascii")
+    data = base64.b64encode(Path(path).read_bytes()).decode("ascii")
+    return f"data:{image_media_type(path)};base64,{data}"
 
 
 def preview(text, limit: int = 200) -> str:
@@ -608,12 +687,169 @@ def extract_json_object(text: str) -> dict:
 
 
 # ── 文件 ────────────────────────────────────────────────────────────────
+# 输入可以是 PDF，也可以**直接是图片**（扫描件/手机拍照/截图）。**按文件头识别**：
+# 后缀不可靠（扫描 App 常常导出没有后缀、或 .dat / .bin），只看后缀会把好端端的图当 PDF 处理。
+IMAGE_SUFFIXES = (
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".jpe",
+    ".webp",
+    ".bmp",
+    ".gif",
+    ".tif",
+    ".tiff",
+    ".jp2",
+    ".j2k",
+    ".pnm",
+    ".pgm",
+    ".ppm",
+    ".pbm",
+    ".psd",
+    ".tga",
+    ".ico",
+)
+# (文件头, 细格式名)；`riff` 要再看第 8–12 字节是不是 WEBP
+_SOURCE_MAGIC: tuple[tuple[bytes, str], ...] = (
+    (b"%PDF", "pdf"),
+    (b"\x89PNG\r\n\x1a\n", "png"),
+    (b"\xff\xd8\xff", "jpeg"),
+    (b"GIF87a", "gif"),
+    (b"GIF89a", "gif"),
+    (b"BM", "bmp"),
+    (b"II*\x00", "tiff"),
+    (b"MM\x00*", "tiff"),
+    (b"\x00\x00\x01\x00", "ico"),
+    (b"8BPS", "psd"),
+    (b"\x00\x00\x00\x0cjP  ", "jp2"),
+    (b"P1", "pnm"),
+    (b"P2", "pnm"),
+    (b"P3", "pnm"),
+    (b"P4", "pnm"),
+    (b"P5", "pnm"),
+    (b"P6", "pnm"),
+    (b"RIFF", "riff"),
+)
+
+
+def sniff_source(path: Path) -> tuple[str, str]:
+    """这是 PDF 还是图片？返回 `(kind, format)`。
+
+    `kind` ∈ `{"pdf", "image"}`（都不像时返回 `""`）；`format` 是细格式名（png / jpeg / webp …）。
+    **先看文件头**，认不出再退回后缀 —— 后缀只当兜底，不当判据。
+    """
+    path = Path(path)
+    try:
+        with path.open("rb") as handle:
+            head = handle.read(32)
+            if head.startswith(b"RIFF"):
+                handle.seek(8)
+                if handle.read(4) == b"WEBP":
+                    return "image", "webp"
+    except OSError:
+        return "", ""
+    if head.startswith(b"%PDF"):
+        return "pdf", "pdf"
+    for magic, name in _SOURCE_MAGIC:
+        if name != "riff" and head.startswith(magic):
+            return "image", name
+    suffix = path.suffix.lower()
+    if suffix == ".pdf":
+        return "pdf", "pdf"
+    if suffix in IMAGE_SUFFIXES:
+        return "image", suffix.lstrip(".")
+    return "", (suffix.lstrip(".") or "unknown")
+
+
+def is_source_file(path: Path) -> bool:
+    """这个文件能不能当输入（PDF 或图片）—— 按内容判，不看后缀。"""
+    return sniff_source(path)[0] in ("pdf", "image")
+
+
+def natural_key(text) -> tuple:
+    """自然序排序键：`IMG_2.jpg` 排在 `IMG_10.jpg` 前面。
+
+    扫描 App 导出的文件名基本都是 `IMG_1 / IMG_2 / … / IMG_10`，按字符串排会把第 10 页
+    放到第 2 页前面 —— 页序错了整卷就乱了。
+    """
+    parts = [part for part in re.split(r"(\d+)", str(text or "")) if part != ""]
+    return tuple((int(part), "") if part.isdigit() else (0, part.lower()) for part in parts)
+
+
+# 多模态端点**直接认**的图片格式：这两种可以把原图直接送去 OCR，不必先转 PNG
+# （照片转 PNG 常常大三倍，白占磁盘还慢；其余格式端点不认，才需要转一下）
+OCR_READY_FORMATS = ("png", "jpeg")
+_MEDIA_TYPES = {
+    "png": "image/png",
+    "jpeg": "image/jpeg",
+    "webp": "image/webp",
+    "gif": "image/gif",
+    "bmp": "image/bmp",
+    "tiff": "image/tiff",
+    "pnm": "image/x-portable-anymap",
+    "jp2": "image/jp2",
+    "psd": "image/vnd.adobe.photoshop",
+}
+
+
+def image_media_type(path: Path) -> str:
+    """按**文件头**给 data URL 选 MIME（图片输入会直接送原图，不能写死 png）。"""
+    kind, fmt = sniff_source(path)
+    if kind != "image":
+        return "image/png"
+    return _MEDIA_TYPES.get(fmt, "image/png")
+
+
+def underline_marks(text) -> int:
+    """正文里 `<u>…</u>` 标记的个数（S2 统计、S4 写进 report）。
+
+    **下划线只由 OCR 模型判定**（提示词里让它把"被划住的文字"用 `<u>…</u>` 包起来）——
+    不在本地做像素检测：扫描件的线宽/灰度差异太大，代码判定漏检、误检都难解释，
+    位置还得再映射回文字，反而不可靠。
+    """
+    return len(re.findall(r"<u>.*?</u>", str(text or ""), re.S))
+
+
+def page_source(document: dict, work_dir: Path, number: int) -> Path:
+    """这一页 OCR 该读哪个文件。
+
+    优先用 manifest 里的 `page_files`：
+      * 绝对路径（老写法，指向源文件）；
+      * 相对路径 → 相对**工作目录**解析（`pages/page-001.png` 是渲染/转出来的页图，
+        `sources/page-001.jpg` 是**复制进来的原图**）。
+    没有记录时退回 `pages/page-NNN.png`（老 manifest 也照样能跑）。
+    """
+    raw = (document.get("page_files") or {}).get(str(number))
+    if raw:
+        candidate = Path(str(raw))
+        if candidate.is_absolute():
+            return candidate
+        direct = work_dir / candidate
+        if direct.exists():
+            return direct
+        # 兼容早期把相对路径记成"相对 pages/"的 manifest
+        legacy = work_dir / "pages" / candidate.name
+        return legacy if legacy.exists() else direct
+    return work_dir / "pages" / f"page-{number:03d}.png"
+
+
 def sha256_of_file(path: Path, chunk: int = 1 << 20) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
         for block in iter(lambda: handle.read(chunk), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def sha256_of_files(paths: list[Path]) -> tuple[str, int]:
+    """多个输入文件合成一个摘要（+ 总字节数）。
+
+    一份卷可能由几十张图组成，manifest 里的 `sha256` 要能唯一代表**这一卷**：
+    按文件名排序后把各文件摘要拼起来再哈希一次。
+    """
+    digests = [sha256_of_file(path) for path in sorted(paths, key=lambda p: natural_key(p.name))]
+    total = sum(path.stat().st_size for path in paths)
+    return hashlib.sha256("".join(digests).encode("utf-8")).hexdigest(), total
 
 
 def read_json(path: Path):
@@ -647,6 +883,20 @@ def safe_name(name: str) -> str:
     cleaned = "".join(ch for ch in name if not (0xDC80 <= ord(ch) <= 0xDCFF))
     cleaned = "".join("_" if ch in _ILLEGAL else ch for ch in cleaned).strip().strip(".")
     return cleaned or "unnamed"
+
+
+def rel(path: Path, root: Path | None = None) -> str:
+    """日志里用的相对路径；**不在 root 下面时退回绝对路径**。
+
+    以前直接 `path.relative_to(REPO_ROOT)`：只要工作目录被指到仓库外（测试沙箱、
+    或有人把 work 根挪走），一个纯打印语句就会把整条流水线搞崩。
+    """
+    path = Path(path)
+    root = Path(root or REPO_ROOT)
+    try:
+        return str(path.relative_to(root))
+    except ValueError:
+        return str(path)
 
 
 def ensure_under(path: Path, root: Path) -> Path:

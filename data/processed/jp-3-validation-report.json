@@ -1,0 +1,180 @@
+{
+  "category": "jp-3",
+  "source": "data/raw/jp-3/jp-3.md",
+  "questions": 63,
+  "groups": [
+    "考试详情"
+  ],
+  "s5": {
+    "checkedAt": "2026-10-02T01:23:22+08:00",
+    "exitCode": 2,
+    "warnings": [
+      "带待复核标记 31 处"
+    ]
+  },
+  "explanationSource": {
+    "printed": 0,
+    "generated": 63,
+    "none": 0
+  },
+  "aiAnswers": 0,
+  "needsReview": [
+    {
+      "id": "jp-3-q005",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "jp-3-q007",
+      "notes": [
+        "OCR 冲突：options.D（A 路「熱いくて」/ B 路「熱くて」）",
+        "OCR 冲突：stem（A 路「( )、触らないでください。」/ B 路「（ ）、触らないでください。」）"
+      ]
+    },
+    {
+      "id": "jp-3-q008",
+      "notes": [
+        "OCR 冲突：stem（A 路「新聞の漢字が読めるようになりましたか。"
+      ]
+    },
+    {
+      "id": "jp-3-q011",
+      "notes": [
+        "OCR 冲突：paper_identity.title（A 路「考试详情」/ B 路「」）"
+      ]
+    },
+    {
+      "id": "jp-3-q018",
+      "notes": [
+        "OCR 冲突：stem（A 路「いいえ。メールをもらった（　）は先週です。」/ B 路「一いいえ。メールをもらった（　）は先週です。」）"
+      ]
+    },
+    {
+      "id": "jp-3-q019",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "jp-3-q020",
+      "notes": [
+        "OCR 冲突：page_header（A 路「」/ B 路「答题卡」）",
+        "OCR 冲突：paper_identity.title（A 路「」/ B 路「考试详情」）"
+      ]
+    },
+    {
+      "id": "jp-3-q027",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "jp-3-q028",
+      "notes": [
+        "模型标记待复核（置信度 medium）"
+      ]
+    },
+    {
+      "id": "jp-3-q030",
+      "notes": [
+        "模型标记待复核（置信度 high）"
+      ]
+    },
+    {
+      "id": "jp-3-q034",
+      "notes": [
+        "OCR 冲突：paper_identity.title（A 路「考试详情」/ B 路「」）"
+      ]
+    },
+    {
+      "id": "jp-3-q035",
+      "notes": [
+        "OCR 冲突：page_header（A 路「11:55",
+        "OCR 冲突：stem（A 路「一このコップは（割れる→　　　）にくいですから、お子さんが（使う→　　　）のにいいです。」/ B 路「一このコップは（割れる→　　）にくいですから、お子さんが（使う→　　）のにいいです。」）"
+      ]
+    },
+    {
+      "id": "jp-3-q037",
+      "notes": [
+        "OCR 冲突：page_header（A 路「」/ B 路「11:55」）"
+      ]
+    },
+    {
+      "id": "jp-3-q041",
+      "notes": [
+        "OCR 冲突：stem（A 路「家族_____ために、大きいうちを 買いたいです。」/ B 路「家族_____ために、大きいうちを買いたいです。」）"
+      ]
+    },
+    {
+      "id": "jp-3-q042",
+      "notes": [
+        "OCR 冲突：stem（A 路「雨や雪の日は事故___起きやすいです。」/ B 路「雨や雪の日は事故____起きやすいです。」）"
+      ]
+    },
+    {
+      "id": "jp-3-q043",
+      "notes": [
+        "OCR 冲突：page.footer_ui（A 路「」/ B 路「答题卡"
+      ]
+    },
+    {
+      "id": "jp-3-q044",
+      "notes": [
+        "OCR 冲突：stem（A 路「この靴は山___歩くのにいいです。」/ B 路「この靴は山____歩くのにいいです。」）"
+      ]
+    },
+    {
+      "id": "jp-3-q045",
+      "notes": [
+        "OCR 冲突：paper_identity.title（A 路「考试详情」/ B 路「」）"
+      ]
+    },
+    {
+      "id": "jp-3-q047",
+      "notes": [
+        "OCR 冲突：pageHeader（A 路「11:56",
+        "OCR 冲突：answerLabel（A 路「正确答案」/ B 路「**正确答案**」）"
+      ]
+    },
+    {
+      "id": "jp-3-q049",
+      "notes": [
+        "OCR 冲突：paper_identity.title（A 路「」/ B 路「考试详情」）"
+      ]
+    },
+    {
+      "id": "jp-3-q052",
+      "notes": [
+        "OCR 冲突：我的答案.(1)（A 路「の」/ B 路「の（但 B 路自报改正称应为「に」，与其自身转写不一致）」）"
+      ]
+    },
+    {
+      "id": "jp-3-q056",
+      "notes": [
+        "OCR 冲突：page_structure（A 路「答题卡」/ B 路「」）"
+      ]
+    },
+    {
+      "id": "jp-3-q057",
+      "notes": [
+        "OCR 冲突：stem（A 路「一その本、漢字が多くて、（難しい→　　）そうですね。」/ B 路「一その本、漢字が多くて、(難しい→　　) そうですね。」）",
+        "OCR 冲突：page_content（A 路「无「答题卡」「上一题 下一题 AI讲解」等页面元素」/ B 路「含「答题卡」「上一题」「下一题」「AI讲解」」）"
+      ]
+    },
+    {
+      "id": "jp-3-q058",
+      "notes": [
+        "OCR 冲突：page_extra（A 路「」/ B 路「答题卡」）"
+      ]
+    },
+    {
+      "id": "jp-3-q059",
+      "notes": [
+        "OCR 冲突：score（A 路「2分」/ B 路「2 分」）",
+        "OCR 冲突：userScore（A 路「0分」/ B 路「0 分」）"
+      ]
+    }
+  ],
+  "numberGaps": []
+}

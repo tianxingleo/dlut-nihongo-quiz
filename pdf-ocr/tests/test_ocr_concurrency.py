@@ -71,7 +71,8 @@ def instrument(ocr2):
     lock = threading.Lock()
     state = {"current": 0, "max": 0, "calls": []}
 
-    def fake(cfg, png, number, pass_key, index, total, timeout, max_retries, max_tokens):
+    def fake(cfg, png, number, pass_key, index, total, timeout, max_retries, max_tokens,
+             idle_timeout=120, stream=True):
         with lock:
             state["current"] += 1
             state["max"] = max(state["max"], state["current"])

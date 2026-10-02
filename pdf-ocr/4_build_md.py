@@ -2,6 +2,7 @@
 
 用法：
   python pdf-ocr/4_build_md.py --category <分类名> [--pages 1-4] [--force] [--quiet]
+  python pdf-ocr/4_build_md.py --category <分类名> --answers ai    # 卷面没答案 → AI 两路解题
 
 输入：pdf-ocr/work/<分类名>/pages/page-00N.merge.json（S3 产物）
 输出：
@@ -19,6 +20,9 @@
   4. **跨页断题拼接**（三步）。
   5. **全局按题号排序 + 去重**。
   6. **渲染 md** 并复查字段完整性（题干非空 / 选项≥2 / 有答案），不满足只标 needs_review，**不丢题**。
+  7. **卷面一道答案都没印时**（`--answers ai` / `auto`）：对没有答案的客观题做**两路 AI 解题**
+     （A 路答字母、B 路打乱选项答原文），一致才定案；推得的答案在 md 里带 `> 🤖 答案由 AI 推得…`
+     → 解析端落 `answerProvenance: 'generated'` + 待复核。主观题不碰。
 
 退出码：0 成功；1 参数/环境错误；3 有页缺 S3 产物（已产出的部分照常写盘，可续跑）。
 """
@@ -26,7 +30,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import os
+import random
 import re
 import sys
 import time
@@ -1336,6 +1342,90 @@ def attach_material_passages(entries: list[dict], report: dict) -> list[dict]:
     return entries
 
 
+# ── 4.5) 阅读题的"文章只印一次"：把文章复制到同组每道小题的题干上方 ──────────
+#
+# 卷面排版：阅读理解的文章**只印一次**，后面跟几道小题。OCR 把文章连同**第一道**小题
+# 一起抽出来（实测：期末 2024 的第 1 题带整段「花見」文章，第 2/3/4 题只有问句；
+# 第 90 题带整段「船旅」文章，第 91–94 题只有问句）。
+#
+# 后果有两个，都不是小事：
+#   * 站点上翻到第 2 题，**根本看不到文章**，题目没法做；
+#   * AI 解题只能看到问句，「一番驚いたことはなんですか」这种题只能盲猜（答案不可信）。
+#
+# 好在 merge.json 里**每道题都带着 OCR 判出的大题分组**（`group` + `groupTitle`，
+# 如 `题组一 / (三) 花見`），同组就是同一篇文章 —— 不用猜。这里把文章复制进每道小题。
+PASSAGE_MIN = 150  # 文章至少这么长（字符），免得把普通长题干当文章
+QUESTION_MAX = 120  # "问题行"最多这么长
+QUESTION_TAIL = re.compile(r"[かか。？?]$|どれですか|なぜですか|なんですか|何ですか|何を|について")
+
+
+def split_article(stem: str) -> tuple[str, str]:
+    """把"文章 + 问题"的题干拆成 (文章, 问题)。拆不出文章时返回 ("", 原题干)。
+
+    两种形态都要认：
+      * `第 1 题`：文章几段 + 末尾一行短问句（「この人はどうして…ですか。」）；
+      * `第 90 题`：整个题干就是文章，空栏在文章里（[96]…），没有单独的问句行 → 整段当文章。
+    """
+    text = str(stem or "").strip()
+    lines = [line for line in text.split("\n")]
+    non_empty = [(index, line) for index, line in enumerate(lines) if line.strip()]
+    if len(non_empty) < 2 and len(text) < 400:
+        return "", text
+    # 末行是"短问句" → 前面都是文章
+    last_line = non_empty[-1][1].strip()
+    if len(last_line) <= QUESTION_MAX and QUESTION_TAIL.search(last_line):
+        head = "\n".join(lines[: non_empty[-1][0]]).strip()
+        if len(flatten(head)) >= PASSAGE_MIN:
+            return head, last_line
+    # 没有单独的问句行（空栏在文章里）→ 整段当文章，但要求它确实够长
+    if len(flatten(text)) >= PASSAGE_MIN * 2:
+        return text, ""
+    return "", text
+
+
+def attach_reading_passages(entries: list[dict], report: dict) -> None:
+    """同组（group + groupTitle）里，把文章复制到每道小题的题干上方（文章只印了一次）。"""
+    groups: dict[tuple[str, str], list[dict]] = {}
+    for entry in entries:
+        q = entry["q"]
+        key = (str(q.get("group") or "").strip(), str(q.get("groupTitle") or "").strip())
+        groups.setdefault(key, []).append(entry)
+
+    for (group, title), members in groups.items():
+        if len(members) < 2:
+            continue
+        # 文章载体 = 这道题自己带文章（题干最长的那道，且确实能拆出文章）
+        best: tuple[int, str, str] | None = None
+        for entry in members:
+            article, question = split_article(str(entry["q"].get("stem") or ""))
+            if article and (best is None or len(article) > best[0]):
+                best = (len(article), article, question)
+        if best is None:
+            continue
+        _length, article, carrier_question = best
+        _carrier_question = carrier_question
+        carrier = next(
+            entry
+            for entry in members
+            if split_article(str(entry["q"].get("stem") or ""))[0] == article
+        )
+        filled: list[tuple[int, int]] = []
+        for entry in members:
+            q = entry["q"]
+            stem = str(q.get("stem") or "")
+            if entry is carrier:
+                continue  # 载体本来就带文章（保持原样，免得重复两遍）
+            if abs(int(entry["page"]) - int(carrier["page"])) > 1:
+                continue  # 同名大题跨了好几页，多半是**另一篇文章**（如都叫「読解・空欄補充」）→ 不补
+            if flatten(stem) and flatten(article) in flatten(stem):
+                continue  # 已经带文章了（S3 或别处补过）
+            q["stem"] = f"{article}\n\n{stem}".strip() if flatten(stem) else article
+            filled.append((entry["page"], q.get("number")))
+        if filled:
+            report["reading_groups"].append((group, title, len(flatten(article)), len(filled)))
+            report["reading_articles_filled"].extend(filled)
+
+
 # ── 4) 跨页断题拼接───────────────────────────────────────────────
 def merge_pair(target: dict, follower: dict) -> None:
     """把 follower 并进 target（同题号的跨页两半）。"""
@@ -1730,13 +1820,17 @@ def ai_review(
     return raw
 
 
-def apply_ai_review(entries: list[dict], review: dict, report: dict) -> list[dict]:
+def apply_ai_review(
+    entries: list[dict], review: dict, report: dict, fill_answers: bool = True
+) -> list[dict]:
     """按 AI 终审结论改题：**删重复 → 题号顺延 → 答案重新对位**。
 
     - 删重复：按 `duplicates[].number` 匹配（keepNumber 优先保留），**直接删**、不改 needs_review。
     - 题号顺延：**只在真的删过题时**做，且**按题组**重新连续编号（从该组第一题的原题号开始）——
       这样"删掉的那题之后所有题号减 1"自然成立，也不会动到没有重复的题组。
     - 答案对位：`answers[]` 给的是**顺延后**的题号 → 答案，逐条覆盖（answerText 跟着选项重算）。
+    - `fill_answers=False`（`--answers ai`）：**不让终审顺手补答案** —— 那批题交给
+      `ai_solve_answers()` 走两路交叉校验（终审补的答案没有交叉校验，而且来源会被标成卷面答案）。
     """
     if not review:
         return entries
@@ -1843,15 +1937,21 @@ def apply_ai_review(entries: list[dict], review: dict, report: dict) -> list[dic
         if not option_keys or not all(ch in option_keys for ch in key):
             report["ai_answer_ignored"].append((entry["page"], number, key, len(option_keys)))
             continue
+        if not fill_answers:
+            report["ai_answers_deferred"].append((entry["page"], number, key))
+            continue
         report["ai_answers"].append((number, before or "（无）", key, text[:20], str(item.get("reason") or "")[:40]))
         entry["q"]["answerKey"] = key
         entry["q"]["answerText"] = text or entry["q"].get("answerText") or ""
-    apply_ai_types(entries, review, report, by_index)
+        # **来源要如实**：这条答案是 AI 给的、卷面没印 → 标 generated + 待复核，
+        # md 里会多一行 🤖（以前不标，解析端只能落成 `printed`，站上分不出印的和猜的）。
+        mark_ai_answer(entry["q"], str(item.get("reason") or ""), "low")
+    apply_ai_types(entries, review, report, by_index, fill_answers)
     return entries
 
 
 def apply_ai_types(
-    entries: list[dict], review: dict, report: dict, by_index: dict | None = None
+    entries: list[dict], review: dict, report: dict, by_index: dict | None = None, fill_answers: bool = True
 ) -> None:
     """按 AI 的判型结果补正题型，并交叉验证多选答案有没有漏读（用户："用 ai 判断"）。
 
@@ -1937,11 +2037,510 @@ def apply_ai_types(
             if not option_keys or not all(ch in option_keys for ch in ai_key):
                 report["ai_answer_ignored"].append((entry["page"], number, ai_key, len(option_keys)))
                 continue
+            if not fill_answers:
+                report["ai_answers_deferred"].append((entry["page"], number, ai_key))
+                continue
             q["answerKey"] = ai_key
             text = "、".join(option_text(q, ch) for ch in ai_key if option_text(q, ch))
             if text:
                 q["answerText"] = text
             report["answers_from_ai"].append((entry["page"], number, ai_key))
+            mark_ai_answer(q, "", "low")
+
+
+# ── 6.55) 卷面没有答案 → 用 AI 解题（两路交叉校验）──────────────────────
+#
+# 场景：卷子和答案册分离（只扫了题、没扫答案），或者干脆是没有答案的题库 —— 卷面一道题
+# 都没印答案。以前只能靠 AI 终审（`apply_ai_review`）顺手补，那条路有两个问题：
+#   ① **没有交叉校验**：一个模型说 D 就是 D，错了也没人拦；
+#   ② 补出来的答案在 md 里跟卷面答案长得一模一样 → 解析端只能落成
+#      `answerProvenance: 'printed'`，站上分不出"印的"和"猜的"。
+#
+# 所以把它做成正规模式（`--answers ai`）：
+#   1. 只解**卷面没有答案**、且**有 ≥2 个选项**的题 —— 主观题没有选项，字母答案无从校验，一律不碰；
+#   2. **两路独立解题**：A 路给选项字母；B 路把**选项顺序打乱**、要求答"选项原文"
+#      （同一个模型换个视角，能揪出看错题/数错项这类不稳定）；
+#   3. 两路一致才定案；不一致时**采用 A 路但写明分歧**，标 `needs_review` 并进报告 ——
+#      丢掉整题不如留一道标红的题给人工看；
+#   4. md 里必须带 `<AI_ANSWER_NOTE>` 那一行 → 解析端落成 `generated` + `needs_review`。
+#
+# 结果缓存 `work/<分类名>/ai-answers.json`（按 题组+题号+题干指纹 命中），重跑不重复花钱。
+AI_SOLVE_SYSTEM = (
+    "你是阅卷老师，负责把**卷面没有印答案**的题目解出来。"
+    "只输出一个 JSON 对象，不要解释、不要代码围栏。"
+)
+
+AI_SOLVE_SCHEMA_A = """请输出如下 JSON：
+{"answers": [{"index": 1, "answerKey": "B", "confidence": "high", "rationale": "一句话依据"}]}
+
+规则：
+1) `index` 填题目前面 `#序号` 里那个**数字**（`#3` 就填 `3`，不要带 `#`、不要自己重排、不要漏题）；
+2) `answerKey` 只能用该题给出的选项字母；多选拼在一起（如 "ACE"，按字母升序）；
+3) 判断题的选项就是 A.正确 / B.错误，照常给字母；
+4) 拿不准就把 `confidence` 写 "low"，并在 `rationale` 里写清不确定在哪；
+5) 题干残缺到读不懂 → 这题**不要出现**在 answers 里（宁缺勿滥）。"""
+
+AI_SOLVE_SCHEMA_B = """请输出如下 JSON：
+{"answers": [{"index": 1, "answerText": "选项原文", "confidence": "high", "rationale": "一句话依据"}]}
+
+规则：
+1) `index` 填题目前面 `#序号` 里那个**数字**（`#3` 就填 `3`，不要带 `#`）；
+2) `answerText` 必须**照抄你选中的那个选项的原文**（不要写字母）—— 每道题的选项顺序
+   都被**打乱**过，写字母等于没看题；多选就把原文用「、」连接；
+3) 抄原文时与卷面一字不差（标点可省）；拿不准就 `confidence` 写 "low"；
+4) 题干残缺到读不懂 → 这题**不要出现**在 answers 里。"""
+
+SOLVE_CHUNK_CHARS = 7000  # 每次请求的题目文本预算（字符）：够 30~60 道客观题
+# `--answers auto` 的判据：卷面答案覆盖率低于这个值 → 认为"这份卷子没有答案册"，改用 AI 解
+AUTO_PAPER_RATIO = 0.5
+
+
+def is_ai_answer(q: dict) -> bool:
+    """这题的答案是 AI 推的（不是卷面印的）？渲染 md 时据此打 🤖 标记。"""
+    return str(q.get("answerProvenance") or "").strip().lower() == "generated"
+
+
+def mark_ai_answer(q: dict, rationale: str = "", confidence: str = "") -> None:
+    """把一道题的答案标成"AI 推得"：来源 + 待复核 + 解析。
+
+    `scripts/parse-computer-banks.mjs` 的校验要求 `answerProvenance: 'generated'` 的题
+    **必须有非空 explanation**，所以没有依据时也要补一句"这是 AI 推的"。
+    """
+    q["answerProvenance"] = "generated"
+    q["needs_review"] = True
+    if not flatten(q.get("explanation")):
+        q["explanation"] = rationale or (
+            f"卷面没有印答案，答案由 AI 推得（置信度 {confidence or '未知'}），未经人工核对。"
+        )
+        q["explanationSource"] = "generated"
+
+
+def solve_key(entry: dict) -> str:
+    """AI 解题缓存的键：题组 + 题号（卷面内唯一）。"""
+    q = entry["q"]
+    bucket = section_bucket(q.get("group"), q.get("groupTitle"))
+    return f"{bucket}::{q.get('number')}"
+
+
+def stem_fingerprint(entry: dict) -> str:
+    """题干指纹：md 重新生成过、题干变了 → 缓存里的旧答案作废（重解一次）。"""
+    return hashlib.sha1(flatten(entry["q"].get("stem")).encode("utf-8")).hexdigest()[:12]
+
+
+def option_keys_of(q: dict) -> set[str]:
+    return {str(o.get("key") or "").upper() for o in q.get("options") or [] if str(o.get("key") or "")}
+
+
+def solve_targets(entries: list[dict], report: dict) -> list[dict]:
+    """挑出"需要 AI 解"的题：卷面无答案 + 有题干 + 选项 ≥2（字母答案才可校验）。
+
+    主观题（没有选项、答案是评分标准）**不解**：给它塞个字母答案在站上就是假答案
+    （`apply_ai_types` 里踩过这个坑）。
+    """
+    targets: list[dict] = []
+    for entry in entries:
+        q = entry["q"]
+        if flatten(q.get("answerKey")) or is_ai_answer(q):
+            continue
+        stem = flatten(q.get("stem"))
+        if not stem or is_placeholder_stem(stem):
+            continue
+        if len(option_keys_of(q)) < 2:
+            report["ai_solve_skipped"].append(
+                (entry["page"], q.get("number"), "没有选项（主观题）/ 选项不足 2 个")
+            )
+            continue
+        targets.append(entry)
+    return targets
+
+
+def shuffle_options(options: list[dict], index: int) -> list[dict]:
+    """把选项顺序打乱（B 路用）。种子固定 → 同一道题每次打乱结果一样，缓存/复跑可比。"""
+    items = list(options)
+    random.Random(f"ai-solve-{index}").shuffle(items)
+    return items
+
+
+def build_solve_payload(model: str | None, chunk: list[tuple[int, dict]], pass_b: bool, max_tokens: int) -> dict:
+    """`chunk` = [(#序号, entry)]；A 路给带字母的选项，B 路给**不带字母**的打乱选项。"""
+    lines = ["【待解题目】卷面没有印答案，请逐题解出正确答案。", ""]
+    for index, entry in chunk:
+        q = entry["q"]
+        options = list(q.get("options") or [])
+        lines.append(
+            f"#{index}（{q.get('group') or '未写大题'} 第{q.get('number')}题）"
+            f"{snippet(q.get('stem'), 200, 200)}"
+        )
+        if pass_b:
+            for option in shuffle_options(options, index):
+                lines.append(f"  - {flatten(option.get('text'))[:200]}")
+        else:
+            for option in options:
+                lines.append(f"  {str(option.get('key') or '').upper()}. {flatten(option.get('text'))[:200]}")
+        lines.append("")
+    lines.append(AI_SOLVE_SCHEMA_B if pass_b else AI_SOLVE_SCHEMA_A)
+    return {
+        "model": model,
+        "temperature": 0,
+        "max_tokens": max_tokens,
+        "messages": [
+            {"role": "system", "content": AI_SOLVE_SYSTEM},
+            {"role": "user", "content": "\n".join(lines)},
+        ],
+    }
+
+
+def parse_solve_response(text: str) -> dict[int, dict]:
+    """解析模型返回的答案（容忍几种常见形状，**不轻易放弃**）。
+
+    实测模型同一个提示词有时给 `{"answers":[...]}`、有时给 `{"1":"B"}` 这种按序号给的映射、
+    有时键名写成 `解答`/`items`。以前只认 `answers`，形状一变就**静默 0 条** →
+    整批题被当成"AI 没给答案"丢掉（实测踩过）。
+    """
+    raw, _repair = c.extract_json(text)
+    items = raw
+    if isinstance(raw, dict):
+        for key in ("answers", "answer", "解答", "答案", "items", "results", "data"):
+            value = raw.get(key)
+            if isinstance(value, (list, dict)):
+                items = value
+                break
+    if isinstance(items, dict):
+        items = [
+            {"index": key, **value} if isinstance(value, dict) else {"index": key, "answerKey": value}
+            for key, value in items.items()
+        ]
+    out: dict[int, dict] = {}
+    for item in items or []:
+        if not isinstance(item, dict):
+            continue
+        raw_index = item.get("index", item.get("number"))
+        if isinstance(raw_index, str):
+            # 模型常把 `#1` / `第1题` 原样抄回来 → 只取数字（实测：整批 3 题因此全被丢）
+            raw_index = re.sub(r"[^0-9]", "", raw_index)
+        try:
+            index = int(raw_index)
+        except (TypeError, ValueError):
+            continue
+        out[index] = item
+    return out
+
+
+def exact_option_text(options: list[dict], text: str) -> str:
+    """整串（压缩空白与标点后）**完全等于**某个选项原文 → 返回它的 key，否则空串。"""
+    want = c.squash_text(text)
+    if not want:
+        return ""
+    hits = [str(o.get("key") or "").upper() for o in options if c.squash_text(o.get("text")) == want]
+    return hits[0] if len(hits) == 1 else ""
+
+
+def match_option_text(options: list[dict], text: str) -> str:
+    """把"选项原文"对回选项字母（B 路用）。对不上返回空串。"""
+    want = c.squash_text(text)
+    if not want:
+        return ""
+    exact = exact_option_text(options, text)
+    if exact:
+        return exact
+    # 模型少抄/多抄几个字是常事 → 唯一前缀也算（两个选项都能前缀匹配就说明有歧义，放弃）
+    prefix = [
+        str(o.get("key") or "").upper()
+        for o in options
+        if c.squash_text(o.get("text")).startswith(want) or want.startswith(c.squash_text(o.get("text")))
+    ]
+    if len(prefix) == 1:
+        return prefix[0]
+    return ""
+
+
+def answer_text_to_key(options: list[dict], text) -> str:
+    """多选题的原文答案（`甲、乙`）→ 字母（`AC`）。任一段对不上就整题放弃（宁缺勿滥）。
+
+    先整串比一次再拆分：有的题**选项文本自带分隔符**（如「が/が」「を/に」），
+    直接按 `/` 拆会拆成两段相同的内容、对不上而误判成"两路不一致"（实测第 76/77 题）。
+    """
+    whole = exact_option_text(options, text)
+    if whole:
+        return whole
+    parts = [part for part in re.split(r"[、,，;；/]+", str(text or "")) if c.squash_text(part)]
+    if not parts:
+        return ""
+    keys: list[str] = []
+    for part in parts:
+        key = match_option_text(options, part)
+        if not key or key in keys:
+            return ""
+        keys.append(key)
+    return "".join(sorted(keys))
+
+
+def chunk_targets(targets: list[tuple[int, dict]]) -> list[list[tuple[int, dict]]]:
+    """按字符预算切批（避免一次请求塞太长、模型开始漏题）。"""
+    chunks: list[list[tuple[int, dict]]] = []
+    current: list[tuple[int, dict]] = []
+    size = 0
+    for index, entry in targets:
+        q = entry["q"]
+        length = (
+            len(flatten(q.get("stem")))
+            + sum(len(flatten(o.get("text"))) for o in q.get("options") or [])
+            + 40
+        )
+        if current and size + length > SOLVE_CHUNK_CHARS:
+            chunks.append(current)
+            current, size = [], 0
+        current.append((index, entry))
+        size += length
+    if current:
+        chunks.append(current)
+    return chunks
+
+
+def call_solve(cfg: dict, payload: dict, args, report: dict) -> dict[int, dict]:
+    """发一次解题请求（A/B 路共用）。
+
+    **必须走 `c.call_with_retry`**：这条链路（经代理/TUN）偶发"连接静默到超时"，
+    实测一次 S4 里整批解题请求因为没重试而全部作废（`ai-answers.json` 里 items 为空），
+    白等了 61 分钟。带重试是这套流水线里其它所有 API 调用的既有做法。
+    """
+    started = time.perf_counter()
+    response = c.call_with_retry(
+        str(cfg["base_url"]),
+        payload,
+        cfg.get("api_key"),
+        timeout=args.ai_timeout,
+        max_retries=3,
+        on_retry=lambda attempt, retries, why, ms: c.retry_line(
+            f"{STAGE}-解题", 1, 1, attempt, retries, why, ms
+        ),
+    )
+    text, field = c.response_text_ex(response)
+    report["ai_usage"] = (report.get("ai_usage") or 0) + c.usage_tokens(response.get("usage"))
+    report["ai_solve_calls"] = int(report.get("ai_solve_calls") or 0) + 1
+    try:
+        items = parse_solve_response(text)
+    except c.ApiError as exc:
+        raise c.ApiError(
+            f"AI 解题返回不是合法 JSON：{exc}"
+            f"{c.reasoning_hint(field, c.response_finish_reason(response), args.ai_max_tokens, 'merge')}"
+        ) from exc
+    # **形状不对要吵**：静默 0 条会让整批题被当成"AI 没给答案"丢掉，看起来像模型不会做，
+    # 其实是返回格式变了（实测踩过）。
+    if not items:
+        c.warn(f"AI 解题这次返回里一条答案都认不出来 —— 原文前 200 字：{c.preview(text)}")
+    c.info(f"    AI 解题：{len(payload['messages'][1]['content'])} 字符 → {len(items)} 条（{c.human_ms(started)}ms）")
+    return items
+
+
+def ai_solve_answers(entries: list[dict], work_dir: Path, cfg: dict, args, report: dict) -> None:
+    """`--answers ai/auto` 的实现：两路解题 → 交叉校验 → 落到题上（来源标 generated）。"""
+    targets = solve_targets(entries, report)
+    if not targets:
+        c.always(f"[{STAGE}] AI 解题：没有「卷面无答案」的客观题，跳过")
+        return
+    if not cfg.get("api_key"):
+        c.warn(
+            f"没配 DEEPSEEK_API_KEY，无法用 AI 解出这 {len(targets)} 道题的答案 —— "
+            "它们会因缺答案被 S5 判为丢弃"
+        )
+        return
+
+    passes = max(1, int(args.solve_passes))
+    cache_path = work_dir / "ai-answers.json"
+    # 缓存只存**推成功的**答案：模型这次没答出来的题**故意不缓存** —— 重跑时再问一次
+    # （模型有随机性，第二次常常答得出来；把失败也缓存住等于永远放弃那几题）。
+    cache: dict = {"version": 1, "items": {}}
+    fresh = False
+    if cache_path.exists() and not args.refresh_answers:
+        loaded = c.read_json(cache_path) or {}
+        if isinstance(loaded.get("items"), dict):
+            cache = {
+                "version": 1,
+                "model": loaded.get("model"),
+                "passes": loaded.get("passes"),
+                "items": loaded.get("items") or {},
+            }
+            c.always(
+                f"[{STAGE}] AI 解题：复用 {cache_path.name}"
+                f"（推得 {len(cache['items'])} 题；要重跑加 --refresh-answers）"
+            )
+
+    # 缓存命中：题干指纹对得上才用（md 重新生成过 → 旧答案作废）
+    pending: list[tuple[int, dict]] = []
+    for index, entry in enumerate(targets, start=1):
+        key = solve_key(entry)
+        item = cache["items"].get(key)
+        if isinstance(item, dict) and item.get("fingerprint") == stem_fingerprint(entry):
+            report["ai_solve_cached"].append((entry["page"], entry["q"].get("number"), item.get("key")))
+            continue
+        pending.append((index, entry))
+
+    model = cfg.get("model")
+    if pending:
+        c.always(f"[{STAGE}] AI 解题：{len(pending)} 题待解（{passes} 路交叉校验）→ {model}")
+        fresh = True
+        for chunk in chunk_targets(pending):
+            try:
+                answers_a = call_solve(cfg, build_solve_payload(model, chunk, False, args.ai_max_tokens), args, report)
+            except c.ApiError as exc:
+                c.warn(f"AI 解题 A 路失败，这批 {len(chunk)} 题跳过：{exc}")
+                continue
+            answers_b: dict[int, dict] | None = None
+            if passes >= 2:
+                try:
+                    answers_b = call_solve(
+                        cfg, build_solve_payload(model, chunk, True, args.ai_max_tokens), args, report
+                    )
+                except c.ApiError as exc:
+                    c.warn(f"AI 解题 B 路失败，这批 {len(chunk)} 题只有单路结果（不交叉校验）：{exc}")
+            for index, entry in chunk:
+                record = solve_one(
+                    entry, index, answers_a.get(index) or {}, (answers_b or {}).get(index), passes, report
+                )
+                if record is None:
+                    continue
+                record["fingerprint"] = stem_fingerprint(entry)
+                cache["items"][solve_key(entry)] = record
+    if fresh:
+        cache["model"] = model
+        cache["passes"] = passes
+        cache["created_at"] = c.now_iso()
+        c.write_json_atomic(cache_path, cache)
+
+    # 应用（缓存命中的也走这里，条件与校验完全一致）
+    for entry in targets:
+        key = solve_key(entry)
+        item = cache["items"].get(key)
+        if not isinstance(item, dict):
+            continue
+        apply_solved_answer(entry, item, report)
+    if pending:
+        c.always(
+            f"[{STAGE}] AI 解题：推得 {len(report['ai_solve_applied'])} 题 / "
+            f"两路不一致 {len(report['ai_solve_disagreed'])} / 被拒 {len(report['ai_solve_rejected'])}"
+            f"（{cache_path.name}）"
+        )
+
+
+def solve_one(
+    entry: dict,
+    index: int,
+    item_a: dict,
+    item_b: dict | None,
+    passes: int,
+    report: dict,
+) -> dict | None:
+    """把两路答案对齐成一条缓存记录。返回 None = 这题作废（A 路没给可用答案）。"""
+    q = entry["q"]
+    number = q.get("number")
+    page = entry["page"]
+    option_keys = option_keys_of(q)
+    key_a = re.sub(r"[^A-E]", "", str(item_a.get("answerKey") or "").upper())
+    if not key_a or not all(ch in option_keys for ch in key_a):
+        report["ai_solve_rejected"].append(
+            (page, number, str(item_a.get("answerKey") or "")[:12] or "（空）", "A 路没给答案 / 不是本题选项")
+        )
+        return None
+    confidence = str(item_a.get("confidence") or "").strip().lower() or "unknown"
+    rationale = flatten(item_a.get("rationale"))[:200]
+    record: dict = {
+        "key": key_a,
+        "text": "、".join(option_text(q, ch) for ch in key_a if option_text(q, ch)),
+        "confidence": confidence,
+        "rationale": rationale,
+        "passA": key_a,
+        "agreement": True,
+    }
+    if item_b is None:
+        # B 路整批失败、或只是没答这一题 → **不算分歧**（没证据说 A 错），如实记下即可
+        record["passB"] = "（只跑了一路）" if passes < 2 else "（B 路没答这题）"
+        return record
+    raw_b = flatten((item_b or {}).get("answerText"))
+    key_b = answer_text_to_key(list(q.get("options") or []), raw_b)
+    record["passB"] = key_b or f"（原文对不上选项：{raw_b[:40] or '空'}）"
+    if key_b == key_a:
+        confidence_b = str((item_b or {}).get("confidence") or "").strip().lower()
+        if confidence_b == "low" or confidence == "low":
+            record["confidence"] = "low"
+        return record
+    # 两路不一致：**采用 A 路但要写明分歧**（丢掉整题不如留一道标红的题给人工看）
+    record["agreement"] = False
+    record["confidence"] = "low"
+    note = f"AI 两路解题结果不一致（A={key_a} / B={key_b or raw_b[:40] or '空'}），暂采用 A，请人工确认。"
+    record["rationale"] = f"{note}{rationale}"
+    report["ai_solve_disagreed"].append((page, number, key_a, key_b or raw_b[:30], rationale[:60]))
+    return record
+
+
+def apply_solved_answer(entry: dict, item: dict, report: dict) -> bool:
+    """把一条 AI 推得的答案落到题上（来源标 `generated` + 待复核）。"""
+    q = entry["q"]
+    key = re.sub(r"[^A-E]", "", str(item.get("key") or "").upper())
+    if flatten(q.get("answerKey")) or is_ai_answer(q):
+        return False
+    if not key or not all(ch in option_keys_of(q) for ch in key):
+        report["ai_solve_rejected"].append(
+            (entry["page"], q.get("number"), key or "（空）", "答案不在本题选项里（题干/选项可能改过）")
+        )
+        return False
+    q["answerKey"] = key
+    text = item.get("text") or "、".join(option_text(q, ch) for ch in key if option_text(q, ch))
+    if text:
+        q["answerText"] = text
+    mark_ai_answer(q, str(item.get("rationale") or ""), str(item.get("confidence") or ""))
+    report["ai_solve_applied"].append(
+        (entry["page"], q.get("number"), key, str(item.get("confidence") or ""), bool(item.get("agreement", True)))
+    )
+    return True
+
+
+def resolve_answers_mode(entries: list[dict], args, report: dict) -> str:
+    """把 `--answers auto` 落成 `paper` 或 `ai`。
+
+    必须在 **AI 终审之前**定：终审要知道自己该不该顺手补答案（`fill_answers`）——
+    `--answers ai` 时那批题要留给两路交叉校验，不能让终审先塞一个没校验的答案进去。
+    """
+    # **判据要和 S5 / 解析端一致**：站点要的是 `**正确答案：…**` 那一行 ——
+    # 有字母答案，或"这道题根本没有选项（主观题/填空）且答案文本非空"。
+    # 以前把"有 answerText（评分标准/解析文案）"也算成有答案，于是 `--answers auto`
+    # 高估覆盖率、选了 paper 模式，那批题既没被 AI 解、又被 S5 判成缺答案（实测 19/80 被拒发）。
+    def _has_answer(q: dict) -> bool:
+        if flatten(q.get("answerKey")):
+            return True
+        return not q.get("options") and bool(flatten(q.get("answerText")))
+
+    answered = sum(1 for entry in entries if _has_answer(entry["q"]))
+    total = len(entries) or 1
+    ratio = answered / total
+    if args.answers == "ai":
+        report["ai_solve_note"] = (
+            f"卷面/答案表已给答案 {answered}/{total} 题（{ratio * 100:.0f}%），其余由 AI 两路解题推得"
+        )
+        c.always(f"[{STAGE}] AI 解题：{report['ai_solve_note']}")
+        return "ai"
+    if args.answers == "paper":
+        return "paper"
+    if ratio < AUTO_PAPER_RATIO:
+        report["ai_solve_note"] = (
+            f"卷面答案只覆盖 {answered}/{total} 题（{ratio * 100:.0f}% < {AUTO_PAPER_RATIO * 100:.0f}%）"
+            "→ 判定「这份卷子没有答案册」，自动改用 AI 两路解题"
+        )
+        c.always(f"[{STAGE}] AI 解题：{report['ai_solve_note']}")
+        return "ai"
+    if answered >= total:
+        report["ai_solve_note"] = f"整卷 {total} 题都已有答案 → 不需要 AI 解题（--answers auto）"
+        c.always(f"[{STAGE}] AI 解题：{report['ai_solve_note']}")
+        return "paper"
+    # **`auto` = 卷面答案优先，缺的用 AI 补齐**：只要还有题没答案就交给两路解题
+    # （解题只针对"卷面无答案"的题，已有答案的一律不动）。以前覆盖率 ≥50% 就整卷不补，
+    # 结果缺的那批题既没被解、又被 S5 判成"缺答案"→ 直接拒发（实测 19/80 卡在这）。
+    report["ai_solve_note"] = (
+        f"卷面答案已覆盖 {answered}/{total} 题（{ratio * 100:.0f}%），"
+        f"剩下 {total - answered} 题交给 AI 两路解题补"
+    )
+    c.always(f"[{STAGE}] AI 解题：{report['ai_solve_note']}（--answers auto）")
+    return "ai"
 
 
 # ── 6.6) 补解析：给**没有解析**的题补一句 AI 解析 ─────────────────────────
@@ -2280,7 +2879,9 @@ def render_question(entry: dict) -> str:
         marks.append(problem)
     # 模型自己标的 needs_review / 低置信度也要落到 md 里 —— 否则解析端（P6）根本不知道哪些题要复核，
     # 这批信息就断在 P4 了（md 是流水线与网站之间唯一的接口）。
-    if q.get("needs_review") and not marks:
+    # AI 推得答案的题不写这条：它自己的 🤖 那句已经说清了，写「模型标记待复核」反而误导
+    # （那句的意思是"OCR 模型自己不确定"，跟"答案是推的"是两件事）。
+    if q.get("needs_review") and not marks and not is_ai_answer(q):
         marks.append(f"模型标记待复核（置信度 {q.get('confidence') or '未知'}）")
     for mark in dict.fromkeys(marks):
         lines.append(f"> ⚠ 待核对：{mark}")
@@ -2288,6 +2889,10 @@ def render_question(entry: dict) -> str:
     if key:
         # 解析端的正则要求答案后面**至少还有一个字符**（`.+?`），所以不能只写 `**正确答案：B**`
         lines.append(f"**正确答案：{key} {answer_text or key}**")
+        if is_ai_answer(q):
+            # **AI 推得的答案必须在 md 里可见地标出来**（解析端据此落 `answerProvenance: 'generated'`
+            # + 待复核）。以前 AI 补的答案跟卷面答案长得一样，站上根本分不出哪个是猜的。
+            lines += ["", c.AI_ANSWER_NOTE]
     elif answer_text:
         # **没有选项字母、但有答案文本**（主观题/填空题的参考答案、评分标准）——
         # 以前这里一律写 `（待补）`，把已经 OCR 到的答案**整段丢掉**（用户："答案不输出"）。
@@ -2754,6 +3359,12 @@ def render_report(
                 + "、".join(f"page {p} 第{n}题={k}" for p, n, k in report["answers_from_ai"]),
                 "",
             ]
+        if report["ai_answers_deferred"]:
+            lines += [
+                "- 终审想补答案、但按 `--answers ai` 让给「AI 两路解题」自己去推的题："
+                + "、".join(f"page {p} 第{n}题={k}" for p, n, k in report["ai_answers_deferred"]),
+                "",
+            ]
         lines += ["<details><summary>AI 逐题判定明细</summary>", "", "| 页码 | 题号 | 大题 | AI 判定 | AI 答案 |", "|---|---|---|---|---|"]
         lines += [
             f"| page {page} | {number} | {group} | {quiz_type} | {key or '—'} |"
@@ -2780,6 +3391,98 @@ def render_report(
             lines.append("")
         for skipped in report["ai_review_skipped"]:
             lines += [f"- 已忽略：{skipped}", ""]
+    # 下划线标记（S3 只认 A 路重贴过）：把每页的标记数摊开给人工看
+    if report["underline_pages"]:
+        lines += [
+            "## 下划线标记（只认 A 路）",
+            "",
+            "卷面上被下划线划住的文字由 OCR 标成 `<u>…</u>`，网页上会给**题干**里这部分标色。"
+            "两路标记数实测差 2~3 倍，S3 已按 **A 路（逐字转写）确定性重贴**、去掉只在 B 路的标记。",
+            "",
+            "| 页 | 标记数 | 去掉的 B 路独有标记 | A 路标了但题干里找不到 |",
+            "|---|---|---|---|",
+        ]
+        lines += [
+            f"| page {page} | {marks} | {dropped} | {missing} |"
+            for page, marks, dropped, missing in report["underline_pages"]
+        ]
+        lines.append("")
+    # 阅读题：文章补到同组每道小题（文章卷面只印一次）
+    if report["reading_groups"]:
+        lines += [
+            "## 阅读题：文章补到同组每道小题",
+            "",
+            "卷面上文章只印一次，OCR 把文章并进了第一道小题 —— 翻到第 2 题就看不到文章，"
+            "AI 解题也只能看着问句盲猜。这里按 OCR 判出的大题分组（`group` + `groupTitle`）"
+            "把文章复制进同组每道小题的题干上方。题干里的 `<u>…</u>` 是 OCR 标出的卷面下划线，"
+            "网页上会标色。",
+            "",
+            "| 大题 | 大题名 | 文章字数 | 补了几道小题 |",
+            "|---|---|---|---|",
+        ]
+        lines += [
+            f"| {group} | {(title or '—')[:24]} | {length} | {count} |"
+            for group, title, length, count in report["reading_groups"]
+        ]
+        lines.append("")
+        lines += [
+            "- 补过文章的小题："
+            + "、".join(f"page {p} 第{n}题" for p, n in report["reading_articles_filled"]),
+            "",
+        ]
+    # AI 推答案（`--answers ai`）：这批答案是**推的、不是卷面印的**，必须单列一节
+    if (
+        report["ai_solve_applied"]
+        or report["ai_solve_disagreed"]
+        or report["ai_solve_rejected"]
+        or report["ai_solve_cached"]
+    ):
+        lines += [
+            "## AI 推答案（卷面没有印答案的客观题）",
+            "",
+            f"A 路答选项字母 / B 路把选项顺序打乱后答选项原文，两路交叉校验，共请求 "
+            f"{report['ai_solve_calls']} 次。**这批答案是推的、不是卷面印的**：md 里都带 "
+            f"`{c.AI_ANSWER_NOTE}`，解析端会落成 `answerProvenance: 'generated'` + "
+            "`status: 'needs_review'`（数据里标成「待复核 + 答案由 AI 推得」；站上目前没有对应徽章）。",
+            "",
+        ]
+        if report["ai_solve_applied"]:
+            lines += ["| 页码 | 题号 | 推得答案 | 置信度 | 两路一致 |", "|---|---|---|---|---|"]
+            lines += [
+                f"| page {page} | {number} | **{key}** | {confidence or '—'} | {'✓' if agree else '✗'} |"
+                for page, number, key, confidence, agree in report["ai_solve_applied"]
+            ]
+            lines.append("")
+        if report["ai_solve_disagreed"]:
+            lines += [
+                "**⚠ 两路结果不一致 → 采用 A 路并已标 needs_review，请人工确认**：",
+                "",
+                "| 页码 | 题号 | A 路 | B 路 | A 路依据 |",
+                "|---|---|---|---|---|",
+            ]
+            lines += [
+                f"| page {page} | {number} | {a} | {b} | {why} |"
+                for page, number, a, b, why in report["ai_solve_disagreed"]
+            ]
+            lines.append("")
+        if report["ai_solve_rejected"]:
+            lines += [
+                "- 被拒（A 路没给答案 / 答案不在本题选项里）："
+                + "、".join(f"page {p} 第{n}题={k}（{why}）" for p, n, k, why in report["ai_solve_rejected"]),
+                "",
+            ]
+        if report["ai_solve_skipped"]:
+            lines += [
+                f"- 未解 {len(report['ai_solve_skipped'])} 题（没有选项的主观题等，"
+                "答案是评分标准、不该有字母答案）",
+                "",
+            ]
+        if report["ai_solve_cached"]:
+            lines += [
+                f"- 命中缓存、这次没重新问模型的 {len(report['ai_solve_cached'])} 题"
+                "（要重问加 `--refresh-answers`）",
+                "",
+            ]
     if report["duplicates"]:
         lines += ["## 去重记录", ""]
         lines += [f"- 第 {n} 题：page {keep} 胜出（丢弃 page {drop} 的重复）" for n, keep, drop, _ in report["duplicates"]]
@@ -2834,6 +3537,26 @@ def main() -> int:
         help="重跑 AI 终审（默认复用 work/<分类名>/paper-review.json，不重复花钱）",
     )
     parser.add_argument(
+        "--answers",
+        choices=("paper", "ai", "auto"),
+        default="paper",
+        help="答案从哪来：paper=只用卷面印的答案（默认）；ai=卷面没答案的客观题由 AI 两路解题推得"
+        "（md 标「答案由 AI 推得」+ 解析端落 generated/待复核）；auto=卷面答案覆盖率 < 50%% 时自动改用 ai",
+    )
+    parser.add_argument(
+        "--solve-passes",
+        type=int,
+        default=2,
+        choices=(1, 2),
+        help="AI 解题跑几路：2=两路交叉校验（默认，A 路答字母 + B 路打乱选项答原文）；"
+        "1=只跑一路（省钱、但没人交叉验证）",
+    )
+    parser.add_argument(
+        "--refresh-answers",
+        action="store_true",
+        help="重跑 AI 解题（默认复用 work/<分类名>/ai-answers.json，不重复花钱）",
+    )
+    parser.add_argument(
         "--ai-max-tokens",
         type=int,
         default=393216,
@@ -2843,7 +3566,12 @@ def main() -> int:
         "再往上（如 13000000）会被端点直接 HTTP 400 打回，所以这里顶到上限即可 —— "
         "max_tokens 只是截止线，没生成的 token 不计费，顶满不额外花钱",
     )
-    parser.add_argument("--ai-timeout", type=int, default=180, help="AI 终审单次超时秒数，默认 180")
+    parser.add_argument(
+        "--ai-timeout",
+        type=int,
+        default=300,
+        help="AI 终审/解题单次超时秒数，默认 300（输出长，180 容易在快完成时被判成卡死重试）",
+    )
     parser.add_argument("--quiet", action="store_true", help="只打印每页完成行与最终摘要")
     args = parser.parse_args()
 
@@ -2909,7 +3637,15 @@ def main() -> int:
         "ai_type_conflicts": [],
         "ai_answer_conflicts": [],
         "ai_answer_ignored": [],
+        "ai_answers_deferred": [],
         "answers_from_ai": [],
+        "ai_solve_applied": [],
+        "ai_solve_disagreed": [],
+        "ai_solve_rejected": [],
+        "ai_solve_skipped": [],
+        "ai_solve_cached": [],
+        "ai_solve_calls": 0,
+        "ai_solve_note": "",
         "explanations_from_ai": [],
         "explanations_from_criteria": [],
         "multi_answer_suspect": [],
@@ -2926,6 +3662,9 @@ def main() -> int:
         "long_group_titles": [],
         "passage_in_title": [],
         "shared_stems": [],
+        "reading_groups": [],
+        "reading_articles_filled": [],
+        "underline_pages": [],
         "shared_stem_missing": [],
         "shared_stem_stripped": [],
         "shared_stem_inlined": [],
@@ -2959,6 +3698,17 @@ def main() -> int:
             continue
         page_data = c.read_json(merge_path)
         page_questions = page_data.get("questions") or []
+        # S3 已经把 `<u>` 下划线标记按 **A 路**重贴过（只认 A 路）；这里把它的统计收进 report
+        page_underline = page_data.get("underline")
+        if isinstance(page_underline, dict):
+            report["underline_pages"].append(
+                (
+                    number,
+                    int(page_underline.get("marks") or 0),
+                    int(page_underline.get("b_only_dropped") or 0),
+                    len(page_underline.get("a_missing") or []),
+                )
+            )
         page_conflicts = page_data.get("conflicts") or []
         # 答案行 / 评分标准行：**没有选项、只有答案**的行不是题目。
         # 带字母答案的 → 直接进答案表（答案表可能印在**任意一页**，实测就印在第 1 页顶部）；
@@ -3082,9 +3832,15 @@ def main() -> int:
     entries = drop_empty_rows(entries, report)
     attach_shared_stems(entries, pages_dir, report)
     entries = attach_material_passages(entries, report)
+    # 阅读题：文章卷面只印一次、OCR 把它并进了第一道小题 → 复制到同组每道小题的题干里
+    # （翻到第 2 题也能看到文章；AI 解题也才有文章可读）
+    attach_reading_passages(entries, report)
     # 贴评分标准放在材料题处理**之后**：材料标题本身也是"没有选项、没有答案的题"，
     # 它还没被撤掉时会混进候选，把"数量相等"的判断搞乱（实测）。
     apply_criteria(entries, criteria, report)
+    # 答案来源模式（`--answers paper/ai/auto`）在终审**之前**定：终审据此决定要不要顺手补答案
+    answers_mode = resolve_answers_mode(entries, args, report)
+    ai_cfg = c.merge_config()
     # 全卷 AI 终审放在公共题干挂载**之后**：它用"卷面原题号"回查转写定位导言，重编号后就不准了
     if args.no_ai_review:
         c.info("    AI 终审：已按 --no-ai-review 跳过（纯离线）")
@@ -3092,10 +3848,9 @@ def main() -> int:
         c.check_max_tokens("merge", args.ai_max_tokens)
         try:
             review = ai_review(
-                entries, pages_dir, pages, work_dir, category, c.merge_config(), args, report
+                entries, pages_dir, pages, work_dir, category, ai_cfg, args, report
             )
-            entries = apply_ai_review(entries, review, report)
-            ai_fill_explanations(entries, work_dir, c.merge_config(), args, report)
+            entries = apply_ai_review(entries, review, report, fill_answers=answers_mode != "ai")
         except c.ApiError as exc:
             # **AI 终审失败不能拖垮整条流水线**：确定性那一层（答案行 / 答案页 / 交叉核对）
             # 已经把能贴的答案贴上了，剩下的是"少一些 AI 纠正、多一些待复核"。
@@ -3103,6 +3858,16 @@ def main() -> int:
             # 40 页卷的 AI 终审被 max_tokens 截断，8 份里就它一个失败）。
             c.warn(f"AI 终审失败，已降级继续（本卷少一层 AI 纠正，待复核会更多）：{exc}")
             report["ai_review_failed"].append(str(exc)[:300])
+    # **AI 解题**（`--answers ai/auto`）：卷面没答案的客观题由两路模型推出来。
+    # 与终审**相互独立** —— 终审被 --no-ai-review 跳过时它照跑（它不依赖终审的结论）。
+    if answers_mode == "ai":
+        try:
+            ai_solve_answers(entries, work_dir, ai_cfg, args, report)
+        except c.ApiError as exc:
+            c.warn(f"AI 解题失败，已降级继续（卷面没答案的题会因缺答案被 S5 判为丢弃）：{exc}")
+            report["ai_review_failed"].append(f"AI 解题：{str(exc)[:200]}")
+    if not args.no_ai_review:
+        ai_fill_explanations(entries, work_dir, ai_cfg, args, report)
     entries = renumber_if_duplicated(entries, report)
     review_completeness(entries, report)
     check_group_counts(entries, report)
@@ -3154,6 +3919,8 @@ def main() -> int:
         f"AI 改答案 {len(report['ai_answers'])} / AI 判型 {len(report['ai_types'])}"
         f"（改 {len(report['type_from_ai'])}、与卷面冲突 {len(report['ai_type_conflicts'])}）"
         f" / 多选答案可疑 {len(report['multi_answer_suspect'])}"
+        f" / AI 推答案 {len(report['ai_solve_applied'])}"
+        f"（不一致 {len(report['ai_solve_disagreed'])}、被拒 {len(report['ai_solve_rejected'])}）"
         f" / 待复核 {review_count} / 缺产物 {len(failures)}"
     )
     c.always(

@@ -52,6 +52,18 @@ import _common as c  # noqa: E402
 STAGE = "S6/6 发布上站"
 STEPS = 6
 
+# S6 会按模板改写的站点源码。它们是按字符串拼进去的，缩进/换行不一定合 prettier 风格 ——
+# 而上游 CI 有一道 `npm run format:check`，不收拾就会红（实测 entries.ts）。
+TOUCHED_SOURCE_FILES = (
+    "src/config/entries.ts",
+    "src/config/categories.ts",
+    "src/config/courseTree.ts",
+    "src/types/question.ts",
+    "src/config/categories.test.ts",
+    "scripts/generate-meta.mjs",
+    "scripts/audit-banks.mjs",
+)
+
 
 # ── 跑外部命令 ──────────────────────────────────────────────────────────
 def _resolve(name: str) -> str:
@@ -778,13 +790,25 @@ def unpublish(args) -> int:
     if args.dry_run or args.no_verify:
         step(5, "·", 0, "跳过类型检查 + 审计")
     else:
+        # **先让 prettier 收拾我们改过的站点源码**：注册点是按模板拼字符串写进去的，
+        # 缩进/换行不一定符合 prettier 风格 —— 而上游 CI 有一道 `npm run format:check`，
+        # 不格式化就直接挂（实测：entries.ts 让整个 PR 的 CI 红掉）。
+        code, output = run(
+            ["npx", "prettier", "--write", *TOUCHED_SOURCE_FILES],
+            "S6",
+        )
+        if code != 0:
+            c.warn(f"prettier 格式化失败（退出码 {code}），继续：\n{output[-300:]}")
         code, output = run(["npx", "vue-tsc", "-b"], "S6")
         if code != 0:
             c.fail(f"vue-tsc 类型检查失败（退出码 {code}）：\n{output[-800:]}", 3)
         code, output = run(["npm", "run", "audit:banks", "--silent"], "S6")
         if code != 0:
             c.fail(f"题库审计未通过（退出码 {code}）：\n{output[-800:]}", 3)
-        step(5, "✓", c.human_ms(t0), "vue-tsc ✓ / 审计 ✓")
+        code, output = run(["npm", "run", "format:check", "--silent"], "S6")
+        if code != 0:
+            c.warn(f"format:check 未通过（退出码 {code}），请手动跑 npx prettier --write：\n{output[-300:]}")
+        step(5, "✓", c.human_ms(t0), "prettier ✓ / vue-tsc ✓ / 审计 ✓ / format:check ✓")
     t0 = time.perf_counter()
     if args.dry_run or args.no_build:
         step(6, "·", 0, "跳过 vite build")

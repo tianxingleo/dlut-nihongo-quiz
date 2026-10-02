@@ -18,8 +18,14 @@
     # 断点续跑：从第 3 步开始（前面几步的产物已存在会被各自跳过）
     python pdf-ocr/7_import.py --folder .\\inbox --from-step 3
 
-    # 只补跑某几份（文件名含这个子串；分类名与卡片顺序仍按全量计划，不会错位）
+    # 只补跑某几份（名字含这个子串；分类名与卡片顺序仍按全量计划，不会错位）
     python pdf-ocr/7_import.py --folder .\\inbox --only 试卷5,试卷7
+
+    # 图片输入：整文件夹的扫描图 = 一份卷的连续页（自然序：IMG_2 在 IMG_10 前）
+    python pdf-ocr/7_import.py --folder .\\扫描件 --entry "某门课" --entry-key some-course --images one
+
+    # 图片输入：一张图一份卷；拍照件太大时按最长边缩一缩省 token
+    python pdf-ocr/7_import.py --folder .\\照片 --entry "某门课" --entry-key some-course --images each --max-side 2600
 
 规则：
   * 入口名默认 = **文件夹名**；`--entry` 可覆盖。
@@ -79,42 +85,72 @@ def clean_paper_title(stem: str) -> str:
     return text.strip() or str(stem or "").strip()
 
 
-def collect_pdfs(folder: Path) -> list[Path]:
-    """文件夹里的 PDF（不递归子目录；按文件名排序，保证卡片顺序稳定）。"""
-    pdfs = sorted(
-        (p for p in folder.iterdir() if p.is_file() and p.suffix.lower() == ".pdf"),
-        key=lambda p: p.name,
-    )
-    return pdfs
+def collect_sources(folder: Path) -> tuple[list[Path], list[Path]]:
+    """文件夹里的输入，按**内容**分成 (PDF, 图片) 两组；都按自然序（`2` 在 `10` 前）。
+
+    后缀不可靠（扫描 App 常导出没有后缀的文件），所以逐个 sniff 文件头。
+    """
+    pdfs: list[Path] = []
+    images: list[Path] = []
+    for path in sorted(folder.iterdir(), key=lambda item: c.natural_key(item.name)):
+        if not path.is_file():
+            continue
+        kind, _fmt = c.sniff_source(path)
+        if kind == "pdf":
+            pdfs.append(path)
+        elif kind == "image":
+            images.append(path)
+    return pdfs, images
 
 
-def plan(folder: Path, pdfs: list[Path], entry_key: str, prefix: str, paper_prefix: str) -> list[dict]:
-    """每份 PDF 一行计划：分类名 / 试卷标题 / 输入路径。
+def plan(
+    folder: Path,
+    pdfs: list[Path],
+    entry_key: str,
+    prefix: str,
+    paper_prefix: str,
+    images: list[Path] | None = None,
+    images_mode: str = "one",
+) -> list[dict]:
+    """出计划：一行 = 一份卷（`sources` 是它的输入文件，按页序）。
+
+    * 每个 PDF 一份卷；
+    * 图片：`--images one`（默认）→ 整个文件夹的图片**当一份卷的连续页**（扫描 App 的常见形态）；
+      `--images each` → 一张图一份卷。
 
     **每份卷一个独立目录**：分类名就是它的目录名（`data/raw/<分类名>/` 放最终 md、
-    `pdf-ocr/work/<分类名>/` 放页图与每页 JSON），S1 会自动建。源 PDF **不复制入库**。
-    分类名优先用 PDF 文件名推出来的 ASCII 短名；推不出（纯中文名）时退回 `<前缀>-<序号>`。
-    卡片标题用文件名清洗后的结果（去掉平台导出的 `_0_<长数字>` 尾巴）。
+    `pdf-ocr/work/<分类名>/` 放页图与每页 JSON），S1 会自动建。源文件**不复制入库**。
+    分类名优先用名字推出来的 ASCII 短名；推不出（纯中文名）时退回 `<前缀>-<序号>`。
     """
+    images = images or []
+    groups: list[tuple[str, list[Path]]] = [(pdf.stem, [pdf]) for pdf in pdfs]
+    if images:
+        if images_mode == "each":
+            groups += [(path.stem, [path]) for path in images]
+        else:
+            groups.append((folder.name, images))
+
     rows = []
     used: set[str] = set()
-    for index, pdf in enumerate(pdfs, start=1):
-        title = clean_paper_title(pdf.stem)
+    for index, (raw_title, sources) in enumerate(groups, start=1):
+        title = clean_paper_title(raw_title)
         slugged = slug(title)
         # 必须**含字母**才算"推得出目录名"：纯中文名 slug 后往往只剩几个数字
         # （`马原试卷1(1)` → `1-1`），拿它当目录名既无意义又容易撞车。
         usable = slugged if re.search(r"[a-z]", slugged) else ""
-        if len(pdfs) > 1:
+        if len(groups) > 1:
             category = usable or f"{prefix}-{index}"
         else:
             category = usable or prefix
-        while category in used:  # 两份卷同名时避免撞目录
+        while category in used:  # 同名时避免撞目录
             category = f"{category}-{index}"
         used.add(category)
         rows.append(
             {
                 "index": index,
-                "pdf": pdf,
+                "sources": sources,
+                "label": sources[0].name if len(sources) == 1 else f"{folder.name}（{len(sources)} 张图）",
+                "kind": "pdf" if sources[0].suffix.lower() == ".pdf" else "image",
                 "category": category,
                 "paper": f"{paper_prefix}{title}".strip(),
             }
@@ -122,15 +158,20 @@ def plan(folder: Path, pdfs: list[Path], entry_key: str, prefix: str, paper_pref
     return rows
 
 
-def run_step(step: int, args: list[str], quiet: bool) -> int:
-    """跑一个阶段（子进程；stdio 继承，进度行直接打到终端）。"""
-    script = c.TOOL_ROOT / STEPS[step - 1][1]
+def run_script(script_name: str, args: list[str], quiet: bool) -> int:
+    """跑 pdf-ocr 下的某个脚本（子进程；stdio 继承，进度行直接打到终端）。"""
+    script = c.TOOL_ROOT / script_name
     cmd = [sys.executable, str(script), *args]
     if not quiet:
         c.info(f"      $ python pdf-ocr/{script.name} {' '.join(args)}")
     # 不捕获输出：子进程自己按统一进度规范打印（捕获会破坏进度条与颜色）
     proc = subprocess.run(cmd, cwd=str(c.REPO_ROOT))
     return proc.returncode
+
+
+def run_step(step: int, args: list[str], quiet: bool) -> int:
+    """跑一个阶段。"""
+    return run_script(STEPS[step - 1][1], args, quiet)
 
 
 def blocked_pages(category: str) -> list[int]:
@@ -150,9 +191,13 @@ def blocked_pages(category: str) -> list[int]:
 
 
 def import_one(row: dict, opts: argparse.Namespace, first: bool) -> int:
-    """把一份 PDF 从 S1 跑到 S6。返回最后一个非零退出码（0 = 成功）。"""
+    """把一份卷从 S1 跑到 S6。返回最后一个非零退出码（0 = 成功）。
+
+    `row["sources"]` 是这份卷的输入（PDF 一个文件，或扫描图片一叠），S1 按顺序拼页。
+    """
     category = row["category"]
-    pdf: Path = row["pdf"]
+    label = row["label"]
+    sources: list[Path] = row["sources"]
     steps = [s for s, _f, _d in STEPS]
     if opts.only_step:
         steps = [opts.only_step]
@@ -165,7 +210,7 @@ def import_one(row: dict, opts: argparse.Namespace, first: bool) -> int:
     md_path = c.RAW_ROOT / category / f"{category}.md"
     if md_path.exists() and not opts.force and not opts.only_step:
         c.always(
-            f"[{STAGE}] {pdf.name}：已存在 {md_path.name} → 跳过 S1–S4，只补 S5/S6"
+            f"[{STAGE}] {label}：已存在 {md_path.name} → 跳过 S1–S4，只补 S5/S6"
             f"（要整条重做加 --force）"
         )
         steps = [s for s in steps if s >= 5]
@@ -175,7 +220,9 @@ def import_one(row: dict, opts: argparse.Namespace, first: bool) -> int:
     for step in steps:
         started = time.perf_counter()
         if step == 1:
-            argv = [str(pdf), "--category", category, "--dpi", str(opts.dpi)]
+            argv = [*[str(source) for source in sources], "--category", category, "--dpi", str(opts.dpi)]
+            if opts.max_side:
+                argv += ["--max-side", str(opts.max_side)]
             if opts.force:
                 argv.append("--force")
         elif step == 6:
@@ -191,12 +238,38 @@ def import_one(row: dict, opts: argparse.Namespace, first: bool) -> int:
                 argv.append("--no-verify")
         else:
             argv = ["--category", category]
-            if step == 4 and opts.force:
+            if step == 3 and opts.force:
+                # `--force` = "整条重做"：S3 也要重算（否则已有的 merge.json 会被跳过，
+                # 新扫到的下划线、新 OCR 结果都进不去）
                 argv.append("--force")
+            if step == 4:  # noqa: SIM102 - 保持与上面同风格
+                if opts.force:
+                    argv.append("--force")
+                # 答案来源（S4 的 `--answers`）：auto/ai 会在卷面没答案时调模型解题
+                argv += ["--answers", opts.answers, "--solve-passes", str(opts.solve_passes)]
+                if opts.refresh_answers:
+                    argv.append("--refresh-answers")
+            if step == 5 and opts.allow_ai_answers:
+                argv.append("--allow-ai-answers")
         if opts.quiet:
             argv.append("--quiet")
 
         code = run_step(step, argv, opts.quiet)
+        # **S2b：专用下划线扫描**（紧跟 OCR 之后，同一个"第 2 步"里跑完）。
+        # 单独一趟极简任务比"顺手标"稳得多（实测同一个 qwen：完整转写里标 0 处，
+        # 单独问"哪些字被划住了"能标 9 处、3 秒）。它**失败不拖垮整条流程** ——
+        # S3 会退回用 A/B 路转写里的 `<u>` 标记。
+        if step == 2 and code in (0, 2):
+            scan_argv = ["--category", category]
+            if opts.force:
+                scan_argv.append("--force")
+            if opts.quiet:
+                scan_argv.append("--quiet")
+            scan_code = run_script("2b_underlines.py", scan_argv, opts.quiet)
+            if scan_code not in (0, 2):
+                c.warn(
+                    f"下划线扫描未完成（退出码 {scan_code}）；S3 会退回用两路转写里的 `<u>` 标记"
+                )
         name, desc = STEPS[step - 1][1], STEPS[step - 1][2]
         # 退出码约定：0 = 全绿；**2 = 有警告（正常通过）**；1 = 参数/环境；3 = 有失败；4 = 预算耗尽。
         # 以前把"非 0"一律当失败 → S5 只要带待复核警告（exit 2）就被判失败、
@@ -214,7 +287,7 @@ def import_one(row: dict, opts: argparse.Namespace, first: bool) -> int:
                     f"（重试 {3} 次仍不过）→ 跳过后续步骤，数据不完整、不发布"
                 )
             c.always(
-                f"[{STAGE}] ✗ {row['pdf'].name} 在 {desc}（{name}）失败，退出码 {code}"
+                f"[{STAGE}] ✗ {label} 在 {desc}（{name}）失败，退出码 {code}"
                 f"（{c.human_ms(started)}ms）"
             )
             return code
@@ -226,23 +299,62 @@ def import_one(row: dict, opts: argparse.Namespace, first: bool) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="S7：文件夹批量导入（一个文件夹 = 一个入口，每个 PDF = 一张试卷；S1→S6 全自动）"
+        description=(
+            "S7：文件夹批量导入（一个文件夹 = 一个入口；每个 PDF = 一张试卷，"
+            "整文件夹的图片 = 一张试卷的连续页；S1→S6 全自动）"
+        )
     )
-    parser.add_argument("--folder", required=True, help="装着 PDF 的文件夹；默认用它当入口名")
+    parser.add_argument("--folder", required=True, help="装着 PDF / 图片的文件夹；默认用它当入口名")
     parser.add_argument("--entry", help="入口名（默认=文件夹名）")
     parser.add_argument("--entry-key", help="入口 key（路由 /<key>；默认由入口名推，推不出必须显式给）")
     parser.add_argument("--entry-icon", help="入口图标（1 个字，如「马」）")
     parser.add_argument("--entry-desc", help="入口描述")
-    parser.add_argument("--paper-prefix", default="", help="卡片标题前缀（默认空，标题就是 PDF 文件名）")
+    parser.add_argument("--paper-prefix", default="", help="卡片标题前缀（默认空，标题就是文件名）")
     parser.add_argument(
         "--only",
-        help="只跑文件名里含这个子串的卷（可逗号分隔多个）；分类名与卡片顺序仍按全量计划，不变",
+        help="只跑名字里含这个子串的卷（可逗号分隔多个）；分类名与卡片顺序仍按全量计划，不变",
     )
     parser.add_argument("--category-prefix", help="分类名前缀（默认=入口 key）")
-    parser.add_argument("--dpi", type=int, default=200, help="S1 渲染分辨率（默认 200）")
+    parser.add_argument("--dpi", type=int, default=200, help="S1 的 PDF 渲染分辨率（默认 200；图片按原始像素）")
+    parser.add_argument(
+        "--max-side",
+        type=int,
+        default=0,
+        help="图片最长边超过它就按 2 的幂缩小（默认 0 = 不缩；手机拍照常用 2600 省 token）",
+    )
+    parser.add_argument(
+        "--images",
+        choices=("one", "each"),
+        default="one",
+        help="图片怎么分组：one（默认）整个文件夹的图片当一份卷的连续页；each 一张图一份卷",
+    )
     parser.add_argument("--from-step", type=int, default=1, choices=range(1, 7), help="从第几步开始（断点续跑）")
     parser.add_argument("--only-step", type=int, choices=range(1, 7), help="只跑这一步")
     parser.add_argument("--force", action="store_true", help="让 S1/S4 覆盖已存在的产物")
+    parser.add_argument(
+        "--answers",
+        choices=("paper", "ai", "auto"),
+        default="auto",
+        help="答案从哪来（传给 S4）：auto（默认）=卷面答案覆盖率 <50%% 时自动用 AI 两路解题；"
+        "paper=只用卷面印的答案；ai=一律对卷面没答案的客观题用 AI 解（标「答案由 AI 推得」+ 待复核）",
+    )
+    parser.add_argument(
+        "--solve-passes",
+        type=int,
+        default=2,
+        choices=(1, 2),
+        help="AI 解题跑几路（传给 S4）：2=两路交叉校验（默认）；1=只跑一路（省钱、没校验）",
+    )
+    parser.add_argument(
+        "--refresh-answers",
+        action="store_true",
+        help="重跑 AI 解题（传给 S4；默认复用 work/<分类名>/ai-answers.json，不重复花钱）",
+    )
+    parser.add_argument(
+        "--allow-ai-answers",
+        action="store_true",
+        help="允许发布「AI 推得的答案超过 1/2」的卷子（传给 S5；默认拒发，那批题在站上只是待复核）",
+    )
     parser.add_argument(
         "--stop-on-error",
         action="store_true",
@@ -281,25 +393,36 @@ def main() -> int:
     if not slug(prefix):
         c.fail(f"--category-prefix「{prefix}」不合法（只能用 a-z 0-9 -）", 1)
 
-    pdfs = collect_pdfs(folder)
-    if not pdfs:
-        c.fail(f"文件夹里没有 PDF：{folder}", 1)
-    rows = plan(folder, pdfs, args.entry_key, prefix, args.paper_prefix)
+    pdfs, images = collect_sources(folder)
+    if not pdfs and not images:
+        c.fail(
+            f"文件夹里没有可导入的输入（PDF 或图片，按文件头识别）：{folder}\n"
+            f"        支持的图片：{', '.join(c.IMAGE_SUFFIXES[:8])} …",
+            1,
+        )
+    if pdfs and images:
+        c.info(
+            f"[输入] 识别到 {len(pdfs)} 个 PDF + {len(images)} 张图片；"
+            f"图片按 --images {args.images} 处理"
+        )
+    elif images:
+        c.info(f"[输入] 识别到 {len(images)} 张图片（无 PDF），按 --images {args.images} 处理")
+    rows = plan(folder, pdfs, args.entry_key, prefix, args.paper_prefix, images, args.images)
     total_rows = len(rows)
     if args.only:
         wanted = [w.strip().lower() for w in str(args.only).split(",") if w.strip()]
-        kept = [r for r in rows if any(w in r["pdf"].name.lower() for w in wanted)]
-        missing = [w for w in wanted if not any(w in r["pdf"].name.lower() for r in rows)]
+        kept = [r for r in rows if any(w in r["label"].lower() for w in wanted)]
+        missing = [w for w in wanted if not any(w in r["label"].lower() for r in rows)]
         if missing:
             c.fail(f"--only 在 {folder} 里找不到：{'、'.join(missing)}", 1)
         rows = kept
         if not rows:
-            c.fail("--only 没匹配到任何 PDF", 1)
+            c.fail("--only 没匹配到任何卷", 1)
         # **序号保持不变**：`row['index']` 还要喂给 S6 的 `--position`（卡片顺序），
         # 重排会让补跑的那份卷跑到别的卷前面去。
         c.always(
             f"[{STAGE}] --only：{len(rows)}/{total_rows} 份 "
-            + "、".join(r["pdf"].name for r in rows)
+            + "、".join(r["label"] for r in rows)
         )
 
     c.always(f"[{STAGE}] 文件夹：{folder}")
@@ -308,8 +431,22 @@ def main() -> int:
         + (f"，图标 {args.entry_icon}" if args.entry_icon else "")
         + f" ← {len(pdfs)} 份试卷"
     )
+    c.always(
+        f"[{STAGE}] 答案来源：--answers {args.answers}"
+        + (
+            "（卷面答案覆盖率 <50% 时用 AI 两路解题推答案，标 🤖 + 待复核）"
+            if args.answers == "auto"
+            else "（AI 两路解题）"
+            if args.answers == "ai"
+            else "（只用卷面印的答案）"
+        )
+        + (f"，允许 AI 答案 >1/2 发布" if args.allow_ai_answers else "")
+    )
     for row in rows:
-        c.always(f"[{STAGE}]   {row['index']}. {row['pdf'].name}  →  分类 {row['category']} / 卡片「{row['paper']}」")
+        c.always(
+            f"[{STAGE}]   {row['index']}. {row['label']}  →  分类 {row['category']}"
+            f" / 卡片「{row['paper']}」（{row['kind']}）"
+        )
     if args.dry_run:
         c.always(f"[{STAGE}] --dry-run：只列计划，未执行（去掉 --dry-run 即开跑）")
         return 0
@@ -323,7 +460,7 @@ def main() -> int:
         if len(rows) != total_rows:
             where += f"（全列第 {row['index']} 份）"
         c.always(
-            f"[{STAGE}] === 试卷 {where}：{row['pdf'].name}"
+            f"[{STAGE}] === 试卷 {where}：{row['label']}"
             f"（分类 {row['category']}）==="
         )
         code = import_one(row, args, first=row["index"] == 1)
@@ -349,7 +486,7 @@ def main() -> int:
             )
         else:
             done.append(row["category"])
-            c.always(f"[{STAGE}] ✓ {row['pdf'].name} 全流程完成")
+            c.always(f"[{STAGE}] ✓ {row['label']} 全流程完成")
 
     # **成功数只数真跑完的**：直接 `总数 - 失败 - 放弃` 会把 --stop-on-error 中断后
     # 根本没跑的那几份也报成"成功"（实测 6c 里 3 份只跑了 1 份却显示 2/3）。

@@ -1,0 +1,1848 @@
+[
+  {
+    "id": "jp-3-q001",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 1,
+    "stem": "会議の資料は机の上に( )あります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "並べて"
+      },
+      {
+        "key": "B",
+        "text": "並んで"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "並べて",
+    "translation": "会议资料摆放在桌子上。",
+    "explanation": "他动词「並べる」＋てある，表示人为有意放置后的状态：資料は机の上に並べてある。自动词「並ぶ」不能构成「てある」句型。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 1
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q002",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 2,
+    "stem": "妹はケーキを（　）そうな顔をしています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "食べる"
+      },
+      {
+        "key": "B",
+        "text": "食べたい"
+      },
+      {
+        "key": "C",
+        "text": "食べられる"
+      },
+      {
+        "key": "D",
+        "text": "食べた"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "食べた",
+    "translation": "妹妹一副吃过蛋糕的表情。",
+    "explanation": "「～たそうな顔をしている」表示“一副已经……的表情”，妹妹的表情像是已经吃过蛋糕。A「食べるそう」是传闻用法，B「食べたい」表本人愿望，C「食べられる」表可能/被动，均不合。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 2
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q003",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 3,
+    "stem": "将来自分の店が( )ように、貯金しています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "持つ"
+      },
+      {
+        "key": "B",
+        "text": "持てる"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "持てる",
+    "translation": "为了将来能拥有自己的店，正在存钱。",
+    "explanation": "「～ように」表目的时前面要接非意志性动词，此处需用「持つ」的可能形「持てる」（能拥有）。「持つ」是意志动词，不能直接接「ように」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 3
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q004",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 4,
+    "stem": "日本へ来た目的は何ですか。\n・・医学を研究する( )来ました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ために"
+      },
+      {
+        "key": "B",
+        "text": "ように"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ために",
+    "translation": "",
+    "explanation": "「ために」表目的，前接意志性动词「研究する」；「ように」表目的时多接非意志性动词或可能形，故不选。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 4
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q005",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 5,
+    "stem": "一何を話しているんですか。\nどこで忘年会を（　　）、相談しているんです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "するかどうか"
+      },
+      {
+        "key": "B",
+        "text": "するか"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "するか",
+    "translation": "",
+    "explanation": "「どこで」与「か」搭配，表示“在哪里做”；「するかどうか」表示“做还是不做”，与「どこで」不搭配。故选B。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 5
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q006",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 6,
+    "stem": "( )、桜が咲いています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "冬なので"
+      },
+      {
+        "key": "B",
+        "text": "冬なのに"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "冬なのに",
+    "translation": "( )、樱花正在盛开。",
+    "explanation": "「のに」表逆接，意为“明明是冬天，樱花却开着”，前后为矛盾关系；「なので」表因果，与句意不符。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 6
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q007",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 7,
+    "stem": "（ ）、触らないでください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "熱いですから"
+      },
+      {
+        "key": "B",
+        "text": "熱くて"
+      },
+      {
+        "key": "C",
+        "text": "熱いので"
+      },
+      {
+        "key": "D",
+        "text": "熱いくて"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "熱いですから",
+    "translation": "（ ），请不要碰。",
+    "explanation": "题干需说明“别碰”的理由。「熱いですから」用「ですから」明确表因，最贴合语境；B、D 的て形不能后接「ください」；C「熱いので」虽也表因，但偏客观陈述。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 7
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「熱いくて」/ B 路「熱くて」）",
+      "OCR 冲突：stem（A 路「( )、触らないでください。」/ B 路「（ ）、触らないでください。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q008",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 8,
+    "stem": "新聞の漢字が読めるようになりましたか。\nいいえ、まだ（　　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "なりません"
+      },
+      {
+        "key": "B",
+        "text": "読めません"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "読めません",
+    "translation": "能读懂报纸上的汉字了吗？—— 不，还读不了。",
+    "explanation": "问句用可能形「読めるようになりましたか」，否定回答也要用可能形「まだ読めません」（还读不了）。A「なりません」对应「なりますか」，与「読める」不搭配。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 8
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「新聞の漢字が読めるようになりましたか。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q009",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 9,
+    "stem": "毎日遅くまで頑張っていますね。\nええ、試合に（　）ように、練習しています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "出られる"
+      },
+      {
+        "key": "B",
+        "text": "出る"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "出られる",
+    "translation": "",
+    "explanation": "「～ように」前接可能形时表示“为了能够……”。句意为“为了能参加比赛而练习”，所以选 A「出られる」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 9
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q010",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 10,
+    "stem": "夏になると、夜が短く()。",
+    "options": [
+      {
+        "key": "A",
+        "text": "します"
+      },
+      {
+        "key": "B",
+        "text": "なります"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "なります",
+    "translation": "一到夏天，夜晚就变短。",
+    "explanation": "「なる」表示自然变化，与「夏になる」呼应；「短くします」是「する」的用法，表示人为使之变化，不能描述夜变短这一自然现象。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 10
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q011",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 11,
+    "stem": "辞書を忘れたので、友達に貸して（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いただく"
+      },
+      {
+        "key": "B",
+        "text": "もらった"
+      },
+      {
+        "key": "C",
+        "text": "あげた"
+      },
+      {
+        "key": "D",
+        "text": "くださった"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "もらった",
+    "translation": "因为忘了带字典，所以朋友借给了我。",
+    "explanation": "「貸してもらった」表示“得到朋友借给我”，符合忘带字典后朋友帮忙的情境；あげた是我借给别人，いただく/くださる敬语或方向不匹配。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 11
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：paper_identity.title（A 路「考试详情」/ B 路「」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q012",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 12,
+    "stem": "もう時間がない（　　）、早く行こうよ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "でも"
+      },
+      {
+        "key": "B",
+        "text": "から"
+      },
+      {
+        "key": "C",
+        "text": "ので"
+      },
+      {
+        "key": "D",
+        "text": "のも"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "から",
+    "translation": "已经没有时间了，快点走吧。",
+    "explanation": "「から」接终止形表原因，后项可接劝诱、命令等主观表达；「ので」后项一般不能接劝诱句，故不能选 C。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 12
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q013",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 13,
+    "stem": "1週間の研修でしたが、本当にいい経験に（　　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "みました"
+      },
+      {
+        "key": "B",
+        "text": "なりました"
+      },
+      {
+        "key": "C",
+        "text": "しました"
+      },
+      {
+        "key": "D",
+        "text": "もらいました"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "なりました",
+    "translation": "虽然只是一周的研修，但真的成了一次很好的经历。",
+    "explanation": "「いい経験になる」是固定搭配，意为“成为很好的经验”。句中“研修でしたが”后接“本当にいい経験になりました”。A、C、D均不符合该搭配。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 13
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q014",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 14,
+    "stem": "荷物が（　　）どうか確かめてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "つくか"
+      },
+      {
+        "key": "B",
+        "text": "つかないか"
+      },
+      {
+        "key": "C",
+        "text": "つきましたか"
+      },
+      {
+        "key": "D",
+        "text": "ついたか"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ついたか",
+    "translation": "请确认一下行李是否已经到了。",
+    "explanation": "「～かどうか」前接普通形，且此处确认的是行李是否已到达，需用过去式「ついた」，故选D。A为现在时，C是敬体不能接「どうか」，B否定与语境不符。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 14
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q015",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 15,
+    "stem": "大切な書類を( )しまいました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "なくして"
+      },
+      {
+        "key": "B",
+        "text": "なくなって"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "なくして",
+    "translation": "把重要的文件弄丢了。",
+    "explanation": "「なくす」是他动词，用「を」提示宾语，故「書類をなくしてしまいました」正确。「なくなる」是自动词，需搭配「が」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 15
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q016",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 16,
+    "stem": "一あのう、気分が（　　）、帰ってもいいですか。\n一いいですよ。お大事に。",
+    "options": [
+      {
+        "key": "A",
+        "text": "悪いので"
+      },
+      {
+        "key": "B",
+        "text": "悪くて"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "悪いので",
+    "translation": "——那个，我身体不舒服，可以回去吗？ ——可以。保重。",
+    "explanation": "表示原因并请求许可时用「ので」连接；「悪くて」中顿后不宜接请求许可。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 16
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q017",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 17,
+    "stem": "私は野田さんが教えて（　　）歌を歌いました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いただいた"
+      },
+      {
+        "key": "B",
+        "text": "あげた"
+      },
+      {
+        "key": "C",
+        "text": "もらった"
+      },
+      {
+        "key": "D",
+        "text": "くれた"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "くれた",
+    "translation": "我唱了野田先生教给我的歌。",
+    "explanation": "「教える」的主体是野田さん（用が提示），「我」是受益者，故用「くれる」的过去式「くれた」。A「いただいた」、C「もらった」主语应是我，B「あげた」是我给别人。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 17
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q018",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 18,
+    "stem": "一昨日鈴木さんからメールが来たんですか。\nいいえ。メールをもらった（　）は先週です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "の"
+      },
+      {
+        "key": "B",
+        "text": "こと"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "の",
+    "translation": "——前天铃木先生发来邮件了吗？ ——不，收到邮件是上周。",
+    "explanation": "形式名词「の」可指代具体事实，构成「～のは…です」强调句型，指出时间是「先週」；「こと」不能这样用于提示具体时间。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 18
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「いいえ。メールをもらった（　）は先週です。」/ B 路「一いいえ。メールをもらった（　）は先週です。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q019",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 19,
+    "stem": "祖母に昔の歌を教えて( )。",
+    "options": [
+      {
+        "key": "A",
+        "text": "もらいました"
+      },
+      {
+        "key": "B",
+        "text": "いただきました"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "もらいました",
+    "translation": "",
+    "explanation": "祖母教给我用授受句「～てもらう」；「いただく」是自谦语，多用于正式或需特别尊敬的场合，此处一般叙述用「もらいました」更自然。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 19
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q020",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 20,
+    "stem": "袋のひもが( )そうです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "切り"
+      },
+      {
+        "key": "B",
+        "text": "切れ"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "切れ",
+    "translation": "袋子的绳子眼看就要断了。",
+    "explanation": "「そうだ」表样态（眼看就要…）时接动词ます形词干。主语是「袋のひも」（绳子），须用自动词「切れる」的词干「切れ」；「切り」是他动词「切る」的词干，主语应为人，故不选。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 20
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：page_header（A 路「」/ B 路「答题卡」）",
+      "OCR 冲突：paper_identity.title（A 路「」/ B 路「考试详情」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q021",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 21,
+    "stem": "電車に傘を忘れない（　）、気を付けてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ので"
+      },
+      {
+        "key": "B",
+        "text": "から"
+      },
+      {
+        "key": "C",
+        "text": "ために"
+      },
+      {
+        "key": "D",
+        "text": "ように"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ように",
+    "translation": "请注意不要将伞忘在电车上。",
+    "explanation": "「忘れないように」表示“为了不忘”，后接「気を付けてください」。ので・から表原因；ために接否定意志表达不自然。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 21
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-q022",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 22,
+    "stem": "先生の質問（ ）すぐ答えるの（ ）難しいです。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "(1) に (2) は；が",
+    "translation": "马上回答老师的问题很难。",
+    "explanation": "「質問に答える」是固定搭配，用「に」；「答えるの」作主语，主题用「は」，强调时可用「が」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 22
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q023",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 23,
+    "stem": "電気屋がテレビの修理に（来る→　　）ので、午後はうちにいます。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "来る；くる",
+    "translation": "因为电器店的人要来修电视，所以下午我在家。",
+    "explanation": "「ので」前接简体形，动词「来る」本身即为连体形，直接填入「来る」；此处表示“电工要来”这一原因，不需要变成敬体或过去式。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 23
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q024",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 24,
+    "stem": "ズボンの 長さはこれ____よろしいでしょうか。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "で",
+    "translation": "裤子的长度这样（可以）吗？",
+    "explanation": "「これで」表示“以这个（长度/状态）”，此处问裤子长度这样是否合适，用「で」表示方式、状态；「は」是主题提示，不贴合句意。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 24
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q025",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 25,
+    "stem": "一10時の（約束→　　　）のに、まだ来ませんね。\n一ええ、電話してみましょう。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "約束な；やくそくな",
+    "translation": "——说好10点的，却还没来呢。 ——是啊，打个电话试试吧。",
+    "explanation": "「約束」是名词，后接逆接助词「のに」时需加「な」，构成「約束なのに」，意为「明明约好了……」。故填「約束な」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 25
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q026",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 26,
+    "stem": "シャツのボタンが（とれる→　　　）そうですよ。\nどうもありがとうございます。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "とれ；取れ",
+    "translation": "衬衫的扣子好像要掉了。非常感谢。",
+    "explanation": "「とれる」是二类动词，表样态的「～そうだ」接ます形去ます，即「とれ＋そう」，所以填「とれ」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 26
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q027",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 27,
+    "stem": "一昨日部長の奥さんにお茶を（教える→　　）いただきました。\n一よかったですね。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "教えて（おしえて）",
+    "translation": "前天承蒙部长的夫人教我茶道。（太好了。）",
+    "explanation": "「～ていただきました」前接动词て形，表示承蒙别人为自己做某事。教える的て形是「教えて」，故填「教えて」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 27
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q028",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 28,
+    "stem": "ーチケットを買えましたか。\nいいえ。2時間（並ぶ→　　　）のに、買えませんでした。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "並んだ；ならんだ",
+    "translation": "",
+    "explanation": "「並ぶ」的过去式是「並んだ」（ならんだ）；「～たのに」表逆接，意为“排了两小时队却…”；用原形「並ぶのに」会变成目的，语义不通。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 28
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q029",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 29,
+    "stem": "ー（書く→　　）やすいボールペンはありませんか。\nーこれはいかがですか。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "書き；かき",
+    "translation": "——有没有好写的圆珠笔？——这个怎么样？",
+    "explanation": "「書く」的ます形词干为「書き」，接续「～やすい」构成复合形容词，表示“容易写、好写”。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 29
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q030",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 30,
+    "stem": "今晚のおかずはすき焼き____しましょう。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "に",
+    "translation": "今晚的菜就做寿喜烧吧。",
+    "explanation": "「～にする」表示选定某物，此处「すき焼きにする」即决定做寿喜烧当菜，所以填「に」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 30
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 high）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q031",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 31,
+    "stem": "ロンドン（ ）オリンピックが行われたの\n（ ）いつですか。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "（1）で （2）は",
+    "translation": "伦敦举办奥运会是什么时候？",
+    "explanation": "「ロンドン」是地点，用「で」表示动作场所；「行われたのは」中的「は」提示主题。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 31
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q032",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 32,
+    "stem": "棚から荷物____落ちそうです。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "(1) が",
+    "translation": "行李快要从架子上掉下来了。",
+    "explanation": "「〜そうだ」表示从外观判断即将发生的样态，其对象（主语）用「が」提示：荷物が落ちそうだ＝行李眼看就要掉下来。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 32
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q033",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 33,
+    "stem": "日本のマンガ文化___興味があります。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "に",
+    "translation": "我对日本的漫画文化感兴趣。",
+    "explanation": "「興味がある」表示“对……有兴趣”，其对象用助词「に」提示，故填「に」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 33
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q034",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 34,
+    "stem": "一領収書が（必要→　　）場合は、どうしたらいいですか。\n一お金を払うときに、言ってください。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "必要な；ひつような；必要の；ひつようの",
+    "translation": "—如果需要收据的话，该怎么办？ —付款时请说一声。",
+    "explanation": "「必要」是な形容词，修饰「場合」要用「必要な場合」；假名写作「ひつような」。卷面还列出「必要の／ひつようの」为可接受形式。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 34
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：paper_identity.title（A 路「考试详情」/ B 路「」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q035",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 35,
+    "stem": "一このコップは（割れる→　　　）にくいですから、お子さんが（使う→　　　）のにいいです。\n一じゃ、それにします。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "(1) 割れ；われ (2) 使う；つかう",
+    "translation": "——这个杯子不容易碎，给孩子用正合适。 ——那就选它了。 考试详情」/ B 路「考试详情」）",
+    "explanation": "「割れる」变ます形「割れ」接「にくい」表难以…；「使うのにいい」的「のに」前接字典形，故填「使う」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 35
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：page_header（A 路「11:55",
+      "OCR 冲突：stem（A 路「一このコップは（割れる→　　　）にくいですから、お子さんが（使う→　　　）のにいいです。」/ B 路「一このコップは（割れる→　　）にくいですから、お子さんが（使う→　　）のにいいです。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q036",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 36,
+    "stem": "東京の人は歩くの（　）速いです。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "が",
+    "translation": "东京人走路很快。",
+    "explanation": "「歩くの」把动词短语名词化作主语，主语后用「が」；「は」用于提示主题，句中「東京の人は」已承当主题，故填「が」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 36
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q037",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 37,
+    "stem": "毎晩遅くまで勉強しているんですね。\nはい、医者に（なる→　　）ために、頑張っています。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "なる",
+    "translation": "你每天都学习到很晚呢。是的，为了成为医生，我正在努力。",
+    "explanation": "「动词辞书形＋ために」表示目的。なる本身已是辞书形，所以括号内填「なる」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 37
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：page_header（A 路「」/ B 路「11:55」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q038",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 38,
+    "stem": "車の修理____1週間かかります。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "に",
+    "translation": "修车需要花一周时间。",
+    "explanation": "「かかる」表示“花费（时间/金钱）”，其对象用「に」提示：車の修理に1週間かかります。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 38
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q039",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 39,
+    "stem": "一説明が（簡単→　　）すぎるので、もう少し（詳しい→　　）したほうがいいですよ。\nはい、わかりました。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "(1) 簡単（かんたん） (2) 詳しく（くわしく）",
+    "translation": "——说明太简单了，再详细一点比较好。 好，我知道了。",
+    "explanation": "「簡単」是な形容词，接「すぎる」时词干直接相连，故填「簡単」；「詳しい」是イ形容词，与「する」连用需变「く」，故填「詳しく」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 39
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q040",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 40,
+    "stem": "太郎が友達（　）けんかしたので、しっかりました。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "と",
+    "translation": "太郎因为和朋友吵架了，所以……",
+    "explanation": "「けんかする」表示双方互相争吵，共同参与者用助词「と」提示，故填「と」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 40
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q041",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 41,
+    "stem": "家族_____ために、大きいうちを買いたいです。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "の",
+    "translation": "为了家族，想买大房子。",
+    "explanation": "「ために」前接名词时需加「の」，表示“为了家族”，故填「の」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 41
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「家族_____ために、大きいうちを 買いたいです。」/ B 路「家族_____ために、大きいうちを買いたいです。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q042",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 42,
+    "stem": "雨や雪の日は事故____起きやすいです。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "が",
+    "translation": "下雨或下雪的日子，事故容易发生。",
+    "explanation": "「事故が起きやすい」中，が提示发生的事故，是自动词「起きる」的主语标记；用が符合句意。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 42
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「雨や雪の日は事故___起きやすいです。」/ B 路「雨や雪の日は事故____起きやすいです。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q043",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 43,
+    "stem": "もう夜も遅いですから、静か______していただけませんか。\n上一题\n下一题\nAI讲解」）",
+    "options": [],
+    "answerKey": "",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "静かだ是形容动词，修饰する时用连用形「静かに」；「静かにしていただけませんか」表示礼貌请求对方安静。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 43
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：page.footer_ui（A 路「」/ B 路「答题卡"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q044",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 44,
+    "stem": "この靴は山____歩くのにいいです。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "を；で",
+    "translation": "",
+    "explanation": "「歩く」表示移动，经过的空间用「を」（山を歩く）；「で」表示活动场所也可。に不表示路径或场所，所以错。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 44
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「この靴は山___歩くのにいいです。」/ B 路「この靴は山____歩くのにいいです。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q045",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 45,
+    "stem": "サイズが（合う→　　）かどうか、（着る→　　）みます。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "(1) あう；合う (2) 着て；きて",
+    "translation": "试着穿一下，看看大小是否合适。",
+    "explanation": "「～かどうか」前接辞书形，故用「合う」；「～てみる」前接て形，故用「着て」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 45
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：paper_identity.title（A 路「考试详情」/ B 路「」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q046",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 46,
+    "stem": "結婚のお祝い___部長に時計をいただきました。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「結婚のお祝いに」表示“作为结婚贺礼”，「に」接在お祝い后表用途/目的；「が」会使其成为主语，语义不通。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 46
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q047",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 47,
+    "stem": "どうしたんですか。\nカラオケで（歌う→　　）すぎて、喉が痛いんです。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "歌い；うたい",
+    "translation": "怎么了？在卡拉OK唱得太多，喉咙痛。 考试详情 47/63」/ B 路「」）",
+    "explanation": "「歌う」变为ます形「歌います」，去ます加「すぎる」，表示“唱得太多”。故填「歌い」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 47
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：pageHeader（A 路「11:56",
+      "OCR 冲突：answerLabel（A 路「正确答案」/ B 路「**正确答案**」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q048",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 48,
+    "stem": "このかばんは物が入れやすくて、旅行や仕事______便利です。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「名詞＋に便利だ」表示对某对象/用途方便；这里说这个包对旅行和工作很方便，所以填「に」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 48
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q049",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 49,
+    "stem": "マラソンを途中___やめたい場合は、係員___名前を言って、帰って〈ください。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "(1) で (2) に",
+    "translation": "马拉松途中想要放弃时，请告诉工作人员姓名后再回去。",
+    "explanation": "「途中でやめる」用「で」表示动作发生的时间／地点；“名前を言う”的对象用「に」标记，即「係員に名前を言って」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 49
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：paper_identity.title（A 路「」/ B 路「考试详情」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q050",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 50,
+    "stem": "ご飯の量はどうですか。\n一（多い→　　　）すぎますから、（半分→　　　）してください。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "（1）多；おお （2）半分に；はんぶんに",
+    "translation": "饭量怎么样？——（太多）了，请（减半）。",
+    "explanation": "「多い」的词干「多」接「すぎます」表示“太多了”；「半分にしてください」要用「に」表示变化结果，只写「はんぶん」缺助词，故只得 1 分。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 50
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q051",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 51,
+    "stem": "一ちょっと休みましょうか。\n一じゃ、飲み物を（買う→　　）来ます。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "買って；かって",
+    "translation": "—稍微休息一下吧。 —那我去买饮料回来。",
+    "explanation": "「買って来ます」表示买好后再来；動詞「買う」的て形是「買って」，故填「買って」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 51
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q052",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 52,
+    "stem": "宮崎さん（　）赤ちゃんが生まれたの（　）知っていますか。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "（1）に （2）を",
+    "translation": "你知道宫崎女士生了孩子吗？",
+    "explanation": "「（人）に赤ちゃんが生まれる」用「に」提示主体；「生まれたの」中的「の」是形式名词，后接「を」作「知る」的宾语。考生作答（1）の（2）を，第(1)空错，得2分。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 52
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：我的答案.(1)（A 路「の」/ B 路「の（但 B 路自报改正称应为「に」，与其自身转写不一致）」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q053",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 53,
+    "stem": "昨日近くで事故が（ある→　　）のを知っていますか。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "あった",
+    "translation": "你知道昨天附近发生了事故吗？",
+    "explanation": "「昨日」表示过去，且「事故があった」这一名词化内容用「の」接「知っていますか」，所以「ある」要变成过去式「あった」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 53
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q054",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 54,
+    "stem": "パーティー（ ）参加するかどうか、教えてください。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "に",
+    "translation": "请告诉我是否参加聚会。",
+    "explanation": "动词「参加する」表示参加某项活动，其对象常用助词「に」提示，所以填「に」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 54
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q055",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 55,
+    "stem": "地震のニュースを（見る→　　　）、びっくりしました。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "みて；見て",
+    "translation": "看到地震的新闻，吓了一跳。",
+    "explanation": "「見る」接续「て」变为「見て」，读作「みて」。句意：看到地震的新闻，吓了一跳。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 55
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q056",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 56,
+    "stem": "絵を（かく→　　）のはおもしろいです。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "かく",
+    "translation": "画画很有趣。",
+    "explanation": "「～のは」前接动词辞书形，故用「かく」；「かき」是ます形，不能直接接「の」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 56
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：page_structure（A 路「答题卡」/ B 路「」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q057",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 57,
+    "stem": "一その本、漢字が多くて、（難しい→　　）そうですね。\n一ええ、でもおもしろいですよ。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "難し；むずかし",
+    "translation": "——那本书汉字很多，（看上去）很难吧。 ——嗯，不过很有意思哦。",
+    "explanation": "「難しい」是イ形容词，接传闻/样态助动词「そう」时要用词干「難し」，即「難しそう」＝看上去很难。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 57
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「一その本、漢字が多くて、（難しい→　　）そうですね。」/ B 路「一その本、漢字が多くて、(難しい→　　) そうですね。」）",
+      "OCR 冲突：page_content（A 路「无「答题卡」「上一题 下一题 AI讲解」等页面元素」/ B 路「含「答题卡」「上一题」「下一题」「AI讲解」」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q058",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 58,
+    "stem": "どんな問題（ ）試験（ ）出るか、わかりません。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "(1) が (2) に",
+    "translation": "不知道考试中会出现什么问题。",
+    "explanation": "「どんな問題が試験に出るか」中「が」提示主语；「試験に出る」是固定搭配，意为“在考试中出现”，第二空用「に」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 58
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：page_extra（A 路「」/ B 路「答题卡」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q059",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 59,
+    "stem": "ダイエットは3日（ ）やめてしまいました。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "で",
+    "translation": "减肥只坚持了3天就放弃了。",
+    "explanation": "「3日で」表示经过3天就……，强调期限；「3日に」是“在3号”，不合“减肥放弃”语境。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 59
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：score（A 路「2分」/ B 路「2 分」）",
+      "OCR 冲突：userScore（A 路「0分」/ B 路「0 分」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q060",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 60,
+    "stem": "故障____場合は、この番号に電話して〈ださい。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "の",
+    "translation": "发生故障时，请拨打这个号码。",
+    "explanation": "「故障」为名词，修饰「場合は」需加「の」构成定语，表示“发生故障的时候”，即故障の場合は。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 60
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q061",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 61,
+    "stem": "事故____あわないように、気をつけてください。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "に",
+    "translation": "请小心，不要遭遇事故。",
+    "explanation": "「事故にあう」是固定搭配，表示“遭遇事故”，对象用助词「に」标记；「ないように」前接动词ない形，故填「に」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 61
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q062",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 62,
+    "stem": "どこで財布を（なくす→　　）か、覚えていません。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "なくした；無くした",
+    "translation": "不记得在哪里把钱包弄丢了。",
+    "explanation": "「なくす」要变成过去式「なくした」，因为“是否丢了钱包”是已发生的事，与「覚えていません」搭配。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 62
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  },
+  {
+    "id": "jp-3-q063",
+    "category": "jp-3",
+    "groupId": "jp-3-g01",
+    "groupTitle": "考试详情",
+    "numberInGroup": 63,
+    "stem": "火事（ ）家が焼けました。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "で",
+    "translation": "因为火灾，房子烧了。",
+    "explanation": "「で」在此表示原因、理由，意为“因为火灾，房子烧了”。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3.md",
+      "group": "考试详情",
+      "position": 63
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "fill"
+  }
+]

@@ -1,0 +1,3473 @@
+[
+  {
+    "id": "jp-3-2024-q001",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 1,
+    "stem": "日本に来て初めての春、おもしろかったのは花見という習慣です。もちろん私の国でも、花を見て、みんなで楽しみますが、日本のように桜という特別な花のための特別な習慣はありません。\nでも、一番驚いたのは特別な習慣があることではなく、三月の終わりごろから、四月初めまで、天気予報やニュースでも花見について「東京では30日ごろ咲き始めます」、「今日、桜が咲きました」、「次の土曜日が花見にいいですよ」などと教えてくれることです。\n私も友達と一緒に花見をしました。学校の近くの公園に行ったのですが、日本の花見で花を見るより、みんなで食べたり飲んだりして、賑やかにさわぐほうが大事なようです。ごっことないつでもできるのに、どうしてほかの花のときはさわがないのでしょうか。ちょっとおかしいと思いました。\nこの人はどうして花見が面白かったと思うのですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "桜を初めて見たから"
+      },
+      {
+        "key": "B",
+        "text": "日本の春の習慣だから"
+      },
+      {
+        "key": "C",
+        "text": "花を見てみんなで楽しむから"
+      },
+      {
+        "key": "D",
+        "text": "特別な花のための習慣だから"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "特別な花のための習慣だから",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n花見が桜という特別な花のための特別な習慣だから。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 1
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：number（A 路「1」/ B 路「」）",
+      "OCR 冲突：stem（A 路「もちろん私の国でも、花を見て、みんなで楽しみますが、」/ B 路「もちろん私の国でも、花を見て、みんなで食べたり飲みたりが、」）",
+      "OCR 冲突：stem（A 路「ごっことないつでもできるのに」/ B 路「ってことないってもできるのに」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q002",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 2,
+    "stem": "日本に来て初めての春、おもしろかったのは花見という習慣です。もちろん私の国でも、花を見て、みんなで楽しみますが、日本のように桜という特別な花のための特別な習慣はありません。\nでも、一番驚いたのは特別な習慣があることではなく、三月の終わりごろから、四月初めまで、天気予報やニュースでも花見について「東京では30日ごろ咲き始めます」、「今日、桜が咲きました」、「次の土曜日が花見にいいですよ」などと教えてくれることです。\n私も友達と一緒に花見をしました。学校の近くの公園に行ったのですが、日本の花見で花を見るより、みんなで食べたり飲んだりして、賑やかにさわぐほうが大事なようです。ごっことないつでもできるのに、どうしてほかの花のときはさわがないのでしょうか。ちょっとおかしいと思いました。\n一番驚いたことはなんですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "特別な花のために特別な習慣があること"
+      },
+      {
+        "key": "B",
+        "text": "三月の終わりから、四月の初めまで咲くこと"
+      },
+      {
+        "key": "C",
+        "text": "天気予報やニュースで花見について知らせること"
+      },
+      {
+        "key": "D",
+        "text": "花見についてみんながいろいろなことを言うこと"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "天気予報やニュースで花見について知らせること",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n一番驚いたのは天気予報やニュースが花見について知らせることだから。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 2
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q003",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 3,
+    "stem": "日本に来て初めての春、おもしろかったのは花見という習慣です。もちろん私の国でも、花を見て、みんなで楽しみますが、日本のように桜という特別な花のための特別な習慣はありません。\nでも、一番驚いたのは特別な習慣があることではなく、三月の終わりごろから、四月初めまで、天気予報やニュースでも花見について「東京では30日ごろ咲き始めます」、「今日、桜が咲きました」、「次の土曜日が花見にいいですよ」などと教えてくれることです。\n私も友達と一緒に花見をしました。学校の近くの公園に行ったのですが、日本の花見で花を見るより、みんなで食べたり飲んだりして、賑やかにさわぐほうが大事なようです。ごっことないつでもできるのに、どうしてほかの花のときはさわがないのでしょうか。ちょっとおかしいと思いました。\n「ちょっとおかしいと思いました」のはなぜですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "友達と一緒に賑やかに花見をするから"
+      },
+      {
+        "key": "B",
+        "text": "自分の国では花を見る習慣がないから"
+      },
+      {
+        "key": "C",
+        "text": "桜の花見の時だけ賑やかにさわぐから"
+      },
+      {
+        "key": "D",
+        "text": "花がまだ咲いていないのにさわいでいたから"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "桜の花見の時だけ賑やかにさわぐから",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n桜の花見の時だけ賑やかにさわぐのが不思議だから。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 3
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q004",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 4,
+    "stem": "日本に来て初めての春、おもしろかったのは花見という習慣です。もちろん私の国でも、花を見て、みんなで楽しみますが、日本のように桜という特別な花のための特別な習慣はありません。\nでも、一番驚いたのは特別な習慣があることではなく、三月の終わりごろから、四月初めまで、天気予報やニュースでも花見について「東京では30日ごろ咲き始めます」、「今日、桜が咲きました」、「次の土曜日が花見にいいですよ」などと教えてくれることです。\n私も友達と一緒に花見をしました。学校の近くの公園に行ったのですが、日本の花見で花を見るより、みんなで食べたり飲んだりして、賑やかにさわぐほうが大事なようです。ごっことないつでもできるのに、どうしてほかの花のときはさわがないのでしょうか。ちょっとおかしいと思いました。\n正しいのは、どれですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "花見をすると、日本人はさわぎます"
+      },
+      {
+        "key": "B",
+        "text": "みんなで食べたり飲んだりするより、花を見るほうが大事です"
+      },
+      {
+        "key": "C",
+        "text": "日本の春、天気予報やニュースでは桜だけ話します"
+      },
+      {
+        "key": "D",
+        "text": "花見は花を見る習慣です"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "花見をすると、日本人はさわぎます。",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n本文说日本花见时大家吃喝喧闹比看花更重要。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 4
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.A（A 路「花見をするとき、日本人はさわぎます。」/ B 路「花見をすると、日本人はさわぎます。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q005",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 5,
+    "stem": "読解・空欄補充\n実家がパン屋だったので、私は休みの日も親に店の掃除などを（　）ことが多く、友達とほとんど遊べなかった。",
+    "options": [
+      {
+        "key": "A",
+        "text": "手伝える"
+      },
+      {
+        "key": "B",
+        "text": "手伝われる"
+      },
+      {
+        "key": "C",
+        "text": "手伝わせる"
+      },
+      {
+        "key": "D",
+        "text": "手伝わされる"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "手伝わされる",
+    "translation": "",
+    "explanation": "「親に…手伝わされる」为使役被动，表示“被迫帮父母打扫店铺”，与后句“几乎没法和朋友玩”呼应，故选D。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 5
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q006",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 6,
+    "stem": "読解・空欄補充\n家族に（　），寂しいです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "会えないで"
+      },
+      {
+        "key": "B",
+        "text": "会えなくて"
+      },
+      {
+        "key": "C",
+        "text": "会って"
+      },
+      {
+        "key": "D",
+        "text": "会いなくて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "会えなくて",
+    "translation": "",
+    "explanation": "「会えなくて」的「なくて」表原因，意为“见不到家人，很寂寞”；「ないで」表状态或并列，不表原因。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 6
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q007",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 7,
+    "stem": "読解・空欄補充\n桂里奈さんの誕生日はいつですか。\n…4月8日だ（　）ですよ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "よう"
+      },
+      {
+        "key": "B",
+        "text": "そう"
+      },
+      {
+        "key": "C",
+        "text": "はず"
+      },
+      {
+        "key": "D",
+        "text": "という"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "そう",
+    "translation": "",
+    "explanation": "「だそうです」表传闻，“听说是4月8日”；「はず」表推断、「よう」表推测，均不合传闻语境。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 7
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q008",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 8,
+    "stem": "読解・空欄補充\n子供が気持ち（　）寝ています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いそうに"
+      },
+      {
+        "key": "B",
+        "text": "よかったち"
+      },
+      {
+        "key": "C",
+        "text": "よさそうに"
+      },
+      {
+        "key": "D",
+        "text": "いい"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "よさそうに",
+    "translation": "",
+    "explanation": "「気持ちよさそうに」＝形容词「よい」的词干「よさ」＋そうに，表“看上去很舒服地”。两路均读作「よかったち」的选项B疑为卷面印刷/识别异常，正解仍为C。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 8
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q009",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 9,
+    "stem": "読解・空欄補充\n最近景気がよくないので、失業者が多くですね。\n…そうですよね。早く景気がよく（　）ですね。",
+    "options": [
+      {
+        "key": "A",
+        "text": "なってほしい"
+      },
+      {
+        "key": "B",
+        "text": "してほしい"
+      },
+      {
+        "key": "C",
+        "text": "しそう"
+      },
+      {
+        "key": "D",
+        "text": "なるから"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "なってほしい",
+    "translation": "",
+    "explanation": "「よくなってほしい」表示希望景气变好，与「早く」呼应；「よくする」是他动词，主语不符。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 9
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q010",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 10,
+    "stem": "読解・空欄補充\n今週末は家族で日帰りで温泉に行って来る（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ことにしました"
+      },
+      {
+        "key": "B",
+        "text": "ことがある"
+      },
+      {
+        "key": "C",
+        "text": "ことだろう"
+      },
+      {
+        "key": "D",
+        "text": "にした"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ことにしました",
+    "translation": "",
+    "explanation": "「～ことにしました」表示自己做出的决定，“决定周末全家去泡温泉”。「ことがある」表经验，不合。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 10
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q011",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 11,
+    "stem": "読解・空欄補充\n課長、今回の企画をぜひ私に（　）ください。自信があります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "やらせて"
+      },
+      {
+        "key": "B",
+        "text": "やられて"
+      },
+      {
+        "key": "C",
+        "text": "やって"
+      },
+      {
+        "key": "D",
+        "text": "やらされて"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "やらせて",
+    "translation": "",
+    "explanation": "「私にやらせてください」是使役て形＋ください，请求“请让我来做”；「やられて」为被动、「やらされて」为使役被动，均不合请求语气。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 11
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q012",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 12,
+    "stem": "読解・空欄補充\nお電話（　）、お待たせして、すみません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "がきた"
+      },
+      {
+        "key": "B",
+        "text": "がきただ"
+      },
+      {
+        "key": "C",
+        "text": "やすから"
+      },
+      {
+        "key": "D",
+        "text": "ので"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "をかけました",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n应相当于お電話をかけましたが、お待たせして…，B最合适，但题干似有残缺。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 12
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.A（A 路「がきた」/ B 路「をかけた」）",
+      "OCR 冲突：options.B（A 路「がきただ」/ B 路「をかけました」）",
+      "OCR 冲突：options.C（A 路「やすから」/ B 路「をかけよう」）",
+      "OCR 冲突：options.D（A 路「ので」/ B 路「の」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q013",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 13,
+    "stem": "読解・空欄補充\n係の人：お客様、申し訳ありませんが、こちらは撮影できない（　）おりますので…。\n客：あ、すみません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ことにして"
+      },
+      {
+        "key": "B",
+        "text": "ことに"
+      },
+      {
+        "key": "C",
+        "text": "ことになって"
+      },
+      {
+        "key": "D",
+        "text": "ように"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ことになって",
+    "translation": "",
+    "explanation": "「～ことになっております」表示按规定、惯例如此，是告知规则时的固定说法，故选C。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 13
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q014",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 14,
+    "stem": "読解・空欄補充\n京都は初めてなので、わたしは課長に京都（　）案内して（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "に/いただきました"
+      },
+      {
+        "key": "B",
+        "text": "に/もらいました"
+      },
+      {
+        "key": "C",
+        "text": "で/いただきました"
+      },
+      {
+        "key": "D",
+        "text": "を/いただきました"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "を/いただきました",
+    "translation": "",
+    "explanation": "「京都を案内していただきました」：案内的对象用「を」；施恩者为上司课长，用「～ていただく」更郑重，故选D。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 14
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q015",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 15,
+    "stem": "読解・空欄補充\n論文を書く（　）資料を集めています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ように"
+      },
+      {
+        "key": "B",
+        "text": "ために"
+      },
+      {
+        "key": "C",
+        "text": "ことに"
+      },
+      {
+        "key": "D",
+        "text": "はずで"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ために",
+    "translation": "",
+    "explanation": "「論文を書くために」表目的，“为了写论文而收集资料”；「ように」接可能形或非意志动词，此处不合。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 15
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q016",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 16,
+    "stem": "山田先生\nお借りしていた先生のご本のことで、先生からお手紙をいただいてはじめて（一之·後·才…）お返ししていないことに気づきました。本当に申し訳ありませんでした。\n先生のご本は、汚さないように本棚に置いていたのですが、見つかりませんでした。調べた結果、お借りした本は絶版ではないことが分かりましたので、必ず同じものを送らせていただきます。勝手（任性、专断）なお願いで誠に恐縮ですが（非常不好意思）、今しばらくお待ちください。本当に申し訳ありませんでした。\n田中太郎\nこの手紙では、先生に対して、特に何を謝っているのですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "先生から借りた本をなくしてしまったこと"
+      },
+      {
+        "key": "B",
+        "text": "先生から借りた本を返すのを忘れていたこと"
+      },
+      {
+        "key": "C",
+        "text": "先生から借りた本を返すのが遅くなってしまったこと"
+      },
+      {
+        "key": "D",
+        "text": "先生から借りた本と同じ本を買って送ること"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "先生から借りた本をなくしてしまったこと",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n借りた本が見つからず同じ物を送ると述べているため、本をなくしたことへの謝罪が中心です。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 16
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「この手紙では、先生に対して、特に何を謝っているのですか。」/ B 路「この手紙では、先生に対して、何に何を謝っているのですか。」）",
+      "OCR 冲突：stem（A 路「お借りしていた先生のご本のことで」/ B 路「お借りしていた先生のご本のことて」）",
+      "OCR 冲突：stem（A 路「はじめて（一之·後·才…）お返ししていないことに気づきました」/ B 路「はじめまして。その後、オ…お返ししていないことに気づきました」）",
+      "OCR 冲突：stem（A 路「勝手（任性、専断）」/ B 路「勝手（任性、专断）」）",
+      "OCR 冲突：stem（A 路「（非常不舒意思）」/ B 路「（非常不好意思）」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q017",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 17,
+    "stem": "読解・空欄補充\n七、次の文の★に入れる最もよいものを、A・B・C・Dから一つ選びなさい。（2×5=10）\nわざわざ資料を★申し訳ございません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "病気で"
+      },
+      {
+        "key": "B",
+        "text": "送っていただいた"
+      },
+      {
+        "key": "C",
+        "text": "のに"
+      },
+      {
+        "key": "D",
+        "text": "休んでしまって"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "送っていただいた",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\nAI 两路解题结果不一致（A=B / B=A），暂采用 A，请人工确认。『送っていただいたのに、病気で休んでしまって申し訳ございません』の語順から★は『送っていただいた』です。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 17
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「七、次の文の★に入れる最もよいものを、A・B・C・Dから一つ選びなさい。（2×5=10）」/ B 路「七、次の文の　★　に入れる最もよいものを、A・B・C・Dから一つ選びなさい。（2×5＝10）」）",
+      "OCR 冲突：stem（A 路「わざわざ資料を______申し訳ございません。」/ B 路「わざわざ資料を★申し訳ございません。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q018",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 18,
+    "stem": "読解・空欄補充\nカタカナは★簡単ではない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "外国人"
+      },
+      {
+        "key": "B",
+        "text": "みたいな"
+      },
+      {
+        "key": "C",
+        "text": "には"
+      },
+      {
+        "key": "D",
+        "text": "ぼく"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ぼく",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\nAI 两路解题结果不一致（A=D / B=A），暂采用 A，请人工确认。『ぼくみたいな外国人には簡単ではない』の語順から★は『ぼく』です。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 18
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「カタカナは______簡単ではない。」/ B 路「カタカナは★簡単ではない。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q019",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 19,
+    "stem": "読解・空欄補充\nごみは★注意されました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ように"
+      },
+      {
+        "key": "B",
+        "text": "出さない"
+      },
+      {
+        "key": "C",
+        "text": "日曜日"
+      },
+      {
+        "key": "D",
+        "text": "以外には"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "日曜日",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\nAI 两路解题结果不一致（A=C / B=B），暂采用 A，请人工确认。『日曜日以外には出さないように注意されました』の語順から★は『日曜日』です。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 19
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「ごみは______注意されました。」/ B 路「ごみは★注意されました。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q020",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 20,
+    "stem": "読解・空欄補充\n★はあります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "立派な人"
+      },
+      {
+        "key": "B",
+        "text": "欠点"
+      },
+      {
+        "key": "C",
+        "text": "でも"
+      },
+      {
+        "key": "D",
+        "text": "どんなに"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "欠点",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\nAI 两路解题结果不一致（A=B / B=C），暂采用 A，请人工确认。『どんなに立派な人でも欠点はあります』の語順から★は『欠点』です。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 20
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「______はあります。」/ B 路「★はあります。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q021",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 21,
+    "stem": "読解・空欄補充\n祖母には★です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ほしい"
+      },
+      {
+        "key": "B",
+        "text": "いつでも"
+      },
+      {
+        "key": "C",
+        "text": "元気で"
+      },
+      {
+        "key": "D",
+        "text": "長生きして"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "いつでも",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\nAI 两路解题结果不一致（A=B / B=D），暂采用 A，请人工确认。『いつでも元気で長生きしてほしいです』の語順から★は『いつでも』です。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 21
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「祖母には______です。」/ B 路「祖母には★です。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q022",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 22,
+    "stem": "読解・空欄補充\n一、____の言葉を漢字で書く時、最もよいものを、A・B・C・Dから一つ選びなさい。(0.5×10=5)\n○ ピアノコンクールで一等賞をじゅしょうした。",
+    "options": [
+      {
+        "key": "A",
+        "text": "受賞"
+      },
+      {
+        "key": "B",
+        "text": "受状"
+      },
+      {
+        "key": "C",
+        "text": "獲得"
+      },
+      {
+        "key": "D",
+        "text": "獲賞"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "受賞",
+    "translation": "",
+    "explanation": "じゅしょう＝受賞。一等賞を受ける意。「受状」「獲得」「獲賞」は「受賞」の表記ではない。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 22
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「獲賞」/ B 路「頒賞」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q023",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 23,
+    "stem": "読解・空欄補充\n○ 今日までおうえんしてくださった皆さん、本当に感謝します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "後援"
+      },
+      {
+        "key": "B",
+        "text": "支援"
+      },
+      {
+        "key": "C",
+        "text": "応援"
+      },
+      {
+        "key": "D",
+        "text": "融援"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "応援",
+    "translation": "",
+    "explanation": "おうえん＝応援。「後援」は後ろ盾、「支援」は支えること、「融援」は誤表記。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 23
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 今日までおうえんしてくださった皆さん、本当に感謝します。」/ B 路「○ 今日までおうえんしてくださいました。本当に感謝しています。」）",
+      "OCR 冲突：options.D（A 路「融援」/ B 路「触援」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q024",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 24,
+    "stem": "読解・空欄補充\n○ AIで室内の温度を自動的に（　）することができる。",
+    "options": [
+      {
+        "key": "A",
+        "text": "調査"
+      },
+      {
+        "key": "B",
+        "text": "整理"
+      },
+      {
+        "key": "C",
+        "text": "調理"
+      },
+      {
+        "key": "D",
+        "text": "調整"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "調整",
+    "translation": "",
+    "explanation": "温度は「調整」する。「調査」「整理」「調理」はいずれも温度には合わない。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 24
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q025",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 25,
+    "stem": "読解・空欄補充\n○ 怪しいしょうしょうをなくさないように気をつけてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "保険書"
+      },
+      {
+        "key": "B",
+        "text": "保証書"
+      },
+      {
+        "key": "C",
+        "text": "領収書"
+      },
+      {
+        "key": "D",
+        "text": "保養書"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "保証書",
+    "translation": "",
+    "explanation": "ほしょうしょ＝保証書。商品の保証を記した書類。「保険書」「領収書」「保養書」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 25
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 怪しいしょうしょうをなくさないように気をつけてください。」/ B 路「○ ほしつしょしなくてさないように気をつけてください。」）",
+      "OCR 冲突：options.D（A 路「保養書」/ B 路「修復書」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q026",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 26,
+    "stem": "読解・空欄補充\n○ ごう望ほうがあればお聞きします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "欲望"
+      },
+      {
+        "key": "B",
+        "text": "志望"
+      },
+      {
+        "key": "C",
+        "text": "願望"
+      },
+      {
+        "key": "D",
+        "text": "希望"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "希望",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n固定表达「ご希望があればお聞きします」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 26
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ ごう望ほうがあればお聞きします。」/ B 路「○ こうほうがあればお聞きします。」）",
+      "OCR 冲突：options.A（A 路「欲望」/ B 路「要望」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q027",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 27,
+    "stem": "読解・空欄補充\n○ 梅雨になると、洗濯物がかわかなくて困ります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "咲か"
+      },
+      {
+        "key": "B",
+        "text": "干か"
+      },
+      {
+        "key": "C",
+        "text": "乾か"
+      },
+      {
+        "key": "D",
+        "text": "渇か"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "乾か",
+    "translation": "",
+    "explanation": "かわく＝乾く。洗濯物が乾かない。「咲か」「干か」「渇か」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 27
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.A（A 路「咲か」/ B 路「暖か」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q028",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 28,
+    "stem": "読解・空欄補充\n○ 犬は仲間といしきがとても強い動物です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "認識"
+      },
+      {
+        "key": "B",
+        "text": "認知"
+      },
+      {
+        "key": "C",
+        "text": "知識"
+      },
+      {
+        "key": "D",
+        "text": "意識"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "意識",
+    "translation": "",
+    "explanation": "いしき＝意識。犬は仲間意識が強い。「認識」「認知」「知識」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 28
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 犬は仲間といしきがとても強い動物です。」/ B 路「○ 犬は仲間いしさがとても強い動物です。」）",
+      "OCR 冲突：options.D（A 路「意識」/ B 路「認識」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q029",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 29,
+    "stem": "読解・空欄補充\n○ 冷蔵庫は常にせいけつにしておきましょう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "清節"
+      },
+      {
+        "key": "B",
+        "text": "清潔"
+      },
+      {
+        "key": "C",
+        "text": "整然"
+      },
+      {
+        "key": "D",
+        "text": "簡潔"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "清潔",
+    "translation": "",
+    "explanation": "せいけつ＝清潔。冷蔵庫は常に清潔に。「清節」「整然」「簡潔」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 29
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 冷蔵庫は常にせいけつにしておきましょう。」/ B 路「○ 冷蔵庫は常にせいりつこにしておきましょう。」）",
+      "OCR 冲突：options.A（A 路「清節」/ B 路「清掃」）",
+      "OCR 冲突：options.D（A 路「簡潔」/ B 路「整潔」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q030",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 30,
+    "stem": "読解・空欄補充\n○ この二つの商品は名前が類似してまぎらわしいです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "紛らわしい"
+      },
+      {
+        "key": "B",
+        "text": "乱らわしい"
+      },
+      {
+        "key": "C",
+        "text": "混らわしい"
+      },
+      {
+        "key": "D",
+        "text": "雑らわしい"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "紛らわしい",
+    "translation": "",
+    "explanation": "まぎらわしい＝紛らわしい。「乱らわしい」「混らわしい」「雑らわしい」は誤表記。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 30
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「雑らわしい」/ B 路「帳らわしい」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q031",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 31,
+    "stem": "読解・空欄補充\n○ 面接のけっかは1週間以内にメールでお知らせいたします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "結局"
+      },
+      {
+        "key": "B",
+        "text": "通知"
+      },
+      {
+        "key": "C",
+        "text": "結果"
+      },
+      {
+        "key": "D",
+        "text": "伝達"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "結果",
+    "translation": "",
+    "explanation": "けっか＝結果。面接の結果を知らせる。「結局」「通知」「伝達」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 31
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q033",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 33,
+    "stem": "読解・空欄補充\n○ 彼氏は置いてで家を出たので、つかった（一小留神）携帯を忘れてしまった。",
+    "options": [
+      {
+        "key": "A",
+        "text": "すって"
+      },
+      {
+        "key": "B",
+        "text": "いそって"
+      },
+      {
+        "key": "C",
+        "text": "あわてて"
+      },
+      {
+        "key": "D",
+        "text": "あせて"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "あわてて",
+    "translation": "",
+    "explanation": "あわてて＝慌てて。家を出る際に慌てて携帯を忘れた。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 32
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 彼氏は置いてで家を出たので、つかった（一小留神）携帯を忘れてしまった。」/ B 路「」）",
+      "OCR 冲突：options.A（A 路「すって」/ B 路「すわてて」）",
+      "OCR 冲突：options.B（A 路「いそって」/ B 路「いそてて」）",
+      "OCR 冲突：options.D（A 路「あせて」/ B 路「あせてて」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q034",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 34,
+    "stem": "読解・空欄補充\n○ 気象庁から注意をうながす、警報を発表しました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しんぽ"
+      },
+      {
+        "key": "B",
+        "text": "しんみ"
+      },
+      {
+        "key": "C",
+        "text": "つなみ"
+      },
+      {
+        "key": "D",
+        "text": "さなみ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "つなみ",
+    "translation": "",
+    "explanation": "つなみ＝津波。気象庁が津波警報を発表する。「しんぽ」「しんみ」「さなみ」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 33
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 気象庁から注意をうながす、警報を発表しました。」/ B 路「」）",
+      "OCR 冲突：options.A（A 路「しんぽ」/ B 路「しんば」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q036",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 36,
+    "stem": "読解・空欄補充\n○ 仕事に全力を注ぐもの、健康な体が必要です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "そそぐ"
+      },
+      {
+        "key": "B",
+        "text": "すぐ"
+      },
+      {
+        "key": "C",
+        "text": "さそぐ"
+      },
+      {
+        "key": "D",
+        "text": "そそぐ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "そそぐ",
+    "translation": "",
+    "explanation": "そそぐ＝注ぐ。仕事に全力を注ぐ。「すぐ」「さそぐ」「そぐ」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 34
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 仕事に全力を注ぐもの、健康な体が必要です。」/ B 路「」）",
+      "OCR 冲突：options.A（A 路「そそぐ」/ B 路「そく」）",
+      "OCR 冲突：options.C（A 路「さそぐ」/ B 路「きそぐ」）",
+      "OCR 冲突：options.D（A 路「そそぐ」/ B 路「そぐ」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q037",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 37,
+    "stem": "読解・空欄補充\n○ このお寺は火事で二度も焼けた。ことがあるそうです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "さけた"
+      },
+      {
+        "key": "B",
+        "text": "やけた"
+      },
+      {
+        "key": "C",
+        "text": "たけた"
+      },
+      {
+        "key": "D",
+        "text": "とけた"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "やけた",
+    "translation": "",
+    "explanation": "やけた＝焼けた。お寺が火事で焼けた。「裂けた」「たけた」「溶けた」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 35
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ このお寺は火事で二度も焼けた。ことがあるそうです。」/ B 路「」）",
+      "OCR 冲突：options.A（A 路「さけた」/ B 路「おきた」）",
+      "OCR 冲突：options.C（A 路「たけた」/ B 路「たいた」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q038",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 38,
+    "stem": "読解・空欄補充\n○ 最近は吸収するので湿度が、取れると言われています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "こうきょう"
+      },
+      {
+        "key": "B",
+        "text": "こきょう"
+      },
+      {
+        "key": "C",
+        "text": "こいきゅう"
+      },
+      {
+        "key": "D",
+        "text": "こきゅう"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "こきゅう",
+    "translation": "",
+    "explanation": "こきゅう＝呼吸。「こうきょう」「こきょう」「こいきゅう」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 36
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 最近は吸収するので湿度が、取れると言われています。」/ B 路「」）",
+      "OCR 冲突：options.B（A 路「きょう」/ B 路「こきょう」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q039",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 39,
+    "stem": "読解・空欄補充",
+    "options": [
+      {
+        "key": "A",
+        "text": "しき"
+      },
+      {
+        "key": "B",
+        "text": "しめき"
+      },
+      {
+        "key": "C",
+        "text": "しっけ"
+      },
+      {
+        "key": "D",
+        "text": "しつけ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "しっけ",
+    "translation": "",
+    "explanation": "しっけ＝湿気。「四季（しき）」「締め切り（しめき）」「躾（しつけ）」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 37
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options（A 路「（A路判読不能，无选项）」/ B 路「A しき　B しめき　C しっけ　D しつけ」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q040",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 40,
+    "stem": "読解・空欄補充\n○ 会費はあとでに参りますので、<u>ご到着</u>の時間をお知らせください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "とうつく"
+      },
+      {
+        "key": "B",
+        "text": "どうきる"
+      },
+      {
+        "key": "C",
+        "text": "とうちゃく"
+      },
+      {
+        "key": "D",
+        "text": "どうきく"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "とうちゃく",
+    "translation": "",
+    "explanation": "とうちゃく＝到着。ご到着の時間を知らせる。「とうつく」「どうきる」「どうきく」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 38
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 会費はあとでに参りますので、ご到着の時間をお知らせください。」/ B 路「」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q041",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 41,
+    "stem": "読解・空欄補充\n○ 3年前にこの都会を離れた。小さな村に引っ越してきた。",
+    "options": [
+      {
+        "key": "A",
+        "text": "たおれた"
+      },
+      {
+        "key": "B",
+        "text": "よごれた"
+      },
+      {
+        "key": "C",
+        "text": "おそれた"
+      },
+      {
+        "key": "D",
+        "text": "はなれた"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "はなれた",
+    "translation": "",
+    "explanation": "はなれた＝離れた。都会を離れて村へ引っ越した。「倒れた」「汚れた」「恐れた」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 39
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 3年前にこの都会を離れた。小さな村に引っ越してきた。」/ B 路「」）",
+      "OCR 冲突：options.B（A 路「よごれた」/ B 路「よこれた」）",
+      "OCR 冲突：options.C（A 路「おそれた」/ B 路「おちれた」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q042",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 42,
+    "stem": "読解・空欄補充\n○ 友達の誘いを断って、夜遅くまで塾に通った。",
+    "options": [
+      {
+        "key": "A",
+        "text": "あつまって"
+      },
+      {
+        "key": "B",
+        "text": "ことわって"
+      },
+      {
+        "key": "C",
+        "text": "さまよって"
+      },
+      {
+        "key": "D",
+        "text": "ととのって"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ことわって",
+    "translation": "",
+    "explanation": "ことわって＝断って。友達の誘いを断る。「集まって」「彷徨って」「整って」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 40
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 友達の誘いを断って、夜遅くまで塾に通った。」/ B 路「」）",
+      "OCR 冲突：options.B（A 路「ことわって」/ B 路「こわって」）",
+      "OCR 冲突：options.C（A 路「さまよって」/ B 路「きまとつて」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q044",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 44,
+    "stem": "読解・空欄補充\n○ やっと実現に成功して長年の夢が叶えました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しけん"
+      },
+      {
+        "key": "B",
+        "text": "じっけん"
+      },
+      {
+        "key": "C",
+        "text": "じけん"
+      },
+      {
+        "key": "D",
+        "text": "じつげん"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "じつげん",
+    "translation": "",
+    "explanation": "じつげん＝実現。長年の夢が実現する。「しけん」「じっけん」「じけん」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 41
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ やっと実現に成功して長年の夢が叶えました。」/ B 路「」）",
+      "OCR 冲突：options.B（A 路「じっけん」/ B 路「じつけん」）",
+      "OCR 冲突：options.D（A 路「じつげん」/ B 路「じつけん」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q046",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 46,
+    "stem": "読解・空欄補充\n○ <u>会社の忘年会</u>はが来月の始めになりますが、残念ながら、<u>都合</u>で出られません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しんねんかい"
+      },
+      {
+        "key": "B",
+        "text": "ぼうねんかい"
+      },
+      {
+        "key": "C",
+        "text": "ろうねんかい"
+      },
+      {
+        "key": "D",
+        "text": "ようねんかい"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ぼうねんかい",
+    "translation": "",
+    "explanation": "ぼうねんかい＝忘年会。会社の忘年会。「しんねんかい」「ろうねんかい」「ようねんかい」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 42
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 会社の忘年会はが来月の始めになりますが、残念ながら、都合で出られません。」/ B 路「」）",
+      "OCR 冲突：options.B（A 路「ほうねんかい」/ B 路「ぼうねんかい」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q047",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 47,
+    "stem": "読解・空欄補充",
+    "options": [
+      {
+        "key": "A",
+        "text": "どあい"
+      },
+      {
+        "key": "B",
+        "text": "ところ"
+      },
+      {
+        "key": "C",
+        "text": "ぐあい"
+      },
+      {
+        "key": "D",
+        "text": "ごう"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ぐあい",
+    "translation": "",
+    "explanation": "ぐあい＝具合。「どあい」「ところ」「ごう」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 43
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options（A 路「（A路判読不能，无选项）」/ B 路「A どあい　B ところ　C ぐあい　D ごう」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q048",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 48,
+    "stem": "読解・空欄補充\n○ 国際市場へ進むために、<u>新し</u>い商品を開発しています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しじょう"
+      },
+      {
+        "key": "B",
+        "text": "いちば"
+      },
+      {
+        "key": "C",
+        "text": "かいじょう"
+      },
+      {
+        "key": "D",
+        "text": "じじょう"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "しじょう",
+    "translation": "",
+    "explanation": "しじょう＝市場。国際市場へ進出する。「いちば」「かいじょう」「じじょう」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 44
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 国際市場へ進むために、新しい商品を開発しています。」/ B 路「」）",
+      "OCR 冲突：options.A（A 路「しじょう」/ B 路「いいば」）",
+      "OCR 冲突：options.D（A 路「じじょう」/ B 路「しじょう」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q049",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 49,
+    "stem": "読解・空欄補充",
+    "options": [
+      {
+        "key": "A",
+        "text": "かいはつ"
+      },
+      {
+        "key": "B",
+        "text": "かいしゅつ"
+      },
+      {
+        "key": "C",
+        "text": "けいはつ"
+      },
+      {
+        "key": "D",
+        "text": "けいしゅつ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "かいはつ",
+    "translation": "",
+    "explanation": "かいはつ＝開発。新しい商品を開発する。「かいしゅつ」「けいはつ」「けいしゅつ」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 45
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.A（A 路「かいけつ」/ B 路「かいはつ」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q050",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 50,
+    "stem": "読解・空欄補充\n○ <u>化粧品の営業</u>の会議に出て大変勉強になりました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かしょう"
+      },
+      {
+        "key": "B",
+        "text": "かしゅ"
+      },
+      {
+        "key": "C",
+        "text": "けしょう"
+      },
+      {
+        "key": "D",
+        "text": "かいしゅう"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "けしょう",
+    "translation": "",
+    "explanation": "けしょう＝化粧（品）。化粧品の営業の会議。「かしょう」「かしゅ」「かいしゅう」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 46
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「○ 化粧品の営業の会議に出て大変勉強になりました。」/ B 路「」）",
+      "OCR 冲突：options.B（A 路「かしゅ」/ B 路「かしゅう」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q051",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 51,
+    "stem": "読解・空欄補充",
+    "options": [
+      {
+        "key": "A",
+        "text": "きゅうぎょう"
+      },
+      {
+        "key": "B",
+        "text": "えいぎょう"
+      },
+      {
+        "key": "C",
+        "text": "こうぎょう"
+      },
+      {
+        "key": "D",
+        "text": "えいぎょう"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "えいぎょう",
+    "translation": "",
+    "explanation": "えいぎょう＝営業。「きゅうぎょう」「こうぎょう」は誤り。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 47
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.B（A 路「えいぎょう」/ B 路「えいぎゅう」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q053",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 53,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、 A・B・C・Dから一つ選びなさい。(2×5=10分) ある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時 代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留 学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の 話です。 アメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る <u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でし た。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。 飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を 出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われまし た。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を 越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也 就是説）、一日<u>98</u>のです。 ところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ 旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさ んの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。 これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シック ラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を 祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験で きない船の旅となりました。 私は、この知人の話を聞いて、このような船旅も<u>100</u>と思いました。今は仕事で 忙しくて時間の余裕がないが、私もいつか船旅をしてみたくなりました。\n読解・空欄補充\n欠点のない人はいないだろう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "けんてい"
+      },
+      {
+        "key": "B",
+        "text": "かんてん"
+      },
+      {
+        "key": "C",
+        "text": "かいてん"
+      },
+      {
+        "key": "D",
+        "text": "けってん"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "けってん",
+    "translation": "",
+    "explanation": "「欠点」读作「けってん」，句意为“没有缺点的人是不存在的”。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 48
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「灰点のない人はいないだろう。」/ B 路「灰皿のない人はいないだろう。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q054",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 54,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、 A・B・C・Dから一つ選びなさい。(2×5=10分) ある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時 代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留 学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の 話です。 アメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る <u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でし た。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。 飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を 出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われまし た。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を 越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也 就是説）、一日<u>98</u>のです。 ところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ 旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさ んの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。 これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シック ラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を 祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験で きない船の旅となりました。 私は、この知人の話を聞いて、このような船旅も<u>100</u>と思いました。今は仕事で 忙しくて時間の余裕がないが、私もいつか船旅をしてみたくなりました。\n読解・空欄補充\nお茶会に出る時、外国人にとって一番らいのは正座でしょう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "たださ"
+      },
+      {
+        "key": "B",
+        "text": "しょうさ"
+      },
+      {
+        "key": "C",
+        "text": "せいざ"
+      },
+      {
+        "key": "D",
+        "text": "そうざ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "せいざ",
+    "translation": "",
+    "explanation": "划线词「正座」读作「せいざ」，指跪坐。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 49
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q055",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 55,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、 A・B・C・Dから一つ選びなさい。(2×5=10分) ある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時 代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留 学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の 話です。 アメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る <u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でし た。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。 飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を 出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われまし た。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を 越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也 就是説）、一日<u>98</u>のです。 ところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ 旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさ んの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。 これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シック ラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を 祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験で きない船の旅となりました。 私は、この知人の話を聞いて、このような船旅も<u>100</u>と思いました。今は仕事で 忙しくて時間の余裕がないが、私もいつか船旅をしてみたくなりました。\n読解・空欄補充\n比べてみればわたしは後輩の提案に賛成したいのです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しらべて"
+      },
+      {
+        "key": "B",
+        "text": "くらべて"
+      },
+      {
+        "key": "C",
+        "text": "たらべて"
+      },
+      {
+        "key": "D",
+        "text": "おくべて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "くらべて",
+    "translation": "",
+    "explanation": "「比べて」读作「くらべて」；「調べて」才读しらべて。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 50
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q058",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 58,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、 A・B・C・Dから一つ選びなさい。(2×5=10分) ある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時 代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留 学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の 話です。 アメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る <u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でし た。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。 飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を 出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われまし た。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を 越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也 就是説）、一日<u>98</u>のです。 ところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ 旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさ んの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。 これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シック ラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を 祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験で きない船の旅となりました。 私は、この知人の話を聞いて、このような船旅も<u>100</u>と思いました。今は仕事で 忙しくて時間の余裕がないが、私もいつか船旅をしてみたくなりました。\n読解・空欄補充\n相手に割るとき、お辞儀を忘れないでください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "あつて"
+      },
+      {
+        "key": "B",
+        "text": "あいて"
+      },
+      {
+        "key": "C",
+        "text": "そうしゅ"
+      },
+      {
+        "key": "D",
+        "text": "あいしゅ"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "あいて",
+    "translation": "",
+    "explanation": "划线词「相手」读作「あいて」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 51
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q060",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 60,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、 A・B・C・Dから一つ選びなさい。(2×5=10分) ある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時 代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留 学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の 話です。 アメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る <u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でし た。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。 飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を 出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われまし た。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を 越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也 就是説）、一日<u>98</u>のです。 ところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ 旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさ んの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。 これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シック ラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を 祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験で きない船の旅となりました。 私は、この知人の話を聞いて、このような船旅も<u>100</u>と思いました。今は仕事で 忙しくて時間の余裕がないが、私もいつか船旅をしてみたくなりました。\n読解・空欄補充\n全国大会で優勝することを目指して練習を重ねています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ゆうしゅう"
+      },
+      {
+        "key": "B",
+        "text": "ゆうしょう"
+      },
+      {
+        "key": "C",
+        "text": "ゆうせい"
+      },
+      {
+        "key": "D",
+        "text": "ゆうせん"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ゆうしょう",
+    "translation": "",
+    "explanation": "「優勝」读作「ゆうしょう」；優秀ゆうしゅう、優勢ゆうせい、優先ゆうせん均为干扰项。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 52
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.A（A 路「ゆうしゅう」/ B 路「ゆうしょう」）",
+      "OCR 冲突：options.B（A 路「ゆうしょう」/ B 路「ゆうぜい」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q062",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 62,
+    "stem": "読解・空欄補充\n三、次の文の（　）に入れるのに最もよいものを、A・B・C・Dから一つ選びなさい。（1×30=30）\n毎日遅くまで頑張っていますね。\n…ええ。試合に（　）、練習しています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "出るように"
+      },
+      {
+        "key": "B",
+        "text": "出すように"
+      },
+      {
+        "key": "C",
+        "text": "出ないように"
+      },
+      {
+        "key": "D",
+        "text": "出られるように"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "出られるように",
+    "translation": "",
+    "explanation": "表目的用「～ように」；“能参加比赛”是能力，须用可能形「出られるように」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 53
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q063",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 63,
+    "stem": "読解・空欄補充\nあの方、気分が（　）、帰ってもいいですか。\n…いいですよ。お大事に。",
+    "options": [
+      {
+        "key": "A",
+        "text": "悪くて"
+      },
+      {
+        "key": "B",
+        "text": "悪いので"
+      },
+      {
+        "key": "C",
+        "text": "悪いで"
+      },
+      {
+        "key": "D",
+        "text": "悪いですか"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "悪いので",
+    "translation": "",
+    "explanation": "请假理由用「ので」最自然；「悪くて」偏状态陈述，「悪いですか」与句末请求重复。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 54
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q064",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 64,
+    "stem": "読解・空欄補充\nこの靴は山を歩く（　）いいです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "のに"
+      },
+      {
+        "key": "B",
+        "text": "に"
+      },
+      {
+        "key": "C",
+        "text": "のは"
+      },
+      {
+        "key": "D",
+        "text": "ので"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "のに",
+    "translation": "",
+    "explanation": "「～のにいい」表示“适合做某事”，此处指适合在山里走路。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 55
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q065",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 65,
+    "stem": "読解・空欄補充\nあ、危ない。棚から荷物が（　）。\n…ほんとうだ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "落ちるそうだ"
+      },
+      {
+        "key": "B",
+        "text": "落とそうだ"
+      },
+      {
+        "key": "C",
+        "text": "落ちそうだ"
+      },
+      {
+        "key": "D",
+        "text": "落ちたそうだ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "落ちそうだ",
+    "translation": "",
+    "explanation": "「落ちそうだ」表样态，意为眼看就要掉下来，与「危ない」呼应。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 56
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q066",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 66,
+    "stem": "読解・空欄補充\nごはんの量はどうですか。\n…多すぎますから、半分（　）ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "になって"
+      },
+      {
+        "key": "B",
+        "text": "でして"
+      },
+      {
+        "key": "C",
+        "text": "をして"
+      },
+      {
+        "key": "D",
+        "text": "にして"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "にして",
+    "translation": "",
+    "explanation": "「～にする」表示改变状态，「半分にしてください」＝请减到一半。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 57
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q067",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 67,
+    "stem": "読解・空欄補充\n首検選くまで勉強しているんですね。\n…はい、医者に（　）、頑張っています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "するために"
+      },
+      {
+        "key": "B",
+        "text": "なるために"
+      },
+      {
+        "key": "C",
+        "text": "なるように"
+      },
+      {
+        "key": "D",
+        "text": "なれるために"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "なるために",
+    "translation": "",
+    "explanation": "「医者になるために頑張る」用「ために」表目的，与意志动词「頑張る」搭配。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 58
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「首検選くまで勉強しているんですね。」/ B 路「首検選できて勉強しているんですね。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q068",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 68,
+    "stem": "読解・空欄補充\n（授業中）学生：先生、頭が痛いので、早めに（　）いただけませんか。\n先生：いいですよ。お大事に。",
+    "options": [
+      {
+        "key": "A",
+        "text": "帰って"
+      },
+      {
+        "key": "B",
+        "text": "来て"
+      },
+      {
+        "key": "C",
+        "text": "帰らせて"
+      },
+      {
+        "key": "D",
+        "text": "休んで"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "帰らせて",
+    "translation": "",
+    "explanation": "请求对方允许自己做某事，用使役形「帰らせて」＋「いただけませんか」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 59
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q069",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 69,
+    "stem": "読解・空欄補充\nちょっとお茶でも飲みませんか。\n…いいですね。たった今仕事が（　）です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "終わったところ"
+      },
+      {
+        "key": "B",
+        "text": "終わるところ"
+      },
+      {
+        "key": "C",
+        "text": "終わったばかり"
+      },
+      {
+        "key": "D",
+        "text": "終わるばかり"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "終わったところ",
+    "translation": "",
+    "explanation": "「たった今～たところです」表示动作刚刚结束；「たばかり」与「たった今」语义重复。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 60
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q070",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 70,
+    "stem": "読解・空欄補充\n会議はもう始まりましたか。\n…いいえ。ちょうど今から（　）です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "始まるところ"
+      },
+      {
+        "key": "B",
+        "text": "始まったところ"
+      },
+      {
+        "key": "C",
+        "text": "始まるばかり"
+      },
+      {
+        "key": "D",
+        "text": "始まったばかり"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "始まるところ",
+    "translation": "",
+    "explanation": "「ちょうど今から～ところです」用动词辞书形，表示马上就要开始。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 61
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「会議はもう始まりましたか。」/ B 路「会議にもう始まりましたか。」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q071",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 71,
+    "stem": "読解・空欄補充\n荷物はいつ届きますか。\n…宅配便で送りましたから、あさって（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "届くようです"
+      },
+      {
+        "key": "B",
+        "text": "届くはずです"
+      },
+      {
+        "key": "C",
+        "text": "届けるはずです"
+      },
+      {
+        "key": "D",
+        "text": "届けるようです"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "届くはずです",
+    "translation": "",
+    "explanation": "根据已寄出的事实作有把握的推测，用「～はずだ」；「届ける」是他动词，主语不符。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 62
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q072",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 72,
+    "stem": "読解・空欄補充\nパトカーが止まっていますね。\n…（　）ね。ちょっと見てきます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "事故ようです"
+      },
+      {
+        "key": "B",
+        "text": "事故のはずです"
+      },
+      {
+        "key": "C",
+        "text": "事故のようにです"
+      },
+      {
+        "key": "D",
+        "text": "事故なみたいです"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "事故のはずです",
+    "translation": "",
+    "explanation": "「事故のはずです」表示据巡逻车停着推测“应该是事故”；A、C、D接续均不合语法。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 63
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：options.D（A 路「事故なみたいです」/ B 路「事故なみたいですね」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q073",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 73,
+    "stem": "読解・空欄補充\n前の妻はどうなさいますか。\n…この写真（　）してください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "みたいな"
+      },
+      {
+        "key": "B",
+        "text": "のような"
+      },
+      {
+        "key": "C",
+        "text": "みたいに"
+      },
+      {
+        "key": "D",
+        "text": "ように"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ように",
+    "translation": "",
+    "explanation": "「この写真のようにしてください」＝请照这张照片这样做；修饰「する」要用「ように」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 64
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q074",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 74,
+    "stem": "読解・空欄補充\n雨ですね。息子に駅まで車で（　）ので、少々お待ちください。\n…ありがとうございます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "送られます"
+      },
+      {
+        "key": "B",
+        "text": "送らせます"
+      },
+      {
+        "key": "C",
+        "text": "送られた"
+      },
+      {
+        "key": "D",
+        "text": "送る"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "送らせます",
+    "translation": "",
+    "explanation": "「息子に～させる」表让儿子做某事，此处即“让儿子开车送”，用使役形「送らせます」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 65
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q075",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 75,
+    "stem": "読解・空欄補充\n部長は小川さんをご存じですか。\n…はい、よく（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ご存じです"
+      },
+      {
+        "key": "B",
+        "text": "ご存じよ"
+      },
+      {
+        "key": "C",
+        "text": "存じていない"
+      },
+      {
+        "key": "D",
+        "text": "存じております"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "存じております",
+    "translation": "",
+    "explanation": "回答上司的提问、叙述自己知道，要用自谦语「存じております」。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 66
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q076",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 76,
+    "stem": "読解・空欄補充\n部下：荷物、重そうですよね。わたしが（　）。\n課長：ありがとう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お持ちください"
+      },
+      {
+        "key": "B",
+        "text": "お持ちになります"
+      },
+      {
+        "key": "C",
+        "text": "お持ちします"
+      },
+      {
+        "key": "D",
+        "text": "持ってやりります"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "お持ちします",
+    "translation": "",
+    "explanation": "主动为上司拿行李，用自谦语「お持ちします」；A、B是尊敬语，D「持ってやります」语气粗鲁。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 67
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q077",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 77,
+    "stem": "読解・空欄補充\n四、（　）に入れるのに最もよいものを、A・B・C・D から一つ選なさい。（1×5=5）\nスピーチ大会の後、記者からの（　）を受けた。",
+    "options": [
+      {
+        "key": "A",
+        "text": "インターネット"
+      },
+      {
+        "key": "B",
+        "text": "インタビュー"
+      },
+      {
+        "key": "C",
+        "text": "インストール"
+      },
+      {
+        "key": "D",
+        "text": "インスタント"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "インタビュー",
+    "translation": "",
+    "explanation": "「記者からのインタビューを受けた」＝接受了记者的采访，符合句意；其余为“互联网、安装、速食的”，均不通。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 68
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「四、（　）に入れるのに最もよいものを、A・B・C・D から一つ選なさい。（1×5=5）」/ B 路「四、（　）に入れるのに最もよいものを、A・B・C・D から一つ選んでください。（1×5=5）」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q078",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 78,
+    "stem": "読解・空欄補充\n（　）を貯めると商品券や宝くじなどの品物に交換してくれます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ポイント"
+      },
+      {
+        "key": "B",
+        "text": "ポリシー"
+      },
+      {
+        "key": "C",
+        "text": "アポイント"
+      },
+      {
+        "key": "D",
+        "text": "プレ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ポイント",
+    "translation": "",
+    "explanation": "「ポイントを貯める」＝积攒积分，可兑换商品券等；「ポリシー（方针）」「アポイント（预约）」不能“积攒”。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 69
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q079",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 79,
+    "stem": "読解・空欄補充\nご（　）をお掛けしまして大変申し訳ございませんでした。",
+    "options": [
+      {
+        "key": "A",
+        "text": "迷惑"
+      },
+      {
+        "key": "B",
+        "text": "世話"
+      },
+      {
+        "key": "C",
+        "text": "遠慮"
+      },
+      {
+        "key": "D",
+        "text": "配慮"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "迷惑",
+    "translation": "",
+    "explanation": "「ご迷惑をお掛けする」是道歉的固定搭配，“给您添麻烦了”；「お世話をかける」不成立。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 70
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q080",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 80,
+    "stem": "読解・空欄補充\nこの問題については来週もう一度（　）ことにしましょう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "話しかけ"
+      },
+      {
+        "key": "B",
+        "text": "話し合う"
+      },
+      {
+        "key": "C",
+        "text": "話し込む"
+      },
+      {
+        "key": "D",
+        "text": "評"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "話し合う",
+    "translation": "",
+    "explanation": "「話し合う」＝互相商量，“下周再讨论一次”；「話しかける」是搭话、「話し込む」是谈得入迷，均不合。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 71
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q081",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 81,
+    "stem": "読解・空欄補充\n小野さんは昨日遅刻したことをまだ（　）います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "気に入って"
+      },
+      {
+        "key": "B",
+        "text": "気にして"
+      },
+      {
+        "key": "C",
+        "text": "気をつけて"
+      },
+      {
+        "key": "D",
+        "text": "気"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "気にして",
+    "translation": "",
+    "explanation": "「気にしている」＝在意、耿耿于怀，与“还在为昨天迟到的事介意”相符；「気に入る」是喜欢、「気をつける」是注意。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 72
+    },
+    "answerProvenance": "printed",
+    "status": "ready",
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q082",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 82,
+    "stem": "読解・空欄補充\n五、（　）に入れるのに最もよいものを、A・B・C・D から選なさい。（1×5=6）\n変なにおい（　）しますね。ごみ（　）燃えているよう",
+    "options": [
+      {
+        "key": "A",
+        "text": "が/が"
+      },
+      {
+        "key": "B",
+        "text": "で/を"
+      },
+      {
+        "key": "C",
+        "text": "を/を"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "が/が",
+    "translation": "",
+    "explanation": "「においがする」「ごみが燃えている」两处都用「が」提示主语，故选A。注：本页选项仅印到C，末句「燃えているよう」后疑有缺字。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 73
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「五、（　）に入れるのに最もよいものを、A・B・C・D から選なさい。（1×5=6）」/ B 路「五、（　）に入れるのに最もよいものを、A・B・C・D から一つ選んでください。（1×5=6）」）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q083",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 83,
+    "stem": "読解・空欄補充\n母は妹（　）塾（　）通わせています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "に/を"
+      },
+      {
+        "key": "B",
+        "text": "を/に"
+      },
+      {
+        "key": "C",
+        "text": "に/に"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "を/に",
+    "translation": "",
+    "explanation": "使役句「妹を塾に通わせる」：被使役者用「を」，目的地用「に」，故选B。本页选项仅印到C，疑缺D。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 74
+    },
+    "answerProvenance": "printed",
+    "status": "needs_review",
+    "reviewNotes": [
+      "模型标记待复核（置信度 medium）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q084",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 84,
+    "stem": "読解・空欄補充\n大連理工大学（　）励めております。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を"
+      },
+      {
+        "key": "B",
+        "text": "で"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "で",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n「励む」表示在某处努力，用「で」提示地点。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 75
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q085",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 85,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。(2×5=10分)\nある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の話です。\nアメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る<u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でした。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。\n飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われました。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也就是説）、一日<u>98</u>のです。\nところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさんの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シックラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験できない船の旅となりました。\n私は、この知人の話を聞いて、このような船旅も<u>100</u>と思いました。今は仕事で忙しくて時間の余裕がないが、私もいつか船旅をしてみたくなりました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ことにしました"
+      },
+      {
+        "key": "B",
+        "text": "ことになっていました"
+      },
+      {
+        "key": "C",
+        "text": "ものにしました"
+      },
+      {
+        "key": "D",
+        "text": "ものになりました"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ことにしました",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\nAI 两路解题结果不一致（A=A / B=B），暂采用 A，请人工确认。『帰りは船で帰ることにしました』が自然で、自分の意志で決めたことを表します。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 76
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「．<u>読んで、□</u>の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。(2×5=10分)」/ B 路「・読んで、□の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。(2×5=10分)」）",
+      "OCR 冲突：stem（A 路「毎日寝る前に１時間時計を遅らせる／失われた１日」/ B 路「毎日寝る前に1時間時計を遅らせる／失われた1日」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q086",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 86,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。(2×5=10分)\nある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の話です。\nアメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る<u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でした。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。\n飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われました。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也就是説）、一日<u>98</u>のです。\nところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさんの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シックラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験できない船の旅となりました。\n読解・空欄補充\n言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ところで"
+      },
+      {
+        "key": "B",
+        "text": "しかし"
+      },
+      {
+        "key": "C",
+        "text": "ながら"
+      },
+      {
+        "key": "D",
+        "text": "もちろん"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "しかし",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\nAI 两路解题结果不一致（A=B / B=D），暂采用 A，请人工确认。前後は対比関係にあり、『しかし』が文脈に合います。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 77
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「ときに、日付を一日先に進めるようになりました。」/ B 路「ときに、日付を一日先に進めることになりました。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q087",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 87,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。(2×5=10分)\nある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の話です。\nアメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る<u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でした。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。\n飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われました。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也就是説）、一日<u>98</u>のです。\nところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさんの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シックラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験できない船の旅となりました。\n読解・空欄補充\nつまり（也就是説）、一日<u>98</u>のです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "得た"
+      },
+      {
+        "key": "B",
+        "text": "失った"
+      },
+      {
+        "key": "C",
+        "text": "もらった"
+      },
+      {
+        "key": "D",
+        "text": "残った"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "失った",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n前文の『失われた一日』と一致し、『つまり、一日失ったのです』となります。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 78
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q088",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 88,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。(2×5=10分)\nある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の話です。\nアメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る<u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でした。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。\n飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われました。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也就是説）、一日<u>98</u>のです。\nところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさんの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シックラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験できない船の旅となりました。\n読解・空欄補充\nこれを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シックラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を祝いました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ために"
+      },
+      {
+        "key": "B",
+        "text": "ように"
+      },
+      {
+        "key": "C",
+        "text": "ような"
+      },
+      {
+        "key": "D",
+        "text": "ことに"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ために",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n『シックラーさんのためにパーティーを開く』が正しい用法です。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 79
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "OCR 冲突：stem（A 路「そのシックラーさんの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。」/ B 路「そのシックラーさんの誕生日がきたま（碰巧）日付変更線を越えるときに失われた1日だったのです。」）",
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  },
+  {
+    "id": "jp-3-2024-q089",
+    "category": "jp-3-2024",
+    "groupId": "jp-3-2024-g01",
+    "groupTitle": "理工大学（B）2024年12月6日",
+    "numberInGroup": 89,
+    "stem": "読解・空欄補充\n．<u>読んで、□</u>の中に入れる最もよいものを、A・B・C・Dから一つ選びなさい。(2×5=10分)\nある日、知人と喫茶店で話していた時、おもしろい話を聞きました。知人は大学時代に交換留学の機会を得て、9か月間アメリカの大学に留学したそうですが、その留学を終えて帰国する時、心に残る思い出ができたということです。以下、その知人の話です。\nアメリカに行くときは飛行機でしたが、帰りは船に乗ってみたくて、貨客船で帰る<u>96</u>。貨客船は基本的に貨物船ですが、乗客も11人まで乗せることのできる船でした。その貨客船に乗ってアメリカ西海岸の港を出て横浜に向かいました。\n飛行機なら到着時とかに時計を一度だけ調節するのが普通ですが、船旅では、港を出てから横浜に着くまで毎日寝る前に１時間時計を遅らせるように船員に言われました。言ってみれば（換句活説）、１日が25時間になったのです。<u>97</u>、日付変更線を越える（越過日期変更線）ときに、日付を一日先に進めるようになりました。つまり（也就是説）、一日<u>98</u>のです。\nところで、その船には小学校の教師を定年退職（退休）し、息子さんと一緒に日本へ旅行に行くシックラーさんという女性が乗っていました。そして、そのシックラーさんの誕生日がたまたま（碰巧）日付変更線を越えるときに失われた１日だったのです。これを知った船長が、それはあまりにもかわいそう（太可伶）だということで、シックラーさんの<u>99</u>パーティーを開くことにして、みんなでシックラーさんの誕生日を祝いました。おかげでみんな特別なパーティーを楽しむことができてなかなか経験できない船の旅となりました。\n読解・空欄補充\n私は、この知人の話を聞いて、このような船旅も<u>100</u>と思いました。今は仕事で忙しくて時間の余裕がないが、私もいつか船旅をしてみたくなりました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "悪い"
+      },
+      {
+        "key": "B",
+        "text": "辛い"
+      },
+      {
+        "key": "C",
+        "text": "悪くない"
+      },
+      {
+        "key": "D",
+        "text": "よくない"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "悪くない",
+    "translation": "",
+    "explanation": "> 🤖 答案由 AI 推得（卷面无答案，未经人工核对）\n\n船旅の話を聞いて『悪くない』と思い、自分もしてみたくなったという流れです。\n\n> ⚙ 解析由 AI 生成（未经人工核对）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "jp-3-2024.md",
+      "group": "理工大学（B）2024年12月6日",
+      "position": 80
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "答案由 AI 推得（卷面无答案，未经人工核对）"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single"
+  }
+]

@@ -55,6 +55,12 @@ export const ENTRIES: EntryMeta[] = [
       'marxism-7',
     ],
   },
+  {
+    key: 'jp-3',
+    name: '综合日语3',
+    icon: '组',
+    papers: ['jp-3-2022', 'jp-3-2024', 'jp-3'],
+  },
 ]
 
 /** 按 key（路由参数）找入口。 */

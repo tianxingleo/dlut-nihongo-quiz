@@ -252,6 +252,36 @@ export const CATEGORIES: CategoryMeta[] = [
     groupViewTitle: '刷题单',
     groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
   },
+  {
+    key: 'jp-3',
+    short: '学习通期中',
+    long: '学习通期中',
+    desc: '63题 · 双路 OCR 校对 · AI 解析 63 题',
+    icon: '组',
+    bankFile: 'jp-3-question-bank.json',
+    groupViewTitle: '刷题单',
+    groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
+  },
+  {
+    key: 'jp-3-2024',
+    short: '期末 2024',
+    long: '期末 2024',
+    desc: '85题 · 双路 OCR 校对 · AI 解析 85 题',
+    icon: '组',
+    bankFile: 'jp-3-2024-question-bank.json',
+    groupViewTitle: '刷题单',
+    groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
+  },
+  {
+    key: 'jp-3-2022',
+    short: '期末 2022',
+    long: '期末 2022',
+    desc: '79题 · 双路 OCR 校对 · AI 解析 78 题',
+    icon: '组',
+    bankFile: 'jp-3-2022-question-bank.json',
+    groupViewTitle: '刷题单',
+    groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
+  },
 ]
 
 const CATEGORY_MAP: Record<Category, CategoryMeta> = CATEGORIES.reduce(

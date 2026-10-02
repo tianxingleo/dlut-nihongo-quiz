@@ -35,6 +35,14 @@ const PROCESSED = path.join(root, 'data', 'processed')
 /** S4 给 AI 生成的解析留的可见标记 */
 const GENERATED_NOTE = '> ⚙ 解析由 AI 生成'
 /**
+ * S4 给「卷面没有答案、由 AI 推出来」的答案留的可见标记。
+ *
+ * 有它就意味着**答案是推的，不是卷面印的**：必须落成 `answerProvenance: 'generated'`
+ * 并且标成 `needs_review` —— 绝不能让 AI 推的答案在站上冒充卷面答案。
+ */
+const AI_ANSWER_NOTE = '> 🤖 答案由 AI 推得'
+const AI_ANSWER_REVIEW_NOTE = '答案由 AI 推得（卷面无答案，未经人工核对）'
+/**
  * 解析区开头的答案行。
  *
  * 解析端（沿用日语那条的实现）把 `#### 答案与解析` 之后的**全部内容**都塞进 `explanation`，
@@ -59,7 +67,7 @@ interface ParsedQuestion {
   tags: string[]
   source: { file: string; group: string; position: number }
   status: 'ready' | 'needs_review'
-  answerProvenance: 'printed'
+  answerProvenance: 'printed' | 'generated'
   explanationSource: 'printed' | 'generated' | 'none'
   reviewNotes?: string[]
   multiAnswer?: boolean
@@ -139,6 +147,42 @@ function generatedExplanationNumbers(content: string): Set<number> {
   return set
 }
 
+/** 哪些题的**答案是 AI 推的**（S4 会留 `> 🤖 答案由 AI 推得…`）。 */
+export function aiAnswerNumbers(content: string): Set<number> {
+  const set = new Set<number>()
+  for (const block of content.split(/(?=### 第\d+题)/)) {
+    const header = block.match(/^### 第(\d+)题/)
+    if (!header) continue
+    if (block.includes(AI_ANSWER_NOTE)) set.add(parseInt(header[1]))
+  }
+  return set
+}
+
+/**
+ * 一题的三个标记 → 站上字段。抽成纯函数是为了能单测（答案来源不能出错）。
+ *
+ * * 答案是 AI 推的 → `generated` + `needs_review`（并往 reviewNotes 里写清缘由）；
+ * * 只有解析是 AI 写的 → 仍 `printed`（答案还是卷面的）；
+ * * 都不沾 → `printed` + `ready`。
+ */
+export function resolveQuestionMarkers(
+  notes: string[] | undefined,
+  generatedExplanation: boolean,
+  aiAnswer: boolean,
+): {
+  answerProvenance: 'printed' | 'generated'
+  status: 'ready' | 'needs_review'
+  reviewNotes?: string[]
+} {
+  const reviewNotes = [...(notes ?? [])]
+  if (aiAnswer) reviewNotes.push(AI_ANSWER_REVIEW_NOTE)
+  return {
+    answerProvenance: aiAnswer ? 'generated' : 'printed',
+    status: reviewNotes.length ? 'needs_review' : 'ready',
+    ...(reviewNotes.length ? { reviewNotes } : {}),
+  }
+}
+
 const sha256 = (file: string) =>
   crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
 
@@ -193,6 +237,7 @@ function build(paper: Paper) {
 
   const notes = reviewNotesByNumber(content)
   const generated = generatedExplanationNumbers(content)
+  const aiAnswers = aiAnswerNumbers(content)
   const usedIds = new Set<string>()
   const questions: ParsedQuestion[] = raw.map((q, index) => {
     // id 必须全局唯一；同题号重复出现时补后缀（S4 允许跳号/拆题，不强求一一对应）
@@ -217,6 +262,11 @@ function build(paper: Paper) {
       : explanationText
         ? 'printed'
         : 'none'
+    const markers = resolveQuestionMarkers(
+      reviewNotes,
+      generated.has(q.numberInGroup),
+      aiAnswers.has(q.numberInGroup),
+    )
     return {
       id,
       category: paper.key,
@@ -232,12 +282,10 @@ function build(paper: Paper) {
       grammarPoints: [],
       tags: [],
       source: { file: path.basename(paper.md), group: groupTitle, position: index + 1 },
-      answerProvenance: 'printed',
+      ...markers,
       explanationSource,
-      status: reviewNotes ? 'needs_review' : 'ready',
       questionType,
       ...(isMulti ? { multiAnswer: true } : {}),
-      ...(reviewNotes ? { reviewNotes } : {}),
     }
   })
 
@@ -262,6 +310,8 @@ function build(paper: Paper) {
       generated: questions.filter((q) => q.explanationSource === 'generated').length,
       none: questions.filter((q) => q.explanationSource === 'none').length,
     },
+    /** 答案是 AI 推的（卷面无答案）有几道 —— 发布报告里必须一眼看得到 */
+    aiAnswers: questions.filter((q) => q.answerProvenance === 'generated').length,
     needsReview: needsReview.map((q) => ({ id: q.id, notes: q.reviewNotes })),
     numberGaps: (() => {
       const nums = questions.map((q) => q.numberInGroup)
@@ -308,6 +358,7 @@ function main() {
       `${report.category}: ${report.questions} 题 / ${report.groups.length} 个题组 / ` +
         `待复核 ${report.needsReview.length} / 解析 printed ${report.explanationSource.printed}` +
         ` · generated ${report.explanationSource.generated} · none ${report.explanationSource.none}` +
+        (report.aiAnswers ? ` / 🤖 AI 推得答案 ${report.aiAnswers} 题` : '') +
         (report.numberGaps.length ? ` / ⚠ 题号缺口 ${report.numberGaps.join(', ')}` : ''),
     )
     for (const group of report.groups) console.log(`  题组: ${group}`)

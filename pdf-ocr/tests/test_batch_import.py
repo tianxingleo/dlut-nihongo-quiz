@@ -31,16 +31,20 @@ print("[1] slug：只保留 a-z 0-9 -，纯中文返回空串")
 sandbox = Path(tempfile.mkdtemp(prefix="p7-"))
 try:
     # ── 2) 多份 PDF：分类名带序号；单份不带 ──────────────────────────────
+    # 输入**按文件头识别**，所以假文件也要写真 magic（`%PDF` / PNG 头）
     folder = sandbox / "english-cet4"
     folder.mkdir()
-    for name in ("2024B.pdf", "2024A.pdf", "note.txt"):
-        (folder / name).write_text("x", encoding="utf-8")
-    pdfs = import7.collect_pdfs(folder)
+    for name in ("2024B.pdf", "2024A.pdf"):
+        (folder / name).write_bytes(b"%PDF-1.4 fake pdf\n")
+    (folder / "note.txt").write_text("x", encoding="utf-8")  # 不是输入，应被忽略
+    pdfs, images = import7.collect_sources(folder)
     assert [p.name for p in pdfs] == ["2024A.pdf", "2024B.pdf"], [p.name for p in pdfs]  # 排序稳定
+    assert images == [], images
     rows = import7.plan(folder, pdfs, "english-cet4", "english-cet4", "")
     # 文件名能推出 ASCII 名字 → **每份卷用自己的目录名**（每份卷一个独立文件夹）
     assert [r["category"] for r in rows] == ["2024a", "2024b"], rows
     assert [r["paper"] for r in rows] == ["2024A", "2024B"], rows
+    assert [r["kind"] for r in rows] == ["pdf", "pdf"], rows
     single = import7.plan(folder, pdfs[:1], "english-cet4", "english-cet4", "")
     assert single[0]["category"] == "2024a", single
     # 纯中文文件名 slug 后只剩数字 → **不能拿它当目录名**，退回 `<前缀>-<序号>`
@@ -49,6 +53,37 @@ try:
     # 卡片名要去掉 `_0_<长数字>` **和下载后缀 `(1)`**（否则侧栏挂着「马原试卷1(1)」）
     assert cn_rows[0]["paper"] == "马原试卷1", cn_rows
     print("[2] 计划：能推出名字就用文件名（每卷一个目录）、纯中文退回前缀+序号；卡片名去掉 `_0_<长数字>`")
+
+    # ── 2b) 图片输入：整文件夹的图 = 一份卷；`--images each` = 一张一份 ────
+    scans = sandbox / "扫描件"
+    scans.mkdir()
+    # 自然序：IMG_2 必须排在 IMG_10 前面（页序错了整卷就乱）
+    for name in ("IMG_10.png", "IMG_2.png", "IMG_1.png"):
+        (scans / name).write_bytes(b"\x89PNG\r\n\x1a\n" + b"fake")
+    (scans / "note.txt").write_text("x", encoding="utf-8")
+    pdfs2, images2 = import7.collect_sources(scans)
+    assert pdfs2 == [] and [p.name for p in images2] == ["IMG_1.png", "IMG_2.png", "IMG_10.png"], [
+        p.name for p in images2
+    ]
+    grouped = import7.plan(scans, [], "x", "scans", "", images2, "one")
+    assert len(grouped) == 1, grouped
+    assert grouped[0]["category"] == "scans", grouped
+    assert [p.name for p in grouped[0]["sources"]] == ["IMG_1.png", "IMG_2.png", "IMG_10.png"], grouped[0]
+    assert grouped[0]["kind"] == "image", grouped[0]
+    each = import7.plan(scans, [], "x", "scans", "", images2, "each")
+    # 图片名是 ASCII（IMG_1 → img-1）→ 每张用自己的名字当目录；自然序保证 IMG_10 排在最后
+    assert [r["category"] for r in each] == ["img-1", "img-2", "img-10"], each
+    assert [r["paper"] for r in each] == ["IMG_1", "IMG_2", "IMG_10"], each
+    # 纯中文图片名推不出目录名 → 退回 `<前缀>-<序号>`
+    cn_scans = sandbox / "手机照片"
+    cn_scans.mkdir()
+    for name in ("第一页.jpg", "第二页.jpg"):
+        (cn_scans / name).write_bytes(b"\xff\xd8\xff\xe0" + b"fake")
+    _p, cn_images = import7.collect_sources(cn_scans)
+    cn_each = import7.plan(cn_scans, [], "x", "photos", "", cn_images, "each")
+    assert [r["category"] for r in cn_each] == ["photos-1", "photos-2"], cn_each
+    assert [r["paper"] for r in cn_each] == ["第一页", "第二页"], cn_each
+    print("[2b] 图片输入：自然序拼页、整夹一份卷；`--images each` 一张一份")
 
     # ── 3) dry-run：**入口名默认 = 文件夹名**；中文名给稳定兜底 key ───────
     cn = sandbox / "马原试卷"

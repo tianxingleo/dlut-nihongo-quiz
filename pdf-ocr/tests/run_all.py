@@ -9,6 +9,7 @@
 
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 import time
@@ -18,6 +19,13 @@ TESTS_DIR = Path(__file__).resolve().parent
 
 
 def main() -> int:
+    # Windows 控制台默认 GBK，打印 `✓`/`✗` 会 UnicodeEncodeError（**直接崩在这一行**，
+    # 测试结果都看不到）→ 先把 stdio 钉成 UTF-8，和 pdf-ocr 各步的做法一致。
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
     quiet = "--quiet" in sys.argv[1:]
     files = sorted(TESTS_DIR.glob("test_*.py"))
     if not files:
@@ -34,6 +42,9 @@ def main() -> int:
             text=True,
             encoding="utf-8",
             errors="replace",
+            # 子进程的 stdout 是管道 → 默认按系统编码（Windows GBK）打字，遇到 `✓`/`✗` 会崩。
+            # 这里统一钉成 UTF-8，和 run_all 自己、以及 pdf-ocr 各步的口径一致。
+            env={**os.environ, "PYTHONIOENCODING": "utf-8"},
         )
         ms = (time.perf_counter() - started) * 1000
         status = "✓" if proc.returncode == 0 else "✗"

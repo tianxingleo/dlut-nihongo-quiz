@@ -262,6 +262,11 @@ def main() -> int:
     parser.add_argument("--category", help="分类名（读 data/raw/<分类名>/<分类名>.md）")
     parser.add_argument("--md", help="直接指定要校验的 md 路径")
     parser.add_argument("--quiet", action="store_true", help="只打印汇总行")
+    parser.add_argument(
+        "--allow-ai-answers",
+        action="store_true",
+        help="允许「AI 推得的答案」超过可收下题目的 1/2（默认拒发：那批题在站上只是待复核）",
+    )
     args = parser.parse_args()
 
     c.setup_stdio()
@@ -377,6 +382,23 @@ def main() -> int:
     if marks:
         soft.append(f"带待复核标记 {len(marks)} 处")
 
+    # ── AI 推得的答案（`--answers ai/auto`）──
+    # 这条判定是**发布门禁**的一部分（用户规则）：整卷 >1/2 的答案是 AI 推的，
+    # 就不该悄悄当题库发布 —— 站上那些题是"待复核"，不是标准答案。
+    ai_answers = len(re.findall(r"^> 🤖 答案由 AI 推得", content, re.M))
+    ai_ratio = ai_answers / len(kept) if kept else 0.0
+    if ai_answers:
+        message = (
+            f"AI 推得的答案 {ai_answers} 题（占可收下题目的 {ai_ratio * 100:.0f}%）"
+            "—— 题库里这些题是 `answerProvenance: 'generated'` + `status: 'needs_review'`"
+        )
+        if ai_ratio > 0.5 and not args.allow_ai_answers:
+            hard.append(
+                message + "；**超过 1/2，默认拒绝发布**（确认要发就加 --allow-ai-answers）"
+            )
+        else:
+            soft.append(message)
+
     # ── 报告 ──
     c.info("")
     if drops:
@@ -395,6 +417,7 @@ def main() -> int:
     c.always(
         f"[S5/5 校验] 契约检查：题块 {len(numbers)} / 题组 {len(set(group_nums))} / "
         f"会被丢弃 {len(drops)} / 公共题干 {article_blocks} 段 / "
+        f"AI 推得答案 {ai_answers} / "
         f"硬错误 {len(hard)} / 警告 {len(soft)}  {status}"
     )
     c.always(f"[S5/5 校验] {md_path.name} → 解析端可收下 {len(kept)} 题")
@@ -417,6 +440,8 @@ def main() -> int:
         "groups": len(set(group_nums)),
         "parser_kept": len(kept),
         "parser_dropped": len(drops),
+        "ai_answers": ai_answers,
+        "ai_answer_ratio": round(ai_ratio, 4),
         "hard_errors": hard,
         "warnings": soft,
     }

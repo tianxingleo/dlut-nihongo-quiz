@@ -9,6 +9,7 @@ import {
 } from '../../utils/multiAnswer'
 import { renderExplanation } from '../../utils/renderExplanation'
 import { renderMarkdown } from '../../utils/renderMarkdown'
+import { highlightUnderlines } from '../../utils/highlightUnderlines'
 import {
   renderQuestionMarkdown,
   renderQuestionMarkdownInline,
@@ -268,7 +269,9 @@ const canSubmit = computed(() => {
   }
   return props.selectedKey.length > 0
 })
-const renderedStem = computed(() => renderContent(props.question.stem))
+// 题干里的下划线标记（`<u>…</u>` = 卷面真正划住的字；`____` = 空栏）在题干里上色显示。
+// 只处理题干：选项与解析保持原样（用户要求"仅仅是正题题干中的部分"）。
+const renderedStem = computed(() => highlightUnderlines(renderContent(props.question.stem)))
 
 const isCorrectOverall = computed(() => {
   if (isFillQuestion.value) {
@@ -595,6 +598,23 @@ const dragOpacity = computed(() => {
 }
 .q-stem :deep(p + p) {
   margin-top: 0.4em;
+}
+/* 卷面上被下划线划住的文字（OCR 用 <u> 标出）：题干里上色 + 加粗下划线。
+   用户要求：只标正题题干里被划住的那部分，别整句标。 */
+.q-stem :deep(u),
+.q-stem :deep(.u-mark) {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+/* 填空/排序题的空栏（`____`）：不上真下划线，改用底色块，和"划住的词"区分开 */
+.q-stem :deep(.u-blank) {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  padding: 0 2px;
+  letter-spacing: 0.06em;
 }
 .q-hint {
   font-size: 13px;

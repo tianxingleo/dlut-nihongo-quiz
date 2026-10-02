@@ -10,16 +10,18 @@ python pdf-ocr/tests/test_answer_matching.py   # 单个文件也可以直接跑
 
 文件名按**它测的行为**命名；括号里是对应的流水线阶段（S1–S6 只是脚本编号，不是命名依据）。
 
-| 文件                             | 测什么                                                                     | 阶段    |
-| -------------------------------- | -------------------------------------------------------------------------- | ------- |
-| `test_ocr_concurrency.py`        | 两路 OCR 的并发/退避、预算护栏（跑满 `--max-tokens` 就停）                 | S2      |
-| `test_question_normalization.py` | `answerKey`（含 `√`/`×` 判断题）与 `questionType` 规范化、答案行不参与判重 | S3      |
-| `test_question_coverage.py`      | 题号覆盖核对：答案表里有、题目里没有 → 报警；少题护栏                      | S3      |
-| `test_markdown_build.py`         | md 渲染与格式契约：跨页拼接、题组、字段完整性                              | S4      |
-| `test_answer_matching.py`        | 答案表 / 评分标准贴回题目（含不印题号的答案页、`√`/`×`、材料题）           | S4      |
-| `test_dedupe_and_ai_review.py`   | 页内判重 + 全卷 AI 终审、判型、AI 答案护栏                                 | S3 + S4 |
-| `test_publish.py`                | 发布与下架：7 处注册点、课程树分组、叶子标题刷新                           | S6      |
-| `test_batch_import.py`           | 批量导入计划、退出码三桶、`--only`、失败/放弃后自动继续                    | S7      |
+| 文件                             | 测什么                                                                                                             | 阶段    |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------- |
+| `test_ocr_concurrency.py`        | 两路 OCR 的并发/退避、预算护栏（跑满 `--max-tokens` 就停）                                                         | S2      |
+| `test_image_input.py`            | 输入识别（PDF/图片/文件夹，按文件头）、自然序页序、S1 把原图**复制**进工作目录（源文件夹删掉也能跑）、`--max-side` | S1      |
+| `test_question_normalization.py` | `answerKey`（含 `√`/`×` 判断题）与 `questionType` 规范化、答案行不参与判重                                         | S3      |
+| `test_question_coverage.py`      | 题号覆盖核对：答案表里有、题目里没有 → 报警；少题护栏                                                              | S3      |
+| `test_markdown_build.py`         | md 渲染与格式契约：跨页拼接、题组、字段完整性                                                                      | S4      |
+| `test_answer_matching.py`        | 答案表 / 评分标准贴回题目（含不印题号的答案页、`√`/`×`、材料题）                                                   | S4      |
+| `test_dedupe_and_ai_review.py`   | 页内判重 + 全卷 AI 终审、判型、AI 答案护栏                                                                         | S3 + S4 |
+| `test_ai_answer_solving.py`      | 卷面没答案时的 AI 两路解题：只解客观题、两路一致/分歧、原文→字母对位、答案来源标记、缓存、S5 的 AI 答案门禁         | S4 + S5 |
+| `test_publish.py`                | 发布与下架：7 处注册点、课程树分组、叶子标题刷新                                                                   | S6      |
+| `test_batch_import.py`           | 批量导入计划、图片分组（`--images one/each`）、退出码三桶、失败/放弃后自动继续                                     | S7      |
 
 ## 不是测试的两个文件
 

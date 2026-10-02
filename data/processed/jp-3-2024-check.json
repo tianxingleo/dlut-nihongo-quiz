@@ -1,0 +1,20 @@
+{
+  "category": "jp-3-2024",
+  "md": "data/raw/jp-3-2024/jp-3-2024.md",
+  "md_sha256": "4842f2a7ec7e8bcc190fca640530ebc8311e9193868236b95402d467b667e3dc",
+  "checked_at": "2026-10-02T20:27:11+08:00",
+  "exit_code": 2,
+  "passed": true,
+  "questions": 89,
+  "groups": 1,
+  "parser_kept": 80,
+  "parser_dropped": 9,
+  "ai_answers": 18,
+  "ai_answer_ratio": 0.225,
+  "hard_errors": [],
+  "warnings": [
+    "会被解析端丢弃的题 9 道（占 10.1%） —— 按「丢弃 < 1/5 可上传」放行；这些题不会上站，逐条原因见 report.md 的「字段不完整」表",
+    "带待复核标记 106 处",
+    "AI 推得的答案 18 题（占可收下题目的 22%）—— 题库里这些题是 `answerProvenance: 'generated'` + `status: 'needs_review'`"
+  ]
+}

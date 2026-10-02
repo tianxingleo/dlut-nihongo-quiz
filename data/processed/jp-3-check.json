@@ -1,0 +1,16 @@
+{
+  "category": "jp-3",
+  "md": "data/raw/jp-3/jp-3.md",
+  "md_sha256": "645c9503bb2a784040ad9c6b160f0af7b211c942f8fd3e0c5b1cec492a780eb8",
+  "checked_at": "2026-10-02T01:23:22+08:00",
+  "exit_code": 2,
+  "passed": true,
+  "questions": 63,
+  "groups": 1,
+  "parser_kept": 63,
+  "parser_dropped": 0,
+  "hard_errors": [],
+  "warnings": [
+    "带待复核标记 31 处"
+  ]
+}
