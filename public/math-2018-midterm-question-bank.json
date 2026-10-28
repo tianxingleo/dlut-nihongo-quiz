@@ -119,7 +119,7 @@
     "groupId": "math-2018-midterm-2018",
     "groupTitle": "2018年期中",
     "numberInGroup": 4,
-    "stem": "已知 $\\lim_{x\\to0^+}\\frac{\\sqrt{1+\\tan\\sqrt x}-\\sqrt{1+\\sin\\sqrt x}}{x^k}=c\ne0$，求 $k,c$。",
+    "stem": "已知 $\\lim_{x\\to0^+}\\frac{\\sqrt{1+\\tan\\sqrt x}-\\sqrt{1+\\sin\\sqrt x}}{x^k}=c\\ne0$，求 $k,c$。",
     "options": [],
     "answerKey": "",
     "answerText": "$\\frac{3}{2}$，$\\frac{1}{4}$",
@@ -249,7 +249,7 @@
     "groupId": "math-2018-midterm-2018",
     "groupTitle": "2018年期中",
     "numberInGroup": 7,
-    "stem": "若 $\\lim\\limits_{x\\to 0}\\frac{\\tan x+xf(x)}{x^{3}}=0$，则 $\\lim\\limits_{x\\to 0}\\frac{1+f(x)}{x^{2}}=$ ________．",
+    "stem": "若 $\\lim\\limits_{x\\to 0}\\frac{\\tan x+xf(x)}{x^{3}}=0$，则 $\\lim\\limits_{x\\to 0}\\frac{1+f(x)}{x^{2}}=$ ＿＿＿＿．",
     "options": [
       {
         "key": "A",
@@ -302,7 +302,7 @@
     "groupId": "math-2018-midterm-2018",
     "groupTitle": "2018年期中",
     "numberInGroup": 8,
-    "stem": "曲线 $y=\\frac{1+e^{-x^{2}}}{1-e^{-x^{2}}}$ 有________条渐近线．",
+    "stem": "曲线 $y=\\frac{1+e^{-x^{2}}}{1-e^{-x^{2}}}$ 有＿＿＿＿条渐近线．",
     "options": [
       {
         "key": "A",
@@ -355,7 +355,7 @@
     "groupId": "math-2018-midterm-2018",
     "groupTitle": "2018年期中",
     "numberInGroup": 9,
-    "stem": "设 $F(x)=\\begin{cases}\\dfrac{f(x)}{x}, & x\neq 0,\\\\ f(0), & x=0\\end{cases}$，其中 $f(x)$ 在 $x=0$ 处可导，$f'(0)\neq 0$，$f(0)=0$，则 $x=0$ 是 $F(x)$ 的________．",
+    "stem": "设 $F(x)=\\begin{cases}\\dfrac{f(x)}{x}, & x\\neq 0,\\\\ f(0), & x=0\\end{cases}$，其中 $f(x)$ 在 $x=0$ 处可导，$f'(0)\\neq 0$，$f(0)=0$，则 $x=0$ 是 $F(x)$ 的＿＿＿＿．",
     "options": [
       {
         "key": "A",
@@ -408,11 +408,11 @@
     "groupId": "math-2018-midterm-2018",
     "groupTitle": "2018年期中",
     "numberInGroup": 10,
-    "stem": "设 $f(x)$ 在 $x=0$ 某邻域内有二阶连续导数，且 $\\lim\\limits_{x\\to 0}\\frac{xf''(x)}{1-\\cos x}=1$，则________．",
+    "stem": "设 $f(x)$ 在 $x=0$ 某邻域内有二阶连续导数，且 $\\lim\\limits_{x\\to 0}\\frac{xf''(x)}{1-\\cos x}=1$，则＿＿＿＿．",
     "options": [
       {
         "key": "A",
-        "text": "$f''(0)\neq 0$，但 $(0,f(0))$ 是 $y=f(x)$ 的拐点"
+        "text": "$f''(0)\\neq 0$，但 $(0,f(0))$ 是 $y=f(x)$ 的拐点"
       },
       {
         "key": "B",
@@ -424,7 +424,7 @@
       },
       {
         "key": "D",
-        "text": "$f''(0)\neq 0$，且 $f(0)$ 是 $y=f(x)$ 的极小值"
+        "text": "$f''(0)\\neq 0$，且 $f(0)$ 是 $y=f(x)$ 的极小值"
       }
     ],
     "answerKey": "C",

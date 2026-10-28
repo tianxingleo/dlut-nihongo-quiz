@@ -18,7 +18,7 @@
 
 ### 2
 
-$\lim\limits_{x\to\infty}\left(\dfrac{x}{x+1}\right)^x=$ ______，$\lim\limits_{n\to\infty}\left(\dfrac{1}{n^2+n+1}+\dfrac{2}{n^2+n+2}+\cdots+\dfrac{n}{n^2+n+n}\right)=$ ______。
+$\lim\limits_{x\to\infty}\left(\dfrac{x}{x+1}\right)^x=$ ＿＿＿＿，$\lim\limits_{n\to\infty}\left(\dfrac{1}{n^2+n+1}+\dfrac{2}{n^2+n+2}+\cdots+\dfrac{n}{n^2+n+n}\right)=$ ＿＿＿＿。
 
 
 
@@ -28,7 +28,7 @@ $\lim\limits_{x\to\infty}\left(\dfrac{x}{x+1}\right)^x=$ ______，$\lim\limits_{
 
 ### 3
 
-曲线 $\begin{cases} x=e^t\sin 2t \\ y=e^t\cos t \end{cases}$ 在 $(0,1)$ 处的切线斜率为 ______，切线方程为 ______。
+曲线 $\begin{cases} x=e^t\sin 2t \\ y=e^t\cos t \end{cases}$ 在 $(0,1)$ 处的切线斜率为 ＿＿＿＿，切线方程为 ＿＿＿＿。
 
 
 
@@ -38,7 +38,7 @@ $\lim\limits_{x\to\infty}\left(\dfrac{x}{x+1}\right)^x=$ ______，$\lim\limits_{
 
 ### 4
 
-$e^{x+y}-xy=1$，$dy=$ ______，$y''(0)=$ ______。
+$e^{x+y}-xy=1$，$dy=$ ＿＿＿＿，$y''(0)=$ ＿＿＿＿。
 
 
 
@@ -50,7 +50,7 @@ $e^{x+y}-xy=1$，$dy=$ ______，$y''(0)=$ ______。
 
 ### 5
 
-若 $\lim\limits_{x\to 1}\dfrac{x^2+ax+b}{x^2+x-2}=2$，则 $a=$ ______，$b=$ ______。
+若 $\lim\limits_{x\to 1}\dfrac{x^2+ax+b}{x^2+x-2}=2$，则 $a=$ ＿＿＿＿，$b=$ ＿＿＿＿。
 
 
 
@@ -152,16 +152,13 @@ D. $\infty$
 
 ### 12
 
-（10分）设 $f(x)=\begin{cases}\dfrac{g(x)-\sin x}{x}, & x
-eq 0,\\[2mm] a, & x=0\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。
+（10分）设 $f(x)=\begin{cases}\dfrac{g(x)-\sin x}{x}, & x\neq 0,\\[2mm] a, & x=0\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。
 
 
 
-参考解答： $a=0$；$f'(x)=\begin{cases}\dfrac{x(g'(x)-\cos x)-g(x)+\sin x}{x^2},&x
-e0\\g''(0)/2,&x=0\end{cases}$；$f'$ 连续。
+参考解答： $a=0$；$f'(x)=\begin{cases}\dfrac{x(g'(x)-\cos x)-g(x)+\sin x}{x^2},&x\ne0\\g''(0)/2,&x=0\end{cases}$；$f'$ 连续。
 
-由 $g(x)=x+g''(0)x^2/2+o(x^2)$ 得 $a=0$ 且 $f'(0)=g''(0)/2$。对 $x
-e0$ 用商法则得到导数公式。又 $g'(x)=1+g''(0)x+o(x)$，故导数分子为 $g''(0)x^2/2+o(x^2)$，从而 $\lim_{x\to0}f'(x)=f'(0)$。其他点的连续性由 $g\in C^2$ 得到。
+由 $g(x)=x+g''(0)x^2/2+o(x^2)$ 得 $a=0$ 且 $f'(0)=g''(0)/2$。对 $x\ne0$ 用商法则得到导数公式。又 $g'(x)=1+g''(0)x+o(x)$，故导数分子为 $g''(0)x^2/2+o(x^2)$，从而 $\lim_{x\to0}f'(x)=f'(0)$。其他点的连续性由 $g\in C^2$ 得到。
 
 校对记录：对照原卷并重新推导，修正转写或补全解析。
 
@@ -173,8 +170,7 @@ e0$ 用商法则得到导数公式。又 $g'(x)=1+g''(0)x+o(x)$，故导数分�
 
 参考解答： （1）a=−1 连续； （2）a=−2 可去； （3）a≠−1，a≠−2 跳跃； （4）a=∅ 空集
 
-左极限为 $-6a$，右极限为 $4(a^2/2+1)=2a^2+4$。二者相等当且仅当 $(a+1)(a+2)=0$。$a=-1$ 时共同极限为 $6=f(0)$，连续；$a=-2$ 时共同极限为 $12
-e f(0)$，可去间断；其他实数 $a$ 为跳跃间断。两侧极限始终有限，故不存在使其成为第二类间断点的实数 $a$。
+左极限为 $-6a$，右极限为 $4(a^2/2+1)=2a^2+4$。二者相等当且仅当 $(a+1)(a+2)=0$。$a=-1$ 时共同极限为 $6=f(0)$，连续；$a=-2$ 时共同极限为 $12\ne f(0)$，可去间断；其他实数 $a$ 为跳跃间断。两侧极限始终有限，故不存在使其成为第二类间断点的实数 $a$。
 
 校对记录：对照原卷并重新推导，修正转写或补全解析。
 
@@ -204,7 +200,7 @@ e f(0)$，可去间断；其他实数 $a$ 为跳跃间断。两侧极限始终�
 
 ### 1
 
-$\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^n=$ ________；$\lim\limits_{x\to 0}\frac{\sin 2x}{(1+x\sin\frac{1}{x})\tan x}=$ ________。
+$\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^n=$ ＿＿＿＿；$\lim\limits_{x\to 0}\frac{\sin 2x}{(1+x\sin\frac{1}{x})\tan x}=$ ＿＿＿＿。
 
 
 
@@ -214,7 +210,7 @@ $\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^n=$ ________；$\lim\limit
 
 ### 2
 
-设函数 $y=y(x)$ 由方程 $e^y+xy=e$ 确定，则 $\frac{dy}{dx}=$ ________，曲线 $y=y(x)$ 在 $(0,1)$ 点处切线方程为________。
+设函数 $y=y(x)$ 由方程 $e^y+xy=e$ 确定，则 $\frac{dy}{dx}=$ ＿＿＿＿，曲线 $y=y(x)$ 在 $(0,1)$ 点处切线方程为＿＿＿＿。
 
 
 
@@ -224,7 +220,7 @@ $\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^n=$ ________；$\lim\limit
 
 ### 3
 
-设函数 $y(x)$ 由参数方程 $\begin{cases}x=t^3+3t+1\\y=t^3-3t+1\end{cases}$ 确定，则函数 $y(x)$ 单调增加的 $x$ 的取值范围是________，曲线 $y=y(x)$ 下凸的 $x$ 取值范围是________。
+设函数 $y(x)$ 由参数方程 $\begin{cases}x=t^3+3t+1\\y=t^3-3t+1\end{cases}$ 确定，则函数 $y(x)$ 单调增加的 $x$ 的取值范围是＿＿＿＿，曲线 $y=y(x)$ 下凸的 $x$ 取值范围是＿＿＿＿。
 
 
 
@@ -234,7 +230,7 @@ $\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^n=$ ________；$\lim\limit
 
 ### 4
 
-设当 $x\to 0$ 时，$e^x-(ax^2+bx+1)$ 是比 $x^2$ 高阶的无穷小，则 $a=$ ________，$b=$ ________。
+设当 $x\to 0$ 时，$e^x-(ax^2+bx+1)$ 是比 $x^2$ 高阶的无穷小，则 $a=$ ＿＿＿＿，$b=$ ＿＿＿＿。
 
 
 
@@ -244,7 +240,7 @@ $\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^n=$ ________；$\lim\limit
 
 ### 5
 
-设 $f(x)=x^3\sin x$，则 $f'(0)=$ ________， $f^{(2011)}(0)=$ ________。
+设 $f(x)=x^3\sin x$，则 $f'(0)=$ ＿＿＿＿， $f^{(2011)}(0)=$ ＿＿＿＿。
 
 
 
@@ -326,13 +322,11 @@ A. $f(a)>0$ 且 $f'(a)>0$
 
 B. $f(a)<0$ 且 $f'(a)<0$
 
-C. $f(a)=0$ 且 $f'(a)
-eq 0$
+C. $f(a)=0$ 且 $f'(a)\neq 0$
 
 D. $f(a)=0$ 且 $f'(a)=0$
 
-参考解答：C $f(a)=0$ 且 $f'(a)
-eq 0$
+参考解答：C $f(a)=0$ 且 $f'(a)\neq 0$
 
 
 
@@ -350,19 +344,16 @@ eq 0$
 
 ### 12
 
-（10分）设 $f(x)=\begin{cases}\frac{g(x)-\sin x}{x},&x
-eq 0,\\ a,&x=0\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，$g''(0)=2$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。
+（10分）设 $f(x)=\begin{cases}\frac{g(x)-\sin x}{x},&x\neq 0,\\ a,&x=0\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，$g''(0)=2$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。
 
 
 
-参考解答： $a=0$；$f'(x)=\begin{cases}\dfrac{x(g'(x)-\cos x)-g(x)+\sin x}{x^2},&x
-e0\\1,&x=0\end{cases}$；$f'$ 连续，$f'(0)=1$。
+参考解答： $a=0$；$f'(x)=\begin{cases}\dfrac{x(g'(x)-\cos x)-g(x)+\sin x}{x^2},&x\ne0\\1,&x=0\end{cases}$；$f'$ 连续，$f'(0)=1$。
 
 解：(1) $a=\lim_{x\to 0}\dfrac{g(x)-\sin x}{x}\left(\dfrac{0}{0}\right)=\lim_{x\to 0}(g'(x)-\cos x)=0$（4 分）
 (2) $f'(0)=\lim_{x\to 0}\frac{f(x)-f(0)}{x}=\lim_{x\to 0}\frac{g(x)-\sin x}{x^2}$
 $=\lim_{x\to 0}\frac{g'(x)-\cos x}{2x}=\lim_{x\to 0}\frac{g''(x)+\sin x}{2}=\frac{g''(0)}{2}=1$
-$\therefore f'(x)=\begin{cases}\frac{x(g'(x)-\cos x)-(g(x)-\sin x)}{x^2}, & x
-eq 0\text{时} \\ 1, & x=0\text{时}\end{cases}$　　（8 分）
+$\therefore f'(x)=\begin{cases}\frac{x(g'(x)-\cos x)-(g(x)-\sin x)}{x^2}, & x\neq 0\text{时} \\ 1, & x=0\text{时}\end{cases}$　　（8 分）
 (3) $\lim_{x\to 0}f'(x)=\lim_{x\to 0}\frac{x(g'(x)-\cos x)-(g(x)-\sin x)}{x^2}$
 $=\lim_{x\to 0}\frac{g'(x)-\cos x+x(g''(x)+\sin x)-(g'(x)-\cos x)}{2x}$
 $=\frac{g''(0)}{2}=1=f'(0)$，因此 $f'(x)$ 在 $(-\infty,+\infty)$ 连续。　　（10 分）
@@ -403,8 +394,7 @@ $\therefore \left(\frac{f(x)}{x}\right)'>0$，即 $\frac{f(x)}{x}$ 单调增加�
 
 七、证明：令 $F(x)=x^n f(x)$　　（4 分）
 则 $F(x)$ 在 $[0,1]$ 连续，$(0,1)$ 可导，$F(0)=F(1)=0$，由罗尔定理，至少存在 $x_0\in(0,1)$ 使 $F'(x_0)=0$，即　$nx_0^{n-1}f(x_0)+x_0^n f'(x_0)=x_0^{n-1}(nf(x_0)+x_0f'(x_0))=0$
-又 $x_0^{n-1}
-eq 0$，故 $nf(x_0)+x_0f'(x_0)=0$　　（10 分）
+又 $x_0^{n-1}\neq 0$，故 $nf(x_0)+x_0f'(x_0)=0$　　（10 分）
 
 ## 2012年期中
 
@@ -470,7 +460,7 @@ $f(x)=\frac23x^4+o(x^4)$，且为解析偶函数，故为四阶无穷小，三�
 
 ### 6
 
-以下极限计算中正确的是________。
+以下极限计算中正确的是＿＿＿＿。
 
 A. $\lim_{x\to0}x\sin(1/x)=1$
 
@@ -506,7 +496,7 @@ D. (2,3)
 
 ### 8
 
-对于定义在 (-1,1) 上的函数 f(x)，下列命题中正确的是________。
+对于定义在 (-1,1) 上的函数 f(x)，下列命题中正确的是＿＿＿＿。
 
 A. 如果 $x<0$ 时 $f'(x)<0$，$x>0$ 时 $f'(x)>0$，则 $f(0)$ 为极小值。
 
@@ -524,7 +514,7 @@ D. 如果 $f$ 为偶函数且可导，则 $f'(0)=0$。
 
 ### 9
 
-若 $\lim\limits_{x\to 0}\dfrac{\ln(1+x)-(ax+bx^{2})}{x^{2}}=2$，则______。
+若 $\lim\limits_{x\to 0}\dfrac{\ln(1+x)-(ax+bx^{2})}{x^{2}}=2$，则＿＿＿＿。
 
 A. $a=1,b=-\dfrac{5}{2}$；
 
@@ -540,7 +530,7 @@ D. $a=0,b=2$。
 
 ### 10
 
-设函数 $f(x)$ 在点 $x=0$ 的某邻域内三阶可导，且 $\lim\limits_{x\to 0}\dfrac{f'(x)}{1-\cos x}=-1$，则______。
+设函数 $f(x)$ 在点 $x=0$ 的某邻域内三阶可导，且 $\lim\limits_{x\to 0}\dfrac{f'(x)}{1-\cos x}=-1$，则＿＿＿＿。
 
 A. $f(0)$ 为 $f(x)$ 的一个极大值；
 
@@ -552,8 +542,7 @@ D. $f'(0)$ 为 $f'(x)$ 的一个极小值。
 
 参考解答：C $f'(0)$ 为 $f'(x)$ 的一个极大值；
 
-由极限条件及 $f'$ 连续，有 $f'(0)=0$。充分接近 $0$ 且 $x
-e0$ 时，$f'(x)/(1-\cos x)<0$，所以 $f'(x)<0=f'(0)$。因此 $f'(0)$ 是导函数 $f'$ 的严格极大值，选 C。
+由极限条件及 $f'$ 连续，有 $f'(0)=0$。充分接近 $0$ 且 $x\ne0$ 时，$f'(x)/(1-\cos x)<0$，所以 $f'(x)<0=f'(0)$。因此 $f'(0)$ 是导函数 $f'$ 的严格极大值，选 C。
 
 校对记录：对照原卷并重新推导，修正转写或补全解析。
 
@@ -630,7 +619,7 @@ $2f'(\xi)=\tan\dfrac{\xi}{2}\cdot f(\xi)$． ——10 分
 
 ### 1
 
-$\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^{n}$ = __________，曲线 $y=\frac{2x^{3}}{x^{2}+1}$ 的渐近线方程为 __________。
+$\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^{n}$ = ＿＿＿＿，曲线 $y=\frac{2x^{3}}{x^{2}+1}$ 的渐近线方程为 ＿＿＿＿。
 
 
 
@@ -640,7 +629,7 @@ $\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^{n}$ = __________，曲线
 
 ### 2
 
-设函数 $y=f(x)$ 由参数方程 { $x=1+t^{2}$，$y=\cos t$ } 确定，则该函数表示的曲线在 $t=\pi$ 处的切线斜率为 ______，函数 $y=f(x)$ 在 $t=\frac{\pi}{2}$ 处的微分 $dy\big|_{t=\pi/2}$ = ______。
+设函数 $y=f(x)$ 由参数方程 { $x=1+t^{2}$，$y=\cos t$ } 确定，则该函数表示的曲线在 $t=\pi$ 处的切线斜率为 ＿＿＿＿，函数 $y=f(x)$ 在 $t=\frac{\pi}{2}$ 处的微分 $dy\big|_{t=\pi/2}$ = ＿＿＿＿。
 
 
 
@@ -650,7 +639,7 @@ $\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^{n}$ = __________，曲线
 
 ### 3
 
-若曲线 $y=x^{3}+ax^{2}+bx+1$ 有拐点 $(-1,0)$，则 $a$ = ______，$b$ = ______。
+若曲线 $y=x^{3}+ax^{2}+bx+1$ 有拐点 $(-1,0)$，则 $a$ = ＿＿＿＿，$b$ = ＿＿＿＿。
 
 
 
@@ -660,7 +649,7 @@ $\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^{n}$ = __________，曲线
 
 ### 4
 
-长方形的长 $x$ 以 $2cm/s$ 的速率增加，宽 $y$ 以 $3cm/s$ 的速率增加。则当 $x=12cm,\ y=5cm$ 时，长方形对角线增加的速率为 __________。
+长方形的长 $x$ 以 $2cm/s$ 的速率增加，宽 $y$ 以 $3cm/s$ 的速率增加。则当 $x=12cm,\ y=5cm$ 时，长方形对角线增加的速率为 ＿＿＿＿。
 
 
 
@@ -670,7 +659,7 @@ $\lim\limits_{n\to\infty}\left(\frac{n+1}{n-1}\right)^{n}$ = __________，曲线
 
 ### 5
 
-设 $f(x)=x^{3}\sin x$，则 $f''(0)=$ __________，$f^{(2013)}(0)=$ __________。
+设 $f(x)=x^{3}\sin x$，则 $f''(0)=$ ＿＿＿＿，$f^{(2013)}(0)=$ ＿＿＿＿。
 
 
 
@@ -750,13 +739,11 @@ A. $f(a)>0$ 且 $f'(a)>0$
 
 B. $f(a)<0$ 且 $f'(a)<0$
 
-C. $f(a)=0$ 且 $f'(a)
-e 0$
+C. $f(a)=0$ 且 $f'(a)\ne 0$
 
 D. $f(a)=0$ 且 $f'(a)=0$
 
-参考解答：C $f(a)=0$ 且 $f'(a)
-e 0$
+参考解答：C $f(a)=0$ 且 $f'(a)\ne 0$
 
 
 
@@ -782,16 +769,13 @@ $=-\dfrac{1}{6}$　　(10分)
 
 ### 12
 
-（10分）设 $f(x)=\begin{cases}\dfrac{g(x)-\sin x}{x}, & x
-e 0\\ a, & x=0\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0, g'(0)=1, g''(0)=2$，(1)求 $a$ 的值使 $f(x)$ 连续；(2)求 $f'(x)$。
+（10分）设 $f(x)=\begin{cases}\dfrac{g(x)-\sin x}{x}, & x\ne 0\\ a, & x=0\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0, g'(0)=1, g''(0)=2$，(1)求 $a$ 的值使 $f(x)$ 连续；(2)求 $f'(x)$。
 
 
 
-参考解答： $a=0$；$f'(x)=\begin{cases}\dfrac{x(g'(x)-\cos x)-g(x)+\sin x}{x^2},&x
-e0\\g''(0)/2,&x=0\end{cases}$，其中 $g''(0)=2$。
+参考解答： $a=0$；$f'(x)=\begin{cases}\dfrac{x(g'(x)-\cos x)-g(x)+\sin x}{x^2},&x\ne0\\g''(0)/2,&x=0\end{cases}$，其中 $g''(0)=2$。
 
-连续条件是 $a=\lim_{x\to0}f(x)=0$。商法则给出 $x
-e0$ 处的导数；在原点由 $g(x)-\sin x=x^2+o(x^2)$ 得 $f'(0)=1$。原解析首行误写为 $\lim f'(x)$，现更正。
+连续条件是 $a=\lim_{x\to0}f(x)=0$。商法则给出 $x\ne0$ 处的导数；在原点由 $g(x)-\sin x=x^2+o(x^2)$ 得 $f'(0)=1$。原解析首行误写为 $\lim f'(x)$，现更正。
 
 校对记录：对照原卷并重新推导，修正转写或补全解析。
 
@@ -975,8 +959,7 @@ D. 若 u_1<u_2，则 {u_n} 必发散
 
 函数 $y=f(x)$ 在 $x_0$ 处可微，$\Delta y=f(x_0+h)-f(x_0)$。下列说法中正确的是（　）。
 ① $\mathrm dy$ 是 $h$ 的等价无穷小；
-② 当 $f'(x_0)
-e0$ 时，$\Delta y$ 与 $\mathrm dy$ 等价；
+② 当 $f'(x_0)\ne0$ 时，$\Delta y$ 与 $\mathrm dy$ 等价；
 ③ $\Delta y-\mathrm dy$ 是 $h$ 的同阶无穷小；
 ④ $\Delta y-\mathrm dy$ 是 $h$ 的高阶无穷小。
 
@@ -1020,16 +1003,13 @@ $g(x)=1+2x+5x^2/2+o(x^2)$，故右侧 $f(x)=2+3x+o(x)$。连续要求 $b=2$，�
 
 ### 13
 
-设 $f,g$ 在 $(a,b)$ 内连续，且 $f(x)
-e g(x),g(x)
-e0$。若 $\frac{f+g}{f-g}$ 在 $x_0\in(a,b)$ 取极大值，证明 $f/g$ 在 $x_0$ 取极小值。
+设 $f,g$ 在 $(a,b)$ 内连续，且 $f(x)\ne g(x),g(x)\ne0$。若 $\frac{f+g}{f-g}$ 在 $x_0\in(a,b)$ 取极大值，证明 $f/g$ 在 $x_0$ 取极小值。
 
 
 
 参考解答： 见解析。
 
-令 $u=f/g$，则 $u$ 连续且 $u(x_0)
-e1$。在 $x_0$ 的一个邻域内，$u-1$ 同号。函数 $H(u)=(u+1)/(u-1)$ 在 $1$ 的每一侧都严格递减，因为 $H'(u)=-2/(u-1)^2<0$。所以 $H(u(x))\le H(u(x_0))$ 等价于 $u(x)\ge u(x_0)$，结论成立。
+令 $u=f/g$，则 $u$ 连续且 $u(x_0)\ne1$。在 $x_0$ 的一个邻域内，$u-1$ 同号。函数 $H(u)=(u+1)/(u-1)$ 在 $1$ 的每一侧都严格递减，因为 $H'(u)=-2/(u-1)^2<0$。所以 $H(u(x))\le H(u(x_0))$ 等价于 $u(x)\ge u(x_0)$，结论成立。
 
 校对记录：对照原卷并重新推导，修正转写或补全解析。
 
@@ -1047,15 +1027,13 @@ $f'$ 严格增加，故 $f'(x)\ge f'(0)>0$，$f$ 严格增加。由中值定理�
 
 ### 15
 
-设 $f,g$ 在 $[a,b]$ 连续、$(a,b)$ 可导，且 $g'(x)
-e0$。证明存在 $\xi\in(a,b)$，使 $\frac{f(\xi)-f(a)}{g(b)-g(\xi)}=\frac{f'(\xi)}{g'(\xi)}$。
+设 $f,g$ 在 $[a,b]$ 连续、$(a,b)$ 可导，且 $g'(x)\ne0$。证明存在 $\xi\in(a,b)$，使 $\frac{f(\xi)-f(a)}{g(b)-g(\xi)}=\frac{f'(\xi)}{g'(\xi)}$。
 
 
 
 参考解答： 见解析。
 
-令 $F(x)=(f(x)-f(a))(g(x)-g(b))$，则 $F(a)=F(b)=0$。由 Rolle 定理存在 $\xi$ 使 $F'(\xi)=0$。又 $g(b)
-e g(\xi)$，否则在 $[\xi,b]$ 上由 Rolle 定理会有 $g'=0$，与假设矛盾。因此可以除以两个非零分母，整理得到结论。
+令 $F(x)=(f(x)-f(a))(g(x)-g(b))$，则 $F(a)=F(b)=0$。由 Rolle 定理存在 $\xi$ 使 $F'(\xi)=0$。又 $g(b)\ne g(\xi)$，否则在 $[\xi,b]$ 上由 Rolle 定理会有 $g'=0$，与假设矛盾。因此可以除以两个非零分母，整理得到结论。
 
 校对记录：对照原卷并重新推导，修正转写或补全解析。
 
@@ -1123,7 +1101,7 @@ $dy/dx=(t\sin t)/(t\cos t)=\tan t$；二阶导 $(\tan t)'/(t\cos t)=(1/t)\sec^3 
 
 ### 6
 
-设 $f(x)=\begin{cases}\frac{1}{x}e^{\frac{1}{x}}, & x<0\\ x\ln x, & x>0\end{cases}$，则 $x=0$ 是 $f(x)$ 的________．
+设 $f(x)=\begin{cases}\frac{1}{x}e^{\frac{1}{x}}, & x<0\\ x\ln x, & x>0\end{cases}$，则 $x=0$ 是 $f(x)$ 的＿＿＿＿．
 
 A. 可去间断点；
 
@@ -1139,7 +1117,7 @@ D. 振荡间断点．
 
 ### 7
 
-设 $f(x)=\begin{cases}\frac{1-\cos x}{x}, & x<0\\ ax+b, & x\ge 0\end{cases}$ 在 $x=0$ 处可导，则________．
+设 $f(x)=\begin{cases}\frac{1-\cos x}{x}, & x<0\\ ax+b, & x\ge 0\end{cases}$ 在 $x=0$ 处可导，则＿＿＿＿．
 
 A. $a=2,\ b=0$；
 
@@ -1155,7 +1133,7 @@ D. $a=\frac{1}{2},\ b=1$．
 
 ### 8
 
-设 $f(x)$，$g(x)$ 为大于零的可导函数，且 $f'(x)g(x)-f(x)g'(x)<0$，则对于 $a<x<b$，有________．
+设 $f(x)$，$g(x)$ 为大于零的可导函数，且 $f'(x)g(x)-f(x)g'(x)<0$，则对于 $a<x<b$，有＿＿＿＿．
 
 A. $f(x)g(b)>f(b)g(x)$；
 
@@ -1171,7 +1149,7 @@ $(f/g)'=(f'g-fg')/g^2<0$，故 $f/g$ 递减；$x<b$ 时 $f(x)/g(x)>f(b)/g(b)$，
 
 ### 9
 
-设 $\lim\limits_{x\to\infty} f'(x)=e$，且 $\lim\limits_{x\to\infty}\big(f(x)-f(x-1)\big)=\lim\limits_{x\to\infty}\left(\frac{x+c}{x-c}\right)^{x}$，则常数 $c$ 为________．
+设 $\lim\limits_{x\to\infty} f'(x)=e$，且 $\lim\limits_{x\to\infty}\big(f(x)-f(x-1)\big)=\lim\limits_{x\to\infty}\left(\frac{x+c}{x-c}\right)^{x}$，则常数 $c$ 为＿＿＿＿．
 
 A. $2$；
 
@@ -1187,8 +1165,7 @@ D. $-\frac{1}{2}$．
 
 ### 10
 
-设偶函数 $f(x)$ 具有二阶连续导数，且 $f''(0)
-e 0$，则 $x=0$ ________．
+设偶函数 $f(x)$ 具有二阶连续导数，且 $f''(0)\ne 0$，则 $x=0$ ＿＿＿＿．
 
 A. 一定不是 $f(x)$ 的驻点；
 
@@ -1200,8 +1177,7 @@ D. 不能确定是否为 $f(x)$ 的极值点．
 
 参考解答：C 一定是 $f(x)$ 的极值点；
 
-偶函数 $f$ 的导函数 $f'$ 为奇函数，故 $f'(0)=0$；又 $f''(0)
-eq0$ 且连续，$x=0$ 两侧 $f'$ 异号，故 $x=0$ 一定是极值点，选 C。
+偶函数 $f$ 的导函数 $f'$ 为奇函数，故 $f'(0)=0$；又 $f''(0)\neq0$ 且连续，$x=0$ 两侧 $f'$ 异号，故 $x=0$ 一定是极值点，选 C。
 
 ### 11
 
@@ -1274,8 +1250,7 @@ eq0$ 且连续，$x=0$ 两侧 $f'$ 异号，故 $x=0$ 一定是极值点，选 C
 
 已知极限
 $$\lim_{x\to 0}\frac{x-\arctan x}{x^k}=C$$
-其中 $k,C$ 为常数，且 $C
-eq 0$，则 $k=$ ________，$C=$ ________。
+其中 $k,C$ 为常数，且 $C\neq 0$，则 $k=$ ＿＿＿＿，$C=$ ＿＿＿＿。
 
 
 
@@ -1287,7 +1262,7 @@ eq 0$，则 $k=$ ________，$C=$ ________。
 
 ### 2
 
-设函数 $y=f(x)$ 由方程 $y-2x=e^{x(1-y)}$ 确定，则 $\mathrm{d}y|_{x=0}=$ ________，$\lim_{n\to\infty} n\left[f\left(\frac{2}{n}\right)-1\right]=$ ________。
+设函数 $y=f(x)$ 由方程 $y-2x=e^{x(1-y)}$ 确定，则 $\mathrm{d}y|_{x=0}=$ ＿＿＿＿，$\lim_{n\to\infty} n\left[f\left(\frac{2}{n}\right)-1\right]=$ ＿＿＿＿。
 
 
 
@@ -1299,7 +1274,7 @@ eq 0$，则 $k=$ ________，$C=$ ________。
 
 ### 3
 
-已知函数 $y=y(x)$ 由方程 $e^y+6xy+x^2-1=0$ 确定，则 $y'(0)=$ ______，$y''(0)=$ ________。
+已知函数 $y=y(x)$ 由方程 $e^y+6xy+x^2-1=0$ 确定，则 $y'(0)=$ ＿＿＿＿，$y''(0)=$ ＿＿＿＿。
 
 
 
@@ -1309,7 +1284,7 @@ eq 0$，则 $k=$ ________，$C=$ ________。
 
 ### 4
 
-函数 $y=f(x)$ 由参数方程 $\begin{cases}x=e^t\sin 2t\\y=e^t\cos t\end{cases}$ 确定，则 $\frac{\mathrm{d}y}{\mathrm{d}x}=$ ____________，该函数表示的曲线在点 $(0,1)$ 处的法线方程为________________。
+函数 $y=f(x)$ 由参数方程 $\begin{cases}x=e^t\sin 2t\\y=e^t\cos t\end{cases}$ 确定，则 $\frac{\mathrm{d}y}{\mathrm{d}x}=$ ＿＿＿＿，该函数表示的曲线在点 $(0,1)$ 处的法线方程为＿＿＿＿。
 
 
 
@@ -1321,7 +1296,7 @@ eq 0$，则 $k=$ ________，$C=$ ________。
 
 ### 5
 
-设函数 $f(x)=e^{x^2}\sin x$，则 $f'''(0)=$ ________，$f^{(2016)}(0)=$ ________。
+设函数 $f(x)=e^{x^2}\sin x$，则 $f'''(0)=$ ＿＿＿＿，$f^{(2016)}(0)=$ ＿＿＿＿。
 
 
 
@@ -1369,14 +1344,11 @@ A. $(x-a)[f(x)-f(a)]\geq 0$；
 
 B. $(x-a)[f(x)-f(a)]\leq 0$；
 
-C. $x
-eq a$，且 $\lim\limits_{t\to a}\dfrac{f(x)-f(t)}{(x-t)^2}\geq 0$；
+C. $x\neq a$，且 $\lim\limits_{t\to a}\dfrac{f(x)-f(t)}{(x-t)^2}\geq 0$；
 
-D. $x
-eq a$，且 $\lim\limits_{t\to a}\dfrac{f(x)-f(t)}{(x-t)^2}\leq 0$。
+D. $x\neq a$，且 $\lim\limits_{t\to a}\dfrac{f(x)-f(t)}{(x-t)^2}\leq 0$。
 
-参考解答：D $x
-eq a$，且 $\lim\limits_{t\to a}\dfrac{f(x)-f(t)}{(x-t)^2}\leq 0$。
+参考解答：D $x\neq a$，且 $\lim\limits_{t\to a}\dfrac{f(x)-f(t)}{(x-t)^2}\leq 0$。
 
 
 
@@ -1466,8 +1438,7 @@ ln²b-ln²a=(2lnξ/ξ)(b-a)，(a<ξ<b)（2分）
 
 
 
-参考解答： （1）见证明；（2）$\kappa(t)=\frac1{4a|\sin(t/2)|}$（$t
-e2k\pi$），$t\to2\pi$ 时趋于 $+\infty$，没有有限极限。
+参考解答： （1）见证明；（2）$\kappa(t)=\frac1{4a|\sin(t/2)|}$（$t\ne2k\pi$），$t\to2\pi$ 时趋于 $+\infty$，没有有限极限。
 
 （1）令 $F=f-g$。若共同最大值分别在 $\alpha,\beta\in(a,b)$ 取得，则 $F(\alpha)\ge0,F(\beta)\le0$。由连续性（含等号情形）存在内部点 $c$ 使 $F(c)=0$。连同 $F(a)=F(b)=0$，连续用两次 Rolle 定理得到 $F''(\xi)=0$。
 （2）将 $x'=a(1-\cos t),y'=a\sin t,x''=a\sin t,y''=a\cos t$ 代入 $\kappa=|x'y''-x''y'|/(x'^2+y'^2)^{3/2}$ 得所述公式。
@@ -1550,8 +1521,8 @@ e2k\pi$），$t\to2\pi$ 时趋于 $+\infty$，没有有限极限。
 
 ### 5
 
-5. $\lim_{n\to\infty}\sqrt[n]{1+2^n+3^n}=$ ____________________，
-$\lim_{x\to 0^+}\left(\dfrac{1+2^x+3^x}{3}\right)^{\frac{1}{x}}=$ ____________________.
+5. $\lim_{n\to\infty}\sqrt[n]{1+2^n+3^n}=$ ＿＿＿＿，
+$\lim_{x\to 0^+}\left(\dfrac{1+2^x+3^x}{3}\right)^{\frac{1}{x}}=$ ＿＿＿＿.
 
 
 
@@ -1561,7 +1532,7 @@ $\lim_{x\to 0^+}\left(\dfrac{1+2^x+3^x}{3}\right)^{\frac{1}{x}}=$ ______________
 
 ### 6
 
-设 $f(x)=\dfrac{x^x-1}{x(x+1)\ln x}$，则 $x=1$ 是 $f(x)$ 的________。
+设 $f(x)=\dfrac{x^x-1}{x(x+1)\ln x}$，则 $x=1$ 是 $f(x)$ 的＿＿＿＿。
 
 A. 可去间断点
 
@@ -1577,7 +1548,7 @@ D. 振荡间断点
 
 ### 7
 
-设 $f(x)=\begin{cases}\dfrac{\arcsin x-x}{x^2}, & x>0 \\ ax+b, & x\le 0 \end{cases}$ 在 $x=0$ 处可导，则________。
+设 $f(x)=\begin{cases}\dfrac{\arcsin x-x}{x^2}, & x>0 \\ ax+b, & x\le 0 \end{cases}$ 在 $x=0$ 处可导，则＿＿＿＿。
 
 A. $a=2,\ b=0$
 
@@ -1593,7 +1564,7 @@ D. $a=\dfrac{1}{2},\ b=1$
 
 ### 8
 
-当 $x\to 0$ 时，$e^{\sin x}-e^{x}$ 是 $x$ 的________无穷小。
+当 $x\to 0$ 时，$e^{\sin x}-e^{x}$ 是 $x$ 的＿＿＿＿无穷小。
 
 A. 3阶
 
@@ -1609,7 +1580,7 @@ D. 等价
 
 ### 9
 
-数列 $\{x_n\}$，$\{y_n\}$ 满足 $\lim_{n\to\infty}x_n y_n=0$，以下正确的是________。
+数列 $\{x_n\}$，$\{y_n\}$ 满足 $\lim_{n\to\infty}x_n y_n=0$，以下正确的是＿＿＿＿。
 
 A. 若$\{x_n\}$发散，则$\{y_n\}$发散
 
@@ -1625,7 +1596,7 @@ D. 若$\{\frac{1}{x_n}\}$为无穷小，则$\{y_n\}$为无穷小
 
 ### 10
 
-曲线 $f(x)=\dfrac{1}{x}+\arctan(1+x^2)$ 的渐近线的条数为________。
+曲线 $f(x)=\dfrac{1}{x}+\arctan(1+x^2)$ 的渐近线的条数为＿＿＿＿。
 
 A. 1
 
@@ -1741,8 +1712,7 @@ $\arctan x-\arcsin x=-x^3/2+o(x^3)$，$\tan x-\sin x=x^3/2+o(x^3)$，比值趋�
 
 ### 4
 
-已知 $\lim_{x\to0^+}\frac{\sqrt{1+\tan\sqrt x}-\sqrt{1+\sin\sqrt x}}{x^k}=c
-e0$，求 $k,c$。
+已知 $\lim_{x\to0^+}\frac{\sqrt{1+\tan\sqrt x}-\sqrt{1+\sin\sqrt x}}{x^k}=c\ne0$，求 $k,c$。
 
 
 
@@ -1784,7 +1754,7 @@ D. 单调函数
 
 ### 7
 
-若 $\lim\limits_{x\to 0}\frac{\tan x+xf(x)}{x^{3}}=0$，则 $\lim\limits_{x\to 0}\frac{1+f(x)}{x^{2}}=$ ________．
+若 $\lim\limits_{x\to 0}\frac{\tan x+xf(x)}{x^{3}}=0$，则 $\lim\limits_{x\to 0}\frac{1+f(x)}{x^{2}}=$ ＿＿＿＿．
 
 A. 0
 
@@ -1800,7 +1770,7 @@ D. $-\frac{1}{3}$
 
 ### 8
 
-曲线 $y=\frac{1+e^{-x^{2}}}{1-e^{-x^{2}}}$ 有________条渐近线．
+曲线 $y=\frac{1+e^{-x^{2}}}{1-e^{-x^{2}}}$ 有＿＿＿＿条渐近线．
 
 A. 0
 
@@ -1816,9 +1786,7 @@ D. 3
 
 ### 9
 
-设 $F(x)=\begin{cases}\dfrac{f(x)}{x}, & x
-eq 0,\\ f(0), & x=0\end{cases}$，其中 $f(x)$ 在 $x=0$ 处可导，$f'(0)
-eq 0$，$f(0)=0$，则 $x=0$ 是 $F(x)$ 的________．
+设 $F(x)=\begin{cases}\dfrac{f(x)}{x}, & x\neq 0,\\ f(0), & x=0\end{cases}$，其中 $f(x)$ 在 $x=0$ 处可导，$f'(0)\neq 0$，$f(0)=0$，则 $x=0$ 是 $F(x)$ 的＿＿＿＿．
 
 A. 连续点
 
@@ -1834,17 +1802,15 @@ D. 连续点或间断点不能确定
 
 ### 10
 
-设 $f(x)$ 在 $x=0$ 某邻域内有二阶连续导数，且 $\lim\limits_{x\to 0}\frac{xf''(x)}{1-\cos x}=1$，则________．
+设 $f(x)$ 在 $x=0$ 某邻域内有二阶连续导数，且 $\lim\limits_{x\to 0}\frac{xf''(x)}{1-\cos x}=1$，则＿＿＿＿．
 
-A. $f''(0)
-eq 0$，但 $(0,f(0))$ 是 $y=f(x)$ 的拐点
+A. $f''(0)\neq 0$，但 $(0,f(0))$ 是 $y=f(x)$ 的拐点
 
 B. $f''(0)=0$，且 $f(0)$ 是 $y=f(x)$ 的极小值
 
 C. $f''(0)=0$，且 $(0,f(0))$ 是 $y=f(x)$ 的拐点
 
-D. $f''(0)
-eq 0$，且 $f(0)$ 是 $y=f(x)$ 的极小值
+D. $f''(0)\neq 0$，且 $f(0)$ 是 $y=f(x)$ 的极小值
 
 参考解答：C $f''(0)=0$，且 $(0,f(0))$ 是 $y=f(x)$ 的拐点
 
@@ -2080,20 +2046,15 @@ D. $a=-3, b=-3$.
 
 下列函数 $f(x)$ 中，导函数 $f'(x)$ 在 $x=0$ 处不连续的是：
 
-A. $f(x)=\begin{cases}x^{\frac{3}{2}}\sin\dfrac{1}{x}, & x
-e 0,\\[4pt] 0, & x=0,\end{cases}$
+A. $f(x)=\begin{cases}x^{\frac{3}{2}}\sin\dfrac{1}{x}, & x\ne 0,\\[4pt] 0, & x=0,\end{cases}$
 
-B. $f(x)=\begin{cases}\dfrac{\sin x}{x}, & x
-e 0,\\[4pt] 1, & x=0,\end{cases}$
+B. $f(x)=\begin{cases}\dfrac{\sin x}{x}, & x\ne 0,\\[4pt] 1, & x=0,\end{cases}$
 
-C. $f(x)=\begin{cases}\dfrac{e^{x}-1}{x}, & x
-e 0,\\[4pt] 1, & x=0,\end{cases}$
+C. $f(x)=\begin{cases}\dfrac{e^{x}-1}{x}, & x\ne 0,\\[4pt] 1, & x=0,\end{cases}$
 
-D. $f(x)=\begin{cases}\dfrac{\ln(1+x)}{x}, & x
-e 0,\\[4pt] 1, & x=0,\end{cases}$
+D. $f(x)=\begin{cases}\dfrac{\ln(1+x)}{x}, & x\ne 0,\\[4pt] 1, & x=0,\end{cases}$
 
-参考解答：A $f(x)=\begin{cases}x^{\frac{3}{2}}\sin\dfrac{1}{x}, & x
-e 0,\\[4pt] 0, & x=0,\end{cases}$
+参考解答：A $f(x)=\begin{cases}x^{\frac{3}{2}}\sin\dfrac{1}{x}, & x\ne 0,\\[4pt] 0, & x=0,\end{cases}$
 
 
 
@@ -2125,11 +2086,9 @@ B. 若 $f(x)$ 在点 $x_0$ 处取极值，则 $f'(x_0)=0$
 
 C. 若 $f''(x_0)=0$，则 $(x_0, f(x_0))$ 是曲线 $y=f(x)$ 的拐点坐标
 
-D. 若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)
-e 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.
+D. 若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.
 
-参考解答：D 若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)
-e 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.
+参考解答：D 若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.
 
 
 
@@ -2209,16 +2168,13 @@ $$\lim_{x\to 0}\frac{\sin x-\arctan x}{\tan x-\sin x}=2\lim_{x\to 0}\frac{\sin x
 
 ### 18
 
-设 $f$ 在 $\mathbb R$ 有一阶连续导数，$f(0)=0$，且 $f''(0)$ 存在。令 $F(x)=\begin{cases}f(x)/x,&x
-e0\\f'(0),&x=0\end{cases}$。求 $F'(x)$，并证明 $F'$ 在 $\mathbb R$ 连续。
+设 $f$ 在 $\mathbb R$ 有一阶连续导数，$f(0)=0$，且 $f''(0)$ 存在。令 $F(x)=\begin{cases}f(x)/x,&x\ne0\\f'(0),&x=0\end{cases}$。求 $F'(x)$，并证明 $F'$ 在 $\mathbb R$ 连续。
 
 
 
-参考解答： $F'(x)=\begin{cases}\frac{xf'(x)-f(x)}{x^2},&x
-e0\\f''(0)/2,&x=0\end{cases}$，且 $F'$ 连续。
+参考解答： $F'(x)=\begin{cases}\frac{xf'(x)-f(x)}{x^2},&x\ne0\\f''(0)/2,&x=0\end{cases}$，且 $F'$ 连续。
 
-由二阶 Peano 展开，$f(x)=f'(0)x+f''(0)x^2/2+o(x^2)$，故 $F'(0)=f''(0)/2$。由 $f''(0)$ 存在，$f'(x)=f'(0)+f''(0)x+o(x)$。代入 $x
-e0$ 处的商法则公式，得 $F'(x)=f''(0)/2+o(1)$，所以原点连续；其他点由 $f,f'$ 连续得到。
+由二阶 Peano 展开，$f(x)=f'(0)x+f''(0)x^2/2+o(x^2)$，故 $F'(0)=f''(0)/2$。由 $f''(0)$ 存在，$f'(x)=f'(0)+f''(0)x+o(x)$。代入 $x\ne0$ 处的商法则公式，得 $F'(x)=f''(0)/2+o(1)$，所以原点连续；其他点由 $f,f'$ 连续得到。
 
 校对记录：对照原卷并重新推导，修正转写或补全解析。
 
@@ -2294,8 +2250,7 @@ D. $-\dfrac{2}{3}$.
 
 ### 3
 
-设函数 $f(x)=\begin{cases}\dfrac{1}{1-e^{\frac{x}{1-x}}}, & x
-eq 1\\[2mm] 1, & x=1\end{cases}$，则 $x=1$ 是 $f(x)$ 的
+设函数 $f(x)=\begin{cases}\dfrac{1}{1-e^{\frac{x}{1-x}}}, & x\neq 1\\[2mm] 1, & x=1\end{cases}$，则 $x=1$ 是 $f(x)$ 的
 
 A. 连续点.
 
@@ -2311,8 +2266,7 @@ $x\to1^-$ 时 $e^{x/(1-x)}\to+\infty$，$f\to0$；$x\to1^+$ 时 $e^{x/(1-x)}\to0
 
 ### 4
 
-设函数 $f(x)=\begin{cases}x^2\sin\dfrac{1}{x}, & x
-eq 0\\[2mm] 0, & x=0\end{cases}$，则 $f(x)$ 在 $x=0$ 处
+设函数 $f(x)=\begin{cases}x^2\sin\dfrac{1}{x}, & x\neq 0\\[2mm] 0, & x=0\end{cases}$，则 $f(x)$ 在 $x=0$ 处
 
 A. 不连续.
 
@@ -2324,8 +2278,7 @@ D. 可导且 $f'(x)$ 在 $x=0$ 处连续.
 
 参考解答：C 可导但 $f'(x)$ 在 $x=0$ 处不连续.
 
-$f'(0)=\lim x\sin(1/x)=0$，而 $x
-eq0$ 时 $f'(x)=2x\sin(1/x)-\cos(1/x)$ 极限不存在，故可导但导函数不连续，选 C。
+$f'(0)=\lim x\sin(1/x)=0$，而 $x\neq0$ 时 $f'(x)=2x\sin(1/x)-\cos(1/x)$ 极限不存在，故可导但导函数不连续，选 C。
 
 ### 5
 
@@ -2557,8 +2510,7 @@ $f$ 为偶函数，故 $f^{(5)}(0)=0$。$x^2\cos^2x=x^2-x^4+x^6/3+O(x^8)$，所�
 
 ### 2
 
-设 $f(x)=\begin{cases}\tan x/x,&x
-e0\\1,&x=0\end{cases}$，求 $f'(0)$。
+设 $f(x)=\begin{cases}\tan x/x,&x\ne0\\1,&x=0\end{cases}$，求 $f'(0)$。
 
 A. 0.
 
@@ -2588,8 +2540,7 @@ D. 3.
 
 参考解答：B 1.
 
-左侧导数为 $3x^2+1+\cos x>0$（$x=0$ 时为 $2$，$x
-e0$ 时也为正），严格增加；在两端趋于异号无穷，故恰有一个实根。
+左侧导数为 $3x^2+1+\cos x>0$（$x=0$ 时为 $2$，$x\ne0$ 时也为正），严格增加；在两端趋于异号无穷，故恰有一个实根。
 
 校对记录：对照原卷并重新推导，修正转写或补全解析。
 
@@ -2631,8 +2582,7 @@ $y'=-\tan t$，$y''=(-\sec^2t)/(-3\cos^2t\sin t)=1/(3\cos^4t\sin t)$，代入得
 
 ### 6
 
-设 $f(x)=\begin{cases}x\ln|x|,&x
-e0\\1,&x=0\end{cases}$，则 $x=0$ 是（　）。
+设 $f(x)=\begin{cases}x\ln|x|,&x\ne0\\1,&x=0\end{cases}$，则 $x=0$ 是（　）。
 
 A. 连续点
 

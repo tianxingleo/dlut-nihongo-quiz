@@ -35,7 +35,7 @@
         "id": "calculus1-1-2010-q002",
         "number": 2,
         "sourceNumber": 2,
-        "stem": "$\\lim\\limits_{x\\to\\infty}\\left(\\dfrac{x}{x+1}\\right)^x=$ ______，$\\lim\\limits_{n\\to\\infty}\\left(\\dfrac{1}{n^2+n+1}+\\dfrac{2}{n^2+n+2}+\\cdots+\\dfrac{n}{n^2+n+n}\\right)=$ ______。",
+        "stem": "$\\lim\\limits_{x\\to\\infty}\\left(\\dfrac{x}{x+1}\\right)^x=$ ＿＿＿＿，$\\lim\\limits_{n\\to\\infty}\\left(\\dfrac{1}{n^2+n+1}+\\dfrac{2}{n^2+n+2}+\\cdots+\\dfrac{n}{n^2+n+n}\\right)=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "1/e，1/2",
@@ -61,7 +61,7 @@
         "id": "calculus1-1-2010-q003",
         "number": 3,
         "sourceNumber": 3,
-        "stem": "曲线 $\\begin{cases} x=e^t\\sin 2t \\\\ y=e^t\\cos t \\end{cases}$ 在 $(0,1)$ 处的切线斜率为 ______，切线方程为 ______。",
+        "stem": "曲线 $\\begin{cases} x=e^t\\sin 2t \\\\ y=e^t\\cos t \\end{cases}$ 在 $(0,1)$ 处的切线斜率为 ＿＿＿＿，切线方程为 ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "1/2，x−2y+2=0",
@@ -87,7 +87,7 @@
         "id": "calculus1-1-2010-q004",
         "number": 4,
         "sourceNumber": 4,
-        "stem": "$e^{x+y}-xy=1$，$dy=$ ______，$y''(0)=$ ______。",
+        "stem": "$e^{x+y}-xy=1$，$dy=$ ＿＿＿＿，$y''(0)=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$\\mathrm dy=\\frac{y-e^{x+y}}{e^{x+y}-x}\\,\\mathrm dx$；$y''(0)=-2$。",
@@ -115,7 +115,7 @@
         "id": "calculus1-1-2010-q005",
         "number": 5,
         "sourceNumber": 5,
-        "stem": "若 $\\lim\\limits_{x\\to 1}\\dfrac{x^2+ax+b}{x^2+x-2}=2$，则 $a=$ ______，$b=$ ______。",
+        "stem": "若 $\\lim\\limits_{x\\to 1}\\dfrac{x^2+ax+b}{x^2+x-2}=2$，则 $a=$ ＿＿＿＿，$b=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "4，−5",
@@ -384,11 +384,11 @@
         "id": "calculus1-1-2010-q012",
         "number": 12,
         "sourceNumber": 4,
-        "stem": "（10分）设 $f(x)=\\begin{cases}\\dfrac{g(x)-\\sin x}{x}, & x\neq 0,\\\\[2mm] a, & x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。",
+        "stem": "（10分）设 $f(x)=\\begin{cases}\\dfrac{g(x)-\\sin x}{x}, & x\\neq 0,\\\\[2mm] a, & x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。",
         "options": [],
         "answerKey": "",
-        "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\ne0\\\\g''(0)/2,&x=0\\end{cases}$；$f'$ 连续。",
-        "explanation": "由 $g(x)=x+g''(0)x^2/2+o(x^2)$ 得 $a=0$ 且 $f'(0)=g''(0)/2$。对 $x\ne0$ 用商法则得到导数公式。又 $g'(x)=1+g''(0)x+o(x)$，故导数分子为 $g''(0)x^2/2+o(x^2)$，从而 $\\lim_{x\\to0}f'(x)=f'(0)$。其他点的连续性由 $g\\in C^2$ 得到。",
+        "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\\ne0\\\\g''(0)/2,&x=0\\end{cases}$；$f'$ 连续。",
+        "explanation": "由 $g(x)=x+g''(0)x^2/2+o(x^2)$ 得 $a=0$ 且 $f'(0)=g''(0)/2$。对 $x\\ne0$ 用商法则得到导数公式。又 $g'(x)=1+g''(0)x+o(x)$，故导数分子为 $g''(0)x^2/2+o(x^2)$，从而 $\\lim_{x\\to0}f'(x)=f'(0)$。其他点的连续性由 $g\\in C^2$ 得到。",
         "questionType": "fill",
         "answerProvenance": "generated",
         "questionSource": {
@@ -416,7 +416,7 @@
         "options": [],
         "answerKey": "",
         "answerText": "（1）a=−1 连续； （2）a=−2 可去； （3）a≠−1，a≠−2 跳跃； （4）a=∅ 空集",
-        "explanation": "左极限为 $-6a$，右极限为 $4(a^2/2+1)=2a^2+4$。二者相等当且仅当 $(a+1)(a+2)=0$。$a=-1$ 时共同极限为 $6=f(0)$，连续；$a=-2$ 时共同极限为 $12\ne f(0)$，可去间断；其他实数 $a$ 为跳跃间断。两侧极限始终有限，故不存在使其成为第二类间断点的实数 $a$。",
+        "explanation": "左极限为 $-6a$，右极限为 $4(a^2/2+1)=2a^2+4$。二者相等当且仅当 $(a+1)(a+2)=0$。$a=-1$ 时共同极限为 $6=f(0)$，连续；$a=-2$ 时共同极限为 $12\\ne f(0)$，可去间断；其他实数 $a$ 为跳跃间断。两侧极限始终有限，故不存在使其成为第二类间断点的实数 $a$。",
         "questionType": "fill",
         "answerProvenance": "generated",
         "questionSource": {
@@ -500,7 +500,7 @@
         "id": "calculus1-1-2011-q001",
         "number": 1,
         "sourceNumber": 1,
-        "stem": "$\\lim\\limits_{n\\to\\infty}\\left(\\frac{n+1}{n-1}\\right)^n=$ ________；$\\lim\\limits_{x\\to 0}\\frac{\\sin 2x}{(1+x\\sin\\frac{1}{x})\\tan x}=$ ________。",
+        "stem": "$\\lim\\limits_{n\\to\\infty}\\left(\\frac{n+1}{n-1}\\right)^n=$ ＿＿＿＿；$\\lim\\limits_{x\\to 0}\\frac{\\sin 2x}{(1+x\\sin\\frac{1}{x})\\tan x}=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "e^2，2",
@@ -526,7 +526,7 @@
         "id": "calculus1-1-2011-q002",
         "number": 2,
         "sourceNumber": 2,
-        "stem": "设函数 $y=y(x)$ 由方程 $e^y+xy=e$ 确定，则 $\\frac{dy}{dx}=$ ________，曲线 $y=y(x)$ 在 $(0,1)$ 点处切线方程为________。",
+        "stem": "设函数 $y=y(x)$ 由方程 $e^y+xy=e$ 确定，则 $\\frac{dy}{dx}=$ ＿＿＿＿，曲线 $y=y(x)$ 在 $(0,1)$ 点处切线方程为＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$-\\dfrac{y}{x+e^y}$，$y-1=-\\dfrac{1}{e}x$",
@@ -552,7 +552,7 @@
         "id": "calculus1-1-2011-q003",
         "number": 3,
         "sourceNumber": 3,
-        "stem": "设函数 $y(x)$ 由参数方程 $\\begin{cases}x=t^3+3t+1\\\\y=t^3-3t+1\\end{cases}$ 确定，则函数 $y(x)$ 单调增加的 $x$ 的取值范围是________，曲线 $y=y(x)$ 下凸的 $x$ 取值范围是________。",
+        "stem": "设函数 $y(x)$ 由参数方程 $\\begin{cases}x=t^3+3t+1\\\\y=t^3-3t+1\\end{cases}$ 确定，则函数 $y(x)$ 单调增加的 $x$ 的取值范围是＿＿＿＿，曲线 $y=y(x)$ 下凸的 $x$ 取值范围是＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "x>5 或 x<-3，x>1",
@@ -578,7 +578,7 @@
         "id": "calculus1-1-2011-q004",
         "number": 4,
         "sourceNumber": 4,
-        "stem": "设当 $x\\to 0$ 时，$e^x-(ax^2+bx+1)$ 是比 $x^2$ 高阶的无穷小，则 $a=$ ________，$b=$ ________。",
+        "stem": "设当 $x\\to 0$ 时，$e^x-(ax^2+bx+1)$ 是比 $x^2$ 高阶的无穷小，则 $a=$ ＿＿＿＿，$b=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$a=\\dfrac{1}{2}$，$b=1$",
@@ -604,7 +604,7 @@
         "id": "calculus1-1-2011-q005",
         "number": 5,
         "sourceNumber": 5,
-        "stem": "设 $f(x)=x^3\\sin x$，则 $f'(0)=$ ________， $f^{(2011)}(0)=$ ________。",
+        "stem": "设 $f(x)=x^3\\sin x$，则 $f'(0)=$ ＿＿＿＿， $f^{(2011)}(0)=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "0，0",
@@ -816,7 +816,7 @@
           },
           {
             "key": "C",
-            "text": "$f(a)=0$ 且 $f'(a)\neq 0$"
+            "text": "$f(a)=0$ 且 $f'(a)\\neq 0$"
           },
           {
             "key": "D",
@@ -824,7 +824,7 @@
           }
         ],
         "answerKey": "C",
-        "answerText": "$f(a)=0$ 且 $f'(a)\neq 0$",
+        "answerText": "$f(a)=0$ 且 $f'(a)\\neq 0$",
         "explanation": "",
         "questionType": "single",
         "answerProvenance": "generated",
@@ -875,11 +875,11 @@
         "id": "calculus1-1-2011-q012",
         "number": 12,
         "sourceNumber": null,
-        "stem": "（10分）设 $f(x)=\\begin{cases}\\frac{g(x)-\\sin x}{x},&x\neq 0,\\\\ a,&x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，$g''(0)=2$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。",
+        "stem": "（10分）设 $f(x)=\\begin{cases}\\frac{g(x)-\\sin x}{x},&x\\neq 0,\\\\ a,&x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，$g''(0)=2$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。",
         "options": [],
         "answerKey": "",
-        "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\ne0\\\\1,&x=0\\end{cases}$；$f'$ 连续，$f'(0)=1$。",
-        "explanation": "解：(1) $a=\\lim_{x\\to 0}\\dfrac{g(x)-\\sin x}{x}\\left(\\dfrac{0}{0}\\right)=\\lim_{x\\to 0}(g'(x)-\\cos x)=0$（4 分）\n(2) $f'(0)=\\lim_{x\\to 0}\\frac{f(x)-f(0)}{x}=\\lim_{x\\to 0}\\frac{g(x)-\\sin x}{x^2}$\n$=\\lim_{x\\to 0}\\frac{g'(x)-\\cos x}{2x}=\\lim_{x\\to 0}\\frac{g''(x)+\\sin x}{2}=\\frac{g''(0)}{2}=1$\n$\\therefore f'(x)=\\begin{cases}\\frac{x(g'(x)-\\cos x)-(g(x)-\\sin x)}{x^2}, & x\neq 0\\text{时} \\\\ 1, & x=0\\text{时}\\end{cases}$　　（8 分）\n(3) $\\lim_{x\\to 0}f'(x)=\\lim_{x\\to 0}\\frac{x(g'(x)-\\cos x)-(g(x)-\\sin x)}{x^2}$\n$=\\lim_{x\\to 0}\\frac{g'(x)-\\cos x+x(g''(x)+\\sin x)-(g'(x)-\\cos x)}{2x}$\n$=\\frac{g''(0)}{2}=1=f'(0)$，因此 $f'(x)$ 在 $(-\\infty,+\\infty)$ 连续。　　（10 分）",
+        "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\\ne0\\\\1,&x=0\\end{cases}$；$f'$ 连续，$f'(0)=1$。",
+        "explanation": "解：(1) $a=\\lim_{x\\to 0}\\dfrac{g(x)-\\sin x}{x}\\left(\\dfrac{0}{0}\\right)=\\lim_{x\\to 0}(g'(x)-\\cos x)=0$（4 分）\n(2) $f'(0)=\\lim_{x\\to 0}\\frac{f(x)-f(0)}{x}=\\lim_{x\\to 0}\\frac{g(x)-\\sin x}{x^2}$\n$=\\lim_{x\\to 0}\\frac{g'(x)-\\cos x}{2x}=\\lim_{x\\to 0}\\frac{g''(x)+\\sin x}{2}=\\frac{g''(0)}{2}=1$\n$\\therefore f'(x)=\\begin{cases}\\frac{x(g'(x)-\\cos x)-(g(x)-\\sin x)}{x^2}, & x\\neq 0\\text{时} \\\\ 1, & x=0\\text{时}\\end{cases}$　　（8 分）\n(3) $\\lim_{x\\to 0}f'(x)=\\lim_{x\\to 0}\\frac{x(g'(x)-\\cos x)-(g(x)-\\sin x)}{x^2}$\n$=\\lim_{x\\to 0}\\frac{g'(x)-\\cos x+x(g''(x)+\\sin x)-(g'(x)-\\cos x)}{2x}$\n$=\\frac{g''(0)}{2}=1=f'(0)$，因此 $f'(x)$ 在 $(-\\infty,+\\infty)$ 连续。　　（10 分）",
         "questionType": "fill",
         "answerProvenance": "generated",
         "questionSource": {
@@ -970,7 +970,7 @@
         "options": [],
         "answerKey": "",
         "answerText": "见解析。",
-        "explanation": "七、证明：令 $F(x)=x^n f(x)$　　（4 分）\n则 $F(x)$ 在 $[0,1]$ 连续，$(0,1)$ 可导，$F(0)=F(1)=0$，由罗尔定理，至少存在 $x_0\\in(0,1)$ 使 $F'(x_0)=0$，即　$nx_0^{n-1}f(x_0)+x_0^n f'(x_0)=x_0^{n-1}(nf(x_0)+x_0f'(x_0))=0$\n又 $x_0^{n-1}\neq 0$，故 $nf(x_0)+x_0f'(x_0)=0$　　（10 分）",
+        "explanation": "七、证明：令 $F(x)=x^n f(x)$　　（4 分）\n则 $F(x)$ 在 $[0,1]$ 连续，$(0,1)$ 可导，$F(0)=F(1)=0$，由罗尔定理，至少存在 $x_0\\in(0,1)$ 使 $F'(x_0)=0$，即　$nx_0^{n-1}f(x_0)+x_0^n f'(x_0)=x_0^{n-1}(nf(x_0)+x_0f'(x_0))=0$\n又 $x_0^{n-1}\\neq 0$，故 $nf(x_0)+x_0f'(x_0)=0$　　（10 分）",
         "questionType": "fill",
         "answerProvenance": "generated",
         "questionSource": {
@@ -1138,7 +1138,7 @@
         "id": "calculus1-1-2012-q006",
         "number": 6,
         "sourceNumber": null,
-        "stem": "以下极限计算中正确的是________。",
+        "stem": "以下极限计算中正确的是＿＿＿＿。",
         "options": [
           {
             "key": "A",
@@ -1228,7 +1228,7 @@
         "id": "calculus1-1-2012-q008",
         "number": 8,
         "sourceNumber": null,
-        "stem": "对于定义在 (-1,1) 上的函数 f(x)，下列命题中正确的是________。",
+        "stem": "对于定义在 (-1,1) 上的函数 f(x)，下列命题中正确的是＿＿＿＿。",
         "options": [
           {
             "key": "A",
@@ -1279,7 +1279,7 @@
         "id": "calculus1-1-2012-q009",
         "number": 9,
         "sourceNumber": null,
-        "stem": "若 $\\lim\\limits_{x\\to 0}\\dfrac{\\ln(1+x)-(ax+bx^{2})}{x^{2}}=2$，则______。",
+        "stem": "若 $\\lim\\limits_{x\\to 0}\\dfrac{\\ln(1+x)-(ax+bx^{2})}{x^{2}}=2$，则＿＿＿＿。",
         "options": [
           {
             "key": "A",
@@ -1322,7 +1322,7 @@
         "id": "calculus1-1-2012-q010",
         "number": 10,
         "sourceNumber": null,
-        "stem": "设函数 $f(x)$ 在点 $x=0$ 的某邻域内三阶可导，且 $\\lim\\limits_{x\\to 0}\\dfrac{f'(x)}{1-\\cos x}=-1$，则______。",
+        "stem": "设函数 $f(x)$ 在点 $x=0$ 的某邻域内三阶可导，且 $\\lim\\limits_{x\\to 0}\\dfrac{f'(x)}{1-\\cos x}=-1$，则＿＿＿＿。",
         "options": [
           {
             "key": "A",
@@ -1343,7 +1343,7 @@
         ],
         "answerKey": "C",
         "answerText": "$f'(0)$ 为 $f'(x)$ 的一个极大值；",
-        "explanation": "由极限条件及 $f'$ 连续，有 $f'(0)=0$。充分接近 $0$ 且 $x\ne0$ 时，$f'(x)/(1-\\cos x)<0$，所以 $f'(x)<0=f'(0)$。因此 $f'(0)$ 是导函数 $f'$ 的严格极大值，选 C。",
+        "explanation": "由极限条件及 $f'$ 连续，有 $f'(0)=0$。充分接近 $0$ 且 $x\\ne0$ 时，$f'(x)/(1-\\cos x)<0$，所以 $f'(x)<0=f'(0)$。因此 $f'(0)$ 是导函数 $f'$ 的严格极大值，选 C。",
         "questionType": "single",
         "answerProvenance": "generated",
         "questionSource": {
@@ -1513,7 +1513,7 @@
         "id": "calculus1-1-2013-q001",
         "number": 1,
         "sourceNumber": 1,
-        "stem": "$\\lim\\limits_{n\\to\\infty}\\left(\\frac{n+1}{n-1}\\right)^{n}$ = __________，曲线 $y=\\frac{2x^{3}}{x^{2}+1}$ 的渐近线方程为 __________。",
+        "stem": "$\\lim\\limits_{n\\to\\infty}\\left(\\frac{n+1}{n-1}\\right)^{n}$ = ＿＿＿＿，曲线 $y=\\frac{2x^{3}}{x^{2}+1}$ 的渐近线方程为 ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$e^2,\\ y=2x$",
@@ -1539,7 +1539,7 @@
         "id": "calculus1-1-2013-q002",
         "number": 2,
         "sourceNumber": 2,
-        "stem": "设函数 $y=f(x)$ 由参数方程 { $x=1+t^{2}$，$y=\\cos t$ } 确定，则该函数表示的曲线在 $t=\\pi$ 处的切线斜率为 ______，函数 $y=f(x)$ 在 $t=\\frac{\\pi}{2}$ 处的微分 $dy\\big|_{t=\\pi/2}$ = ______。",
+        "stem": "设函数 $y=f(x)$ 由参数方程 { $x=1+t^{2}$，$y=\\cos t$ } 确定，则该函数表示的曲线在 $t=\\pi$ 处的切线斜率为 ＿＿＿＿，函数 $y=f(x)$ 在 $t=\\frac{\\pi}{2}$ 处的微分 $dy\\big|_{t=\\pi/2}$ = ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "0，$-\\dfrac{dx}{\\pi}$",
@@ -1565,7 +1565,7 @@
         "id": "calculus1-1-2013-q003",
         "number": 3,
         "sourceNumber": 3,
-        "stem": "若曲线 $y=x^{3}+ax^{2}+bx+1$ 有拐点 $(-1,0)$，则 $a$ = ______，$b$ = ______。",
+        "stem": "若曲线 $y=x^{3}+ax^{2}+bx+1$ 有拐点 $(-1,0)$，则 $a$ = ＿＿＿＿，$b$ = ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$a=b=3$",
@@ -1591,7 +1591,7 @@
         "id": "calculus1-1-2013-q004",
         "number": 4,
         "sourceNumber": 4,
-        "stem": "长方形的长 $x$ 以 $2cm/s$ 的速率增加，宽 $y$ 以 $3cm/s$ 的速率增加。则当 $x=12cm,\\ y=5cm$ 时，长方形对角线增加的速率为 __________。",
+        "stem": "长方形的长 $x$ 以 $2cm/s$ 的速率增加，宽 $y$ 以 $3cm/s$ 的速率增加。则当 $x=12cm,\\ y=5cm$ 时，长方形对角线增加的速率为 ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$3cm/s$",
@@ -1617,7 +1617,7 @@
         "id": "calculus1-1-2013-q005",
         "number": 5,
         "sourceNumber": 5,
-        "stem": "设 $f(x)=x^{3}\\sin x$，则 $f''(0)=$ __________，$f^{(2013)}(0)=$ __________。",
+        "stem": "设 $f(x)=x^{3}\\sin x$，则 $f''(0)=$ ＿＿＿＿，$f^{(2013)}(0)=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$0,0$",
@@ -1833,7 +1833,7 @@
           },
           {
             "key": "C",
-            "text": "$f(a)=0$ 且 $f'(a)\ne 0$"
+            "text": "$f(a)=0$ 且 $f'(a)\\ne 0$"
           },
           {
             "key": "D",
@@ -1841,7 +1841,7 @@
           }
         ],
         "answerKey": "C",
-        "answerText": "$f(a)=0$ 且 $f'(a)\ne 0$",
+        "answerText": "$f(a)=0$ 且 $f'(a)\\ne 0$",
         "explanation": "",
         "questionType": "single",
         "answerProvenance": "generated",
@@ -1892,11 +1892,11 @@
         "id": "calculus1-1-2013-q012",
         "number": 12,
         "sourceNumber": null,
-        "stem": "（10分）设 $f(x)=\\begin{cases}\\dfrac{g(x)-\\sin x}{x}, & x\ne 0\\\\ a, & x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0, g'(0)=1, g''(0)=2$，(1)求 $a$ 的值使 $f(x)$ 连续；(2)求 $f'(x)$。",
+        "stem": "（10分）设 $f(x)=\\begin{cases}\\dfrac{g(x)-\\sin x}{x}, & x\\ne 0\\\\ a, & x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0, g'(0)=1, g''(0)=2$，(1)求 $a$ 的值使 $f(x)$ 连续；(2)求 $f'(x)$。",
         "options": [],
         "answerKey": "",
-        "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\ne0\\\\g''(0)/2,&x=0\\end{cases}$，其中 $g''(0)=2$。",
-        "explanation": "连续条件是 $a=\\lim_{x\\to0}f(x)=0$。商法则给出 $x\ne0$ 处的导数；在原点由 $g(x)-\\sin x=x^2+o(x^2)$ 得 $f'(0)=1$。原解析首行误写为 $\\lim f'(x)$，现更正。",
+        "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\\ne0\\\\g''(0)/2,&x=0\\end{cases}$，其中 $g''(0)=2$。",
+        "explanation": "连续条件是 $a=\\lim_{x\\to0}f(x)=0$。商法则给出 $x\\ne0$ 处的导数；在原点由 $g(x)-\\sin x=x^2+o(x^2)$ 得 $f'(0)=1$。原解析首行误写为 $\\lim f'(x)$，现更正。",
         "questionType": "fill",
         "answerProvenance": "generated",
         "questionSource": {
@@ -2336,7 +2336,7 @@
         "id": "calculus1-1-2014-q010",
         "number": 10,
         "sourceNumber": 5,
-        "stem": "函数 $y=f(x)$ 在 $x_0$ 处可微，$\\Delta y=f(x_0+h)-f(x_0)$。下列说法中正确的是（　）。\n① $\\mathrm dy$ 是 $h$ 的等价无穷小；\n② 当 $f'(x_0)\ne0$ 时，$\\Delta y$ 与 $\\mathrm dy$ 等价；\n③ $\\Delta y-\\mathrm dy$ 是 $h$ 的同阶无穷小；\n④ $\\Delta y-\\mathrm dy$ 是 $h$ 的高阶无穷小。",
+        "stem": "函数 $y=f(x)$ 在 $x_0$ 处可微，$\\Delta y=f(x_0+h)-f(x_0)$。下列说法中正确的是（　）。\n① $\\mathrm dy$ 是 $h$ 的等价无穷小；\n② 当 $f'(x_0)\\ne0$ 时，$\\Delta y$ 与 $\\mathrm dy$ 等价；\n③ $\\Delta y-\\mathrm dy$ 是 $h$ 的同阶无穷小；\n④ $\\Delta y-\\mathrm dy$ 是 $h$ 的高阶无穷小。",
         "options": [
           {
             "key": "A",
@@ -2443,11 +2443,11 @@
         "id": "calculus1-1-2014-q013",
         "number": 13,
         "sourceNumber": null,
-        "stem": "设 $f,g$ 在 $(a,b)$ 内连续，且 $f(x)\ne g(x),g(x)\ne0$。若 $\\frac{f+g}{f-g}$ 在 $x_0\\in(a,b)$ 取极大值，证明 $f/g$ 在 $x_0$ 取极小值。",
+        "stem": "设 $f,g$ 在 $(a,b)$ 内连续，且 $f(x)\\ne g(x),g(x)\\ne0$。若 $\\frac{f+g}{f-g}$ 在 $x_0\\in(a,b)$ 取极大值，证明 $f/g$ 在 $x_0$ 取极小值。",
         "options": [],
         "answerKey": "",
         "answerText": "见解析。",
-        "explanation": "令 $u=f/g$，则 $u$ 连续且 $u(x_0)\ne1$。在 $x_0$ 的一个邻域内，$u-1$ 同号。函数 $H(u)=(u+1)/(u-1)$ 在 $1$ 的每一侧都严格递减，因为 $H'(u)=-2/(u-1)^2<0$。所以 $H(u(x))\\le H(u(x_0))$ 等价于 $u(x)\\ge u(x_0)$，结论成立。",
+        "explanation": "令 $u=f/g$，则 $u$ 连续且 $u(x_0)\\ne1$。在 $x_0$ 的一个邻域内，$u-1$ 同号。函数 $H(u)=(u+1)/(u-1)$ 在 $1$ 的每一侧都严格递减，因为 $H'(u)=-2/(u-1)^2<0$。所以 $H(u(x))\\le H(u(x_0))$ 等价于 $u(x)\\ge u(x_0)$，结论成立。",
         "questionType": "fill",
         "answerProvenance": "generated",
         "questionSource": {
@@ -2499,11 +2499,11 @@
         "id": "calculus1-1-2014-q015",
         "number": 15,
         "sourceNumber": null,
-        "stem": "设 $f,g$ 在 $[a,b]$ 连续、$(a,b)$ 可导，且 $g'(x)\ne0$。证明存在 $\\xi\\in(a,b)$，使 $\\frac{f(\\xi)-f(a)}{g(b)-g(\\xi)}=\\frac{f'(\\xi)}{g'(\\xi)}$。",
+        "stem": "设 $f,g$ 在 $[a,b]$ 连续、$(a,b)$ 可导，且 $g'(x)\\ne0$。证明存在 $\\xi\\in(a,b)$，使 $\\frac{f(\\xi)-f(a)}{g(b)-g(\\xi)}=\\frac{f'(\\xi)}{g'(\\xi)}$。",
         "options": [],
         "answerKey": "",
         "answerText": "见解析。",
-        "explanation": "令 $F(x)=(f(x)-f(a))(g(x)-g(b))$，则 $F(a)=F(b)=0$。由 Rolle 定理存在 $\\xi$ 使 $F'(\\xi)=0$。又 $g(b)\ne g(\\xi)$，否则在 $[\\xi,b]$ 上由 Rolle 定理会有 $g'=0$，与假设矛盾。因此可以除以两个非零分母，整理得到结论。",
+        "explanation": "令 $F(x)=(f(x)-f(a))(g(x)-g(b))$，则 $F(a)=F(b)=0$。由 Rolle 定理存在 $\\xi$ 使 $F'(\\xi)=0$。又 $g(b)\\ne g(\\xi)$，否则在 $[\\xi,b]$ 上由 Rolle 定理会有 $g'=0$，与假设矛盾。因此可以除以两个非零分母，整理得到结论。",
         "questionType": "fill",
         "answerProvenance": "generated",
         "questionSource": {
@@ -2673,7 +2673,7 @@
         "id": "calculus1-1-2015-q006",
         "number": 6,
         "sourceNumber": 1,
-        "stem": "设 $f(x)=\\begin{cases}\\frac{1}{x}e^{\\frac{1}{x}}, & x<0\\\\ x\\ln x, & x>0\\end{cases}$，则 $x=0$ 是 $f(x)$ 的________．",
+        "stem": "设 $f(x)=\\begin{cases}\\frac{1}{x}e^{\\frac{1}{x}}, & x<0\\\\ x\\ln x, & x>0\\end{cases}$，则 $x=0$ 是 $f(x)$ 的＿＿＿＿．",
         "options": [
           {
             "key": "A",
@@ -2716,7 +2716,7 @@
         "id": "calculus1-1-2015-q007",
         "number": 7,
         "sourceNumber": 2,
-        "stem": "设 $f(x)=\\begin{cases}\\frac{1-\\cos x}{x}, & x<0\\\\ ax+b, & x\\ge 0\\end{cases}$ 在 $x=0$ 处可导，则________．",
+        "stem": "设 $f(x)=\\begin{cases}\\frac{1-\\cos x}{x}, & x<0\\\\ ax+b, & x\\ge 0\\end{cases}$ 在 $x=0$ 处可导，则＿＿＿＿．",
         "options": [
           {
             "key": "A",
@@ -2759,7 +2759,7 @@
         "id": "calculus1-1-2015-q008",
         "number": 8,
         "sourceNumber": 3,
-        "stem": "设 $f(x)$，$g(x)$ 为大于零的可导函数，且 $f'(x)g(x)-f(x)g'(x)<0$，则对于 $a<x<b$，有________．",
+        "stem": "设 $f(x)$，$g(x)$ 为大于零的可导函数，且 $f'(x)g(x)-f(x)g'(x)<0$，则对于 $a<x<b$，有＿＿＿＿．",
         "options": [
           {
             "key": "A",
@@ -2802,7 +2802,7 @@
         "id": "calculus1-1-2015-q009",
         "number": 9,
         "sourceNumber": 4,
-        "stem": "设 $\\lim\\limits_{x\\to\\infty} f'(x)=e$，且 $\\lim\\limits_{x\\to\\infty}\\big(f(x)-f(x-1)\\big)=\\lim\\limits_{x\\to\\infty}\\left(\\frac{x+c}{x-c}\\right)^{x}$，则常数 $c$ 为________．",
+        "stem": "设 $\\lim\\limits_{x\\to\\infty} f'(x)=e$，且 $\\lim\\limits_{x\\to\\infty}\\big(f(x)-f(x-1)\\big)=\\lim\\limits_{x\\to\\infty}\\left(\\frac{x+c}{x-c}\\right)^{x}$，则常数 $c$ 为＿＿＿＿．",
         "options": [
           {
             "key": "A",
@@ -2845,7 +2845,7 @@
         "id": "calculus1-1-2015-q010",
         "number": 10,
         "sourceNumber": 5,
-        "stem": "设偶函数 $f(x)$ 具有二阶连续导数，且 $f''(0)\ne 0$，则 $x=0$ ________．",
+        "stem": "设偶函数 $f(x)$ 具有二阶连续导数，且 $f''(0)\\ne 0$，则 $x=0$ ＿＿＿＿．",
         "options": [
           {
             "key": "A",
@@ -2866,7 +2866,7 @@
         ],
         "answerKey": "C",
         "answerText": "一定是 $f(x)$ 的极值点；",
-        "explanation": "偶函数 $f$ 的导函数 $f'$ 为奇函数，故 $f'(0)=0$；又 $f''(0)\neq0$ 且连续，$x=0$ 两侧 $f'$ 异号，故 $x=0$ 一定是极值点，选 C。",
+        "explanation": "偶函数 $f$ 的导函数 $f'$ 为奇函数，故 $f'(0)=0$；又 $f''(0)\\neq0$ 且连续，$x=0$ 两侧 $f'$ 异号，故 $x=0$ 一定是极值点，选 C。",
         "questionType": "single",
         "answerProvenance": "generated",
         "questionSource": {
@@ -3043,7 +3043,7 @@
         "id": "calculus1-1-2016-q001",
         "number": 1,
         "sourceNumber": 1,
-        "stem": "已知极限\n$$\\lim_{x\\to 0}\\frac{x-\\arctan x}{x^k}=C$$\n其中 $k,C$ 为常数，且 $C\neq 0$，则 $k=$ ________，$C=$ ________。",
+        "stem": "已知极限\n$$\\lim_{x\\to 0}\\frac{x-\\arctan x}{x^k}=C$$\n其中 $k,C$ 为常数，且 $C\\neq 0$，则 $k=$ ＿＿＿＿，$C=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$k=3$，$C=\\frac13$。",
@@ -3071,7 +3071,7 @@
         "id": "calculus1-1-2016-q002",
         "number": 2,
         "sourceNumber": 2,
-        "stem": "设函数 $y=f(x)$ 由方程 $y-2x=e^{x(1-y)}$ 确定，则 $\\mathrm{d}y|_{x=0}=$ ________，$\\lim_{n\\to\\infty} n\\left[f\\left(\\frac{2}{n}\\right)-1\\right]=$ ________。",
+        "stem": "设函数 $y=f(x)$ 由方程 $y-2x=e^{x(1-y)}$ 确定，则 $\\mathrm{d}y|_{x=0}=$ ＿＿＿＿，$\\lim_{n\\to\\infty} n\\left[f\\left(\\frac{2}{n}\\right)-1\\right]=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$2\\,\\mathrm dx$；$4$。",
@@ -3099,7 +3099,7 @@
         "id": "calculus1-1-2016-q003",
         "number": 3,
         "sourceNumber": 3,
-        "stem": "已知函数 $y=y(x)$ 由方程 $e^y+6xy+x^2-1=0$ 确定，则 $y'(0)=$ ______，$y''(0)=$ ________。",
+        "stem": "已知函数 $y=y(x)$ 由方程 $e^y+6xy+x^2-1=0$ 确定，则 $y'(0)=$ ＿＿＿＿，$y''(0)=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "0，-2",
@@ -3125,7 +3125,7 @@
         "id": "calculus1-1-2016-q004",
         "number": 4,
         "sourceNumber": 4,
-        "stem": "函数 $y=f(x)$ 由参数方程 $\\begin{cases}x=e^t\\sin 2t\\\\y=e^t\\cos t\\end{cases}$ 确定，则 $\\frac{\\mathrm{d}y}{\\mathrm{d}x}=$ ____________，该函数表示的曲线在点 $(0,1)$ 处的法线方程为________________。",
+        "stem": "函数 $y=f(x)$ 由参数方程 $\\begin{cases}x=e^t\\sin 2t\\\\y=e^t\\cos t\\end{cases}$ 确定，则 $\\frac{\\mathrm{d}y}{\\mathrm{d}x}=$ ＿＿＿＿，该函数表示的曲线在点 $(0,1)$ 处的法线方程为＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "$\\frac{\\cos t-\\sin t}{\\sin2t+2\\cos2t}$；$y=1-2x$。",
@@ -3153,7 +3153,7 @@
         "id": "calculus1-1-2016-q005",
         "number": 5,
         "sourceNumber": 5,
-        "stem": "设函数 $f(x)=e^{x^2}\\sin x$，则 $f'''(0)=$ ________，$f^{(2016)}(0)=$ ________。",
+        "stem": "设函数 $f(x)=e^{x^2}\\sin x$，则 $f'''(0)=$ ＿＿＿＿，$f^{(2016)}(0)=$ ＿＿＿＿。",
         "options": [],
         "answerKey": "",
         "answerText": "5，0",
@@ -3277,15 +3277,15 @@
           },
           {
             "key": "C",
-            "text": "$x\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\geq 0$；"
+            "text": "$x\\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\geq 0$；"
           },
           {
             "key": "D",
-            "text": "$x\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\leq 0$。"
+            "text": "$x\\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\leq 0$。"
           }
         ],
         "answerKey": "D",
-        "answerText": "$x\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\leq 0$。",
+        "answerText": "$x\\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\leq 0$。",
         "explanation": "",
         "questionType": "single",
         "answerProvenance": "generated",
@@ -3504,7 +3504,7 @@
         "stem": "（1）设 $f,g$ 在 $[a,b]$ 连续、$(a,b)$ 内二阶可导，并在 $(a,b)$ 内取得相同的最大值，且 $f(a)=g(a),f(b)=g(b)$。证明存在 $\\xi\\in(a,b)$ 使 $f''(\\xi)=g''(\\xi)$。\n（2）给定曲线 $x=a(t-\\sin t),y=a(1-\\cos t)$（$a>0$），求曲率，并讨论 $t\\to2\\pi$ 时曲率的极限。",
         "options": [],
         "answerKey": "",
-        "answerText": "（1）见证明；（2）$\\kappa(t)=\\frac1{4a|\\sin(t/2)|}$（$t\ne2k\\pi$），$t\\to2\\pi$ 时趋于 $+\\infty$，没有有限极限。",
+        "answerText": "（1）见证明；（2）$\\kappa(t)=\\frac1{4a|\\sin(t/2)|}$（$t\\ne2k\\pi$），$t\\to2\\pi$ 时趋于 $+\\infty$，没有有限极限。",
         "explanation": "（1）令 $F=f-g$。若共同最大值分别在 $\\alpha,\\beta\\in(a,b)$ 取得，则 $F(\\alpha)\\ge0,F(\\beta)\\le0$。由连续性（含等号情形）存在内部点 $c$ 使 $F(c)=0$。连同 $F(a)=F(b)=0$，连续用两次 Rolle 定理得到 $F''(\\xi)=0$。\n（2）将 $x'=a(1-\\cos t),y'=a\\sin t,x''=a\\sin t,y''=a\\cos t$ 代入 $\\kappa=|x'y''-x''y'|/(x'^2+y'^2)^{3/2}$ 得所述公式。",
         "questionType": "fill",
         "answerProvenance": "generated",
@@ -3714,7 +3714,7 @@
         "id": "calculus1-1-2017-q005",
         "number": 5,
         "sourceNumber": 5,
-        "stem": "5. $\\lim_{n\\to\\infty}\\sqrt[n]{1+2^n+3^n}=$ ____________________，\n$\\lim_{x\\to 0^+}\\left(\\dfrac{1+2^x+3^x}{3}\\right)^{\\frac{1}{x}}=$ ____________________.",
+        "stem": "5. $\\lim_{n\\to\\infty}\\sqrt[n]{1+2^n+3^n}=$ ＿＿＿＿，\n$\\lim_{x\\to 0^+}\\left(\\dfrac{1+2^x+3^x}{3}\\right)^{\\frac{1}{x}}=$ ＿＿＿＿.",
         "options": [],
         "answerKey": "",
         "answerText": "3，∛6",
@@ -3740,7 +3740,7 @@
         "id": "calculus1-1-2017-q006",
         "number": 6,
         "sourceNumber": 1,
-        "stem": "设 $f(x)=\\dfrac{x^x-1}{x(x+1)\\ln x}$，则 $x=1$ 是 $f(x)$ 的________。",
+        "stem": "设 $f(x)=\\dfrac{x^x-1}{x(x+1)\\ln x}$，则 $x=1$ 是 $f(x)$ 的＿＿＿＿。",
         "options": [
           {
             "key": "A",
@@ -3783,7 +3783,7 @@
         "id": "calculus1-1-2017-q007",
         "number": 7,
         "sourceNumber": 2,
-        "stem": "设 $f(x)=\\begin{cases}\\dfrac{\\arcsin x-x}{x^2}, & x>0 \\\\ ax+b, & x\\le 0 \\end{cases}$ 在 $x=0$ 处可导，则________。",
+        "stem": "设 $f(x)=\\begin{cases}\\dfrac{\\arcsin x-x}{x^2}, & x>0 \\\\ ax+b, & x\\le 0 \\end{cases}$ 在 $x=0$ 处可导，则＿＿＿＿。",
         "options": [
           {
             "key": "A",
@@ -3826,7 +3826,7 @@
         "id": "calculus1-1-2017-q008",
         "number": 8,
         "sourceNumber": 3,
-        "stem": "当 $x\\to 0$ 时，$e^{\\sin x}-e^{x}$ 是 $x$ 的________无穷小。",
+        "stem": "当 $x\\to 0$ 时，$e^{\\sin x}-e^{x}$ 是 $x$ 的＿＿＿＿无穷小。",
         "options": [
           {
             "key": "A",
@@ -3869,7 +3869,7 @@
         "id": "calculus1-1-2017-q009",
         "number": 9,
         "sourceNumber": 4,
-        "stem": "数列 $\\{x_n\\}$，$\\{y_n\\}$ 满足 $\\lim_{n\\to\\infty}x_n y_n=0$，以下正确的是________。",
+        "stem": "数列 $\\{x_n\\}$，$\\{y_n\\}$ 满足 $\\lim_{n\\to\\infty}x_n y_n=0$，以下正确的是＿＿＿＿。",
         "options": [
           {
             "key": "A",
@@ -3912,7 +3912,7 @@
         "id": "calculus1-1-2017-q010",
         "number": 10,
         "sourceNumber": 5,
-        "stem": "曲线 $f(x)=\\dfrac{1}{x}+\\arctan(1+x^2)$ 的渐近线的条数为________。",
+        "stem": "曲线 $f(x)=\\dfrac{1}{x}+\\arctan(1+x^2)$ 的渐近线的条数为＿＿＿＿。",
         "options": [
           {
             "key": "A",
@@ -4185,7 +4185,7 @@
         "id": "math-2018-midterm-2018-q004",
         "number": 4,
         "sourceNumber": 4,
-        "stem": "已知 $\\lim_{x\\to0^+}\\frac{\\sqrt{1+\\tan\\sqrt x}-\\sqrt{1+\\sin\\sqrt x}}{x^k}=c\ne0$，求 $k,c$。",
+        "stem": "已知 $\\lim_{x\\to0^+}\\frac{\\sqrt{1+\\tan\\sqrt x}-\\sqrt{1+\\sin\\sqrt x}}{x^k}=c\\ne0$，求 $k,c$。",
         "options": [],
         "answerKey": "",
         "answerText": "$\\frac{3}{2}$，$\\frac{1}{4}$",
@@ -4286,7 +4286,7 @@
         "id": "math-2018-midterm-2018-q007",
         "number": 7,
         "sourceNumber": 2,
-        "stem": "若 $\\lim\\limits_{x\\to 0}\\frac{\\tan x+xf(x)}{x^{3}}=0$，则 $\\lim\\limits_{x\\to 0}\\frac{1+f(x)}{x^{2}}=$ ________．",
+        "stem": "若 $\\lim\\limits_{x\\to 0}\\frac{\\tan x+xf(x)}{x^{3}}=0$，则 $\\lim\\limits_{x\\to 0}\\frac{1+f(x)}{x^{2}}=$ ＿＿＿＿．",
         "options": [
           {
             "key": "A",
@@ -4329,7 +4329,7 @@
         "id": "math-2018-midterm-2018-q008",
         "number": 8,
         "sourceNumber": 3,
-        "stem": "曲线 $y=\\frac{1+e^{-x^{2}}}{1-e^{-x^{2}}}$ 有________条渐近线．",
+        "stem": "曲线 $y=\\frac{1+e^{-x^{2}}}{1-e^{-x^{2}}}$ 有＿＿＿＿条渐近线．",
         "options": [
           {
             "key": "A",
@@ -4372,7 +4372,7 @@
         "id": "math-2018-midterm-2018-q009",
         "number": 9,
         "sourceNumber": 4,
-        "stem": "设 $F(x)=\\begin{cases}\\dfrac{f(x)}{x}, & x\neq 0,\\\\ f(0), & x=0\\end{cases}$，其中 $f(x)$ 在 $x=0$ 处可导，$f'(0)\neq 0$，$f(0)=0$，则 $x=0$ 是 $F(x)$ 的________．",
+        "stem": "设 $F(x)=\\begin{cases}\\dfrac{f(x)}{x}, & x\\neq 0,\\\\ f(0), & x=0\\end{cases}$，其中 $f(x)$ 在 $x=0$ 处可导，$f'(0)\\neq 0$，$f(0)=0$，则 $x=0$ 是 $F(x)$ 的＿＿＿＿．",
         "options": [
           {
             "key": "A",
@@ -4415,11 +4415,11 @@
         "id": "math-2018-midterm-2018-q010",
         "number": 10,
         "sourceNumber": 5,
-        "stem": "设 $f(x)$ 在 $x=0$ 某邻域内有二阶连续导数，且 $\\lim\\limits_{x\\to 0}\\frac{xf''(x)}{1-\\cos x}=1$，则________．",
+        "stem": "设 $f(x)$ 在 $x=0$ 某邻域内有二阶连续导数，且 $\\lim\\limits_{x\\to 0}\\frac{xf''(x)}{1-\\cos x}=1$，则＿＿＿＿．",
         "options": [
           {
             "key": "A",
-            "text": "$f''(0)\neq 0$，但 $(0,f(0))$ 是 $y=f(x)$ 的拐点"
+            "text": "$f''(0)\\neq 0$，但 $(0,f(0))$ 是 $y=f(x)$ 的拐点"
           },
           {
             "key": "B",
@@ -4431,7 +4431,7 @@
           },
           {
             "key": "D",
-            "text": "$f''(0)\neq 0$，且 $f(0)$ 是 $y=f(x)$ 的极小值"
+            "text": "$f''(0)\\neq 0$，且 $f(0)$ 是 $y=f(x)$ 的极小值"
           }
         ],
         "answerKey": "C",
@@ -5051,23 +5051,23 @@
         "options": [
           {
             "key": "A",
-            "text": "$f(x)=\\begin{cases}x^{\\frac{3}{2}}\\sin\\dfrac{1}{x}, & x\ne 0,\\\\[4pt] 0, & x=0,\\end{cases}$"
+            "text": "$f(x)=\\begin{cases}x^{\\frac{3}{2}}\\sin\\dfrac{1}{x}, & x\\ne 0,\\\\[4pt] 0, & x=0,\\end{cases}$"
           },
           {
             "key": "B",
-            "text": "$f(x)=\\begin{cases}\\dfrac{\\sin x}{x}, & x\ne 0,\\\\[4pt] 1, & x=0,\\end{cases}$"
+            "text": "$f(x)=\\begin{cases}\\dfrac{\\sin x}{x}, & x\\ne 0,\\\\[4pt] 1, & x=0,\\end{cases}$"
           },
           {
             "key": "C",
-            "text": "$f(x)=\\begin{cases}\\dfrac{e^{x}-1}{x}, & x\ne 0,\\\\[4pt] 1, & x=0,\\end{cases}$"
+            "text": "$f(x)=\\begin{cases}\\dfrac{e^{x}-1}{x}, & x\\ne 0,\\\\[4pt] 1, & x=0,\\end{cases}$"
           },
           {
             "key": "D",
-            "text": "$f(x)=\\begin{cases}\\dfrac{\\ln(1+x)}{x}, & x\ne 0,\\\\[4pt] 1, & x=0,\\end{cases}$"
+            "text": "$f(x)=\\begin{cases}\\dfrac{\\ln(1+x)}{x}, & x\\ne 0,\\\\[4pt] 1, & x=0,\\end{cases}$"
           }
         ],
         "answerKey": "A",
-        "answerText": "$f(x)=\\begin{cases}x^{\\frac{3}{2}}\\sin\\dfrac{1}{x}, & x\ne 0,\\\\[4pt] 0, & x=0,\\end{cases}$",
+        "answerText": "$f(x)=\\begin{cases}x^{\\frac{3}{2}}\\sin\\dfrac{1}{x}, & x\\ne 0,\\\\[4pt] 0, & x=0,\\end{cases}$",
         "explanation": "",
         "questionType": "single",
         "answerProvenance": "generated",
@@ -5150,11 +5150,11 @@
           },
           {
             "key": "D",
-            "text": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点."
+            "text": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点."
           }
         ],
         "answerKey": "D",
-        "answerText": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.",
+        "answerText": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.",
         "explanation": "",
         "questionType": "single",
         "answerProvenance": "generated",
@@ -5321,11 +5321,11 @@
         "id": "2019-a-7-2019-q018",
         "number": 18,
         "sourceNumber": 18,
-        "stem": "设 $f$ 在 $\\mathbb R$ 有一阶连续导数，$f(0)=0$，且 $f''(0)$ 存在。令 $F(x)=\\begin{cases}f(x)/x,&x\ne0\\\\f'(0),&x=0\\end{cases}$。求 $F'(x)$，并证明 $F'$ 在 $\\mathbb R$ 连续。",
+        "stem": "设 $f$ 在 $\\mathbb R$ 有一阶连续导数，$f(0)=0$，且 $f''(0)$ 存在。令 $F(x)=\\begin{cases}f(x)/x,&x\\ne0\\\\f'(0),&x=0\\end{cases}$。求 $F'(x)$，并证明 $F'$ 在 $\\mathbb R$ 连续。",
         "options": [],
         "answerKey": "",
-        "answerText": "$F'(x)=\\begin{cases}\\frac{xf'(x)-f(x)}{x^2},&x\ne0\\\\f''(0)/2,&x=0\\end{cases}$，且 $F'$ 连续。",
-        "explanation": "由二阶 Peano 展开，$f(x)=f'(0)x+f''(0)x^2/2+o(x^2)$，故 $F'(0)=f''(0)/2$。由 $f''(0)$ 存在，$f'(x)=f'(0)+f''(0)x+o(x)$。代入 $x\ne0$ 处的商法则公式，得 $F'(x)=f''(0)/2+o(1)$，所以原点连续；其他点由 $f,f'$ 连续得到。",
+        "answerText": "$F'(x)=\\begin{cases}\\frac{xf'(x)-f(x)}{x^2},&x\\ne0\\\\f''(0)/2,&x=0\\end{cases}$，且 $F'$ 连续。",
+        "explanation": "由二阶 Peano 展开，$f(x)=f'(0)x+f''(0)x^2/2+o(x^2)$，故 $F'(0)=f''(0)/2$。由 $f''(0)$ 存在，$f'(x)=f'(0)+f''(0)x+o(x)$。代入 $x\\ne0$ 处的商法则公式，得 $F'(x)=f''(0)/2+o(1)$，所以原点连续；其他点由 $f,f'$ 连续得到。",
         "questionType": "fill",
         "answerProvenance": "generated",
         "questionSource": {
@@ -5525,7 +5525,7 @@
         "id": "calculus1-8-2024-q003",
         "number": 3,
         "sourceNumber": 3,
-        "stem": "设函数 $f(x)=\\begin{cases}\\dfrac{1}{1-e^{\\frac{x}{1-x}}}, & x\neq 1\\\\[2mm] 1, & x=1\\end{cases}$，则 $x=1$ 是 $f(x)$ 的",
+        "stem": "设函数 $f(x)=\\begin{cases}\\dfrac{1}{1-e^{\\frac{x}{1-x}}}, & x\\neq 1\\\\[2mm] 1, & x=1\\end{cases}$，则 $x=1$ 是 $f(x)$ 的",
         "options": [
           {
             "key": "A",
@@ -5568,7 +5568,7 @@
         "id": "calculus1-8-2024-q004",
         "number": 4,
         "sourceNumber": 4,
-        "stem": "设函数 $f(x)=\\begin{cases}x^2\\sin\\dfrac{1}{x}, & x\neq 0\\\\[2mm] 0, & x=0\\end{cases}$，则 $f(x)$ 在 $x=0$ 处",
+        "stem": "设函数 $f(x)=\\begin{cases}x^2\\sin\\dfrac{1}{x}, & x\\neq 0\\\\[2mm] 0, & x=0\\end{cases}$，则 $f(x)$ 在 $x=0$ 处",
         "options": [
           {
             "key": "A",
@@ -5589,7 +5589,7 @@
         ],
         "answerKey": "C",
         "answerText": "可导但 $f'(x)$ 在 $x=0$ 处不连续.",
-        "explanation": "$f'(0)=\\lim x\\sin(1/x)=0$，而 $x\neq0$ 时 $f'(x)=2x\\sin(1/x)-\\cos(1/x)$ 极限不存在，故可导但导函数不连续，选 C。",
+        "explanation": "$f'(0)=\\lim x\\sin(1/x)=0$，而 $x\\neq0$ 时 $f'(x)=2x\\sin(1/x)-\\cos(1/x)$ 极限不存在，故可导但导函数不连续，选 C。",
         "questionType": "single",
         "answerProvenance": "generated",
         "questionSource": {
@@ -6056,7 +6056,7 @@
         "id": "calculus1-9-2025-q002",
         "number": 2,
         "sourceNumber": 2,
-        "stem": "设 $f(x)=\\begin{cases}\\tan x/x,&x\ne0\\\\1,&x=0\\end{cases}$，求 $f'(0)$。",
+        "stem": "设 $f(x)=\\begin{cases}\\tan x/x,&x\\ne0\\\\1,&x=0\\end{cases}$，求 $f'(0)$。",
         "options": [
           {
             "key": "A",
@@ -6122,7 +6122,7 @@
         ],
         "answerKey": "B",
         "answerText": "1.",
-        "explanation": "左侧导数为 $3x^2+1+\\cos x>0$（$x=0$ 时为 $2$，$x\ne0$ 时也为正），严格增加；在两端趋于异号无穷，故恰有一个实根。",
+        "explanation": "左侧导数为 $3x^2+1+\\cos x>0$（$x=0$ 时为 $2$，$x\\ne0$ 时也为正），严格增加；在两端趋于异号无穷，故恰有一个实根。",
         "questionType": "single",
         "answerProvenance": "generated",
         "questionSource": {
@@ -6236,7 +6236,7 @@
         "id": "calculus1-9-2025-q006",
         "number": 6,
         "sourceNumber": 6,
-        "stem": "设 $f(x)=\\begin{cases}x\\ln|x|,&x\ne0\\\\1,&x=0\\end{cases}$，则 $x=0$ 是（　）。",
+        "stem": "设 $f(x)=\\begin{cases}x\\ln|x|,&x\\ne0\\\\1,&x=0\\end{cases}$，则 $x=0$ 是（　）。",
         "options": [
           {
             "key": "A",

@@ -111,7 +111,7 @@
     "groupId": "calculus1-8-2024",
     "groupTitle": "2024年期中",
     "numberInGroup": 3,
-    "stem": "设函数 $f(x)=\\begin{cases}\\dfrac{1}{1-e^{\\frac{x}{1-x}}}, & x\neq 1\\\\[2mm] 1, & x=1\\end{cases}$，则 $x=1$ 是 $f(x)$ 的",
+    "stem": "设函数 $f(x)=\\begin{cases}\\dfrac{1}{1-e^{\\frac{x}{1-x}}}, & x\\neq 1\\\\[2mm] 1, & x=1\\end{cases}$，则 $x=1$ 是 $f(x)$ 的",
     "options": [
       {
         "key": "A",
@@ -164,7 +164,7 @@
     "groupId": "calculus1-8-2024",
     "groupTitle": "2024年期中",
     "numberInGroup": 4,
-    "stem": "设函数 $f(x)=\\begin{cases}x^2\\sin\\dfrac{1}{x}, & x\neq 0\\\\[2mm] 0, & x=0\\end{cases}$，则 $f(x)$ 在 $x=0$ 处",
+    "stem": "设函数 $f(x)=\\begin{cases}x^2\\sin\\dfrac{1}{x}, & x\\neq 0\\\\[2mm] 0, & x=0\\end{cases}$，则 $f(x)$ 在 $x=0$ 处",
     "options": [
       {
         "key": "A",
@@ -186,7 +186,7 @@
     "answerKey": "C",
     "answerText": "可导但 $f'(x)$ 在 $x=0$ 处不连续.",
     "translation": "",
-    "explanation": "$f'(0)=\\lim x\\sin(1/x)=0$，而 $x\neq0$ 时 $f'(x)=2x\\sin(1/x)-\\cos(1/x)$ 极限不存在，故可导但导函数不连续，选 C。",
+    "explanation": "$f'(0)=\\lim x\\sin(1/x)=0$，而 $x\\neq0$ 时 $f'(x)=2x\\sin(1/x)-\\cos(1/x)$ 极限不存在，故可导但导函数不连续，选 C。",
     "grammarPoints": [],
     "tags": [],
     "source": {

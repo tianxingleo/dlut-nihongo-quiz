@@ -59,7 +59,7 @@
     "groupId": "calculus1-9-2025",
     "groupTitle": "2025年期中",
     "numberInGroup": 2,
-    "stem": "设 $f(x)=\\begin{cases}\\tan x/x,&x\ne0\\\\1,&x=0\\end{cases}$，求 $f'(0)$。",
+    "stem": "设 $f(x)=\\begin{cases}\\tan x/x,&x\\ne0\\\\1,&x=0\\end{cases}$，求 $f'(0)$。",
     "options": [
       {
         "key": "A",
@@ -135,7 +135,7 @@
     "answerKey": "B",
     "answerText": "1.",
     "translation": "",
-    "explanation": "左侧导数为 $3x^2+1+\\cos x>0$（$x=0$ 时为 $2$，$x\ne0$ 时也为正），严格增加；在两端趋于异号无穷，故恰有一个实根。",
+    "explanation": "左侧导数为 $3x^2+1+\\cos x>0$（$x=0$ 时为 $2$，$x\\ne0$ 时也为正），严格增加；在两端趋于异号无穷，故恰有一个实根。",
     "grammarPoints": [],
     "tags": [],
     "source": {
@@ -275,7 +275,7 @@
     "groupId": "calculus1-9-2025",
     "groupTitle": "2025年期中",
     "numberInGroup": 6,
-    "stem": "设 $f(x)=\\begin{cases}x\\ln|x|,&x\ne0\\\\1,&x=0\\end{cases}$，则 $x=0$ 是（　）。",
+    "stem": "设 $f(x)=\\begin{cases}x\\ln|x|,&x\\ne0\\\\1,&x=0\\end{cases}$，则 $x=0$ 是（　）。",
     "options": [
       {
         "key": "A",

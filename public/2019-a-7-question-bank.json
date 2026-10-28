@@ -605,11 +605,11 @@
       },
       {
         "key": "D",
-        "text": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点."
+        "text": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点."
       }
     ],
     "answerKey": "D",
-    "answerText": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.",
+    "answerText": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.",
     "translation": "",
     "explanation": "参考答案已与原卷对应项核对。",
     "grammarPoints": [],
@@ -825,12 +825,12 @@
     "groupId": "2019-a-7-2019",
     "groupTitle": "2019年期中",
     "numberInGroup": 18,
-    "stem": "设 $f$ 在 $\\mathbb R$ 有一阶连续导数，$f(0)=0$，且 $f''(0)$ 存在。令 $F(x)=\\begin{cases}f(x)/x,&x\ne0\\\\f'(0),&x=0\\end{cases}$。求 $F'(x)$，并证明 $F'$ 在 $\\mathbb R$ 连续。",
+    "stem": "设 $f$ 在 $\\mathbb R$ 有一阶连续导数，$f(0)=0$，且 $f''(0)$ 存在。令 $F(x)=\\begin{cases}f(x)/x,&x\\ne0\\\\f'(0),&x=0\\end{cases}$。求 $F'(x)$，并证明 $F'$ 在 $\\mathbb R$ 连续。",
     "options": [],
     "answerKey": "",
-    "answerText": "$F'(x)=\\begin{cases}\\frac{xf'(x)-f(x)}{x^2},&x\ne0\\\\f''(0)/2,&x=0\\end{cases}$，且 $F'$ 连续。",
+    "answerText": "$F'(x)=\\begin{cases}\\frac{xf'(x)-f(x)}{x^2},&x\\ne0\\\\f''(0)/2,&x=0\\end{cases}$，且 $F'$ 连续。",
     "translation": "",
-    "explanation": "由二阶 Peano 展开，$f(x)=f'(0)x+f''(0)x^2/2+o(x^2)$，故 $F'(0)=f''(0)/2$。由 $f''(0)$ 存在，$f'(x)=f'(0)+f''(0)x+o(x)$。代入 $x\ne0$ 处的商法则公式，得 $F'(x)=f''(0)/2+o(1)$，所以原点连续；其他点由 $f,f'$ 连续得到。",
+    "explanation": "由二阶 Peano 展开，$f(x)=f'(0)x+f''(0)x^2/2+o(x^2)$，故 $F'(0)=f''(0)/2$。由 $f''(0)$ 存在，$f'(x)=f'(0)+f''(0)x+o(x)$。代入 $x\\ne0$ 处的商法则公式，得 $F'(x)=f''(0)/2+o(1)$，所以原点连续；其他点由 $f,f'$ 连续得到。",
     "grammarPoints": [],
     "tags": [],
     "source": {
