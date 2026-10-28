@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SELF_CORRECT, isSelfAssessmentVerdict } from '../utils/selfAssessment'
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter, onBeforeRouteLeave, type RouteLocationRaw } from 'vue-router'
 import {
@@ -442,17 +443,22 @@ onMounted(async () => {
 
 function handleSelect(key: string) {
   if (submitted.value) return
+  if (currentQuestion.value?.selfAssessment && !isSelfAssessmentVerdict(key)) return
   // QuestionCard already computed the correct toggled/new value
   selectedKey.value = key
 }
 
 async function handleSubmit() {
   if (!selectedKey.value || !currentQuestion.value) return
+  if (submitted.value) return
+  if (currentQuestion.value.selfAssessment && !isSelfAssessmentVerdict(selectedKey.value)) return
   submitted.value = true
 
   const q = currentQuestion.value
   let isCorrect: boolean
-  if (q.questionType === 'fill') {
+  if (q.selfAssessment) {
+    isCorrect = selectedKey.value === SELF_CORRECT
+  } else if (q.questionType === 'fill') {
     isCorrect = isFillAnswerCorrect(selectedKey.value, q.answerText)
   } else if (q.multiAnswer) {
     isCorrect = isMultiAnswerCorrect(selectedKey.value, q.answerKey)

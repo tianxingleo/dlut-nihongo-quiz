@@ -220,6 +220,29 @@ describe('computer question bank uses the existing quiz flow', () => {
     expect(host.querySelector('.q-result')?.textContent).toContain('16 KB')
   })
 
+  it('records a mathematics self-assessment only after revealing the reference', async () => {
+    mocks.questions = [
+      sample({
+        questionType: 'fill',
+        options: [],
+        answerKey: '',
+        answerText: '见解析。',
+        selfAssessment: true,
+      }),
+    ]
+    await mountQuiz()
+    expect(host.querySelector('.fill-input')).toBeNull()
+    expect(mocks.recordAttempt).not.toHaveBeenCalled()
+    button('查看参考解答').click()
+    await nextTick()
+    button('自评：答对了').click()
+    await vi.waitFor(() => expect(mocks.recordAttempt).toHaveBeenCalledOnce())
+    expect(mocks.recordAttempt).toHaveBeenCalledWith(
+      expect.objectContaining({ isCorrect: true, selectedKey: '__self_correct__' }),
+      expect.anything(),
+    )
+  })
+
   it.each([
     { answerFirst: true, expected: '50%' },
     { answerFirst: false, expected: '0%' },

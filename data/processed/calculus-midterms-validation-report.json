@@ -1,0 +1,76 @@
+{
+  "humanVerified": false,
+  "reviewMethod": "AI 对照试题、参考答案和页图逐题复核；不等同于教师审核",
+  "total": 187,
+  "published": 186,
+  "withheld": [
+    {
+      "id": "2019-a-7-2019-q011",
+      "year": 2019,
+      "number": 11,
+      "reason": "原 PDF 的 A 项为 x^(3/2)sin(1/x)，在负实数处无定义，与原点两侧导数的常规题意不符。保留原文归档，暂不进入计分题库，待确认原题是否漏印绝对值。"
+    }
+  ],
+  "papers": [
+    {
+      "year": 2010,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2011,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2012,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2013,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2014,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2015,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2016,
+      "total": 16,
+      "published": 16
+    },
+    {
+      "year": 2017,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2018,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2019,
+      "total": 21,
+      "published": 20
+    },
+    {
+      "year": 2024,
+      "total": 15,
+      "published": 15
+    },
+    {
+      "year": 2025,
+      "total": 15,
+      "published": 15
+    }
+  ]
+}

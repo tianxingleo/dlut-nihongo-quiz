@@ -1,0 +1,5202 @@
+[
+  {
+    "id": "calculus1-1-2010-q001",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 1,
+    "stem": "函数 $f(x)=\\begin{cases}a+bx^2,&x\\ge0\\\\(e^{bx}-1)/x,&x<0\\end{cases}$，求 $\\lim_{x\\to0^-}f(x)$；若 $f$ 在 $0$ 处连续，$a,b$ 满足什么条件？",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$b$；$a=b$。",
+    "translation": "",
+    "explanation": "左极限为 $b$，右极限及函数值均为 $a$，故连续当且仅当 $a=b$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 1,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q002",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 2,
+    "stem": "$\\lim\\limits_{x\\to\\infty}\\left(\\dfrac{x}{x+1}\\right)^x=$ ______，$\\lim\\limits_{n\\to\\infty}\\left(\\dfrac{1}{n^2+n+1}+\\dfrac{2}{n^2+n+2}+\\cdots+\\dfrac{n}{n^2+n+n}\\right)=$ ______。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "1/e，1/2",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 2,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q003",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 3,
+    "stem": "曲线 $\\begin{cases} x=e^t\\sin 2t \\\\ y=e^t\\cos t \\end{cases}$ 在 $(0,1)$ 处的切线斜率为 ______，切线方程为 ______。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "1/2，x−2y+2=0",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 3,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q004",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 4,
+    "stem": "$e^{x+y}-xy=1$，$dy=$ ______，$y''(0)=$ ______。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\mathrm dy=\\frac{y-e^{x+y}}{e^{x+y}-x}\\,\\mathrm dx$；$y''(0)=-2$。",
+    "translation": "",
+    "explanation": "隐式求导得 $e^{x+y}(1+y')-y-xy'=0$。在 $x=0$ 时 $y=0,y'=-1$；再求导得 $e^{x+y}[(1+y')^2+y'']-2y'-xy''=0$，故 $y''(0)=-2$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 4,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "原参考答案把微分末尾印成 dy；依据隐函数求导更正为 dx。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q005",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 5,
+    "stem": "若 $\\lim\\limits_{x\\to 1}\\dfrac{x^2+ax+b}{x^2+x-2}=2$，则 $a=$ ______，$b=$ ______。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "4，−5",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 5,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q006",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 6,
+    "stem": "当 $x\\to 0$ 时，$\\sqrt[3]{1+ax^2}-1$ 与 $1-\\cos x$ 是等价无穷小，则（    ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a=\\dfrac{2}{3}$"
+      },
+      {
+        "key": "B",
+        "text": "a=3"
+      },
+      {
+        "key": "C",
+        "text": "$a=\\dfrac{3}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "a=2"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$a=\\dfrac{3}{2}$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 6,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2010-q007",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 7,
+    "stem": "下列结论中不正确的是（    ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "可导奇函数的导数一定是偶函数；"
+      },
+      {
+        "key": "B",
+        "text": "可导偶函数的导数一定是奇函数；"
+      },
+      {
+        "key": "C",
+        "text": "可导周期函数的导数一定是周期函数；"
+      },
+      {
+        "key": "D",
+        "text": "可导单调增加函数的导数一定是单调增加函数；"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "可导单调增加函数的导数一定是单调增加函数；",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 7,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2010-q008",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 8,
+    "stem": "设 $f(x)=\\dfrac{x^3-x}{\\sin \\pi x}$，则其（    ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "有无穷多个第一类间断点；"
+      },
+      {
+        "key": "B",
+        "text": "只有一个跳跃间断点；"
+      },
+      {
+        "key": "C",
+        "text": "只有两个可去间断点；"
+      },
+      {
+        "key": "D",
+        "text": "有三个可去间断点；"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "有三个可去间断点；",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 8,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2010-q009",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 9,
+    "stem": "设 $f(x)=x+x^3|x|$，则使 $f^{(n)}(0)$ 存在的最高阶数 $n$ 为（    ）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "3",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 9,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2010-q010",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 10,
+    "stem": "若 $\\lim\\limits_{x\\to 0}\\dfrac{\\sin x+xf(x)}{x^3}=0$，则 $\\lim\\limits_{x\\to 0}\\dfrac{1+f(x)}{x^2}$ 为（    ）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "0"
+      },
+      {
+        "key": "B",
+        "text": "$\\dfrac{1}{6}$"
+      },
+      {
+        "key": "C",
+        "text": "1"
+      },
+      {
+        "key": "D",
+        "text": "$\\infty$"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$\\dfrac{1}{6}$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 10,
+      "pages": [
+        1
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第1页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2010-q011",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 11,
+    "stem": "（10分）求 $\\lim\\limits_{x\\to 0}\\dfrac{\\sqrt{1+x}+\\sqrt{1-x}-2}{\\tan x\\cdot\\arctan x}$",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$-\\frac14$",
+    "translation": "",
+    "explanation": "分子 $\\sqrt{1+x}+\\sqrt{1-x}-2=-x^2/4+o(x^2)$，分母 $\\tan x\\arctan x\\sim x^2$，故极限为 $-1/4$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 11,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第2页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q012",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 12,
+    "stem": "（10分）设 $f(x)=\\begin{cases}\\dfrac{g(x)-\\sin x}{x}, & x\neq 0,\\\\[2mm] a, & x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\ne0\\\\g''(0)/2,&x=0\\end{cases}$；$f'$ 连续。",
+    "translation": "",
+    "explanation": "由 $g(x)=x+g''(0)x^2/2+o(x^2)$ 得 $a=0$ 且 $f'(0)=g''(0)/2$。对 $x\ne0$ 用商法则得到导数公式。又 $g'(x)=1+g''(0)x+o(x)$，故导数分子为 $g''(0)x^2/2+o(x^2)$，从而 $\\lim_{x\\to0}f'(x)=f'(0)$。其他点的连续性由 $g\\in C^2$ 得到。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 12,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第2页；参考解答 calculus1-1 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q013",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 13,
+    "stem": "（10分）函数 $f(x)=\\begin{cases}\\dfrac{\\ln(1+ax^3)}{x-\\arcsin x}, & x<0\\\\[2mm] 6, & x=0\\\\[2mm] \\dfrac{e^{ax}+x^2-ax-1}{x\\sin\\frac{x}{4}}, & x>0\\end{cases}$ 问 $a$ 为何值，$f(x)$ 在 $x=0$ 处（1）连续；（2）为可去间断点；（3）为跳跃间断点；（4）为第二类间断点；",
+    "options": [],
+    "answerKey": "",
+    "answerText": "（1）a=−1 连续； （2）a=−2 可去； （3）a≠−1，a≠−2 跳跃； （4）a=∅ 空集",
+    "translation": "",
+    "explanation": "左极限为 $-6a$，右极限为 $4(a^2/2+1)=2a^2+4$。二者相等当且仅当 $(a+1)(a+2)=0$。$a=-1$ 时共同极限为 $6=f(0)$，连续；$a=-2$ 时共同极限为 $12\ne f(0)$，可去间断；其他实数 $a$ 为跳跃间断。两侧极限始终有限，故不存在使其成为第二类间断点的实数 $a$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 13,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第2页；参考解答 calculus1-1 第2页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q014",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 14,
+    "stem": "（10分）设 $x_1=14$，　$x_{n+1}=\\sqrt{x_n+2}$　$(n=1,\\ 2,\\ \\cdots)$，（1）求极限 $\\lim\\limits_{n\\to\\infty}x_n$；　（2）求极限 $\\lim\\limits_{n\\to\\infty}\\left(\\dfrac{4(x_{n+1}-2)}{x_n-2}\\right)^{\\frac{1}{x_n-2}}$",
+    "options": [],
+    "answerKey": "",
+    "answerText": "（1）$2$；（2）$e^{-1/16}$。",
+    "translation": "",
+    "explanation": "由 $x_1>2$ 及归纳法，$2<x_{n+1}<x_n$，极限满足 $L=\\sqrt{L+2}$，故 $L=2$。有理化得 $4(x_{n+1}-2)/(x_n-2)=4/(\\sqrt{x_n+2}+2)$。令 $h=x_n-2\\to0^+$，底数为 $1-h/16+o(h)$，所以第二问极限为 $e^{-1/16}$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 14,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第2页；参考解答 calculus1-1 第2页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2010-q015",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2010",
+    "groupTitle": "2010年期中",
+    "numberInGroup": 15,
+    "stem": "（10分）设函数 $f(x)$ 在 $[a,\\ b]$ 连续，$(a,\\ b)$ 可导，证明：至少存在一点 $\\xi\\in(a,\\ b)$，使 $f'(\\xi)=\\dfrac{f(\\xi)-f(a)}{b-\\xi}$",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "证：$\\varphi'(x)=f'(x)(b-x)-(f(x)-f(a))$；对 $\\varphi(x)=(f(x)-f(a))(b-x)$ 用罗尔定理",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2010年期中",
+      "position": 15,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第2页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q001",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 1,
+    "stem": "$\\lim\\limits_{n\\to\\infty}\\left(\\frac{n+1}{n-1}\\right)^n=$ ________；$\\lim\\limits_{x\\to 0}\\frac{\\sin 2x}{(1+x\\sin\\frac{1}{x})\\tan x}=$ ________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "e^2，2",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 1,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第3页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q002",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 2,
+    "stem": "设函数 $y=y(x)$ 由方程 $e^y+xy=e$ 确定，则 $\\frac{dy}{dx}=$ ________，曲线 $y=y(x)$ 在 $(0,1)$ 点处切线方程为________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$-\\dfrac{y}{x+e^y}$，$y-1=-\\dfrac{1}{e}x$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 2,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第3页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q003",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 3,
+    "stem": "设函数 $y(x)$ 由参数方程 $\\begin{cases}x=t^3+3t+1\\\\y=t^3-3t+1\\end{cases}$ 确定，则函数 $y(x)$ 单调增加的 $x$ 的取值范围是________，曲线 $y=y(x)$ 下凸的 $x$ 取值范围是________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "x>5 或 x<-3，x>1",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 3,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第3页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q004",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 4,
+    "stem": "设当 $x\\to 0$ 时，$e^x-(ax^2+bx+1)$ 是比 $x^2$ 高阶的无穷小，则 $a=$ ________，$b=$ ________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$a=\\dfrac{1}{2}$，$b=1$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 4,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第3页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q005",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 5,
+    "stem": "设 $f(x)=x^3\\sin x$，则 $f'(0)=$ ________， $f^{(2011)}(0)=$ ________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "0，0",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 5,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第3页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q006",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 6,
+    "stem": "下列结论正确的是（  ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "如果 $f(x)$ 连续，则 $f(x)$ 可导。"
+      },
+      {
+        "key": "B",
+        "text": "如果 $f(x)$ 可导，则 $f'(x)$ 连续。"
+      },
+      {
+        "key": "C",
+        "text": "如果 $f'(x)$ 不存在，则 $f(x)$ 不连续"
+      },
+      {
+        "key": "D",
+        "text": "如果 $f(x)$ 可导，则 $f(x)$ 连续。"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "如果 $f(x)$ 可导，则 $f(x)$ 连续。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 6,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "原 PDF 的 D 项混入下一题的文字，删除“x_n 落在区间外”后恢复可导必连续这一命题。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第3页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2011-q007",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 7,
+    "stem": "数列 $\\{x_n\\}$ 极限是 $a$ 的充要条件是（  ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "对任意 $\\varepsilon>0$，存在正整数 $N$，当 $n>N$ 时有无穷多个 $x_n$ 落在 $(a-\\varepsilon,a+\\varepsilon)$ 中"
+      },
+      {
+        "key": "B",
+        "text": "对任意 $\\varepsilon>0$，存在正整数 $N$，当 $n>N$ 时有无穷多个 $x_n$ 落在 $(a-\\varepsilon,a+\\varepsilon)$ 外"
+      },
+      {
+        "key": "C",
+        "text": "对任意 $\\varepsilon>0$，至多有有限多个 $x_n$ 落在 $(a-\\varepsilon,a+\\varepsilon)$ 外"
+      },
+      {
+        "key": "D",
+        "text": "以上结论均不对。"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "对任意 $\\varepsilon>0$，至多有有限多个 $x_n$ 落在 $(a-\\varepsilon,a+\\varepsilon)$ 外",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 7,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第3页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2011-q008",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 8,
+    "stem": "设 $f(x)=\\frac{x^2-1}{\\sin \\pi x}$，则其（  ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "有无穷多个第一类间断点；"
+      },
+      {
+        "key": "B",
+        "text": "只有一个可去间断点；"
+      },
+      {
+        "key": "C",
+        "text": "有两个跳跃间断点；"
+      },
+      {
+        "key": "D",
+        "text": "有两个可去间断点；"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "有两个可去间断点；",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 8,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第3页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2011-q009",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 9,
+    "stem": "曲线 $y=xe^{\\frac{1}{x^2}}$ 的渐近线有（　）条。",
+    "options": [
+      {
+        "key": "A",
+        "text": "1 条"
+      },
+      {
+        "key": "B",
+        "text": "2 条"
+      },
+      {
+        "key": "C",
+        "text": "3 条"
+      },
+      {
+        "key": "D",
+        "text": "4 条"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "2 条",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 9,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第4页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2011-q010",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 10,
+    "stem": "设 $f(x)$ 在 $x=a$ 可导，则函数 $|f(x)|$ 在 $x=a$ 不可导的充分条件是（　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(a)>0$ 且 $f'(a)>0$"
+      },
+      {
+        "key": "B",
+        "text": "$f(a)<0$ 且 $f'(a)<0$"
+      },
+      {
+        "key": "C",
+        "text": "$f(a)=0$ 且 $f'(a)\neq 0$"
+      },
+      {
+        "key": "D",
+        "text": "$f(a)=0$ 且 $f'(a)=0$"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$f(a)=0$ 且 $f'(a)\neq 0$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 10,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第4页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2011-q011",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 11,
+    "stem": "（10分）求 $\\lim\\limits_{x\\to 0}\\frac{1}{\\arctan x\\sqrt{1+2x^2}}\\left[\\left(\\frac{2+\\cos x}{3}\\right)^x-1\\right]$",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$0$",
+    "translation": "",
+    "explanation": "解：原式 $=\\lim_{x\\to 0}\\dfrac{e^{x\\ln\\frac{2+\\cos x}{3}}-1}{x}$（6 分）；$=\\lim_{x\\to 0}\\ln\\dfrac{2+\\cos x}{3}=0$（10 分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 11,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "整理序号11"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第4页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q012",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 12,
+    "stem": "（10分）设 $f(x)=\\begin{cases}\\frac{g(x)-\\sin x}{x},&x\neq 0,\\\\ a,&x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0$，$g'(0)=1$，$g''(0)=2$，（1）求 $a$ 的值使 $f(x)$ 连续；（2）求 $f'(x)$；（3）讨论 $f'(x)$ 连续性。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\ne0\\\\1,&x=0\\end{cases}$；$f'$ 连续，$f'(0)=1$。",
+    "translation": "",
+    "explanation": "解：(1) $a=\\lim_{x\\to 0}\\dfrac{g(x)-\\sin x}{x}\\left(\\dfrac{0}{0}\\right)=\\lim_{x\\to 0}(g'(x)-\\cos x)=0$（4 分）\n(2) $f'(0)=\\lim_{x\\to 0}\\frac{f(x)-f(0)}{x}=\\lim_{x\\to 0}\\frac{g(x)-\\sin x}{x^2}$\n$=\\lim_{x\\to 0}\\frac{g'(x)-\\cos x}{2x}=\\lim_{x\\to 0}\\frac{g''(x)+\\sin x}{2}=\\frac{g''(0)}{2}=1$\n$\\therefore f'(x)=\\begin{cases}\\frac{x(g'(x)-\\cos x)-(g(x)-\\sin x)}{x^2}, & x\neq 0\\text{时} \\\\ 1, & x=0\\text{时}\\end{cases}$　　（8 分）\n(3) $\\lim_{x\\to 0}f'(x)=\\lim_{x\\to 0}\\frac{x(g'(x)-\\cos x)-(g(x)-\\sin x)}{x^2}$\n$=\\lim_{x\\to 0}\\frac{g'(x)-\\cos x+x(g''(x)+\\sin x)-(g'(x)-\\cos x)}{2x}$\n$=\\frac{g''(0)}{2}=1=f'(0)$，因此 $f'(x)$ 在 $(-\\infty,+\\infty)$ 连续。　　（10 分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 12,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "整理序号12"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第4页；参考解答 calculus1-1 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q013",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 13,
+    "stem": "（10分）比较 $2011^{2012}$ 和 $2012^{2011}$ 的大小，并叙述理由。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "五、解：设 $f(x)=\\frac{\\ln x}{x}$，由 $f'(x)=\\frac{1-\\ln x}{x^2}$，可知，当 $x>e$ 时 $f(x)$ 单调减少　（5 分）\n若 $b>a>e$，则有 $\\frac{\\ln a}{a}>\\frac{\\ln b}{b}$，推出 $\\ln a^b>\\ln b^a$，即有 $a^b>b^a$\n所以　$2011^{2012}>2012^{2011}$　　（10 分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 13,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "整理序号13"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第4页；参考解答 calculus1-1 第4页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q014",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 14,
+    "stem": "（10分）$f''(x)>0$，$f(0)<0$，证明函数 $\\frac{f(x)}{x}$ 在 $(-\\infty,0)$ 和 $(0,+\\infty)$ 内单调增加。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "六、解：$\\left(\\frac{f(x)}{x}\\right)'=\\frac{xf'(x)-f(x)}{x^2}$　　（4 分）\n令 $g(x)=xf'(x)-f(x)$，$g'(x)=xf''(x)$，令 $g'(x)=0$，得 $x=0$（唯一驻点），当 $x<0$ 时，$g'(x)<0$，当 $x>0$ 时，$g'(x)>0$，故 $g(0)$ 为最小值，故 $g(x)\\ge g(0)=-f(0)>0$，\n$\\therefore \\left(\\frac{f(x)}{x}\\right)'>0$，即 $\\frac{f(x)}{x}$ 单调增加。　　（10 分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 14,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "整理序号14"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第4页；参考解答 calculus1-1 第4页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2011-q015",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2011",
+    "groupTitle": "2011年期中",
+    "numberInGroup": 15,
+    "stem": "（10分）设 $f(x)$ 在 $[0,1]$ 连续，$(0,1)$ 可导，$f(1)=0$，证：存在 $x_0\\in(0,1)$ 使 $nf(x_0)+x_0f'(x_0)=0$，$n$ 为正整数。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "七、证明：令 $F(x)=x^n f(x)$　　（4 分）\n则 $F(x)$ 在 $[0,1]$ 连续，$(0,1)$ 可导，$F(0)=F(1)=0$，由罗尔定理，至少存在 $x_0\\in(0,1)$ 使 $F'(x_0)=0$，即　$nx_0^{n-1}f(x_0)+x_0^n f'(x_0)=x_0^{n-1}(nf(x_0)+x_0f'(x_0))=0$\n又 $x_0^{n-1}\neq 0$，故 $nf(x_0)+x_0f'(x_0)=0$　　（10 分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2011年期中",
+      "position": 15,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "整理序号15"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第4页；参考解答 calculus1-1 第4页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q001",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 1,
+    "stem": "求 $\\lim_{n\\to\\infty}\\left(\\frac{2^n+3^n}{5}\\right)^{1/n}$ 和 $\\lim_{x\\to\\infty}\\frac{3x^2+2x+1}{x^2+\\sin^2x}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$3$；$3$。",
+    "translation": "",
+    "explanation": "第一式取对数用 max(2,3)=3；第二式分子分母同除 x^2 得 3/1=3。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 1,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "整理序号1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第5页；参考解答 calculus1-1 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q002",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 2,
+    "stem": "曲线 $y=x^n$（$n\\in\\mathbb N^+$）在 $(1,1)$ 处的切线方程是什么？记切线与 $x$ 轴的交点为 $(\\xi_n,0)$，求 $\\lim_{n\\to\\infty}\\xi_n^n$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$y-1=n(x-1)$；$e^{-1}$。",
+    "translation": "",
+    "explanation": "切线斜率 n；切线与 x 轴交点 ξ_n=1-1/n，故 ξ_n^n→e^{-1}。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 2,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "整理序号2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第5页；参考解答 calculus1-1 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q003",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 3,
+    "stem": "设 $x=t^2+2t$，$y=\\ln(1+t)$，求 $\\mathrm dy/\\mathrm dx$ 和 $\\mathrm d^2y/\\mathrm dx^2$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac1{2(t+1)^2}$；$-\\frac1{2(t+1)^4}$。",
+    "translation": "",
+    "explanation": "参数方程求导 dy/dx=(dy/dt)/(dx/dt)；再对 t 求导除以 dx/dt。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 3,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "整理序号3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第5页；参考解答 calculus1-1 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q004",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 4,
+    "stem": "写出 $\\cos2x$ 带 $o(x^5)$ 余项的 Maclaurin 公式；设 $g(x)=x^2\\cos2x$，求 $g^{(4)}(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\cos2x=1-\\frac{(2x)^2}{2!}+\\frac{(2x)^4}{4!}+o(x^5)$；$g^{(4)}(0)=-48$。",
+    "translation": "",
+    "explanation": "cos2x 展开到 x^4；g=x^2cos2x 的 x^4 系数为 -2，故四阶导数为 -48。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 4,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "整理序号4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第5页；参考解答 calculus1-1 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q005",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 5,
+    "stem": "当 $x\\to0$ 时，$f(x)=\\tan^2x-x^2$ 是 $x$ 的几阶无穷小？求 $f'''(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "4；0",
+    "translation": "",
+    "explanation": "$f(x)=\\frac23x^4+o(x^4)$，且为解析偶函数，故为四阶无穷小，三阶导数在 $0$ 处为 $0$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 5,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "整理序号5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第5页；参考解答 calculus1-1 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q006",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 6,
+    "stem": "以下极限计算中正确的是________。",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\lim_{x\\to0}x\\sin(1/x)=1$"
+      },
+      {
+        "key": "B",
+        "text": "$\\lim_{x\\to\\infty}\\sin x/x=0$"
+      },
+      {
+        "key": "C",
+        "text": "$\\lim_{x\\to0}\\sin(1/x)/x=\\infty$"
+      },
+      {
+        "key": "D",
+        "text": "$\\lim_{x\\to\\infty}\\sin x/x=1$"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$\\lim_{x\\to\\infty}\\sin x/x=0$",
+    "translation": "",
+    "explanation": "A 极限为0；B 有界量乘无穷小为0；C 振荡无极限；D 应为0。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 6,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "整理序号6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第5页；参考解答 calculus1-1 第5页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2012-q007",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 7,
+    "stem": "函数 $f(x)=\\frac{|x|\\sin(x-2)}{x(x-1)(x-2)^2}$ 在下列哪一个区间内有界？",
+    "options": [
+      {
+        "key": "A",
+        "text": "(-1,0)"
+      },
+      {
+        "key": "B",
+        "text": "(0,1)"
+      },
+      {
+        "key": "C",
+        "text": "(1,2)"
+      },
+      {
+        "key": "D",
+        "text": "(2,3)"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "(-1,0)",
+    "translation": "",
+    "explanation": "(-1,0) 内分母无零点且端点极限有限，故有界；其余区间端点处趋于无穷。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 7,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "整理序号7"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第5页；参考解答 calculus1-1 第5页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2012-q008",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 8,
+    "stem": "对于定义在 (-1,1) 上的函数 f(x)，下列命题中正确的是________。",
+    "options": [
+      {
+        "key": "A",
+        "text": "如果 $x<0$ 时 $f'(x)<0$，$x>0$ 时 $f'(x)>0$，则 $f(0)$ 为极小值。"
+      },
+      {
+        "key": "B",
+        "text": "如果 $f(0)$ 为极大值，则存在 $0<\\delta\\le1$，使 $f$ 在 $(-\\delta,0)$ 内单调增加，在 $(0,\\delta)$ 内单调减少。"
+      },
+      {
+        "key": "C",
+        "text": "如果 $f$ 为偶函数，则 $f(0)$ 为极值。"
+      },
+      {
+        "key": "D",
+        "text": "如果 $f$ 为偶函数且可导，则 $f'(0)=0$。"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "如果 $f$ 为偶函数且可导，则 $f'(0)=0$。",
+    "translation": "",
+    "explanation": "可导偶函数在原点的导数为零。A 缺少原点连续条件；B 的单调性不是极大值的必要条件；C 也不成立。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 8,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "整理序号8"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第5页；参考解答 calculus1-1 第5页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2012-q009",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 9,
+    "stem": "若 $\\lim\\limits_{x\\to 0}\\dfrac{\\ln(1+x)-(ax+bx^{2})}{x^{2}}=2$，则______。",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a=1,b=-\\dfrac{5}{2}$；"
+      },
+      {
+        "key": "B",
+        "text": "$a=1,b=\\dfrac{5}{2}$；"
+      },
+      {
+        "key": "C",
+        "text": "$a=1,b=-2$；"
+      },
+      {
+        "key": "D",
+        "text": "$a=0,b=2$。"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$a=1,b=-\\dfrac{5}{2}$；",
+    "translation": "",
+    "explanation": "展开 $\\ln(1+x)=x-\\frac{x^2}{2}+o(x^2)$，极限为 $-\\frac12-b=2$ 且 $a=1$，故 $b=-\\frac52$，选 A。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 9,
+      "pages": [
+        6
+      ],
+      "originalNumbers": [
+        "整理序号9"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第6页；参考解答 calculus1-1 第6页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2012-q010",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 10,
+    "stem": "设函数 $f(x)$ 在点 $x=0$ 的某邻域内三阶可导，且 $\\lim\\limits_{x\\to 0}\\dfrac{f'(x)}{1-\\cos x}=-1$，则______。",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(0)$ 为 $f(x)$ 的一个极大值；"
+      },
+      {
+        "key": "B",
+        "text": "$f(0)$ 为 $f(x)$ 的一个极小值；"
+      },
+      {
+        "key": "C",
+        "text": "$f'(0)$ 为 $f'(x)$ 的一个极大值；"
+      },
+      {
+        "key": "D",
+        "text": "$f'(0)$ 为 $f'(x)$ 的一个极小值。"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$f'(0)$ 为 $f'(x)$ 的一个极大值；",
+    "translation": "",
+    "explanation": "由极限条件及 $f'$ 连续，有 $f'(0)=0$。充分接近 $0$ 且 $x\ne0$ 时，$f'(x)/(1-\\cos x)<0$，所以 $f'(x)<0=f'(0)$。因此 $f'(0)$ 是导函数 $f'$ 的严格极大值，选 C。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 10,
+      "pages": [
+        6
+      ],
+      "originalNumbers": [
+        "整理序号10"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第6页；参考解答 calculus1-1 第6页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2012-q011",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 11,
+    "stem": "（10分）已知函数 $y=y(x)$ 由方程 $x^{2}y^{2}+y=1\\ (y>0)$ 确定，求 $\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}$，并求 $y=y(x)$ 的极值。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac{dy}{dx}=-\\frac{2xy^2}{2x^2y+1}$；$y(0)=1$ 为极大值．",
+    "translation": "",
+    "explanation": "解 对 $x$ 求导，$2xy^2+2x^2yy'+y'=0$ (1)\n---3分\n令 $y'=0$，得 $x=0$，易算得 $y(0)=1$；\n-----5分\n(1) 式两端继续求导，得\n$2y^2+4xyy'+4xyy'+2x^2y'^2+2x^2yy''+y''=0$ (2)，\n在(2)中令 $x=0$，算得 $y''(0)=-2$，所以 $y(0)=1$ 为极大值．\n---10分",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 11,
+      "pages": [
+        6
+      ],
+      "originalNumbers": [
+        "整理序号11"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第6页；参考解答 calculus1-1 第6页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q012",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 12,
+    "stem": "（10分）求极限 $\\lim\\limits_{x\\to 0}\\dfrac{e^{x}-e^{\\sin x}}{x\\ln(1+x)-x^{2}+\\sin^{6}x}$",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$-\\frac13$",
+    "translation": "",
+    "explanation": "$e^x-e^{\\sin x}=e^{\\sin x}(e^{x-\\sin x}-1)\\sim x^3/6$，而 $x\\ln(1+x)-x^2+\\sin^6x=-x^3/2+o(x^3)$，故极限为 $-1/3$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 12,
+      "pages": [
+        6
+      ],
+      "originalNumbers": [
+        "整理序号12"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第6页；参考解答 calculus1-1 第6页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q013",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 13,
+    "stem": "（10分）已知函数 $f(x)=\\begin{cases}x, & x\\le 0\\\\ \\dfrac{a+b\\cos x}{x}, & x>0\\end{cases}$ 在点 $x=0$ 处可导，求常数 $a$ 和 $b$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "a=2，b=-2",
+    "translation": "",
+    "explanation": "解 （1）由连续条件，f(0-0)=f(0)=f(0+0)，因此 lim_{x→0^+}(a+b cos x)/x=0，进而应有 lim_{x→0^+}(a+b cos x)=0，即 a+b=0；——5分\n（2）由可导条件，f'_+(0)=f'_−(0)，算得 f'_+(0)=lim_{x→0^+}(a−a cos x)/x^2=a/2，而 f'_−(0)=1，所以 a=2，b=−2.——10分",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 13,
+      "pages": [
+        6
+      ],
+      "originalNumbers": [
+        "整理序号13"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第6页；参考解答 calculus1-1 第7页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q014",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 14,
+    "stem": "（10分）(1) 证明：$\\dfrac{1}{n+1}<\\ln\\left(1+\\dfrac{1}{n}\\right)<\\dfrac{1}{n}\\quad(n\\in N^{+})$；\n\n(2) 设 $u_{n}=1+\\dfrac{1}{2}+\\cdots+\\dfrac{1}{n}-\\ln n\\quad(n\\in N^{+})$，证明数列 $\\{u_{n}\\}$ 收敛。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "不等式成立，数列单调递减且有下界，因此收敛。",
+    "translation": "",
+    "explanation": "在 $[n,n+1]$ 上对 $\\ln x$ 用中值定理，存在 $\\xi\\in(n,n+1)$ 使 $\\ln(1+1/n)=1/\\xi$，即得两侧严格不等式。于是 $u_{n+1}-u_n=1/(n+1)-\\ln(1+1/n)<0$。又 $\\sum_{k=1}^n1/k>\\sum_{k=1}^n\\ln(1+1/k)=\\ln(n+1)$，故 $u_n>\\ln(n+1)-\\ln n>0$，由单调有界定理得收敛。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 14,
+      "pages": [
+        6
+      ],
+      "originalNumbers": [
+        "整理序号14"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第6页；参考解答 calculus1-1 第7页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2012-q015",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2012",
+    "groupTitle": "2012年期中",
+    "numberInGroup": 15,
+    "stem": "（10分）设函数 $f(x)$ 在 $[0,\\pi]$ 上连续，在 $(0,\\pi)$ 内可导，$f(0)=0$。证明：至少存在一点 $\\xi\\in(0,\\pi)$，使 $2f'(\\xi)=\\tan\\dfrac{\\xi}{2}\\cdot f(\\xi)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "证 令 $g(x)=f(x)\\cdot\\cos\\dfrac{x}{2}$（$x\\in[0,\\pi]$），\n——3 分\n则 $g(x)$ 在 $[0,\\pi]$ 上连续，在 $(0,\\pi)$ 内可导，$g(0)=g(\\pi)=0$，\n——8 分\n由 Rolle 定理，至少存在一点 $\\xi\\in(0,\\pi)$，使 $g'(\\xi)=0$，即\n$2f'(\\xi)=\\tan\\dfrac{\\xi}{2}\\cdot f(\\xi)$． ——10 分",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2012年期中",
+      "position": 15,
+      "pages": [
+        6
+      ],
+      "originalNumbers": [
+        "整理序号15"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第6页；参考解答 calculus1-1 第8页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q001",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 1,
+    "stem": "$\\lim\\limits_{n\\to\\infty}\\left(\\frac{n+1}{n-1}\\right)^{n}$ = __________，曲线 $y=\\frac{2x^{3}}{x^{2}+1}$ 的渐近线方程为 __________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$e^2,\\ y=2x$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 1,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q002",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 2,
+    "stem": "设函数 $y=f(x)$ 由参数方程 { $x=1+t^{2}$，$y=\\cos t$ } 确定，则该函数表示的曲线在 $t=\\pi$ 处的切线斜率为 ______，函数 $y=f(x)$ 在 $t=\\frac{\\pi}{2}$ 处的微分 $dy\\big|_{t=\\pi/2}$ = ______。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "0，$-\\dfrac{dx}{\\pi}$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 2,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q003",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 3,
+    "stem": "若曲线 $y=x^{3}+ax^{2}+bx+1$ 有拐点 $(-1,0)$，则 $a$ = ______，$b$ = ______。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$a=b=3$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 3,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q004",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 4,
+    "stem": "长方形的长 $x$ 以 $2cm/s$ 的速率增加，宽 $y$ 以 $3cm/s$ 的速率增加。则当 $x=12cm,\\ y=5cm$ 时，长方形对角线增加的速率为 __________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$3cm/s$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 4,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q005",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 5,
+    "stem": "设 $f(x)=x^{3}\\sin x$，则 $f''(0)=$ __________，$f^{(2013)}(0)=$ __________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$0,0$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 5,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q006",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 6,
+    "stem": "函数 $f(x)=\\frac{x^{2}-x}{x^{2}-1}\\sqrt{1+\\frac{1}{x^{2}}}$ 的无穷间断点的个数是（　　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "0"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "2"
+      },
+      {
+        "key": "D",
+        "text": "3"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "1",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 6,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2013-q007",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 7,
+    "stem": "$\\lim\\limits_{x\\to 1}\\frac{x^{2}-ax-b}{x^{2}+x-2}=2$，则 $(a,b)=$（　　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a=-1,\\ b=2$"
+      },
+      {
+        "key": "B",
+        "text": "$a=-2,\\ b=3$"
+      },
+      {
+        "key": "C",
+        "text": "$a=-3,\\ b=4$"
+      },
+      {
+        "key": "D",
+        "text": "$a=-4,\\ b=5$"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "$a=-4,\\ b=5$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 7,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2013-q008",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 8,
+    "stem": "设函数 $f(x)=\\{e^{x},\\ x<0;\\ a+bx,\\ x\\ge 0\\}$ 在 $x=0$ 处可导，则（　　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a=1,\\ b=-1$"
+      },
+      {
+        "key": "B",
+        "text": "$a=1,\\ b=0$"
+      },
+      {
+        "key": "C",
+        "text": "$a=1,\\ b=1$"
+      },
+      {
+        "key": "D",
+        "text": "$a=1,\\ b=2$"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$a=1,\\ b=1$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 8,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2013-q009",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 9,
+    "stem": "设函数 $f(x)$ 在 $(-\\infty,+\\infty)$ 内单调有界，$\\{x_{n}\\}$ 为数列，下列命题正确的是（　　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "若 $\\{x_n\\}$ 收敛，则 $\\{f(x_n)\\}$ 收敛"
+      },
+      {
+        "key": "B",
+        "text": "若 $\\{x_n\\}$ 单调，则 $\\{f(x_n)\\}$ 收敛"
+      },
+      {
+        "key": "C",
+        "text": "若 $\\{f(x_n)\\}$ 收敛，则 $\\{x_n\\}$ 收敛"
+      },
+      {
+        "key": "D",
+        "text": "若 $\\{f(x_n)\\}$ 单调，则 $\\{x_n\\}$ 收敛"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "若 $\\{x_n\\}$ 单调，则 $\\{f(x_n)\\}$ 收敛",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 9,
+      "pages": [
+        7
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第7页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2013-q010",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 10,
+    "stem": "设 $f(x)$ 在 $x=a$ 可导，则函数 $|f(x)|$ 在 $x=a$ 不可导的充分条件是（　　）",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(a)>0$ 且 $f'(a)>0$"
+      },
+      {
+        "key": "B",
+        "text": "$f(a)<0$ 且 $f'(a)<0$"
+      },
+      {
+        "key": "C",
+        "text": "$f(a)=0$ 且 $f'(a)\ne 0$"
+      },
+      {
+        "key": "D",
+        "text": "$f(a)=0$ 且 $f'(a)=0$"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$f(a)=0$ 且 $f'(a)\ne 0$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 10,
+      "pages": [
+        8
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第8页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2013-q011",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 11,
+    "stem": "（10分）求 $\\lim\\limits_{x\\to 0}\\frac{1}{\\sin^3 x}\\left[\\left(\\frac{2+\\cos x}{3}\\right)^x-1\\right]$",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$-\\frac16$",
+    "translation": "",
+    "explanation": "解：原式$=\\lim\\limits_{x\\to 0}\\dfrac{e^{x\\ln\\frac{2+\\cos x}{3}}-1}{x^3}$　　(2分)\n\n$=\\lim\\limits_{x\\to 0}\\dfrac{\\ln\\left(1+\\dfrac{\\cos x-1}{3}\\right)}{x^2}$　　(4分)\n\n$=\\lim\\limits_{x\\to 0}\\dfrac{\\dfrac{\\cos x-1}{3}}{x^2}$　　(6分)\n\n$=\\lim\\limits_{x\\to 0}\\dfrac{-\\dfrac{x^2}{2}}{3x^2}$　　(8分)\n\n$=-\\dfrac{1}{6}$　　(10分)",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 11,
+      "pages": [
+        8
+      ],
+      "originalNumbers": [
+        "整理序号11"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第8页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q012",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 12,
+    "stem": "（10分）设 $f(x)=\\begin{cases}\\dfrac{g(x)-\\sin x}{x}, & x\ne 0\\\\ a, & x=0\\end{cases}$，其中 $g(x)$ 具有二阶连续导数，$g(0)=0, g'(0)=1, g''(0)=2$，(1)求 $a$ 的值使 $f(x)$ 连续；(2)求 $f'(x)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$a=0$；$f'(x)=\\begin{cases}\\dfrac{x(g'(x)-\\cos x)-g(x)+\\sin x}{x^2},&x\ne0\\\\g''(0)/2,&x=0\\end{cases}$，其中 $g''(0)=2$。",
+    "translation": "",
+    "explanation": "连续条件是 $a=\\lim_{x\\to0}f(x)=0$。商法则给出 $x\ne0$ 处的导数；在原点由 $g(x)-\\sin x=x^2+o(x^2)$ 得 $f'(0)=1$。原解析首行误写为 $\\lim f'(x)$，现更正。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 12,
+      "pages": [
+        8
+      ],
+      "originalNumbers": [
+        "整理序号12"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第8页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q013",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 13,
+    "stem": "（10分）设函数 $y=y(x)$ 由方程 $2y^3-2y^2+2xy-x^2=1$ 确定，求 $y=y(x)$ 的驻点，并判别它是否为极值点，如果是极值点，并求极值。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "驻点 $x=1$，为极小值点，极小值为 $1$。",
+    "translation": "",
+    "explanation": "解：在方程两边对 $x$ 求导，得 $3y^2y'-2yy'+xy'+y-x=0$　（1）(2分)\n\n令 $y'=0$，得 $y=x$，将此代入原方程，得 $2x^3-x^2-1=0$，求得唯一实根 $x=1$（驻点），且 $y(1)=1$。　　(5分)\n\n在（1）式两边再求导，得 $(3y^2-2y+x)y''+2(3y-1)y'^2+2y'-1=0$， 因此\n\n$y''|_{(1,1)}=\\dfrac{1}{2}>0$。故 $x=1$ 是 $y=y(x)$ 极小值点且极小值为 $y=1$。　　(10分)",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 13,
+      "pages": [
+        8
+      ],
+      "originalNumbers": [
+        "整理序号13"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第8页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q014",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 14,
+    "stem": "（10分）证明 $x>0$ 时，$(x^2-1)\\ln x\\ge (x-1)^2$",
+    "options": [],
+    "answerKey": "",
+    "answerText": "不等式成立，仅在 $x=1$ 时取等号。",
+    "translation": "",
+    "explanation": "令 $\\varphi(x)=(x^2-1)\\ln x-(x-1)^2$。有 $\\varphi'(x)=2x\\ln x-x+2-1/x$，$\\varphi''(x)=2\\ln x+1+1/x^2$，$\\varphi'''(x)=2(x^2-1)/x^3$。故 $\\varphi''$ 在 $1$ 处取最小值 $2>0$，于是 $\\varphi'$ 严格增加且 $\\varphi'(1)=0$，$\\varphi$ 在 $1$ 处取唯一最小值 $0$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 14,
+      "pages": [
+        8
+      ],
+      "originalNumbers": [
+        "整理序号14"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第8页；参考解答 calculus1-1 第9页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2013-q015",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2013",
+    "groupTitle": "2013年期中",
+    "numberInGroup": 15,
+    "stem": "（10分）已知函数 $f(x)$ 具有二阶导数，且 $\\lim\\limits_{x\\to 0}\\frac{f(x)}{x}=0$，$f(1)=0$，证明：存在点 $\\xi\\in(0,1)$，使得 $f''(\\xi)=0$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "由 $f$ 连续和 $f(x)/x\\to0$，得 $f(0)=0$，继而 $f'(0)=\\lim_{x\\to0}(f(x)-f(0))/x=0$。在 $[0,1]$ 对 $f$ 用 Rolle 定理，得到 $c\\in(0,1)$ 使 $f'(c)=0$；再在 $[0,c]$ 对 $f'$ 用 Rolle 定理，得到所需的 $\\xi$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2013年期中",
+      "position": 15,
+      "pages": [
+        8
+      ],
+      "originalNumbers": [
+        "整理序号15"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第8页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q001",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 1,
+    "stem": "方程 $e^y+xy=e$ 确定隐函数 $y=y(x)$，求 $y'(0)$ 与 $y''(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$-e^{-1}$；$e^{-2}$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 1,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q002",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 2,
+    "stem": "函数 $y(x)$ 由 $x=t^3+3t+1$，$y=t^3-3t+1$ 确定，求单调减少的 $x$ 范围及曲线的拐点。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$-3<x<5$；$(1,1)$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 2,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q003",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 3,
+    "stem": "求 $\\lim_{n\\to\\infty}\\left(n\\tan\\frac1n\\right)^{n^2}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$e^{1/3}$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 3,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q004",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 4,
+    "stem": "球体的半径以 $0.1\\,\\mathrm{m/min}$ 的速率增加。半径为 $1\\,\\mathrm m$ 时，体积和表面积的增加速率分别是多少？",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$0.4\\pi\\,\\mathrm{m^3/min}$；$0.8\\pi\\,\\mathrm{m^2/min}$。",
+    "translation": "",
+    "explanation": "对 $V=4\\pi r^3/3$ 和 $S=4\\pi r^2$ 关于时间求导，得到 $V'=4\\pi r^2r'$，$S'=8\\pi rr'$，代入即可。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 4,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "OCR 将小数点拆成逗号，错误生成四个数字；恢复为 0.4π、0.8π。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q005",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 5,
+    "stem": "设 $f(x)=x^2\\ln(1+x)$，求 $f'''(0)$ 和 $f^{(2014)}(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$6$；$-\\frac{2014!}{2012}$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 5,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q006",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 6,
+    "stem": "设 $f(x)=\\frac{x^3-x}{\\sin\\pi x}$，则其（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "只有一个可去间断点"
+      },
+      {
+        "key": "B",
+        "text": "有两个跳跃间断点"
+      },
+      {
+        "key": "C",
+        "text": "有三个可去间断点"
+      },
+      {
+        "key": "D",
+        "text": "有无穷多个第一类间断点"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "有三个可去间断点",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 6,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2014-q007",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 7,
+    "stem": "曲线 $y=xe^{1/x^2}$（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "即有水平又有铅直渐近线；"
+      },
+      {
+        "key": "B",
+        "text": "即有铅直又有斜渐近线；"
+      },
+      {
+        "key": "C",
+        "text": "即无水平又无斜渐近线；"
+      },
+      {
+        "key": "D",
+        "text": "即无铅直又无斜渐近线。"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "即有铅直又有斜渐近线；",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 7,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2014-q008",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 8,
+    "stem": "当 $x\\to0$ 时，$2\\arctan x-\\ln\\frac{1+x}{1-x}$ 是几阶无穷小？",
+    "options": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "3",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 8,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2014-q009",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 9,
+    "stem": "设 $f$ 在 $(0,+\\infty)$ 上二阶可导且 $f''>0$，令 $u_n=f(n)$。下列结论正确的是（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "若 u_1>u_2，则 {u_n} 必收敛"
+      },
+      {
+        "key": "B",
+        "text": "若 u_1>u_2，则 {u_n} 必发散"
+      },
+      {
+        "key": "C",
+        "text": "若 u_1<u_2，则 {u_n} 必收敛"
+      },
+      {
+        "key": "D",
+        "text": "若 u_1<u_2，则 {u_n} 必发散"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "若 u_1<u_2，则 {u_n} 必发散",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 9,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2014-q010",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 10,
+    "stem": "函数 $y=f(x)$ 在 $x_0$ 处可微，$\\Delta y=f(x_0+h)-f(x_0)$。下列说法中正确的是（　）。\n① $\\mathrm dy$ 是 $h$ 的等价无穷小；\n② 当 $f'(x_0)\ne0$ 时，$\\Delta y$ 与 $\\mathrm dy$ 等价；\n③ $\\Delta y-\\mathrm dy$ 是 $h$ 的同阶无穷小；\n④ $\\Delta y-\\mathrm dy$ 是 $h$ 的高阶无穷小。",
+    "options": [
+      {
+        "key": "A",
+        "text": "①②"
+      },
+      {
+        "key": "B",
+        "text": "①③"
+      },
+      {
+        "key": "C",
+        "text": "②③"
+      },
+      {
+        "key": "D",
+        "text": "②④"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "②④",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 10,
+      "pages": [
+        9
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第9页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2014-q011",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 11,
+    "stem": "求 $\\lim_{x\\to0}(1/x^2-\\cot^2x)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac23$",
+    "translation": "",
+    "explanation": "由 $\\cot x=1/x-x/3+O(x^3)$，有 $\\cot^2x=1/x^2-2/3+O(x^2)$，故极限为 $2/3$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 11,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "整理序号11"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第10页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q012",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 12,
+    "stem": "设 $f(x)=\\begin{cases}(g(x)-\\cos x)/x,&x>0\\\\ax+b,&x\\le0\\end{cases}$，其中 $g''(0)=5,g'(0)=2,g(0)=1$。确定 $a,b$ 使 $f$ 在 $0$ 处可导，并求 $f'(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$a=3$，$b=2$，$f'(0)=3$。",
+    "translation": "",
+    "explanation": "$g(x)=1+2x+5x^2/2+o(x^2)$，故右侧 $f(x)=2+3x+o(x)$。连续要求 $b=2$，左右导数相等要求 $a=3$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 12,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "整理序号12"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第11页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q013",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 13,
+    "stem": "设 $f,g$ 在 $(a,b)$ 内连续，且 $f(x)\ne g(x),g(x)\ne0$。若 $\\frac{f+g}{f-g}$ 在 $x_0\\in(a,b)$ 取极大值，证明 $f/g$ 在 $x_0$ 取极小值。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "令 $u=f/g$，则 $u$ 连续且 $u(x_0)\ne1$。在 $x_0$ 的一个邻域内，$u-1$ 同号。函数 $H(u)=(u+1)/(u-1)$ 在 $1$ 的每一侧都严格递减，因为 $H'(u)=-2/(u-1)^2<0$。所以 $H(u(x))\\le H(u(x_0))$ 等价于 $u(x)\\ge u(x_0)$，结论成立。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 13,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "整理序号13"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第11页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q014",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 14,
+    "stem": "$f$ 在 $[0,+\\infty)$ 上二阶可导，$f(0)<0,f'(0)>0$，且 $x>0$ 时 $f''(x)>0$。证明 $f(x)=0$ 在 $(0,+\\infty)$ 恰有一个实根。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "$f'$ 严格增加，故 $f'(x)\\ge f'(0)>0$，$f$ 严格增加。由中值定理，$f(x)\\ge f(0)+xf'(0)\\to+\\infty$。再由 $f(0)<0$、连续性和零点定理得到根的存在性，严格单调性保证唯一性。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 14,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "整理序号14"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第11页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2014-q015",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2014",
+    "groupTitle": "2014年期中",
+    "numberInGroup": 15,
+    "stem": "设 $f,g$ 在 $[a,b]$ 连续、$(a,b)$ 可导，且 $g'(x)\ne0$。证明存在 $\\xi\\in(a,b)$，使 $\\frac{f(\\xi)-f(a)}{g(b)-g(\\xi)}=\\frac{f'(\\xi)}{g'(\\xi)}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "令 $F(x)=(f(x)-f(a))(g(x)-g(b))$，则 $F(a)=F(b)=0$。由 Rolle 定理存在 $\\xi$ 使 $F'(\\xi)=0$。又 $g(b)\ne g(\\xi)$，否则在 $[\\xi,b]$ 上由 Rolle 定理会有 $g'=0$，与假设矛盾。因此可以除以两个非零分母，整理得到结论。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2014年期中",
+      "position": 15,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "整理序号15"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第11页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q001",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 1,
+    "stem": "设 $\\lim_{x\\to\\infty}\\left(\\frac{x^2+1}{x+1}-ax-b\\right)=0$，求 $a,b$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$a=1$，$b=-1$",
+    "translation": "",
+    "explanation": "通分后令 $x$ 的一次项与常数项均为 0，得 $a=1$，$b=-1$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 1,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第12页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q002",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 2,
+    "stem": "设 $f(x)=\\sin x\\sin3x\\sin5x$，求 $f'''(0)$ 和 $f^{(4)}(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$f'''(0)=90$，$f^{(4)}(0)=0$",
+    "translation": "",
+    "explanation": "展开 $\\sin x\\sin3x\\sin5x\\approx15x^3-\\cdots$，故三阶导数为 $6\\cdot15=90$，四阶导数为 0。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 2,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第12页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q003",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 3,
+    "stem": "设 $x=\\cos t+t\\sin t$，$y=\\sin t-t\\cos t$，求 $\\mathrm dy/\\mathrm dx$ 与 $\\mathrm d^2y/\\mathrm dx^2$（在参数求导公式适用处）。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac{dy}{dx}=\\tan t$，$\\frac{d^2y}{dx^2}=\\frac{1}{t}\\sec^3 t$",
+    "translation": "",
+    "explanation": "$dy/dx=(t\\sin t)/(t\\cos t)=\\tan t$；二阶导 $(\\tan t)'/(t\\cos t)=(1/t)\\sec^3 t$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 3,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第12页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q004",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 4,
+    "stem": "设 $y=y(x)$ 由 $e^{x+y}-xy=1$ 确定，求 $y'(0)$ 与 $y''(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$y'(0)=-1$，$y''(0)=-2$",
+    "translation": "",
+    "explanation": "隐函数求导：在 $(0,0)$ 得 $1+y'=0$，故 $y'=-1$；再求导得 $y''+2=0$，故 $y''=-2$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 4,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第12页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q005",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 5,
+    "stem": "求 $\\lim_{x\\to1}\\frac{\\sqrt{3-x}-\\sqrt{1+x}}{x^2+x-2}$ 和 $\\lim_{x\\to0}\\left(\\frac1{x^2}-\\frac1{\\sin^2x}\\right)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$-\\frac{\\sqrt{2}}{6}$，$-\\frac{1}{3}$",
+    "translation": "",
+    "explanation": "第一式有理化得 $-1/(3\\sqrt{2})$；第二式用 $\\sin x=x-x^3/6$ 展开，极限为 $-1/3$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 5,
+      "pages": [
+        10
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第10页；参考解答 calculus1-1 第12页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q006",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 6,
+    "stem": "设 $f(x)=\\begin{cases}\\frac{1}{x}e^{\\frac{1}{x}}, & x<0\\\\ x\\ln x, & x>0\\end{cases}$，则 $x=0$ 是 $f(x)$ 的________．",
+    "options": [
+      {
+        "key": "A",
+        "text": "可去间断点；"
+      },
+      {
+        "key": "B",
+        "text": "跳跃间断点；"
+      },
+      {
+        "key": "C",
+        "text": "无穷间断点；"
+      },
+      {
+        "key": "D",
+        "text": "振荡间断点．"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "可去间断点；",
+    "translation": "",
+    "explanation": "左极限 $x\\to0^-$ 时 $(1/x)e^{1/x}\\to0$；右极限 $x\\ln x\\to0$，故为可去间断点。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 6,
+      "pages": [
+        11
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第11页；参考解答 calculus1-1 第12页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2015-q007",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 7,
+    "stem": "设 $f(x)=\\begin{cases}\\frac{1-\\cos x}{x}, & x<0\\\\ ax+b, & x\\ge 0\\end{cases}$ 在 $x=0$ 处可导，则________．",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a=2,\\ b=0$；"
+      },
+      {
+        "key": "B",
+        "text": "$a=\\frac{1}{2},\\ b=0$；"
+      },
+      {
+        "key": "C",
+        "text": "$a=2,\\ b=1$；"
+      },
+      {
+        "key": "D",
+        "text": "$a=\\frac{1}{2},\\ b=1$．"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$a=\\frac{1}{2},\\ b=0$；",
+    "translation": "",
+    "explanation": "连续性给 $b=0$；左导数 $\\lim(1-\\cos x)/x^2=1/2$，右导数为 $a$，故 $a=1/2$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 7,
+      "pages": [
+        11
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第11页；参考解答 calculus1-1 第12页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2015-q008",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 8,
+    "stem": "设 $f(x)$，$g(x)$ 为大于零的可导函数，且 $f'(x)g(x)-f(x)g'(x)<0$，则对于 $a<x<b$，有________．",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(x)g(b)>f(b)g(x)$；"
+      },
+      {
+        "key": "B",
+        "text": "$f(x)g(a)>f(a)g(x)$；"
+      },
+      {
+        "key": "C",
+        "text": "$f(x)g(x)>f(b)g(b)$；"
+      },
+      {
+        "key": "D",
+        "text": "$f(x)g(x)>f(a)g(a)$．"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$f(x)g(b)>f(b)g(x)$；",
+    "translation": "",
+    "explanation": "$(f/g)'=(f'g-fg')/g^2<0$，故 $f/g$ 递减；$x<b$ 时 $f(x)/g(x)>f(b)/g(b)$，即 A。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 8,
+      "pages": [
+        11
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第11页；参考解答 calculus1-1 第12页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2015-q009",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 9,
+    "stem": "设 $\\lim\\limits_{x\\to\\infty} f'(x)=e$，且 $\\lim\\limits_{x\\to\\infty}\\big(f(x)-f(x-1)\\big)=\\lim\\limits_{x\\to\\infty}\\left(\\frac{x+c}{x-c}\\right)^{x}$，则常数 $c$ 为________．",
+    "options": [
+      {
+        "key": "A",
+        "text": "$2$；"
+      },
+      {
+        "key": "B",
+        "text": "$-2$；"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac{1}{2}$；"
+      },
+      {
+        "key": "D",
+        "text": "$-\\frac{1}{2}$．"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$\\frac{1}{2}$；",
+    "translation": "",
+    "explanation": "由拉格朗日中值定理，左极限为 $e$；右边 $=\\lim\\limits_{x\\to\\infty}\\left(1+\\dfrac{2c}{x-c}\\right)^x=e^{2c}$，故 $2c=1$，$c=\\dfrac12$，选 C。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 9,
+      "pages": [
+        11
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第11页；参考解答 calculus1-1 第13页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2015-q010",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 10,
+    "stem": "设偶函数 $f(x)$ 具有二阶连续导数，且 $f''(0)\ne 0$，则 $x=0$ ________．",
+    "options": [
+      {
+        "key": "A",
+        "text": "一定不是 $f(x)$ 的驻点；"
+      },
+      {
+        "key": "B",
+        "text": "一定不是 $f(x)$ 的极值点；"
+      },
+      {
+        "key": "C",
+        "text": "一定是 $f(x)$ 的极值点；"
+      },
+      {
+        "key": "D",
+        "text": "不能确定是否为 $f(x)$ 的极值点．"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "一定是 $f(x)$ 的极值点；",
+    "translation": "",
+    "explanation": "偶函数 $f$ 的导函数 $f'$ 为奇函数，故 $f'(0)=0$；又 $f''(0)\neq0$ 且连续，$x=0$ 两侧 $f'$ 异号，故 $x=0$ 一定是极值点，选 C。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 10,
+      "pages": [
+        11
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第11页；参考解答 calculus1-1 第13页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2015-q011",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 11,
+    "stem": "（10 分）计算 $\\lim\\limits_{x\\to 0}\\dfrac{\\tan x-x}{(\\sqrt{1+x}-1)\\ln(1+x^2)+x^4\\cos\\dfrac{1}{x}}$．",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\dfrac{2}{3}$",
+    "translation": "",
+    "explanation": "解 因为 $\\lim\\limits_{x\\to0}\\dfrac{\\tan x-x}{x^3}=\\lim\\limits_{x\\to0}\\dfrac{\\sec^2x-1}{3x^2}=\\lim\\limits_{x\\to0}\\dfrac{\\tan^2x}{3x^2}=\\dfrac{1}{3}$；$\\lim\\limits_{x\\to0}\\dfrac{(\\sqrt{1+x}-1)\\ln(1+x^2)}{x^3}=\\lim\\limits_{x\\to0}\\dfrac{\\frac{x}{2}\\cdot x^2}{x^3}=\\dfrac{1}{2}$；$\\lim\\limits_{x\\to0}\\dfrac{x^4\\cos\\frac{1}{x}}{x^3}=0$（6分）。所以原式 $=\\lim\\limits_{x\\to0}\\dfrac{\\frac{\\tan x-x}{x^3}}{\\frac{(\\sqrt{1+x}-1)\\ln(1+x^2)}{x^3}+\\frac{x^4\\cos\\frac{1}{x}}{x^3}}=\\dfrac{2}{3}$．（10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 11,
+      "pages": [
+        11
+      ],
+      "originalNumbers": [
+        "整理序号11"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第11页；参考解答 calculus1-1 第13页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q012",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 12,
+    "stem": "证明：$0<x<1$ 时，$\\frac{1-x}{1+x}<e^{-2x}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "证明成立",
+    "translation": "",
+    "explanation": "证 令 $f(x)=(1-x)e^{2x}-(1+x)\\;(x\\in[0,1])$，则 $f(x)$ 在 $[0,1]$ 上二阶可导（2分）；且 $f'(x)=(1-2x)e^{2x}-1$，$f''(x)=-4xe^{2x}<0\\;(x>0)$（6分）；所以 $f'(x)$ 在 $[0,1]$ 上单减，所以当 $x>0$ 时，$f'(x)<f'(0)=0$；进而可知 $f(x)$ 在 $[0,1]$ 上单减；所以当 $0<x<1$ 时，$f(x)<f(0)=0$．不等式得证．（10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 12,
+      "pages": [
+        12
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第12页；参考解答 calculus1-1 第13页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q013",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 13,
+    "stem": "讨论方程 $xe^{-x}=a$（$a>0$）的实根个数。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "当 0<a<e^{-1} 时有两个实根，分别位于 (0,1) 与 (1,+∞)；当 a=e^{-1} 时有唯一实根 x=1；当 a>e^{-1} 时无实根。",
+    "translation": "",
+    "explanation": "证 显然，方程在 (-∞,0] 上没有根，因此方程只可能有正根。\n令 f(x)=xe^{-x}-a（x∈[0,+∞)），则 f(x) 在 [0,+∞) 上可导，且 f'(x)=(1-x)e^{-x}，驻点 x=1。\n当 0≤x<1 时，f'(x)>0；当 x>1 时，f'(x)<0，所以 f(1)=e^{-1}-a 是 f(x) 的最大值。（4分）\n所以，当 e^{-1}<a 时，f(x)<0，方程没有实根；当 e^{-1}=a 时，方程有唯一实根 x=1；当 e^{-1}>a>0 时，f(1)>0，f(0)=-a<0，lim_{x→+∞} f(x)=-a<0，由零点定理可知，方程有两个实根，分别位于 (0,1) 与 (1,+∞) 内。\n（10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 13,
+      "pages": [
+        12
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第12页；参考解答 calculus1-1 第14页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q014",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 14,
+    "stem": "设 $f$ 在 $[0,2]$ 上连续、$(0,2)$ 内可导，且 $f(0)+2f(1)=3f(2)$。证明存在 $\\xi\\in(0,2)$ 使 $f'(\\xi)=0$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "存在 ξ∈(0,2)，使得 f'(ξ)=0。",
+    "translation": "",
+    "explanation": "证 因为 min_{x∈[0,1]} f(x)≤(f(0)+2f(1))/3≤max_{x∈[0,1]} f(x)，所以由连续函数的介值定理，存在 c∈[0,1]，使得 f(c)=(f(0)+2f(1))/3=f(2)；（5分）\n因为 f(x) 在 [c,2] 上连续，在 (c,2) 内可导，且 f(c)=f(2)，所以由 Rolle 定理，存在 ξ∈(c,2)⊂(0,2)，使得 f'(ξ)=0。\n（10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 14,
+      "pages": [
+        13
+      ],
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第13页；参考解答 calculus1-1 第14页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2015-q015",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2015",
+    "groupTitle": "2015年期中",
+    "numberInGroup": 15,
+    "stem": "（1）设 $a_1\\ge a_2\\ge\\cdots\\ge a_k>0$，求 $\\lim_{n\\to\\infty}\\sqrt[n]{a_1^n+\\cdots+a_k^n}$。\n（2）设 $f(x)=\\lim_{n\\to\\infty}\\sqrt[n]{1+x^n+(x^2/2)^n}$（$x\\ge0$），求 $f(x)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "（1）$a_1$；（2）$f(x)=\\max\\{1,x,x^2/2\\}=\\begin{cases}1,&0\\le x\\le1\\\\x,&1<x<2\\\\x^2/2,&x\\ge2\\end{cases}$。",
+    "translation": "",
+    "explanation": "由 $a_1^n\\le\\sum a_i^n\\le ka_1^n$，开 $n$ 次方并用夹逼定理得到第一问。第二问同理为三个非负底数的最大值，比较 $1,x,x^2/2$ 即可。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2015年期中",
+      "position": 15,
+      "pages": [
+        13
+      ],
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第13页；参考解答 calculus1-1 第14页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q001",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 1,
+    "stem": "已知极限\n$$\\lim_{x\\to 0}\\frac{x-\\arctan x}{x^k}=C$$\n其中 $k,C$ 为常数，且 $C\neq 0$，则 $k=$ ________，$C=$ ________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$k=3$，$C=\\frac13$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 1,
+      "pages": [
+        14
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第14页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q002",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 2,
+    "stem": "设函数 $y=f(x)$ 由方程 $y-2x=e^{x(1-y)}$ 确定，则 $\\mathrm{d}y|_{x=0}=$ ________，$\\lim_{n\\to\\infty} n\\left[f\\left(\\frac{2}{n}\\right)-1\\right]=$ ________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$2\\,\\mathrm dx$；$4$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 2,
+      "pages": [
+        14
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第14页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q003",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 3,
+    "stem": "已知函数 $y=y(x)$ 由方程 $e^y+6xy+x^2-1=0$ 确定，则 $y'(0)=$ ______，$y''(0)=$ ________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "0，-2",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 3,
+      "pages": [
+        14
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第14页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q004",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 4,
+    "stem": "函数 $y=f(x)$ 由参数方程 $\\begin{cases}x=e^t\\sin 2t\\\\y=e^t\\cos t\\end{cases}$ 确定，则 $\\frac{\\mathrm{d}y}{\\mathrm{d}x}=$ ____________，该函数表示的曲线在点 $(0,1)$ 处的法线方程为________________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac{\\cos t-\\sin t}{\\sin2t+2\\cos2t}$；$y=1-2x$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 4,
+      "pages": [
+        14
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第14页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q005",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 5,
+    "stem": "设函数 $f(x)=e^{x^2}\\sin x$，则 $f'''(0)=$ ________，$f^{(2016)}(0)=$ ________。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "5，0",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 5,
+      "pages": [
+        14
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第14页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q006",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 6,
+    "stem": "函数 $y=f(x)$ 与其反函数 $x=g(y)$ 在同一直角坐标系 $Oxy$ 中的图像是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "完全不同；"
+      },
+      {
+        "key": "B",
+        "text": "部分相同，部分不同；"
+      },
+      {
+        "key": "C",
+        "text": "完全相同；"
+      },
+      {
+        "key": "D",
+        "text": "关于直线 $y=x$ 对称。"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "完全相同；",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 6,
+      "pages": [
+        14
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第14页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2016-q007",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 7,
+    "stem": "在函数在一点处的极限的 $\\varepsilon-\\delta$ 定义中，$\\varepsilon$ 与 $\\delta$ 的关系是（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\varepsilon$ 与 $\\delta$ 无关；"
+      },
+      {
+        "key": "B",
+        "text": "先给定 $\\varepsilon$，后确定 $\\delta$，但 $\\delta$ 的取值不唯一；"
+      },
+      {
+        "key": "C",
+        "text": "先给定 $\\delta$，后确定 $\\varepsilon$；"
+      },
+      {
+        "key": "D",
+        "text": "先给定 $\\varepsilon$，后唯一确定 $\\delta$。"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "先给定 $\\varepsilon$，后确定 $\\delta$，但 $\\delta$ 的取值不唯一；",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 7,
+      "pages": [
+        14
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第14页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2016-q008",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 8,
+    "stem": "设 $f$ 在 $a$ 的某邻域内连续，且 $f(a)$ 为极大值。则存在 $\\delta>0$，使 $0<|x-a|<\\delta$ 时，下列哪项成立？",
+    "options": [
+      {
+        "key": "A",
+        "text": "$(x-a)[f(x)-f(a)]\\geq 0$；"
+      },
+      {
+        "key": "B",
+        "text": "$(x-a)[f(x)-f(a)]\\leq 0$；"
+      },
+      {
+        "key": "C",
+        "text": "$x\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\geq 0$；"
+      },
+      {
+        "key": "D",
+        "text": "$x\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\leq 0$。"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "$x\neq a$，且 $\\lim\\limits_{t\\to a}\\dfrac{f(x)-f(t)}{(x-t)^2}\\leq 0$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 8,
+      "pages": [
+        14
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "将选项自带的 x≠a 条件移入题干，避免原题在 x=a 处的量词歧义。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第14页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2016-q009",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 9,
+    "stem": "函数 $f(x)=x\\sqrt{\\dfrac{x}{x-1}}$ 的渐近线有（ ）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "1条；"
+      },
+      {
+        "key": "B",
+        "text": "2条；"
+      },
+      {
+        "key": "C",
+        "text": "3条；"
+      },
+      {
+        "key": "D",
+        "text": "4条。"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "2条；",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 9,
+      "pages": [
+        15
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第15页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2016-q010",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 10,
+    "stem": "下列四个函数，哪一个在 $(-\\infty,+\\infty)$ 内不一致连续（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sin x$"
+      },
+      {
+        "key": "B",
+        "text": "$x+\\sin x$"
+      },
+      {
+        "key": "C",
+        "text": "$\\sin x^2$"
+      },
+      {
+        "key": "D",
+        "text": "$\\arctan x$"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$\\sin x^2$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 10,
+      "pages": [
+        15
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第15页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2016-q011",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 11,
+    "stem": "设 $f$ 在 $[0,1]$ 连续，$(0,1)$ 内二次可微且 $f''(x)>0$，并且端点的有限单侧导数 $f'_+(0)$、$f'_-(1)$ 存在（下文简记为 $f'(0),f'(1)$）。下列顺序正确的是（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f'(1)>f(1)-f(0)>f'(0)$；"
+      },
+      {
+        "key": "B",
+        "text": "$f(1)-f(0)>f'(1)>f'(0)$；"
+      },
+      {
+        "key": "C",
+        "text": "$f'(1)>f'(0)>f(1)-f(0)$；"
+      },
+      {
+        "key": "D",
+        "text": "$f'(1)>f(0)-f(1)>f'(0)$。"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$f'(1)>f(1)-f(0)>f'(0)$；",
+    "translation": "",
+    "explanation": "由中值定理，割线斜率 $f(1)-f(0)=f'(c)$，$c\\in(0,1)$。因 $f''>0$，$f'$ 严格增加，结合端点单侧导数，得到 $f'(0)<f(1)-f(0)<f'(1)$，选 A。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 11,
+      "pages": [
+        15
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "原题使用端点导数却未保证其存在；补充有限单侧导数存在的条件，并保留改动说明。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第15页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2016-q012",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 12,
+    "stem": "（10分）设 $\\xi$ 为 $f(t)=\\arcsin t$ 在区间 $[0,x]$ 上使用拉格朗日中值定理的“中值”，求极限 $\\lim\\limits_{x\\to 0}\\dfrac{\\xi}{x}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac1{\\sqrt3}$",
+    "translation": "",
+    "explanation": "中值定理给出 $\\arcsin x=x/\\sqrt{1-\\xi^2}$，且 $\\xi$ 与 $x$ 同号。因此 $\\xi^2=1-x^2/(\\arcsin x)^2$。由 $\\arcsin x=x+x^3/6+o(x^3)$，得 $\\xi^2/x^2\\to1/3$，又 $\\xi/x>0$，故所求为 $1/\\sqrt3$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 12,
+      "pages": [
+        15
+      ],
+      "originalNumbers": [
+        "整理序号12"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第15页；参考解答 calculus1-1 第15页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q013",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 13,
+    "stem": "（10分）设 $e<a<b<e^2$，证明：$\\ln^2 b-\\ln^2 a>\\dfrac{4}{e^2}(b-a)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "见解析。",
+    "translation": "",
+    "explanation": "证：对函数 ln²x 在 [a,b] 上应用拉格朗日中值定理，得\nln²b-ln²a=(2lnξ/ξ)(b-a)，(a<ξ<b)（2分）\n设 f(x)=lnx/x，则 f'(x)=(1-lnx)/x²（4分）\n当 x>e 时，f'(x)<0，故 f(x) 单减（6分）\n由 e<ξ<e²，故 f(ξ)>f(e²)，即 lnξ/ξ>ln e²/e²=2/e²（9分）\n故 ln²b-ln²a>(4/e²)(b-a)（10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 13,
+      "pages": [
+        15
+      ],
+      "originalNumbers": [
+        "整理序号13"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第15页；参考解答 calculus1-1 第16页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q014",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 14,
+    "stem": "（1）设 $f,g$ 在 $[a,b]$ 连续、$(a,b)$ 内二阶可导，并在 $(a,b)$ 内取得相同的最大值，且 $f(a)=g(a),f(b)=g(b)$。证明存在 $\\xi\\in(a,b)$ 使 $f''(\\xi)=g''(\\xi)$。\n（2）给定曲线 $x=a(t-\\sin t),y=a(1-\\cos t)$（$a>0$），求曲率，并讨论 $t\\to2\\pi$ 时曲率的极限。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "（1）见证明；（2）$\\kappa(t)=\\frac1{4a|\\sin(t/2)|}$（$t\ne2k\\pi$），$t\\to2\\pi$ 时趋于 $+\\infty$，没有有限极限。",
+    "translation": "",
+    "explanation": "（1）令 $F=f-g$。若共同最大值分别在 $\\alpha,\\beta\\in(a,b)$ 取得，则 $F(\\alpha)\\ge0,F(\\beta)\\le0$。由连续性（含等号情形）存在内部点 $c$ 使 $F(c)=0$。连同 $F(a)=F(b)=0$，连续用两次 Rolle 定理得到 $F''(\\xi)=0$。\n（2）将 $x'=a(1-\\cos t),y'=a\\sin t,x''=a\\sin t,y''=a\\cos t$ 代入 $\\kappa=|x'y''-x''y'|/(x'^2+y'^2)^{3/2}$ 得所述公式。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 14,
+      "pages": [
+        15
+      ],
+      "originalNumbers": [
+        "整理序号14"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "补回跨页丢失的 f″(ξ)=g″(ξ)；明确最大值在开区间内取得及摆线参数 a>0；保留两小问。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第15页；参考解答 calculus1-1 第16页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q015",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 15,
+    "stem": "给定 $f(x)=\\begin{cases}1-2x^2,&x<-1\\\\x^3,&-1\\le x\\le2\\\\12x-16,&x>2\\end{cases}$。问是否有间断点或不可导点；若有，请指出。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "无间断点；唯一不可导点是 $x=-1$。",
+    "translation": "",
+    "explanation": "在 $-1$ 的左右极限和函数值都为 $-1$，在 $2$ 都为 $8$，故处处连续。$-1$ 处左右导数为 $4,3$，不可导；$2$ 处左右导数都为 $12$，可导。其余点均可导。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 15,
+      "pages": [
+        16
+      ],
+      "originalNumbers": [
+        "整理序号15"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第16页；参考解答 calculus1-1 第17页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2016-q016",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2016",
+    "groupTitle": "2016年期中（含原文件中的替换题）",
+    "numberInGroup": 16,
+    "stem": "设 $x_1>0$，$x_{n+1}=\\frac12(x_n+1/x_n)$。证明数列收敛并求极限。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$1$",
+    "translation": "",
+    "explanation": "由算术几何平均不等式，$n\\ge2$ 时 $x_n\\ge1$。此时 $x_{n+1}-x_n=(1-x_n^2)/(2x_n)\\le0$，故从第二项起单调有界，收敛到 $L\\ge1$。方程 $L=(L+1/L)/2$ 得 $L=1$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2016年期中（含原文件中的替换题）",
+      "position": 16,
+      "pages": [
+        16
+      ],
+      "originalNumbers": [
+        "整理序号16"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第16页；参考解答 calculus1-1 第17页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q001",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 1,
+    "stem": "已知 $\\lim_{n\\to\\infty}\\frac{n^\\alpha}{(n+1)^\\beta-n^\\beta}=2017$，求 $\\alpha,\\beta$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\alpha=-\\frac{2016}{2017}$，$\\beta=\\frac1{2017}$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 1,
+      "pages": [
+        16
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第16页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q002",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 2,
+    "stem": "设 $y=y(x)$ 由 $e^y-xy-2e^x=0$ 确定，求 $\\mathrm dy$ 及曲线在 $x=0$ 处的切线。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\mathrm dy=\\frac{2e^x+y}{e^y-x}\\,\\mathrm dx$；$y-\\ln2=(1+\\frac{\\ln2}{2})x$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 2,
+      "pages": [
+        16
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第16页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q003",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 3,
+    "stem": "已知 $f$ 在 $0$ 的邻域内二阶可导，且 $\\lim_{x\\to0}\\frac{\\cos x-1}{e^{f(x)}-1}=1$。求 $f'(0)$ 和 $f''(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$0$；$-1$。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 3,
+      "pages": [
+        16
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第16页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q004",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 4,
+    "stem": "函数 $y=y(x)$ 由 $x=\\ln(1+t^2)$，$y=t-\\arctan t$ 确定，求 $\\mathrm dy/\\mathrm dx$。另求 $y=\\ln(1-x)$ 的 $n$ 阶导数（$n\\ge1$）。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac t2$；$-\\frac{(n-1)!}{(1-x)^n}$。",
+    "translation": "",
+    "explanation": "参数求导为 $[t^2/(1+t^2)]/[2t/(1+t^2)]=t/2$（在适用处）。$\\ln(1-x)$ 的一阶导数为 $-1/(1-x)$，归纳可得每一阶导数均带负号。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 4,
+      "pages": [
+        16
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "参考答案 n 阶导数漏了负号；按原题 ln(1−x) 更正。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第16页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q005",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 5,
+    "stem": "5. $\\lim_{n\\to\\infty}\\sqrt[n]{1+2^n+3^n}=$ ____________________，\n$\\lim_{x\\to 0^+}\\left(\\dfrac{1+2^x+3^x}{3}\\right)^{\\frac{1}{x}}=$ ____________________.",
+    "options": [],
+    "answerKey": "",
+    "answerText": "3，∛6",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 5,
+      "pages": [
+        17
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第17页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q006",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 6,
+    "stem": "设 $f(x)=\\dfrac{x^x-1}{x(x+1)\\ln x}$，则 $x=1$ 是 $f(x)$ 的________。",
+    "options": [
+      {
+        "key": "A",
+        "text": "可去间断点"
+      },
+      {
+        "key": "B",
+        "text": "跳跃间断点"
+      },
+      {
+        "key": "C",
+        "text": "无穷间断点"
+      },
+      {
+        "key": "D",
+        "text": "振荡间断点"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "可去间断点",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 6,
+      "pages": [
+        17
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第17页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2017-q007",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 7,
+    "stem": "设 $f(x)=\\begin{cases}\\dfrac{\\arcsin x-x}{x^2}, & x>0 \\\\ ax+b, & x\\le 0 \\end{cases}$ 在 $x=0$ 处可导，则________。",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a=2,\\ b=0$"
+      },
+      {
+        "key": "B",
+        "text": "$a=\\dfrac{1}{6},\\ b=0$"
+      },
+      {
+        "key": "C",
+        "text": "$a=2,\\ b=1$"
+      },
+      {
+        "key": "D",
+        "text": "$a=\\dfrac{1}{2},\\ b=1$"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$a=\\dfrac{1}{6},\\ b=0$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 7,
+      "pages": [
+        17
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第17页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2017-q008",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 8,
+    "stem": "当 $x\\to 0$ 时，$e^{\\sin x}-e^{x}$ 是 $x$ 的________无穷小。",
+    "options": [
+      {
+        "key": "A",
+        "text": "3阶"
+      },
+      {
+        "key": "B",
+        "text": "2阶"
+      },
+      {
+        "key": "C",
+        "text": "同阶"
+      },
+      {
+        "key": "D",
+        "text": "等价"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "3阶",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 8,
+      "pages": [
+        17
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第17页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2017-q009",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 9,
+    "stem": "数列 $\\{x_n\\}$，$\\{y_n\\}$ 满足 $\\lim_{n\\to\\infty}x_n y_n=0$，以下正确的是________。",
+    "options": [
+      {
+        "key": "A",
+        "text": "若$\\{x_n\\}$发散，则$\\{y_n\\}$发散"
+      },
+      {
+        "key": "B",
+        "text": "若$\\{x_n\\}$无界，则$\\{y_n\\}$有界"
+      },
+      {
+        "key": "C",
+        "text": "若$\\{x_n\\}$有界，则$\\{y_n\\}$为无穷小"
+      },
+      {
+        "key": "D",
+        "text": "若$\\{\\frac{1}{x_n}\\}$为无穷小，则$\\{y_n\\}$为无穷小"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "若$\\{\\frac{1}{x_n}\\}$为无穷小，则$\\{y_n\\}$为无穷小",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 9,
+      "pages": [
+        17
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第17页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2017-q010",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 10,
+    "stem": "曲线 $f(x)=\\dfrac{1}{x}+\\arctan(1+x^2)$ 的渐近线的条数为________。",
+    "options": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "0"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "2",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 10,
+      "pages": [
+        17
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第17页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-1-2017-q011",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 11,
+    "stem": "三、（10分）计算 $\\lim_{x\\to 0}\\dfrac{\\arctan x-\\arcsin x}{\\tan x-\\sin x}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$-1$",
+    "translation": "",
+    "explanation": "$\\arctan x-\\arcsin x=-x^3/2+o(x^3)$，$\\tan x-\\sin x=x^3/2+o(x^3)$，比值趋于 $-1$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 11,
+      "pages": [
+        17
+      ],
+      "originalNumbers": [
+        "整理序号11"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第17页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q012",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 12,
+    "stem": "（10 分）设函数 $f(x)=\\begin{cases} x+\\sin x^{2} & x\\le 0 \\\\ \\ln(1+x) & x>0 \\end{cases}$，\n\n（1）求 $f'(x)$；（2）函数 $f(x)$ 在 $x=0$ 处是否二阶可导？若可导，求 $f''(0)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$f'(x)=\\begin{cases}1+2x\\cos x^2,&x\\le0\\\\1/(1+x),&x>0\\end{cases}$；$f''(0)$ 不存在。",
+    "translation": "",
+    "explanation": "左右一阶导数都为 $1$。导函数在 $0$ 处的左导数为 $2$，右导数为 $-1$，故不存在二阶导数。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 12,
+      "pages": [
+        18
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第18页；参考解答 calculus1-3 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q013",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 13,
+    "stem": "（10 分）证明： $x\\ln\\dfrac{1+x}{1-x}+\\cos x\\ge 1+\\dfrac{x^{2}}{2}\\ (-1<x<1)$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "不等式成立，等号仅在 $x=0$ 成立。",
+    "translation": "",
+    "explanation": "令 $F(x)=x\\ln\\frac{1+x}{1-x}+\\cos x-1-x^2/2$，这是偶函数。$F(0)=F'(0)=0$，且 $F''(x)=4/(1-x^2)^2-\\cos x-1\\ge2>0$。所以 $F$ 在原点取得最小值 $0$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 13,
+      "pages": [
+        18
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第18页；参考解答 calculus1-3 第2页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q014",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 14,
+    "stem": "（10 分）在抛物线 $L$：$y^{2}=px\\ (p>0)$ 上求一点，使该点的法线被抛物线 $L$ 所截得的线段最短。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$(p/2,\\ p/\\sqrt2)$ 或 $(p/2,\\ -p/\\sqrt2)$。",
+    "translation": "",
+    "explanation": "原题为 $y^2=px$，令 $P=p/2$，则为 $y^2=2Px$。取点 $(u,v)$，$u>0,v^2=2Pu$。法线斜率为 $-v/P$，与抛物线另一交点的横坐标为 $u+2P+P^2/u$，故弦长平方为 $L^2=P(P+2u)^3/u^2$。其导数为 $2P(P+2u)^2(u-P)/u^3$，所以在 $u=P$ 取得唯一最小值；得到 $(P,\\pm\\sqrt2P)=(p/2,\\pm p/\\sqrt2)$。顶点法线没有另一个有限交点，不属于这类有限弦。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 14,
+      "pages": [
+        18
+      ],
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "原参考解答中途把 y²=px 换成 y²=2px，造成坐标扩大两倍。按原题重新求解，更正坐标。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第18页；参考解答 calculus1-3 第2页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-1-2017-q015",
+    "category": "calculus1-1",
+    "groupId": "calculus1-1-2017",
+    "groupTitle": "2017年期中",
+    "numberInGroup": 15,
+    "stem": "（10 分）若 $f(x)$ 在 $[0,a]$ 上可导 $(a>0)$，且 $f(0)=1,\\ f(a)=0$，证明：在 $(0,a)$ 内必存在两个点 $x_{1},x_{2}$ 使得 $f'(x_{1})f'(x_{2})=\\dfrac{1}{a^{2}}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "存在两个不同的内部点满足等式。",
+    "translation": "",
+    "explanation": "令 $F(x)=f(x)-x/a$，$F(0)=1,F(a)=-1$，故存在 $c\\in(0,a)$ 使 $f(c)=c/a$。分别在 $[0,c]$ 与 $[c,a]$ 用中值定理，存在 $x_1\\in(0,c),x_2\\in(c,a)$，满足 $f'(x_1)=(c/a-1)/c$，$f'(x_2)=-(c/a)/(a-c)$，相乘为 $1/a^2$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2017年期中",
+      "position": 15,
+      "pages": [
+        18
+      ],
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-2 第18页；参考解答 calculus1-3 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  }
+]

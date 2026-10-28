@@ -221,16 +221,35 @@ export const COURSE_TREE: TreeNode[] = [
     icon: '微',
     children: [
       {
-        type: 'leaf',
-        key: 'math-1',
-        label: '春季过程考 · 卷一',
-        category: 'math-1',
+        type: 'group',
+        key: 'math-process',
+        label: '过程考',
+        children: [
+          { type: 'leaf', key: 'math-1', label: '春季过程考 · 卷一', category: 'math-1' },
+          { type: 'leaf', key: 'math-2', label: '春季过程考 · 卷二', category: 'math-2' },
+        ],
       },
       {
-        type: 'leaf',
-        key: 'math-2',
-        label: '春季过程考 · 卷二',
-        category: 'math-2',
+        type: 'group',
+        key: 'math-midterm',
+        label: '期中',
+        children: [
+          {
+            type: 'leaf',
+            key: 'calculus1-1',
+            label: '2010—2017年期中试卷合集',
+            category: 'calculus1-1',
+          },
+          {
+            type: 'leaf',
+            key: 'math-2018-midterm',
+            label: '2018年期中 A卷',
+            category: 'math-2018-midterm',
+          },
+          { type: 'leaf', key: '2019-a-7', label: '2019年期中 A卷', category: '2019-a-7' },
+          { type: 'leaf', key: 'calculus1-8', label: '2024年期中 A卷', category: 'calculus1-8' },
+          { type: 'leaf', key: 'calculus1-9', label: '2025年期中 A卷', category: 'calculus1-9' },
+        ],
       },
     ],
   },

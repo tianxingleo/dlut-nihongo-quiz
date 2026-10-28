@@ -14,6 +14,12 @@
 
 import type { Category } from '../types/question'
 
+export interface EntryGroup {
+  key: string
+  name: string
+  papers: Category[]
+}
+
 export interface EntryMeta {
   /** 入口 key，同时就是路由路径 `/<key>`；只用小写字母、数字、连字符 */
   key: string
@@ -23,6 +29,8 @@ export interface EntryMeta {
   icon: string
   /** 入口卡副标题；不填则运行时自动拼「N 份试卷 · M 题」 */
   desc?: string
+  /** 可选的题库分类。 */
+  groups?: EntryGroup[]
   /** 该入口下的试卷，**顺序即卡片顺序** */
   papers: Category[]
 }
@@ -66,7 +74,23 @@ export const ENTRIES: EntryMeta[] = [
     key: 'math',
     name: '微积分1',
     icon: '微',
-    papers: ['math-1', 'math-2'],
+    papers: [
+      'math-1',
+      'math-2',
+      'calculus1-1',
+      'math-2018-midterm',
+      '2019-a-7',
+      'calculus1-8',
+      'calculus1-9',
+    ],
+    groups: [
+      { key: 'process', name: '过程考', papers: ['math-1', 'math-2'] },
+      {
+        key: 'midterm',
+        name: '期中',
+        papers: ['calculus1-1', 'math-2018-midterm', '2019-a-7', 'calculus1-8', 'calculus1-9'],
+      },
+    ],
   },
 ]
 

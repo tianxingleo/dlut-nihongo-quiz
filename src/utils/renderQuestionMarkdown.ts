@@ -31,7 +31,12 @@ renderer.use({
  * 于是在站上原样显示成 LaTeX 源码。
  */
 export function needsRichMarkdown(category: string): boolean {
-  return category.startsWith('computer-') || category.startsWith('math-')
+  return (
+    category.startsWith('computer-') ||
+    category.startsWith('math-') ||
+    category.startsWith('calculus1-') ||
+    category === '2019-a-7'
+  )
 }
 
 /** Preserve code blocks/tables and render OCR formulas without trusting source HTML. */

@@ -1,0 +1,974 @@
+[
+  {
+    "id": "2019-a-7-2019-q001",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 1,
+    "stem": "设 $f(x)=x\\sin x$，则（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "在 $(-\\infty,+\\infty)$ 内有界，"
+      },
+      {
+        "key": "B",
+        "text": "当 $x\\to+\\infty$ 时为无穷大，"
+      },
+      {
+        "key": "C",
+        "text": "在 $(-\\infty,+\\infty)$ 内无界，"
+      },
+      {
+        "key": "D",
+        "text": "当 $x\\to\\infty$ 时有极限。"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "在 $(-\\infty,+\\infty)$ 内无界，",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 1,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第2页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q002",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 2,
+    "stem": "$f(x)$在 $x_0$ 点的左右导数均存在，但不相等，则",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(x)$在 $x_0$ 点处连续，"
+      },
+      {
+        "key": "B",
+        "text": "$f(x)$在 $x_0$ 点处不连续，"
+      },
+      {
+        "key": "C",
+        "text": "$f(x)$在 $x_0$ 点处可导，"
+      },
+      {
+        "key": "D",
+        "text": "$f(x)$在 $x_0$ 点极限不存在，"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$f(x)$在 $x_0$ 点处连续，",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 2,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第2页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q003",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 3,
+    "stem": "设 $f(x)$具有二阶连续导数，且 $f'(1)=0,\\lim_{x\\to 1}\\frac{f''(x)}{(x-1)^2}=\\frac{1}{2}$，则",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f(1)$是 $f(x)$的极大值"
+      },
+      {
+        "key": "B",
+        "text": "$f(1)$是 $f(x)$的极小值"
+      },
+      {
+        "key": "C",
+        "text": "$(1,f(1))$是曲线 $f(x)$的拐点坐标"
+      },
+      {
+        "key": "D",
+        "text": "$f(1)$不是 $f(x)$的极值点，$(1,f(1))$不是曲线 $f(x)$的拐点坐标"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$f(1)$是 $f(x)$的极小值",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 3,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第2页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q004",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 4,
+    "stem": "设 $f(x)=x^2\\sin x$，则 $f^{(2019)}(0)=$",
+    "options": [
+      {
+        "key": "A",
+        "text": "2019；"
+      },
+      {
+        "key": "B",
+        "text": "$2018\\times2019$；"
+      },
+      {
+        "key": "C",
+        "text": "$-2018\\times2019$；"
+      },
+      {
+        "key": "D",
+        "text": "$-2019$。"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$2018\\times2019$；",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 4,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第2页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q005",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 5,
+    "stem": "设 $f(x)=\\dfrac{1}{\\arctan\\dfrac{x-1}{x}}$，则",
+    "options": [
+      {
+        "key": "A",
+        "text": "$x=0$ 与 $x=1$ 都是 $f(x)$ 的第一类间断点，"
+      },
+      {
+        "key": "B",
+        "text": "$x=0$ 与 $x=1$ 都是 $f(x)$ 的第二类间断点."
+      },
+      {
+        "key": "C",
+        "text": "$x=0$ 是 $f(x)$ 的第一类间断点，$x=1$ 是 $f(x)$ 的第二类间断点。"
+      },
+      {
+        "key": "D",
+        "text": "$x=0$ 是 $f(x)$ 的第二类间断点，$x=1$ 是 $f(x)$ 的第一类间断点。"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$x=0$ 是 $f(x)$ 的第一类间断点，$x=1$ 是 $f(x)$ 的第二类间断点。",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 5,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第2页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q006",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 6,
+    "stem": "设函数 $f(x)=\\lim_{n\\to\\infty}\\sqrt[n]{1+|x|^{2n}}$，则 $f(x)$ 在 $(-\\infty,+\\infty)$ 内",
+    "options": [
+      {
+        "key": "A",
+        "text": "处处可导"
+      },
+      {
+        "key": "B",
+        "text": "恰有 1 个不可导点，"
+      },
+      {
+        "key": "C",
+        "text": "恰有 2 个不可导点"
+      },
+      {
+        "key": "D",
+        "text": "至少有 3 个不可导点."
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "恰有 2 个不可导点",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 6,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第3页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q007",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 7,
+    "stem": "设函数 $y=f(x)$ 具有二阶导数，且 $f'(x)>0,f''(x)>0,\\Delta x$ 为自变量 $x$ 在点 $x_0$ 处的增量，$\\Delta y$ 与 $dy$ 分别为 $f(x)$ 在点 $x_0$ 处对应的增量与微分，若 $\\Delta x>0$，则",
+    "options": [
+      {
+        "key": "A",
+        "text": "$0<dy<\\Delta y$"
+      },
+      {
+        "key": "B",
+        "text": "$0<\\Delta y<dy$"
+      },
+      {
+        "key": "C",
+        "text": "$\\Delta y<dy<0$"
+      },
+      {
+        "key": "D",
+        "text": "$dy<\\Delta y<0$"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$0<dy<\\Delta y$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 7,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第3页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q008",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 8,
+    "stem": "曲线 $y=\\frac{(1+x)^2}{4(1-x)}$",
+    "options": [
+      {
+        "key": "A",
+        "text": "既有垂直又有水平与斜渐近线，"
+      },
+      {
+        "key": "B",
+        "text": "仅有垂直渐近线，"
+      },
+      {
+        "key": "C",
+        "text": "只有垂直与水平渐近线，"
+      },
+      {
+        "key": "D",
+        "text": "只有垂直与斜渐近线."
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "只有垂直与斜渐近线.",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 8,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第3页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q009",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 9,
+    "stem": "当 $x\\to0$ 时，无穷小 $(1+x)^{x^2}-1$，$e^{x^4-2x}-1$ 和 $\\sqrt{1+2x}-\\sqrt[3]{1+3x}$ 的阶数分别是：",
+    "options": [
+      {
+        "key": "A",
+        "text": "1，2 和 3 阶，"
+      },
+      {
+        "key": "B",
+        "text": "3，2 和 1 阶，"
+      },
+      {
+        "key": "C",
+        "text": "3，1 和 2 阶，"
+      },
+      {
+        "key": "D",
+        "text": "2，3 和 1 阶"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "3，1 和 2 阶，",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 9,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第3页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q010",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 10,
+    "stem": "设直线 $y=ax+b$ 同时与曲线 $y=x^2$ 及 $y=\\frac{1}{x}$ 相切，则常数 $a,b$ 应分别取：",
+    "options": [
+      {
+        "key": "A",
+        "text": "$a=-4, b=-4$."
+      },
+      {
+        "key": "B",
+        "text": "$a=-3, b=-4$."
+      },
+      {
+        "key": "C",
+        "text": "$a=-4, b=-3$."
+      },
+      {
+        "key": "D",
+        "text": "$a=-3, b=-3$."
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$a=-4, b=-4$.",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 10,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第3页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q012",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 12,
+    "stem": "$\\lim\\limits_{x\\to 0}\\left(\\dfrac{\\sin x}{x}\\right)^{\\frac{1}{x^{2}}}$",
+    "options": [
+      {
+        "key": "A",
+        "text": "等于 $e^{-\\frac{1}{6}}$ ."
+      },
+      {
+        "key": "B",
+        "text": "等于 $e^{\\frac{1}{6}}$ ."
+      },
+      {
+        "key": "C",
+        "text": "等于 $e^{-6}$"
+      },
+      {
+        "key": "D",
+        "text": "不存在."
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "等于 $e^{-\\frac{1}{6}}$ .",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 12,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "12"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第4页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q013",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 13,
+    "stem": "设 $f(x)$ 在 $(-\\infty,\\ +\\infty)$ 有定义，则下述命题中正确的是",
+    "options": [
+      {
+        "key": "A",
+        "text": "若 $f(x)$ 在 $(-\\infty,\\ +\\infty)$ 可导且单调增加，则对一切 $x\\in (-\\infty,\\ +\\infty)$，都有 $f'(x)>0$,"
+      },
+      {
+        "key": "B",
+        "text": "若 $f(x)$ 在点 $x_0$ 处取极值，则 $f'(x_0)=0$"
+      },
+      {
+        "key": "C",
+        "text": "若 $f''(x_0)=0$，则 $(x_0, f(x_0))$ 是曲线 $y=f(x)$ 的拐点坐标"
+      },
+      {
+        "key": "D",
+        "text": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点."
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "若 $f'(x_0)=0$，$f''(x_0)=0$，$f'''(x_0)\ne 0$，则 $x_0$ 一定不是 $f(x)$ 的极值点.",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 13,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "13"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第4页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q014",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 14,
+    "stem": "摆线 $\\begin{cases}x=a(t-\\sin t)\\\\ y=a(1-\\cos t)\\end{cases}$ （$a>0$）在 $t=\\dfrac{\\pi}{3}$ 处的曲率为：",
+    "options": [
+      {
+        "key": "A",
+        "text": "$2a$ ."
+      },
+      {
+        "key": "B",
+        "text": "$4a$"
+      },
+      {
+        "key": "C",
+        "text": "$\\dfrac{1}{2a}$ ."
+      },
+      {
+        "key": "D",
+        "text": "$\\dfrac{1}{4a}$ ."
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$\\dfrac{1}{2a}$ .",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 14,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "14"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "明确摆线尺度参数 a>0。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第4页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q015",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 15,
+    "stem": "曲线 $y=x^{3}$ 的弧微分 $\\mathrm{d}s$ 等于：",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sqrt{1+x^{6}}\\mathrm{d}x$ ;"
+      },
+      {
+        "key": "B",
+        "text": "$\\sqrt{1+x^{8}}\\mathrm{d}x$ ;"
+      },
+      {
+        "key": "C",
+        "text": "$\\sqrt{1+6x^{4}}\\mathrm{d}x$"
+      },
+      {
+        "key": "D",
+        "text": "$\\sqrt{1+9x^{4}}\\mathrm{d}x$"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "$\\sqrt{1+9x^{4}}\\mathrm{d}x$",
+    "translation": "",
+    "explanation": "参考答案已与原卷对应项核对。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 15,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "15"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第4页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "2019-a-7-2019-q016",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 16,
+    "stem": "求 $\\lim_{x\\to0}\\frac{\\sin x-\\arctan x}{\\tan x-\\sin x}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac13$",
+    "translation": "",
+    "explanation": "解　先分解分母：\n\n$$\\tan x-\\sin x=\\sin x\\left(\\frac{1}{\\cos x}-1\\right)=\\sin x(1-\\cos x)\\frac{1}{\\cos x}$$\n\n当 $x\\to 0$ 时，$\\sin x$ 与 $x$ 为等价无穷小，$1-\\cos x$ 与 $\\frac{x^2}{2}$ 为等价无穷小，而 $\\cos x\\to 1$，因此原极限等于\n\n$$2\\lim_{x\\to 0}\\frac{\\sin x-\\arctan x}{x^3}\\qquad(5\\text{ 分})$$\n\n又因为\n\n$$\\sin x-\\arctan x=x-\\frac{1}{6}x^3+o(x^3)-\\left(x-\\frac{1}{3}x^3+o(x^3)\\right)$$\n\n$$=\\frac{1}{6}x^3+o(x^3)\\qquad(8\\text{ 分})$$\n\n所以原极限\n\n$$\\lim_{x\\to 0}\\frac{\\sin x-\\arctan x}{\\tan x-\\sin x}=2\\lim_{x\\to 0}\\frac{\\sin x-\\arctan x}{x^3}=2\\lim_{x\\to 0}\\frac{\\frac{1}{6}x^3+o(x^3)}{x^3}=\\frac{1}{3}\\qquad(10\\text{ 分})$$",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 16,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "16"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第5页；参考解答 2019-a-7 第1页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "2019-a-7-2019-q017",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 17,
+    "stem": "求 $\\lim_{n\\to\\infty}\\prod_{k=1}^n\\cos\\frac{ka}{n\\sqrt n}$（$a$ 为常数）。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "极限为 $e^{-\\frac{a^2}{6}}$",
+    "translation": "",
+    "explanation": "当 $n$ 足够大时各余弦均为正。令乘积为 $P_n$，利用在零附近一致的展开 $\\ln\\cos t=-t^2/2+O(t^4)$，得到 $\\ln P_n=-\\frac{a^2}{2n^3}\\sum_{k=1}^n k^2+O(\\frac{a^4}{n^6}\\sum_{k=1}^n k^4)=-a^2/6+o(1)$。故极限为 $e^{-a^2/6}$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 17,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "17"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第5页；参考解答 2019-a-7 第2页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "2019-a-7-2019-q018",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 18,
+    "stem": "设 $f$ 在 $\\mathbb R$ 有一阶连续导数，$f(0)=0$，且 $f''(0)$ 存在。令 $F(x)=\\begin{cases}f(x)/x,&x\ne0\\\\f'(0),&x=0\\end{cases}$。求 $F'(x)$，并证明 $F'$ 在 $\\mathbb R$ 连续。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$F'(x)=\\begin{cases}\\frac{xf'(x)-f(x)}{x^2},&x\ne0\\\\f''(0)/2,&x=0\\end{cases}$，且 $F'$ 连续。",
+    "translation": "",
+    "explanation": "由二阶 Peano 展开，$f(x)=f'(0)x+f''(0)x^2/2+o(x^2)$，故 $F'(0)=f''(0)/2$。由 $f''(0)$ 存在，$f'(x)=f'(0)+f''(0)x+o(x)$。代入 $x\ne0$ 处的商法则公式，得 $F'(x)=f''(0)/2+o(1)$，所以原点连续；其他点由 $f,f'$ 连续得到。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 18,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "18"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第5页；参考解答 2019-a-7 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "2019-a-7-2019-q019",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 19,
+    "stem": "设 $y=f(x)$ 由 $x^3+y^3-3x+3y=2$ 确定，求 $f$ 的极大值和极小值。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "极小值 f(−1)=0；极大值 f(1)=1。",
+    "translation": "",
+    "explanation": "$y'=(1-x^2)/(1+y^2)$。故在 $(-\\infty,-1)$ 减少、$(-1,1)$ 增加、$(1,+\\infty)$ 减少。代入方程得 $f(-1)=0$ 为极小值，$f(1)=1$ 为极大值。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 19,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "19"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第5页；参考解答 2019-a-7 第4页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "2019-a-7-2019-q020",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 20,
+    "stem": "设 $y=\\sin\\left(\\ln\\sqrt{\\frac{x}{1+x^2}}\\right)$（$x>0$），求 $y'$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$y'=\\frac{1-x^2}{2x(1+x^2)}\\cos\\left(\\ln\\sqrt{\\frac{x}{1+x^2}}\\right)$。",
+    "translation": "",
+    "explanation": "内层 $u=\\ln\\sqrt{x/(1+x^2)}=\\frac12[\\ln x-\\ln(1+x^2)]$，故 $u'=\\frac12(1/x-2x/(1+x^2))=\\frac{1-x^2}{2x(1+x^2)}$。再用链式法则 $y'=u'\\cos u$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 20,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "20"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "原参考答案误把 (1/2)ln u 的求导当作 ln(u/2)，漏乘 1/2；按链式法则更正。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第5页；参考解答 2019-a-7 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "2019-a-7-2019-q021",
+    "category": "2019-a-7",
+    "groupId": "2019-a-7-2019",
+    "groupTitle": "2019年期中",
+    "numberInGroup": 21,
+    "stem": "设 $f$ 在 $[-1,1]$ 有 $n$ 阶导数（$n\\ge1$），且 $\\lim_{x\\to0}f^{(n)}(x)=l$。证明 $f^{(n)}$ 在 $0$ 处连续。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "证明见解析；结论：$f^{(n)}(x)$ 在 $x=0$ 点处连续。",
+    "translation": "",
+    "explanation": "在 $0,h$ 之间对 $f^{(n-1)}$ 用中值定理，得 $[f^{(n-1)}(h)-f^{(n-1)}(0)]/h=f^{(n)}(\\xi_h)$，其中 $\\xi_h$ 在两端点之间。令 $h\\to0$，左侧趋于 $f^{(n)}(0)$，右侧趋于 $l$。故 $f^{(n)}(0)=l$，结论成立。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2019年期中",
+      "position": 21,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "21"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 2019-a 第5页；参考解答 2019-a-7 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  }
+]

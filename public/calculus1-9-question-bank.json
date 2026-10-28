@@ -1,0 +1,727 @@
+[
+  {
+    "id": "calculus1-9-2025-q001",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 1,
+    "stem": "设 $f(x)=x^2\\cos^2x$，则（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "$f^{(5)}(0)=0,\\ f^{(6)}(0)=-240$"
+      },
+      {
+        "key": "B",
+        "text": "$f^{(5)}(0)=96,\\ f^{(6)}(0)=0$"
+      },
+      {
+        "key": "C",
+        "text": "$f^{(5)}(0)=0,\\ f^{(6)}(0)=240$"
+      },
+      {
+        "key": "D",
+        "text": "$f^{(5)}(0)=-96,\\ f^{(6)}(0)=0$"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$f^{(5)}(0)=0,\\ f^{(6)}(0)=240$",
+    "translation": "",
+    "explanation": "$f$ 为偶函数，故 $f^{(5)}(0)=0$。$x^2\\cos^2x=x^2-x^4+x^6/3+O(x^8)$，所以 $f^{(6)}(0)=6!/3=240$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 1,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第2页；参考解答 calculus1-9 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q002",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 2,
+    "stem": "设 $f(x)=\\begin{cases}\\tan x/x,&x\ne0\\\\1,&x=0\\end{cases}$，求 $f'(0)$。",
+    "options": [
+      {
+        "key": "A",
+        "text": "0."
+      },
+      {
+        "key": "B",
+        "text": "不存在."
+      },
+      {
+        "key": "C",
+        "text": "1/3."
+      },
+      {
+        "key": "D",
+        "text": "-1/3."
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "0.",
+    "translation": "",
+    "explanation": "$f'(0)=\\lim_{x\\to0}(\\tan x-x)/x^2=0$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 2,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第2页；参考解答 calculus1-9 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q003",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 3,
+    "stem": "方程 $x^3+x+\\sin x+1=0$ 的实根个数为（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "0."
+      },
+      {
+        "key": "B",
+        "text": "1."
+      },
+      {
+        "key": "C",
+        "text": "2."
+      },
+      {
+        "key": "D",
+        "text": "3."
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "1.",
+    "translation": "",
+    "explanation": "左侧导数为 $3x^2+1+\\cos x>0$（$x=0$ 时为 $2$，$x\ne0$ 时也为正），严格增加；在两端趋于异号无穷，故恰有一个实根。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 3,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第2页；参考解答 calculus1-9 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q004",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 4,
+    "stem": "设 $f(x)=\\frac{\\ln(1+3^x)}{\\ln(1+2^x)}$，则（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\lim_{x\\to+\\infty}f(x)=\\ln2/\\ln3$"
+      },
+      {
+        "key": "B",
+        "text": "$\\lim_{x\\to-\\infty}f(x)=+\\infty$"
+      },
+      {
+        "key": "C",
+        "text": "$\\lim_{x\\to+\\infty}f(x)=\\ln3/\\ln2$"
+      },
+      {
+        "key": "D",
+        "text": "$\\lim_{x\\to-\\infty}f(x)=1$"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$\\lim_{x\\to+\\infty}f(x)=\\ln3/\\ln2$",
+    "translation": "",
+    "explanation": "$x\\to+\\infty$ 时分子分母分别等价于 $x\\ln3,x\\ln2$；$x\\to-\\infty$ 时比值等价于 $(3/2)^x\\to0$。因此选 C。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 4,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第2页；参考解答 calculus1-9 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q005",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 5,
+    "stem": "设 $x=\\cos^3t,y=\\sin^3t$，求 $\\left.\\frac{\\mathrm d^2y}{\\mathrm dx^2}\\right|_{t=\\pi/6}$。",
+    "options": [
+      {
+        "key": "A",
+        "text": "-3/4."
+      },
+      {
+        "key": "B",
+        "text": "3/4."
+      },
+      {
+        "key": "C",
+        "text": "-32/27."
+      },
+      {
+        "key": "D",
+        "text": "32/27."
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "32/27.",
+    "translation": "",
+    "explanation": "$y'=-\\tan t$，$y''=(-\\sec^2t)/(-3\\cos^2t\\sin t)=1/(3\\cos^4t\\sin t)$，代入得 $32/27$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 5,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第2页；参考解答 calculus1-9 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q006",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 6,
+    "stem": "设 $f(x)=\\begin{cases}x\\ln|x|,&x\ne0\\\\1,&x=0\\end{cases}$，则 $x=0$ 是（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "连续点"
+      },
+      {
+        "key": "B",
+        "text": "跳跃间断点"
+      },
+      {
+        "key": "C",
+        "text": "无穷间断点"
+      },
+      {
+        "key": "D",
+        "text": "可去间断点"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "可去间断点",
+    "translation": "",
+    "explanation": "左右极限均为 $0$，不等于函数值 $1$，故是可去间断点，选 D。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 6,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第2页；参考解答 calculus1-9 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q007",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 7,
+    "stem": "$\\lim\\limits_{n\\to\\infty}\\sqrt[n]{1+\\frac{1}{2}+\\frac{1}{3}+\\cdots+\\frac{1}{n}}$ =",
+    "options": [
+      {
+        "key": "A",
+        "text": "$1$."
+      },
+      {
+        "key": "B",
+        "text": "$\\sqrt{e}$."
+      },
+      {
+        "key": "C",
+        "text": "$e$."
+      },
+      {
+        "key": "D",
+        "text": "$+\\infty$."
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$1$.",
+    "translation": "",
+    "explanation": "记 $H_n=1+\\frac{1}{2}+\\cdots+\\frac{1}{n}$，有 $1\\le H_n\\le n$，故 $1\\le\\sqrt[n]{H_n}\\le n^{1/n}\\to1$，夹逼得极限1。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 7,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第3页；参考解答 calculus1-9 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q008",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 8,
+    "stem": "$\\lim\\limits_{n\\to\\infty}\\left(\\frac{n-1}{n+1}\\right)^n$ =",
+    "options": [
+      {
+        "key": "A",
+        "text": "$e^{-1}$."
+      },
+      {
+        "key": "B",
+        "text": "$e^2$."
+      },
+      {
+        "key": "C",
+        "text": "$e^{-2}$."
+      },
+      {
+        "key": "D",
+        "text": "$e$."
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$e^{-2}$.",
+    "translation": "",
+    "explanation": "化为 $\\left(1-\\frac{2}{n+1}\\right)^n$，由重要极限得 $e^{-2}$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 8,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第3页；参考解答 calculus1-9 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q009",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 9,
+    "stem": "设函数 $f(x)=x^5\\tan x$，则",
+    "options": [
+      {
+        "key": "A",
+        "text": "$x=0$ 是 $f(x)$ 的极值点，$(0,0)$ 是曲线 $y=f(x)$ 的拐点."
+      },
+      {
+        "key": "B",
+        "text": "$x=0$ 是 $f(x)$ 的极值点，$(0,0)$ 不是曲线 $y=f(x)$ 的拐点."
+      },
+      {
+        "key": "C",
+        "text": "$x=0$ 不是 $f(x)$ 的极值点，$(0,0)$ 是曲线 $y=f(x)$ 的拐点."
+      },
+      {
+        "key": "D",
+        "text": "$x=0$ 不是 $f(x)$ 的极值点，$(0,0)$ 不是曲线 $y=f(x)$ 的拐点."
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$x=0$ 是 $f(x)$ 的极值点，$(0,0)$ 不是曲线 $y=f(x)$ 的拐点.",
+    "translation": "",
+    "explanation": "在0附近 $\\tan x\\sim x$，$f(x)\\sim x^6\\ge0$，故0为极小值点；两侧凹凸性相同，$(0,0)$不是拐点。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 9,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第3页；参考解答 calculus1-9 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q010",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 10,
+    "stem": "$\\lim\\limits_{x\\to+\\infty}\\frac{(1+x)(2+x^2)(3+x^3)(4+x^4)}{5^x+x^5}$ =",
+    "options": [
+      {
+        "key": "A",
+        "text": "$0$."
+      },
+      {
+        "key": "B",
+        "text": "$+\\infty$."
+      },
+      {
+        "key": "C",
+        "text": "$1$."
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{10!}{(\\ln 5)^{10}}$."
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$0$.",
+    "translation": "",
+    "explanation": "分子是10次多项式，分母由指数项 $5^x$ 主导，故极限为0。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 10,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第3页；参考解答 calculus1-9 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-9-2025-q011",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 11,
+    "stem": "求 $\\lim_{x\\to0}\\frac{x^2+2-2\\sqrt{1+x^2}}{(e^{x^2}-\\cos x)\\ln(1+x^2)}$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$\\frac16$",
+    "translation": "",
+    "explanation": "分子 $=(\\sqrt{1+x^2}-1)^2\\sim x^4/4$；$e^{x^2}-\\cos x\\sim3x^2/2$，$\\ln(1+x^2)\\sim x^2$，所以比值趋于 $1/6$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 11,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第4页；参考解答 calculus1-9 第4页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-9-2025-q012",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 12,
+    "stem": "证明：$0<x<\\pi/2$ 时，$e^{-x}+\\sin x<1+x^2/2$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "证明见解析。",
+    "translation": "",
+    "explanation": "令 $F(x)=e^{-x}+\\sin x-1-x^2/2$，有 $F(0)=F'(0)=0$。$0<x<\\pi/2$ 时，$F''(x)=e^{-x}-\\sin x-1<0$，故 $F'(x)<0$，进而 $F(x)<0$。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 12,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第4页；参考解答 calculus1-9 第4页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-9-2025-q013",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 13,
+    "stem": "（10 分）设 $f(x)$ 在 $[0,1]$ 上可导，且 $f(0)=f(1)=0$．证明：\n\n（1）存在 $\\xi\\in(0,1)$，使得 $\\xi f'(\\xi)+f(\\xi)=0$；\n\n（2）存在 $\\eta\\in(0,1)$，使得 $f'(\\eta)+\\eta f(\\eta)=0$．",
+    "options": [],
+    "answerKey": "",
+    "answerText": "两项存在性命题均成立，见解析。",
+    "translation": "",
+    "explanation": "证：（1）令 $g(x)=xf(x)$（$x\\in[0,1]$），则 $g(x)$ 在 $[0,1]$ 上可导，且 $g(0)=g(1)=0$，所以由 Rolle 定理，存在 $\\xi\\in(0,1)$，使得 $g'(\\xi)=\\xi f'(\\xi)+f(\\xi)=0$．　　……5 分\n\n（2）令 $h(x)=e^{\\frac{x^2}{2}}f(x)$（$x\\in[0,1]$），则 $h(x)$ 在 $[0,1]$ 上可导，且 $h(0)=h(1)=0$，所以由 Rolle 定理，存在 $\\eta\\in(0,1)$，使得 $h'(\\eta)=e^{\\frac{\\eta^2}{2}}f'(\\eta)+\\eta e^{\\frac{\\eta^2}{2}}f(\\eta)=0$，整理可得 $f'(\\eta)+\\eta f(\\eta)=0$．　　……10 分",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 13,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第5页；参考解答 calculus1-9 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-9-2025-q014",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 14,
+    "stem": "（10 分）设数列 $\\{x_n\\}$ 定义如下：$x_1=\\sqrt{2}$，$x_{n+1}=\\sqrt{2+x_n}$（$n=1,2,\\cdots$）．证明数列 $\\{x_n\\}$ 收敛，并求其极限．",
+    "options": [],
+    "answerKey": "",
+    "answerText": "极限为 $2$．",
+    "translation": "",
+    "explanation": "证：先证单调性．$x_1=\\sqrt{2}<\\sqrt{2+\\sqrt{2}}=x_2$；若 $x_{k-1}<x_k$，则 $x_k=\\sqrt{2+x_{k-1}}<\\sqrt{2+x_k}=x_{k+1}$．由数学归纳法，数列 $\\{x_n\\}$ 单调增加．　　……3 分\n\n再证有界性．$x_1=\\sqrt{2}<2$；若 $x_k<2$，则 $x_{k+1}=\\sqrt{2+x_k}<\\sqrt{2+2}=2$．由数学归纳法，数列 $\\{x_n\\}$ 有一个上界 2．　　……6 分\n\n综上，数列 $\\{x_n\\}$ 单增且有上界，故由单调有界原理，数列 $\\{x_n\\}$ 收敛．　　……8 分\n\n设 $\\lim\\limits_{n\\to\\infty}x_n=A$，则由 $\\lim\\limits_{n\\to\\infty}x_{n+1}=\\lim\\limits_{n\\to\\infty}\\sqrt{2+x_n}$，得 $A=\\sqrt{2+A}$，解得 $A=2$，",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 14,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第5页；参考解答 calculus1-9 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-9-2025-q015",
+    "category": "calculus1-9",
+    "groupId": "calculus1-9-2025",
+    "groupTitle": "2025年期中",
+    "numberInGroup": 15,
+    "stem": "六、（10 分）设函数 $f(x)=x\\ln\\left(e+\\dfrac{1}{x}\\right)$．解答下列问题：\n\n（1）求 $f(x)$ 的自然定义域 $I$；\n\n（2）求曲线 $f(x)=x\\ln\\left(e+\\dfrac{1}{x}\\right)\\ (x\\in I)$ 的所有渐近线方程.",
+    "options": [],
+    "answerKey": "",
+    "answerText": "（1）$I=\\left(-\\infty,-\\dfrac{1}{e}\\right)\\cup(0,+\\infty)$；\n（2）垂直渐近线 $x=-\\dfrac{1}{e}$，斜渐近线 $y=x+\\dfrac{1}{e}$，无水平渐近线。",
+    "translation": "",
+    "explanation": "对数的真数必须为正，解 $e+1/x>0$ 得 $I=(-\\infty,-1/e)\\cup(0,+\\infty)$。当 $x\\to(-1/e)^-$ 时，令 $t=e+1/x\\to0^+$，则 $f(x)=\\ln t/(t-e)\\to+\\infty$，故垂直渐近线为 $x=-1/e$。当 $x\\to0^+$ 时 $x\\ln(e+1/x)\\to0$，这里不是垂直渐近线。当 $x\\to\\pm\\infty$ 时，$f(x)=x+x\\ln(1+1/(ex))=x+1/e+o(1)$，故斜渐近线为 $y=x+1/e$，无水平渐近线。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2025年期中",
+      "position": 15,
+      "pages": [
+        6
+      ],
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "原解析把 t→0⁺ 写成 t→0⁻，且误插 x→−∞；按定义域与代换更正。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-9 第6页；参考解答 calculus1-9 第6页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  }
+]

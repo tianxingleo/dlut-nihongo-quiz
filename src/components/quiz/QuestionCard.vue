@@ -19,6 +19,7 @@ import { useAI } from '../../composables/useAI'
 import TagBadge from '../ui/TagBadge.vue'
 import AIExplanation from '../ai/AIExplanation.vue'
 import AIChat from '../ai/AIChat.vue'
+import { SELF_CORRECT, SELF_WRONG } from '../../utils/selfAssessment'
 import type { AIExplanationRequest } from '../../types/ai'
 
 const props = defineProps<{
@@ -66,6 +67,18 @@ const renderedTranslation = computed(() =>
   technicalQuestion.value ? renderQuestionMarkdown(props.question.translation) : '',
 )
 const isFillQuestion = computed(() => props.question.questionType === 'fill')
+const referenceVisible = ref(false)
+watch(
+  () => props.question.id,
+  () => {
+    referenceVisible.value = false
+  },
+)
+function assess(correct: boolean) {
+  if (!referenceVisible.value || props.submitted) return
+  emit('select', correct ? SELF_CORRECT : SELF_WRONG)
+  emit('submit')
+}
 
 const showExplanation = ref(props.showExplanation ?? false)
 const shareStatus = ref<'' | 'copied' | 'unsupported'>('')
@@ -280,6 +293,7 @@ const canSubmit = computed(() => {
 const renderedStem = computed(() => highlightUnderlines(renderContent(props.question.stem)))
 
 const isCorrectOverall = computed(() => {
+  if (props.question.selfAssessment) return props.selectedKey === SELF_CORRECT
   if (isFillQuestion.value) {
     // 填空题：忽略大小写和首尾空格进行比较
     return isFillAnswerCorrect(fillAnswer.value, props.question.answerText)
@@ -338,10 +352,11 @@ const dragOpacity = computed(() => {
         <button class="hint-btn" @click="clearSelection">清除</button>
       </span>
     </div>
-    <div class="q-hint" v-if="isFillQuestion">填空题，请输入答案</div>
+    <div class="q-hint" v-if="question.selfAssessment">请先在纸上作答，再对照参考解答自评。</div>
+    <div class="q-hint" v-else-if="isFillQuestion">填空题，请输入答案</div>
 
     <!-- 填空题输入框 -->
-    <div v-if="isFillQuestion" class="fill-input-container">
+    <div v-if="isFillQuestion && !question.selfAssessment" class="fill-input-container">
       <input
         v-model="fillAnswer"
         type="text"
@@ -388,9 +403,29 @@ const dragOpacity = computed(() => {
       </button>
     </div>
 
+    <div v-if="question.selfAssessment && !submitted" class="self-assessment">
+      <button v-if="!referenceVisible" class="btn btn-submit" @click="referenceVisible = true">
+        查看参考解答
+      </button>
+      <template v-else>
+        <div
+          class="q-explanation"
+          v-html="renderContent(question.answerText + '\n\n' + question.explanation)"
+        />
+        <div class="q-actions">
+          <button class="btn btn-submit" @click="assess(true)">自评：答对了</button>
+          <button class="btn btn-ghost" @click="assess(false)">自评：还需练习</button>
+        </div>
+      </template>
+    </div>
     <div class="q-actions" v-if="!submitted">
       <button v-if="questionIndex > 0" class="btn btn-ghost" @click="emit('prev')">上一题</button>
-      <button class="btn btn-submit" :disabled="!canSubmit" @click="emit('submit')">
+      <button
+        v-if="!question.selfAssessment"
+        class="btn btn-submit"
+        :disabled="!canSubmit"
+        @click="emit('submit')"
+      >
         提交答案
       </button>
     </div>
@@ -436,11 +471,21 @@ const dragOpacity = computed(() => {
 
     <div class="q-result" v-if="submitted">
       <div class="result-line" :class="isCorrectOverall ? 'correct' : 'wrong'">
-        <span class="result-badge">{{ isCorrectOverall ? '正确' : '错误' }}</span>
+        <span class="result-badge">{{
+          question.selfAssessment
+            ? isCorrectOverall
+              ? '自评：答对了'
+              : '自评：还需练习'
+            : isCorrectOverall
+              ? '正确'
+              : '错误'
+        }}</span>
         <template v-if="isFillQuestion">
           答案：<strong v-if="technicalQuestion" v-html="renderedAnswer" />
           <strong v-else>{{ question.answerText }}</strong>
-          <span v-if="!isCorrectOverall" class="your-answer">（你的答案：{{ fillAnswer }}）</span>
+          <span v-if="!isCorrectOverall && !question.selfAssessment" class="your-answer"
+            >（你的答案：{{ fillAnswer }}）</span
+          >
         </template>
         <template v-else>
           答案：<strong

@@ -1,0 +1,720 @@
+[
+  {
+    "id": "calculus1-8-2024-q001",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 1,
+    "stem": "极限 $\\lim\\limits_{n\\to\\infty}\\left[\\sqrt{n^2+n+1}-(n+1)\\right]$ 的值为",
+    "options": [
+      {
+        "key": "A",
+        "text": "1."
+      },
+      {
+        "key": "B",
+        "text": "-1."
+      },
+      {
+        "key": "C",
+        "text": "$\\dfrac{1}{2}$."
+      },
+      {
+        "key": "D",
+        "text": "$-\\dfrac{1}{2}$."
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "$-\\dfrac{1}{2}$.",
+    "translation": "",
+    "explanation": "将根式展开为 $\\sqrt{n^2+n+1}=n+\\frac12+o(1)$，减去 $n+1$ 后极限为 $-\\frac12$，选 D。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 1,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第2页；参考解答 calculus1-8 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q002",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 2,
+    "stem": "极限 $\\lim\\limits_{x\\to 0}\\left(\\dfrac{1}{x^2}-\\dfrac{1}{\\tan^2 x}\\right)$ 的值为",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\dfrac{1}{3}$."
+      },
+      {
+        "key": "B",
+        "text": "$\\dfrac{2}{3}$."
+      },
+      {
+        "key": "C",
+        "text": "$-\\dfrac{1}{3}$."
+      },
+      {
+        "key": "D",
+        "text": "$-\\dfrac{2}{3}$."
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$\\dfrac{2}{3}$.",
+    "translation": "",
+    "explanation": "由 $\\tan x=x+\\frac{x^3}{3}+o(x^3)$ 得 $\\frac1{\\tan^2x}=\\frac1{x^2}-\\frac23+o(1)$，故极限为 $\\frac23$，选 B。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 2,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第2页；参考解答 calculus1-8 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q003",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 3,
+    "stem": "设函数 $f(x)=\\begin{cases}\\dfrac{1}{1-e^{\\frac{x}{1-x}}}, & x\neq 1\\\\[2mm] 1, & x=1\\end{cases}$，则 $x=1$ 是 $f(x)$ 的",
+    "options": [
+      {
+        "key": "A",
+        "text": "连续点."
+      },
+      {
+        "key": "B",
+        "text": "可去间断点."
+      },
+      {
+        "key": "C",
+        "text": "跳跃间断点."
+      },
+      {
+        "key": "D",
+        "text": "第二类间断点."
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "跳跃间断点.",
+    "translation": "",
+    "explanation": "$x\\to1^-$ 时 $e^{x/(1-x)}\\to+\\infty$，$f\\to0$；$x\\to1^+$ 时 $e^{x/(1-x)}\\to0$，$f\\to1$，左右极限不等，故为跳跃间断点，选 C。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 3,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第2页；参考解答 calculus1-8 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q004",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 4,
+    "stem": "设函数 $f(x)=\\begin{cases}x^2\\sin\\dfrac{1}{x}, & x\neq 0\\\\[2mm] 0, & x=0\\end{cases}$，则 $f(x)$ 在 $x=0$ 处",
+    "options": [
+      {
+        "key": "A",
+        "text": "不连续."
+      },
+      {
+        "key": "B",
+        "text": "连续但不可导."
+      },
+      {
+        "key": "C",
+        "text": "可导但 $f'(x)$ 在 $x=0$ 处不连续."
+      },
+      {
+        "key": "D",
+        "text": "可导且 $f'(x)$ 在 $x=0$ 处连续."
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "可导但 $f'(x)$ 在 $x=0$ 处不连续.",
+    "translation": "",
+    "explanation": "$f'(0)=\\lim x\\sin(1/x)=0$，而 $x\neq0$ 时 $f'(x)=2x\\sin(1/x)-\\cos(1/x)$ 极限不存在，故可导但导函数不连续，选 C。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 4,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第2页；参考解答 calculus1-8 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q005",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 5,
+    "stem": "设函数 $f(x)$ 可导，令 $F(x)=f(x)(1+|x|)$，则 $f(0)=0$ 是 $F(x)$ 在 $x=0$ 处可导的",
+    "options": [
+      {
+        "key": "A",
+        "text": "充分必要条件."
+      },
+      {
+        "key": "B",
+        "text": "充分非必要条件."
+      },
+      {
+        "key": "C",
+        "text": "必要非充分条件."
+      },
+      {
+        "key": "D",
+        "text": "既非充分又非必要条件."
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "充分必要条件.",
+    "translation": "",
+    "explanation": "若 $f(0)=0$，则 $F'(0)=\\lim f(x)(1+|x|)/x=f'(0)$；反之 $F$ 可导迫使左右导数相等，得 $f(0)=0$，故为充要条件，选 A。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 5,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第2页；参考解答 calculus1-8 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q006",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 6,
+    "stem": "已知 $\\lim\\limits_{x\\to 0}\\dfrac{\\sin x-\\arctan x}{x^k}=a$，则非零常数 $k$ 和 $a$ 分别为",
+    "options": [
+      {
+        "key": "A",
+        "text": "$k=1,\\ a=2$."
+      },
+      {
+        "key": "B",
+        "text": "$k=3,\\ a=\\dfrac{1}{6}$."
+      },
+      {
+        "key": "C",
+        "text": "$k=3,\\ a=-\\dfrac{1}{3}$."
+      },
+      {
+        "key": "D",
+        "text": "$k=3,\\ a=\\dfrac{1}{3}$."
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "$k=3,\\ a=\\dfrac{1}{6}$.",
+    "translation": "",
+    "explanation": "$\\sin x-\\arctan x=\\frac{x^3}{6}+o(x^3)$，故 $k=3$，$a=\\frac16$，选 B。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 6,
+      "pages": [
+        2
+      ],
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第2页；参考解答 calculus1-8 第2页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q007",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 7,
+    "stem": "设函数 $y=f(x)$ 由方程 $y-x=e^{x(2-y)}$ 确定，则 $\\lim\\limits_{n\\to\\infty} n\\left[f\\left(\\frac{2}{n}\\right)-1\\right]=$",
+    "options": [
+      {
+        "key": "A",
+        "text": "0"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "2"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "4",
+    "translation": "",
+    "explanation": "由 $x=0$ 得 $f(0)=1$；隐函数求导得 $f'(0)=2$，故原极限 $=2f'(0)=4$，选 D。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 7,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第3页；参考解答 calculus1-8 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q008",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 8,
+    "stem": "设函数 $f(x)=\\ln(3-2x)$，则 $f^{(n)}(0)=$",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\frac{2^n}{n\\cdot3^n}$"
+      },
+      {
+        "key": "B",
+        "text": "$-\\frac{2^n}{n\\cdot3^n}$"
+      },
+      {
+        "key": "C",
+        "text": "$-\\frac{(n-1)!\\cdot2^n}{3^n}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{(n-1)!\\cdot2^n}{3^n}$"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "$-\\frac{(n-1)!\\cdot2^n}{3^n}$",
+    "translation": "",
+    "explanation": "由 $\\ln(1+t)$ 的 $n$ 阶导数公式，代入 $t=-\\frac{2x}{3}$，得 $f^{(n)}(0)=-\\frac{(n-1)!\\cdot2^n}{3^n}$，选 C。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 8,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第3页；参考解答 calculus1-8 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q009",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 9,
+    "stem": "设函数 $f(x)=\\frac{x^3}{(x-1)^2}$，则",
+    "options": [
+      {
+        "key": "A",
+        "text": "$x=0$是$f(x)$的极大值点"
+      },
+      {
+        "key": "B",
+        "text": "$x=0$是$f(x)$的极小值点"
+      },
+      {
+        "key": "C",
+        "text": "$x=0$是$f'(x)$的极大值点"
+      },
+      {
+        "key": "D",
+        "text": "$(0,0)$是曲线 $y=f(x)$ 的拐点"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "$(0,0)$是曲线 $y=f(x)$ 的拐点",
+    "translation": "",
+    "explanation": "$f(x)=x^3+2x^4+\\cdots$，$x=0$ 不是极值点；$f''(0)=0$ 且两侧凹凸性改变，$(0,0)$ 为拐点，选 D。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 9,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第3页；参考解答 calculus1-8 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q010",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 10,
+    "stem": "由参数方程 $\\begin{cases}x=t-\\ln\\sqrt{1+e^{2t}}\\\\ y=\\arctan e^t\\end{cases}$ 确定的曲线 $y=f(x)$ 在 $t=0$ 对应点处的曲率半径为",
+    "options": [
+      {
+        "key": "A",
+        "text": "$\\sqrt{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$2\\sqrt{2}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac{\\sqrt{2}}{2}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{\\sqrt{2}}{4}$"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "$\\sqrt{2}$",
+    "translation": "",
+    "explanation": "$x'(0)=y'(0)=\\frac12$，故 $y'=1$，$y''=2$；曲率半径 $R=\\frac{(1+y'^2)^{3/2}}{|y''|}=\\sqrt2$，选 A。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 10,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第3页；参考解答 calculus1-8 第3页。"
+    ],
+    "questionType": "single"
+  },
+  {
+    "id": "calculus1-8-2024-q011",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 11,
+    "stem": "求极限 $\\lim\\limits_{n\\to\\infty}\\left(n\\tan\\frac{1}{n}\\right)^{n^2}$.",
+    "options": [],
+    "answerKey": "",
+    "answerText": "$e^{\\frac{1}{3}}$",
+    "translation": "",
+    "explanation": "考虑极限 $\\lim\\limits_{x\\to+\\infty}\\left(x\\tan\\frac{1}{x}\\right)^{x^2}$，利用 Heine 定理。由\n$\\lim\\limits_{x\\to+\\infty}\\left(x\\tan\\frac{1}{x}\\right)^{x^2}=\\lim\\limits_{x\\to0^+}\\left(\\frac{\\tan x}{x}\\right)^{\\frac{1}{x^2}}=\\lim\\limits_{x\\to0^+}e^{\\frac{1}{x^2}\\ln\\frac{\\tan x}{x}}=e^{\\lim\\limits_{x\\to0^+}\\frac{1}{x^2}\\ln\\frac{\\tan x}{x}}$（2分）\n$=e^{\\lim\\limits_{x\\to0^+}\\frac{1}{x^2}\\left(\\frac{\\tan x}{x}-1\\right)}=e^{\\lim\\limits_{x\\to0^+}\\frac{\\tan x-x}{x^3}}$（4分）\n$=e^{\\lim\\limits_{x\\to0^+}\\frac{\\sec^2 x-1}{3x^2}}=e^{\\lim\\limits_{x\\to0^+}\\frac{\\tan^2 x}{3x^2}}=e^{\\frac{1}{3}},$（9分）\n由 Heine 定理，则有 $\\lim\\limits_{n\\to\\infty}\\left(n\\tan\\frac{1}{n}\\right)^{n^2}=e^{\\frac{1}{3}}.$（10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 11,
+      "pages": [
+        3
+      ],
+      "originalNumbers": [
+        "整理序号11"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第3页；参考解答 calculus1-8 第3页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-8-2024-q012",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 12,
+    "stem": "证明：当 $0 \\le x \\le \\frac{\\pi}{4}$ 时，有 $\\tan x \\le \\frac{4}{\\pi}x$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "不等式成立，等号在两个端点取得。",
+    "translation": "",
+    "explanation": "证明 当 $x=0$ 和 $x=\\frac{\\pi}{4}$ 时，结论成立。 （1分）\n\n当 $0<x<\\frac{\\pi}{4}$ 时，令 $f(x)=\\frac{\\tan x}{x}-\\frac{4}{\\pi}$，由\n\n$$f'(x)=\\frac{x\\sec^2 x-\\tan x}{x^2}=\\frac{1}{x^2\\cos^2 x}(x-\\sin x\\cos x)，$$ （3分）\n\n令 $g(x)=x-\\sin x\\cos x=x-\\frac{1}{2}\\sin 2x$，由 $g'(x)=1-\\cos 2x>0$，$(0<x<\\frac{\\pi}{4})$，\n\n则 $g(x)$ 在 $(0,\\frac{\\pi}{4})$ 内单调递增。 （6分）\n\n故当 $0<x<\\frac{\\pi}{4}$ 时，有 $g(x)>g(0)=0$，则 $f'(x)>0$，\n\n即 $f(x)$ 在 $(0,\\frac{\\pi}{4})$ 内单调递增，故 $f(x)<f(\\frac{\\pi}{4})=0$，即：$\\frac{\\tan x}{x}<\\frac{4}{\\pi}$。\n\n综上：当 $0 \\le x \\le \\frac{\\pi}{4}$ 时，有 $\\tan x \\le \\frac{4}{\\pi}x$。 （10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 12,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "整理序号12"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第4页；参考解答 calculus1-8 第4页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-8-2024-q013",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 13,
+    "stem": "已知函数 $f(x)$ 在 $[0,1]$ 上连续，在 $(0,1)$ 内可导，满足 $f(0)=f(1)=0$，\n\n且 $f(\\frac{1}{2})=1$，试证明：\n\n(1) 存在 $\\eta \\in (\\frac{1}{2},1)$，使得 $f(\\eta)=\\eta$；\n\n(2) 存在 $\\xi \\in (0,1)$，使得 $f'(\\xi)+2\\xi[f(\\xi)-\\xi]=1$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "两项存在性命题均成立，见解析。",
+    "translation": "",
+    "explanation": "证明：(1) 令 $F(x)=f(x)-x$，则 $F(x)$ 在 $[0,1]$ 上连续，也在 $[\\frac{1}{2},1]$ 上连续，且\n\n$$F(\\frac{1}{2})=f(\\frac{1}{2})-\\frac{1}{2}=\\frac{1}{2}>0，\\quad F(1)=f(1)-1=-1<0，$$\n\n由零点定理，存在 $\\eta \\in (\\frac{1}{2},1)$，有 $F(\\eta)=0$，即 $f(\\eta)=\\eta$。 （4分）\n\n(2) 令 $G(x)=e^{x^2}F(x)=e^{x^2}(f(x)-x)$，则 $G(x)$ 在 $[0,1]$ 上连续，$(0,1)$ 内可导，且\n\n$$G(0)=f(0)-0=0，\\quad G(\\eta)=e^{\\eta^2}(f(\\eta)-\\eta)=0，$$\n\n由 Rolle 定理，存在 $\\xi \\in (0,\\eta) \\subset (0,1)$，有 $G'(\\xi)=0$，\n\n即 $f'(\\xi)+2\\xi[f(\\xi)-\\xi]=1$。 （10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 13,
+      "pages": [
+        4
+      ],
+      "originalNumbers": [
+        "整理序号13"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "对照原卷并重新推导，修正转写或补全解析。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第4页；参考解答 calculus1-8 第4页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-8-2024-q014",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 14,
+    "stem": "设数列 $\\{x_n\\}$ 满足 $-1<x_0<0$，$x_{n+1}=x_n^2+2x_n$（$n=0,1,2,\\cdots$），\n\n证明数列 $\\{x_n\\}$ 收敛，并求 $\\lim\\limits_{n\\to\\infty}x_n$。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "数列 $\\{x_n\\}$ 收敛，且 $\\lim\\limits_{n\\to\\infty}x_n=-1$。",
+    "translation": "",
+    "explanation": "证明 由 $-1<x_0<0$，且 $x_1=x_0^2+2x_0$，即 $x_1+1=(x_0+1)^2$，则有 $-1<x_1<0$，\n\n假设 $-1<x_n<0$，由 $x_{n+1}+1=(x_n+1)^2$，则有 $-1<x_{n+1}<0$，\n\n由数学归纳法，有 $-1<x_n<0$（$n=0,1,2,\\cdots$）。（4分）\n\n另一方面，由 $\\dfrac{x_{n+1}}{x_n}=x_n+2>1$，则有 $x_{n+1}<x_n$，\n\n即：数列 $\\{x_n\\}$ 单调递减，且有界，\n\n由单调有界原理，数列 $\\{x_n\\}$ 收敛。（8分）\n\n令 $\\lim\\limits_{n\\to\\infty}x_n=A$，由 $x_{n+1}=x_n^2+2x_n$，两边取极限，则有 $A=A^2+2A$，\n\n解之，$A=-1$，$A=0$（舍去），故 $\\lim\\limits_{n\\to\\infty}x_n=-1$。（10分）",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 14,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第5页；参考解答 calculus1-8 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  },
+  {
+    "id": "calculus1-8-2024-q015",
+    "category": "calculus1-8",
+    "groupId": "calculus1-8-2024",
+    "groupTitle": "2024年期中",
+    "numberInGroup": 15,
+    "stem": "已知函数 $f(x)=e^{\\frac{2}{x}}(2x+3)$。\n\n（1）求函数 $f(x)$ 的单调区间与极值；\n\n（2）求曲线 $y=f(x)$ 的渐近线方程。",
+    "options": [],
+    "answerKey": "",
+    "answerText": "递增：$(-\\infty,-1)$、$(3,+\\infty)$；递减：$(-1,0)$、$(0,3)$。极大值 $e^{-2}$，极小值 $9e^{2/3}$。渐近线：$x=0$、$y=2x+7$。",
+    "translation": "",
+    "explanation": "$f'(x)=\\frac{2e^{2/x}}{x^2}(x-3)(x+1)$，由符号表得到单调区间和两个极值。$x\\to0^+$ 时 $f(x)\\to+\\infty$，故 $x=0$ 为垂直渐近线。$x\\to\\pm\\infty$ 时 $e^{2/x}=1+2/x+O(x^{-2})$，所以 $f(x)=2x+7+O(1/x)$，斜渐近线为 $y=2x+7$，无水平渐近线。",
+    "grammarPoints": [],
+    "tags": [],
+    "source": {
+      "file": "calculus-midterms/reviewed-papers.json",
+      "group": "2024年期中",
+      "position": 15,
+      "pages": [
+        5
+      ],
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "needs_review",
+    "answerProvenance": "generated",
+    "explanationSource": "generated",
+    "reviewNotes": [
+      "AI 对照原卷复核，未经教师审核。",
+      "补回 PDF 第6页未被旧导入接上的渐近线解答。"
+    ],
+    "sourceNotes": [
+      "试题 calculus1-8 第5页；参考解答 calculus1-8 第5页。"
+    ],
+    "questionType": "fill",
+    "selfAssessment": true
+  }
+]
