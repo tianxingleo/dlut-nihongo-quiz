@@ -16,7 +16,7 @@ export interface CategoryMeta {
 export const CATEGORIES: CategoryMeta[] = [
   {
     key: 'japanese1-midterm',
-    short: '期中范围（1—6课）',
+    short: '期中范围（1—7课）',
     long: '综合日语1 · 期中单词',
     desc: '汉字与假名互选 · 日中互译',
     icon: '日',

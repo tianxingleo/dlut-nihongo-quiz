@@ -2,9 +2,9 @@
   "category": "综合日语1",
   "subcategory": "单词",
   "scope": "midterm",
-  "scopeLabel": "期中范围（1—6课）",
+  "scopeLabel": "期中范围（1—7课）",
   "idPrefix": "japanese1-mid-",
-  "note": "原文（期中（1-6课）单词自查.docx）不按课文顺序排列，本文件不推测每个词所属课次。original 保留原文写法；word / reading / meaning / partOfSpeech 为规范化字段，其中原文未标注的词性与释义为补充，已在 notes 注明。",
+  "note": "原文（期中（1-6课）单词自查.docx）不按课文顺序排列，本文件不推测每个词所属课次。original 保留原文写法；word / reading / meaning / partOfSpeech 为规范化字段，其中原文未标注的词性与释义为补充，已在 notes 注明。；范围经用户确认更正为1—7课，来源文件名保留原名以便追溯。",
   "sources": [
     {
       "file": "期中（1-6课）单词自查.docx",

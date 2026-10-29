@@ -27,7 +27,7 @@ export const COURSE_TREE: TreeNode[] = [
           {
             type: 'leaf',
             key: 'japanese1-midterm',
-            label: '期中范围（1—6课）',
+            label: '期中范围（1—7课）',
             category: 'japanese1-midterm',
           },
           {
