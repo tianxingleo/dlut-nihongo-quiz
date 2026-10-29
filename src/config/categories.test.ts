@@ -15,6 +15,8 @@ describe('CATEGORIES config', () => {
       'computer-c-exam',
       'computer-midterms',
       'history',
+      'japanese1-final',
+      'japanese1-midterm',
       'japanese2',
       'japanese3',
       'jp-3',

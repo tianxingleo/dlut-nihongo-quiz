@@ -14,8 +14,20 @@ const route = useRoute()
 /** 当前是不是某个入口的二级页（路由 `/<入口 key>`，入口清单在 src/config/entries.ts） */
 const currentEntry = computed(() => findEntry(route.params.entryKey as string | undefined))
 /** 该入口下的试卷，顺序就是 entries.ts 里 `papers` 的顺序 */
+const currentGroup = computed(() =>
+  currentEntry.value?.groups?.find((g) => g.key === route.query.group),
+)
+const showingFolders = computed(() =>
+  Boolean(currentEntry.value?.groups?.length && !currentGroup.value),
+)
+const folderCards = computed(() =>
+  (currentEntry.value?.groups ?? []).map((g) => ({
+    ...g,
+    count: g.papers.reduce((sum, key) => sum + (counts.value[key] || 0), 0),
+  })),
+)
 const entryPapers = computed(() =>
-  (currentEntry.value?.papers ?? [])
+  (currentGroup.value?.papers ?? currentEntry.value?.papers ?? [])
     .map((key) => CATEGORIES.find((c) => c.key === key))
     .filter((c): c is CategoryMeta => Boolean(c)),
 )
@@ -79,6 +91,7 @@ async function refresh() {
               !id.startsWith('mil') &&
               !id.startsWith('computer-') &&
               !id.startsWith('jp1-mid24-') &&
+              !id.startsWith('japanese1-') &&
               !/^w(?:3[7-9]|4[0-3])-/.test(id)
             )
           case 'japanese3':
@@ -119,14 +132,17 @@ function goCalculusNotes() {
 }
 
 const subjects = computed(() =>
-  (currentEntry.value ? entryPapers.value : CATEGORIES.filter((c) => !entryOfCategory(c.key))).map(
-    (c) => ({
-      key: c.key,
-      title: currentEntry.value ? c.short : c.long,
-      desc: c.desc,
-      icon: c.icon,
-    }),
-  ),
+  (showingFolders.value
+    ? []
+    : currentEntry.value
+      ? entryPapers.value
+      : CATEGORIES.filter((c) => !entryOfCategory(c.key))
+  ).map((c) => ({
+    key: c.key,
+    title: currentEntry.value ? c.short : c.long,
+    desc: c.desc,
+    icon: c.icon,
+  })),
 )
 
 // 第一层的卡片数：不归属任何入口的学科 + 各入口 + 微积分笔记
@@ -153,9 +169,15 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   <div v-else class="landing">
     <!-- Hero -->
     <header v-if="currentEntry" class="paper-header">
-      <RouterLink class="btn btn-ghost" to="/">← 返回学科首页</RouterLink>
-      <h1>{{ currentEntry.name }}</h1>
-      <p>{{ entryPapers.length }} 份试卷 · {{ entryQuestionCount }} 题，选择试卷后进入题单。</p>
+      <RouterLink class="btn btn-ghost" :to="currentGroup ? '/' + currentEntry.key : '/'">{{
+        currentGroup ? '← 返回' + currentEntry.name : '← 返回学科首页'
+      }}</RouterLink>
+      <h1>{{ currentEntry.name }}{{ currentGroup ? ' · ' + currentGroup.name : '' }}</h1>
+      <p>
+        {{ entryPapers.length }} 份试卷 · {{ entryQuestionCount }} 题，{{
+          showingFolders ? '选择分类后查看试卷。' : '选择试卷后进入题单。'
+        }}
+      </p>
     </header>
     <section v-else class="hero">
       <div class="hero-badge stagger-1">DLUT · 国际信息与软件学院</div>
@@ -211,8 +233,26 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
 
     <!-- Subject cards -->
     <section class="subjects">
-      <h2>{{ currentEntry ? '选择试卷' : '选择学科，开始复习' }}</h2>
+      <h2>
+        {{ showingFolders ? '选择分类' : currentEntry ? '选择试卷' : '选择学科，开始复习' }}
+      </h2>
       <div class="subject-grid">
+        <template v-if="showingFolders && currentEntry">
+          <RouterLink
+            v-for="folder in folderCards"
+            :key="folder.key"
+            class="subject-card subject-link"
+            :to="{ path: '/' + currentEntry.key, query: { group: folder.key } }"
+          >
+            <div class="sc-icon">{{ currentEntry.icon }}</div>
+            <div class="sc-body">
+              <h3 class="sc-title">{{ folder.name }}</h3>
+              <p class="sc-desc">{{ folder.papers.length }} 份题库</p>
+            </div>
+            <div class="sc-count">{{ folder.count }} 题</div>
+            <span class="sc-arrow">&rarr;</span>
+          </RouterLink>
+        </template>
         <div v-if="!currentEntry" class="subject-card calculus-card" @click="goCalculusNotes">
           <div class="sc-icon">微</div>
           <div class="sc-body">

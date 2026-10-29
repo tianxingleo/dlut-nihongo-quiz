@@ -15,6 +15,26 @@ export interface CategoryMeta {
 
 export const CATEGORIES: CategoryMeta[] = [
   {
+    key: 'japanese1-midterm',
+    short: '期中范围（1—6课）',
+    long: '综合日语1 · 期中单词',
+    desc: '汉字与假名互选 · 日中互译',
+    icon: '日',
+    bankFile: 'japanese1-midterm-question-bank.json',
+    groupViewTitle: '词汇类型',
+    groupViewHint: '按词汇类型整理；原资料未按课次排列。',
+  },
+  {
+    key: 'japanese1-final',
+    short: '期末范围（7—15课）',
+    long: '综合日语1 · 期末单词',
+    desc: '汉字与假名互选 · 日中互译',
+    icon: '日',
+    bankFile: 'japanese1-final-question-bank.json',
+    groupViewTitle: '词汇类型',
+    groupViewHint: '按词汇类型整理；原资料未按课次排列。',
+  },
+  {
     // 保留已在本地使用的题库标识；原卷实际是综合日语2。
     key: 'jp1-mid24',
     short: '2024年期中',
