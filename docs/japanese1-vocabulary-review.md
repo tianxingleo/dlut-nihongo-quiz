@@ -31,4 +31,4 @@
 
 `npm run parse:japanese1` → `npm run generate:meta`；运行 `npm run test:japanese1`、`npm test`、`npm run build`、`npm run audit:banks`。
 
-本次基于 PR #18 的最终提交 23c1298，包含 PR #16 和 #17 的最终版本。不替换既有试卷 JSON，不改综合日语2的小字。新增题目 ID 使用 japanese1- 前缀，首页统计排除它们进入综合日语2的旧题默认归类。
+综合日语1词库随日语题库 PR #17 提交。新增题目 ID 使用 `japanese1-` 前缀，首页统计按所属题库计数。
