@@ -5443,7 +5443,7 @@
         "options": [
           {
             "key": "A",
-            "text": "1."
+            "text": "$1$"
           },
           {
             "key": "B",
@@ -6060,7 +6060,7 @@
         "options": [
           {
             "key": "A",
-            "text": "0."
+            "text": "$0$"
           },
           {
             "key": "B",
@@ -6076,7 +6076,7 @@
           }
         ],
         "answerKey": "A",
-        "answerText": "0.",
+        "answerText": "$0$",
         "explanation": "$f'(0)=\\lim_{x\\to0}(\\tan x-x)/x^2=0$。",
         "questionType": "single",
         "answerProvenance": "generated",
@@ -6105,23 +6105,23 @@
         "options": [
           {
             "key": "A",
-            "text": "0."
+            "text": "$0$"
           },
           {
             "key": "B",
-            "text": "1."
+            "text": "$1$"
           },
           {
             "key": "C",
-            "text": "2."
+            "text": "$2$"
           },
           {
             "key": "D",
-            "text": "3."
+            "text": "$3$"
           }
         ],
         "answerKey": "B",
-        "answerText": "1.",
+        "answerText": "$1$",
         "explanation": "左侧导数为 $3x^2+1+\\cos x>0$（$x=0$ 时为 $2$，$x\\ne0$ 时也为正），严格增加；在两端趋于异号无穷，故恰有一个实根。",
         "questionType": "single",
         "answerProvenance": "generated",

@@ -377,6 +377,14 @@ export function getCategoryMeta(cat: Category): CategoryMeta {
 }
 
 export const NO_SHUFFLE_CATEGORIES: ReadonlySet<Category> = new Set([
+  // Printed-paper explanations refer to the original option letters.
+  'math-1',
+  'math-2',
+  'calculus1-1',
+  'math-2018-midterm',
+  '2019-a-7',
+  'calculus1-8',
+  'calculus1-9',
   'history',
   'party',
   'military',

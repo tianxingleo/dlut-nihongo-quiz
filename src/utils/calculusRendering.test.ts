@@ -39,6 +39,7 @@ describe('published calculus rendering', () => {
             const node = document.createElement('div')
             node.innerHTML = render(text)
             node.querySelectorAll('math,annotation').forEach((n) => n.remove())
+            if (text.trim()) expect(node.textContent?.trim(), text).toBeTruthy()
             expect(node.querySelector('.katex-error'), text).toBeNull()
             expect(node.textContent, text).not.toMatch(/\\[a-zA-Z]|\$/)
           }
