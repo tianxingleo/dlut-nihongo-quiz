@@ -1,5 +1,8 @@
 export type Category =
+  | 'japanese1-midterm'
+  | 'japanese1-final'
   | 'japanese2'
+  | 'jp1-mid24'
   | 'japanese3'
   | 'history'
   | 'party'

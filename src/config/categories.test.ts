@@ -15,11 +15,14 @@ describe('CATEGORIES config', () => {
       'computer-c-exam',
       'computer-midterms',
       'history',
+      'japanese1-final',
+      'japanese1-midterm',
       'japanese2',
       'japanese3',
       'jp-3',
       'jp-3-2022',
       'jp-3-2024',
+      'jp1-mid24',
       'marxism-1',
       'marxism-2',
       'marxism-3',
@@ -59,6 +62,7 @@ describe('CATEGORIES config', () => {
     expect(NO_SHUFFLE_CATEGORIES.has('party')).toBe(true)
     expect(NO_SHUFFLE_CATEGORIES.has('military')).toBe(true)
     expect(NO_SHUFFLE_CATEGORIES.has('japanese2')).toBe(false)
+    expect(NO_SHUFFLE_CATEGORIES.has('jp1-mid24')).toBe(true)
     for (const category of CATEGORIES.filter((c) => c.key.startsWith('computer-'))) {
       expect(NO_SHUFFLE_CATEGORIES.has(category.key)).toBe(true)
       expect(GROUPED_CATEGORIES.has(category.key)).toBe(true)

@@ -1,5 +1,7 @@
 # 题库维护流程
 
+综合日语2的2024年期中A卷使用结构化源 `data/raw/jp1-mid24/reviewed-questions.json`，运行 `npm run parse:japanese2-midterm` 生成网页数据和Markdown存档，再运行 `npm run generate:meta`。原卷95题，当前收录91题，4题待复核；详见 [逐题校对记录](japanese2-2024-midterm-review.md)。该结构化源是此卷的唯一可编辑源，不要直接编辑生成的Markdown或public JSON。
+
 本文档讲怎么加题、改题、加新学科。脚本生成的题库以 `data/raw/` 中的源文件为准，不要直接修改其 `public/*.json`，下次运行 parser 会覆盖。综合日语3单词题库直接维护 `public/japanese3-question-bank.json`。
 
 ## 学科分类
@@ -7,7 +9,7 @@
 | 分类         | Category key | 源 md                                                                                                           | JSON 输出                             | Parser 命令               | 题数（约） |
 | ------------ | ------------ | --------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------- | ---------- |
 | 综合日语2    | `japanese2`  | 单词：`data/raw/日语汉字单词选择题-第26-36课.md`<br>语法：`data/raw/日语期末复习题目答案解析_题目选项在上版.md` | `public/japanese2-question-bank.json` | `npm run parse:japanese2` | 963        |
-| 综合日语3    | `japanese3`  | `data/raw/japanese3/vocabulary-37-43.md`（来源存档）                                                            | `public/japanese3-question-bank.json` | 直接维护 JSON            | 738        |
+| 综合日语3    | `japanese3`  | `data/raw/japanese3/vocabulary-37-43.md`（来源存档）                                                            | `public/japanese3-question-bank.json` | 直接维护 JSON             | 738        |
 | 中国近现代史 | `history`    | `data/raw/history/*.md`                                                                                         | `public/history-question-bank.json`   | `npm run parse:history`   | 2,872      |
 | 党史         | `party`      | `data/raw/party/*.md`                                                                                           | `public/party-question-bank.json`     | `npm run parse:party`     | 1,615      |
 | 军事理论     | `military`   | `data/raw/military/*.md`                                                                                        | `public/military-question-bank.json`  | `npm run parse:military`  | 407        |

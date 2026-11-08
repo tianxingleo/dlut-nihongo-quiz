@@ -55,6 +55,7 @@ describe('ENTRIES config', () => {
     expect(findEntry('不存在的入口')).toBeUndefined()
     expect(findEntry(undefined)).toBeUndefined()
     expect(entryOfCategory(first.papers[0])?.key).toBe(first.key)
-    expect(entryOfCategory('japanese2')).toBeUndefined()
+    expect(entryOfCategory('japanese2')?.key).toBe('japanese2-exams')
+    expect(entryOfCategory('jp1-mid24')?.key).toBe('japanese2-exams')
   })
 })

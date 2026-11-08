@@ -14,6 +14,12 @@
 
 import type { Category } from '../types/question'
 
+export interface EntryGroup {
+  key: string
+  name: string
+  papers: Category[]
+}
+
 export interface EntryMeta {
   /** 入口 key，同时就是路由路径 `/<key>`；只用小写字母、数字、连字符 */
   key: string
@@ -23,11 +29,28 @@ export interface EntryMeta {
   icon: string
   /** 入口卡副标题；不填则运行时自动拼「N 份试卷 · M 题」 */
   desc?: string
+  /** 可选的题库分类。 */
+  groups?: EntryGroup[]
   /** 该入口下的试卷，**顺序即卡片顺序** */
   papers: Category[]
 }
 
 export const ENTRIES: EntryMeta[] = [
+  {
+    key: 'japanese1',
+    name: '综合日语1',
+    icon: '日',
+    desc: '单词 · 期中与期末范围',
+    papers: ['japanese1-midterm', 'japanese1-final'],
+    groups: [{ key: 'words', name: '单词', papers: ['japanese1-midterm', 'japanese1-final'] }],
+  },
+  {
+    key: 'japanese2-exams',
+    name: '综合日语2',
+    icon: '日',
+    desc: '单词 · 语法（学习通99题 + 2021/2024 真题）',
+    papers: ['japanese2', 'jp1-mid24'],
+  },
   {
     key: 'computer-organization',
     name: '计算机组成（软国际）',

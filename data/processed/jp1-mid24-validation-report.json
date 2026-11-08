@@ -1,0 +1,31 @@
+{
+  "category": "jp1-mid24",
+  "source": "data/raw/jp1-mid24/reviewed-questions.json",
+  "sourceQuestions": 95,
+  "publishedQuestions": 91,
+  "excludedQuestions": [
+    {
+      "originalNumber": 3,
+      "id": "jp1-mid24-q003",
+      "reason": "原照片的浊音/半浊音不够清晰，OCR 将 A/B、C/D 转成重复选项；读音应为「べんとう」，正确字母待清晰原图确认，不猜改干扰项。"
+    },
+    {
+      "originalNumber": 4,
+      "id": "jp1-mid24-q004",
+      "reason": "原照片 A/B 的「ぶ／ぷ」等细节不能可靠辨清；读音应为「じぶん」，重复选项导致字母不能唯一确定，待清晰原图确认。"
+    },
+    {
+      "originalNumber": 78,
+      "id": "jp1-mid24-q087",
+      "reason": "「ううん、知らない」和得知新消息时的「ううん、知らなかった」都能构成自然回答；现有原卷未附答案，缺乏足以唯一排除 D 的语境，暂不自动判分。"
+    },
+    {
+      "originalNumber": 88,
+      "id": "jp1-mid24-q098",
+      "reason": "「自分で作った花」和「自分で作っている花」均能修饰「花」，分别侧重已种成和正在培育；原文缺乏足够时态线索，不能唯一确认 D 而排除 B，待教师答案核对。"
+    }
+  ],
+  "hardErrors": [],
+  "answerProvenance": "generated",
+  "humanVerified": false
+}

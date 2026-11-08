@@ -70,6 +70,7 @@ const slideDirection = ref<'slide-left' | 'slide-right'>('slide-left')
 const showLeaveConfirm = ref(false)
 const showExplanation = ref(false)
 const loadError = ref('')
+const loading = ref(true)
 let pendingNavigation: RouteLocationRaw | null = null
 let skipLeaveGuard = false
 let isDirty = false
@@ -394,6 +395,7 @@ async function startNewSession(all: Question[]) {
     finalPool = shuffleArray(resolved.pool)
   }
   questions.value = finalPool
+  if (finalPool.length === 0) return
 
   sessionId.value = generateSessionId()
   startTime.value = Date.now()
@@ -426,6 +428,8 @@ onMounted(async () => {
       await startNewSession(all)
     }
 
+    if (questions.value.length === 0) return
+
     window.addEventListener('keydown', onKeydown)
     window.addEventListener('beforeunload', onBeforeUnload)
     startTimer()
@@ -437,6 +441,8 @@ onMounted(async () => {
     window.removeEventListener('keydown', onKeydown)
     window.removeEventListener('beforeunload', onBeforeUnload)
     loadError.value = e instanceof Error ? e.message : '加载题库失败，请返回首页重试'
+  } finally {
+    loading.value = false
   }
 })
 
@@ -833,7 +839,12 @@ function cancelLeave() {
       </div>
     </div>
 
-    <div v-else class="empty"><PageSkeleton type="detail" /></div>
+    <div v-else-if="loading" class="empty"><PageSkeleton type="detail" /></div>
+    <div v-else class="empty" role="status">
+      <h2>暂无符合条件的题目</h2>
+      <p>请返回题库，选择其他题组或练习方式。</p>
+      <button class="btn btn-accent" @click="router.push('/home')">返回题库</button>
+    </div>
 
     <!-- 离开确认弹窗 -->
     <Teleport to="body">

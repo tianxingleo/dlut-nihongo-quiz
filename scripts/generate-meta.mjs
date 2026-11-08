@@ -14,6 +14,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const publicDir = resolve(__dirname, '..', 'public')
 
 const banks = [
+  { key: 'japanese1-midterm', file: 'japanese1-midterm-question-bank.json' },
+  { key: 'japanese1-final', file: 'japanese1-final-question-bank.json' },
+  { key: 'jp1-mid24', file: 'jp1-mid24-question-bank.json' },
   { key: 'japanese2', file: 'japanese2-question-bank.json' },
   { key: 'japanese3', file: 'japanese3-question-bank.json' },
   { key: 'history', file: 'history-question-bank.json' },
