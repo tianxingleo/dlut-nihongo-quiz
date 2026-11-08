@@ -86,7 +86,7 @@ const sample = (overrides: Partial<Question> = {}): Question => ({
 })
 let app: App | undefined
 let host: HTMLDivElement
-async function mountQuiz(extraQuery = 'fresh=1') {
+async function mountQuiz(extraQuery = 'fresh=1', empty = false) {
   const router = createRouter({
     history: createMemoryHistory(),
     routes: [
@@ -100,7 +100,10 @@ async function mountQuiz(extraQuery = 'fresh=1') {
   document.body.append(host)
   app = createApp(QuizPage).use(router)
   app.mount(host)
-  await vi.waitFor(() => expect(host.querySelector('.question-card')).not.toBeNull())
+  await vi.waitFor(() =>
+    expect(host.querySelector(empty ? '[role="status"]' : '.question-card')).not.toBeNull(),
+  )
+  return router
 }
 function button(label: string) {
   const result = Array.from(host.querySelectorAll('button')).find(
@@ -130,6 +133,15 @@ afterEach(() => {
 })
 
 describe('computer question bank uses the existing quiz flow', () => {
+  it('shows an empty state when the selected question type has no questions', async () => {
+    mocks.questions = [sample({ questionType: 'single' })]
+    const router = await mountQuiz('fresh=1&questionType=fill', true)
+    expect(host.textContent).toContain('暂无符合条件的题目')
+    expect(mocks.saveSession).not.toHaveBeenCalled()
+    expect(host.querySelector('.page-skeleton')).toBeNull()
+    button('返回题库').click()
+    await vi.waitFor(() => expect(router.currentRoute.value.path).toBe('/home'))
+  })
   it.each(['single', 'fill'] as const)(
     'renders and sanitizes technical %s answers and translations',
     async (questionType) => {

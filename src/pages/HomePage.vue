@@ -51,6 +51,9 @@ const { isUnlocked } = useHiddenSite()
 const loading = ref(true)
 const error = ref('')
 const questions = ref<Question[]>([])
+const groupsWithFillQuestions = computed(
+  () => new Set(questions.value.filter((q) => q.questionType === 'fill').map((q) => q.groupId)),
+)
 const totalQuestions = ref(0)
 const doneCount = ref(0)
 const totalAttempts = ref(0)
@@ -812,7 +815,7 @@ const groupViewHint = computed(() => {
               随机
             </button>
             <button
-              v-if="activeCategory !== 'japanese3'"
+              v-if="groupsWithFillQuestions.has(g.groupId)"
               class="btn btn-outline btn-sm"
               @click="startGroupQuiz(g.groupId, 'sequential', { questionType: 'fill' })"
             >
