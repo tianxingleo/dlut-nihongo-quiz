@@ -1,0 +1,304 @@
+[
+  {
+    "id": "japanese1-mid-0067",
+    "before": {
+      "status": "needs_review"
+    },
+    "after": {
+      "status": "ready"
+    },
+    "reason": "原文汉字栏与中文“楼梯”相互印证，階段读かいだん。"
+  },
+  {
+    "id": "japanese1-mid-0072",
+    "before": {
+      "status": "needs_review"
+    },
+    "after": {
+      "status": "ready"
+    },
+    "reason": "保留原文うち；题干提供中文语境，排除同字其他读音的干扰项。"
+  },
+  {
+    "id": "japanese1-mid-0155",
+    "before": {
+      "word": "きゅうじはん",
+      "reading": "きゅうじはん"
+    },
+    "after": {
+      "word": "九時半",
+      "reading": "くじはん"
+    },
+    "reason": "九点读くじ，原文きゅうじはん有误。"
+  },
+  {
+    "id": "japanese1-mid-0254",
+    "before": {
+      "partOfSpeech": "",
+      "status": "needs_review"
+    },
+    "after": {
+      "partOfSpeech": "動（テ形）",
+      "status": "ready"
+    },
+    "reason": "歩く的テ形歩いて；保留原文形式。"
+  },
+  {
+    "id": "japanese1-mid-0262",
+    "before": {
+      "word": "手洗い"
+    },
+    "after": {
+      "word": "お手洗い"
+    },
+    "reason": "原文假名おてあらい对应お手洗い，补齐敬语前缀。"
+  },
+  {
+    "id": "japanese1-mid-0249",
+    "before": {
+      "status": "ready"
+    },
+    "after": {
+      "status": "needs_review"
+    },
+    "reason": "与0012的“这边（礼貌）”义项重复，保留来源但不重复出题。"
+  },
+  {
+    "id": "japanese1-final-0011",
+    "before": {
+      "reading": "にほんばし"
+    },
+    "after": {
+      "reading": "にっぽんばし"
+    },
+    "reason": "释义明确指大阪；大阪市官方读音：https://www.city.osaka.lg.jp/kensetsu/page/0000023842.html"
+  },
+  {
+    "id": "japanese1-final-0057",
+    "before": {
+      "meaning": "鸡素烧",
+      "status": "needs_review"
+    },
+    "after": {
+      "meaning": "寿喜烧（日式火锅）",
+      "status": "ready"
+    },
+    "reason": "统一为易理解的通行译名；原文“鸡素烧”保留在修改记录中，不断言为错字。参考：https://kodokunosukiyaki.com/"
+  },
+  {
+    "id": "japanese1-final-0086",
+    "before": {
+      "meaning": "～站",
+      "status": "needs_review"
+    },
+    "after": {
+      "meaning": "乘车处、乘船处",
+      "status": "ready"
+    },
+    "reason": "乗り場表示搭乘交通工具的场所，原释义“～站”过于简略。"
+  },
+  {
+    "id": "japanese1-final-0136",
+    "before": {
+      "status": "ready"
+    },
+    "after": {
+      "status": "needs_review"
+    },
+    "reason": "原文町与みどりちょう不匹配；疑似地名缺字，暂不臆补。"
+  },
+  {
+    "id": "japanese1-final-0172",
+    "before": {
+      "status": "ready"
+    },
+    "after": {
+      "status": "needs_review"
+    },
+    "reason": "原文将でござる当作现代礼貌表达；需确认教材是否原为でございます，暂不出题。"
+  },
+  {
+    "id": "japanese1-final-0239",
+    "before": {
+      "word": "ナンブラー",
+      "reading": "ナンブラー",
+      "meaning": "鱼酱",
+      "status": "needs_review"
+    },
+    "after": {
+      "word": "ナンプラー",
+      "reading": "ナンプラー",
+      "meaning": "鱼露（泰式鱼酱）",
+      "status": "ready"
+    },
+    "reason": "ブ→プ；原文释义鱼酱可确定并非タンブラー。参考食品厂商：https://www.sbfoods.co.jp/products/detail/15062.html"
+  },
+  {
+    "id": "japanese1-final-0290",
+    "before": {
+      "partOfSpeech": "",
+      "status": "needs_review"
+    },
+    "after": {
+      "partOfSpeech": "副",
+      "status": "ready"
+    },
+    "reason": "べつべつに为副词性形式，保留原文而不改成べつべつ。"
+  },
+  {
+    "id": "japanese1-final-0256",
+    "before": {
+      "reading": "ローマ字"
+    },
+    "after": {
+      "reading": "ローマじ"
+    },
+    "reason": "读音字段统一为假名，原写法保留在word。"
+  },
+  {
+    "id": "japanese1-final-0316",
+    "before": {
+      "reading": "行ってらっしゃい"
+    },
+    "after": {
+      "reading": "いってらっしゃい"
+    },
+    "reason": "读音字段统一为假名，原写法保留在word。"
+  },
+  {
+    "id": "japanese1-final-0317",
+    "before": {
+      "reading": "行ってきます"
+    },
+    "after": {
+      "reading": "いってきます"
+    },
+    "reason": "读音字段统一为假名，原写法保留在word。"
+  },
+  {
+    "id": "japanese1-final-0333",
+    "before": {
+      "reading": "お帰りなさい"
+    },
+    "after": {
+      "reading": "おかえりなさい"
+    },
+    "reason": "读音字段统一为假名，原写法保留在word。"
+  },
+  {
+    "id": "japanese1-final-0347",
+    "before": {
+      "reading": "お出かけですか"
+    },
+    "after": {
+      "reading": "おでかけですか"
+    },
+    "reason": "读音字段统一为假名，原写法保留在word。"
+  },
+  {
+    "id": "japanese1-final-0368",
+    "before": {
+      "reading": "どうぞお上がりください"
+    },
+    "after": {
+      "reading": "どうぞおあがりください"
+    },
+    "reason": "读音字段统一为假名，原写法保留在word。"
+  },
+  {
+    "id": "japanese1-final-0212",
+    "before": {
+      "word": "カレー［ライス］",
+      "reading": ""
+    },
+    "after": {
+      "word": "カレーライス",
+      "reading": "カレーライス"
+    },
+    "reason": "展开原文可省略部分；カレー作为同义形式不作干扰项。"
+  },
+  {
+    "id": "japanese1-final-0354",
+    "before": {
+      "word": "～や～［など］",
+      "reading": ""
+    },
+    "after": {
+      "word": "～や～など",
+      "reading": "～や～など"
+    },
+    "reason": "展开原文可省略部分，保留列举结构。"
+  },
+  {
+    "id": "japanese1-final-0372",
+    "before": {
+      "word": "ごちそうさま［でした］",
+      "reading": ""
+    },
+    "after": {
+      "word": "ごちそうさまでした",
+      "reading": "ごちそうさまでした"
+    },
+    "reason": "展开原文可省略部分；省略でした也是合法表达。"
+  },
+  {
+    "id": "japanese1-final-0147",
+    "before": {
+      "meaning": "下次、这次、上次"
+    },
+    "after": {
+      "meaning": "这次、下次（依语境）"
+    },
+    "reason": "初级孤立词条不将“上次”作为无语境的标准答案。"
+  },
+  {
+    "id": "japanese1-final-0249",
+    "before": {
+      "meaning": "饭店"
+    },
+    "after": {
+      "meaning": "酒店、旅馆"
+    },
+    "reason": "避免“饭店”被误解为餐厅。"
+  },
+  {
+    "id": "japanese1-final-0111",
+    "before": {
+      "meaning": "妻子"
+    },
+    "after": {
+      "meaning": "（别人的）妻子"
+    },
+    "reason": "区分妻与奥さん的称呼场景。"
+  },
+  {
+    "id": "japanese1-final-0112",
+    "before": {
+      "meaning": "妻子"
+    },
+    "after": {
+      "meaning": "（自己的）妻子"
+    },
+    "reason": "区分妻与奥さん的称呼场景。"
+  },
+  {
+    "id": "japanese1-final-0113",
+    "before": {
+      "meaning": "丈夫"
+    },
+    "after": {
+      "meaning": "（别人的）丈夫"
+    },
+    "reason": "区分夫与ご主人的称呼场景。"
+  },
+  {
+    "id": "japanese1-final-0114",
+    "before": {
+      "meaning": "丈夫"
+    },
+    "after": {
+      "meaning": "（自己的）丈夫"
+    },
+    "reason": "区分夫与ご主人的称呼场景。"
+  }
+]

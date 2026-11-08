@@ -1,0 +1,44 @@
+{
+  "title": "综合日语2期中",
+  "date": "2024-04-21",
+  "variant": "A",
+  "printedPages": 8,
+  "photos": [
+    {
+      "file": "page-003.jpg",
+      "printedPages": [
+        "A-1",
+        "A-2"
+      ],
+      "sha256": "271a0cd3b0133efcaf8b8c83bb217232b4efa27ba979bf866a63827c89fb2125",
+      "bytes": 524610
+    },
+    {
+      "file": "page-001.jpg",
+      "printedPages": [
+        "A-3",
+        "A-4"
+      ],
+      "sha256": "416d30f505a03f082e839ac16405a7dfd6f079dc15780ce4ca2d344975c99fc4",
+      "bytes": 512317
+    },
+    {
+      "file": "page-002.jpg",
+      "printedPages": [
+        "A-5",
+        "A-6"
+      ],
+      "sha256": "b347ed0f23088b423704b38e5aea5104d9fa6716c0989a40ff5c4f6664f3ebb7",
+      "bytes": 483032
+    },
+    {
+      "file": "page-004.jpg",
+      "printedPages": [
+        "A-7",
+        "A-8"
+      ],
+      "sha256": "99414dbe0b48fbd57a09dc8e7656ddc11026583b5b5e6cb5f6ab92e94b0b0b4e",
+      "bytes": 907205
+    }
+  ]
+}

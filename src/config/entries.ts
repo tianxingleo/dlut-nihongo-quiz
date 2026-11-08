@@ -37,6 +37,21 @@ export interface EntryMeta {
 
 export const ENTRIES: EntryMeta[] = [
   {
+    key: 'japanese1',
+    name: '综合日语1',
+    icon: '日',
+    desc: '单词 · 期中与期末范围',
+    papers: ['japanese1-midterm', 'japanese1-final'],
+    groups: [{ key: 'words', name: '单词', papers: ['japanese1-midterm', 'japanese1-final'] }],
+  },
+  {
+    key: 'japanese2-exams',
+    name: '综合日语2',
+    icon: '日',
+    desc: '单词 · 语法（学习通99题 + 2021/2024 真题）',
+    papers: ['japanese2', 'jp1-mid24'],
+  },
+  {
     key: 'computer-organization',
     name: '计算机组成（软国际）',
     icon: '组',

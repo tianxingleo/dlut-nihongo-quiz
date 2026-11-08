@@ -63,6 +63,7 @@ describe('COURSE_TREE config', () => {
     const leafKeys = jp2!.children!.map((c) => c.key)
     expect(leafKeys).toContain('jp2-word')
     expect(leafKeys).toContain('jp2-grammar')
+    expect(leafKeys).toContain('jp1-mid24')
   })
 
   it('leaf nodes with requireUnlock do not break the contract when locked', () => {

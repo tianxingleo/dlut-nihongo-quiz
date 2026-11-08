@@ -1,0 +1,504 @@
+{
+  "sourcePhotos": [
+    "page-003.jpg (A-1/A-2)",
+    "page-001.jpg (A-3/A-4)",
+    "page-002.jpg (A-5/A-6)",
+    "page-004.jpg (A-7/A-8)"
+  ],
+  "originalCount": 109,
+  "reconstructedCount": 95,
+  "publishCount": 91,
+  "removedDuplicateOrFragmentIds": [
+    "jp1-mid24-q059",
+    "jp1-mid24-q061",
+    "jp1-mid24-q062",
+    "jp1-mid24-q069",
+    "jp1-mid24-q078",
+    "jp1-mid24-q080",
+    "jp1-mid24-q082",
+    "jp1-mid24-q084",
+    "jp1-mid24-q101",
+    "jp1-mid24-q102",
+    "jp1-mid24-q103",
+    "jp1-mid24-q104",
+    "jp1-mid24-q105",
+    "jp1-mid24-q106"
+  ],
+  "questionMapping": [
+    {
+      "originalNumber": 1,
+      "retainedId": "jp1-mid24-q001",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 2,
+      "retainedId": "jp1-mid24-q002",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 3,
+      "retainedId": "jp1-mid24-q003",
+      "excludeReason": "原照片的浊音/半浊音不够清晰，OCR 将 A/B、C/D 转成重复选项；读音应为「べんとう」，正确字母待清晰原图确认，不猜改干扰项。"
+    },
+    {
+      "originalNumber": 4,
+      "retainedId": "jp1-mid24-q004",
+      "excludeReason": "原照片 A/B 的「ぶ／ぷ」等细节不能可靠辨清；读音应为「じぶん」，重复选项导致字母不能唯一确定，待清晰原图确认。"
+    },
+    {
+      "originalNumber": 5,
+      "retainedId": "jp1-mid24-q005",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 6,
+      "retainedId": "jp1-mid24-q006",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 7,
+      "retainedId": "jp1-mid24-q007",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 8,
+      "retainedId": "jp1-mid24-q008",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 9,
+      "retainedId": "jp1-mid24-q009",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 10,
+      "retainedId": "jp1-mid24-q010",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 11,
+      "retainedId": "jp1-mid24-q011",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 12,
+      "retainedId": "jp1-mid24-q012",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 13,
+      "retainedId": "jp1-mid24-q013",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 14,
+      "retainedId": "jp1-mid24-q014",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 15,
+      "retainedId": "jp1-mid24-q015",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 16,
+      "retainedId": "jp1-mid24-q016",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 17,
+      "retainedId": "jp1-mid24-q017",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 18,
+      "retainedId": "jp1-mid24-q018",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 19,
+      "retainedId": "jp1-mid24-q019",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 20,
+      "retainedId": "jp1-mid24-q020",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 21,
+      "retainedId": "jp1-mid24-q021",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 22,
+      "retainedId": "jp1-mid24-q022",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 23,
+      "retainedId": "jp1-mid24-q023",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 24,
+      "retainedId": "jp1-mid24-q024",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 25,
+      "retainedId": "jp1-mid24-q025",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 26,
+      "retainedId": "jp1-mid24-q026",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 27,
+      "retainedId": "jp1-mid24-q027",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 28,
+      "retainedId": "jp1-mid24-q028",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 29,
+      "retainedId": "jp1-mid24-q029",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 30,
+      "retainedId": "jp1-mid24-q030",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 31,
+      "retainedId": "jp1-mid24-q031",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 32,
+      "retainedId": "jp1-mid24-q032",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 33,
+      "retainedId": "jp1-mid24-q033",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 34,
+      "retainedId": "jp1-mid24-q034",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 35,
+      "retainedId": "jp1-mid24-q035",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 36,
+      "retainedId": "jp1-mid24-q036",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 37,
+      "retainedId": "jp1-mid24-q037",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 38,
+      "retainedId": "jp1-mid24-q038",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 39,
+      "retainedId": "jp1-mid24-q039",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 40,
+      "retainedId": "jp1-mid24-q040",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 41,
+      "retainedId": "jp1-mid24-q041",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 42,
+      "retainedId": "jp1-mid24-q042",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 43,
+      "retainedId": "jp1-mid24-q043",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 44,
+      "retainedId": "jp1-mid24-q044",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 45,
+      "retainedId": "jp1-mid24-q045",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 46,
+      "retainedId": "jp1-mid24-q046",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 47,
+      "retainedId": "jp1-mid24-q047",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 48,
+      "retainedId": "jp1-mid24-q048",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 49,
+      "retainedId": "jp1-mid24-q049",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 50,
+      "retainedId": "jp1-mid24-q050",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 51,
+      "retainedId": "jp1-mid24-q051",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 52,
+      "retainedId": "jp1-mid24-q052",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 53,
+      "retainedId": "jp1-mid24-q053",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 54,
+      "retainedId": "jp1-mid24-q054",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 55,
+      "retainedId": "jp1-mid24-q055",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 56,
+      "retainedId": "jp1-mid24-q056",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 57,
+      "retainedId": "jp1-mid24-q057",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 58,
+      "retainedId": "jp1-mid24-q058",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 59,
+      "retainedId": "jp1-mid24-q063",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 60,
+      "retainedId": "jp1-mid24-q064",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 61,
+      "retainedId": "jp1-mid24-q065",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 62,
+      "retainedId": "jp1-mid24-q066",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 63,
+      "retainedId": "jp1-mid24-q067",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 64,
+      "retainedId": "jp1-mid24-q068",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 65,
+      "retainedId": "jp1-mid24-q070",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 66,
+      "retainedId": "jp1-mid24-q071",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 67,
+      "retainedId": "jp1-mid24-q072",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 68,
+      "retainedId": "jp1-mid24-q073",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 69,
+      "retainedId": "jp1-mid24-q074",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 70,
+      "retainedId": "jp1-mid24-q075",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 71,
+      "retainedId": "jp1-mid24-q076",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 72,
+      "retainedId": "jp1-mid24-q077",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 73,
+      "retainedId": "jp1-mid24-q079",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 74,
+      "retainedId": "jp1-mid24-q081",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 75,
+      "retainedId": "jp1-mid24-q083",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 76,
+      "retainedId": "jp1-mid24-q085",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 77,
+      "retainedId": "jp1-mid24-q086",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 78,
+      "retainedId": "jp1-mid24-q087",
+      "excludeReason": "「ううん、知らない」和得知新消息时的「ううん、知らなかった」都能构成自然回答；现有原卷未附答案，缺乏足以唯一排除 D 的语境，暂不自动判分。"
+    },
+    {
+      "originalNumber": 79,
+      "retainedId": "jp1-mid24-q089",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 80,
+      "retainedId": "jp1-mid24-q090",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 81,
+      "retainedId": "jp1-mid24-q091",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 82,
+      "retainedId": "jp1-mid24-q092",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 83,
+      "retainedId": "jp1-mid24-q093",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 84,
+      "retainedId": "jp1-mid24-q094",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 85,
+      "retainedId": "jp1-mid24-q095",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 86,
+      "retainedId": "jp1-mid24-q096",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 87,
+      "retainedId": "jp1-mid24-q097",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 88,
+      "retainedId": "jp1-mid24-q098",
+      "excludeReason": "「自分で作った花」和「自分で作っている花」均能修饰「花」，分别侧重已种成和正在培育；原文缺乏足够时态线索，不能唯一确认 D 而排除 B，待教师答案核对。"
+    },
+    {
+      "originalNumber": 89,
+      "retainedId": "jp1-mid24-q099",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 90,
+      "retainedId": "jp1-mid24-q100",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 91,
+      "retainedId": "jp1-mid24-q111",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 92,
+      "retainedId": "jp1-mid24-q107",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 93,
+      "retainedId": "jp1-mid24-q108",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 94,
+      "retainedId": "jp1-mid24-q109",
+      "excludeReason": null
+    },
+    {
+      "originalNumber": 95,
+      "retainedId": "jp1-mid24-q110",
+      "excludeReason": null
+    }
+  ]
+}

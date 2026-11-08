@@ -15,6 +15,33 @@ export interface TreeNode {
 export const COURSE_TREE: TreeNode[] = [
   {
     type: 'group',
+    key: 'japanese1',
+    label: '综合日语1',
+    icon: '日',
+    children: [
+      {
+        type: 'group',
+        key: 'japanese1-words',
+        label: '单词',
+        children: [
+          {
+            type: 'leaf',
+            key: 'japanese1-midterm',
+            label: '期中范围（1—7课）',
+            category: 'japanese1-midterm',
+          },
+          {
+            type: 'leaf',
+            key: 'japanese1-final',
+            label: '期末范围（7—15课）',
+            category: 'japanese1-final',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    type: 'group',
     key: 'computer-organization',
     label: '计算机组成（软国际）',
     icon: '组',
@@ -75,6 +102,12 @@ export const COURSE_TREE: TreeNode[] = [
             label: '语法',
             category: 'japanese2',
             subBank: null,
+          },
+          {
+            type: 'leaf',
+            key: 'jp1-mid24',
+            label: '2024年期中',
+            category: 'jp1-mid24',
           },
           {
             type: 'leaf',

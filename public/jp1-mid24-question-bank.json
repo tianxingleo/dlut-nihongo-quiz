@@ -1,0 +1,5098 @@
+[
+  {
+    "id": "jp1-mid24-q001",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 1,
+    "stem": "お金が<u>要る</u>とき、電話してください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きる"
+      },
+      {
+        "key": "B",
+        "text": "いる"
+      },
+      {
+        "key": "C",
+        "text": "ある"
+      },
+      {
+        "key": "D",
+        "text": "しる"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "いる",
+    "translation": "",
+    "explanation": "「要る」表示需要，读作「いる」；きる/ある/しる均不符。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第1题；读音；保留旧题ID jp1-mid24-q001，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q002",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 2,
+    "stem": "虫は<u>動いて</u>います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "うごいて"
+      },
+      {
+        "key": "B",
+        "text": "はたらいて"
+      },
+      {
+        "key": "C",
+        "text": "およいで"
+      },
+      {
+        "key": "D",
+        "text": "とどいて"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "うごいて",
+    "translation": "",
+    "explanation": "「動いて」读作「うごいて」，是「動く」的て形。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第2题；读音；保留旧题ID jp1-mid24-q002，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q005",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 5,
+    "stem": "音楽が好きですから、毎日ピアノを<u>弾き</u>ます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かき"
+      },
+      {
+        "key": "B",
+        "text": "しき"
+      },
+      {
+        "key": "C",
+        "text": "ひき"
+      },
+      {
+        "key": "D",
+        "text": "つき"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ひき",
+    "translation": "",
+    "explanation": "「弾きます」读作「ひきます」，表示弹奏乐器。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 5,
+      "originalNumbers": [
+        "5"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第5题；读音；保留旧题ID jp1-mid24-q005，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q006",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 6,
+    "stem": "和室に<u>押し入れ</u>がついています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おしいれ"
+      },
+      {
+        "key": "B",
+        "text": "ほしいれ"
+      },
+      {
+        "key": "C",
+        "text": "おしはいれ"
+      },
+      {
+        "key": "D",
+        "text": "ほしはいれ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "おしいれ",
+    "translation": "",
+    "explanation": "「押し入れ」读作「おしいれ」，是壁橱。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 6,
+      "originalNumbers": [
+        "6"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第6题；读音；保留旧题ID jp1-mid24-q006，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q007",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 7,
+    "stem": "ここは高速道路の近くですから、一日中、車の<u>音</u>がうるさいです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おん"
+      },
+      {
+        "key": "B",
+        "text": "おと"
+      },
+      {
+        "key": "C",
+        "text": "こえ"
+      },
+      {
+        "key": "D",
+        "text": "ね"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "おと",
+    "translation": "",
+    "explanation": "「音」在此指声音，读作「おと」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 7,
+      "originalNumbers": [
+        "7"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第7题；读音；保留旧题ID jp1-mid24-q007，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q008",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 8,
+    "stem": "ちょっとあの人に<u>紹介</u>してくれないか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しゅうけい"
+      },
+      {
+        "key": "B",
+        "text": "きゅうけい"
+      },
+      {
+        "key": "C",
+        "text": "しょうかい"
+      },
+      {
+        "key": "D",
+        "text": "きょうかい"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "しょうかい",
+    "translation": "",
+    "explanation": "「紹介」读作「しょうかい」。原照片中该读音在 C 项；旧数据把 A 项误写成正确读音，导致答案字母也错了。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 8,
+      "originalNumbers": [
+        "8"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第8题；读音；保留旧题ID jp1-mid24-q008，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q009",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 9,
+    "stem": "近くにスーパーがないから、とても<u>不便</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ふびん"
+      },
+      {
+        "key": "B",
+        "text": "ぶべん"
+      },
+      {
+        "key": "C",
+        "text": "ぶびん"
+      },
+      {
+        "key": "D",
+        "text": "ふべん"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ふべん",
+    "translation": "",
+    "explanation": "「不便」读作「ふべん」，对应原照片 D 项；C 项为「ぶびん」，不是正确读音。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 9,
+      "originalNumbers": [
+        "9"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第9题；读音；保留旧题ID jp1-mid24-q009，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q010",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 10,
+    "stem": "この機械はよく<u>故障</u>します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "こしょう"
+      },
+      {
+        "key": "B",
+        "text": "こうしょう"
+      },
+      {
+        "key": "C",
+        "text": "こしょ"
+      },
+      {
+        "key": "D",
+        "text": "こうしょ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "こしょう",
+    "translation": "",
+    "explanation": "「故障」读作「こしょう」，表示故障。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 10,
+      "originalNumbers": [
+        "10"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第10题；读音；保留旧题ID jp1-mid24-q010，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q011",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 11,
+    "stem": "<u>都合</u>がよかったら、一緒に遊びに行かない？",
+    "options": [
+      {
+        "key": "A",
+        "text": "どあい"
+      },
+      {
+        "key": "B",
+        "text": "とあい"
+      },
+      {
+        "key": "C",
+        "text": "つごう"
+      },
+      {
+        "key": "D",
+        "text": "つこう"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "つごう",
+    "translation": "",
+    "explanation": "「都合」读作「つごう」，表示方便/情况。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 11,
+      "originalNumbers": [
+        "11"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第11题；读音；保留旧题ID jp1-mid24-q011，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q012",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 12,
+    "stem": "よく<u>考え</u>てから答えてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かんがえ"
+      },
+      {
+        "key": "B",
+        "text": "のりかえ"
+      },
+      {
+        "key": "C",
+        "text": "おぼえ"
+      },
+      {
+        "key": "D",
+        "text": "こたえ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "かんがえ",
+    "translation": "",
+    "explanation": "「考えて」的「考え」读作「かんがえ」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 12,
+      "originalNumbers": [
+        "12"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第12题；读音；保留旧题ID jp1-mid24-q012，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q013",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 13,
+    "stem": "<u>上着</u>を脱いでください。下着は脱がなくてもいいです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "うえぎ"
+      },
+      {
+        "key": "B",
+        "text": "うわぎ"
+      },
+      {
+        "key": "C",
+        "text": "うえき"
+      },
+      {
+        "key": "D",
+        "text": "うわき"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "うわぎ",
+    "translation": "",
+    "explanation": "「上着」读作「うわぎ」，是外衣。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 13,
+      "originalNumbers": [
+        "13"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第13题；读音；保留旧题ID jp1-mid24-q013，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q014",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 14,
+    "stem": "お金が<u>足り</u>ません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "とり"
+      },
+      {
+        "key": "B",
+        "text": "ふり"
+      },
+      {
+        "key": "C",
+        "text": "しり"
+      },
+      {
+        "key": "D",
+        "text": "たり"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "たり",
+    "translation": "",
+    "explanation": "「足り」读作「たり」，表示足够。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 14,
+      "originalNumbers": [
+        "14"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第14题；读音；保留旧题ID jp1-mid24-q014，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q015",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 15,
+    "stem": "分からない単語の<u>意味</u>を聞きます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いみ"
+      },
+      {
+        "key": "B",
+        "text": "いし"
+      },
+      {
+        "key": "C",
+        "text": "いじ"
+      },
+      {
+        "key": "D",
+        "text": "いぎ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "いみ",
+    "translation": "",
+    "explanation": "「意味」读作「いみ」，表示意思。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 15,
+      "originalNumbers": [
+        "15"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第15题；读音；保留旧题ID jp1-mid24-q015，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q016",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 16,
+    "stem": "彼が<u>生まれた</u>所を知っていますか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "せまれた"
+      },
+      {
+        "key": "B",
+        "text": "うまれた"
+      },
+      {
+        "key": "C",
+        "text": "かまれた"
+      },
+      {
+        "key": "D",
+        "text": "よまれた"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "うまれた",
+    "translation": "",
+    "explanation": "「生まれた」读作「うまれた」，是「生まれる」的过去形。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 16,
+      "originalNumbers": [
+        "16"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第16题；读音；保留旧题ID jp1-mid24-q016，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q017",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 17,
+    "stem": "日本語の発音を何度も<u>練習</u>します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "れんしゅ"
+      },
+      {
+        "key": "B",
+        "text": "ねんしゅ"
+      },
+      {
+        "key": "C",
+        "text": "ねんしゅう"
+      },
+      {
+        "key": "D",
+        "text": "れんしゅう"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "れんしゅう",
+    "translation": "",
+    "explanation": "「練習」读作「れんしゅう」，注意长音。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 17,
+      "originalNumbers": [
+        "17"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第17题；读音；保留旧题ID jp1-mid24-q017，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q018",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 18,
+    "stem": "このボタンを押すと、お釣りが<u>出ます</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "だします"
+      },
+      {
+        "key": "B",
+        "text": "でます"
+      },
+      {
+        "key": "C",
+        "text": "でします"
+      },
+      {
+        "key": "D",
+        "text": "おろします"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "でます",
+    "translation": "",
+    "explanation": "「出ます」读作「でます」，表示出来。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 18,
+      "originalNumbers": [
+        "18"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第18题；读音；保留旧题ID jp1-mid24-q018，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q019",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 19,
+    "stem": "<u>暗い</u>所で本を読まないでください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しろい"
+      },
+      {
+        "key": "B",
+        "text": "ひくい"
+      },
+      {
+        "key": "C",
+        "text": "くらい"
+      },
+      {
+        "key": "D",
+        "text": "くろい"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "くらい",
+    "translation": "",
+    "explanation": "「暗い」读作「くらい」，表示黑暗。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 19,
+      "originalNumbers": [
+        "19"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第19题；读音；保留旧题ID jp1-mid24-q019，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q020",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 20,
+    "stem": "来週の日曜日子供を<u>連れて</u>北海道へ行きます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "つれて"
+      },
+      {
+        "key": "B",
+        "text": "ふれて"
+      },
+      {
+        "key": "C",
+        "text": "とれて"
+      },
+      {
+        "key": "D",
+        "text": "ゆれて"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "つれて",
+    "translation": "",
+    "explanation": "「連れて」读作「つれて」，表示带领。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 20,
+      "originalNumbers": [
+        "20"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第20题；读音；保留旧题ID jp1-mid24-q020，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q021",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 21,
+    "stem": "あそこの<u>建物</u>は大学の図書館です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "けんぶつ"
+      },
+      {
+        "key": "B",
+        "text": "たてもの"
+      },
+      {
+        "key": "C",
+        "text": "けんもの"
+      },
+      {
+        "key": "D",
+        "text": "たてぶつ"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "たてもの",
+    "translation": "",
+    "explanation": "「建物」读作「たてもの」，表示建筑物。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 21,
+      "originalNumbers": [
+        "21"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第21题；读音；保留旧题ID jp1-mid24-q021，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q022",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 22,
+    "stem": "体の<u>調子</u>が悪くて、何もしたくありません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ちょうし"
+      },
+      {
+        "key": "B",
+        "text": "ちょうす"
+      },
+      {
+        "key": "C",
+        "text": "ようし"
+      },
+      {
+        "key": "D",
+        "text": "ようす"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ちょうし",
+    "translation": "",
+    "explanation": "「調子」读作「ちょうし」，表示状态。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 22,
+      "originalNumbers": [
+        "22"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第22题；读音；保留旧题ID jp1-mid24-q022，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q023",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 23,
+    "stem": "明日の会議の時間をもう一度<u>確認</u>してください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かくいん"
+      },
+      {
+        "key": "B",
+        "text": "たくにん"
+      },
+      {
+        "key": "C",
+        "text": "たくいん"
+      },
+      {
+        "key": "D",
+        "text": "かくにん"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "かくにん",
+    "translation": "",
+    "explanation": "「確認」读作「かくにん」。原照片 A 项是「かくいん」，D 项才是正确读音。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 23,
+      "originalNumbers": [
+        "23"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第23题；读音；保留旧题ID jp1-mid24-q023，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q024",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 24,
+    "stem": "友達がいなくて、ちょっと<u>寂しい</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "やさしい"
+      },
+      {
+        "key": "B",
+        "text": "たのしい"
+      },
+      {
+        "key": "C",
+        "text": "さびしい"
+      },
+      {
+        "key": "D",
+        "text": "うれしい"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "さびしい",
+    "translation": "",
+    "explanation": "「寂しい」读作「さびしい」，表示寂寞。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 24,
+      "originalNumbers": [
+        "24"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第24题；读音；保留旧题ID jp1-mid24-q024，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q025",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 25,
+    "stem": "清水さんは車を<u>運転</u>することができます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "うんでん"
+      },
+      {
+        "key": "B",
+        "text": "うんてん"
+      },
+      {
+        "key": "C",
+        "text": "うんどう"
+      },
+      {
+        "key": "D",
+        "text": "うんとう"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "うんてん",
+    "translation": "",
+    "explanation": "「運転」读作「うんてん」，表示驾驶。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 25,
+      "originalNumbers": [
+        "25"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第25题；读音；保留旧题ID jp1-mid24-q025，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q026",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 26,
+    "stem": "明日、サッカーの<u>試合</u>があります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しえい"
+      },
+      {
+        "key": "B",
+        "text": "しかい"
+      },
+      {
+        "key": "C",
+        "text": "しごい"
+      },
+      {
+        "key": "D",
+        "text": "しあい"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "しあい",
+    "translation": "",
+    "explanation": "「試合」读作「しあい」，表示比赛。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 26,
+      "originalNumbers": [
+        "26"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第26题；读音；保留旧题ID jp1-mid24-q026，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q027",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 27,
+    "stem": "食事の<u>準備</u>ができました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "じゅんび"
+      },
+      {
+        "key": "B",
+        "text": "じゅんべ"
+      },
+      {
+        "key": "C",
+        "text": "しゅんび"
+      },
+      {
+        "key": "D",
+        "text": "しゅんべ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "じゅんび",
+    "translation": "",
+    "explanation": "「準備」读作「じゅんび」，表示准备。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 27,
+      "originalNumbers": [
+        "27"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第27题；读音；保留旧题ID jp1-mid24-q027，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q028",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 28,
+    "stem": "昨日から歯が<u>痛い</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ねむい"
+      },
+      {
+        "key": "B",
+        "text": "すごい"
+      },
+      {
+        "key": "C",
+        "text": "いたい"
+      },
+      {
+        "key": "D",
+        "text": "よわい"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "いたい",
+    "translation": "",
+    "explanation": "「痛い」读作「いたい」，表示疼痛。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 28,
+      "originalNumbers": [
+        "28"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第28题；读音；保留旧题ID jp1-mid24-q028，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q029",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 29,
+    "stem": "喉が痛くて、<u>熱</u>もあります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ねつ"
+      },
+      {
+        "key": "B",
+        "text": "あつ"
+      },
+      {
+        "key": "C",
+        "text": "れつ"
+      },
+      {
+        "key": "D",
+        "text": "なつ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ねつ",
+    "translation": "",
+    "explanation": "「熱」读作「ねつ」，表示发烧。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 29,
+      "originalNumbers": [
+        "29"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第29题；读音；保留旧题ID jp1-mid24-q029，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q030",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 30,
+    "stem": "危ないですから、<u>触ら</u>ないでください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おわら"
+      },
+      {
+        "key": "B",
+        "text": "おくら"
+      },
+      {
+        "key": "C",
+        "text": "さわら"
+      },
+      {
+        "key": "D",
+        "text": "まがら"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "さわら",
+    "translation": "",
+    "explanation": "「触らない」的「触」读作「さわ」，选项C「さわら」正确。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "读音"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 30,
+      "originalNumbers": [
+        "30"
+      ],
+      "pages": [
+        3
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第30题；读音；保留旧题ID jp1-mid24-q030，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q031",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 31,
+    "stem": "彼はたくさんの<u>ことば</u>を話すことができる。",
+    "options": [
+      {
+        "key": "A",
+        "text": "言語"
+      },
+      {
+        "key": "B",
+        "text": "語言"
+      },
+      {
+        "key": "C",
+        "text": "葉言"
+      },
+      {
+        "key": "D",
+        "text": "言葉"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "言葉",
+    "translation": "",
+    "explanation": "「ことば」写作「言葉」，在原卷 D 项。A「言語」读「げんご」，B「語言」和 C「葉言」不是本题正确写法。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 31,
+      "originalNumbers": [
+        "31"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第31题；汉字；保留旧题ID jp1-mid24-q031，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q032",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 32,
+    "stem": "警視庁で火事の詳しい原因を<u>しらべて</u>います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "査べて"
+      },
+      {
+        "key": "B",
+        "text": "調べて"
+      },
+      {
+        "key": "C",
+        "text": "教えて"
+      },
+      {
+        "key": "D",
+        "text": "察べて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "調べて",
+    "translation": "",
+    "explanation": "「しらべる」写作「調べる」，选B。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 32,
+      "originalNumbers": [
+        "32"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第32题；汉字；保留旧题ID jp1-mid24-q032，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q033",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 33,
+    "stem": "最後まで希望を<u>すて</u>ない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "投て"
+      },
+      {
+        "key": "B",
+        "text": "捨て"
+      },
+      {
+        "key": "C",
+        "text": "葉て"
+      },
+      {
+        "key": "D",
+        "text": "拾て"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "捨て",
+    "translation": "",
+    "explanation": "这里「すてる」写作「捨てる」。原照片 C 项是「葉て」，旧 OCR 写成「棄て」会人为制造另一个可用写法。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 33,
+      "originalNumbers": [
+        "33"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第33题；汉字；保留旧题ID jp1-mid24-q033，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q034",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 34,
+    "stem": "最近、<u>ぶっか</u>がだいぶ上がりましたね。",
+    "options": [
+      {
+        "key": "A",
+        "text": "物価"
+      },
+      {
+        "key": "B",
+        "text": "値段"
+      },
+      {
+        "key": "C",
+        "text": "価値"
+      },
+      {
+        "key": "D",
+        "text": "価格"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "物価",
+    "translation": "",
+    "explanation": "「ぶっか」写作「物価」，选A。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 34,
+      "originalNumbers": [
+        "34"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第34题；汉字；保留旧题ID jp1-mid24-q034，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q035",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 35,
+    "stem": "駅の近くは<u>やちん</u>が高いです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "屋貸"
+      },
+      {
+        "key": "B",
+        "text": "家賃"
+      },
+      {
+        "key": "C",
+        "text": "屋代"
+      },
+      {
+        "key": "D",
+        "text": "家費"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "家賃",
+    "translation": "",
+    "explanation": "「やちん」写作「家賃」，表示房租。原照片 D 项是「家費」，不是与 B 重复的「家賃」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 35,
+      "originalNumbers": [
+        "35"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第35题；汉字；保留旧题ID jp1-mid24-q035，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q036",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 36,
+    "stem": "信号を見てから道を<u>わたり</u>ましょう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "渡り"
+      },
+      {
+        "key": "B",
+        "text": "通り"
+      },
+      {
+        "key": "C",
+        "text": "越り"
+      },
+      {
+        "key": "D",
+        "text": "穿り"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "渡り",
+    "translation": "",
+    "explanation": "「わたる」写作「渡る」，选A。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 36,
+      "originalNumbers": [
+        "36"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第36题；汉字；保留旧题ID jp1-mid24-q036，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q037",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 37,
+    "stem": "今晩、友人の家に<u>とまり</u>ます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "止まり"
+      },
+      {
+        "key": "B",
+        "text": "留まり"
+      },
+      {
+        "key": "C",
+        "text": "泊まり"
+      },
+      {
+        "key": "D",
+        "text": "住まり"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "泊まり",
+    "translation": "",
+    "explanation": "「とまる」写作「泊まる」，选C。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 37,
+      "originalNumbers": [
+        "37"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第37题；汉字；保留旧题ID jp1-mid24-q037，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q038",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 38,
+    "stem": "日本人の友達にレポートを<u>なおし</u>てもらいました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "治し"
+      },
+      {
+        "key": "B",
+        "text": "改し"
+      },
+      {
+        "key": "C",
+        "text": "修し"
+      },
+      {
+        "key": "D",
+        "text": "直し"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "直し",
+    "translation": "",
+    "explanation": "修改报告用「直す」，选D。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 38,
+      "originalNumbers": [
+        "38"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第38题；汉字；保留旧题ID jp1-mid24-q038，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q039",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 39,
+    "stem": "名古屋駅で新幹線を<u>おりる</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "降りる"
+      },
+      {
+        "key": "B",
+        "text": "離りる"
+      },
+      {
+        "key": "C",
+        "text": "落りる"
+      },
+      {
+        "key": "D",
+        "text": "開りる"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "降りる",
+    "translation": "",
+    "explanation": "下车用「降りる」，选A。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 39,
+      "originalNumbers": [
+        "39"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第39题；汉字；保留旧题ID jp1-mid24-q039，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q040",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 40,
+    "stem": "いくら呼んでも<u>へんじ</u>がありません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "回復"
+      },
+      {
+        "key": "B",
+        "text": "返信"
+      },
+      {
+        "key": "C",
+        "text": "返事"
+      },
+      {
+        "key": "D",
+        "text": "回答"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "返事",
+    "translation": "",
+    "explanation": "「へんじ」写作「返事」，选C。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "汉字"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 40,
+      "originalNumbers": [
+        "40"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第40题；汉字；保留旧题ID jp1-mid24-q040，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q041",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 41,
+    "stem": "病院へ行く時、保険（　　）を持って行かなければなりません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "カード"
+      },
+      {
+        "key": "B",
+        "text": "書"
+      },
+      {
+        "key": "C",
+        "text": "証"
+      },
+      {
+        "key": "D",
+        "text": "卡"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "証",
+    "translation": "",
+    "explanation": "保险证明是「保険証」，选C。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "构词"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 41,
+      "originalNumbers": [
+        "41"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第41题；构词；保留旧题ID jp1-mid24-q041，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q042",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 42,
+    "stem": "来週の日曜日は遊園(　　)に行きましょう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "場"
+      },
+      {
+        "key": "B",
+        "text": "所"
+      },
+      {
+        "key": "C",
+        "text": "薬"
+      },
+      {
+        "key": "D",
+        "text": "地"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "地",
+    "translation": "",
+    "explanation": "游乐场是「遊園地」，选D。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "构词"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 42,
+      "originalNumbers": [
+        "42"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第42题；构词；保留旧题ID jp1-mid24-q042，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q043",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 43,
+    "stem": "百合子さんは今日成人(　　)に出ます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "節"
+      },
+      {
+        "key": "B",
+        "text": "式"
+      },
+      {
+        "key": "C",
+        "text": "礼"
+      },
+      {
+        "key": "D",
+        "text": "儀"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "式",
+    "translation": "",
+    "explanation": "成人仪式是「成人式」，选B。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "构词"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 43,
+      "originalNumbers": [
+        "43"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第43题；构词；保留旧题ID jp1-mid24-q043，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q044",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 44,
+    "stem": "三つ(　　)のバス停で降りてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "目"
+      },
+      {
+        "key": "B",
+        "text": "番"
+      },
+      {
+        "key": "C",
+        "text": "順"
+      },
+      {
+        "key": "D",
+        "text": "個"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "目",
+    "translation": "",
+    "explanation": "表示第三个用「三つ目」，选A。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "构词"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 44,
+      "originalNumbers": [
+        "44"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第44题；构词；保留旧题ID jp1-mid24-q044，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q045",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 45,
+    "stem": "次の交差(　　)で車を止めてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "口"
+      },
+      {
+        "key": "B",
+        "text": "処"
+      },
+      {
+        "key": "C",
+        "text": "所"
+      },
+      {
+        "key": "D",
+        "text": "点"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "点",
+    "translation": "",
+    "explanation": "十字路口是「交差点」，选D。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "构词"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 45,
+      "originalNumbers": [
+        "45"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第45题；构词；保留旧题ID jp1-mid24-q045，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q046",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 46,
+    "stem": "顔色が悪いですから、彼は（　　）病気でしょう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ぜひ"
+      },
+      {
+        "key": "B",
+        "text": "かならず"
+      },
+      {
+        "key": "C",
+        "text": "きっと"
+      },
+      {
+        "key": "D",
+        "text": "すぐ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "きっと",
+    "translation": "",
+    "explanation": "根据脸色不好推测“一定生病”，选C「きっと」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 46,
+      "originalNumbers": [
+        "46"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第46题；词汇；保留旧题ID jp1-mid24-q046，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q047",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 47,
+    "stem": "その夢は必ず(　　)実現する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いつか"
+      },
+      {
+        "key": "B",
+        "text": "いつも"
+      },
+      {
+        "key": "C",
+        "text": "いつ"
+      },
+      {
+        "key": "D",
+        "text": "いつでも"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "いつか",
+    "translation": "",
+    "explanation": "「いつか」表示将来某时，与「必ず」呼应，选A。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 47,
+      "originalNumbers": [
+        "47"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第47题；词汇；保留旧题ID jp1-mid24-q047，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q048",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 48,
+    "stem": "(写真を見ながら話している)この赤い帽子を(　　)いる人は誰ですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "はいて"
+      },
+      {
+        "key": "B",
+        "text": "着て"
+      },
+      {
+        "key": "C",
+        "text": "かけて"
+      },
+      {
+        "key": "D",
+        "text": "かぶって"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "かぶって",
+    "translation": "",
+    "explanation": "戴帽子用「かぶる」，选D。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 48,
+      "originalNumbers": [
+        "48"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第48题；词汇；保留旧题ID jp1-mid24-q048，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q049",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 49,
+    "stem": "日曜日いっしょにサッカーをしませんか。\n...すみません。日曜日はちょっと(　　)です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "調子が悪い"
+      },
+      {
+        "key": "B",
+        "text": "都合が悪い"
+      },
+      {
+        "key": "C",
+        "text": "だいじょうぶ"
+      },
+      {
+        "key": "D",
+        "text": "悪い"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "都合が悪い",
+    "translation": "",
+    "explanation": "拒绝邀约说「都合が悪い」，选B。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 49,
+      "originalNumbers": [
+        "49"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第49题；词汇；保留旧题ID jp1-mid24-q049，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q050",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 50,
+    "stem": "宅配便が今晩6時から8時の間に(　　)から、早く家に帰らないといけません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "届ける"
+      },
+      {
+        "key": "B",
+        "text": "届く"
+      },
+      {
+        "key": "C",
+        "text": "送る"
+      },
+      {
+        "key": "D",
+        "text": "運ぶ"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "届く",
+    "translation": "",
+    "explanation": "宅配便会“送到”用自动词「届く」，选B。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 50,
+      "originalNumbers": [
+        "50"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第50题；词汇；保留旧题ID jp1-mid24-q050，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q051",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 51,
+    "stem": "太郎ちゃんは大きくなりましたね。何歳ですか。\n...(　　)10歳になります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "もうすぐ"
+      },
+      {
+        "key": "B",
+        "text": "だんだん"
+      },
+      {
+        "key": "C",
+        "text": "きっと"
+      },
+      {
+        "key": "D",
+        "text": "あとで"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "もうすぐ",
+    "translation": "",
+    "explanation": "快要10岁用「もうすぐ」，选A。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 51,
+      "originalNumbers": [
+        "51"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第51题；词汇；保留旧题ID jp1-mid24-q051，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q052",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 52,
+    "stem": "学校へ行く時、梅田まで地下鉄で(　　)、JRに乗り換えます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "行くと"
+      },
+      {
+        "key": "B",
+        "text": "行って"
+      },
+      {
+        "key": "C",
+        "text": "行くとき"
+      },
+      {
+        "key": "D",
+        "text": "降りて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "行って",
+    "translation": "",
+    "explanation": "先坐地铁到梅田再换乘，用「行って」，选B。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 52,
+      "originalNumbers": [
+        "52"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第52题；词汇；保留旧题ID jp1-mid24-q052，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q053",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 53,
+    "stem": "朝起きたら、布団を(　　)に入れます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ベッド"
+      },
+      {
+        "key": "B",
+        "text": "棚"
+      },
+      {
+        "key": "C",
+        "text": "机の上"
+      },
+      {
+        "key": "D",
+        "text": "押し入れ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "押し入れ",
+    "translation": "",
+    "explanation": "被褥放进壁橱「押し入れ」，选D。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 53,
+      "originalNumbers": [
+        "53"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第53题；词汇；保留旧题ID jp1-mid24-q053，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q054",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 54,
+    "stem": "この仕事は明日までに終わりますか。\n...ちょっと(　　)だと思います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "むだ"
+      },
+      {
+        "key": "B",
+        "text": "むり"
+      },
+      {
+        "key": "C",
+        "text": "だいじょうぶ"
+      },
+      {
+        "key": "D",
+        "text": "いい"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "むり",
+    "translation": "",
+    "explanation": "工作完不成说「無理」，选B。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 54,
+      "originalNumbers": [
+        "54"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第54题；词汇；保留旧题ID jp1-mid24-q054，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q055",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 55,
+    "stem": "山田さんは田中さんより(　　)若いです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "特に"
+      },
+      {
+        "key": "B",
+        "text": "一番"
+      },
+      {
+        "key": "C",
+        "text": "ずっと"
+      },
+      {
+        "key": "D",
+        "text": "よく"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ずっと",
+    "translation": "",
+    "explanation": "比较程度用「ずっと」，选C。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "词汇"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 55,
+      "originalNumbers": [
+        "55"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第55题；词汇；保留旧题ID jp1-mid24-q055，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q056",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 56,
+    "stem": "時間がないから、急が（　　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "なくて"
+      },
+      {
+        "key": "B",
+        "text": "ないと"
+      },
+      {
+        "key": "C",
+        "text": "ないで"
+      },
+      {
+        "key": "D",
+        "text": "なく"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ないと",
+    "translation": "",
+    "explanation": "「急がないと」表示必须赶快，选B。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 56,
+      "originalNumbers": [
+        "56"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第56题；语法；保留旧题ID jp1-mid24-q056，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q057",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 57,
+    "stem": "その角(　　)右へ曲がってください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "で"
+      },
+      {
+        "key": "B",
+        "text": "を"
+      },
+      {
+        "key": "C",
+        "text": "は"
+      },
+      {
+        "key": "D",
+        "text": "が"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "を",
+    "translation": "",
+    "explanation": "经过拐角用「角を曲がる」，选B。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 57,
+      "originalNumbers": [
+        "57"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第57题；语法；保留旧题ID jp1-mid24-q057，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q058",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 58,
+    "stem": "(　　)高くても買います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ほしいと"
+      },
+      {
+        "key": "B",
+        "text": "ほしいですけど"
+      },
+      {
+        "key": "C",
+        "text": "ほしいですが"
+      },
+      {
+        "key": "D",
+        "text": "ほしかったら"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ほしかったら",
+    "translation": "",
+    "explanation": "「ほしかったら」表示如果想要，选D。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 58,
+      "originalNumbers": [
+        "58"
+      ],
+      "pages": [
+        1
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第58题；语法；保留旧题ID jp1-mid24-q058，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q063",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 59,
+    "stem": "何（　　）食べたいものがありますか。\n…そうですね。お母さんの手作り料理が懐かしいね。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を"
+      },
+      {
+        "key": "B",
+        "text": "が"
+      },
+      {
+        "key": "C",
+        "text": "でも"
+      },
+      {
+        "key": "D",
+        "text": "か"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "か",
+    "translation": "",
+    "explanation": "疑问词「何」后接「か」构成「何か」，意为有什么……。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 59,
+      "originalNumbers": [
+        "59"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第59题；语法；保留旧题ID jp1-mid24-q063，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q064",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 60,
+    "stem": "渡辺さんは毎晩お子さんにおもしろい絵本を読んで（　　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "くれます"
+      },
+      {
+        "key": "B",
+        "text": "あげます"
+      },
+      {
+        "key": "C",
+        "text": "いただきます"
+      },
+      {
+        "key": "D",
+        "text": "さしあげます"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "あげます",
+    "translation": "",
+    "explanation": "渡边先生给孩子读绘本，用「～てあげます」表示为他人做某事。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 60,
+      "originalNumbers": [
+        "60"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第60题；语法；保留旧题ID jp1-mid24-q064，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q065",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 61,
+    "stem": "熱いですから、これ（　　）触らないでください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を"
+      },
+      {
+        "key": "B",
+        "text": "で"
+      },
+      {
+        "key": "C",
+        "text": "が"
+      },
+      {
+        "key": "D",
+        "text": "に"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「触る」的对象用助词「に」表示接触对象。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 61,
+      "originalNumbers": [
+        "61"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第61题；语法；保留旧题ID jp1-mid24-q065，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q066",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 62,
+    "stem": "インターネットでホテル（　　）予約ができます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を"
+      },
+      {
+        "key": "B",
+        "text": "の"
+      },
+      {
+        "key": "C",
+        "text": "で"
+      },
+      {
+        "key": "D",
+        "text": "まで"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "の",
+    "translation": "",
+    "explanation": "「ホテルの予約」表示酒店的预约，用「の」连接名词。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 62,
+      "originalNumbers": [
+        "62"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第62题；语法；保留旧题ID jp1-mid24-q066，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q067",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 63,
+    "stem": "秘書：荷物を（　　）。\n上司：ありがとう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "持ってあげましょうか"
+      },
+      {
+        "key": "B",
+        "text": "持ってくれますか"
+      },
+      {
+        "key": "C",
+        "text": "持ちましょうか"
+      },
+      {
+        "key": "D",
+        "text": "持っていただけませんか"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "持ちましょうか",
+    "translation": "",
+    "explanation": "秘书主动提出帮上司拿行李，用「持ちましょうか」最自然礼貌。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 63,
+      "originalNumbers": [
+        "63"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第63题；语法；保留旧题ID jp1-mid24-q067，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q068",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 64,
+    "stem": "田中さんは私（　　）車で空港まで送ってくれました。助かりました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "に"
+      },
+      {
+        "key": "B",
+        "text": "の"
+      },
+      {
+        "key": "C",
+        "text": "が"
+      },
+      {
+        "key": "D",
+        "text": "を"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "を",
+    "translation": "",
+    "explanation": "「私を空港まで送ってくれました」用「を」表示被送的对象。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 64,
+      "originalNumbers": [
+        "64"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第64题；语法；保留旧题ID jp1-mid24-q068，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q070",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 65,
+    "stem": "中川さんは私（　　）壊れたパソコンを直してくれました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "の"
+      },
+      {
+        "key": "B",
+        "text": "に"
+      },
+      {
+        "key": "C",
+        "text": "と"
+      },
+      {
+        "key": "D",
+        "text": "で"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "の",
+    "translation": "中川帮我修好了坏掉的电脑。",
+    "explanation": "「私の壊れたパソコン」中的「の」连接名词与名词，表示所属关系；「私に」不能修饰名词。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 65,
+      "originalNumbers": [
+        "65"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第65题；语法；保留旧题ID jp1-mid24-q070，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q071",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 66,
+    "stem": "大学に（　　）とき、姉がパソコンを買ってくれました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "入りの"
+      },
+      {
+        "key": "B",
+        "text": "入った"
+      },
+      {
+        "key": "C",
+        "text": "入れる"
+      },
+      {
+        "key": "D",
+        "text": "入れた"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "入った",
+    "translation": "上大学的时候，姐姐给我买了电脑。",
+    "explanation": "所给选项中，「大学に入ったとき」表示入学之际，能自然连接后面的过去事件「姉がパソコンを買ってくれました」。A、C、D 不能在这里表达相同的入学情境；并非所有「とき」前都必须用过去式。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 66,
+      "originalNumbers": [
+        "66"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第66题；语法；保留旧题ID jp1-mid24-q071，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q072",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 67,
+    "stem": "休みの日（　　）早く起きます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ても"
+      },
+      {
+        "key": "B",
+        "text": "たら"
+      },
+      {
+        "key": "C",
+        "text": "でも"
+      },
+      {
+        "key": "D",
+        "text": "から"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "でも",
+    "translation": "",
+    "explanation": "「休みの日でも早く起きます」表示即使休息日也早起。名词后用「でも」，原照片 C 项为「でも」，A 项为「ても」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 67,
+      "originalNumbers": [
+        "67"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第67题；语法；保留旧题ID jp1-mid24-q072，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q073",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 68,
+    "stem": "ニンジン食べないの？じゃ、わたしが食べて（　　）よ。残ったら、困るから。",
+    "options": [
+      {
+        "key": "A",
+        "text": "くれる"
+      },
+      {
+        "key": "B",
+        "text": "あげる"
+      },
+      {
+        "key": "C",
+        "text": "もらう"
+      },
+      {
+        "key": "D",
+        "text": "いただく"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "あげる",
+    "translation": "",
+    "explanation": "说话人主动替对方吃胡萝卜，用「食べてあげる」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 68,
+      "originalNumbers": [
+        "68"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第68题；语法；保留旧题ID jp1-mid24-q073，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q074",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 69,
+    "stem": "林さん（　　）送ってくれた資料はどれですか。\n…これです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "は"
+      },
+      {
+        "key": "B",
+        "text": "から"
+      },
+      {
+        "key": "C",
+        "text": "に"
+      },
+      {
+        "key": "D",
+        "text": "が"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "が",
+    "translation": "",
+    "explanation": "「林さんが送ってくれた資料」中给予者作主语，用「が」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 69,
+      "originalNumbers": [
+        "69"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第69题；语法；保留旧题ID jp1-mid24-q074，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q075",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 70,
+    "stem": "そのかばん、すてきですね。だれが（　　）。\n…誕生日に姉にもらいました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "くれましたか"
+      },
+      {
+        "key": "B",
+        "text": "もらいましたか"
+      },
+      {
+        "key": "C",
+        "text": "あげましたか"
+      },
+      {
+        "key": "D",
+        "text": "やりましたか"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "くれましたか",
+    "translation": "",
+    "explanation": "问包是谁给的，回答从姐姐那里收到，用「だれがくれましたか」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 70,
+      "originalNumbers": [
+        "70"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第70题；语法；保留旧题ID jp1-mid24-q075，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q076",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 71,
+    "stem": "高級なレストラン（　　）から、晩ご飯の場所を早く決めましょう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "でなかった"
+      },
+      {
+        "key": "B",
+        "text": "でない"
+      },
+      {
+        "key": "C",
+        "text": "でなくてもいい"
+      },
+      {
+        "key": "D",
+        "text": "なくてもいい"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "でなくてもいい",
+    "translation": "即使不是高档餐厅也可以，我们赶快决定晚饭的地点吧。",
+    "explanation": "「〜でなくてもいい」表示“即使不是…也可以”，符合“不必高档餐厅，快点定地点”的语境。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 71,
+      "originalNumbers": [
+        "71"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第71题；语法；保留旧题ID jp1-mid24-q076，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q077",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 72,
+    "stem": "図書館まではどうやって行きますか。\n…梅田駅から5番のバスに乗って、桜大学の前（　　）降りてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "から"
+      },
+      {
+        "key": "B",
+        "text": "で"
+      },
+      {
+        "key": "C",
+        "text": "を"
+      },
+      {
+        "key": "D",
+        "text": "より"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "で",
+    "translation": "",
+    "explanation": "在某个地点下车用「桜大学の前で降りてください」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 72,
+      "originalNumbers": [
+        "72"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第72题；语法；保留旧题ID jp1-mid24-q077，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q079",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 73,
+    "stem": "（友達が結婚する友人に話している）君には絶対に幸せになって（　　）たい。",
+    "options": [
+      {
+        "key": "A",
+        "text": "もらい"
+      },
+      {
+        "key": "B",
+        "text": "あげ"
+      },
+      {
+        "key": "C",
+        "text": "くれ"
+      },
+      {
+        "key": "D",
+        "text": "くださり"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "もらい",
+    "translation": "",
+    "explanation": "完整句子是「君には絶対に幸せになってもらいたい」，表示希望你一定幸福。「たい」已经在括号后，填「もらい」组成「てもらいたい」。旧答案 C 会生成不成立的「くれたい」，不能用另一句「幸せになってくれ」来解释。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 73,
+      "originalNumbers": [
+        "73"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第73题；语法；保留旧题ID jp1-mid24-q079，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q081",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 74,
+    "stem": "危ない！気をつけなさい。けが（　　）したら大変だ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "に"
+      },
+      {
+        "key": "B",
+        "text": "でも"
+      },
+      {
+        "key": "C",
+        "text": "だけ"
+      },
+      {
+        "key": "D",
+        "text": "では"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "でも",
+    "translation": "",
+    "explanation": "「けがでもしたら大変だ」中「でも」表示举例万一。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 74,
+      "originalNumbers": [
+        "74"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第74题；语法；保留旧题ID jp1-mid24-q081，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q083",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 75,
+    "stem": "（　　）スカートを履いている女の子が多い。",
+    "options": [
+      {
+        "key": "A",
+        "text": "寒いと"
+      },
+      {
+        "key": "B",
+        "text": "寒かったら"
+      },
+      {
+        "key": "C",
+        "text": "寒くても"
+      },
+      {
+        "key": "D",
+        "text": "寒くて"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "寒くても",
+    "translation": "",
+    "explanation": "前后文相同，表示即使寒冷也有很多女孩穿裙子。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 75,
+      "originalNumbers": [
+        "75"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第75题；语法；保留旧题ID jp1-mid24-q083，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q085",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 76,
+    "stem": "この図書館の本は10冊（　　）借りることができます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "が"
+      },
+      {
+        "key": "B",
+        "text": "に"
+      },
+      {
+        "key": "C",
+        "text": "まで"
+      },
+      {
+        "key": "D",
+        "text": "から"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "まで",
+    "translation": "",
+    "explanation": "「10冊まで」表示最多可以借十本。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 76,
+      "originalNumbers": [
+        "76"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第76题；语法；保留旧题ID jp1-mid24-q085，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q086",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 77,
+    "stem": "この仕事はあなた（　　）は無理だと思います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "に"
+      },
+      {
+        "key": "B",
+        "text": "へ"
+      },
+      {
+        "key": "C",
+        "text": "では"
+      },
+      {
+        "key": "D",
+        "text": "から"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「あなたには無理だ」用「に」表示对某人来说。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 77,
+      "originalNumbers": [
+        "77"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第77题；语法；保留旧题ID jp1-mid24-q086，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q089",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 79,
+    "stem": "あそこ（　　）止まっている赤い車は誰のですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を"
+      },
+      {
+        "key": "B",
+        "text": "が"
+      },
+      {
+        "key": "C",
+        "text": "で"
+      },
+      {
+        "key": "D",
+        "text": "に"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "某处停着车用「あそこに止まっている」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 79,
+      "originalNumbers": [
+        "79"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第79题；语法；保留旧题ID jp1-mid24-q089，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q090",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 80,
+    "stem": "私も新しいノートパソコンが（　　）なりました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ほしい"
+      },
+      {
+        "key": "B",
+        "text": "ほしく"
+      },
+      {
+        "key": "C",
+        "text": "ほしかった"
+      },
+      {
+        "key": "D",
+        "text": "ほしに"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ほしく",
+    "translation": "",
+    "explanation": "形容词「ほしい」接「なる」要变为「ほしく」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "语法"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 80,
+      "originalNumbers": [
+        "80"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第80题；语法；保留旧题ID jp1-mid24-q090，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q091",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 81,
+    "stem": "次の四つの選択肢を並べ替えて、★に入るものを選びなさい。\n道［　］［　］とき、車［★］［　］なければなりません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "を"
+      },
+      {
+        "key": "B",
+        "text": "気をつけ"
+      },
+      {
+        "key": "C",
+        "text": "わたる"
+      },
+      {
+        "key": "D",
+        "text": "に"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "顺序为 A→C→D→B：「道をわたるとき、車に気をつけなければなりません」。原卷 ★ 在第三个空，即「に」（D）；旧答案把末空「気をつけ」误当成星号空。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "排序"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 81,
+      "originalNumbers": [
+        "81"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第81题；排序；保留旧题ID jp1-mid24-q091，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q092",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 82,
+    "stem": "次の四つの選択肢を並べ替えて、★に入るものを選びなさい。\n奈良［　］法隆寺は［　］［★］［　］でいちばん古い建物です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "木の建物"
+      },
+      {
+        "key": "B",
+        "text": "の中"
+      },
+      {
+        "key": "C",
+        "text": "にある"
+      },
+      {
+        "key": "D",
+        "text": "世界の"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "木の建物",
+    "translation": "",
+    "explanation": "顺序为 C→D→A→B：「奈良にある法隆寺は世界の木の建物の中でいちばん古い建物です」。★ 在第三空，应选「木の建物」（A）；旧解析漏掉了这个选项。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "排序"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 82,
+      "originalNumbers": [
+        "82"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第82题；排序；保留旧题ID jp1-mid24-q092，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q093",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 83,
+    "stem": "次の四つの選択肢を並べ替えて、★に入るものを選びなさい。\nミラーさんに［　］［★］［　］を［　］もらいました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "見せて"
+      },
+      {
+        "key": "B",
+        "text": "北海道で"
+      },
+      {
+        "key": "C",
+        "text": "写真"
+      },
+      {
+        "key": "D",
+        "text": "撮った"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "撮った",
+    "translation": "",
+    "explanation": "顺序为 B→D→C→A：「ミラーさんに北海道で撮った写真を見せてもらいました」。★ 在第二空，对应「撮った」（D）。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "排序"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 83,
+      "originalNumbers": [
+        "83"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第83题；排序；保留旧题ID jp1-mid24-q093，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q094",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 84,
+    "stem": "次の四つの選択肢を並べ替えて、★に入るものを選びなさい。\n迎えに［　］から、［　］［★］［　］ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "駅に"
+      },
+      {
+        "key": "B",
+        "text": "行きます"
+      },
+      {
+        "key": "C",
+        "text": "待っていて"
+      },
+      {
+        "key": "D",
+        "text": "着いたら"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "着いたら",
+    "translation": "",
+    "explanation": "顺序为 B→A→D→C：「迎えに行きますから、駅に着いたら待っていてください」。★ 在第三空，对应「着いたら」（D）。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "排序"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 84,
+      "originalNumbers": [
+        "84"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第84题；排序；保留旧题ID jp1-mid24-q094，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q095",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 85,
+    "stem": "次の四つの選択肢を並べ替えて、★に入るものを選びなさい。\n鈴木さんは［★］とき、［　］［　］［　］と言いました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "までに"
+      },
+      {
+        "key": "B",
+        "text": "帰る"
+      },
+      {
+        "key": "C",
+        "text": "出かける"
+      },
+      {
+        "key": "D",
+        "text": "4時"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "出かける",
+    "translation": "",
+    "explanation": "顺序为 C→D→A→B：「鈴木さんは出かけるとき、4時までに帰ると言いました」。★ 在第一空，对应「出かける」（C）。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "排序"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 85,
+      "originalNumbers": [
+        "85"
+      ],
+      "pages": [
+        2
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第85题；排序；保留旧题ID jp1-mid24-q095，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q096",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 86,
+    "stem": "次の文章を読んで、空欄［86］に入る最もよいものを選びなさい。\n\n私の趣味は野菜や花を［86］ことです。田舎でいろいろな野菜や花を［87］。自分で［88］花を友達に［89］。花を［90］人はみんなとてもきれいだと言います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "作っている"
+      },
+      {
+        "key": "B",
+        "text": "作る"
+      },
+      {
+        "key": "C",
+        "text": "作ります"
+      },
+      {
+        "key": "D",
+        "text": "作らない"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "作る",
+    "translation": "",
+    "explanation": "「趣味は～ことです」在这里用辞书形「作る」表述种菜种花这一爱好，选 B。「作ります」不能直接修饰「こと」；不能把所有连体形式一概说成不合语法。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "完形"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 86,
+      "originalNumbers": [
+        "86"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第86题；完形；保留旧题ID jp1-mid24-q096，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q097",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 87,
+    "stem": "次の文章を読んで、空欄［87］に入る最もよいものを選びなさい。\n\n私の趣味は野菜や花を［86］ことです。田舎でいろいろな野菜や花を［87］。自分で［88］花を友達に［89］。花を［90］人はみんなとてもきれいだと言います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "作る"
+      },
+      {
+        "key": "B",
+        "text": "作っています"
+      },
+      {
+        "key": "C",
+        "text": "作らない"
+      },
+      {
+        "key": "D",
+        "text": "作りました"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "作っています",
+    "translation": "",
+    "explanation": "短文描述当前持续从事的爱好，因此「作っています」（B）最合语境，表示持续或习惯性的活动。其余选项分别为辞书形、否定和过去形。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "完形"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 87,
+      "originalNumbers": [
+        "87"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第87题；完形；保留旧题ID jp1-mid24-q097，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q099",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 89,
+    "stem": "次の文章を読んで、空欄［89］に入る最もよいものを選びなさい。\n\n私の趣味は野菜や花を［86］ことです。田舎でいろいろな野菜や花を［87］。自分で［88］花を友達に［89］。花を［90］人はみんなとてもきれいだと言います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "あげます"
+      },
+      {
+        "key": "B",
+        "text": "もらいます"
+      },
+      {
+        "key": "C",
+        "text": "くれます"
+      },
+      {
+        "key": "D",
+        "text": "いただけます"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "あげます",
+    "translation": "",
+    "explanation": "「（私が）友達に花をあげます」——把东西给出去用「あげます」；「もらいます」是接收，「くれます」是别人给我。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "完形"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 89,
+      "originalNumbers": [
+        "89"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第89题；完形；保留旧题ID jp1-mid24-q099，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q100",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 90,
+    "stem": "次の文章を読んで、空欄［90］に入る最もよいものを選びなさい。\n\n私の趣味は野菜や花を［86］ことです。田舎でいろいろな野菜や花を［87］。自分で［88］花を友達に［89］。花を［90］人はみんなとてもきれいだと言います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "くれた"
+      },
+      {
+        "key": "B",
+        "text": "あげた"
+      },
+      {
+        "key": "C",
+        "text": "もらった"
+      },
+      {
+        "key": "D",
+        "text": "いただいた"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "もらった",
+    "translation": "",
+    "explanation": "「花をもらった人」＝收到花的人，与「みんなきれいだと言います」衔接自然；「あげた人」是给花的人，视角不合。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "完形"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 90,
+      "originalNumbers": [
+        "90"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第90题；完形；保留旧题ID jp1-mid24-q100，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q111",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 91,
+    "stem": "（一）キヨスク\nみなさんは駅の売店で新聞や雑誌を買ったことがありますか。JRの駅の中にある小さな店をキヨスクといいます。このキヨスクはいちばん小さなコンビニと言ってもいいもので、全国に約4000店もあります。キヨスクには<u>およそ</u>400種類の品物が並べてあります。よく売れるのはお菓子、タバコ、雑誌などです。最近、人気があったのは老眼鏡です。切手やはがきを売っているキヨスクは少ないので、不便だと言う人もいます。しかし、<u>わずか</u>16平方メートルの広さの店にこんなにたくさん品物が<u>置いてある</u>店はほかにはない<u>ということです</u>。\n\n注：およそ＝大约；わずか＝仅仅；置いてある＝摆放着；ということです＝据说。\n\nわずか16平方メートルのキヨスクにはどのくらいの種類の品物が並べてありますか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "40種類"
+      },
+      {
+        "key": "B",
+        "text": "400種類"
+      },
+      {
+        "key": "C",
+        "text": "4000種類"
+      },
+      {
+        "key": "D",
+        "text": "40000種類"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "400種類",
+    "translation": "",
+    "explanation": "文中说キヨスクにはおよそ400種類の品物が並べてある，所以选B（400種類）。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "阅读"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 91,
+      "originalNumbers": [
+        "91"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第91题；阅读；保留旧题ID jp1-mid24-q111，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q107",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 92,
+    "stem": "（一）キヨスク\nみなさんは駅の売店で新聞や雑誌を買ったことがありますか。JRの駅の中にある小さな店をキヨスクといいます。このキヨスクはいちばん小さなコンビニと言ってもいいもので、全国に約4000店もあります。キヨスクには<u>およそ</u>400種類の品物が並べてあります。よく売れるのはお菓子、タバコ、雑誌などです。最近、人気があったのは老眼鏡です。切手やはがきを売っているキヨスクは少ないので、不便だと言う人もいます。しかし、<u>わずか</u>16平方メートルの広さの店にこんなにたくさん品物が<u>置いてある</u>店はほかにはない<u>ということです</u>。\n\n注：およそ＝大约；わずか＝仅仅；置いてある＝摆放着；ということです＝据说。\n\nキヨスクが不便だという理由は次のどれですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お菓子、タバコ、雑誌を売っているキヨスクがないからです"
+      },
+      {
+        "key": "B",
+        "text": "切手やはがきを売っているキヨスクがないからです"
+      },
+      {
+        "key": "C",
+        "text": "お菓子、タバコ、雑誌を売っているキヨスクが少ないからです"
+      },
+      {
+        "key": "D",
+        "text": "切手やはがきを売っているキヨスクが少ないからです"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "切手やはがきを売っているキヨスクが少ないからです",
+    "translation": "",
+    "explanation": "正文「切手やはがきを売っているキヨスクは少ないので、不便だと言う人もいます」。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "阅读"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 92,
+      "originalNumbers": [
+        "92"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第92题；阅读；保留旧题ID jp1-mid24-q107，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q108",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 93,
+    "stem": "（二）実力テストのお知らせ\n5月6日、土曜日に学校で「漢字」と「聴解」の実力テストがあります。\n1:30-2:30　漢字\n3:00-3:45　聴解\n注意：\n①テストを受ける人は5分前に教室に入ってください。聴解のテストは10分遅れたら、教室に入ることができません。\n②必要なものは<u>受験票</u>と<u>筆記用具</u>（HBの鉛筆と消しゴム）です。<u>マークシート</u>に答えを書くから、かならず鉛筆で<u>書かなければ</u>なりません。\n③名前を書かなければ、0点になります。ほかの人の答えを見た時、日本語の本を見た時も0点になります。\n④<u>問題用紙</u>と<u>解答用紙</u>も持ち帰ってはいけません。\n注：1. 受験票[名]准考证　　2. 筆記用具[名]考试用具\n3. マークシート[名]答题卡　　4. 書かなければ：如果不写的话\n5. 問題用紙[名]试卷　　6. 解答用紙[名]答卷，答题纸\n「聴解」の実力テストの時に、教室に入れない人はどの人ですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "1時45分に来た人です"
+      },
+      {
+        "key": "B",
+        "text": "2時20分に来た人です"
+      },
+      {
+        "key": "C",
+        "text": "3時05分に来た人です"
+      },
+      {
+        "key": "D",
+        "text": "3時15分に来た人です"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "3時15分に来た人です",
+    "translation": "",
+    "explanation": "听力从3:00开始，迟到10分钟以上不得入场；3:15迟到15分钟，超过10分钟。3:05只迟到5分钟，可以进场。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "阅读"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 93,
+      "originalNumbers": [
+        "93"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "explanationSource": "generated",
+    "questionType": "single",
+    "sourceNotes": [
+      "原卷第93题；阅读；保留旧题ID jp1-mid24-q108，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q109",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 94,
+    "stem": "（二）実力テストのお知らせ\n5月6日、土曜日に学校で「漢字」と「聴解」の実力テストがあります。\n1:30-2:30　漢字\n3:00-3:45　聴解\n注意：\n①テストを受ける人は5分前に教室に入ってください。聴解のテストは10分遅れたら、教室に入ることができません。\n②必要なものは<u>受験票</u>と<u>筆記用具</u>（HBの鉛筆と消しゴム）です。<u>マークシート</u>に答えを書くから、かならず鉛筆で<u>書かなければ</u>なりません。\n③名前を書かなければ、0点になります。ほかの人の答えを見た時、日本語の本を見た時も0点になります。\n④<u>問題用紙</u>と<u>解答用紙</u>も持ち帰ってはいけません。\n注：1. 受験票[名]准考证　　2. 筆記用具[名]考试用具\n3. マークシート[名]答题卡　　4. 書かなければ：如果不写的话\n5. 問題用紙[名]试卷　　6. 解答用紙[名]答卷，答题纸\n\nテストを受ける時、持っていなければならないものは何ですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "日本語の本と鉛筆"
+      },
+      {
+        "key": "B",
+        "text": "鉛筆と受験票"
+      },
+      {
+        "key": "C",
+        "text": "問題用紙と受験票"
+      },
+      {
+        "key": "D",
+        "text": "受験票とボールペン"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "鉛筆と受験票",
+    "translation": "",
+    "explanation": "注意②：必须带受験票和筆記用具（HB铅笔和橡皮）；日语书、问题卷、圆珠笔都不符合要求。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "阅读"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 94,
+      "originalNumbers": [
+        "94"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第94题；阅读；保留旧题ID jp1-mid24-q109，不将旧ID数字当作原卷题号。"
+    ]
+  },
+  {
+    "id": "jp1-mid24-q110",
+    "category": "jp1-mid24",
+    "groupId": "jp1-mid24-g01",
+    "groupTitle": "大连理工大学 综合日语2期中（A）2024年4月21日",
+    "numberInGroup": 95,
+    "stem": "（二）実力テストのお知らせ\n5月6日、土曜日に学校で「漢字」と「聴解」の実力テストがあります。\n1:30-2:30　漢字\n3:00-3:45　聴解\n注意：\n①テストを受ける人は5分前に教室に入ってください。聴解のテストは10分遅れたら、教室に入ることができません。\n②必要なものは<u>受験票</u>と<u>筆記用具</u>（HBの鉛筆と消しゴム）です。<u>マークシート</u>に答えを書くから、かならず鉛筆で<u>書かなければ</u>なりません。\n③名前を書かなければ、0点になります。ほかの人の答えを見た時、日本語の本を見た時も0点になります。\n④<u>問題用紙</u>と<u>解答用紙</u>も持ち帰ってはいけません。\n注：1. 受験票[名]准考证　　2. 筆記用具[名]考试用具\n3. マークシート[名]答题卡　　4. 書かなければ：如果不写的话\n5. 問題用紙[名]试卷　　6. 解答用紙[名]答卷，答题纸\n\n次のうち、正しいものはどれですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "問題と答えの紙はどちらも出します"
+      },
+      {
+        "key": "B",
+        "text": "問題と答えの紙はどちらも出さなくてもいいです"
+      },
+      {
+        "key": "C",
+        "text": "問題の紙は終わったら、持ち帰ってもかまいません"
+      },
+      {
+        "key": "D",
+        "text": "問題と答えの紙はどちらも出してもいいです"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "問題と答えの紙はどちらも出します",
+    "translation": "",
+    "explanation": "注意④说明问题纸和答题纸都不许带走，A「两者都交回」最准确。B 说可不交、C 说可带走，直接不符；D 仅说「也可以交」，没有表达必须交回的要求，不能准确概括原文。\n\n> 答案与解析经 AI 对照原卷校对，非官方答案，仍需人工核对。",
+    "grammarPoints": [],
+    "tags": [
+      "2024年期中",
+      "阅读"
+    ],
+    "source": {
+      "file": "jp1-mid24.md",
+      "group": "大连理工大学 综合日语2期中（A）2024年4月21日",
+      "position": 95,
+      "originalNumbers": [
+        "95"
+      ],
+      "pages": [
+        4
+      ]
+    },
+    "answerProvenance": "generated",
+    "status": "needs_review",
+    "explanationSource": "generated",
+    "questionType": "single",
+    "reviewNotes": [
+      "已由 AI 对照原卷照片复核；原卷未提供标准答案，仍需人工复核。"
+    ],
+    "sourceNotes": [
+      "原卷第95题；阅读；保留旧题ID jp1-mid24-q110，不将旧ID数字当作原卷题号。"
+    ]
+  }
+]
