@@ -1,0 +1,31 @@
+{
+  "category": "math-2",
+  "source": "data/raw/math-2/math-2.md",
+  "questions": 16,
+  "groups": [
+    "一、单选题",
+    "二、判断题"
+  ],
+  "s5": {
+    "checkedAt": "2026-10-28T13:33:17+08:00",
+    "exitCode": 2,
+    "warnings": [
+      "带待复核标记 1 处"
+    ]
+  },
+  "explanationSource": {
+    "printed": 0,
+    "generated": 16,
+    "none": 0
+  },
+  "aiAnswers": 0,
+  "needsReview": [
+    {
+      "id": "math-2-q016",
+      "notes": [
+        "原卷该题末字被页面截断（OCR 得到\"处都收\"），此处按\"都收敛\"补全"
+      ]
+    }
+  ],
+  "numberGaps": []
+}

@@ -1,0 +1,22 @@
+{
+  "category": "math-1",
+  "source": "data/raw/math-1/math-1.md",
+  "questions": 16,
+  "groups": [
+    "一、单选题",
+    "二、判断题"
+  ],
+  "s5": {
+    "checkedAt": "2026-10-28T13:36:33+08:00",
+    "exitCode": 0,
+    "warnings": []
+  },
+  "explanationSource": {
+    "printed": 0,
+    "generated": 16,
+    "none": 0
+  },
+  "aiAnswers": 0,
+  "needsReview": [],
+  "numberGaps": []
+}

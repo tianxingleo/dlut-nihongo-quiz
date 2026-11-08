@@ -1,0 +1,16 @@
+{
+  "category": "math-1",
+  "md": "data/raw/math-1/math-1.md",
+  "md_sha256": "b970409d3eb635f8eb5c95c5ff5ae1c22f0b23cca0815c718719f230b68da2bd",
+  "checked_at": "2026-10-28T13:36:33+08:00",
+  "exit_code": 0,
+  "passed": true,
+  "questions": 16,
+  "groups": 2,
+  "parser_kept": 16,
+  "parser_dropped": 0,
+  "ai_answers": 0,
+  "ai_answer_ratio": 0.0,
+  "hard_errors": [],
+  "warnings": []
+}

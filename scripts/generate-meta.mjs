@@ -14,6 +14,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const publicDir = resolve(__dirname, '..', 'public')
 
 const banks = [
+  { key: 'calculus1-1', file: 'calculus1-1-question-bank.json' },
+  { key: 'math-2018-midterm', file: 'math-2018-midterm-question-bank.json' },
+  { key: '2019-a-7', file: '2019-a-7-question-bank.json' },
+  { key: 'calculus1-8', file: 'calculus1-8-question-bank.json' },
+  { key: 'calculus1-9', file: 'calculus1-9-question-bank.json' },
   { key: 'japanese1-midterm', file: 'japanese1-midterm-question-bank.json' },
   { key: 'japanese1-final', file: 'japanese1-final-question-bank.json' },
   { key: 'jp1-mid24', file: 'jp1-mid24-question-bank.json' },
@@ -37,6 +42,8 @@ const banks = [
     'marxism-5',
     'marxism-6',
     'marxism-7',
+    'math-1',
+    'math-2',
     'principles-of-marxism-1',
   ].map((key) => ({ key, file: `${key}-question-bank.json` })),
 ]

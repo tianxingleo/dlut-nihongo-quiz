@@ -3,6 +3,12 @@ import { ENTRIES, findEntry, entryOfCategory } from './entries'
 import { CATEGORIES } from './categories'
 
 describe('ENTRIES config', () => {
+  it('calculus folders partition papers and preserve the two process exams', () => {
+    const math = findEntry('math')!
+    expect(math.groups?.map((g) => g.name)).toEqual(['过程考', '期中'])
+    expect(math.groups?.[0]?.papers).toEqual(['math-1', 'math-2'])
+    expect(math.groups?.flatMap((g) => g.papers)).toEqual(math.papers)
+  })
   it('每个入口都有唯一的 key / name / icon', () => {
     expect(new Set(ENTRIES.map((e) => e.key)).size).toBe(ENTRIES.length)
     expect(new Set(ENTRIES.map((e) => e.name)).size).toBe(ENTRIES.length)

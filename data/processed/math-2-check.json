@@ -1,0 +1,18 @@
+{
+  "category": "math-2",
+  "md": "data/raw/math-2/math-2.md",
+  "md_sha256": "e4c768a5b7c701b6b7839a7df4613ab9691e6811116fa4bed6f99de82ff9050a",
+  "checked_at": "2026-10-28T13:33:17+08:00",
+  "exit_code": 2,
+  "passed": true,
+  "questions": 16,
+  "groups": 2,
+  "parser_kept": 16,
+  "parser_dropped": 0,
+  "ai_answers": 0,
+  "ai_answer_ratio": 0.0,
+  "hard_errors": [],
+  "warnings": [
+    "带待复核标记 1 处"
+  ]
+}

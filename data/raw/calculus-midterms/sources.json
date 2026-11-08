@@ -1,0 +1,74 @@
+[
+  {
+    "bank": "calculus1-1",
+    "file": "10--16级上学期期中工科数学分析基础试题答案.pdf",
+    "sha256": "db8e23988154422403c5cdecedf75a8f4e584e30e19c249ba0c8f303d1c0bb4b",
+    "pages": 18,
+    "ocrSnapshotSha256": "1e1666097b81601cb78c5b53f4e95f97eaacdf0f2750cc4b957cdb11c89a3aa9",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  },
+  {
+    "bank": "calculus1-2",
+    "file": "10--17级上学期期中工科数学分析基础试题.pdf",
+    "sha256": "7354c4176947e6b99e688e2bb4be130dc420f441f7d5358a7c498953962d5063",
+    "pages": 18,
+    "ocrSnapshotSha256": "49c835a006963edebde4a9bb6aaa7c6cdac8d9608ef48dacbb5dbff7317359b8",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  },
+  {
+    "bank": "calculus1-3",
+    "file": "17-18-1期中考试答案.pdf",
+    "sha256": "d54ef480b90410029f6541a042240667ec71228e49d52fd2603cabd128ee97a8",
+    "pages": 3,
+    "ocrSnapshotSha256": "3fdf3a6b547f03667fda417853262a7c05485dcbaf0568d1e44a3f87f605947a",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  },
+  {
+    "bank": "calculus1-5",
+    "file": "18-19-1期中考试答案.pdf",
+    "sha256": "a0c23baf31015cfa323a5d0ff5b39f89ef7e69da3301045dc3357fdfcbca481b",
+    "pages": 3,
+    "ocrSnapshotSha256": "95232cc9aac9abe387928b6fe00248dfe52fc2434a2377e51bfbab49ea86b3cf",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  },
+  {
+    "bank": "18-19-1-1-a",
+    "file": "18-19-1学年期中高等数学1试题A.pdf",
+    "sha256": "0d5f4ed139ad5317924fa75dc275dccee6932cda419266ceeee41a68881fdf07",
+    "pages": 6,
+    "ocrSnapshotSha256": "5dcdcae24c5086011a8e74f0e26bf98c738c7cb0e3d3479e3ab1add84f6261d3",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  },
+  {
+    "bank": "2019-a",
+    "file": "2019期中高数、微积分A试题.pdf",
+    "sha256": "74f8f34fddb3a218f3c0d8c69c8ffe2f7473b76b7b745e0d195a36862dcc5b65",
+    "pages": 5,
+    "ocrSnapshotSha256": "0309c5dbe5e05f0b50e119360794c3a512fa951b035b292fac3e087c7aa18189",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  },
+  {
+    "bank": "2019-a-7",
+    "file": "2019高数、微积分期中考试A答案.pdf",
+    "sha256": "a9e35042fb86da4112452bd10c33e60dccdf4f867d54aa0e84f0686d0818cfd6",
+    "pages": 5,
+    "ocrSnapshotSha256": "bd081d78278296eee33282bc752a7417e77582926b3247e34b07af4fd58f3e80",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  },
+  {
+    "bank": "calculus1-8",
+    "file": "2024级上学期微积分期中试题与答案.pdf",
+    "sha256": "1d98942deab3f6edee0f4e418d69d3cfae7916e6f41e18810cac7c82e3daa67d",
+    "pages": 6,
+    "ocrSnapshotSha256": "7cb145bcc3966ace36c1974e56eda3bf0f1f8bcdf0fc539aae1594ed6fdbc807",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  },
+  {
+    "bank": "calculus1-9",
+    "file": "2025级上学期微积分期中试题与答案.pdf",
+    "sha256": "0c0993c83d57f9150c65aba5e39682b13b44ac03236154e7167d82a0eb340b7d",
+    "pages": 6,
+    "ocrSnapshotSha256": "cf4dae5e1e7bddb429ec5b914a525c3eb0c91391552bc00b83e45f2d3dd6018f",
+    "note": "PDF 原文件与 OCR 处理中间文件哈希不同；页图及文字须对照，禁止把 OCR 快照哈希标为原文件哈希。"
+  }
+]

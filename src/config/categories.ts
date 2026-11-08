@@ -15,6 +15,56 @@ export interface CategoryMeta {
 
 export const CATEGORIES: CategoryMeta[] = [
   {
+    key: 'calculus1-1',
+    short: '2010—2017年期中试卷合集',
+    long: '微积分1 · 2010—2017年期中试卷合集',
+    desc: '按原卷核对 · 含计算与证明题',
+    icon: '微',
+    bankFile: 'calculus1-1-question-bank.json',
+    groupViewTitle: '选择题单',
+    groupViewHint: '按年份与原卷顺序整理；证明题请先独立作答，再对照解析。',
+  },
+  {
+    key: 'math-2018-midterm',
+    short: '2018年期中 A卷',
+    long: '微积分1 · 2018年期中 A卷',
+    desc: '按原卷核对 · 含计算与证明题',
+    icon: '微',
+    bankFile: 'math-2018-midterm-question-bank.json',
+    groupViewTitle: '选择题单',
+    groupViewHint: '按年份与原卷顺序整理；证明题请先独立作答，再对照解析。',
+  },
+  {
+    key: '2019-a-7',
+    short: '2019年期中 A卷',
+    long: '微积分1 · 2019年期中 A卷',
+    desc: '按原卷核对 · 含计算与证明题',
+    icon: '微',
+    bankFile: '2019-a-7-question-bank.json',
+    groupViewTitle: '选择题单',
+    groupViewHint: '按年份与原卷顺序整理；证明题请先独立作答，再对照解析。',
+  },
+  {
+    key: 'calculus1-8',
+    short: '2024年期中 A卷',
+    long: '微积分1 · 2024年期中 A卷',
+    desc: '按原卷核对 · 含计算与证明题',
+    icon: '微',
+    bankFile: 'calculus1-8-question-bank.json',
+    groupViewTitle: '选择题单',
+    groupViewHint: '按年份与原卷顺序整理；证明题请先独立作答，再对照解析。',
+  },
+  {
+    key: 'calculus1-9',
+    short: '2025年期中 A卷',
+    long: '微积分1 · 2025年期中 A卷',
+    desc: '按原卷核对 · 含计算与证明题',
+    icon: '微',
+    bankFile: 'calculus1-9-question-bank.json',
+    groupViewTitle: '选择题单',
+    groupViewHint: '按年份与原卷顺序整理；证明题请先独立作答，再对照解析。',
+  },
+  {
     key: 'japanese1-midterm',
     short: '期中范围（1—7课）',
     long: '综合日语1 · 期中单词',
@@ -323,6 +373,26 @@ export const CATEGORIES: CategoryMeta[] = [
     groupViewTitle: '刷题单',
     groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
   },
+  {
+    key: 'math-1',
+    short: '春季过程考 · 卷一',
+    long: '春季过程考 · 卷一',
+    desc: '16题 · 双路 OCR 校对 · AI 解析 16 题',
+    icon: '组',
+    bankFile: 'math-1-question-bank.json',
+    groupViewTitle: '刷题单',
+    groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
+  },
+  {
+    key: 'math-2',
+    short: '春季过程考 · 卷二',
+    long: '春季过程考 · 卷二',
+    desc: '16题 · 双路 OCR 校对 · AI 解析 16 题',
+    icon: '组',
+    bankFile: 'math-2-question-bank.json',
+    groupViewTitle: '刷题单',
+    groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
+  },
 ]
 
 const CATEGORY_MAP: Record<Category, CategoryMeta> = CATEGORIES.reduce(
@@ -338,6 +408,14 @@ export function getCategoryMeta(cat: Category): CategoryMeta {
 }
 
 export const NO_SHUFFLE_CATEGORIES: ReadonlySet<Category> = new Set([
+  // Printed-paper explanations refer to the original option letters.
+  'math-1',
+  'math-2',
+  'calculus1-1',
+  'math-2018-midterm',
+  '2019-a-7',
+  'calculus1-8',
+  'calculus1-9',
   'jp1-mid24',
   'history',
   'party',

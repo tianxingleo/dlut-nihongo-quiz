@@ -12,6 +12,11 @@ const ROOT = path.resolve(__dirname, '..')
 const PUBLIC = path.join(ROOT, 'public')
 
 const BANKS = [
+  'calculus1-1-question-bank.json',
+  'math-2018-midterm-question-bank.json',
+  '2019-a-7-question-bank.json',
+  'calculus1-8-question-bank.json',
+  'calculus1-9-question-bank.json',
   'japanese1-midterm-question-bank.json',
   'japanese1-final-question-bank.json',
   'jp1-mid24-question-bank.json',
@@ -37,6 +42,8 @@ const BANKS = [
   'jp-3-question-bank.json',
   'jp-3-2024-question-bank.json',
   'jp-3-2022-question-bank.json',
+  'math-1-question-bank.json',
+  'math-2-question-bank.json',
 ]
 
 const REQUIRED_FIELDS = ['id', 'groupId', 'stem', 'options', 'answerKey', 'explanation']

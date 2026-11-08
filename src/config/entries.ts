@@ -85,6 +85,28 @@ export const ENTRIES: EntryMeta[] = [
     desc: '第37–43课单词 · 学习通期中 · 2022/2024期末',
     papers: ['japanese3', 'jp-3-2022', 'jp-3-2024', 'jp-3'],
   },
+  {
+    key: 'math',
+    name: '微积分1',
+    icon: '微',
+    papers: [
+      'math-1',
+      'math-2',
+      'calculus1-1',
+      'math-2018-midterm',
+      '2019-a-7',
+      'calculus1-8',
+      'calculus1-9',
+    ],
+    groups: [
+      { key: 'process', name: '过程考', papers: ['math-1', 'math-2'] },
+      {
+        key: 'midterm',
+        name: '期中',
+        papers: ['calculus1-1', 'math-2018-midterm', '2019-a-7', 'calculus1-8', 'calculus1-9'],
+      },
+    ],
+  },
 ]
 
 /** 按 key（路由参数）找入口。 */

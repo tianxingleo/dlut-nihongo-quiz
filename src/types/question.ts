@@ -22,6 +22,13 @@ export type Category =
   | 'jp-3'
   | 'jp-3-2024'
   | 'jp-3-2022'
+  | 'math-1'
+  | 'math-2'
+  | 'calculus1-1'
+  | 'math-2018-midterm'
+  | '2019-a-7'
+  | 'calculus1-8'
+  | 'calculus1-9'
 
 export interface SubBankMeta {
   key: string
@@ -64,6 +71,8 @@ export interface Question {
   headword?: string
   multiAnswer?: boolean
   questionType?: 'single' | 'multi' | 'judgement' | 'fill'
+  /** Subjective mathematics: reveal reference, then record the learner's own assessment. */
+  selfAssessment?: boolean
 }
 
 export interface Attempt {
