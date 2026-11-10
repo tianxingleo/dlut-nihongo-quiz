@@ -29,7 +29,7 @@ export type Category =
   | '2019-a-7'
   | 'calculus1-8'
   | 'calculus1-9'
-
+  | 'creativity'
 export interface SubBankMeta {
   key: string
   name: string
@@ -73,7 +73,8 @@ export interface Question {
   questionType?: 'single' | 'multi' | 'judgement' | 'fill'
   /** Subjective mathematics: reveal reference, then record the learner's own assessment. */
   selfAssessment?: boolean
-}
+  /** 答案争议提示（status=needs_review 时由题库生成器写入，前端在题目/解析处展示） */
+  answerNote?: string}
 
 export interface Attempt {
   id?: number

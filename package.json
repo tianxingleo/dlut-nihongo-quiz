@@ -34,6 +34,7 @@
     "parse:history": "tsx scripts/parse-history-markdown.ts",
     "parse:party": "tsx scripts/parse-party-markdown.ts",
     "parse:military": "tsx scripts/parse-military-markdown.ts",
+    "parse:creativity": "tsx scripts/parse-creativity-markdown.ts",
     "parse:japanese2024": "tsx scripts/parse-japanese-2024-markdown.ts",
     "parse:japanese2021": "node scripts/add-2021-exam.cjs",
     "merge:japanese2": "tsx scripts/merge-japanese2-banks.ts",

@@ -163,6 +163,13 @@ export const COURSE_TREE: TreeNode[] = [
         label: '四史',
         children: [{ type: 'leaf', key: 'party', label: '党史', category: 'party', subBank: null }],
       },
+      {
+        type: 'leaf',
+        key: 'creativity',
+        label: '创造性思维与创新方法',
+        category: 'creativity',
+        subBank: null,
+      },
     ],
   },
   {

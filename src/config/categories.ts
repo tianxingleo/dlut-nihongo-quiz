@@ -393,6 +393,18 @@ export const CATEGORIES: CategoryMeta[] = [
     groupViewTitle: '刷题单',
     groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
   },
+  {
+    key: 'creativity',
+    short: '创新思维',
+    long: '创造性思维与创新方法',
+    desc: '部分题库 · 持续更新 · 单选/多选/判断（含答案待核对标注）',
+    icon: '创',
+    bankFile: 'creativity-question-bank.json',
+    groupOrder: ['creativity-all'],
+    groupViewTitle: '综合题库',
+    groupViewHint:
+      '部分题库（源自用户整理的题目分析文档），完整题库持续补充中。练习答案为文档「认定答案」，非官方核实；争议答案已标注待核对。',
+  },
 ]
 
 const CATEGORY_MAP: Record<Category, CategoryMeta> = CATEGORIES.reduce(
@@ -420,9 +432,24 @@ export const NO_SHUFFLE_CATEGORIES: ReadonlySet<Category> = new Set([
   'history',
   'party',
   'military',
+  'creativity',
   ...CATEGORIES.filter((c) => c.key.startsWith('computer-')).map((c) => c.key),
 ])
 
 export const GROUPED_CATEGORIES: ReadonlySet<Category> = new Set(
   CATEGORIES.filter((c) => c.groupViewTitle).map((c) => c.key),
 )
+
+/**
+ * 按 questionId 前缀推断所属学科（database.ts version 3 升级用它回填旧库记录）。
+ * 仅覆盖升级路径会出现的旧学科前缀；首页进度归属另有更细的分支（含新学科），
+ * 不要把新学科前缀加到这里，而是各归各的 startsWith(cat.key + '-')。
+ */
+export function inferCategoryByIdPrefix(id: string): Category {
+  if (id.startsWith('hist')) return 'history'
+  if (id.startsWith('party')) return 'party'
+  if (id.startsWith('mil')) return 'military'
+  if (id.startsWith('creativity')) return 'creativity'
+  return 'japanese2'
+}
+

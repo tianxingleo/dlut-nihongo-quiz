@@ -6,13 +6,14 @@
 
 ## 学科分类
 
-| 分类         | Category key | 源 md                                                                                                           | JSON 输出                             | Parser 命令               | 题数（约） |
-| ------------ | ------------ | --------------------------------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------- | ---------- |
-| 综合日语2    | `japanese2`  | 单词：`data/raw/日语汉字单词选择题-第26-36课.md`<br>语法：`data/raw/日语期末复习题目答案解析_题目选项在上版.md` | `public/japanese2-question-bank.json` | `npm run parse:japanese2` | 963        |
-| 综合日语3    | `japanese3`  | `data/raw/japanese3/vocabulary-37-43.md`（来源存档）                                                            | `public/japanese3-question-bank.json` | 直接维护 JSON             | 738        |
-| 中国近现代史 | `history`    | `data/raw/history/*.md`                                                                                         | `public/history-question-bank.json`   | `npm run parse:history`   | 2,872      |
-| 党史         | `party`      | `data/raw/party/*.md`                                                                                           | `public/party-question-bank.json`     | `npm run parse:party`     | 1,615      |
-| 军事理论     | `military`   | `data/raw/military/*.md`                                                                                        | `public/military-question-bank.json`  | `npm run parse:military`  | 407        |
+| 分类                 | Category key | 源 md                                                                                                           | JSON 输出                              | Parser 命令                | 题数（约） |
+|----------------------|--------------|-----------------------------------------------------------------------------------------------------------------|----------------------------------------|----------------------------|------------|
+| 综合日语2            | `japanese2`  | 单词：`data/raw/日语汉字单词选择题-第26-36课.md`<br>语法：`data/raw/日语期末复习题目答案解析_题目选项在上版.md` | `public/japanese2-question-bank.json`  | `npm run parse:japanese2`  | 963        |
+| 综合日语3            | `japanese3`  | `data/raw/japanese3/vocabulary-37-43.md`（来源存档）                                                            | `public/japanese3-question-bank.json`  | 直接维护 JSON              | 738        |
+| 中国近现代史         | `history`    | `data/raw/history/*.md`                                                                                         | `public/history-question-bank.json`    | `npm run parse:history`    | 2,872      |
+| 党史                 | `party`      | `data/raw/party/*.md`                                                                                           | `public/party-question-bank.json`      | `npm run parse:party`      | 1,615      |
+| 创造性思维与创新方法 | `creativity` | `data/raw/creativity/*.md`                                                                                      | `public/creativity-question-bank.json` | `npm run parse:creativity` | 128        |
+| 军事理论             | `military`   | `data/raw/military/*.md`                                                                                        | `public/military-question-bank.json`   | `npm run parse:military`   | 407        |
 
 上表旧分类的近似题数仅供参考；实际题数见 `public/_meta.json`（也包含计算机组成各题库）。
 
@@ -32,6 +33,14 @@ npm run audit:banks
 ```
 
 改题时保留每个词条两种题型、四个唯一选项及唯一正确答案，并核对原读音/表记一致性与假名选项无汉字。题库审计负责通用结构检查；词条读音和双向题对应关系需人工核对。解析按选项文字组织，前端随机打乱选项后仍对应正确内容。
+
+## 创造性思维与创新方法（部分题库 · 持续更新）
+
+- **数据来源**：用户整理的题目分析 Markdown（每题含图片/截图原答案、认定答案与解析）。练习答案取自其中的「认定答案」，**不是教师/官方核实答案**。
+- **答案冲突**：图片/截图原答案与认定答案不一致的题目（当前 3 道）标记 `status: 'needs_review'`，练习采用认定答案，原答案保留在题目 `answerNote` 与审计报告中，前端在题目与解析处提示「答案存在争议，待核对」。
+- **题目 ID**：`creativity-` + 内容哈希（题干+题型+选项，与答案、文件顺序无关）。修正答案、追加批次文件都不会改变既有题目 ID，错题/收藏/统计记录不丢失。
+- **审计报告**：`npm run parse:creativity` 每次生成 `data/processed/creativity-audit-report.json`，含原始条目数、题型分布、确切/疑似重复、答案冲突、待核对清单、源文档声明重复组对照。硬错误（缺答案、非法选项等）以非零退出码阻止生成。
+- **增量更新**：把新批次的 Markdown 放进 `data/raw/creativity/`（题头支持「第N题（原题号M，题型）」与「新N题（截图shotNN，作业题号M，题型）」两种格式），重新运行 `npm run parse:creativity && npm run generate:meta` 即可；解析器自动合并目录内所有文件的条目并跨批次去重。
 
 > **注意**：旧的 `grammar` 和 `word` 分类已合并为 `japanese2`。`public/question-bank.json` 和 `public/word-question-bank.json` 是旧分类的遗留文件，新分类使用 `public/japanese2-question-bank.json`。
 

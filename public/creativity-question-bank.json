@@ -1,0 +1,5261 @@
+[
+  {
+    "id": "creativity-c8fda67a81",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 1,
+    "stem": "美籍经济学家熊彼特在1912年出版的《经济发展概论》，认为创新是指把一种新的生产要素和生产条件的新结合引入生产体系。它包括五种情况：引入一种新产品，引入一种（），开辟一个新的市场，获得原材料或半成品的一种新的供应来源。",
+    "options": [
+      {
+        "key": "A",
+        "text": "新的生产方法"
+      },
+      {
+        "key": "B",
+        "text": "新的加工设备"
+      },
+      {
+        "key": "C",
+        "text": "新的发展思路"
+      },
+      {
+        "key": "D",
+        "text": "新的技术手段"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "新的生产方法",
+    "translation": "",
+    "explanation": "知识点为熊彼特五种创新：新产品、新生产方法、新市场、新原料来源、新组织。题空对应第二种，即新的生产方法，故选A。B、D只是设备或手段，范围过窄；C不是熊彼特原表述。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 1
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-0eac1466c8",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 2,
+    "stem": "下面关于专利的说法正确的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "根据专利的科技贡献和应用范围，专利分为4个等级"
+      },
+      {
+        "key": "B",
+        "text": "新菜菜谱的创作属于第二等级"
+      },
+      {
+        "key": "C",
+        "text": "半导体的发现属于第四等级"
+      },
+      {
+        "key": "D",
+        "text": "发现属于第三等级"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "半导体的发现属于第四等级",
+    "translation": "",
+    "explanation": "知识点为专利按科技贡献与应用范围分级，级别越高突破性越大。半导体是开创信息时代的重大发现，属于高等级，以C为正确。A分级数量表述与教材体系不符；B菜谱属低水平生活创新；D混淆发现与发明的等级归属。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 2
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-bb74536236",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 3,
+    "stem": "陷入正向思维而不懂变通是非常可怕的，愚公就是这样的例子。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "知识点为正向思维定势与变通。愚公移山只知移山、不知搬家或修路，被创新思维教材用作不懂逆向变通的反例，故判正确。从毅力看愚公可敬，但从方法论看确属变通不足。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 3
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-e08df38769",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 4,
+    "stem": "思维是一种复杂的心理现象，没有方向。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "知识点为思维的方向性。思维有发散与聚合、正向与逆向、横向与纵向等明确方向，方向不同方法与结果不同。说没有方向否定了思维分类基础，故判错误。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 4
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-2df4ee068e",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 5,
+    "stem": "（）是定义灵感思维的必要特征。",
+    "options": [
+      {
+        "key": "A",
+        "text": "突发性"
+      },
+      {
+        "key": "B",
+        "text": "独创性"
+      },
+      {
+        "key": "C",
+        "text": "跳跃性"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "独创性",
+    "translation": "",
+    "explanation": "知识点为灵感思维特征。突发性、跳跃性是常见伴随现象，但只有独创性成果才能与一般顿悟、回忆区分，是定义灵感的必要条件，故选B。A、C不具有排他性，非必要特征。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 5
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-a5bc620981",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 6,
+    "stem": "满怀希望的、积极乐观的、建设性的，指的是（）色思考帽的特征。",
+    "options": [
+      {
+        "key": "A",
+        "text": "黑"
+      },
+      {
+        "key": "B",
+        "text": "蓝"
+      },
+      {
+        "key": "C",
+        "text": "黄"
+      },
+      {
+        "key": "D",
+        "text": "白"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "黄",
+    "translation": "",
+    "explanation": "知识点为六顶思考帽。黄帽代表乐观、肯定、建设性；黑帽是否定批判；蓝帽是组织控制；白帽是事实数据。题干三词正是黄帽定义，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 6
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-69807103f4",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 7,
+    "stem": "推理必须遵循一定的方式，最典型的推理方式是三段论。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "知识点为逻辑推理形式。三段论由大前提、小前提推出结论，是最典型、最规范的演绎推理方式。推理确须遵循形式规则，故判正确。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 7
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-117d18c19c",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 8,
+    "stem": "在解决某一问题，改某一物品时，能否先有一个约定的标准，大家都能接受的规定，能使工作效率更高、更方便、更准确。这是和田十二表法中的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "反一反"
+      },
+      {
+        "key": "B",
+        "text": "改一改"
+      },
+      {
+        "key": "C",
+        "text": "定一定"
+      },
+      {
+        "key": "D",
+        "text": "搬一搬"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "定一定",
+    "translation": "",
+    "explanation": "知识点为和田十二法。定一定指制定标准、规格、约定以统一行动，正对应题干“约定的标准”。反一反是逆向思考，改一改是改良，搬一搬是移植，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 8
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-461f1ac77f",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 9,
+    "stem": "下面哪一项最能体现新旧事物的辩证统一关系？",
+    "options": [
+      {
+        "key": "A",
+        "text": "旧的东西经过翻新后继续使用"
+      },
+      {
+        "key": "B",
+        "text": "传统的风俗习惯必须得到尊重"
+      },
+      {
+        "key": "C",
+        "text": "孔孟之道、孙子兵法中蕴含的古代哲学思想"
+      },
+      {
+        "key": "D",
+        "text": "过去流行的时装现在已经过时了"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "旧的东西经过翻新后继续使用",
+    "translation": "",
+    "explanation": "知识点为新旧事物辩证统一即扬弃：既继承又发展。A“翻新后继续使用”最典型体现旧物以新形式延续。B只讲尊重旧，未体现新；C只讲古未讲今用；D是新否定旧的对立。图片B不全面，认定A更准确。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 9
+    },
+    "status": "needs_review",
+    "multiAnswer": false,
+    "questionType": "single",
+    "answerNote": "原图片答案为 B，本题练习采用认定答案 A，答案存在争议，待核对（认定说明：图片答案疑误）"
+  },
+  {
+    "id": "creativity-1ab0104978",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 10,
+    "stem": "在使用头脑风暴法时，在设想提出阶段，以下哪些行为违反了延迟批判这一原则。（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "反对"
+      },
+      {
+        "key": "B",
+        "text": "支持"
+      },
+      {
+        "key": "C",
+        "text": "质疑"
+      },
+      {
+        "key": "D",
+        "text": "以上全部违反"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "以上全部违反",
+    "translation": "",
+    "explanation": "知识点为头脑风暴延迟批判原则。设想阶段既禁批评反对、质疑，也禁过早肯定支持，以免抑制自由联想。A、B、C任一评价都破坏氛围，故D“全部违反”正确。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 10
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-95c453441d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 11,
+    "stem": "爱因斯坦建立相对论时，由于省略了中间环节，其创新成果曾一时令人无法理解和接受，被人讥笑他为“疯子”。这体现了创造性思维的（）特征。",
+    "options": [
+      {
+        "key": "A",
+        "text": "对传统的突破"
+      },
+      {
+        "key": "B",
+        "text": "程序上的非逻辑性"
+      },
+      {
+        "key": "C",
+        "text": "思路上的新颖性"
+      },
+      {
+        "key": "D",
+        "text": "视角上的灵活性"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "程序上的非逻辑性",
+    "translation": "",
+    "explanation": "知识点为创造性思维特征。题眼是“省略中间环节”，指跳过常规逻辑步骤、难以按常理理解，正是程序上非逻辑性，故选B。A、C、D虽与相对论有关，但不直接对应省略环节。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 11
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-fe4072a040",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 12,
+    "stem": "六项思考帽法运用的思维方式是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "立体思维"
+      },
+      {
+        "key": "B",
+        "text": "平面思维"
+      },
+      {
+        "key": "C",
+        "text": "平行思维"
+      },
+      {
+        "key": "D",
+        "text": "多面思维"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "平行思维",
+    "translation": "",
+    "explanation": "知识点为德博诺六顶思考帽。与对抗式辩论不同，六帽要求同一时间同向思考，即平行思维。A、D非规范术语，B与平行对立，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 12
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-303bf48f7d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 13,
+    "stem": "他的英语讲得真好，这非常有用。使用的是（）色思考帽。",
+    "options": [
+      {
+        "key": "A",
+        "text": "黑"
+      },
+      {
+        "key": "B",
+        "text": "白"
+      },
+      {
+        "key": "C",
+        "text": "黄"
+      },
+      {
+        "key": "D",
+        "text": "红"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "黄",
+    "translation": "",
+    "explanation": "知识点为六顶思考帽识别。“真好”“非常有用”是肯定优点与价值，属黄帽乐观肯定。黑帽是否定风险，白帽是客观事实，红帽是情绪直觉，均不符，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 13
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-8faa9e0015",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 14,
+    "stem": "列举型创新方法是一种具体运用（）来克服思维定势的创新方法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "形象思维"
+      },
+      {
+        "key": "B",
+        "text": "发散思维"
+      },
+      {
+        "key": "C",
+        "text": "批判思维"
+      },
+      {
+        "key": "D",
+        "text": "组合思维"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "发散思维",
+    "translation": "",
+    "explanation": "知识点为列举法原理。特性列举、缺点列举、希望点列举都是围绕对象多角度展开联想，靠发散打破定势，故选B。A重表象，C重评价，D重拼合，均非列举法直接机制。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 14
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-72e041e149",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 15,
+    "stem": "概念、判断和推理是逻辑思维的三个基本构成形式。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "知识点为逻辑思维结构。传统逻辑学以概念为细胞、判断为组合、推理为展开，三者构成逻辑思维基本形式。表述规范，故判正确。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 15
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-8c366f65e7",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 16,
+    "stem": "江南春在电梯即将封闭时看到电梯门口舒淇的海报，联想到电梯门口安电视，造就分众传媒，带来亿万财富。这是和田十二表法中的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "联一联"
+      },
+      {
+        "key": "B",
+        "text": "改一改"
+      },
+      {
+        "key": "C",
+        "text": "定一定"
+      },
+      {
+        "key": "D",
+        "text": "搬一搬"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "联一联",
+    "translation": "",
+    "explanation": "知识点为和田十二法。把电梯空间与电视广告两事物联想结合而创新，属联一联。改一改是改良原物，定一定是定标准，搬一搬是整体移植，均不贴合联想结合，故选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 16
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-a790b55b97",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 17,
+    "stem": "在六项思考帽法中，运用（）思考帽时人可以表现自己的情绪，还可以表达直觉、感受、预感等方面的看法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "白色"
+      },
+      {
+        "key": "B",
+        "text": "红色"
+      },
+      {
+        "key": "C",
+        "text": "黄色"
+      },
+      {
+        "key": "D",
+        "text": "绿色"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "红色",
+    "translation": "",
+    "explanation": "知识点为六顶思考帽分工。红帽允许表达情绪、直觉、预感而无需论证；白帽是事实，黄色是优点，绿色是创新。题干即红帽定义，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 17
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-6f0be1013d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 18,
+    "stem": "法国细菌学家巴斯德发现酒变酸，肉汤变质都是细菌作怪。经过处理，消灭或隔离细菌就可以防止酒和肉汤变质。李斯特把巴斯德的理论用于医学界，轻而易举地发明了外科手术消毒法，拯救了千百万人的性命。体现了横向思维应用方法中的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "横向移入"
+      },
+      {
+        "key": "B",
+        "text": "横向移出"
+      },
+      {
+        "key": "C",
+        "text": "横向转换"
+      },
+      {
+        "key": "D",
+        "text": "横向借用"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "横向移入",
+    "translation": "",
+    "explanation": "知识点为横向思维移植。李斯特站在医学立场，把外领域细菌理论移入本领域应用，即横向移入，故选A。移出是反向视角，转换是思路转向，借用表述不如移入规范。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 18
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-3a601bf255",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 19,
+    "stem": "（）是以系统分析和综合为基础，用集合论理论对研究对象相关形态要素的分解排列和重新组合，得出所有可能的总体方案，最后通过评价进行选择。",
+    "options": [
+      {
+        "key": "A",
+        "text": "主体附加法"
+      },
+      {
+        "key": "B",
+        "text": "信息交合法"
+      },
+      {
+        "key": "C",
+        "text": "形态分析法"
+      },
+      {
+        "key": "D",
+        "text": "分解法"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "形态分析法",
+    "translation": "",
+    "explanation": "知识点为形态分析法。瑞士茨维基提出，通过要素分解、形态矩阵排列组合穷举方案再优选，正对应题干定义，故选C。A是附加，B是信息交叉，D仅分解不组合，均不全面。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 19
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-47f887d7f3",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 20,
+    "stem": "“行成于思”一词出自（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "老子《道德经》"
+      },
+      {
+        "key": "B",
+        "text": "孔子《论语》"
+      },
+      {
+        "key": "C",
+        "text": "韩愈《进学解》"
+      },
+      {
+        "key": "D",
+        "text": "儒家经典《礼记》"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "韩愈《进学解》",
+    "translation": "",
+    "explanation": "知识点为名言出处。“业精于勤荒于嬉，行成于思毁于随”出自唐代韩愈《进学解》，故选C。A、B、D均无此句，属误记。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 20
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-82c428f784",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 21,
+    "stem": "下列属于TRIZ理论问题分析工具的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ARIZ算法"
+      },
+      {
+        "key": "B",
+        "text": "76个标准解"
+      },
+      {
+        "key": "C",
+        "text": "物质-场分析"
+      },
+      {
+        "key": "D",
+        "text": "效应知识库"
+      }
+    ],
+    "answerKey": "AC",
+    "answerText": "ARIZ算法 / 物质-场分析",
+    "translation": "",
+    "explanation": "ARIZ算法是解发明问题的程序化分析流程，物质-场分析用物质与场建模分析问题系统，均属分析工具。76个标准解和效应知识库是提供解题方案的知识库，属求解工具而非分析工具。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 21
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-249ecff2de",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 22,
+    "stem": "（）是以系统分析和综合为基础，用集合论对研究对象相关形态要素的分解排列和重新组合，得出所有可能的总体方案，最后通过评价进行选择。",
+    "options": [
+      {
+        "key": "A",
+        "text": "主体附加法"
+      },
+      {
+        "key": "B",
+        "text": "信息交合法"
+      },
+      {
+        "key": "C",
+        "text": "形态分析法"
+      },
+      {
+        "key": "D",
+        "text": "分解法"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "形态分析法",
+    "translation": "",
+    "explanation": "题干中“形态要素分解排列、重新组合、穷举总体方案再评价”正是形态分析法的定义。主体附加法是在主体上附加新物，信息交合法是信息交叉启发，分解法只拆分不重组，均不符合。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 22
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-7281b06a23",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 23,
+    "stem": "形象思维的分类不包括",
+    "options": [
+      {
+        "key": "A",
+        "text": "直觉思维"
+      },
+      {
+        "key": "B",
+        "text": "想象思维"
+      },
+      {
+        "key": "C",
+        "text": "联想思维"
+      },
+      {
+        "key": "D",
+        "text": "发散思维"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "发散思维",
+    "translation": "",
+    "explanation": "形象思维一般分为直觉思维、想象思维和联想思维三类，都依赖表象运作。发散思维是按思维方向（发散/收敛）划分的创造思维形式，不属于形象思维的下位分类，故选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 23
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-1281750562",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 24,
+    "stem": "越多越好！—重数量而非质量，指的是头脑风暴法基本规则中的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "延迟判断"
+      },
+      {
+        "key": "B",
+        "text": "数量产生质量"
+      },
+      {
+        "key": "C",
+        "text": "鼓励巧妙地利用并改善他人的设想"
+      },
+      {
+        "key": "D",
+        "text": "欢迎各种离奇的假想"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "数量产生质量",
+    "translation": "",
+    "explanation": "头脑风暴四规则之一即“以量求质”：设想越多，出现好创意的概率越大。A指暂不对设想批评，C指搭便车改进他人想法，D指自由奔放，题干“重数量”直接对应B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 24
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-5c1fcb5a0b",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 25,
+    "stem": "通过媒体、知识、经验等反映客观事物的本质，称之为思维的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "传播性"
+      },
+      {
+        "key": "B",
+        "text": "概括性"
+      },
+      {
+        "key": "C",
+        "text": "间接性"
+      },
+      {
+        "key": "D",
+        "text": "时代性"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "间接性",
+    "translation": "",
+    "explanation": "思维的间接性指借助媒介、知识和经验间接认识事物本质；概括性指抽取同类事物共同本质特征。题干强调“通过媒体等中介”反映本质，关键词对应间接性，故C正确。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 25
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-a581cae626",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 26,
+    "stem": "演绎推理和归纳推理是两种主要的推理形式。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "逻辑学中推理按方向分为演绎（一般到个别）与归纳（个别到一般），是两大基本推理形式，另有类比等辅助形式。题干表述符合常识，判正确。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 26
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-b487ac781f",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 27,
+    "stem": "无论是从词源的涵义、还是作为一种推理思维的方法、还是作为一种创新方法，类比始终强调的一点是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "事物之间的差异性的比较"
+      },
+      {
+        "key": "B",
+        "text": "事物同属一类"
+      },
+      {
+        "key": "C",
+        "text": "事物之间的相似性比较"
+      },
+      {
+        "key": "D",
+        "text": "事物分属不同类"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "事物之间的相似性比较",
+    "translation": "",
+    "explanation": "类比的核心是基于相似性由已知推未知，相似比较是其成立的前提。差异性比较属对比而非类比；同类/不同类说的是对象归属，不是类比强调的思维操作，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 27
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-d8fbe0ad1d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 28,
+    "stem": "毛毛虫实验反映了（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "书本型思维定势"
+      },
+      {
+        "key": "B",
+        "text": "经验性思维定势"
+      },
+      {
+        "key": "C",
+        "text": "权威思维定势"
+      },
+      {
+        "key": "D",
+        "text": "从众思维定势"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "从众思维定势",
+    "translation": "",
+    "explanation": "毛毛虫实验中虫子盲目跟随前者绕圈直至饿死，典型地反映不独立思考、随大流的从众定势。与书本教条、个人经验、迷信权威无关，故选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 28
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-b801429ceb",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 29,
+    "stem": "由给定事物联想到经常与之同时出现或在某个方面有内在联系的事物的思维活动是（）联想。",
+    "options": [
+      {
+        "key": "A",
+        "text": "相似"
+      },
+      {
+        "key": "B",
+        "text": "对称"
+      },
+      {
+        "key": "C",
+        "text": "相关"
+      },
+      {
+        "key": "D",
+        "text": "类比"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "相关",
+    "translation": "",
+    "explanation": "相关联想（接近联想）指由时空接近或内在联系引发的联想，题干定义与之一致。相似联想靠外形/性质相像，对称联想靠对称关系，类比属推理方法，均不符合。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 29
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-70265ac4ad",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 30,
+    "stem": "问题意识就是指要怀疑一切。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "问题意识是善于发现、质疑并探究问题的自觉倾向，但不是无原则地怀疑一切，而是有根据地质疑、求证。题干把问题意识等同于绝对怀疑，表述片面，判错误。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 30
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-d0115cea50",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 31,
+    "stem": "对现有状况的根本性改变，如自行车的发明、蒸汽机的发明，属于第（）级别的专利等级。",
+    "options": [
+      {
+        "key": "A",
+        "text": "一"
+      },
+      {
+        "key": "B",
+        "text": "二"
+      },
+      {
+        "key": "C",
+        "text": "三"
+      },
+      {
+        "key": "D",
+        "text": "四"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "三",
+    "translation": "",
+    "explanation": "TRIZ五级发明中，三级是实质性改进现有系统的中度发明，自行车、蒸汽机属此类。一级是简单改进，二级是小发明，四级是采用全新原理的大发明，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 31
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-2e33199342",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 32,
+    "stem": "以下属于头脑风暴法应遵循的规则的有（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "不做任何有关缺点的评价"
+      },
+      {
+        "key": "B",
+        "text": "追求设想的数量"
+      },
+      {
+        "key": "C",
+        "text": "欢迎各种离奇的假想"
+      },
+      {
+        "key": "D",
+        "text": "鼓励巧妙地利用并改善他人的设想"
+      }
+    ],
+    "answerKey": "ABCD",
+    "answerText": "不做任何有关缺点的评价 / 追求设想的数量 / 欢迎各种离奇的假想 / 鼓励巧妙地利用并改善他人的设想",
+    "translation": "",
+    "explanation": "头脑风暴四规则为延迟判断（A）、以量求质（B）、自由奔放欢迎离奇想法（C）、搭便车改进他人设想（D），四项全是，故选ABCD。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 32
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-7668ebe52a",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 33,
+    "stem": "人们把创造活动进行了不同的分类，按照创造的内容进行划分，为聋哑人设计一款助听器属于（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "物质财富的创造"
+      },
+      {
+        "key": "B",
+        "text": "精神财富的创造"
+      },
+      {
+        "key": "C",
+        "text": "科学研究"
+      },
+      {
+        "key": "D",
+        "text": "技术发明"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "物质财富的创造",
+    "translation": "",
+    "explanation": "按创造内容划分，产出物质产品的活动属物质财富创造。助听器是有形的物质产品，故选A。技术发明是按创造活动类型划分的维度，本题限定“按内容划分”，故不选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 33
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-baf255595b",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 34,
+    "stem": "（）是一种具体运用发散性思维来克服思维定势的创新方法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "列举法"
+      },
+      {
+        "key": "B",
+        "text": "组合法"
+      },
+      {
+        "key": "C",
+        "text": "类比法"
+      },
+      {
+        "key": "D",
+        "text": "六项思考帽法"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "列举法",
+    "translation": "",
+    "explanation": "列举法通过逐项列举属性、缺点、希望点来发散思路、打破定势，定义与题干完全对应。组合法重在要素重组，类比法靠相似推理，六顶帽法是平行思考框架，均非题干所指。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 34
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-752cd0af42",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 35,
+    "stem": "17世纪的笛卡尔把代数方法移植到几何领域，使代数、几何融为一体，从而创立了解析几何。体现了移植法中的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "原理移植"
+      },
+      {
+        "key": "B",
+        "text": "结构移植"
+      },
+      {
+        "key": "C",
+        "text": "方法移植"
+      },
+      {
+        "key": "D",
+        "text": "材料移植"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "方法移植",
+    "translation": "",
+    "explanation": "笛卡尔移植的是代数的研究“方法”而非某条原理、结构或材料，并开创新学科，是方法移植的经典案例，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 35
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-857cd2f97e",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 36,
+    "stem": "大脑思维模式类似于（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "沙盘模型"
+      },
+      {
+        "key": "B",
+        "text": "黏质液体模型"
+      },
+      {
+        "key": "C",
+        "text": "模压塑料模型"
+      },
+      {
+        "key": "D",
+        "text": "跳蚤模型"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "黏质液体模型",
+    "translation": "",
+    "explanation": "德博诺提出大脑记忆与思维如黏质液体：新经验留下痕迹又可被后续流动改变，体现思维的惯性与可塑性。沙盘、模压塑料、跳蚤模型无此含义，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 36
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-371a08aff1",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 37,
+    "stem": "（）是指当系统中的某一子系统（参数）得到改善时能导致另一子系统（参数）发生恶化。",
+    "options": [
+      {
+        "key": "A",
+        "text": "物理矛盾"
+      },
+      {
+        "key": "B",
+        "text": "技术矛盾"
+      },
+      {
+        "key": "C",
+        "text": "相对矛盾"
+      },
+      {
+        "key": "D",
+        "text": "相关矛盾"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "技术矛盾",
+    "translation": "",
+    "explanation": "TRIZ中技术矛盾指改善一个参数导致另一参数恶化；物理矛盾指同一参数有互斥要求。题干描述的是两个参数之间的冲突，即技术矛盾，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 37
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-068bf2fdbe",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 38,
+    "stem": "形象思维发展到抽象思维后便不能再继续进化了。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "思维发展是连续过程，抽象思维之后还有辩证思维、灵感思维、创造思维等更高形态，且形象与抽象思维相互促进。题干说进化就此停止，违背思维发展规律，判错误。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 39
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-f5e2a94b89",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 39,
+    "stem": "占发明创新1%不到，它需要综合运用所有的知识，如核聚变、核裂变的发现造就核武器的发明，计算机的发明属于第（）级别的专利等级。",
+    "options": [
+      {
+        "key": "A",
+        "text": "二"
+      },
+      {
+        "key": "B",
+        "text": "三"
+      },
+      {
+        "key": "C",
+        "text": "四"
+      },
+      {
+        "key": "D",
+        "text": "五"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "五",
+    "translation": "",
+    "explanation": "TRIZ第五级发明是发现新现象、综合全部知识的重大突破，占比不足1%，核能发现、计算机开创属此类。二至四级分别是小改进、中发明和新原理应用，层级均低于题干描述，故选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 40
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-10e5d089ae",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 40,
+    "stem": "以下属于列举法的有（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "缺点列举法"
+      },
+      {
+        "key": "B",
+        "text": "希望点列举法"
+      },
+      {
+        "key": "C",
+        "text": "属性列举法"
+      },
+      {
+        "key": "D",
+        "text": "案例列举法"
+      }
+    ],
+    "answerKey": "ABC",
+    "answerText": "缺点列举法 / 希望点列举法 / 属性列举法",
+    "translation": "",
+    "explanation": "列举法三大典型是缺点列举、希望点列举、属性列举，分别从找毛病、提希望、析属性入手激发创新。案例列举法不是规范的列举法分支，为干扰项，故选ABC。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 41
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-44a384db73",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 41,
+    "stem": "万物生长靠太阳，这是人人皆知的事情有农艺家在对“阳光农业”的思考中悟出了“月光农业”的创意。运用的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "相关类比"
+      },
+      {
+        "key": "B",
+        "text": "对称类比"
+      },
+      {
+        "key": "C",
+        "text": "相似类比"
+      },
+      {
+        "key": "D",
+        "text": "联想类比"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "对称类比",
+    "translation": "",
+    "explanation": "日与月、白天与夜晚构成对称对应关系，由阳光想到月光属于对称类比。相关类比强调因果相关，相似类比强调形态功能相似，联想类比表述不规范，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 42
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-1b4702fa99",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 42,
+    "stem": "在学习时，虽然也遇到过稍微复杂的数学问题、物理问题，但多数情况下是把类似的问题拿来照搬，也因为这样往往缺乏深入思考，导致解题失误。这属于（）思维定式。",
+    "options": [
+      {
+        "key": "A",
+        "text": "权威性"
+      },
+      {
+        "key": "B",
+        "text": "习惯性"
+      },
+      {
+        "key": "C",
+        "text": "直线型"
+      },
+      {
+        "key": "D",
+        "text": "从众型"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "直线型",
+    "translation": "",
+    "explanation": "照搬旧解法、不转弯、不深入分析条件变化，是直线型思维定式的表现。权威性指迷信权威，从众型指随大流，习惯性侧重习惯动作，本题更强调思路僵直照搬，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 43
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-22a67b2da2",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 43,
+    "stem": "人打电话不能离开，又需要离开，子母机的发明是使用（）原理解决物理矛盾。",
+    "options": [
+      {
+        "key": "A",
+        "text": "空间分离"
+      },
+      {
+        "key": "B",
+        "text": "时间分离"
+      },
+      {
+        "key": "C",
+        "text": "条件分离"
+      },
+      {
+        "key": "D",
+        "text": "整体与部分分离"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "整体与部分分离",
+    "translation": "",
+    "explanation": "子母机让母机固定接线、子机自由移动，以部分可动满足整体不可动的要求，属于整体与部分分离。不是换地点、换时间或换条件实现，故不选A、B、C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 44
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-d939f20684",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 44,
+    "stem": "系统观是指以系统的观点来认识自然界和社会，它揭示了自然和人类社会系统的（）、开放性和动态性。",
+    "options": [
+      {
+        "key": "A",
+        "text": "整体性、关联性、层次性"
+      },
+      {
+        "key": "B",
+        "text": "层次性"
+      },
+      {
+        "key": "C",
+        "text": "整体性"
+      },
+      {
+        "key": "D",
+        "text": "关联性"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "整体性、关联性、层次性",
+    "translation": "",
+    "explanation": "系统基本特性包括整体性、关联性、层次性、开放性、动态性等。题干已给出开放性、动态性，空缺部分应是整体性、关联性、层次性三者，B、C、D都不全面，故选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 45
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-4cd7bcceae",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 45,
+    "stem": "“月晕而风、础润而雨”、“朝霞不出门，晚霞行千里”、“鱼鳞天不雨也风颠”等等体现的是（）思维方式。",
+    "options": [
+      {
+        "key": "A",
+        "text": "逆向思维"
+      },
+      {
+        "key": "B",
+        "text": "正向思维"
+      },
+      {
+        "key": "C",
+        "text": "发散思维"
+      },
+      {
+        "key": "D",
+        "text": "收敛思维"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "正向思维",
+    "translation": "",
+    "explanation": "这些谚语是按常规经验从征兆直接推断天气结果，属于顺向的正向思维。不是反向求解，也不是一题多解的发散或多路归一的收敛，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 46
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-d7b1760906",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 46,
+    "stem": "发明问题的核心是发现矛盾并解决矛盾，技术系统进化就是不断解决系统所存在矛盾的过程。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "这是萃智理论的核心观点：创新即解决矛盾，技术系统靠不断克服技术矛盾和物理矛盾而进化。表述符合原理，故判正确。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 47
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-86dd350bbf",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 47,
+    "stem": "下面属于和田十二表法中的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "加一加"
+      },
+      {
+        "key": "B",
+        "text": "减一减"
+      },
+      {
+        "key": "C",
+        "text": "联一联"
+      },
+      {
+        "key": "D",
+        "text": "学一学"
+      }
+    ],
+    "answerKey": "ABCD",
+    "answerText": "加一加 / 减一减 / 联一联 / 学一学",
+    "translation": "",
+    "explanation": "和田十二法包括加、减、扩、缩、变、改、联、学、代、搬、反、定。加一加、减一减、联一联、学一学都在其中，故全选。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 48
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-0698ddb271",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 48,
+    "stem": "以下哪些属于传统讨论会议的缺点（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "从众障碍"
+      },
+      {
+        "key": "B",
+        "text": "权威障碍"
+      },
+      {
+        "key": "C",
+        "text": "惯性障碍"
+      },
+      {
+        "key": "D",
+        "text": "惰性障碍"
+      }
+    ],
+    "answerKey": "ABCD",
+    "answerText": "从众障碍 / 权威障碍 / 惯性障碍 / 惰性障碍",
+    "translation": "",
+    "explanation": "传统会议易受从众心理、权威压制、思维惯性和个人惰性影响，抑制新想法，这正是头脑风暴要克服的障碍。四项都是公认缺点，故全选。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 49
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-652829fcfd",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 49,
+    "stem": "超声波熔接缝纫机利用超声波在两块衣料间振动，摩擦生热并以极高的温度将它们熔接在一起，实现了无针无线，快速美观，体现了创造性思维的（）特征。",
+    "options": [
+      {
+        "key": "A",
+        "text": "内容上的综合性"
+      },
+      {
+        "key": "B",
+        "text": "视角上的灵活性"
+      },
+      {
+        "key": "C",
+        "text": "对传统的突破性"
+      },
+      {
+        "key": "D",
+        "text": "程序上的非逻辑性"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "对传统的突破性",
+    "translation": "",
+    "explanation": "无针无线抛弃了传统针线缝合概念，是对传统的突破。题干重点不是多学科综合、视角转换或非逻辑程序，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 50
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-261958641d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 50,
+    "stem": "逻辑思维作为一种思维形式的应用应当有一定的前提条件但不应当限定的适用范围。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "逻辑思维既有前提条件，也有适用边界，不能无限适用。题干说不应当限定适用范围，否定了边界，表述错误，故判错误。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 51
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-4b3bf3b8f4",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 51,
+    "stem": "信息交合法具体实施步骤的第一步是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "定中心"
+      },
+      {
+        "key": "B",
+        "text": "化标线"
+      },
+      {
+        "key": "C",
+        "text": "注标点"
+      },
+      {
+        "key": "D",
+        "text": "相交合"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "定中心",
+    "translation": "",
+    "explanation": "信息交合法步骤是先定中心，再化标线、注标点、相交合。定中心是确定创新对象和目标，为后续展开信息作准备，故第一步选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 52
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-680d7d8fa8",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 52,
+    "stem": "学校食堂的用餐价格上涨了20%。使用的是（）色思考帽。",
+    "options": [
+      {
+        "key": "A",
+        "text": "黑"
+      },
+      {
+        "key": "B",
+        "text": "白"
+      },
+      {
+        "key": "C",
+        "text": "红"
+      },
+      {
+        "key": "D",
+        "text": "蓝"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "白",
+    "translation": "",
+    "explanation": "六顶思考帽中白帽代表客观事实和数据，黑帽表风险批评，红帽表情感直觉，蓝帽表控制总结。陈述上涨20%是客观数据，故选白帽B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 53
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-1a30c553a2",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 53,
+    "stem": "TRIZ理论归纳整理了（）个通用工程参数。",
+    "options": [
+      {
+        "key": "A",
+        "text": "38"
+      },
+      {
+        "key": "B",
+        "text": "39"
+      },
+      {
+        "key": "C",
+        "text": "40"
+      },
+      {
+        "key": "D",
+        "text": "41"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "39",
+    "translation": "",
+    "explanation": "萃智理论归纳出39个通用工程参数用于描述技术矛盾，40条发明原理用于解矛盾。38和41为干扰数，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 54
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-2cb8a05d5c",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 54,
+    "stem": "从哲学的角度，新事物是指符合事物发展的（）、具有强大生命力和远大前途的事物。",
+    "options": [
+      {
+        "key": "A",
+        "text": "本质属性和进化趋势"
+      },
+      {
+        "key": "B",
+        "text": "内在规律和前进方向"
+      },
+      {
+        "key": "C",
+        "text": "客观规律和前进趋势"
+      },
+      {
+        "key": "D",
+        "text": "内在特性和变化过程"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "客观规律和前进趋势",
+    "translation": "",
+    "explanation": "哲学上新事物指符合客观规律、具有远大前途的事物，旧事物则违背规律、日趋灭亡。C的表述最规范，A、B、D用词不准确，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 55
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-ded0078ad2",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 55,
+    "stem": "早上起来，推开窗子发现地面全都湿了，你推断昨天夜里一定下雨了。这是思维的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "概括性"
+      },
+      {
+        "key": "B",
+        "text": "间接性"
+      },
+      {
+        "key": "C",
+        "text": "合理性"
+      },
+      {
+        "key": "D",
+        "text": "整体性"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "间接性",
+    "translation": "",
+    "explanation": "没有直接看到下雨，而是借助地面湿这一媒介推知，属于思维的间接性。概括性指抽取共性，合理性、整体性非此处特征，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 57
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-f661e2bf4e",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 56,
+    "stem": "按照思维方式进行划分，可将思维分为逻辑思维和（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "形象思维"
+      },
+      {
+        "key": "B",
+        "text": "收敛思维"
+      },
+      {
+        "key": "C",
+        "text": "创造性思维"
+      },
+      {
+        "key": "D",
+        "text": "发散思维"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "形象思维",
+    "translation": "",
+    "explanation": "按思维方式划分是逻辑思维与形象思维；按思维方向划分是发散与收敛；按创新程度划分才有创造性思维。题干问思维方式，故选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 58
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-9234c07fcd",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 57,
+    "stem": "下面（）是奥斯本检核表所包含的内容。",
+    "options": [
+      {
+        "key": "A",
+        "text": "能否重复"
+      },
+      {
+        "key": "B",
+        "text": "能否改变"
+      },
+      {
+        "key": "C",
+        "text": "能否扩大"
+      },
+      {
+        "key": "D",
+        "text": "能否颠倒"
+      }
+    ],
+    "answerKey": "BCD",
+    "answerText": "能否改变 / 能否扩大 / 能否颠倒",
+    "translation": "",
+    "explanation": "奥斯本检核表包括能否改变、扩大、缩小、替代、颠倒、组合等提问。改变、扩大、颠倒都是标准条目，能否重复不是规范表述，故选BCD。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 59
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-76ac62e9ad",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 58,
+    "stem": "芝加哥西尔斯大厦的结构采用的是树木细胞蜂窝状的，其中运用到的类比类型是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "直接类比"
+      },
+      {
+        "key": "B",
+        "text": "亲身类比"
+      },
+      {
+        "key": "C",
+        "text": "符号类比"
+      },
+      {
+        "key": "D",
+        "text": "幻想类比"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "直接类比",
+    "translation": "",
+    "explanation": "把树木蜂窝结构直接借用到建筑结构，属于综摄法中的直接类比。亲身类比强调设身处地，符号类比用象征符号，幻想类比靠空想，均不符，故选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 60
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-3f059330c6",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 59,
+    "stem": "根据TRIZ理论中关于专利等级的划分，可折叠式自行车的发明属于第（）级别。",
+    "options": [
+      {
+        "key": "A",
+        "text": "一（简单的解）"
+      },
+      {
+        "key": "B",
+        "text": "二（少量的改进）"
+      },
+      {
+        "key": "C",
+        "text": "三（根本性的改进）"
+      },
+      {
+        "key": "D",
+        "text": "四（全新的概念）"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "二（少量的改进）",
+    "translation": "",
+    "explanation": "考查TRIZ发明等级。一级是简单解，二级是对现有系统的小改进，未改变基本原理，三级是根本改进，四级是全新概念。可折叠自行车只是在普通自行车上改进结构实现折叠，属二级。A过低，C、D夸大了创新程度。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 61
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-c58eea4196",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 60,
+    "stem": "“月晕而风、础润而雨”、“朝霞不出门，晚霞行千里”、“鱼鳞天不雨也风颠”等等体现的是（）思维方式。（单选题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "逆向思维"
+      },
+      {
+        "key": "B",
+        "text": "正向思维"
+      },
+      {
+        "key": "C",
+        "text": "发散思维"
+      },
+      {
+        "key": "D",
+        "text": "收敛思维"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "正向思维",
+    "translation": "",
+    "explanation": "考查思维方向分类。这些谚语都是由征兆顺推结果，即从因到果的正向推理和经验归纳。逆向是由果溯因或反向思考，发散是由一到多的扩散，收敛是由多到一的集中，均不符合。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 62
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-634ce22f0a",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 61,
+    "stem": "对一件事物的认知引起对和该事物在形态或性质上相似的另一事物的联想指的是（）。（单选题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "相似联想"
+      },
+      {
+        "key": "B",
+        "text": "对称联想"
+      },
+      {
+        "key": "C",
+        "text": "相关联想"
+      },
+      {
+        "key": "D",
+        "text": "类比联想"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "类比联想",
+    "translation": "",
+    "explanation": "考查联想类型。按本课程口径，基于形态或性质相似性进行比较、由已知推未知的联想统归为类比联想。对称联想强调对称对应，相关联想强调因果或相依关系，均不符合题干的“相似”比较特征。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 63
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-8c395b3c0d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 62,
+    "stem": "下面关于头脑风暴法的说法正确的有（）。（单选题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "头脑风暴法适合解决单一明确的问题，不适合处理复杂、面广的对象"
+      },
+      {
+        "key": "B",
+        "text": "组成头脑风暴法小组，小组成员应全是专家"
+      },
+      {
+        "key": "C",
+        "text": "小型会议的与会者10人以上为宜"
+      },
+      {
+        "key": "D",
+        "text": "头脑风暴法完全不追求质量"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "头脑风暴法适合解决单一明确的问题，不适合处理复杂、面广的对象",
+    "translation": "",
+    "explanation": "考查头脑风暴法原则。头脑风暴宜聚焦单一明确议题，议题过大难以深入，故A对。B错，小组应异质多样，避免全专家固化；C错，一般5～10人、5～7人最佳；D错，是先求数量、延迟批判，并非完全不求质量。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 64
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-6048cc8442",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 63,
+    "stem": "根据TRIZ理论中关于专利等级的划分，半导体的发现属于（）级别。",
+    "options": [
+      {
+        "key": "A",
+        "text": "一（简单的解）"
+      },
+      {
+        "key": "B",
+        "text": "二（少量的改进）"
+      },
+      {
+        "key": "C",
+        "text": "三（根本性的改进）"
+      },
+      {
+        "key": "D",
+        "text": "四（全新的概念）"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "四（全新的概念）",
+    "translation": "",
+    "explanation": "考查TRIZ发明等级。半导体开创了全新工作原理和技术体系，属四级“全新概念”。一、二级只是简单解或小改进，三级是根本性改进但仍在原原理内，均不足以概括半导体的突破性。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 65
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-35494a8e25",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 64,
+    "stem": "电话子母机的发明运用的使物理矛盾中的（）原理。",
+    "options": [
+      {
+        "key": "A",
+        "text": "整体与部分分离"
+      },
+      {
+        "key": "B",
+        "text": "条件分离"
+      },
+      {
+        "key": "C",
+        "text": "空间分离"
+      },
+      {
+        "key": "D",
+        "text": "时间分离"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "整体与部分分离",
+    "translation": "",
+    "explanation": "考查TRIZ物理矛盾分离原理。子母机把话机整体分解为固定母机与可移动子机，使“固定连接”与“自由移动”同时满足，属整体与部分分离。空间、时间、条件分离指同一对象在不同空间、时间或条件下分开满足要求，不如A贴切。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 66
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-be15ab8a47",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 65,
+    "stem": "创新思维要以逻辑思维为基础。（判断题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "考查创新思维与逻辑思维关系。逻辑思维提供概念、判断、推理等理性支撑，是创新思维得以成立和检验的基础，非逻辑思维则提供动力和突破。否定基础作用则创新沦为空想，故判正确。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 67
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-f6390d1859",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 66,
+    "stem": "创新方法的三阶段不包括（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "尝试法"
+      },
+      {
+        "key": "B",
+        "text": "试错法"
+      },
+      {
+        "key": "C",
+        "text": "头脑风暴法"
+      },
+      {
+        "key": "D",
+        "text": "疑问法"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "疑问法",
+    "translation": "",
+    "explanation": "考查创新方法发展阶段。尝试法、试错法、头脑风暴法都属于从直觉试错到减轻试错的方法演进。疑问法是一般的提问技巧，不是三阶段中的独立阶段，故选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 68
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-85897aae9d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 67,
+    "stem": "亨利·丁根将轴承的滚柱改成圆球，发明了滚珠轴承，这一形状的改变，大大提高了轴承的使用寿命。这属于奥斯本检核表中的（）方面。",
+    "options": [
+      {
+        "key": "A",
+        "text": "能否借用"
+      },
+      {
+        "key": "B",
+        "text": "能否改变"
+      },
+      {
+        "key": "C",
+        "text": "能否变大"
+      },
+      {
+        "key": "D",
+        "text": "能否缩小"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "能否改变",
+    "translation": "",
+    "explanation": "考查奥斯本检核表。把滚柱改成圆球是改变形状、结构和方式，属“能否改变”。借用强调他用或借鉴，变大、缩小强调尺寸增减，均不符合形状改变这一核心。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 69
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-640f49c503",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 68,
+    "stem": "类比法的基础是比较，它的运作机制原理包括（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "同质异化"
+      },
+      {
+        "key": "B",
+        "text": "同质同化"
+      },
+      {
+        "key": "C",
+        "text": "异质异化"
+      },
+      {
+        "key": "D",
+        "text": "异质同化"
+      }
+    ],
+    "answerKey": "AD",
+    "answerText": "同质异化 / 异质同化",
+    "translation": "",
+    "explanation": "图片答案存疑，应为AD。综摄法经典机制是“同质异化（使熟悉的变陌生）”与“异质同化（使陌生的变熟悉）”。B同质同化、C异质异化只是同义重复或背离比较融合本质，不具创新机制意义，故不选。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 70
+    },
+    "status": "needs_review",
+    "multiAnswer": true,
+    "questionType": "multi",
+    "answerNote": "原图片答案为 AB，本题练习采用认定答案 AD，答案存在争议，待核对"
+  },
+  {
+    "id": "creativity-129983c685",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 69,
+    "stem": "创新思维的本质在于将创新意识的感性愿望提升到（）方面，实现创新活动由感性认识到理性思考的飞跃。（单选题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "理性探索"
+      },
+      {
+        "key": "B",
+        "text": "美好向往"
+      },
+      {
+        "key": "C",
+        "text": "理想追求"
+      },
+      {
+        "key": "D",
+        "text": "更深层次"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "理性探索",
+    "translation": "",
+    "explanation": "考查创新思维本质。题干强调由感性到理性的飞跃，对应的就是理性探索。美好向往、理想追求仍停留在感性愿望，更深层次表述空泛，均未点出理性化关键。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 71
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-66ce4e3ab2",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 70,
+    "stem": "18世纪著名科幻作家凡尔纳写出了104部科幻小说，书中写到的直升机、导弹、电视台等在20世纪都已实现，凡尔纳幻想的事物70%如今已成为现实。这足以证明（）是科学创造的先导。",
+    "options": [
+      {
+        "key": "A",
+        "text": "形象思维"
+      },
+      {
+        "key": "B",
+        "text": "想象思维"
+      },
+      {
+        "key": "C",
+        "text": "联想思维"
+      },
+      {
+        "key": "D",
+        "text": "灵感思维"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "想象思维",
+    "translation": "",
+    "explanation": "考查想象思维作用。凡尔纳超前幻想未来事物并被证实，体现想象思维的预见和先导功能。形象思维偏直观表象，联想是由此及彼，灵感是突发顿悟，均不如想象贴切。注：题干“18世纪”应为19世纪笔误。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 73
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-e38a980547",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 71,
+    "stem": "长期按照相同的思维方式去解决问题，这就是我们所说的“习惯成自然”，但在很多方面对问题的解决起到了不好的影响，我们把这叫做（）。（单选题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "思维方式"
+      },
+      {
+        "key": "B",
+        "text": "思维定势"
+      },
+      {
+        "key": "C",
+        "text": "思维模式"
+      },
+      {
+        "key": "D",
+        "text": "思维定性"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "思维定势",
+    "translation": "",
+    "explanation": "考查思维障碍。固守旧路径、难以变通且产生负面影响即思维定势。思维方式、思维模式是中性总称，思维定性非规范术语，均不指这种僵化的负面效应。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 74
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-e6730fe75e",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 72,
+    "stem": "在提出设想阶段，以下哪些行为违背了延迟批判原则（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "讨论"
+      },
+      {
+        "key": "B",
+        "text": "支持"
+      },
+      {
+        "key": "C",
+        "text": "提问"
+      },
+      {
+        "key": "D",
+        "text": "叹气"
+      }
+    ],
+    "answerKey": "ABCD",
+    "answerText": "讨论 / 支持 / 提问 / 叹气",
+    "translation": "",
+    "explanation": "考查延迟批判原则。提出阶段须只提设想、不作任何评价。讨论、提问打断思路，支持也是正向评价会抑制异见，叹气是体态语言的否定暗示，四者都构成过早评判，故全选。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 75
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-399d59c7b4",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 73,
+    "stem": "六项思考帽包括（）颜色的思考帽。",
+    "options": [
+      {
+        "key": "A",
+        "text": "黑、白"
+      },
+      {
+        "key": "B",
+        "text": "紫、灰"
+      },
+      {
+        "key": "C",
+        "text": "红、绿"
+      },
+      {
+        "key": "D",
+        "text": "黄、蓝"
+      }
+    ],
+    "answerKey": "ACD",
+    "answerText": "黑、白 / 红、绿 / 黄、蓝",
+    "translation": "",
+    "explanation": "考查六顶思考帽。六帽为白（事实）、红（情感）、黑（批判）、黄（乐观）、绿（创新）、蓝（控制），即A、C、D组合。紫、灰不在体系内，故不选B。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 76
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-68f256705a",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 74,
+    "stem": "最早提出三段论的思想家是？（单选题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "培根"
+      },
+      {
+        "key": "B",
+        "text": "苏格拉底"
+      },
+      {
+        "key": "C",
+        "text": "亚里士多德"
+      },
+      {
+        "key": "D",
+        "text": "莱布尼茨"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "亚里士多德",
+    "translation": "",
+    "explanation": "考查逻辑学史。亚里士多德在《工具论》中系统创立三段论。苏格拉底长于问答法，培根倡导归纳法，莱布尼茨精于数理逻辑，均非三段论首创者。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 77
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-d11b0f8418",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 75,
+    "stem": "纸上谈兵指的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "习惯性"
+      },
+      {
+        "key": "B",
+        "text": "书本式"
+      },
+      {
+        "key": "C",
+        "text": "经验式"
+      },
+      {
+        "key": "D",
+        "text": "偏执型"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "书本式",
+    "translation": "",
+    "explanation": "考查思维障碍类型。赵括空谈兵法、不知变通，是典型的书本式、教条式思维障碍。习惯性强调习惯固守，经验式强调过分依赖经验，偏执型强调固执己见，均不如书本式准确。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 78
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-be36d80641",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 76,
+    "stem": "二战期间，美国科学家茨维基在研究火箭结构的方案时，运用了一种创新方法，根据当时可能的技术水平，在一周之内获得了576种不同的火箭构造方案并根据这些方案进一步筛选评价获得了当时德国正在秘密研发F-1型巡航导弹和F-2型火箭，后来，这种方法被称为形态分析法。形态分析法是一种典型的（）。（单选题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "组分法"
+      },
+      {
+        "key": "B",
+        "text": "智力激励法"
+      },
+      {
+        "key": "C",
+        "text": "列举法"
+      },
+      {
+        "key": "D",
+        "text": "设问法"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "组分法",
+    "translation": "",
+    "explanation": "考查形态分析法归属。形态分析把对象分解为要素与形态再穷举组合，属典型的组合、组分法。智力激励法靠群体激智，列举法、设问法侧重罗列或提问，均非其本质。注：题干F-1、F-2应为V-1、V-2笔误。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 79
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-ab57bece4a",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 77,
+    "stem": "以下哪项是TRIZ理论的核心思想（）。（单选题）",
+    "options": [
+      {
+        "key": "A",
+        "text": "技术系统进化"
+      },
+      {
+        "key": "B",
+        "text": "效应知识库"
+      },
+      {
+        "key": "C",
+        "text": "76个标准解"
+      },
+      {
+        "key": "D",
+        "text": "物-场分析模型"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "技术系统进化",
+    "translation": "",
+    "explanation": "考查TRIZ核心。技术系统进化法则揭示系统演进规律，是TRIZ的理论内核。效应知识库、76个标准解、物-场分析都只是解题工具和方法，不属核心思想。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 80
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-88155d9a1f",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 78,
+    "stem": "依照赫曼全脑模型划分，孙悟空属于（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "象限A：逻辑性强，好分析，重事实，善于强调量化。"
+      },
+      {
+        "key": "B",
+        "text": "象限B：有条理的，循序渐进的，重规则的，重细节的工作。"
+      },
+      {
+        "key": "C",
+        "text": "象限C：善交际的，重感觉的，重运动感觉的，情绪主导的。"
+      },
+      {
+        "key": "D",
+        "text": "象限D：善于用直觉的，整体的，演绎推理的认识与处理问题。"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "象限D：善于用直觉的，整体的，演绎推理的认识与处理问题。",
+    "translation": "",
+    "explanation": "赫曼模型中A重逻辑分析，B重组织条理，C重人际情感，D重直觉想象与整体冒险。孙悟空机智敢闯、富于想象与直觉，符合D象限特征，故选D，不选A、B、C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 81
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-264e4abf0c",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 79,
+    "stem": "18世纪著名科幻作家凡尔纳写出了104部科幻小说，书中写到的直升机、导弹、电视台等在20世纪都已实现。凡尔纳幻想的事物70%如今已成为现实，这足以证明（）是科学创造的前导。",
+    "options": [
+      {
+        "key": "A",
+        "text": "形象思维"
+      },
+      {
+        "key": "B",
+        "text": "想象思维"
+      },
+      {
+        "key": "C",
+        "text": "联想思维"
+      },
+      {
+        "key": "D",
+        "text": "灵感思维"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "想象思维",
+    "translation": "",
+    "explanation": "想象思维是对未经历事物超前构想，是科幻引导发明的机制。形象思维偏直观表象，联想是由此及彼，灵感是突发顿悟，均不如想象贴合凡尔纳超前虚构，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 82
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-5e5ab9bef7",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 80,
+    "stem": "按照所列举对象的不同，列举法可以分为（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "属性列举法"
+      },
+      {
+        "key": "B",
+        "text": "缺点列举法"
+      },
+      {
+        "key": "C",
+        "text": "希望点列举法"
+      },
+      {
+        "key": "D",
+        "text": "成对列举法"
+      },
+      {
+        "key": "E",
+        "text": "综合列举法"
+      }
+    ],
+    "answerKey": "ABCDE",
+    "answerText": "属性列举法 / 缺点列举法 / 希望点列举法 / 成对列举法 / 综合列举法",
+    "translation": "",
+    "explanation": "按该课程口径，属性、缺点、希望点是三种基本列举对象，成对列举与综合列举也是按对象组合的扩展类型，故五项全选。一般教材常只讲前三者，但本题按图片口径认定全选。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 83
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-c21e043ade",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 81,
+    "stem": "受石油工业中用小机器人来探测管道漏洞做法的启发，制造出各种内窥镜用于医疗工作，体现了奥斯本检核表中的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "有无其他用途"
+      },
+      {
+        "key": "B",
+        "text": "能否借用"
+      },
+      {
+        "key": "C",
+        "text": "能否缩小"
+      },
+      {
+        "key": "D",
+        "text": "能否替代"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "能否借用",
+    "translation": "",
+    "explanation": "把石油管道探测技术借用到医疗内窥镜，属借用他人领域创意。A是有无其他用途指本物他用，方向相反；C缩小、D替代与题干借用跨界无关，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 84
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-90eb257a2d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 82,
+    "stem": "批判性思维也有其缺点，容易让人专注于挑毛病而少建构。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "批判性思维长于质疑评估，过度使用会只破不立、抑制建设性想法。题干准确指出其局限，故判正确。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 85
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-70d898fd13",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 83,
+    "stem": "收敛思考强调严密的逻辑性，需要冷静的科学分析。定性分析、定量分析。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "收敛思维是从多方案中求最优唯一解，须经逻辑评价与定性定量分析，去粗取精。题干表述符合收敛思维特征，故判正确。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 86
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-392f190744",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 84,
+    "stem": "右脑是创造力的源泉。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "正确",
+    "translation": "",
+    "explanation": "按本课程传统讲法，右脑主管直觉、形象与空间，是灵感想象优势区，故判正确。严格脑科学认为创造需左右脑协同，但本题按教材口径不改判。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 87
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-4767aceeec",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 85,
+    "stem": "在提出设想阶段，只专心提出设想，而不进行评价，这体现了头脑风暴法的（）原则。",
+    "options": [
+      {
+        "key": "A",
+        "text": "延迟判断"
+      },
+      {
+        "key": "B",
+        "text": "数量产生质量"
+      },
+      {
+        "key": "C",
+        "text": "欢迎各种离奇的假想"
+      },
+      {
+        "key": "D",
+        "text": "鼓励巧妙地利用并改善他人的设想"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "延迟判断",
+    "translation": "",
+    "explanation": "只提设想不评价即把评价推迟到后阶段，正是延迟判断原则。B强调多多益善，C强调求异大胆，D强调借鉴改善，均非题干直接对应，故选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 88
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-f970603fe8",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 86,
+    "stem": "保持中立、注意客观数据和事实，指的是（）色思考帽的特征。",
+    "options": [
+      {
+        "key": "A",
+        "text": "黑"
+      },
+      {
+        "key": "B",
+        "text": "蓝"
+      },
+      {
+        "key": "C",
+        "text": "白"
+      },
+      {
+        "key": "D",
+        "text": "黄"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "白",
+    "translation": "",
+    "explanation": "白帽代表事实数据、中立客观；黑帽主风险批判，蓝帽主控制组织，黄帽主优点乐观。题干关键词是数据事实，故选白帽C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 89
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-bb878ed352",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 87,
+    "stem": "（）是指同一个参数的两个互相独立对立的特性，也就是说自相矛盾。",
+    "options": [
+      {
+        "key": "A",
+        "text": "物理矛盾"
+      },
+      {
+        "key": "B",
+        "text": "技术矛盾"
+      },
+      {
+        "key": "C",
+        "text": "相对矛盾"
+      },
+      {
+        "key": "D",
+        "text": "相关矛盾"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "物理矛盾",
+    "translation": "",
+    "explanation": "TRIZ中物理矛盾是同一参数互斥要求，技术矛盾是两个参数改善恶化冲突。题干强调同一参数自相矛盾，故选A；C、D非标准术语。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 90
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-d5930ce156",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 88,
+    "stem": "在六顶思考帽法中，（）思考帽代表思维过程的控制与组织，它可以控制其他思考帽的使用。",
+    "options": [
+      {
+        "key": "A",
+        "text": "白色"
+      },
+      {
+        "key": "B",
+        "text": "红色"
+      },
+      {
+        "key": "C",
+        "text": "蓝色"
+      },
+      {
+        "key": "D",
+        "text": "绿色"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "蓝色",
+    "translation": "",
+    "explanation": "蓝帽如指挥家，负责控场、定议程与组织切换。白帽管事实，红帽管情绪直觉，绿帽管创新方案，均无控制职能，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 91
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-4a4640f1aa",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 89,
+    "stem": "设问型创意思考方法中最为典型的方法是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "和田十二法"
+      },
+      {
+        "key": "B",
+        "text": "5W2H法"
+      },
+      {
+        "key": "C",
+        "text": "系统提问法"
+      },
+      {
+        "key": "D",
+        "text": "奥斯本检核表法"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "奥斯本检核表法",
+    "translation": "",
+    "explanation": "奥斯本检核表以九组系统设问覆盖转化创新路径，是设问型最典型代表。和田十二法、5W2H、系统提问法虽属设问，但覆盖面与典型性不及D，故选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 93
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-266968cacc",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 90,
+    "stem": "以下（）不属于组合法的类型。",
+    "options": [
+      {
+        "key": "A",
+        "text": "同类组合"
+      },
+      {
+        "key": "B",
+        "text": "强制组合"
+      },
+      {
+        "key": "C",
+        "text": "异类组合"
+      },
+      {
+        "key": "D",
+        "text": "材料组合"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "强制组合",
+    "translation": "",
+    "explanation": "组合法常见类型有同类、异类、材料、技术等组合。强制多与联想法搭配，强制组合非常规组合类型，故选B为不属于项。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 94
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-2f471539c3",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 91,
+    "stem": "下列属于方向性思维的有（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "发散思维与收敛思维"
+      },
+      {
+        "key": "B",
+        "text": "正向思维与逆向思维"
+      },
+      {
+        "key": "C",
+        "text": "联想思维与直觉思维"
+      },
+      {
+        "key": "D",
+        "text": "横向思维与纵向思维"
+      }
+    ],
+    "answerKey": "ABD",
+    "answerText": "发散思维与收敛思维 / 正向思维与逆向思维 / 横向思维与纵向思维",
+    "translation": "",
+    "explanation": "发散收敛、正逆向、横纵向都体现思维方向维度。联想与直觉是按机制形式划分，不属方向划分，故排除C，选ABD。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 95
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-6f4649d358",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 92,
+    "stem": "（）就是将整个创造系统内部的要素分解、重组和创造系统之间要素的组合，从而产生新的功能和最优的结果的方法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "组合法"
+      },
+      {
+        "key": "B",
+        "text": "分解法"
+      },
+      {
+        "key": "C",
+        "text": "信息交合法"
+      },
+      {
+        "key": "D",
+        "text": "主体附加法"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "组合法",
+    "translation": "",
+    "explanation": "题干分解加重新组合产生新功能正是组合法定义。B只拆不合，C是信息交叉，D是主体上附加改进，属组合下位技法而非定义，故选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 96
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-bbf1f0c765",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 93,
+    "stem": "挖土机可以用模拟人体手臂的动作来进行设计，它的主臂如同人的上下臂，可以左右上下弯曲，挖斗似人的手掌，可以插入土中，将土抓起。运用的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "直接类比"
+      },
+      {
+        "key": "B",
+        "text": "相似类比"
+      },
+      {
+        "key": "C",
+        "text": "联想类比"
+      },
+      {
+        "key": "D",
+        "text": "拟人类比"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "拟人类比",
+    "translation": "",
+    "explanation": "以人体手臂手掌为拟象进行仿形设计，属拟人/人身类比。直接类比多指自然或技术直接借比，相似与联想类比表述泛化，不如D精准，故选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 97
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-e4efa30d22",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 94,
+    "stem": "综合列举法是将（）综合起来运用的一种方法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "属性列举法"
+      },
+      {
+        "key": "B",
+        "text": "优点列举法"
+      },
+      {
+        "key": "C",
+        "text": "缺点列举法"
+      },
+      {
+        "key": "D",
+        "text": "希望点列举法"
+      }
+    ],
+    "answerKey": "ACD",
+    "answerText": "属性列举法 / 缺点列举法 / 希望点列举法",
+    "translation": "",
+    "explanation": "综合列举法是把属性、缺点、希望点三者综合运用。优点列举一般不单列，其改进意图已由希望点覆盖，故排除B，选ACD。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 98
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-abf244b8db",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 95,
+    "stem": "按创造过程的表现形式，可分为（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "技术发明"
+      },
+      {
+        "key": "B",
+        "text": "艺术创造"
+      },
+      {
+        "key": "C",
+        "text": "科学研究"
+      },
+      {
+        "key": "D",
+        "text": "出版书籍"
+      }
+    ],
+    "answerKey": "ABC",
+    "answerText": "技术发明 / 艺术创造 / 科学研究",
+    "translation": "",
+    "explanation": "按表现形式，创造分科学研究、技术发明、艺术创造三大类。出版书籍只是成果载体，不是创造类型，故排除D，选ABC。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 99
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-d502b7ddca",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 96,
+    "stem": "属性列举法主要从（ ）方面进行。",
+    "options": [
+      {
+        "key": "A",
+        "text": "名词属性"
+      },
+      {
+        "key": "B",
+        "text": "形容词属性"
+      },
+      {
+        "key": "C",
+        "text": "动词属性"
+      },
+      {
+        "key": "D",
+        "text": "量词属性"
+      }
+    ],
+    "answerKey": "ABCD",
+    "answerText": "名词属性 / 形容词属性 / 动词属性 / 量词属性",
+    "translation": "",
+    "explanation": "属性列举法要求从名词（结构、材料、部件）、形容词（性质、状态）、动词（功能、用途）和量词（数量、尺寸）四个方面系统列举事物属性，再逐项寻求改进，四项缺一不可，故全选。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 102
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-5267ec4b0c",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 97,
+    "stem": "头脑风暴法是由美国创造学家（ ）于1939年首次提出、1953年正式发表的一种激发思维的方法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "托兰斯"
+      },
+      {
+        "key": "B",
+        "text": "奥斯本"
+      },
+      {
+        "key": "C",
+        "text": "克劳福德"
+      },
+      {
+        "key": "D",
+        "text": "阿奇舒勒"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "奥斯本",
+    "translation": "",
+    "explanation": "头脑风暴法由奥斯本提出。托兰斯以创造力测验闻名，克劳福德提出属性列举法，阿奇舒勒是TRIZ理论创始人，均与头脑风暴无关，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 103
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-a58e64586e",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 98,
+    "stem": "以下属于元件组合的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "子母电话"
+      },
+      {
+        "key": "B",
+        "text": "双排插座"
+      },
+      {
+        "key": "C",
+        "text": "瑞士军刀"
+      },
+      {
+        "key": "D",
+        "text": "蒙太奇技术"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "瑞士军刀",
+    "translation": "",
+    "explanation": "元件组合指把不同功能的元件组合为整体，瑞士军刀集刀、剪、锯等多种工具于一体，是典型代表。子母电话、双排插座属同物/成对组合，蒙太奇技术属方法组合，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 104
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-1a6683e979",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 99,
+    "stem": "眉头一皱，计上心来。这体现了创造性思维的（ ）特征。",
+    "options": [
+      {
+        "key": "A",
+        "text": "对传统的突破性"
+      },
+      {
+        "key": "B",
+        "text": "视角上的灵活性"
+      },
+      {
+        "key": "C",
+        "text": "内容上的综合性"
+      },
+      {
+        "key": "D",
+        "text": "程序上的非逻辑性"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "程序上的非逻辑性",
+    "translation": "",
+    "explanation": "“计上心来”形容灵感顿悟突然出现，不经过严密逻辑推导，体现思维程序上的非逻辑性（跳跃性）。突破性、灵活性、综合性分别强调超传统、多角度和整合性，与题意不合，故选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 105
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-3d22b848fa",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 100,
+    "stem": "以下哪个选项不是直觉思维的特征（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "直接性"
+      },
+      {
+        "key": "B",
+        "text": "快速性"
+      },
+      {
+        "key": "C",
+        "text": "情绪性"
+      },
+      {
+        "key": "D",
+        "text": "理智性"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "理智性",
+    "translation": "",
+    "explanation": "图片答案C存疑。直觉思维具有直接性、快速性，且常伴随情绪体验，故A、B、C均可视为其特征；而理智性指冷静的逻辑分析，恰与直觉的非逻辑、跳跃本性相对立，最不可能是直觉特征，故应选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 106
+    },
+    "status": "needs_review",
+    "multiAnswer": false,
+    "questionType": "single",
+    "answerNote": "原图片答案为 C，本题练习采用认定答案 D，答案存在争议，待核对"
+  },
+  {
+    "id": "creativity-46608b2766",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 101,
+    "stem": "人们通过对云杉的结构分析，设计出了圆锥形的电视塔，使其既有抗各向风力的性能，又能满足发射信号的需要。这运用的是（ ）方法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "对称类比"
+      },
+      {
+        "key": "B",
+        "text": "直接类比"
+      },
+      {
+        "key": "C",
+        "text": "综合类比"
+      },
+      {
+        "key": "D",
+        "text": "拟人类比"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "直接类比",
+    "translation": "",
+    "explanation": "直接把自然物（云杉）的形态结构借用到发明物（电视塔）上，属直接类比。对称类比须抓住对称性，拟人类比须把物比作人，综合类比须融合多种类比，本题均不符合，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 107
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-1fee0bf013",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 102,
+    "stem": "在组合型创意思考方法中，把某些自然现象或者物理、化学现象进行组合，从而创造出新产品、新方法以及发现新的原理属于哪种组合（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "元件组合"
+      },
+      {
+        "key": "B",
+        "text": "现象组合"
+      },
+      {
+        "key": "C",
+        "text": "方法组合"
+      },
+      {
+        "key": "D",
+        "text": "材料组合"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "现象组合",
+    "translation": "",
+    "explanation": "题干明确以“自然现象或物理、化学现象”为组合对象，正是现象组合的定义。元件组合对象是零部件，方法组合对象是工艺方法，材料组合对象是物质材料，均不符，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 108
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-fe01528bd0",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 103,
+    "stem": "人类社会在我们的不断创造中快速发展，那么我们不断实现各种突破性的创造的根本动因是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "创造性动机"
+      },
+      {
+        "key": "B",
+        "text": "创造性需求"
+      },
+      {
+        "key": "C",
+        "text": "创造性行为"
+      },
+      {
+        "key": "D",
+        "text": "创造性目标"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "创造性需求",
+    "translation": "",
+    "explanation": "需求是创造最根本的动力（“需求是发明之母”），动机、目标都由需求派生，行为则是结果。突破性创造源于人类不断增长的根本需求，故选B而非A、C、D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 109
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-fb00a28572",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 104,
+    "stem": "思考智能手机的现有功能和希望的功能，需要用到思维的（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "批判性"
+      },
+      {
+        "key": "B",
+        "text": "发散性"
+      },
+      {
+        "key": "C",
+        "text": "灵活性"
+      },
+      {
+        "key": "D",
+        "text": "收敛性"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "发散性",
+    "translation": "",
+    "explanation": "列举现有功能并畅想希望功能，是从一点向多方向展开的希望点列举，依赖发散思维。批判性和收敛性用于评价筛选，灵活性只是发散的一个维度，题干核心是“多向展开”，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 110
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-03897740e0",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 105,
+    "stem": "在海王星和冥王星的发现过程中，人们按照常规的思维方式去思考，利用已知的理论对实测数据进行分析，并大胆地推测出了新行星的存在。这种推测利用的是（ ）思维。",
+    "options": [
+      {
+        "key": "A",
+        "text": "逆向"
+      },
+      {
+        "key": "B",
+        "text": "横向"
+      },
+      {
+        "key": "C",
+        "text": "正向"
+      },
+      {
+        "key": "D",
+        "text": "纵向"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "正向",
+    "translation": "",
+    "explanation": "按常规思路、沿已知理论向前推导未知结论，属正向思维。逆向思维是反向求索，横向思维是跨领域借鉴，纵向思维是沿时间/层次深入，均与“常规方式推导”不符，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 111
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-7fc5c4d053",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 106,
+    "stem": "互联网思维下人与人、人与商品、人与物、人与信息等方面的互动称为（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "交互环节"
+      },
+      {
+        "key": "B",
+        "text": "联接环节"
+      },
+      {
+        "key": "C",
+        "text": "信息互动"
+      },
+      {
+        "key": "D",
+        "text": "网络沟通"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "交互环节",
+    "translation": "",
+    "explanation": "题干强调多主体之间双向互动，在互联网思维术语中专称“交互环节”。联接环节侧重建立连接，信息互动和网络沟通是一般表述而非规范术语，故选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 112
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-be5e22f608",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 107,
+    "stem": "物理矛盾解决原理中主要有（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "空间分离"
+      },
+      {
+        "key": "B",
+        "text": "时间分离"
+      },
+      {
+        "key": "C",
+        "text": "条件分离"
+      },
+      {
+        "key": "D",
+        "text": "整体与部分分离"
+      }
+    ],
+    "answerKey": "ABCD",
+    "answerText": "空间分离 / 时间分离 / 条件分离 / 整体与部分分离",
+    "translation": "",
+    "explanation": "TRIZ解决物理矛盾的四条分离原理正是空间分离、时间分离、条件分离和整体与部分分离，四者平行并列，缺一不可，故全选。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 114
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-2e132d53b3",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 108,
+    "stem": "（ ）就是将整个创造系统内部的要素分解、重组和创造系统之间要素的组合，从而产生新的功能和最优的结果的方法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "组合法"
+      },
+      {
+        "key": "B",
+        "text": "信息交合法"
+      },
+      {
+        "key": "C",
+        "text": "分解法"
+      },
+      {
+        "key": "D",
+        "text": "主体附加法"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "组合法",
+    "translation": "",
+    "explanation": "题干以“要素分解、重组、组合产生新功能”为核心，正是组合法的定义。信息交合法侧重信息交叉，分解法只有分解无组合，主体附加法只是在主体上附加，均不完整，故选A。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 115
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-5ee45f8a8b",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 109,
+    "stem": "创造是形象思维与抽象思维的互补。",
+    "options": [
+      {
+        "key": "A",
+        "text": "正确"
+      },
+      {
+        "key": "B",
+        "text": "错误"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "错误",
+    "translation": "",
+    "explanation": "形象思维与抽象思维虽可互补，但创造是发散与收敛、逻辑与非逻辑、灵感与直觉等多种思维及知识、动机等因素的综合作用，把创造简单归结为两种思维的互补过于片面，故判错误。",
+    "grammarPoints": [],
+    "tags": [
+      "判断题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 116
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "judgement"
+  },
+  {
+    "id": "creativity-20c6a5040a",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 110,
+    "stem": "下列哪个是不属于原型启发法的特点（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "原型是有意识被寻找到的"
+      },
+      {
+        "key": "B",
+        "text": "启发物与发明物之间不一定有严格的相似关系"
+      },
+      {
+        "key": "C",
+        "text": "最终的发明物和启发物之间可能有很大的差别"
+      },
+      {
+        "key": "D",
+        "text": "原型启发法中的原型是对创造起垫脚石作用的中介物"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "原型是有意识被寻找到的",
+    "translation": "",
+    "explanation": "原型启发多为偶然触发、无意获得的启发，原型只起垫脚石式中介作用，启发物与发明物不必严格相似、最终差别可很大。A说“有意识被寻找”是缺点列举法等方法的特征，与原型启发偶然性相悖，故为不属于的一项。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 117
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-3b76d66ae8",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 111,
+    "stem": "美国戴维德等人把超声波和静电场方法结合，设计出一种硬水软化装置。属于（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "材料组合"
+      },
+      {
+        "key": "B",
+        "text": "元件组合"
+      },
+      {
+        "key": "C",
+        "text": "方法组合"
+      },
+      {
+        "key": "D",
+        "text": "异类组合"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "方法组合",
+    "translation": "",
+    "explanation": "考查组合创新类型。超声波与静电场都是技术方法，二者结合产生新功能，属于方法组合。材料组合指不同材料复合，元件组合指零部件拼合，异类组合指跨领域嫁接，均不符合。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 118
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-8a159e4a6a",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 112,
+    "stem": "床和沙发组合成的沙发床、镜子和柜子组合成的带穿衣镜的柜子、床和箱子组合成的床底可兼做储物柜的组合床等，这些发明创造使用了（）的方法。",
+    "options": [
+      {
+        "key": "A",
+        "text": "缺点举例法"
+      },
+      {
+        "key": "B",
+        "text": "属性举例法"
+      },
+      {
+        "key": "C",
+        "text": "希望点举例法"
+      },
+      {
+        "key": "D",
+        "text": "成对举例法"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "成对举例法",
+    "translation": "",
+    "explanation": "题干均为两件物品配对组合成多功能新产品，典型成对举例法。缺点法针对不足改进，属性法罗列属性求变，希望点法从愿望出发，均不符合“一对物品组合”特征。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 119
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-d9dbedf150",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 113,
+    "stem": "通过插画、图形、图表、表格、关键词等把信息传达出来，将我们的想法画出来，帮助我们有效地分析和理解问题，寻求解决问题的方案，指的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "六顶思考帽"
+      },
+      {
+        "key": "B",
+        "text": "思维导图"
+      },
+      {
+        "key": "C",
+        "text": "奥斯本检核表"
+      },
+      {
+        "key": "D",
+        "text": "列举法"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "思维导图",
+    "translation": "",
+    "explanation": "题干描述“把想法画出来”是思维导图的可视化定义。六顶思考帽是角色思考法，奥斯本检核表是核检提问法，列举法是穷举法，均不以图形化表达为特征。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 120
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-94c5c7afd8",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 114,
+    "stem": "一幅合格的思维导图不需要具备的特点是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "突出重点"
+      },
+      {
+        "key": "B",
+        "text": "文字繁多"
+      },
+      {
+        "key": "C",
+        "text": "具有个人风格"
+      },
+      {
+        "key": "D",
+        "text": "清晰明白"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "文字繁多",
+    "translation": "",
+    "explanation": "思维导图要求关键词、简洁清晰、突出重点，文字繁多违背其原则，故为“不需要具备”的选项。A、C、D均为合格导图应有特点。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 121
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-daafb7ca25",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 115,
+    "stem": "思维导图绘制的第一步是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "关注关键词"
+      },
+      {
+        "key": "B",
+        "text": "写下中心主题"
+      },
+      {
+        "key": "C",
+        "text": "连线"
+      },
+      {
+        "key": "D",
+        "text": "增加颜色"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "写下中心主题",
+    "translation": "",
+    "explanation": "绘制须先在中央写下中心主题，再发散分支、关键词、连线与配色。A、C、D均为后续美化与展开步骤，故第一步选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 122
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-91d831091c",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 116,
+    "stem": "思维导图的理论原理是科学研究认为人类的思维特征是呈（）的，进入大脑的每一条信息、每一种感觉、记忆或思想都可作为一个思维分支表现出来。",
+    "options": [
+      {
+        "key": "A",
+        "text": "周期性"
+      },
+      {
+        "key": "B",
+        "text": "放射性"
+      },
+      {
+        "key": "C",
+        "text": "反复性"
+      },
+      {
+        "key": "D",
+        "text": "单一性"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "放射性",
+    "translation": "",
+    "explanation": "思维导图基于大脑思维的放射性（发散联想）特征，每个信息节点都可向外分叉。周期性、反复性、单一性均非该理论表述，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 123
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-ee698218c0",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 117,
+    "stem": "思维导图是通过带顺序标号的树状的结构来呈现一个思维过程，要想画出一幅合格的思维导图要避免（）等误区。",
+    "options": [
+      {
+        "key": "A",
+        "text": "文字繁多"
+      },
+      {
+        "key": "B",
+        "text": "图片过多"
+      },
+      {
+        "key": "C",
+        "text": "节点过多"
+      },
+      {
+        "key": "D",
+        "text": "思路清晰"
+      }
+    ],
+    "answerKey": "ABC",
+    "answerText": "文字繁多 / 图片过多 / 节点过多",
+    "translation": "",
+    "explanation": "合格导图要求简洁清晰，文字繁多、图片过多、节点过多都会导致杂乱，均为应避免的误区。D项思路清晰是优点而非误区，故排除。",
+    "grammarPoints": [],
+    "tags": [
+      "多选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 124
+    },
+    "status": "ready",
+    "multiAnswer": true,
+    "questionType": "multi"
+  },
+  {
+    "id": "creativity-4de37f9dd4",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 118,
+    "stem": "在一次会议上，为解决一个问题，他建议大家提出各种各样的想法，想法越多越好。王总的这个建议体现了头脑风暴法的（）的特点。",
+    "options": [
+      {
+        "key": "A",
+        "text": "排除评论性批判"
+      },
+      {
+        "key": "B",
+        "text": "暂不评论"
+      },
+      {
+        "key": "C",
+        "text": "鼓励“自由想象”"
+      },
+      {
+        "key": "D",
+        "text": "改进观念"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "鼓励“自由想象”",
+    "translation": "",
+    "explanation": "“想法越多越好”强调放开束缚、自由想象，以数量求质量。排除评论、暂不评论侧重延迟评判，改进观念侧重借鉴完善，均不如自由想象直接对应。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 125
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-7584461031",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 119,
+    "stem": "关于头脑风暴法，说法不正确的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "头脑风暴法是一种创造性的思维方法"
+      },
+      {
+        "key": "B",
+        "text": "在头脑风暴法中不切合实际的想法是坚决不允许的"
+      },
+      {
+        "key": "C",
+        "text": "头脑风暴法是一种培养创造力的方法"
+      },
+      {
+        "key": "D",
+        "text": "头脑风暴法既可以应用于团队，也可应用于个人"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "在头脑风暴法中不切合实际的想法是坚决不允许的",
+    "translation": "",
+    "explanation": "头脑风暴欢迎离奇、不成熟想法，强调延迟评判，荒诞想法常能激发新思路，故B说法错误。A、C、D均符合其创造性、培养创造力及可用于团队与个人的特征。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 126
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-d5e9fec3b2",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 120,
+    "stem": "下列不属于有意想象的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "梦游"
+      },
+      {
+        "key": "B",
+        "text": "创造性想象"
+      },
+      {
+        "key": "C",
+        "text": "再造性想象"
+      },
+      {
+        "key": "D",
+        "text": "幻想"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "梦游",
+    "translation": "",
+    "explanation": "有意想象是有目的、自觉进行的想象，包括再造性想象、创造性想象和幻想。梦游属于无意识状态下的行为，不是有意想象。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 127
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-808ca58d7d",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 121,
+    "stem": "心理学家吉尔福德说，“正是在（）思维中，我们看到了创造性思维最明显的标准”。",
+    "options": [
+      {
+        "key": "A",
+        "text": "横向"
+      },
+      {
+        "key": "B",
+        "text": "发散"
+      },
+      {
+        "key": "C",
+        "text": "逆向"
+      },
+      {
+        "key": "D",
+        "text": "纵向"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "发散",
+    "translation": "",
+    "explanation": "吉尔福德以发散思维研究著称，认为流畅性、变通性、独创性是创造性标志。横向/纵向是德波诺分类，逆向只是方向之一，均非原话。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 128
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-726aad9a28",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 122,
+    "stem": "下面不属于收敛思维特点的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "唯一性"
+      },
+      {
+        "key": "B",
+        "text": "逻辑性"
+      },
+      {
+        "key": "C",
+        "text": "比较性"
+      },
+      {
+        "key": "D",
+        "text": "变通性"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "变通性",
+    "translation": "",
+    "explanation": "收敛思维求唯一最优解，强调逻辑、比较、求同。变通性指灵活多变、多角度，是发散思维特点，故选D。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 129
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-e1d93f5bb9",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 123,
+    "stem": "作为两种思维方式，发散思维和收敛思维有显著的区别，在作用上，（）更有利于人们思维的广阔性、开放性。",
+    "options": [
+      {
+        "key": "A",
+        "text": "收敛思维"
+      },
+      {
+        "key": "B",
+        "text": "发散思维"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "发散思维",
+    "translation": "",
+    "explanation": "发散思维向多方向扩散、追求多方案，带来广阔开放；收敛思维求聚拢最优，利于深刻缜密。故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 130
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-0e71d8cfe1",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 124,
+    "stem": "以下哪一项不属于正向思维的运用？（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "愚公移山"
+      },
+      {
+        "key": "B",
+        "text": "司马光砸缸"
+      },
+      {
+        "key": "C",
+        "text": "月晕而风、础润而雨"
+      },
+      {
+        "key": "D",
+        "text": "鱼鳞天不雨也风颠"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "司马光砸缸",
+    "translation": "",
+    "explanation": "正向是顺常规因果推理。愚公移山坚持常规努力，两句谚语由征兆推天气，都属正向；司马光砸缸把“人离水”反转为“水离人”，属逆向思维，故选B。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 131
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-ed70b017ab",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 125,
+    "stem": "有的人喜欢跟别人唱对台戏，人家说东，他偏往西，好赌气，费了好大力气，走了许多弯路还不愿回头。这属于（）思维定势。",
+    "options": [
+      {
+        "key": "A",
+        "text": "从众型"
+      },
+      {
+        "key": "B",
+        "text": "习惯性"
+      },
+      {
+        "key": "C",
+        "text": "偏执型"
+      },
+      {
+        "key": "D",
+        "text": "局限型"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "偏执型",
+    "translation": "",
+    "explanation": "明知弯路仍固执对立、不回头是偏执型。从众是盲从，习惯性是沿袭旧法，局限是视野狭窄，均不符题意。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 132
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-6d4c9553f9",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 126,
+    "stem": "依照赫曼全脑模型划分，沙和尚属于（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "逻辑性"
+      },
+      {
+        "key": "B",
+        "text": "空想型"
+      },
+      {
+        "key": "C",
+        "text": "表现型"
+      },
+      {
+        "key": "D",
+        "text": "纪律型"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "纪律型",
+    "translation": "",
+    "explanation": "课程设定中沙僧代表踏实执行、守纪苦干的纪律型。逻辑性偏分析，空想型偏幻想，表现型偏外显，均不符沙僧形象。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 133
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-28ce5176f4",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 127,
+    "stem": "以下哪一项不是创新型人才的特点？",
+    "options": [
+      {
+        "key": "A",
+        "text": "具有创新精神和创新能力"
+      },
+      {
+        "key": "B",
+        "text": "个性灵活、开放"
+      },
+      {
+        "key": "C",
+        "text": "力求稳妥，拒绝冒险"
+      },
+      {
+        "key": "D",
+        "text": "精力充沛，坚持不懈"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "力求稳妥，拒绝冒险",
+    "translation": "",
+    "explanation": "创新需冒险容错、开放坚持。A、B、D都是典型特征，C求稳拒险与创新精神相悖，故选C。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 134
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  },
+  {
+    "id": "creativity-727bfe21bc",
+    "category": "creativity",
+    "groupId": "creativity-all",
+    "groupTitle": "综合题库",
+    "numberInGroup": 128,
+    "stem": "创造是指人们首创或改进某种思想、理论、方法、技术和产品的活动。我们可以将人类的创造分为第一创造性和第二创造性，下列属于第二创造性的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "爱因斯坦的相对论"
+      },
+      {
+        "key": "B",
+        "text": "勾股定理"
+      },
+      {
+        "key": "C",
+        "text": "LED显示屏"
+      },
+      {
+        "key": "D",
+        "text": "四大发明"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "LED显示屏",
+    "translation": "",
+    "explanation": "第一创造是首创原理性突破，第二创造是在原理上改进应用。相对论、勾股定理、四大发明属首创；LED显示屏是发光原理的应用改进，属第二创造。",
+    "grammarPoints": [],
+    "tags": [
+      "单选题"
+    ],
+    "source": {
+      "file": "final_merged.md",
+      "group": "综合题库",
+      "position": 135
+    },
+    "status": "ready",
+    "multiAnswer": false,
+    "questionType": "single"
+  }
+]

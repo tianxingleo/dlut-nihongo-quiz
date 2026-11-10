@@ -67,7 +67,8 @@ async function refresh() {
     totalDone.value = stats.filter((s) => s.attemptCount > 0).length
 
     // 计算每个学科的进度：根据 questionId 前缀判断所属 category
-    // 前缀规则与 database.ts version 3 升级逻辑一致
+    // japanese2 是排除法兜底（其 ID 前缀历史上不统一），新增学科前缀
+    // 必须同步加进排除列表，否则会被误算进 japanese2（如 creativity-）
     const progress: Record<string, { done: number; rate: number }> = {}
     for (const cat of CATEGORIES) {
       // 按 category 过滤 stats
@@ -93,7 +94,8 @@ async function refresh() {
               !/^(math-|calculus1-|2019-a-7-)/.test(id) &&
               !id.startsWith('jp1-mid24-') &&
               !id.startsWith('japanese1-') &&
-              !/^w(?:3[7-9]|4[0-3])-/.test(id)
+              !/^w(?:3[7-9]|4[0-3])-/.test(id) &&
+              !id.startsWith('creativity-')
             )
           case 'japanese3':
             return /^w(?:3[7-9]|4[0-3])-/.test(id)

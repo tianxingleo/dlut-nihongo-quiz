@@ -1,5 +1,6 @@
 import Dexie, { type Table } from 'dexie'
 import { INTERVAL_DAYS } from '../constants'
+import { inferCategoryByIdPrefix } from '../config/categories'
 import type { Attempt, QuestionStats, TagStats, Session } from '../types/question'
 import type { SettingsMap, SettingsKey } from '../types/settings'
 
@@ -50,21 +51,11 @@ export class QuizDatabase extends Dexie {
       })
       .upgrade(async (tx) => {
         // 为现有 attempts 记录添加 category 字段
-        // 通过 questionId 前缀推断 category
+        // 通过 questionId 前缀推断 category（规则集中在 inferCategoryByIdPrefix）
         const attempts = tx.table('attempts')
         await attempts.toCollection().modify((attempt: any) => {
           if (!attempt.category) {
-            // 根据 questionId 前缀推断 category
-            const id = attempt.questionId || ''
-            if (id.startsWith('hist-') || id.startsWith('hist')) {
-              attempt.category = 'history'
-            } else if (id.startsWith('party-') || id.startsWith('party')) {
-              attempt.category = 'party'
-            } else if (id.startsWith('mil-') || id.startsWith('mil')) {
-              attempt.category = 'military'
-            } else {
-              attempt.category = 'japanese2'
-            }
+            attempt.category = inferCategoryByIdPrefix(attempt.questionId || '')
           }
         })
       })

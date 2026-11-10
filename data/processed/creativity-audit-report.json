@@ -1,0 +1,263 @@
+{
+  "generatedAt": "2026-11-10T12:39:13.748Z",
+  "files": [
+    "final_merged.md"
+  ],
+  "rawCount": 135,
+  "byType": {
+    "single": 104,
+    "multi": 17,
+    "judgement": 14
+  },
+  "practicableCount": 128,
+  "needsReviewCount": 3,
+  "answerConflicts": [
+    {
+      "ref": "第9题(原题号26·单选)@final_merged.md",
+      "id": "creativity-461f1ac77f",
+      "originalAnswer": "B",
+      "adoptedAnswer": "A",
+      "note": "图片答案疑误"
+    },
+    {
+      "ref": "第70题(原题号156·多选)@final_merged.md",
+      "id": "creativity-640f49c503",
+      "originalAnswer": "AB",
+      "adoptedAnswer": "AD",
+      "note": "认定答案与图片/截图原答案不一致，采用认定答案并标记待核对"
+    },
+    {
+      "ref": "第106题(原题号59·单选)@final_merged.md",
+      "id": "creativity-3d22b848fa",
+      "originalAnswer": "C",
+      "adoptedAnswer": "D",
+      "note": "认定答案与图片/截图原答案不一致，采用认定答案并标记待核对"
+    }
+  ],
+  "exactDuplicates": [
+    {
+      "keptId": "creativity-b801429ceb",
+      "keptRef": "第29题(原题号3·单选)@final_merged.md",
+      "dropped": [
+        {
+          "ref": "第38题(原题号103·单选)@final_merged.md",
+          "explanationDiff": true
+        }
+      ]
+    },
+    {
+      "keptId": "creativity-b487ac781f",
+      "keptRef": "第27题(原题号1·单选)@final_merged.md",
+      "dropped": [
+        {
+          "ref": "第56题(原题号151·单选题)@final_merged.md",
+          "explanationDiff": true
+        }
+      ]
+    },
+    {
+      "keptId": "creativity-3f059330c6",
+      "keptRef": "第61题(原题号163·单选)@final_merged.md",
+      "dropped": [
+        {
+          "ref": "第72题(原题号4·单选)@final_merged.md",
+          "explanationDiff": true
+        }
+      ]
+    },
+    {
+      "keptId": "creativity-fe4072a040",
+      "keptRef": "第12题(原题号1·单选)@final_merged.md",
+      "dropped": [
+        {
+          "ref": "第92题(原题号146·单选)@final_merged.md",
+          "explanationDiff": true
+        }
+      ]
+    },
+    {
+      "keptId": "creativity-6f4649d358",
+      "keptRef": "第96题(原题号2·单选)@final_merged.md",
+      "dropped": [
+        {
+          "ref": "第100题(原题号139·单选)@final_merged.md",
+          "explanationDiff": true
+        }
+      ]
+    },
+    {
+      "keptId": "creativity-5e5ab9bef7",
+      "keptRef": "第83题(原题号3·多选)@final_merged.md",
+      "dropped": [
+        {
+          "ref": "第101题(原题号132·多选)@final_merged.md",
+          "explanationDiff": true
+        }
+      ]
+    },
+    {
+      "keptId": "creativity-6048cc8442",
+      "keptRef": "第65题(原题号161·单选)@final_merged.md",
+      "dropped": [
+        {
+          "ref": "第113题(原题号3·单选)@final_merged.md",
+          "explanationDiff": true
+        }
+      ]
+    }
+  ],
+  "suspectedDuplicates": [
+    {
+      "aRef": "第96题(原题号2·单选)@final_merged.md",
+      "bRef": "第115题(原题号144·单选)@final_merged.md",
+      "reason": "stem-same-options-differ",
+      "detail": "题干相同但选项/题型不同（single vs single），两题均保留，请人工确认"
+    }
+  ],
+  "declaredDuplicates": [
+    {
+      "refs": [
+        "第29题",
+        "第38题"
+      ],
+      "ids": [
+        "creativity-b801429ceb"
+      ],
+      "status": "merged"
+    },
+    {
+      "refs": [
+        "第19题",
+        "第22题"
+      ],
+      "ids": [
+        "creativity-3a601bf255",
+        "creativity-249ecff2de"
+      ],
+      "status": "kept-both"
+    },
+    {
+      "refs": [
+        "第27题",
+        "第56题"
+      ],
+      "ids": [
+        "creativity-b487ac781f"
+      ],
+      "status": "merged"
+    },
+    {
+      "refs": [
+        "第44题",
+        "第66题"
+      ],
+      "ids": [
+        "creativity-22a67b2da2",
+        "creativity-35494a8e25"
+      ],
+      "status": "kept-both"
+    },
+    {
+      "refs": [
+        "第46题",
+        "第62题"
+      ],
+      "ids": [
+        "creativity-4cd7bcceae",
+        "creativity-c58eea4196"
+      ],
+      "status": "kept-both"
+    },
+    {
+      "refs": [
+        "第61题",
+        "第72题"
+      ],
+      "ids": [
+        "creativity-3f059330c6"
+      ],
+      "status": "merged"
+    },
+    {
+      "refs": [
+        "第73题",
+        "第82题"
+      ],
+      "ids": [
+        "creativity-66ce4e3ab2",
+        "creativity-264e4abf0c"
+      ],
+      "status": "kept-both"
+    },
+    {
+      "refs": [
+        "第12题",
+        "第92题"
+      ],
+      "ids": [
+        "creativity-fe4072a040"
+      ],
+      "status": "merged"
+    },
+    {
+      "refs": [
+        "第96题",
+        "第100题",
+        "第115题"
+      ],
+      "ids": [
+        "creativity-6f4649d358",
+        "creativity-2e132d53b3"
+      ],
+      "status": "suspected"
+    },
+    {
+      "refs": [
+        "第83题",
+        "第101题"
+      ],
+      "ids": [
+        "creativity-5e5ab9bef7"
+      ],
+      "status": "merged"
+    },
+    {
+      "refs": [
+        "第65题",
+        "第113题",
+        "第2题"
+      ],
+      "ids": [
+        "creativity-6048cc8442",
+        "creativity-0eac1466c8"
+      ],
+      "status": "kept-both"
+    }
+  ],
+  "sourceHeaderNotes": [
+    "final_merged.md: ## 存疑纠正（3题）",
+    "final_merged.md: - 第9题（原题号26）：图片答案 B，认定 A。新旧事物辩证统一最典型的是旧物翻新再用。",
+    "final_merged.md: - 第70题（原题号156，多选）：图片答案 AB，认定 AD。类比运作机制是同质异化＋异质同化。",
+    "final_merged.md: - 第106题（原题号59）：图片答案 C，认定 D。理智性不是直觉思维特征。",
+    "final_merged.md: ## 重复题提示",
+    "final_merged.md: - 相关联想定义：第29题 = 第38题",
+    "final_merged.md: - 形态分析法定义：第19题 = 第22题",
+    "final_merged.md: - 类比强调相似性：第27题 = 第56题",
+    "final_merged.md: - 子母机分离原理：第44题 = 第66题",
+    "final_merged.md: - 谚语正向思维：第46题 = 第62题",
+    "final_merged.md: - 可折叠自行车等级：第61题 = 第72题",
+    "final_merged.md: - 凡尔纳想象先导：第73题 = 第82题",
+    "final_merged.md: - 六帽平行思维：第12题 = 第92题",
+    "final_merged.md: - 组合法定义：第96题 = 第100题 = 第115题",
+    "final_merged.md: - 列举法五分法：第83题 = 第101题",
+    "final_merged.md: - 半导体四级：第65题 = 第113题（另第2题选项涉及）"
+  ],
+  "warnings": [],
+  "errors": [],
+  "needsReviewRefs": [
+    "第9题(原题号26·单选)@final_merged.md",
+    "第70题(原题号156·多选)@final_merged.md",
+    "第106题(原题号59·单选)@final_merged.md"
+  ],
+  "provenanceDisclaimer": "练习答案取自用户提供的分析文档「认定答案」，并非教师/官方核实答案；图片/截图原答案已保留在 answerNote 与本报告中。"
+}

@@ -56,6 +56,15 @@ describe('COURSE_TREE config', () => {
     expect(topKeys).toContain('general')
   })
 
+  it('has creativity leaf under the general group', () => {
+    const general = COURSE_TREE.find((n) => n.key === 'general')
+    expect(general, 'general group must exist').toBeDefined()
+    const leaf = flatten(COURSE_TREE).find((n) => n.type === 'leaf' && n.key === 'creativity')
+    expect(leaf, 'creativity leaf must exist').toBeDefined()
+    expect(leaf!.category).toBe('creativity')
+    expect(general!.children?.some((c) => c.key === 'creativity')).toBe(true)
+  })
+
   it('contains japanese2 group with word and grammar leaves', () => {
     const jp2 = flatten(COURSE_TREE).find((n) => n.type === 'group' && n.key === 'japanese2-group')
     expect(jp2, 'japanese2-group must exist').toBeDefined()

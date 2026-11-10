@@ -4,10 +4,11 @@ import {
   getCategoryMeta,
   NO_SHUFFLE_CATEGORIES,
   GROUPED_CATEGORIES,
+  inferCategoryByIdPrefix,
 } from './categories'
 
 describe('CATEGORIES config', () => {
-  it('covers existing subjects and four independent computer papers', () => {
+  it('covers existing subjects, computer papers and creativity', () => {
     expect(CATEGORIES.map((c) => c.key).sort()).toEqual([
       '2019-a-7',
       'calculus1-1',
@@ -18,6 +19,7 @@ describe('CATEGORIES config', () => {
       'computer-2026-midterm',
       'computer-c-exam',
       'computer-midterms',
+      'creativity',
       'history',
       'japanese1-final',
       'japanese1-midterm',
@@ -64,16 +66,37 @@ describe('CATEGORIES config', () => {
     ])
   })
 
-  it('NO_SHUFFLE_CATEGORIES contains history/party/military (multi-answer banks)', () => {
+  it('NO_SHUFFLE_CATEGORIES contains history/party/military/creativity (multi-answer banks)', () => {
     expect(NO_SHUFFLE_CATEGORIES.has('history')).toBe(true)
     expect(NO_SHUFFLE_CATEGORIES.has('party')).toBe(true)
     expect(NO_SHUFFLE_CATEGORIES.has('military')).toBe(true)
+    expect(NO_SHUFFLE_CATEGORIES.has('creativity')).toBe(true)
     expect(NO_SHUFFLE_CATEGORIES.has('japanese2')).toBe(false)
     expect(NO_SHUFFLE_CATEGORIES.has('jp1-mid24')).toBe(true)
     for (const category of CATEGORIES.filter((c) => c.key.startsWith('computer-'))) {
       expect(NO_SHUFFLE_CATEGORIES.has(category.key)).toBe(true)
       expect(GROUPED_CATEGORIES.has(category.key)).toBe(true)
     }
+  })
+
+  it('creativity entry declares partial bank and its bankFile', () => {
+    const c = getCategoryMeta('creativity')
+    expect(c.long).toBe('创造性思维与创新方法')
+    expect(c.bankFile).toBe('creativity-question-bank.json')
+    expect(c.desc).toContain('持续更新')
+    expect(c.groupOrder).toEqual(['creativity-all'])
+  })
+
+  it('inferCategoryByIdPrefix maps id prefixes to categories with japanese2 fallback', () => {
+    expect(inferCategoryByIdPrefix('hist-q1')).toBe('history')
+    expect(inferCategoryByIdPrefix('history-q1')).toBe('history')
+    expect(inferCategoryByIdPrefix('party-judge-q1')).toBe('party')
+    expect(inferCategoryByIdPrefix('mil-ch1-q1')).toBe('military')
+    expect(inferCategoryByIdPrefix('creativity-461f1ac77f')).toBe('creativity')
+    // 日语题库历史上前缀不统一，兜底归 japanese2
+    expect(inferCategoryByIdPrefix('g01-q0001')).toBe('japanese2')
+    expect(inferCategoryByIdPrefix('w26-001')).toBe('japanese2')
+    expect(inferCategoryByIdPrefix('')).toBe('japanese2')
   })
 
   it('GROUPED_CATEGORIES aligns with entries that have a group view', () => {

@@ -345,6 +345,9 @@ const dragOpacity = computed(() => {
     </div>
 
     <div class="q-stem" v-html="renderedStem" />
+    <div class="q-review-note" v-if="question.status === 'needs_review'">
+      ⚠ {{ question.answerNote || '答案存在争议，待核对' }}
+    </div>
     <div class="q-hint" v-if="question.multiAnswer">
       多选，请勾选所有正确选项
       <span class="q-hint-actions" v-if="!submitted">
@@ -506,6 +509,15 @@ const dragOpacity = computed(() => {
       v-if="submitted && showExplanation"
       tabindex="0"
     >
+      <div class="exp-section q-review-exp" v-if="question.status === 'needs_review'">
+        <h4>答案待核对</h4>
+        <p>
+          {{
+            question.answerNote ||
+            '本题答案存在争议，练习采用的答案来自题库文档的认定答案，请以课程或教师口径为准。'
+          }}
+        </p>
+      </div>
       <div class="exp-section" v-if="question.headword">
         <h4>词条</h4>
         <p>{{ question.headword }}</p>
@@ -675,6 +687,14 @@ const dragOpacity = computed(() => {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+}
+/* 答案存在争议（needs_review）的轻量提示：查看题目时展示 */
+.q-review-note {
+  font-size: 13px;
+  color: var(--warning);
+  border-left: 3px solid var(--warning);
+  padding: 2px 0 2px 10px;
+  margin: 4px 0 14px;
 }
 .q-hint-actions {
   display: flex;
@@ -869,6 +889,15 @@ const dragOpacity = computed(() => {
 }
 .exp-section {
   margin-bottom: 14px;
+}
+/* 答案待核对警示块（解析面板内）：与题干处的 q-review-note 呼应 */
+.q-review-exp h4,
+.q-review-exp p {
+  color: var(--warning);
+}
+.q-review-exp p {
+  font-size: 14px;
+  line-height: 1.7;
 }
 .exp-section h4 {
   font-size: 13px;
