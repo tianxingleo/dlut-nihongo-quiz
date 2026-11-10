@@ -30,6 +30,7 @@
 | 马克思主义原理       |       510 |       138 |       5 |      31 | 机考真题 + 6 份试卷（PDF 导入）     | 马原期末         |
 | 创造性思维与创新方法 |       128 |        17 |      14 |       0 | 提炼版题库分析（部分题库·持续更新） | 创新方法课程复习 |
 | **合计**             | **7,192** | **1,637** | **888** | **463** | —                                   | —                |
+
 综合日语2 包含四个子库：单词（w26–w36）、学习通 99 题（g01–g10）、2021 年真题 79 题（g11）、2024 年真题 99 题（g21–g28）。
 
 计算机组成（软国际）共 240 题（5 份试卷），参考答案由 StepFun `step-3.7-flash` 生成并经复核，非官方答案。
@@ -68,23 +69,23 @@ npm run dev          # http://localhost:5173/
 
 常用脚本：
 
-| 命令                      | 作用                                                          |
-| ------------------------- | ------------------------------------------------------------- |
-| `npm run dev`             | 启动开发服务器                                                |
-| `npm run build`           | 生产构建（`base=/dlut-nihongo-quiz/`，含 `vue-tsc` 类型检查） |
-| `npm run preview`         | 本地预览生产构建                                              |
-| `npm run test`            | Vitest 测试 + 计算机题库回归检查                              |
-| `npm run parse:all`       | 一次性跑全部 parser                                           |
-| `npm run merge:japanese2` | 合并已生成的语法、单词 JSON 为综合日语2题库                   |
-| `npm run parse:history`   | 历史 md → JSON                                                |
-| `npm run parse:party`     | 党史 md → JSON                                                |
-| `npm run parse:military`  | 军事 md → JSON                                                |
-| `npm run parse:creativity`  | 创造性思维 md → JSON（含审计报告）                                                |
-| `npm run parse:computer`  | 从结构化源文件生成计算机组成题库                              |
-| `npm run test:computer`   | 检查计算机题库答案、来源覆盖与已知勘误                        |
-| `npm run generate:meta`   | 更新各分类题数统计                                            |
-| `npm run audit:banks`     | 题库 schema + 内部去重检查                                    |
-| `npm run format`          | Prettier 自动格式化                                           |
+| 命令                       | 作用                                                          |
+| -------------------------- | ------------------------------------------------------------- |
+| `npm run dev`              | 启动开发服务器                                                |
+| `npm run build`            | 生产构建（`base=/dlut-nihongo-quiz/`，含 `vue-tsc` 类型检查） |
+| `npm run preview`          | 本地预览生产构建                                              |
+| `npm run test`             | Vitest 测试 + 计算机题库回归检查                              |
+| `npm run parse:all`        | 一次性跑全部 parser                                           |
+| `npm run merge:japanese2`  | 合并已生成的语法、单词 JSON 为综合日语2题库                   |
+| `npm run parse:history`    | 历史 md → JSON                                                |
+| `npm run parse:party`      | 党史 md → JSON                                                |
+| `npm run parse:military`   | 军事 md → JSON                                                |
+| `npm run parse:creativity` | 创造性思维 md → JSON（含审计报告）                            |
+| `npm run parse:computer`   | 从结构化源文件生成计算机组成题库                              |
+| `npm run test:computer`    | 检查计算机题库答案、来源覆盖与已知勘误                        |
+| `npm run generate:meta`    | 更新各分类题数统计                                            |
+| `npm run audit:banks`      | 题库 schema + 内部去重检查                                    |
+| `npm run format`           | Prettier 自动格式化                                           |
 
 > 脚本生成的题库源保留在 `data/raw/`。修改源文件后运行对应 parser，再运行 `npm run generate:meta`、`npm run audit:banks` 和 `npm test`；不要直接修改生成的 `public/*-question-bank.json`。综合日语3单词题库直接维护 `public/japanese3-question-bank.json`，修改后运行元数据生成、审计和测试。
 

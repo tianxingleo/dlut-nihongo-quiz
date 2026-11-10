@@ -74,7 +74,8 @@ export interface Question {
   /** Subjective mathematics: reveal reference, then record the learner's own assessment. */
   selfAssessment?: boolean
   /** 答案争议提示（status=needs_review 时由题库生成器写入，前端在题目/解析处展示） */
-  answerNote?: string}
+  answerNote?: string
+}
 
 export interface Attempt {
   id?: number

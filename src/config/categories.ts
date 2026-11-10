@@ -452,4 +452,3 @@ export function inferCategoryByIdPrefix(id: string): Category {
   if (id.startsWith('creativity')) return 'creativity'
   return 'japanese2'
 }
-
