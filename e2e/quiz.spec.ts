@@ -55,7 +55,9 @@ test('全库搜索按需加载索引和题库，首页与仪表盘统计一致',
   await expect(card).toContainText('已做 1 题 · 正确率 100%')
   await card.focus()
   await page.keyboard.press('Enter')
-  await expect(page.locator('.stat-card').filter({ hasText: '总进度' })).toContainText('1/')
+  await expect(page.locator('.summary-item').filter({ hasText: '总进度' })).toContainText(
+    '已做 1 题',
+  )
   await expect(page.locator('.stat-card').filter({ hasText: '总正确率' })).toContainText('100%')
 })
 
@@ -174,4 +176,14 @@ test('手机首屏显示选课程和卡片，窄屏无横向溢出', async ({ pa
   await expect(page.getByRole('heading', { name: '课程列表' })).toBeFocused()
   await page.setViewportSize({ width: 320, height: 844 })
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBe(320)
+})
+
+test('窄屏课程先显示题单，且可直接开始指定题单', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 812 })
+  await page.goto('#/home?category=history')
+  const card = page.locator('.group-card').filter({ hasText: '核心必刷' })
+  await expect(card).toBeInViewport()
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBe(320)
+  await card.getByRole('button', { name: '顺序', exact: true }).click()
+  await expect(page.locator('.q-stem')).toContainText(firstStem)
 })

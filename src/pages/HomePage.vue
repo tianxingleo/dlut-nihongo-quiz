@@ -598,14 +598,13 @@ const groupViewHint = computed(() => {
     <div class="resume-banner">
       <div class="resume-info">
         <span class="resume-title">{{ activeSession ? '继续上次' : '开始练习' }}</span>
-        <span v-if="activeSession" class="resume-meta"
-          >{{ activeSessionPaper ? activeSessionPaper + ' · ' : '' }}第
-          {{
-            (activeSession.submitted
-              ? activeSession.currentIndex + 1
-              : activeSession.currentIndex) + 1
-          }}/{{ activeSession.totalQuestions }} 题 · {{ activeSession.mode }}</span
-        >
+        <template v-if="activeSession">
+          <span class="resume-meta">{{ activeSessionPaper || titleText }}</span>
+          <span class="resume-meta">
+            第 {{ activeSession.currentIndex + Number(activeSession.submitted) + 1 }} /
+            {{ activeSession.totalQuestions }} 题
+          </span>
+        </template>
       </div>
       <div class="resume-actions">
         <button class="btn btn-accent" @click="continueOrStart">
@@ -614,60 +613,6 @@ const groupViewHint = computed(() => {
         <button v-if="activeSession" class="btn btn-ghost" @click="discardSession">放弃</button>
       </div>
     </div>
-
-    <!-- 每日目标进度 -->
-    <div class="daily-goal-bar">
-      <div class="dg-header">
-        <span class="dg-label">今日目标 <span class="dg-hint">（跨学科合计）</span></span>
-        <span class="dg-count">{{ dailyProgress.done }}/{{ dailyProgress.goal }} 题</span>
-      </div>
-      <div class="dg-track">
-        <div
-          class="dg-fill"
-          :style="{ width: dailyProgress.pct + '%', background: dailyProgress.color }"
-        />
-      </div>
-      <p v-if="dailyProgress.pct >= 100" class="dg-complete">🎉 今日目标已达成！</p>
-    </div>
-
-    <div class="stats-row">
-      <StatCard label="待复习" :value="reviewDueIds.length" sub="间隔重复到期" />
-      <StatCard label="错题数" :value="wrongIds.length" sub="错题重刷优先" />
-      <StatCard label="总进度" :value="`${totals.done}/${totals.total}`" sub="已做 / 总题数" />
-      <StatCard label="总正确率" :value="totals.attempts ? totals.rate + '%' : '--'" />
-      <StatCard
-        label="近期正确率"
-        :value="totals.done ? recentCorrectRate + '%' : '--'"
-        sub="近30题"
-      />
-    </div>
-
-    <section class="section">
-      <h2>掌握程度</h2>
-      <!-- 数量为 0 的分段不渲染；数字统一放到色块正下方的标尺里 -->
-      <div class="mastery-bar">
-        <div v-if="mastery.mastered > 0" class="seg mastered" :style="{ flex: mastery.mastered }" />
-        <div v-if="mastery.learning > 0" class="seg learning" :style="{ flex: mastery.learning }" />
-        <div v-if="mastery.weak > 0" class="seg weak" :style="{ flex: mastery.weak }" />
-        <div
-          v-if="mastery.untouched > 0"
-          class="seg untouched"
-          :style="{ flex: mastery.untouched }"
-        />
-      </div>
-      <div ref="rulerEl" class="mastery-ruler" :style="{ height: masteryRuler.height + 'px' }">
-        <div
-          v-for="item in masteryRuler.items"
-          :key="item.key"
-          class="mr-slot"
-          :style="{ flex: item.value }"
-        >
-          <span class="mr-label" :style="{ top: item.top + 'px' }"
-            >{{ item.label }} <strong>{{ item.value }}</strong></span
-          >
-        </div>
-      </div>
-    </section>
 
     <section class="section" v-if="!isGroupView && !hasSubBanks">
       <h2>快速开始</h2>
@@ -863,6 +808,57 @@ const groupViewHint = computed(() => {
       </div>
     </section>
 
+    <section class="progress-summary" aria-label="练习进度">
+      <div class="summary-item">
+        <span>今日目标</span>
+        <strong>{{ dailyProgress.done }} / {{ dailyProgress.goal }} 题</strong>
+        <span v-if="dailyProgress.pct >= 100">已达成</span>
+      </div>
+      <div class="summary-item">
+        <span>总进度</span>
+        <strong>已做 {{ totals.done }} 题</strong>
+        <span>共 {{ totals.total }} 题</span>
+      </div>
+    </section>
+
+    <div class="stats-row">
+      <StatCard label="待复习" :value="reviewDueIds.length" sub="间隔重复到期" />
+      <StatCard label="错题数" :value="wrongIds.length" sub="错题重刷优先" />
+      <StatCard label="总正确率" :value="totals.attempts ? totals.rate + '%' : '--'" />
+      <StatCard
+        label="近期正确率"
+        :value="totals.done ? recentCorrectRate + '%' : '--'"
+        sub="近30题"
+      />
+    </div>
+
+    <section class="section">
+      <h2>掌握程度</h2>
+      <!-- 数量为 0 的分段不渲染；数字统一放到色块正下方的标尺里 -->
+      <div class="mastery-bar">
+        <div v-if="mastery.mastered > 0" class="seg mastered" :style="{ flex: mastery.mastered }" />
+        <div v-if="mastery.learning > 0" class="seg learning" :style="{ flex: mastery.learning }" />
+        <div v-if="mastery.weak > 0" class="seg weak" :style="{ flex: mastery.weak }" />
+        <div
+          v-if="mastery.untouched > 0"
+          class="seg untouched"
+          :style="{ flex: mastery.untouched }"
+        />
+      </div>
+      <div ref="rulerEl" class="mastery-ruler" :style="{ height: masteryRuler.height + 'px' }">
+        <div
+          v-for="item in masteryRuler.items"
+          :key="item.key"
+          class="mr-slot"
+          :style="{ flex: item.value }"
+        >
+          <span class="mr-label" :style="{ top: item.top + 'px' }"
+            >{{ item.label }} <strong>{{ item.value }}</strong></span
+          >
+        </div>
+      </div>
+    </section>
+
     <section class="section" v-if="weakTags.length > 0 && !isGroupView">
       <h2>{{ weakSectionTitle }}</h2>
       <div class="weak-list">
@@ -971,6 +967,8 @@ h1 {
   background: var(--bg-card);
 }
 .resume-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -984,55 +982,29 @@ h1 {
   color: var(--text-secondary);
 }
 .resume-actions {
+  flex-shrink: 0;
   display: flex;
   gap: 8px;
 }
 
-/* 每日目标进度条 */
-.daily-goal-bar {
-  margin-bottom: 24px;
-  padding: 14px 18px;
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-}
-.dg-header {
+.progress-summary {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-.dg-label {
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--text-primary);
-}
-.dg-hint {
-  font-weight: 400;
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.dg-count {
-  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding-block: 12px;
+  margin-bottom: 16px;
+  border-block: 1px solid var(--border);
   color: var(--text-secondary);
-  font-family: var(--font-mono);
-}
-.dg-track {
-  height: 8px;
-  background: var(--bg-hover);
-  overflow: hidden;
-}
-.dg-fill {
-  height: 100%;
-  transition:
-    width 0.5s var(--ease-brush),
-    background 0.3s var(--ease-ink);
-}
-.dg-complete {
-  margin-top: 8px;
   font-size: 13px;
-  color: var(--correct);
-  font-weight: 600;
-  animation: fade-up 0.4s var(--ease-brush) both;
+  font-variant-numeric: tabular-nums;
+}
+.summary-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+.summary-item strong {
+  color: var(--text-primary);
 }
 
 .stats-row {
@@ -1306,7 +1278,7 @@ h1 {
 
 .group-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: 12px;
 }
 .group-card {
@@ -1337,11 +1309,13 @@ h1 {
   color: var(--text-primary);
 }
 .gc-count {
+  flex-shrink: 0;
   font-size: 13px;
   color: var(--text-muted);
 }
 .gc-stats {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   font-size: 13px;
   color: var(--text-secondary);
