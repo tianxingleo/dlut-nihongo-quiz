@@ -378,11 +378,12 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   color: var(--text-secondary);
 }
 .hero-actions {
+  display: flex;
   margin-top: 16px;
 }
 
 .resume-detail {
-  margin-top: 8px;
+  margin-top: 16px;
   color: var(--text-muted);
   font-size: 12px;
   line-height: 1.5;
