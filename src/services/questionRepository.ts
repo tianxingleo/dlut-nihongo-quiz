@@ -52,6 +52,7 @@ export function shuffleQuestionOptions(q: Question): Question {
   const newOptions = shuffled.map((opt, i) => ({
     key: String.fromCharCode('A'.charCodeAt(0) + i),
     text: opt.text,
+    originalKey: opt.key,
   }))
   return {
     ...q,

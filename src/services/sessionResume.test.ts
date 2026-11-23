@@ -141,3 +141,14 @@ describe('pickSessionForScope', () => {
     ).toBeNull()
   })
 })
+
+it('isolates temporary questions and normalizes review sets', () => {
+  expect(paperKeyFromEntryKey('history|sequential||||q1|')).toBe('')
+  expect(buildPaperKey({ category: 'history', ids: 'q2,q1,q1', source: 'wrong' })).toBe(
+    'history|review|wrong|q1,q2',
+  )
+  expect(buildPaperKey({ category: 'history', ids: 'q1', source: 'bookmarks' })).toBe(
+    'history|review|bookmarks|q1',
+  )
+  expect(buildPaperKey({ category: 'history', questionType: 'fill' })).toBe('history|all||fill')
+})

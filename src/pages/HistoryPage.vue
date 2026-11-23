@@ -121,7 +121,16 @@ function formatDate(dateStr: string): string {
 }
 
 function goReview(questionId: string) {
-  router.push({ path: '/quiz', query: { ids: questionId } })
+  router.push({
+    path: '/quiz',
+    query: {
+      category:
+        getQuestionById(questionId)?.category ||
+        attempts.value.find((a) => a.questionId === questionId)?.category ||
+        activeCategory.value,
+      ids: questionId,
+    },
+  })
 }
 </script>
 <template>

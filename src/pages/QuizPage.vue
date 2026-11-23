@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { SELF_CORRECT, isSelfAssessmentVerdict } from '../utils/selfAssessment'
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
-import { useRoute, useRouter, onBeforeRouteLeave, type RouteLocationRaw } from 'vue-router'
+import {
+  useRoute,
+  useRouter,
+  onBeforeRouteLeave,
+  onBeforeRouteUpdate,
+  type RouteLocationRaw,
+} from 'vue-router'
 import {
   loadQuestionBank,
   getQuestionsByTag,
@@ -23,7 +29,7 @@ import {
   loadActiveSession,
   clearActiveSession,
   isSessionInProgress,
-  buildPaperKey,
+  paperKeyFromEntryKey,
   type ActiveSession,
 } from '../services/sessionResume'
 import { useActiveCategory, loadActiveCategory, setActiveCategory } from '../services/categoryStore'
@@ -33,6 +39,8 @@ import QuestionNavigator from '../components/quiz/QuestionNavigator.vue'
 import ProgressBar from '../components/ui/ProgressBar.vue'
 import PageSkeleton from '../components/ui/PageSkeleton.vue'
 import { renderMarkdown, stripMarkdown } from '../utils/renderMarkdown'
+import { routeEntryKey } from '../utils/routeEntry'
+import { optionSignature, mapAnswer } from '../services/sessionAnswers'
 import { truncate } from '../utils/text'
 import { useAI } from '../composables/useAI'
 import { hasCompleteFillAnswer } from '../utils/multiAnswer'
@@ -58,6 +66,9 @@ const finished = ref(false)
 const bookmarked = ref(false)
 const bookmarkCache = ref<Set<string>>(new Set())
 const startedAt = ref('')
+const lastActivityAt = ref('')
+let restoredEntry: string | undefined
+const reselectIds = ref(new Set<string>())
 const elapsedTime = ref(0)
 const timerInterval = ref<ReturnType<typeof setInterval> | null>(null)
 const isExamMode = ref(false)
@@ -75,7 +86,6 @@ const loadError = ref('')
 const loading = ref(true)
 let pendingNavigation: RouteLocationRaw | null = null
 let skipLeaveGuard = false
-let isDirty = false
 
 type CellStatus = 'correct' | 'wrong' | 'draft' | 'unanswered'
 
@@ -121,30 +131,32 @@ function computeEntryKey(): string {
     (q.tag as string) || '',
     (q.ids as string) || '',
     q.shuffle === '1' ? '1' : '',
+    q.questionType || '',
+    q.source ||
+      (q.redo === '1'
+        ? 'wrong-redo'
+        : q.ids && ['wrong', 'untouched'].includes(String(q.mode))
+          ? q.mode
+          : ''),
   ]
   return parts.join('|')
 }
 
 // 这次刷的是哪份试卷（学科 + 子题库/题单 + 标签），决定记录存到哪一条、和谁互不干扰。
 function computePaperKey(): string {
-  const q = route.query
-  return buildPaperKey({
-    category: (q.category as string) || activeCategory.value,
-    groups: (q.groups as string) || '',
-    group: (q.group as string) || '',
-    tag: (q.tag as string) || '',
-  })
+  return (route.query.paper as string) || paperKeyFromEntryKey(computeEntryKey())
 }
 
 function snapshot(submittedNow: boolean): ActiveSession {
-  // 将 Map 转换为 Record 以便序列化
-  const draftsRecord: Record<number, string> = {}
-  drafts.value.forEach((value, key) => {
-    draftsRecord[key] = value
-  })
-
-  // 标记数据已保存，重置 dirty flag
-  isDirty = false
+  saveCurrentDraft()
+  const draftsById: Record<string, string> = {}
+  const optionSignatures: Record<string, string> = {}
+  for (const [i, q] of questions.value.entries()) {
+    const draft = drafts.value.get(i)
+    const signature = (draft || history.value[i]?.selectedKey) && optionSignature(q)
+    if (signature) optionSignatures[q.id] = signature
+    if (draft) draftsById[q.id] = mapAnswer(q, draft, 'original')
+  }
 
   return {
     sessionId: sessionId.value,
@@ -156,18 +168,20 @@ function snapshot(submittedNow: boolean): ActiveSession {
     correctCount: correctCount.value,
     wrongList: [...wrongList.value],
     startedAt: startedAt.value,
-    history: [...history.value],
+    history: history.value
+      .map((h, i) => {
+        const q = questions.value[i]
+        return { ...h, selectedKey: q ? mapAnswer(q, h.selectedKey, 'original') : '' }
+      })
+      .filter(Boolean),
     elapsedSeconds: elapsedTime.value,
-    drafts: draftsRecord,
-    entryKey: computeEntryKey(),
+    draftsById,
+    optionSignatures,
+    lastActivityAt: lastActivityAt.value || undefined,
+    entryKey: restoredEntry || computeEntryKey(),
     paperKey: computePaperKey(),
     wrongRedo: wrongRedo.value,
   }
-}
-
-// 标记数据已改变，需要保存
-function markDirty() {
-  isDirty = true
 }
 
 function startTimer() {
@@ -326,10 +340,10 @@ async function tryRestoreSession(all: Question[]): Promise<boolean> {
   const explicitResume = route.query.resume === '1'
   const wantsFresh = route.query.fresh === '1'
   wrongRedo.value = route.query.redo === '1'
-  const sameEntry = !wantsFresh && saved?.entryKey != null && saved.entryKey === computeEntryKey()
+  const sameEntry = !wantsFresh && Boolean(saved)
   // 无 query 参数直接进 /quiz（顶栏"刷题"、地址栏输入等）视为"继续上次"
   const bareQuizEntry = Object.keys(route.query).length === 0
-  if (((explicitResume || sameEntry) && isSessionInProgress(saved)) || (bareQuizEntry && saved)) {
+  if ((explicitResume || sameEntry || bareQuizEntry) && isSessionInProgress(saved)) {
     const map = new Map(all.map((q) => [q.id, q] as const))
     questions.value = saved.questionIds.map((id) => map.get(id)).filter((q): q is Question => !!q)
     sessionId.value = saved.sessionId
@@ -337,21 +351,39 @@ async function tryRestoreSession(all: Question[]): Promise<boolean> {
     correctCount.value = saved.correctCount
     wrongList.value = [...saved.wrongList]
     startedAt.value = saved.startedAt
-    currentIndex.value = saved.submitted ? saved.currentIndex + 1 : saved.currentIndex
+    const nextIds = saved.questionIds.slice(saved.currentIndex + Number(saved.submitted))
+    currentIndex.value = questions.value.findIndex((q) => nextIds.includes(q.id))
+    if (currentIndex.value < 0) return false
     submitted.value = false
-    selectedKey.value = ''
     startTime.value = Date.now()
-    // 恢复 history、elapsedTime 和 drafts（AI 辅助功能相关）
-    history.value = saved.history || []
     elapsedTime.value = saved.elapsedSeconds || 0
     wrongRedo.value = saved.wrongRedo || false
-    if (saved.drafts) {
-      const draftsMap = new Map<number, string>()
-      Object.entries(saved.drafts).forEach(([key, value]) => {
-        draftsMap.set(Number(key), value)
-      })
-      drafts.value = draftsMap
+    lastActivityAt.value = saved.lastActivityAt || ''
+    restoredEntry = saved.entryKey
+    const historyById = new Map((saved.history || []).filter(Boolean).map((h) => [h.questionId, h]))
+    function restore(q: Question, value: string) {
+      if (!value) return ''
+      const signature = optionSignature(q)
+      if (!signature) return value
+      const valid = saved!.optionSignatures
+        ? saved!.optionSignatures[q.id] === signature
+        : !q.options.some((option) => option.originalKey)
+      const answer = valid ? mapAnswer(q, value, 'display') : ''
+      if (!answer) reselectIds.value.add(q.id)
+      return answer
     }
+    history.value = []
+    drafts.value.clear()
+    questions.value.forEach((q, i) => {
+      const previous = historyById.get(q.id)
+      if (previous)
+        history.value[i] = { ...previous, selectedKey: restore(q, previous.selectedKey) }
+      const draft = saved.draftsById?.[q.id] ?? saved.drafts?.[saved.questionIds.indexOf(q.id)]
+      const answer = restore(q, draft || '')
+      if (answer) drafts.value.set(i, answer)
+    })
+    selectedKey.value =
+      drafts.value.get(currentIndex.value) ?? history.value[currentIndex.value]?.selectedKey ?? ''
     return true
   }
 
@@ -453,6 +485,10 @@ function handleSelect(key: string) {
   if (currentQuestion.value?.selfAssessment && !isSelfAssessmentVerdict(key)) return
   // QuestionCard already computed the correct toggled/new value
   selectedKey.value = key
+  if (currentQuestion.value) reselectIds.value.delete(currentQuestion.value.id)
+  lastActivityAt.value = new Date().toISOString()
+  const state = snapshot(false)
+  void saveActiveSession(state).catch(console.error)
 }
 
 async function handleSubmit() {
@@ -503,7 +539,8 @@ async function handleSubmit() {
     }
   }
   drafts.value.delete(currentIndex.value)
-  markDirty()
+  lastActivityAt.value = new Date().toISOString()
+  const saving = saveActiveSession(snapshot(true)).catch(console.error)
 
   const elapsedMs = Date.now() - startTime.value
   startTime.value = Date.now()
@@ -512,6 +549,7 @@ async function handleSubmit() {
     await recordAttempt(
       {
         questionId: q.id,
+        category: q.category,
         sessionId: sessionId.value,
         selectedKey: selectedKey.value,
         correctKey: q.answerKey,
@@ -535,7 +573,7 @@ async function handleSubmit() {
       }),
     )
 
-    await saveActiveSession(snapshot(true))
+    await saving
   } catch (e) {
     console.error('保存答题记录失败:', e)
     // 不影响用户继续答题，只记录错误
@@ -545,7 +583,7 @@ async function handleSubmit() {
 function saveCurrentDraft() {
   if (!submitted.value && selectedKey.value) {
     drafts.value.set(currentIndex.value, selectedKey.value)
-  } else if (submitted.value) {
+  } else {
     drafts.value.delete(currentIndex.value)
   }
 }
@@ -553,7 +591,6 @@ function saveCurrentDraft() {
 function jumpTo(i: number) {
   if (i === currentIndex.value || i < 0 || i >= questions.value.length) return
   saveCurrentDraft()
-  markDirty()
   // Pre-render markdown before changing index so the new card's
   // synchronous marked.parse() doesn't block the transition frames.
   const target = questions.value[i]
@@ -564,14 +601,9 @@ function jumpTo(i: number) {
   currentIndex.value = i
   const h = history.value[i]
   submitted.value = false
-  selectedKey.value = h ? h.selectedKey : (drafts.value.get(i) ?? '')
+  selectedKey.value = drafts.value.get(i) ?? h?.selectedKey ?? ''
   startTime.value = Date.now()
-  requestAnimationFrame(() => {
-    // 只在数据真正改变时才保存
-    if (isDirty) {
-      saveActiveSession(snapshot(false))
-    }
-  })
+  void saveActiveSession(snapshot(false)).catch(console.error)
 }
 
 function handleNext() {
@@ -711,20 +743,33 @@ function onBeforeUnload(e: BeforeUnloadEvent) {
 // 路由离开确认：自定义弹窗
 // 注意：不能用 next() 异步回调模式，在 Vue Router 4 中异步调用 next() 不可靠。
 // 改用 return false 取消导航 + 手动 router.push() 的模式。
-onBeforeRouteLeave((to) => {
+const confirmNavigation: Parameters<typeof onBeforeRouteLeave>[0] = (to) => {
   if (skipLeaveGuard || finished.value || questions.value.length === 0) {
     return true
   }
   pendingNavigation = { path: to.path, query: to.query, hash: to.hash }
   showLeaveConfirm.value = true
   return false
+}
+onBeforeRouteLeave(confirmNavigation)
+onBeforeRouteUpdate((to, from) => {
+  if (routeEntryKey(to.query) !== routeEntryKey(from.query))
+    return confirmNavigation(to, from, () => {})
 })
 
-function confirmLeave() {
+async function confirmLeave() {
   showLeaveConfirm.value = false
   if (pendingNavigation) {
     const target = pendingNavigation
     pendingNavigation = null
+    try {
+      await saveActiveSession(snapshot(submitted.value))
+    } catch (error) {
+      console.error(error)
+      showLeaveConfirm.value = true
+      pendingNavigation = target
+      return
+    }
     skipLeaveGuard = true
     router.push(target)
   }
@@ -768,6 +813,7 @@ function cancelLeave() {
       >
         剩余时间: {{ formattedRemainingTime }}
       </div>
+      <p v-if="reselectIds.has(currentQuestion.id)" role="status">原选项无法恢复，请重新选择。</p>
       <Transition :name="slideDirection" mode="out-in">
         <QuestionCard
           :key="currentQuestion.id"
@@ -808,7 +854,12 @@ function cancelLeave() {
         <button
           class="btn btn-outline"
           v-if="wrongList.length > 0"
-          @click="router.push({ path: '/quiz', query: { ids: wrongList.join(',') } })"
+          @click="
+            router.push({
+              path: '/quiz',
+              query: { category: activeCategory, source: 'wrong', ids: wrongList.join(',') },
+            })
+          "
         >
           只刷错题
         </button>
@@ -818,7 +869,13 @@ function cancelLeave() {
           @click="
             router.push({
               path: '/quiz',
-              query: { ids: wrongList.join(','), redo: '1', fresh: '1' },
+              query: {
+                category: activeCategory,
+                source: 'wrong-redo',
+                ids: wrongList.join(','),
+                redo: '1',
+                fresh: '1',
+              },
             })
           "
         >

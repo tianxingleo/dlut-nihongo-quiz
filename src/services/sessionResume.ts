@@ -1,4 +1,4 @@
-import { getSetting, setSetting } from '../db/database'
+import { db, getSetting, setSetting } from '../db/database'
 import { STORAGE_KEYS, SESSION } from '../constants'
 import type { ActiveSession } from '../types/question'
 
@@ -23,25 +23,38 @@ export function buildPaperKey(parts: {
   groups?: string
   group?: string
   tag?: string
+  questionType?: string
+  ids?: string
+  source?: string
 }): string {
-  const set = parts.groups || parts.group || WHOLE_CATEGORY
-  return [parts.category || '', set, parts.tag || ''].join('|')
+  const normalize = (value: string) =>
+    [...new Set(value.split(',').filter(Boolean))].sort().join(',')
+  const category = parts.category || ''
+  if (parts.ids) {
+    if (parts.source === 'single' || (!parts.source && !parts.ids.includes(','))) return ''
+    return [category, 'review', parts.source || 'legacy', normalize(parts.ids)].join('|')
+  }
+  const set = normalize(parts.groups || parts.group || WHOLE_CATEGORY)
+  return [category, set, parts.tag || '', ...(parts.questionType ? [parts.questionType] : [])].join(
+    '|',
+  )
 }
 
 /** 从入口签名（category|mode|group|groups|tag|ids|shuffle）还原出试卷标识 */
 export function paperKeyFromEntryKey(entryKey: string): string {
-  const [category, , group, groups, tag] = entryKey.split('|')
-  return buildPaperKey({ category, group, groups, tag })
+  const [category, , group, groups, tag, ids, , questionType, source] = entryKey.split('|')
+  return buildPaperKey({ category, group, groups, tag, ids, questionType, source })
 }
 
 /** 取一条会话所属的试卷标识：新记录直接用 paperKey，旧记录用 entryKey 兜底 */
 export function paperKeyOf(session: ActiveSession): string {
+  if (session.entryKey?.split('|')[5]) return paperKeyFromEntryKey(session.entryKey)
   if (session.paperKey) return session.paperKey
   return session.entryKey ? paperKeyFromEntryKey(session.entryKey) : ''
 }
 
 function startedAtMs(session: ActiveSession): number {
-  const ms = new Date(session.startedAt).getTime()
+  const ms = new Date(session.lastActivityAt || session.startedAt).getTime()
   return Number.isNaN(ms) ? 0 : ms
 }
 
@@ -59,7 +72,7 @@ export function pickSessionForScope(
   for (const [key, session] of Object.entries(map)) {
     if (!isSessionInProgress(session)) continue
     const [category = '', set = ''] = key.split('|')
-    if (category !== scope.category) continue
+    if (category !== scope.category || set === 'review') continue
     if (allowed) {
       // 选了子题库就不展示整个学科的记录（那是「刷整套」之外的入口）
       if (set === WHOLE_CATEGORY) continue
@@ -73,60 +86,70 @@ export function pickSessionForScope(
 
 /** 读取全部会话记录；首次读取时把旧版单条记录迁移到对应试卷下 */
 export async function loadActiveSessions(): Promise<ActiveSessionMap> {
+  return db.transaction('rw', db.settings, readSessions)
+}
+
+async function readSessions(): Promise<ActiveSessionMap> {
   const stored = await getSetting(KEY, {} as ActiveSessionMap)
-  const usable =
-    stored && typeof stored === 'object' && !('sessionId' in stored) ? { ...stored } : {}
-
-  if (Object.keys(usable).length > 0) return usable
-
   const legacy = await getSetting(LEGACY_KEY, null as ActiveSession | null)
-  if (!legacy) return usable
-
-  const key = paperKeyOf(legacy)
-  if (!key) return usable
-
-  const migrated: ActiveSessionMap = { [key]: { ...legacy, paperKey: key } }
-  await setSetting(KEY, migrated)
-  await setSetting(LEGACY_KEY, null)
-  return migrated
+  const entries = Object.values(stored || {})
+  if (legacy) entries.push(legacy)
+  const map: ActiveSessionMap = {}
+  for (const session of entries) {
+    if (!session?.questionIds) continue
+    const key = paperKeyOf(session)
+    if (key && (!map[key] || startedAtMs(session) >= startedAtMs(map[key]))) {
+      map[key] = { ...session, paperKey: key }
+    }
+  }
+  if (
+    legacy ||
+    Object.keys(stored || {}).some((key) => stored[key]?.paperKey !== key || !map[key])
+  ) {
+    await setSetting(KEY, map)
+    if (legacy) await setSetting(LEGACY_KEY, null)
+  }
+  return map
 }
 
 export async function saveActiveSessions(map: ActiveSessionMap): Promise<void> {
   await setSetting(KEY, map)
 }
 
-/** 保存一条会话：按它自己的试卷标识落位，不会影响其它试卷的记录 */
 export async function saveActiveSession(session: ActiveSession): Promise<void> {
   const key = paperKeyOf(session)
   if (!key) return
-  const map = await loadActiveSessions()
-  map[key] = { ...session, paperKey: key }
-  await saveActiveSessions(map)
+  await db.transaction('rw', db.settings, async () => {
+    const map = await readSessions()
+    map[key] = { ...session, paperKey: key }
+    await saveActiveSessions(map)
+  })
 }
 
-/** 读取指定试卷的记录 */
 export async function loadActiveSession(paperKey: string): Promise<ActiveSession | null> {
-  const map = await loadActiveSessions()
-  return map[paperKey] ?? null
+  if (!paperKey) return null
+  return (await loadActiveSessions())[paperKey] ?? null
 }
 
-/** 清掉指定试卷的记录（只影响这一份试卷；清空全部请用 clearAllData） */
 export async function clearActiveSession(paperKey: string): Promise<void> {
-  const map = await loadActiveSessions()
-  if (!(paperKey in map)) return
-  delete map[paperKey]
-  await saveActiveSessions(map)
+  if (!paperKey) return
+  await db.transaction('rw', db.settings, async () => {
+    const map = await readSessions()
+    if (!(paperKey in map)) return
+    delete map[paperKey]
+    await saveActiveSessions(map)
+  })
 }
 
-/** 丢掉已经答完 / 过期的记录，返回剩余的记录表（有变化才会写回） */
 export async function pruneInactiveSessions(): Promise<ActiveSessionMap> {
-  const map = await loadActiveSessions()
-  const kept: ActiveSessionMap = {}
-  for (const [key, session] of Object.entries(map)) {
-    if (isSessionInProgress(session)) kept[key] = session
-  }
-  if (Object.keys(kept).length !== Object.keys(map).length) await saveActiveSessions(kept)
-  return kept
+  return db.transaction('rw', db.settings, async () => {
+    const map = await readSessions()
+    const kept = Object.fromEntries(
+      Object.entries(map).filter(([, session]) => isSessionInProgress(session)),
+    )
+    if (Object.keys(kept).length !== Object.keys(map).length) await saveActiveSessions(kept)
+    return kept
+  })
 }
 
 export function isSessionInProgress(s: ActiveSession | null): s is ActiveSession {

@@ -78,7 +78,10 @@ const pagedItems = computed(() => {
 })
 
 function goReview(ids: string[]) {
-  router.push({ path: '/quiz', query: { ids: ids.join(',') } })
+  router.push({
+    path: '/quiz',
+    query: { category: activeCategory.value, source: 'bookmarks', ids: ids.join(',') },
+  })
 }
 
 async function toggleBookmark(questionId: string) {

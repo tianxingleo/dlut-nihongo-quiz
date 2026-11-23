@@ -392,7 +392,7 @@ const heatmapData = computed(() => {
         <span class="w-rate">{{ w.rate }}%</span>
         <button
           class="btn btn-outline btn-sm"
-          @click="router.push({ path: '/quiz', query: { ids: w.id } })"
+          @click="router.push({ path: '/quiz', query: { category: activeCategory, ids: w.id } })"
         >
           刷这题
         </button>
