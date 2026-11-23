@@ -10,7 +10,6 @@ import {
 } from 'vue-router'
 import {
   loadQuestionBank,
-  getQuestionsByTag,
   shuffleArray,
   generateSessionId,
   isMultiAnswerCorrect,
@@ -32,7 +31,7 @@ import {
   paperKeyFromEntryKey,
   type ActiveSession,
 } from '../services/sessionResume'
-import { useActiveCategory, loadActiveCategory, setActiveCategory } from '../services/categoryStore'
+import { loadActiveCategory, setActiveCategory } from '../services/categoryStore'
 import { useHiddenSite } from '../composables/useHiddenSite'
 import QuestionCard from '../components/quiz/QuestionCard.vue'
 import QuestionNavigator from '../components/quiz/QuestionNavigator.vue'
@@ -44,11 +43,12 @@ import { optionSignature, mapAnswer } from '../services/sessionAnswers'
 import { truncate } from '../utils/text'
 import { useAI } from '../composables/useAI'
 import { hasCompleteFillAnswer } from '../utils/multiAnswer'
+import { CATEGORIES } from '../config/categories'
 import type { Question, QuizMode, Category } from '../types/question'
 
 const route = useRoute()
 const router = useRouter()
-const activeCategory = useActiveCategory()
+const activeCategory = ref<Category>('japanese2')
 const { isUnlocked } = useHiddenSite()
 const { initAI } = useAI()
 
@@ -177,6 +177,7 @@ function snapshot(submittedNow: boolean): ActiveSession {
     draftsById,
     optionSignatures,
     lastActivityAt: lastActivityAt.value || undefined,
+    reselectIds: [...reselectIds.value],
     entryKey: restoredEntry || computeEntryKey(),
     paperKey: computePaperKey(),
     wrongRedo: wrongRedo.value,
@@ -259,15 +260,6 @@ function resolveMode(all: Question[]): {
   const shuffle = route.query.shuffle === '1'
   const questionTypeFilter = route.query.questionType as string | undefined
 
-  if (tag) {
-    return {
-      poolMode: 'tag',
-      displayMode: `tag: ${tag}`,
-      pool: filterVisibleQuestions(getQuestionsByTag(tag, activeCategory.value), isUnlocked.value),
-      shuffle: false,
-    }
-  }
-
   let pool: Question[]
   if (groupsParam) {
     const groupSet = new Set(groupsParam.split(','))
@@ -283,6 +275,19 @@ function resolveMode(all: Question[]): {
   }
   if (questionTypeFilter) {
     pool = pool.filter((q) => q.questionType === questionTypeFilter)
+  }
+
+  if (tag) {
+    return {
+      poolMode: 'tag',
+      displayMode: `tag: ${tag}`,
+      pool: pool.filter((q) => q.tags.includes(tag) || q.grammarPoints.includes(tag)),
+      shuffle: false,
+    }
+  }
+
+  if (idsParam && !computePaperKey()) {
+    return { poolMode: 'sequential', displayMode: '单题练习', pool, shuffle: false }
   }
 
   const poolMode: QuizMode = idsParam
@@ -330,35 +335,30 @@ async function tryRestoreSession(all: Question[]): Promise<boolean> {
   const allStats = await db.questionStats.toArray()
   bookmarkCache.value = new Set(allStats.filter((s) => s.isBookmarked).map((s) => s.questionId))
 
-  // 恢复条件：从首页"继续上次"进来（resume=1，并带上那条记录所属的 paperKey），
-  // 或直接刷新页面且存盘会话属于当前入口。
-  // fresh=1 表示用户从首页/错题本/搜索主动点入口要开新一轮，此时即使签名相同也不恢复（开新轮）。
-  // 后者（刷新自动恢复）避免了刷新后用初始状态（1/N）覆盖掉真实进度。
-  const resumePaper = (route.query.paper as string) || ''
-  const saved = await loadActiveSession(resumePaper || computePaperKey())
-  const explicitResume = route.query.resume === '1'
+  const saved = await loadActiveSession(computePaperKey())
   const wantsFresh = route.query.fresh === '1'
   wrongRedo.value = route.query.redo === '1'
-  const sameEntry = !wantsFresh && Boolean(saved)
-  // 无 query 参数直接进 /quiz（顶栏"刷题"、地址栏输入等）视为"继续上次"
-  const bareQuizEntry = Object.keys(route.query).length === 0
-  if ((explicitResume || sameEntry || bareQuizEntry) && isSessionInProgress(saved)) {
+  if ((!wantsFresh || route.query.resume === '1') && isSessionInProgress(saved)) {
     const map = new Map(all.map((q) => [q.id, q] as const))
-    questions.value = saved.questionIds.map((id) => map.get(id)).filter((q): q is Question => !!q)
+    const restored = saved.questionIds.map((id) => map.get(id)).filter((q): q is Question => !!q)
+    const nextIds = new Set(saved.questionIds.slice(saved.currentIndex + Number(saved.submitted)))
+    const nextIndex = restored.findIndex((q) => nextIds.has(q.id))
+    if (nextIndex < 0) return false
+    questions.value = restored
+    currentIndex.value = nextIndex
+    reselectIds.value = new Set(saved.reselectIds)
     sessionId.value = saved.sessionId
     mode.value = saved.mode
     correctCount.value = saved.correctCount
     wrongList.value = [...saved.wrongList]
     startedAt.value = saved.startedAt
-    const nextIds = saved.questionIds.slice(saved.currentIndex + Number(saved.submitted))
-    currentIndex.value = questions.value.findIndex((q) => nextIds.includes(q.id))
-    if (currentIndex.value < 0) return false
     submitted.value = false
     startTime.value = Date.now()
     elapsedTime.value = saved.elapsedSeconds || 0
     wrongRedo.value = saved.wrongRedo || false
     lastActivityAt.value = saved.lastActivityAt || ''
     restoredEntry = saved.entryKey
+    const positions = new Map(saved.questionIds.map((id, i) => [id, i]))
     const historyById = new Map((saved.history || []).filter(Boolean).map((h) => [h.questionId, h]))
     function restore(q: Question, value: string) {
       if (!value) return ''
@@ -377,7 +377,7 @@ async function tryRestoreSession(all: Question[]): Promise<boolean> {
       const previous = historyById.get(q.id)
       if (previous)
         history.value[i] = { ...previous, selectedKey: restore(q, previous.selectedKey) }
-      const draft = saved.draftsById?.[q.id] ?? saved.drafts?.[saved.questionIds.indexOf(q.id)]
+      const draft = saved.draftsById?.[q.id] ?? saved.drafts?.[positions.get(q.id) ?? -1]
       const answer = restore(q, draft || '')
       if (answer) drafts.value.set(i, answer)
     })
@@ -386,7 +386,7 @@ async function tryRestoreSession(all: Question[]): Promise<boolean> {
     return true
   }
 
-  // 主动开新一轮：把 fresh 标记从 URL 抹掉，这样之后刷新（F5）能匹配 entryKey 自动恢复进度。
+  // 用完一次性标记后，刷新页面时按当前练习范围自动恢复。
   if (wantsFresh) {
     const { fresh: _fresh, ...rest } = route.query
     router.replace({ path: route.path, query: rest })
@@ -438,20 +438,13 @@ async function startNewSession(all: Question[]) {
 
 onMounted(async () => {
   try {
-    await loadActiveCategory()
-    // 初始化 AI 功能
+    const storedCategory = await loadActiveCategory()
     await initAI()
-    const queryCat = route.query.category as Category | undefined
-    if (queryCat && queryCat !== activeCategory.value) {
-      await setActiveCategory(queryCat)
-    }
-    // 从首页"继续上次"进来时带着 paperKey（学科就在第一段），据此切学科，
-    // 避免在别的学科里加载题库、续到不对的卷子上。
-    const paperCat = ((route.query.paper as string) || '').split('|')[0] as Category | ''
-    if (paperCat && paperCat !== activeCategory.value) {
-      await setActiveCategory(paperCat)
-    }
-    const cat = activeCategory.value
+    const paperCategory = String(route.query.paper || '').split('|')[0]
+    const requested = paperCategory || route.query.category
+    const cat = CATEGORIES.find((item) => item.key === requested)?.key || storedCategory
+    activeCategory.value = cat
+    if (cat !== storedCategory && computePaperKey()) await setActiveCategory(cat)
     // 表站未解锁时剔除里站题（requireUnlock subBank 的 groupOrder）。里站入口设了 subBank 后 isUnlocked 必为 true，no-op。
     const all = filterVisibleQuestions(await loadQuestionBank(cat), isUnlocked.value)
 
@@ -892,7 +885,7 @@ function cancelLeave() {
       <div class="error-box">
         <h2>加载失败</h2>
         <p>{{ loadError }}</p>
-        <button class="btn btn-accent" @click="router.push('/home')">返回首页</button>
+        <RouterLink class="btn btn-accent" to="/">返回课程列表</RouterLink>
       </div>
     </div>
 

@@ -15,7 +15,7 @@ const KEY = STORAGE_KEYS.ACTIVE_SESSIONS
 
 /**
  * 试卷（题集）标识：学科 + 子题库/题单 + 标签，**不含练习方式** ——
- * 同一套题的顺序/随机/错题共用一条记录，不同试卷各存一条、互不覆盖。
+ * 同一套题的顺序与随机练习共用一条记录，不同试卷各存一条、互不覆盖。
  * 形如 `japanese2|g21,g22,…|`（2024 真题整套）、`history|t0|`（某个刷题单）、`history|all|`（整科）。
  */
 export function buildPaperKey(parts: {
@@ -48,14 +48,19 @@ export function paperKeyFromEntryKey(entryKey: string): string {
 
 /** 取一条会话所属的试卷标识：新记录直接用 paperKey，旧记录用 entryKey 兜底 */
 export function paperKeyOf(session: ActiveSession): string {
-  if (session.entryKey?.split('|')[5]) return paperKeyFromEntryKey(session.entryKey)
+  if (session.entryKey) {
+    const parts = session.entryKey.split('|')
+    if (parts[5]) {
+      if (session.wrongRedo && !parts[8]) parts[8] = 'wrong-redo'
+      return paperKeyFromEntryKey(parts.join('|'))
+    }
+  }
   if (session.paperKey) return session.paperKey
   return session.entryKey ? paperKeyFromEntryKey(session.entryKey) : ''
 }
 
-function startedAtMs(session: ActiveSession): number {
-  const ms = new Date(session.lastActivityAt || session.startedAt).getTime()
-  return Number.isNaN(ms) ? 0 : ms
+export function sessionActivityMs(session: ActiveSession): number {
+  return Date.parse(session.lastActivityAt || '') || Date.parse(session.startedAt) || 0
 }
 
 /**
@@ -78,7 +83,8 @@ export function pickSessionForScope(
       if (set === WHOLE_CATEGORY) continue
       if (!set.split(',').every((groupId) => allowed.has(groupId))) continue
     }
-    if (!best || startedAtMs(session) > startedAtMs(best.session)) best = { key, session }
+    if (!best || sessionActivityMs(session) > sessionActivityMs(best.session))
+      best = { key, session }
   }
 
   return best
@@ -92,13 +98,16 @@ export async function loadActiveSessions(): Promise<ActiveSessionMap> {
 async function readSessions(): Promise<ActiveSessionMap> {
   const stored = await getSetting(KEY, {} as ActiveSessionMap)
   const legacy = await getSetting(LEGACY_KEY, null as ActiveSession | null)
-  const entries = Object.values(stored || {})
+  const entries =
+    stored && 'sessionId' in stored
+      ? [stored as unknown as ActiveSession]
+      : Object.values(stored || {})
   if (legacy) entries.push(legacy)
   const map: ActiveSessionMap = {}
   for (const session of entries) {
     if (!session?.questionIds) continue
     const key = paperKeyOf(session)
-    if (key && (!map[key] || startedAtMs(session) >= startedAtMs(map[key]))) {
+    if (key && (!map[key] || sessionActivityMs(session) >= sessionActivityMs(map[key]))) {
       map[key] = { ...session, paperKey: key }
     }
   }
@@ -158,7 +167,7 @@ export function isSessionInProgress(s: ActiveSession | null): s is ActiveSession
 
   // 检查会话是否过期
   const sessionAge = Date.now() - new Date(s.startedAt).getTime()
-  if (sessionAge > SESSION.MAX_AGE_MS) return false
+  if (!Number.isFinite(sessionAge) || sessionAge > SESSION.MAX_AGE_MS) return false
 
   const nextIndex = s.submitted ? s.currentIndex + 1 : s.currentIndex
   return nextIndex < s.totalQuestions

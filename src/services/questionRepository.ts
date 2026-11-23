@@ -102,13 +102,11 @@ export async function loadQuestionBank(category: Category = 'japanese2'): Promis
 async function doLoad(category: Category): Promise<Question[]> {
   const base = import.meta.env.BASE_URL.replace(/\/+$/, '')
   const file = `${base}/${BANK_FILES[category]}`
+  const offlineMessage = '该题库尚未缓存，联网打开一次后可离线使用。'
   const resp = await fetch(file).catch(() => {
-    throw new Error(
-      navigator.onLine
-        ? '题库加载失败，请检查网络后重试。'
-        : '该题库尚未缓存，联网打开一次后可离线使用。',
-    )
+    throw new Error(navigator.onLine ? '题库加载失败，请检查网络后重试。' : offlineMessage)
   })
+  if (resp.headers.get('X-Quiz-Cache-Miss') === 'bank') throw new Error(offlineMessage)
   if (!resp.ok) throw new Error(`无法加载题库 ${file}: ${resp.status}`)
   if (import.meta.env.PROD && globalThis.caches && !navigator.serviceWorker?.controller) {
     const scope = new URL(import.meta.env.BASE_URL, location.href).href

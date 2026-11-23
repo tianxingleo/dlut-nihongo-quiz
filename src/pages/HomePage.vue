@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { summarizeProgress } from '../services/questionCatalog'
-import { shallowRef } from 'vue'
-import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, shallowRef, computed, onMounted, onBeforeUnmount, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useHiddenSite } from '../composables/useHiddenSite'
 import {
   loadQuestionBank,
@@ -28,10 +27,11 @@ import { getDailyAttemptCount, getSetting, resetQuestionStats } from '../db/data
 import {
   useActiveCategory,
   loadActiveCategory,
+  setActiveCategory,
   setActiveSubBankKey,
   useActiveSubBankKey,
 } from '../services/categoryStore'
-import { GROUPED_CATEGORIES } from '../config/categories'
+import { CATEGORIES, GROUPED_CATEGORIES } from '../config/categories'
 import { STORAGE_KEYS } from '../constants'
 import { computeStreak } from '../utils/streak'
 import StatCard from '../components/ui/StatCard.vue'
@@ -48,6 +48,7 @@ const ORDER_ITEMS = [
 ]
 
 const router = useRouter()
+const route = useRoute()
 const activeCategory = useActiveCategory()
 const { isUnlocked } = useHiddenSite()
 const loading = ref(true)
@@ -269,7 +270,11 @@ async function refresh() {
     groupStats.value = next
 
     // 会话记录按试卷分开存：这里只挑「当前正在看的这套题」的那条来展示
-    const sessions = await pruneInactiveSessions()
+    const sessions = Object.fromEntries(
+      Object.entries(await pruneInactiveSessions()).filter(([, session]) =>
+        session.questionIds.every((id) => validIds.has(id)),
+      ),
+    )
     const picked = pickSessionForScope(sessions, {
       category: cat,
       groups: currentSubBank.value?.groupOrder ?? null,
@@ -290,6 +295,8 @@ async function refresh() {
 
 onMounted(async () => {
   await loadActiveCategory()
+  const category = CATEGORIES.find((item) => item.key === route.query.category)
+  if (category) await setActiveCategory(category.key)
   await refresh()
 })
 
@@ -298,10 +305,15 @@ watch([activeCategory, isUnlocked], () => {
 })
 
 function startQuiz(mode: QuizMode | 'weakness' | 'review', options?: { shuffle?: boolean }) {
-  const params: Record<string, string> = { mode: mode === 'review' ? 'wrong' : mode, fresh: '1' }
+  const params: Record<string, string> = {
+    category: activeCategory.value,
+    mode: mode === 'review' ? 'wrong' : mode,
+    fresh: '1',
+  }
   if (options?.shuffle) params.shuffle = '1'
   if (mode === 'review' && reviewDueIds.value.length > 0) {
     params.ids = reviewDueIds.value.join(',')
+    params.source = 'due'
   } else if (mode === 'wrong' && wrongIds.value.length > 0) {
     params.ids = wrongIds.value.join(',')
   } else if (mode === 'untouched' && untouchedIds.value.length > 0) {
@@ -311,7 +323,7 @@ function startQuiz(mode: QuizMode | 'weakness' | 'review', options?: { shuffle?:
 }
 
 function startTagQuiz(tag: string) {
-  router.push({ path: '/quiz', query: { tag, fresh: '1' } })
+  router.push({ path: '/quiz', query: { category: activeCategory.value, tag, fresh: '1' } })
 }
 
 function startGroupQuiz(
@@ -321,7 +333,12 @@ function startGroupQuiz(
 ) {
   const s = groupStats.value[groupId]
   if (!s) return
-  const params: Record<string, string> = { group: groupId, mode, fresh: '1' }
+  const params: Record<string, string> = {
+    category: activeCategory.value,
+    group: groupId,
+    mode,
+    fresh: '1',
+  }
   if (options?.shuffle) params.shuffle = '1'
   if (options?.questionType) params.questionType = options.questionType
   if (mode === 'wrong' && s.wrongIds.length > 0) {
@@ -476,7 +493,12 @@ function startSubBankFull(
 ) {
   const sb = currentSubBank.value
   if (!sb) return
-  const params: Record<string, string> = { mode, groups: sb.groupOrder.join(','), fresh: '1' }
+  const params: Record<string, string> = {
+    category: activeCategory.value,
+    mode,
+    groups: sb.groupOrder.join(','),
+    fresh: '1',
+  }
   if (options?.shuffle) params.shuffle = '1'
   if (mode === 'wrong') {
     const allWrong: string[] = []

@@ -26,6 +26,7 @@ const partial = ref(false)
 const includeExplanations = ref(false)
 const { isUnlocked } = useHiddenSite()
 let revision = 0
+const panel = ref<HTMLElement>()
 const inputRef = ref<HTMLInputElement | null>(null)
 const scopeAll = ref(true)
 const activeCategory = useActiveCategory()
@@ -58,7 +59,20 @@ function doSearch() {
 }
 
 function handleKeydown(e: KeyboardEvent) {
-  if (e.key === 'Escape') emit('close')
+  if (e.key === 'Escape') {
+    emit('close')
+    return
+  }
+  if (e.key !== 'Tab') return
+  const items = panel.value?.querySelectorAll<HTMLElement>('input, button')
+  if (!items?.length) return
+  const first = items[0]
+  const last = items[items.length - 1]
+  if (document.activeElement === (e.shiftKey ? first : last)) {
+    e.preventDefault()
+    const next = e.shiftKey ? last : first
+    next.focus()
+  }
 }
 
 watch([keyword, scopeAll, includeExplanations, isUnlocked, activeCategory], doSearch)
@@ -67,10 +81,8 @@ watch(
   () => props.visible,
   (v) => {
     if (v) {
-      document.addEventListener('keydown', handleKeydown)
       nextTick(() => inputRef.value?.focus())
     } else {
-      document.removeEventListener('keydown', handleKeydown)
       keyword.value = ''
       doSearch()
     }
@@ -78,7 +90,6 @@ watch(
 )
 
 onUnmounted(() => {
-  document.removeEventListener('keydown', handleKeydown)
   revision++
   if (debounceTimer) clearTimeout(debounceTimer)
 })
@@ -100,7 +111,14 @@ function highlightMatch(text: string, kw: string): string {
 </script>
 <template>
   <div v-if="visible" class="search-backdrop" @click="onBackdropClick">
-    <div class="search-panel" role="dialog" aria-modal="true" aria-label="搜索题目">
+    <div
+      ref="panel"
+      class="search-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-label="搜索题目"
+      @keydown.stop="handleKeydown"
+    >
       <div class="search-input-wrap">
         <span class="search-icon">⌕</span>
         <input

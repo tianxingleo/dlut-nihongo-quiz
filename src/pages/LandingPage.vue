@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
+import { pruneInactiveSessions, sessionActivityMs } from '../services/sessionResume'
 import { loadCatalog, summarizeProgress } from '../services/questionCatalog'
 import { useHiddenSite } from '../composables/useHiddenSite'
-import { loadActiveCategory, setActiveCategory } from '../services/categoryStore'
 import { CATEGORIES } from '../config/categories'
 import { ENTRIES, findEntry, entryOfCategory } from '../config/entries'
 import { db } from '../db/database'
 import type { Category } from '../types/question'
 import type { CategoryMeta } from '../config/categories'
 
-const router = useRouter()
 const route = useRoute()
 const { isUnlocked } = useHiddenSite()
 /** 当前是不是某个入口的二级页（路由 `/<入口 key>`，入口清单在 src/config/entries.ts） */
@@ -63,13 +62,28 @@ const totalQuestions = ref(0)
 const loading = ref(true)
 const error = ref('')
 const currentYear = new Date().getFullYear()
+const coursesHeading = ref<HTMLElement>()
+const recent = ref<{
+  key: string
+  category: Category
+  label: string
+  index: number
+  total: number
+}>()
+function focusCourses() {
+  coursesHeading.value?.scrollIntoView({ block: 'start' })
+  coursesHeading.value?.focus({ preventScroll: true })
+}
 
 async function refresh() {
   loading.value = true
   error.value = ''
   try {
-    await loadActiveCategory()
-    const [banks, stats] = await Promise.all([loadCatalog(), db.questionStats.toArray()])
+    const [banks, stats, sessions] = await Promise.all([
+      loadCatalog(),
+      db.questionStats.toArray(),
+      pruneInactiveSessions(),
+    ])
     const statsById = new Map(stats.map((s) => [s.questionId, s]))
     const share = banks.map(({ category, questions }) => ({
       category,
@@ -83,6 +97,41 @@ async function refresh() {
     )
     totalQuestions.value = share.reduce((sum, { ids }) => sum + ids.length, 0)
     totalDone.value = Object.values(categoryProgress.value).reduce((sum, row) => sum + row.done, 0)
+    recent.value = undefined
+    const visibleIds = new Map(share.map(({ category, ids }) => [category, new Set(ids)]))
+    const latest = Object.entries(sessions)
+      .sort(([, a], [, b]) => sessionActivityMs(b) - sessionActivityMs(a))
+      .find(([key, session]) => {
+        const hasProgress =
+          session.lastActivityAt || !session.optionSignatures || session.currentIndex > 0
+        const ids = visibleIds.get(key.split('|')[0] as Category)
+        return hasProgress && ids && session.questionIds.every((id) => ids.has(id))
+      })
+    if (latest) {
+      const [key, session] = latest
+      const bank = banks.find((bank) => bank.category === key.split('|')[0])
+      const course = CATEGORIES.find((category) => category.key === bank?.category)
+      if (bank && course) {
+        const [, scope] = key.split('|')
+        const groups = new Set(scope.split(','))
+        const title = bank.questions.find((q) => groups.has(q.groupId))?.groupTitle
+        const label =
+          scope === 'all'
+            ? session.mode.startsWith('tag:')
+              ? session.mode.slice(4).trim()
+              : '整科练习'
+            : scope === 'review' || groups.size > 1
+              ? session.mode
+              : title || session.mode
+        recent.value = {
+          key,
+          category: course.key,
+          label: `${course.long} · ${label}`,
+          index: session.currentIndex + Number(session.submitted) + 1,
+          total: session.totalQuestions,
+        }
+      }
+    }
   } catch (e) {
     error.value = e instanceof Error ? e.message : '加载题库失败，请刷新页面重试'
   } finally {
@@ -92,19 +141,6 @@ async function refresh() {
 
 onMounted(refresh)
 watch(isUnlocked, refresh)
-
-async function enterSubject(cat: Category) {
-  await setActiveCategory(cat)
-  router.push('/home')
-}
-
-function quickStart() {
-  router.push('/home')
-}
-
-function goCalculusNotes() {
-  router.push('/calculus-notes')
-}
 
 const subjects = computed(() =>
   (showingFolders.value
@@ -139,66 +175,35 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
       </p>
     </header>
     <section v-else class="hero">
-      <div class="hero-badge stagger-1">DLUT · 国际信息与软件学院</div>
-      <h1 class="hero-title stagger-2">题库</h1>
-      <p class="hero-sub stagger-3">
-        日语语法词汇 · 近代史 · 党史 · 军事理论 · 计算机组成<br />一体化期末复习平台
-      </p>
-      <p class="hero-desc stagger-4">
-        覆盖 {{ totalQuestions.toLocaleString() }} 道题目，内置智能错题本、掌握度追踪、薄弱点分析。
-        键盘驱动，高效刷题。
-      </p>
-      <div class="hero-actions stagger-5">
-        <button class="btn btn-accent btn-lg" @click="quickStart">开始复习</button>
-        <button class="btn btn-outline btn-lg" @click="router.push('/settings')">了解更多</button>
-        <a
-          class="btn btn-github btn-lg"
-          href="https://github.com/tianxingleo/dlut-nihongo-quiz"
-          target="_blank"
-          rel="noopener noreferrer"
+      <h1 class="hero-title">期末复习题库</h1>
+      <p class="hero-sub">大连理工大学国际信息与软件学院</p>
+      <div class="hero-actions">
+        <RouterLink
+          v-if="recent"
+          class="btn btn-accent btn-lg"
+          :to="{
+            path: '/quiz',
+            query: { resume: '1', category: recent.category, paper: recent.key },
+          }"
+          >继续上次</RouterLink
         >
-          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor">
-            <path
-              d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"
-            />
-          </svg>
-          GitHub
-        </a>
+        <button
+          class="btn btn-lg"
+          :class="recent ? 'btn-outline' : 'btn-accent'"
+          @click="focusCourses"
+        >
+          选课程
+        </button>
       </div>
+      <p v-if="recent" class="resume-detail">
+        {{ recent.label }} · 第 {{ recent.index }}/{{ recent.total }} 题
+      </p>
     </section>
-
-    <!-- Stats strip -->
-    <section v-if="!currentEntry" class="stats-strip">
-      <div class="strip-item">
-        <span class="strip-num">{{ totalQuestions.toLocaleString() }}</span>
-        <span class="strip-label">题库总量</span>
-      </div>
-      <div class="strip-divider" />
-      <div class="strip-item">
-        <span class="strip-num">{{ subjectCount }}</span>
-        <span class="strip-label">学科门类</span>
-      </div>
-      <div class="strip-divider" />
-      <div class="strip-item">
-        <span class="strip-num">键盘</span>
-        <span class="strip-label">驱动刷题</span>
-      </div>
-      <div class="strip-divider" />
-      <div class="strip-item">
-        <span class="strip-num">离线</span>
-        <span class="strip-label">本地可用</span>
-      </div>
-    </section>
-
-    <p v-if="loading" role="status">正在读取题库目录…</p>
-    <div v-else-if="error" role="status">
-      {{ error }} <button class="btn btn-outline" @click="refresh">重试</button>
-    </div>
 
     <!-- Subject cards -->
     <section class="subjects">
-      <h2>
-        {{ showingFolders ? '选择分类' : currentEntry ? '选择试卷' : '选择学科，开始复习' }}
+      <h2 ref="coursesHeading" tabindex="-1">
+        {{ showingFolders ? '选择分类' : currentEntry ? '选择试卷' : '课程列表' }}
       </h2>
       <div class="subject-grid">
         <template v-if="showingFolders && currentEntry">
@@ -220,15 +225,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
             <span class="sc-arrow">&rarr;</span>
           </RouterLink>
         </template>
-        <div v-if="!currentEntry" class="subject-card calculus-card" @click="goCalculusNotes">
-          <div class="sc-icon">微</div>
-          <div class="sc-body">
-            <h3 class="sc-title">微积分2</h3>
-            <p class="sc-desc">第1–18课 · 级数→高斯公式 · 笔记整理</p>
-          </div>
-          <div class="sc-count">18 课</div>
-          <span class="sc-arrow">&rarr;</span>
-        </div>
         <!-- 入口卡：清单与顺序都由 src/config/entries.ts 决定 -->
         <template v-if="!currentEntry">
           <RouterLink
@@ -249,7 +245,12 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
             <span class="sc-arrow">&rarr;</span>
           </RouterLink>
         </template>
-        <div v-for="s in subjects" :key="s.key" class="subject-card" @click="enterSubject(s.key)">
+        <RouterLink
+          v-for="s in subjects"
+          :key="s.key"
+          class="subject-card subject-link"
+          :to="{ path: '/home', query: { category: s.key } }"
+        >
           <div class="sc-icon">{{ s.icon }}</div>
           <div class="sc-body">
             <h3 class="sc-title">{{ s.title }}</h3>
@@ -275,7 +276,37 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
           </div>
           <div class="sc-count">{{ counts[s.key] || '—' }} 题</div>
           <span class="sc-arrow">&rarr;</span>
-        </div>
+        </RouterLink>
+        <RouterLink v-if="!currentEntry" class="subject-card subject-link" to="/calculus-notes">
+          <div class="sc-icon">微</div>
+          <div class="sc-body">
+            <h3 class="sc-title">微积分2</h3>
+            <p class="sc-desc">第1–18课 · 级数至高斯公式 · 笔记整理</p>
+          </div>
+          <div class="sc-count">18 课</div>
+          <span class="sc-arrow">&rarr;</span>
+        </RouterLink>
+      </div>
+      <p v-if="loading" role="status">正在读取题库目录…</p>
+      <div v-else-if="error" role="status">
+        {{ error }} <button class="btn btn-outline" @click="refresh">重试</button>
+      </div>
+    </section>
+
+    <section v-if="!currentEntry && !loading && !error" class="stats-strip" aria-label="题库统计">
+      <div class="strip-item">
+        <span class="strip-num">{{ totalQuestions.toLocaleString() }}</span>
+        <span class="strip-label">题库总量</span>
+      </div>
+      <div class="strip-divider" />
+      <div class="strip-item">
+        <span class="strip-num">{{ totalDone.toLocaleString() }}</span>
+        <span class="strip-label">已做题数</span>
+      </div>
+      <div class="strip-divider" />
+      <div class="strip-item">
+        <span class="strip-num">{{ subjectCount }}</span>
+        <span class="strip-label">课程入口</span>
       </div>
     </section>
 
@@ -308,13 +339,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
           <p>支持导出/导入 JSON 备份，刷题记录随身携带，换设备无缝切换。</p>
         </div>
       </div>
-    </section>
-
-    <!-- Footer CTA -->
-    <section v-if="!currentEntry" class="cta">
-      <h2>准备好了吗？</h2>
-      <p>选择一个学科，开始高效刷题。</p>
-      <button class="btn btn-accent btn-lg" @click="quickStart">进入仪表盘</button>
     </section>
 
     <footer class="landing-footer">
@@ -357,22 +381,7 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 80px 0 60px;
-}
-.hero-badge {
-  display: inline-block;
-  padding: 4px 16px;
-  border: 1px solid var(--border);
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 28px;
-  transition:
-    border-color 0.25s var(--ease-ink),
-    color 0.25s var(--ease-ink);
-}
-.hero-badge:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  padding: 44px 0 32px;
 }
 .hero-title {
   font-family: var(--font-display);
@@ -390,13 +399,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   line-height: 1.8;
   margin-bottom: 16px;
 }
-.hero-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  max-width: 500px;
-  margin: 0 auto 36px;
-  line-height: 1.7;
-}
 .hero-actions {
   display: flex;
   gap: 10px;
@@ -404,24 +406,10 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   flex-wrap: wrap;
 }
 
-/* GitHub 按钮 */
-.btn-github {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #24292e;
-  color: #fff;
-  border: 1px solid #24292e;
-  transition: all 0.2s var(--ease-ink);
-}
-.btn-github:hover {
-  background: #2f363d;
-  border-color: #2f363d;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.btn-github svg {
-  flex-shrink: 0;
+.resume-detail {
+  margin-block: 12px 0;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
 }
 
 /* Stats strip */
@@ -469,6 +457,7 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   text-align: center;
   margin-bottom: 28px;
   letter-spacing: 1px;
+  scroll-margin-top: 70px;
 }
 .subject-grid {
   display: flex;
@@ -529,6 +518,8 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   background: color-mix(in srgb, var(--accent) 6%, transparent);
 }
 .sc-body {
+  min-width: 0;
+  overflow-wrap: anywhere;
   flex: 1;
   min-width: 0;
 }
@@ -621,27 +612,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   line-height: 1.7;
 }
 
-/* CTA */
-.cta {
-  text-align: center;
-  padding: 60px 0;
-  margin-bottom: 48px;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.cta h2 {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-}
-.cta p {
-  font-size: 14px;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-}
-
 /* Footer */
 .landing-footer {
   text-align: center;
@@ -673,12 +643,15 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
 }
 
 @media (max-width: 639px) {
+  .landing {
+    padding-inline: 14px;
+  }
   .hero {
-    padding: 40px 0 32px;
+    padding: 28px 0 20px;
   }
   .hero-title {
-    font-size: 36px;
-    letter-spacing: 4px;
+    font-size: clamp(26px, 8vw, 36px);
+    letter-spacing: 2px;
   }
   .hero-sub {
     font-size: 15px;
@@ -695,7 +668,8 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
     display: none;
   }
   .subject-card {
-    padding: 14px 16px;
+    padding: 12px;
+    gap: 10px;
   }
   .sc-icon {
     width: 40px;

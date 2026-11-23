@@ -1,3 +1,5 @@
+import 'fake-indexeddb/auto'
+import { db, importData } from '../db/database'
 import { describe, it, expect } from 'vitest'
 import {
   isSessionInProgress,
@@ -5,6 +7,8 @@ import {
   paperKeyFromEntryKey,
   paperKeyOf,
   pickSessionForScope,
+  loadActiveSessions,
+  saveActiveSession,
   type ActiveSession,
   type ActiveSessionMap,
 } from './sessionResume'
@@ -151,4 +155,31 @@ it('isolates temporary questions and normalizes review sets', () => {
     'history|review|bookmarks|q1',
   )
   expect(buildPaperKey({ category: 'history', questionType: 'fill' })).toBe('history|all||fill')
+})
+
+it('migrates both backup formats and keeps concurrent saves for separate practice sets', async () => {
+  await db.settings.clear()
+  const whole = makeSession({ entryKey: 'history|sequential|||||', currentIndex: 1 })
+  const review = makeSession({ entryKey: 'history|wrong||||q2,q1|', paperKey: 'history|all|' })
+  await importData(
+    JSON.stringify({
+      version: 2,
+      settings: [
+        { key: 'activeSession', value: JSON.stringify(whole) },
+        { key: 'activeSessions', value: JSON.stringify({ 'history|all|': review }) },
+      ],
+    }),
+  )
+  await Promise.all([
+    saveActiveSession(makeSession({ entryKey: 'history|wrong||||q3,q1|||wrong' })),
+    saveActiveSession(makeSession({ entryKey: 'history|wrong||||q3,q1|||bookmarks' })),
+    saveActiveSession(makeSession({ entryKey: 'history|wrong||||q1|' })),
+  ])
+  expect(await loadActiveSessions()).toMatchObject({
+    'history|all|': { currentIndex: 1 },
+    'history|review|legacy|q1,q2': { entryKey: review.entryKey },
+    'history|review|wrong|q1,q3': {},
+    'history|review|bookmarks|q1,q3': {},
+  })
+  expect(Object.keys(await loadActiveSessions())).toHaveLength(4)
 })

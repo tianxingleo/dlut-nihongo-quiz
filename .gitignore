@@ -167,3 +167,6 @@ scripts/debug/_*.txt
 
 # Temporary files
 /tmp/
+
+/test-results/
+/playwright-report/

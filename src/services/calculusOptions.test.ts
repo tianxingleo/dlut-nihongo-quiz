@@ -16,7 +16,7 @@ it('preserves printed option letters when loading every calculus paper', async (
     const original = JSON.parse(readFileSync(`public/${paper.bankFile}`, 'utf8'))
     vi.stubGlobal(
       'fetch',
-      vi.fn(async () => ({ ok: true, json: async () => original })),
+      vi.fn(async () => Response.json(original)),
     )
     const loaded = await loadQuestionBank(paper.key)
     expect(loaded.map((question) => [question.options, question.answerKey])).toEqual(

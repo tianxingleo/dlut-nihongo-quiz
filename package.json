@@ -41,8 +41,8 @@
     "parse:all": "npm run parse:grammar && npm run parse:japanese2024 && npm run parse:japanese2021 && npm run parse:words && npm run merge:japanese2 && npm run parse:history && npm run parse:party && npm run parse:military && npm run parse:computer && npm run parse:computerPaper && npm run parse:japanese2-midterm && npm run parse:japanese1 && npm run parse:japanese3-homework && npm run parse:japanese3-classroom-tests && npm run parse:calculus && npm run generate:meta",
     "generate:meta": "node scripts/generate-meta.mjs",
     "audit:banks": "node scripts/audit-banks.mjs",
-    "format": "prettier --write \"src/**/*.{ts,vue,css}\" \"scripts/**/*.{ts,mjs}\" \"*.{json,md}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,vue,css}\" \"scripts/**/*.{ts,mjs}\" \"*.{json,md}\"",
+    "format": "prettier --write \"src/**/*.{ts,vue,css}\" \"scripts/**/*.{ts,mjs}\" \"*.{json,md}\" \"e2e/**/*.ts\" playwright.config.ts vite.config.ts public/sw.js",
+    "format:check": "prettier --check \"src/**/*.{ts,vue,css}\" \"scripts/**/*.{ts,mjs}\" \"*.{json,md}\" \"e2e/**/*.ts\" playwright.config.ts vite.config.ts public/sw.js",
     "parse:computer": "node scripts/parse-computer-banks.mjs",
     "parse:computerPaper": "tsx scripts/parse-computer-paper.ts",
     "test:computer": "node --test scripts/test-computer-banks.mjs",
@@ -53,7 +53,8 @@
     "parse:japanese3-classroom-tests": "node scripts/parse-japanese3-classroom-tests.mjs",
     "test:japanese1": "node --test scripts/test-japanese1-vocabulary.mjs",
     "parse:calculus": "node scripts/parse-calculus-midterms.mjs",
-    "test:calculus": "node --test scripts/test-calculus-midterms.mjs"
+    "test:calculus": "node --test scripts/test-calculus-midterms.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@types/dompurify": "^3.0.5",
@@ -69,6 +70,7 @@
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.105.0",
+    "@playwright/test": "^1.65.1",
     "@types/node": "^24.12.3",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/tsconfig": "^0.9.1",

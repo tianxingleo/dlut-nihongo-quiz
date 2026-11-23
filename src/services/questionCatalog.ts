@@ -35,7 +35,7 @@ async function cachedQuestions(): Promise<Question[]> {
     CATEGORIES.map(async ({ key, bankFile }) => {
       const loaded = getQuestions(key)
       if (loaded.length || !globalThis.caches) return loaded
-      const response = await caches.match(resourceUrl(bankFile))
+      const response = await caches.match(resourceUrl(bankFile), { ignoreVary: true })
       if (!response) return []
       const questions = (await response.json()) as Question[]
       return questions.map((q) => ({ ...q, category: key }))

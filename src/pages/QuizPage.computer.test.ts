@@ -2,6 +2,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createApp, nextTick, type App } from 'vue'
 import { createMemoryHistory, createRouter } from 'vue-router'
+import { optionSignature } from '../services/sessionAnswers'
 import type { ActiveSession, Question } from '../types/question'
 
 const mocks = vi.hoisted(() => ({
@@ -211,6 +212,50 @@ describe('computer question bank uses the existing quiz flow', () => {
     expect(host.querySelector('.q-stem .katex')).not.toBeNull()
     expect(host.querySelector('.fill-input')).toBeNull()
   })
+
+  it.each([false, true])(
+    'restores the original selected text after reshuffle (revised: %s)',
+    async (revised) => {
+      const original = sample({
+        options: [
+          { key: 'A', text: '16 KB' },
+          { key: 'B', text: '32 KB' },
+        ],
+      })
+      const shuffled = sample({
+        options: [
+          { key: 'A', originalKey: 'B', text: '32 KB' },
+          { key: 'B', originalKey: 'A', text: revised ? '64 KB' : '16 KB' },
+        ],
+        answerKey: 'B',
+      })
+      const second = sample({ id: 'computer-2021-final-002' })
+      mocks.questions = [shuffled, second]
+      mocks.savedSession = {
+        sessionId: 'saved-shuffle',
+        mode: 'sequential',
+        questionIds: [original.id, second.id],
+        totalQuestions: 2,
+        currentIndex: 0,
+        submitted: true,
+        correctCount: 1,
+        wrongList: [],
+        startedAt: new Date().toISOString(),
+        history: [{ questionId: original.id, selectedKey: 'A', isCorrect: true }],
+        optionSignatures: { [original.id]: optionSignature(original) },
+      }
+      await mountQuiz('mode=sequential')
+      button('上一题').click()
+      await nextTick()
+      if (revised) {
+        expect(host.querySelector('.opt-btn.selected')).toBeNull()
+        expect(host.textContent).toContain('原选项无法恢复')
+      } else {
+        expect(host.querySelector('.opt-btn.selected')?.textContent).toContain('16 KB')
+      }
+      expect(mocks.saveSession.mock.lastCall?.[0].history?.[0]?.isCorrect).toBe(true)
+    },
+  )
 
   it('submits generated answers and records attempts using ordinary scoring', async () => {
     mocks.questions = [sample()]

@@ -5,6 +5,8 @@ const shellName = `${prefix}shell:${VERSION}`
 const bankName = `${prefix}banks`
 const indexName = `${prefix}index:${VERSION}`
 const scoped = (path) => new URL(path, scope).href
+// 静态资源的响应只取决于同源 URL，预缓存和模块加载的 Origin 请求头可能不同。
+const staticMatch = { ignoreVary: true }
 const isBank = (url) => new URL(url).pathname.endsWith('-question-bank.json')
 const assets = [
   'index.html',
@@ -23,12 +25,12 @@ self.addEventListener('activate', (event) => {
     (async () => {
       const names = await caches.keys()
       const banks = await caches.open(bankName)
-      for (const name of names.filter((name) => name.startsWith('quiz-cache-'))) {
+      for (const name of names.filter((name) => name.startsWith('quiz-cache-')).reverse()) {
         const old = await caches.open(name)
         for (const request of await old.keys()) {
           if (!request.url.startsWith(scope) || !isBank(request.url)) continue
-          if (await banks.match(request)) continue
-          const response = await old.match(request)
+          if (await banks.match(request, staticMatch)) continue
+          const response = await old.match(request, staticMatch)
           if (response?.ok) await banks.put(request, response)
         }
       }
@@ -54,19 +56,25 @@ async function fetchBank(request) {
   const cache = await caches.open(bankName)
   try {
     const response = await fetch(request)
-    if (response.ok) await cache.put(request, response.clone())
+    if (response.ok) await cache.put(request, response.clone()).catch(console.warn)
     return response
   } catch {
-    return (await cache.match(request)) || Response.error()
+    return (
+      (await cache.match(request, staticMatch)) ||
+      new Response(null, {
+        status: 503,
+        headers: { 'X-Quiz-Cache-Miss': 'bank' },
+      })
+    )
   }
 }
 
 async function cachedResource(request, name) {
   const cache = await caches.open(name)
-  const cached = await cache.match(request)
+  const cached = await cache.match(request, staticMatch)
   if (cached) return cached
   const response = await fetch(request)
-  if (response.ok) await cache.put(request, response.clone())
+  if (response.ok) await cache.put(request, response.clone()).catch(console.warn)
   return response
 }
 
@@ -75,7 +83,9 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET' || !request.url.startsWith(scope)) return
   const path = new URL(request.url).pathname
   if (request.mode === 'navigate') {
-    event.respondWith(caches.open(shellName).then((cache) => cache.match(scoped('index.html'))))
+    event.respondWith(
+      caches.open(shellName).then((cache) => cache.match(scoped('index.html'), staticMatch)),
+    )
   } else if (isBank(request.url)) {
     event.respondWith(fetchBank(request))
   } else if (/\/question-(?:search|explanations)\.json$/.test(path)) {
