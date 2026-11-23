@@ -364,6 +364,16 @@ export const CATEGORIES: CategoryMeta[] = [
     groupViewHint: '全卷 1 张题单；匹配题的公共题干已复制到每道小题的题干上方。',
   },
   {
+    key: 'japanese3-final-vocabulary',
+    short: '期末单词（第47–50课，自编）',
+    long: '综合日语3 · 期末单词（第47–50课，自编）',
+    desc: '92题 · 根据教材单词表自编 · 读音与汉字书写',
+    icon: '词',
+    bankFile: 'japanese3-final-vocabulary-question-bank.json',
+    groupOrder: ['lesson-47', 'lesson-48', 'lesson-49', 'lesson-50'],
+    groupViewTitle: '按课练习',
+  },
+  {
     key: 'japanese3-homework',
     short: '学习通下半学期作业',
     long: '综合日语3 · 学习通下半学期作业',

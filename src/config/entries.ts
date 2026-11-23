@@ -82,9 +82,10 @@ export const ENTRIES: EntryMeta[] = [
     key: 'jp-3',
     name: '综合日语3',
     icon: '组',
-    desc: '第37–43课单词 · 学习通期中、下半学期作业与课堂测试 · 2022/2024期末',
+    desc: '第37–43课单词 · 第47–50课期末自编单词 · 学习通练习 · 2022/2024期末',
     papers: [
       'japanese3',
+      'japanese3-final-vocabulary',
       'jp-3-2022',
       'jp-3-2024',
       'jp-3',

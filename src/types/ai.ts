@@ -107,6 +107,7 @@ export const AI_SYSTEM_PROMPTS = {
       japanese2: '综合日语2',
       japanese3: '综合日语3',
       'japanese3-homework': '综合日语3',
+      'japanese3-final-vocabulary': '综合日语3',
       'japanese3-classroom-words': '综合日语3',
       'japanese3-classroom-grammar': '综合日语3',
       history: '中国近现代史',

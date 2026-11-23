@@ -27,6 +27,7 @@ describe('CATEGORIES config', () => {
       'japanese3',
       'japanese3-classroom-grammar',
       'japanese3-classroom-words',
+      'japanese3-final-vocabulary',
       'japanese3-homework',
       'jp-3',
       'jp-3-2022',

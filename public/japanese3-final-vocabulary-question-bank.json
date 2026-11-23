@@ -1,0 +1,4418 @@
+[
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-1",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 1,
+    "stem": "请选择划线部分的读音。\n\nうちの先生は時間にとても<u>厳しい</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きびしい"
+      },
+      {
+        "key": "B",
+        "text": "きみしい"
+      },
+      {
+        "key": "C",
+        "text": "ぎびしい"
+      },
+      {
+        "key": "D",
+        "text": "きびい"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "きびしい",
+    "translation": "",
+    "explanation": "きびしい，\"严格、严厉\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "厳しい",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-2",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 2,
+    "stem": "请选择划线部分的汉字写法。\n\nまつりの夜には多くの人が<u>あつまります</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "集ります"
+      },
+      {
+        "key": "B",
+        "text": "集まります"
+      },
+      {
+        "key": "C",
+        "text": "集合ます"
+      },
+      {
+        "key": "D",
+        "text": "聚まります"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "集まります",
+    "translation": "",
+    "explanation": "集まります，读作あつまります，\"聚集\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "集まる",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-3",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 3,
+    "stem": "请选择划线部分的读音。\n\n事故の後、<u>救急車</u>がすぐ来ました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きゅうききゅしゃ"
+      },
+      {
+        "key": "B",
+        "text": "ききゅうしゃ"
+      },
+      {
+        "key": "C",
+        "text": "きゅうきゅうしゃ"
+      },
+      {
+        "key": "D",
+        "text": "すくいきしゃ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "きゅうきゅうしゃ",
+    "translation": "",
+    "explanation": "きゅうきゅうしゃ，\"救护车\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "救急車",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-4",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 4,
+    "stem": "请选择划线部分的汉字写法。\n\n姉は来年<u>こんやく</u>する予定だ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "婚束"
+      },
+      {
+        "key": "B",
+        "text": "姻約"
+      },
+      {
+        "key": "C",
+        "text": "結約"
+      },
+      {
+        "key": "D",
+        "text": "婚約"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "婚約",
+    "translation": "",
+    "explanation": "婚約，读作こんやく，\"订婚\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "婚約",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 4,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-5",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 5,
+    "stem": "请选择划线部分的读音。\n\n<u>恋人</u>と海を見に行った。",
+    "options": [
+      {
+        "key": "A",
+        "text": "れんじん"
+      },
+      {
+        "key": "B",
+        "text": "こいびと"
+      },
+      {
+        "key": "C",
+        "text": "こいひと"
+      },
+      {
+        "key": "D",
+        "text": "れんにん"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "こいびと",
+    "translation": "",
+    "explanation": "こいびと，\"恋人\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "恋人",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 5,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-6",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 6,
+    "stem": "请选择划线部分的读音。\n\n<u>相手</u>の気持ちを考えることが大切だ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "あいて"
+      },
+      {
+        "key": "B",
+        "text": "あいしゅ"
+      },
+      {
+        "key": "C",
+        "text": "そうて"
+      },
+      {
+        "key": "D",
+        "text": "しょうて"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "あいて",
+    "translation": "",
+    "explanation": "あいて，\"对方\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "相手",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 6,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-7",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 7,
+    "stem": "请选择划线部分的汉字写法。\n\n大学で今の友達と<u>しりあった</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "知り合た"
+      },
+      {
+        "key": "B",
+        "text": "知合った"
+      },
+      {
+        "key": "C",
+        "text": "知り合った"
+      },
+      {
+        "key": "D",
+        "text": "智り合った"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "知り合った",
+    "translation": "",
+    "explanation": "知り合った，是知り合う的过去式，\"结识\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "知り合う",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 7,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-8",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 8,
+    "stem": "请选择划线部分的汉字写法。\n\nこの国の<u>じんこう</u>は減っている。",
+    "options": [
+      {
+        "key": "A",
+        "text": "人々"
+      },
+      {
+        "key": "B",
+        "text": "人交"
+      },
+      {
+        "key": "C",
+        "text": "入口"
+      },
+      {
+        "key": "D",
+        "text": "人口"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "人口",
+    "translation": "",
+    "explanation": "人口，读作じんこう，\"人口\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "人口",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 8,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-9",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 9,
+    "stem": "请选择划线部分的读音。\n\n<u>科学</u>の力で病気を治す。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かくがく"
+      },
+      {
+        "key": "B",
+        "text": "かがく"
+      },
+      {
+        "key": "C",
+        "text": "かがこ"
+      },
+      {
+        "key": "D",
+        "text": "しかがく"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "かがく",
+    "translation": "",
+    "explanation": "かがく，\"科学\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "科学",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 9,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-10",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 10,
+    "stem": "请选择划线部分的读音。\n\n<u>医学</u>の発展は素晴らしい。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いかく"
+      },
+      {
+        "key": "B",
+        "text": "いぎゃく"
+      },
+      {
+        "key": "C",
+        "text": "いがく"
+      },
+      {
+        "key": "D",
+        "text": "いがっく"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "いがく",
+    "translation": "",
+    "explanation": "いがく，\"医学\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "医学",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 10,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-11",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 11,
+    "stem": "请选择划线部分的汉字写法。\n\n新しい薬の<u>じっけん</u>を行う。",
+    "options": [
+      {
+        "key": "A",
+        "text": "実験"
+      },
+      {
+        "key": "B",
+        "text": "実検"
+      },
+      {
+        "key": "C",
+        "text": "実険"
+      },
+      {
+        "key": "D",
+        "text": "時験"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "実験",
+    "translation": "",
+    "explanation": "実験，读作じっけん，\"实验\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "実験",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 11,
+      "originalNumbers": [
+        "11"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-12",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 12,
+    "stem": "请选择划线部分的读音。\n\n<u>大統領</u>がテレビで話した。",
+    "options": [
+      {
+        "key": "A",
+        "text": "だいどうりょう"
+      },
+      {
+        "key": "B",
+        "text": "だいとうりょ"
+      },
+      {
+        "key": "C",
+        "text": "たいとうりょう"
+      },
+      {
+        "key": "D",
+        "text": "だいとうりょう"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "だいとうりょう",
+    "translation": "",
+    "explanation": "だいとうりょう，\"总统\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "大統領",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 12,
+      "originalNumbers": [
+        "12"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-13",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 13,
+    "stem": "请选择划线部分的汉字写法。\n\n彼に<u>こうい</u>を持っている。",
+    "options": [
+      {
+        "key": "A",
+        "text": "好気"
+      },
+      {
+        "key": "B",
+        "text": "好意"
+      },
+      {
+        "key": "C",
+        "text": "好義"
+      },
+      {
+        "key": "D",
+        "text": "好衣"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "好意",
+    "translation": "",
+    "explanation": "好意，读作こうい，\"好意、善意\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "好意",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 13,
+      "originalNumbers": [
+        "13"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-14",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 14,
+    "stem": "请选择划线部分的读音。\n\nその意見に<u>賛成</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ざんせい"
+      },
+      {
+        "key": "B",
+        "text": "さんしょう"
+      },
+      {
+        "key": "C",
+        "text": "さんせい"
+      },
+      {
+        "key": "D",
+        "text": "さんせ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "さんせい",
+    "translation": "",
+    "explanation": "さんせい，\"赞成\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "賛成",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 14,
+      "originalNumbers": [
+        "14"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-15",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 15,
+    "stem": "请选择划线部分的读音。\n\nその計画には大<u>反対</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "はんたい"
+      },
+      {
+        "key": "B",
+        "text": "ばんたい"
+      },
+      {
+        "key": "C",
+        "text": "はんだい"
+      },
+      {
+        "key": "D",
+        "text": "はんた"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "はんたい",
+    "translation": "",
+    "explanation": "はんたい，\"反对\"之意，\"大反対\"表示\"强烈反对\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "反対",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 15,
+      "originalNumbers": [
+        "15"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-16",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 16,
+    "stem": "请选择划线部分的汉字写法。\n\n<u>にほんぶんがく</u>を大学で学ぶ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "日本文楽"
+      },
+      {
+        "key": "B",
+        "text": "日本分学"
+      },
+      {
+        "key": "C",
+        "text": "日本丈学"
+      },
+      {
+        "key": "D",
+        "text": "日本文学"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "日本文学",
+    "translation": "",
+    "explanation": "日本文学，读作にほんぶんがく，\"日本文学\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "日本文学",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 16,
+      "originalNumbers": [
+        "16"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-17",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 17,
+    "stem": "请选择划线部分的读音。\n\n恋人と<u>別れて</u>悲しい。",
+    "options": [
+      {
+        "key": "A",
+        "text": "べつれて"
+      },
+      {
+        "key": "B",
+        "text": "わかれて"
+      },
+      {
+        "key": "C",
+        "text": "べれて"
+      },
+      {
+        "key": "D",
+        "text": "わかて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "わかれて",
+    "translation": "",
+    "explanation": "わかれて，是別れる的て形，\"分手、分别\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "別れる",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 17,
+      "originalNumbers": [
+        "17"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-18",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 18,
+    "stem": "请选择划线部分的读音。\n\n変な<u>匂い</u>がします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "にお"
+      },
+      {
+        "key": "B",
+        "text": "にほい"
+      },
+      {
+        "key": "C",
+        "text": "におい"
+      },
+      {
+        "key": "D",
+        "text": "おのい"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "におい",
+    "translation": "",
+    "explanation": "におい，\"气味\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "匂い",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 18,
+      "originalNumbers": [
+        "18"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-19",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 19,
+    "stem": "请选择划线部分的读音。\n\nごみがよく<u>燃えます</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "もえます"
+      },
+      {
+        "key": "B",
+        "text": "もえります"
+      },
+      {
+        "key": "C",
+        "text": "ねえます"
+      },
+      {
+        "key": "D",
+        "text": "めえます"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "もえます",
+    "translation": "",
+    "explanation": "もえます，是燃える的ます形，\"燃烧\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "燃える",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 19,
+      "originalNumbers": [
+        "19"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-20",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 20,
+    "stem": "请选择划线部分的汉字写法。\n\n外で強い風が<u>ふきます</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "吹ます"
+      },
+      {
+        "key": "B",
+        "text": "吹ききます"
+      },
+      {
+        "key": "C",
+        "text": "恢きます"
+      },
+      {
+        "key": "D",
+        "text": "吹きます"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "吹きます",
+    "translation": "",
+    "explanation": "吹きます，读作ふきます，\"刮（风）\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "吹く",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 20,
+      "originalNumbers": [
+        "20"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-21",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 21,
+    "stem": "请选择划线部分的读音。\n\n祖父が去年<u>亡くなりました</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "なくなかりました"
+      },
+      {
+        "key": "B",
+        "text": "なくなりました"
+      },
+      {
+        "key": "C",
+        "text": "ぼうくなりました"
+      },
+      {
+        "key": "D",
+        "text": "なぐなりました"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "なくなりました",
+    "translation": "",
+    "explanation": "なくなりました，是亡くなる的过去敬体，\"去世\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "亡くなる",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 21,
+      "originalNumbers": [
+        "21"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-22",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 22,
+    "stem": "请选择划线部分的读音。\n\n出かける前に<u>化粧</u>をした。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かしょう"
+      },
+      {
+        "key": "B",
+        "text": "けそう"
+      },
+      {
+        "key": "C",
+        "text": "けしょう"
+      },
+      {
+        "key": "D",
+        "text": "けじょう"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "けしょう",
+    "translation": "",
+    "explanation": "けしょう，\"化妆\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "化粧",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 22,
+      "originalNumbers": [
+        "22"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-23",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 23,
+    "stem": "请选择划线部分的读音。\n\n母は毎日花の<u>世話</u>をします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "せわ"
+      },
+      {
+        "key": "B",
+        "text": "せいわ"
+      },
+      {
+        "key": "C",
+        "text": "せは"
+      },
+      {
+        "key": "D",
+        "text": "せいば"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "せわ",
+    "translation": "",
+    "explanation": "せわ，\"照顾、照料\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "世話",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 23,
+      "originalNumbers": [
+        "23"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-24",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 24,
+    "stem": "请选择划线部分的汉字写法。\n\nこの会社には<u>じょせい</u>が多い。",
+    "options": [
+      {
+        "key": "A",
+        "text": "女姓"
+      },
+      {
+        "key": "B",
+        "text": "女政"
+      },
+      {
+        "key": "C",
+        "text": "女子"
+      },
+      {
+        "key": "D",
+        "text": "女性"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "女性",
+    "translation": "",
+    "explanation": "女性，读作じょせい，\"女性\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "女性",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 24,
+      "originalNumbers": [
+        "24"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-25",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 25,
+    "stem": "请选择划线部分的读音。\n\n<u>男性</u>の先生に習う。",
+    "options": [
+      {
+        "key": "A",
+        "text": "たんせい"
+      },
+      {
+        "key": "B",
+        "text": "だんせい"
+      },
+      {
+        "key": "C",
+        "text": "だんせ"
+      },
+      {
+        "key": "D",
+        "text": "だんぜい"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "だんせい",
+    "translation": "",
+    "explanation": "だんせい，\"男性\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "男性",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 25,
+      "originalNumbers": [
+        "25"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-26",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 26,
+    "stem": "请选择划线部分的汉字写法。\n\n祖母は100歳まで<u>ながいき</u>した。",
+    "options": [
+      {
+        "key": "A",
+        "text": "長生"
+      },
+      {
+        "key": "B",
+        "text": "長活き"
+      },
+      {
+        "key": "C",
+        "text": "長生き"
+      },
+      {
+        "key": "D",
+        "text": "永生き"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "長生き",
+    "translation": "",
+    "explanation": "長生き，读作ながいき，\"长寿\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "長生き",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 26,
+      "originalNumbers": [
+        "26"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-27",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 27,
+    "stem": "请选择划线部分的读音。\n\n休んだ<u>理由</u>を説明する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "りゆう"
+      },
+      {
+        "key": "B",
+        "text": "りゅう"
+      },
+      {
+        "key": "C",
+        "text": "りいう"
+      },
+      {
+        "key": "D",
+        "text": "りょう"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "りゆう",
+    "translation": "",
+    "explanation": "りゆう，\"理由\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "理由",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 27,
+      "originalNumbers": [
+        "27"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-47-28",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课",
+    "numberInGroup": 28,
+    "stem": "请选择划线部分的汉字写法。\n\n彼とは何の<u>かんけい</u>もない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "関系"
+      },
+      {
+        "key": "B",
+        "text": "関保"
+      },
+      {
+        "key": "C",
+        "text": "係関"
+      },
+      {
+        "key": "D",
+        "text": "関係"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "関係",
+    "translation": "",
+    "explanation": "関係，读作かんけい，\"关系\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "関係",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第47课",
+      "position": 28,
+      "originalNumbers": [
+        "28"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-29",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 29,
+    "stem": "请选择划线部分的汉字写法。\n\n他校の<u>せいと</u>とけんかをした。",
+    "options": [
+      {
+        "key": "A",
+        "text": "生従"
+      },
+      {
+        "key": "B",
+        "text": "生徒"
+      },
+      {
+        "key": "C",
+        "text": "学生"
+      },
+      {
+        "key": "D",
+        "text": "先生"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "生徒",
+    "translation": "",
+    "explanation": "生徒，读作せいと，\"中小学学生\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "生徒",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 29,
+      "originalNumbers": [
+        "29"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-30",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 30,
+    "stem": "请选择划线部分的读音。\n\n休日は<u>自由に</u>過ごす。",
+    "options": [
+      {
+        "key": "A",
+        "text": "じゅうに"
+      },
+      {
+        "key": "B",
+        "text": "じいゆうに"
+      },
+      {
+        "key": "C",
+        "text": "じゆうに"
+      },
+      {
+        "key": "D",
+        "text": "しゆうに"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "じゆうに",
+    "translation": "",
+    "explanation": "じゆうに，\"自由地、随意地\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "自由に",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 30,
+      "originalNumbers": [
+        "30"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-31",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 31,
+    "stem": "请选择划线部分的读音。\n\n<u>一週間</u>の旅行に出かけた。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いっしゅうかん"
+      },
+      {
+        "key": "B",
+        "text": "いちしゅうかん"
+      },
+      {
+        "key": "C",
+        "text": "いっしゅうけん"
+      },
+      {
+        "key": "D",
+        "text": "いっすうかん"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "いっしゅうかん",
+    "translation": "",
+    "explanation": "いっしゅうかん，\"～間\"作接尾词表期间时读かん",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "～間",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 31,
+      "originalNumbers": [
+        "31"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-32",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 32,
+    "stem": "请选择划线部分的汉字写法。\n\nこの店の<u>えいぎょう</u>時間は短い。",
+    "options": [
+      {
+        "key": "A",
+        "text": "営楽"
+      },
+      {
+        "key": "B",
+        "text": "栄業"
+      },
+      {
+        "key": "C",
+        "text": "営病"
+      },
+      {
+        "key": "D",
+        "text": "営業"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "営業",
+    "translation": "",
+    "explanation": "営業，读作えいぎょう，\"营业\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "営業",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 32,
+      "originalNumbers": [
+        "32"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-33",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 33,
+    "stem": "请选择划线部分的读音。\n\n音楽を<u>楽しんで</u>聞く。",
+    "options": [
+      {
+        "key": "A",
+        "text": "たのしで"
+      },
+      {
+        "key": "B",
+        "text": "たのしんで"
+      },
+      {
+        "key": "C",
+        "text": "たのんで"
+      },
+      {
+        "key": "D",
+        "text": "のしんで"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "たのしんで",
+    "translation": "",
+    "explanation": "たのしんで，是楽しむ的て形，\"享受、欣赏\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "楽しむ",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 33,
+      "originalNumbers": [
+        "33"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-34",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 34,
+    "stem": "请选择划线部分的汉字写法。\n\n子供は週に3回<u>じゅく</u>に通っている。",
+    "options": [
+      {
+        "key": "A",
+        "text": "熟"
+      },
+      {
+        "key": "B",
+        "text": "塚"
+      },
+      {
+        "key": "C",
+        "text": "塾"
+      },
+      {
+        "key": "D",
+        "text": "塞"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "塾",
+    "translation": "",
+    "explanation": "塾，读作じゅく，\"补习班、私塾\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "塾",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 34,
+      "originalNumbers": [
+        "34"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-35",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 35,
+    "stem": "请选择划线部分的读音。\n\n注文品をすぐ<u>届けて</u>ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "とどけて"
+      },
+      {
+        "key": "B",
+        "text": "ととけて"
+      },
+      {
+        "key": "C",
+        "text": "とどげて"
+      },
+      {
+        "key": "D",
+        "text": "どどけて"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "とどけて",
+    "translation": "",
+    "explanation": "とどけて，是届ける的て形，\"送达、投递\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "届ける",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 35,
+      "originalNumbers": [
+        "35"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-36",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 36,
+    "stem": "请选择划线部分的汉字写法。\n\n船の荷物を上海で<u>おろします</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "上ろします"
+      },
+      {
+        "key": "B",
+        "text": "下おろします"
+      },
+      {
+        "key": "C",
+        "text": "下ろすます"
+      },
+      {
+        "key": "D",
+        "text": "下ろします"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "下ろします",
+    "translation": "",
+    "explanation": "下ろします，读作おろします，\"卸下（货物）\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "下ろす",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 36,
+      "originalNumbers": [
+        "36"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-37",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 37,
+    "stem": "请选择划线部分的读音。\n\n彼は<u>嫌な</u>顔をした。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きらいな"
+      },
+      {
+        "key": "B",
+        "text": "いやな"
+      },
+      {
+        "key": "C",
+        "text": "けんな"
+      },
+      {
+        "key": "D",
+        "text": "いやか"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "いやな",
+    "translation": "",
+    "explanation": "いやな，\"令人不快的、厌恶的\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "嫌",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 37,
+      "originalNumbers": [
+        "37"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-38",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 38,
+    "stem": "请选择划线部分的汉字写法。\n\n鳥の鳴き声を<u>ろくおん</u>する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "録声"
+      },
+      {
+        "key": "B",
+        "text": "緑音"
+      },
+      {
+        "key": "C",
+        "text": "録音"
+      },
+      {
+        "key": "D",
+        "text": "録首"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "録音",
+    "translation": "",
+    "explanation": "録音，读作ろくおん，\"录音\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "録音",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 38,
+      "originalNumbers": [
+        "38"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-39",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 39,
+    "stem": "请选择划线部分的读音。\n\nあの子の<u>親</u>の顔が見たい。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おや"
+      },
+      {
+        "key": "B",
+        "text": "しん"
+      },
+      {
+        "key": "C",
+        "text": "おい"
+      },
+      {
+        "key": "D",
+        "text": "ちか"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "おや",
+    "translation": "",
+    "explanation": "おや，\"父母\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "親",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 39,
+      "originalNumbers": [
+        "39"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-40",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 40,
+    "stem": "请选择划线部分的读音。\n\n<u>小学生</u>の時、毎日泳いだ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しょうがくしょう"
+      },
+      {
+        "key": "B",
+        "text": "こがくせい"
+      },
+      {
+        "key": "C",
+        "text": "しょうがっせい"
+      },
+      {
+        "key": "D",
+        "text": "しょうがくせい"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "しょうがくせい",
+    "translation": "",
+    "explanation": "しょうがくせい，\"小学生\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "小学生",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 40,
+      "originalNumbers": [
+        "40"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-41",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 41,
+    "stem": "请选择划线部分的汉字写法。\n\nきれいな字を書くために、<u>しゅうじ</u>を習う。",
+    "options": [
+      {
+        "key": "A",
+        "text": "習学"
+      },
+      {
+        "key": "B",
+        "text": "習字"
+      },
+      {
+        "key": "C",
+        "text": "習時"
+      },
+      {
+        "key": "D",
+        "text": "羽字"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "習字",
+    "translation": "",
+    "explanation": "習字，读作しゅうじ，\"书法、练字\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "習字",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 41,
+      "originalNumbers": [
+        "41"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-48-42",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课",
+    "numberInGroup": 42,
+    "stem": "请选择划线部分的读音。\n\n<u>普通の</u>人と同じ生活をする。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ふっうの"
+      },
+      {
+        "key": "B",
+        "text": "ふつんの"
+      },
+      {
+        "key": "C",
+        "text": "ふつうの"
+      },
+      {
+        "key": "D",
+        "text": "ふとうの"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ふつうの",
+    "translation": "",
+    "explanation": "ふつうの，\"普通的\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "普通の",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第48课",
+      "position": 42,
+      "originalNumbers": [
+        "42"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-43",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 43,
+    "stem": "请选择划线部分的读音。\n\nこの写真を<u>ご覧</u>ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ごらん"
+      },
+      {
+        "key": "B",
+        "text": "ごかん"
+      },
+      {
+        "key": "C",
+        "text": "ごらむ"
+      },
+      {
+        "key": "D",
+        "text": "ごりゃん"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ごらん",
+    "translation": "",
+    "explanation": "ごらん，\"看\"的尊敬语表达",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "ご覧になる",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 43,
+      "originalNumbers": [
+        "43"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-44",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 44,
+    "stem": "请选择划线部分的读音。\n\n父は銀行に<u>勤め</u>ています。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きんめ"
+      },
+      {
+        "key": "B",
+        "text": "づとめ"
+      },
+      {
+        "key": "C",
+        "text": "つどめ"
+      },
+      {
+        "key": "D",
+        "text": "つとめ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "つとめ",
+    "translation": "",
+    "explanation": "つとめ，是勤める的连用形，\"工作\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "勤める",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 44,
+      "originalNumbers": [
+        "44"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-45",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 45,
+    "stem": "请选择划线部分的读音。\n\n<u>会社</u>まで電車で通う。",
+    "options": [
+      {
+        "key": "A",
+        "text": "がいしゃ"
+      },
+      {
+        "key": "B",
+        "text": "かいしゃ"
+      },
+      {
+        "key": "C",
+        "text": "かいじゃ"
+      },
+      {
+        "key": "D",
+        "text": "かいさ"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "かいしゃ",
+    "translation": "",
+    "explanation": "かいしゃ，\"公司\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "会社",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 45,
+      "originalNumbers": [
+        "45"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-46",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 46,
+    "stem": "请选择划线部分的汉字写法。\n\n結婚式に<u>しゅっせき</u>する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "出市"
+      },
+      {
+        "key": "B",
+        "text": "出度"
+      },
+      {
+        "key": "C",
+        "text": "出席"
+      },
+      {
+        "key": "D",
+        "text": "出希"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "出席",
+    "translation": "",
+    "explanation": "出席，读作しゅっせき，\"出席\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "出席",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 46,
+      "originalNumbers": [
+        "46"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-47",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 47,
+    "stem": "请选择划线部分的读音。\n\n優勝者に<u>賞</u>を出す。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しょう"
+      },
+      {
+        "key": "B",
+        "text": "しょ"
+      },
+      {
+        "key": "C",
+        "text": "そう"
+      },
+      {
+        "key": "D",
+        "text": "じょう"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "しょう",
+    "translation": "",
+    "explanation": "しょう，\"奖\"之意，\"賞を出す\"表示\"颁奖\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "賞",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 47,
+      "originalNumbers": [
+        "47"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-48",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 48,
+    "stem": "请选择划线部分的汉字写法。\n\n先生によろしくお<u>つたえ</u>ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "伝い"
+      },
+      {
+        "key": "B",
+        "text": "伝之"
+      },
+      {
+        "key": "C",
+        "text": "抎え"
+      },
+      {
+        "key": "D",
+        "text": "伝え"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "伝え",
+    "translation": "",
+    "explanation": "伝え，是伝える的连用形，\"转达\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "伝える",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 48,
+      "originalNumbers": [
+        "48"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-49",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 49,
+    "stem": "请选择划线部分的读音。\n\nお先に<u>失礼</u>いたします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しつれ"
+      },
+      {
+        "key": "B",
+        "text": "しつれい"
+      },
+      {
+        "key": "C",
+        "text": "しちれい"
+      },
+      {
+        "key": "D",
+        "text": "うしれい"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "しつれい",
+    "translation": "",
+    "explanation": "しつれい，\"失礼、告辞\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "失礼",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 49,
+      "originalNumbers": [
+        "49"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-50",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 50,
+    "stem": "请选择划线部分的读音。\n\n先生のご住所を<u>ご存じ</u>ですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ごそんじ"
+      },
+      {
+        "key": "B",
+        "text": "ごぞんち"
+      },
+      {
+        "key": "C",
+        "text": "ごぞんじ"
+      },
+      {
+        "key": "D",
+        "text": "ごぞんし"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ごぞんじ",
+    "translation": "",
+    "explanation": "ごぞんじ，\"知道\"的尊敬语表达",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "ご存じ",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 50,
+      "originalNumbers": [
+        "50"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-51",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 51,
+    "stem": "请选择划线部分的读音。\n\nどうぞたくさん<u>召し上がって</u>ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "めしあがって"
+      },
+      {
+        "key": "B",
+        "text": "しょうあがって"
+      },
+      {
+        "key": "C",
+        "text": "めしがって"
+      },
+      {
+        "key": "D",
+        "text": "めしあがて"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "めしあがって",
+    "translation": "",
+    "explanation": "めしあがって，是召し上がる的て形，\"吃、喝\"的尊敬语",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "召し上がる",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 51,
+      "originalNumbers": [
+        "51"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-52",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 52,
+    "stem": "请选择划线部分的汉字写法。\n\nどうぞ椅子に腰を<u>かけて</u>ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "掛て"
+      },
+      {
+        "key": "B",
+        "text": "掛けって"
+      },
+      {
+        "key": "C",
+        "text": "掲けて"
+      },
+      {
+        "key": "D",
+        "text": "掛けて"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "掛けて",
+    "translation": "",
+    "explanation": "掛けて，是掛ける的て形，\"腰を掛ける\"表示\"就座\"",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "掛ける",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 52,
+      "originalNumbers": [
+        "52"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-53",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 53,
+    "stem": "请选择划线部分的读音。\n\n<u>奥様</u>によろしくお伝えください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おうさま"
+      },
+      {
+        "key": "B",
+        "text": "おくさま"
+      },
+      {
+        "key": "C",
+        "text": "あくさま"
+      },
+      {
+        "key": "D",
+        "text": "おくよう"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "おくさま",
+    "translation": "",
+    "explanation": "おくさま，\"（别人的）夫人\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "奥様",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 53,
+      "originalNumbers": [
+        "53"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-54",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 54,
+    "stem": "请选择划线部分的汉字写法。\n\n田中<u>さま</u>宛ての手紙です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "泳"
+      },
+      {
+        "key": "B",
+        "text": "祥"
+      },
+      {
+        "key": "C",
+        "text": "様"
+      },
+      {
+        "key": "D",
+        "text": "杼"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "様",
+    "translation": "",
+    "explanation": "様，读作さま，\"～先生/女士\"的尊敬语接尾词",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "～様",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 54,
+      "originalNumbers": [
+        "54"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-55",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 55,
+    "stem": "请选择划线部分的读音。\n\n<u>バス停</u>で友達を待つ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "バスてい"
+      },
+      {
+        "key": "B",
+        "text": "バスちょう"
+      },
+      {
+        "key": "C",
+        "text": "バスていい"
+      },
+      {
+        "key": "D",
+        "text": "バスせい"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "バスてい",
+    "translation": "",
+    "explanation": "バスてい，\"公共汽车站\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "バス停",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 55,
+      "originalNumbers": [
+        "55"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-56",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 56,
+    "stem": "请选择划线部分的汉字写法。\n\n温泉の<u>りょかん</u>に泊まった。",
+    "options": [
+      {
+        "key": "A",
+        "text": "旅官"
+      },
+      {
+        "key": "B",
+        "text": "旅管"
+      },
+      {
+        "key": "C",
+        "text": "旅客"
+      },
+      {
+        "key": "D",
+        "text": "旅館"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "旅館",
+    "translation": "",
+    "explanation": "旅館，读作りょかん，\"旅馆\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "旅館",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 56,
+      "originalNumbers": [
+        "56"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-57",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 57,
+    "stem": "请选择划线部分的读音。\n\n朝は元気に<u>挨拶</u>をする。",
+    "options": [
+      {
+        "key": "A",
+        "text": "あいさち"
+      },
+      {
+        "key": "B",
+        "text": "あいさつ"
+      },
+      {
+        "key": "C",
+        "text": "あいざつ"
+      },
+      {
+        "key": "D",
+        "text": "がいさつ"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "あいさつ",
+    "translation": "",
+    "explanation": "あいさつ，\"寒暄、问候\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "挨拶",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 57,
+      "originalNumbers": [
+        "57"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-58",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 58,
+    "stem": "请选择划线部分的汉字写法。\n\n休日は家でのんびり<u>すごします</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "過ぎます"
+      },
+      {
+        "key": "B",
+        "text": "過します"
+      },
+      {
+        "key": "C",
+        "text": "過ごします"
+      },
+      {
+        "key": "D",
+        "text": "遇ごします"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "過ごします",
+    "translation": "",
+    "explanation": "過ごします，读作すごします，\"度过\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "過ごす",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 58,
+      "originalNumbers": [
+        "58"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-59",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 59,
+    "stem": "请选择划线部分的汉字写法。\n\n休日を<u>りよう</u>して勉強する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "利用"
+      },
+      {
+        "key": "B",
+        "text": "使用"
+      },
+      {
+        "key": "C",
+        "text": "刺用"
+      },
+      {
+        "key": "D",
+        "text": "利田"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "利用",
+    "translation": "",
+    "explanation": "利用，读作りよう，\"利用\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "利用",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 59,
+      "originalNumbers": [
+        "59"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-60",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 60,
+    "stem": "请选择划线部分的读音。\n\n<u>経歴</u>を履歴書に書く。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きょうれき"
+      },
+      {
+        "key": "B",
+        "text": "けいりゃく"
+      },
+      {
+        "key": "C",
+        "text": "けいれぎ"
+      },
+      {
+        "key": "D",
+        "text": "けいれき"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "けいれき",
+    "translation": "",
+    "explanation": "けいれき，\"经历、履历\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "経歴",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 60,
+      "originalNumbers": [
+        "60"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-61",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 61,
+    "stem": "请选择划线部分的汉字写法。\n\n兄は<u>いがくぶ</u>の学生だ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "医学付"
+      },
+      {
+        "key": "B",
+        "text": "医学部"
+      },
+      {
+        "key": "C",
+        "text": "医字部"
+      },
+      {
+        "key": "D",
+        "text": "医学歩"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "医学部",
+    "translation": "",
+    "explanation": "医学部，读作いがくぶ，\"医学系\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "医学部",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 61,
+      "originalNumbers": [
+        "61"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-62",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 62,
+    "stem": "请选择划线部分的汉字写法。\n\n医者を<u>めざして</u>勉強する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "目刺して"
+      },
+      {
+        "key": "B",
+        "text": "目指しって"
+      },
+      {
+        "key": "C",
+        "text": "目指して"
+      },
+      {
+        "key": "D",
+        "text": "目指すて"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "目指して",
+    "translation": "",
+    "explanation": "目指して，是目指す的て形，\"以……为目标\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "目指す",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 62,
+      "originalNumbers": [
+        "62"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-63",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 63,
+    "stem": "请选择划线部分的读音。\n\n大学に<u>進んで</u>医学を学ぶ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "すすんで"
+      },
+      {
+        "key": "B",
+        "text": "しんんで"
+      },
+      {
+        "key": "C",
+        "text": "すすで"
+      },
+      {
+        "key": "D",
+        "text": "すずんで"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "すすんで",
+    "translation": "",
+    "explanation": "すすんで，是進む的て形，\"升（学）\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "進む",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 63,
+      "originalNumbers": [
+        "63"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-64",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 64,
+    "stem": "请选择划线部分的读音。\n\niPS<u>細胞</u>の研究が進む。",
+    "options": [
+      {
+        "key": "A",
+        "text": "さいほう"
+      },
+      {
+        "key": "B",
+        "text": "さぼう"
+      },
+      {
+        "key": "C",
+        "text": "さいぼ"
+      },
+      {
+        "key": "D",
+        "text": "さいぼう"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "さいぼう",
+    "translation": "",
+    "explanation": "さいぼう，\"细胞\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "細胞",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 64,
+      "originalNumbers": [
+        "64"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-65",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 65,
+    "stem": "请选择划线部分的汉字写法。\n\n新しい薬を<u>かいはつ</u>する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "開癶"
+      },
+      {
+        "key": "B",
+        "text": "開発"
+      },
+      {
+        "key": "C",
+        "text": "開廃"
+      },
+      {
+        "key": "D",
+        "text": "開起"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "開発",
+    "translation": "",
+    "explanation": "開発，读作かいはつ，\"开发、研制\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "開発",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 65,
+      "originalNumbers": [
+        "65"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-66",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 66,
+    "stem": "请选择划线部分的汉字写法。\n\nグランプリを<u>じゅしょう</u>した。",
+    "options": [
+      {
+        "key": "A",
+        "text": "受覚"
+      },
+      {
+        "key": "B",
+        "text": "受党"
+      },
+      {
+        "key": "C",
+        "text": "受賞"
+      },
+      {
+        "key": "D",
+        "text": "愛賞"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "受賞",
+    "translation": "",
+    "explanation": "受賞，读作じゅしょう，\"获奖\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "受賞",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 66,
+      "originalNumbers": [
+        "66"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-67",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 67,
+    "stem": "请选择划线部分的读音。\n\n大学で<u>講演会</u>を開く。",
+    "options": [
+      {
+        "key": "A",
+        "text": "こうえんかい"
+      },
+      {
+        "key": "B",
+        "text": "こうえんえ"
+      },
+      {
+        "key": "C",
+        "text": "こうえんがい"
+      },
+      {
+        "key": "D",
+        "text": "こえんかい"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "こうえんかい",
+    "translation": "",
+    "explanation": "こうえんかい，\"演讲会\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "講演会",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 67,
+      "originalNumbers": [
+        "67"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-49-68",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课",
+    "numberInGroup": 68,
+    "stem": "请选择划线部分的读音。\n\n息子は一年一<u>組</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ぐみ"
+      },
+      {
+        "key": "B",
+        "text": "そ"
+      },
+      {
+        "key": "C",
+        "text": "くめ"
+      },
+      {
+        "key": "D",
+        "text": "くみ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "くみ",
+    "translation": "",
+    "explanation": "くみ，\"班、组\"之意，\"一年一組\"即\"一年级一班\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "組",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第49课",
+      "position": 68,
+      "originalNumbers": [
+        "68"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-69",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 69,
+    "stem": "请选择划线部分的汉字写法。\n\n明日、もう一つ<u>うかがいたい</u>ことがあります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "伺たいたい"
+      },
+      {
+        "key": "B",
+        "text": "伺いたい"
+      },
+      {
+        "key": "C",
+        "text": "伺いだい"
+      },
+      {
+        "key": "D",
+        "text": "伺きたい"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "伺いたい",
+    "translation": "",
+    "explanation": "伺いたい，是伺う的たい形，\"请教、询问\"的谦逊语",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "伺う",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 69,
+      "originalNumbers": [
+        "69"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-70",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 70,
+    "stem": "请选择划线部分的汉字写法。\n\n<u>わたくし</u>は田中と申します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "我"
+      },
+      {
+        "key": "B",
+        "text": "僕"
+      },
+      {
+        "key": "C",
+        "text": "私"
+      },
+      {
+        "key": "D",
+        "text": "俺"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "私",
+    "translation": "",
+    "explanation": "私，在此读作わたくし，是\"我\"的谦逊语说法",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "私",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 70,
+      "originalNumbers": [
+        "70"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-71",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 71,
+    "stem": "请选择划线部分的汉字写法。\n\n明日の2時ごろ<u>まいる</u>予定です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "参る"
+      },
+      {
+        "key": "B",
+        "text": "参加る"
+      },
+      {
+        "key": "C",
+        "text": "参入る"
+      },
+      {
+        "key": "D",
+        "text": "来る"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "参る",
+    "translation": "",
+    "explanation": "参る，读作まいる，\"来、去\"的谦逊语",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "参る",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 71,
+      "originalNumbers": [
+        "71"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-72",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 72,
+    "stem": "请选择划线部分的读音。\n\n助けてくれて<u>心から</u>感謝します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しんから"
+      },
+      {
+        "key": "B",
+        "text": "ごころから"
+      },
+      {
+        "key": "C",
+        "text": "こころがら"
+      },
+      {
+        "key": "D",
+        "text": "こころから"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "こころから",
+    "translation": "",
+    "explanation": "こころから，\"衷心地\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "心から",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 72,
+      "originalNumbers": [
+        "72"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-73",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 73,
+    "stem": "请选择划线部分的汉字写法。\n\n先生の親切に<u>かんしゃ</u>します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "感射"
+      },
+      {
+        "key": "B",
+        "text": "感謝"
+      },
+      {
+        "key": "C",
+        "text": "咸謝"
+      },
+      {
+        "key": "D",
+        "text": "感想"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "感謝",
+    "translation": "",
+    "explanation": "感謝，读作かんしゃ，\"感谢\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "感謝",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 73,
+      "originalNumbers": [
+        "73"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-74",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 74,
+    "stem": "请选择划线部分的汉字写法。\n\n試験の前はいつも<u>きんちょう</u>する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "緊帳"
+      },
+      {
+        "key": "B",
+        "text": "堅張"
+      },
+      {
+        "key": "C",
+        "text": "緊張"
+      },
+      {
+        "key": "D",
+        "text": "近張"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "緊張",
+    "translation": "",
+    "explanation": "緊張，读作きんちょう，\"紧张\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "緊張",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 74,
+      "originalNumbers": [
+        "74"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-75",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 75,
+    "stem": "请选择划线部分的读音。\n\n優勝者に100万円の<u>賞金</u>を出す。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しょうきん"
+      },
+      {
+        "key": "B",
+        "text": "しょうがね"
+      },
+      {
+        "key": "C",
+        "text": "しょうぎん"
+      },
+      {
+        "key": "D",
+        "text": "しょきん"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "しょうきん",
+    "translation": "",
+    "explanation": "しょうきん，\"奖金、悬赏金\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "賞金",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 75,
+      "originalNumbers": [
+        "75"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-76",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 76,
+    "stem": "请选择划线部分的汉字写法。\n\n<u>よろん</u>を調べるための調査。",
+    "options": [
+      {
+        "key": "A",
+        "text": "世倫"
+      },
+      {
+        "key": "B",
+        "text": "世界"
+      },
+      {
+        "key": "C",
+        "text": "市論"
+      },
+      {
+        "key": "D",
+        "text": "世論"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "世論",
+    "translation": "",
+    "explanation": "世論，读作よろん，\"社会舆论\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "世論",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 76,
+      "originalNumbers": [
+        "76"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-77",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 77,
+    "stem": "请选择划线部分的读音。\n\n子供の<u>頃</u>、よく川で泳いだ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ごろ"
+      },
+      {
+        "key": "B",
+        "text": "ころ"
+      },
+      {
+        "key": "C",
+        "text": "ころん"
+      },
+      {
+        "key": "D",
+        "text": "さき"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ころ",
+    "translation": "",
+    "explanation": "ころ，\"时候\"之意，\"子供の頃\"即\"小时候\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "頃",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 77,
+      "originalNumbers": [
+        "77"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-78",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 78,
+    "stem": "请选择划线部分的读音。\n\n夢が<u>叶って</u>嬉しい。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ようって"
+      },
+      {
+        "key": "B",
+        "text": "かのって"
+      },
+      {
+        "key": "C",
+        "text": "かなって"
+      },
+      {
+        "key": "D",
+        "text": "かなて"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "かなって",
+    "translation": "",
+    "explanation": "かなって，是叶う的て形，\"夢が叶う\"表示\"梦想实现\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "叶う",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 78,
+      "originalNumbers": [
+        "78"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-79",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 79,
+    "stem": "请选择划线部分的汉字写法。\n\n友達のチームを<u>おうえん</u>する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "応援"
+      },
+      {
+        "key": "B",
+        "text": "応媛"
+      },
+      {
+        "key": "C",
+        "text": "応緩"
+      },
+      {
+        "key": "D",
+        "text": "応嗳"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "応援",
+    "translation": "",
+    "explanation": "応援，读作おうえん，\"声援、支援\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "応援",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 79,
+      "originalNumbers": [
+        "79"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-80",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 80,
+    "stem": "请选择划线部分的读音。\n\n鈴木と<u>申します</u>。よろしくお願いします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "さします"
+      },
+      {
+        "key": "B",
+        "text": "しんします"
+      },
+      {
+        "key": "C",
+        "text": "もします"
+      },
+      {
+        "key": "D",
+        "text": "もうします"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "もうします",
+    "translation": "",
+    "explanation": "もうします，是申す的ます形，\"说、叫\"的谦逊语",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "申す",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 80,
+      "originalNumbers": [
+        "80"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-81",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 81,
+    "stem": "请选择划线部分的汉字写法。\n\nその件については<u>ぞんじません</u>。",
+    "options": [
+      {
+        "key": "A",
+        "text": "在じません"
+      },
+      {
+        "key": "B",
+        "text": "存じません"
+      },
+      {
+        "key": "C",
+        "text": "存じまぜん"
+      },
+      {
+        "key": "D",
+        "text": "存じせん"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "存じません",
+    "translation": "",
+    "explanation": "存じません，是存じる的否定形，\"知道\"的谦逊语",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "存じる",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 81,
+      "originalNumbers": [
+        "81"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-82",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 82,
+    "stem": "请选择划线部分的汉字写法。\n\nお手紙を<u>はいけん</u>いたしました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "拝視"
+      },
+      {
+        "key": "B",
+        "text": "拝言"
+      },
+      {
+        "key": "C",
+        "text": "拝見"
+      },
+      {
+        "key": "D",
+        "text": "抹見"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "拝見",
+    "translation": "",
+    "explanation": "拝見，读作はいけん，\"看\"的谦逊语",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "拝見",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 82,
+      "originalNumbers": [
+        "82"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-83",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 83,
+    "stem": "请选择划线部分的读音。\n\n先生に<u>お目にかかり</u>ました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おめにかかり"
+      },
+      {
+        "key": "B",
+        "text": "おもくにかかり"
+      },
+      {
+        "key": "C",
+        "text": "おめにかがり"
+      },
+      {
+        "key": "D",
+        "text": "おめにかかりい"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "おめにかかり",
+    "translation": "",
+    "explanation": "おめにかかり，是お目にかかる的连用形，\"见面\"的谦逊语",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "お目にかかる",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 83,
+      "originalNumbers": [
+        "83"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-84",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 84,
+    "stem": "请选择划线部分的读音。\n\n<u>初めに</u>自己紹介をします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しょめに"
+      },
+      {
+        "key": "B",
+        "text": "ういめに"
+      },
+      {
+        "key": "C",
+        "text": "はじまりに"
+      },
+      {
+        "key": "D",
+        "text": "はじめに"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "はじめに",
+    "translation": "",
+    "explanation": "はじめに，\"首先\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "初めに",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 84,
+      "originalNumbers": [
+        "84"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-85",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 85,
+    "stem": "请选择划线部分的汉字写法。\n\n旅行の<u>ようい</u>をする。",
+    "options": [
+      {
+        "key": "A",
+        "text": "用異"
+      },
+      {
+        "key": "B",
+        "text": "用意"
+      },
+      {
+        "key": "C",
+        "text": "用億"
+      },
+      {
+        "key": "D",
+        "text": "準備"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "用意",
+    "translation": "",
+    "explanation": "用意，读作ようい，\"准备\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "用意",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 85,
+      "originalNumbers": [
+        "85"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-86",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 86,
+    "stem": "请选择划线部分的读音。\n\n<u>さ来月</u>に結婚します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "さきげつ"
+      },
+      {
+        "key": "B",
+        "text": "さらいがつ"
+      },
+      {
+        "key": "C",
+        "text": "さらいげつ"
+      },
+      {
+        "key": "D",
+        "text": "さいらいげつ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "さらいげつ",
+    "translation": "",
+    "explanation": "さらいげつ，\"下下个月\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "さ来月",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 86,
+      "originalNumbers": [
+        "86"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-87",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 87,
+    "stem": "请选择划线部分的汉字写法。\n\n<u>さらいしゅう</u>に出張します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "さ来週"
+      },
+      {
+        "key": "B",
+        "text": "さ来州"
+      },
+      {
+        "key": "C",
+        "text": "さ来過"
+      },
+      {
+        "key": "D",
+        "text": "さ来月"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "さ来週",
+    "translation": "",
+    "explanation": "さ来週，读作さらいしゅう，\"下下周\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "さ来週",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 87,
+      "originalNumbers": [
+        "87"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-88",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 88,
+    "stem": "请选择划线部分的读音。\n\n<u>さ来年</u>に留学する予定だ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "さきねん"
+      },
+      {
+        "key": "B",
+        "text": "さらいとし"
+      },
+      {
+        "key": "C",
+        "text": "さいらいねん"
+      },
+      {
+        "key": "D",
+        "text": "さらいねん"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "さらいねん",
+    "translation": "",
+    "explanation": "さらいねん，\"后年\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "さ来年",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 88,
+      "originalNumbers": [
+        "88"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-89",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 89,
+    "stem": "请选择划线部分的汉字写法。\n\n<u>おれい</u>を言いに行く。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お例"
+      },
+      {
+        "key": "B",
+        "text": "お礼"
+      },
+      {
+        "key": "C",
+        "text": "お祖"
+      },
+      {
+        "key": "D",
+        "text": "お祝"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "お礼",
+    "translation": "",
+    "explanation": "お礼，读作おれい，\"致谢、感谢\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "お礼",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 89,
+      "originalNumbers": [
+        "89"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-90",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 90,
+    "stem": "请选择划线部分的读音。\n\n<u>お元気</u>でいらっしゃいますか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おがんき"
+      },
+      {
+        "key": "B",
+        "text": "おげんぎ"
+      },
+      {
+        "key": "C",
+        "text": "おげんき"
+      },
+      {
+        "key": "D",
+        "text": "おげんけ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "おげんき",
+    "translation": "",
+    "explanation": "おげんき，\"身体好\"之意，お元気で表示\"请保重\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "お元気",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 90,
+      "originalNumbers": [
+        "90"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-91",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 91,
+    "stem": "请选择划线部分的读音。\n\n<u>ご迷惑</u>をおかけしてすみません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ごめいわく"
+      },
+      {
+        "key": "B",
+        "text": "ごめいほく"
+      },
+      {
+        "key": "C",
+        "text": "ごまいわく"
+      },
+      {
+        "key": "D",
+        "text": "ごめえわく"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ごめいわく",
+    "translation": "",
+    "explanation": "ごめいわく，\"麻烦、打扰\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "subType": "kanji-to-kana",
+    "headword": "迷惑",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 91,
+      "originalNumbers": [
+        "91"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-final-vocabulary-lesson-50-92",
+    "category": "japanese3-final-vocabulary",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课",
+    "numberInGroup": 92,
+    "stem": "请选择划线部分的汉字写法。\n\n野菜の味を<u>いかす</u>料理を作った。",
+    "options": [
+      {
+        "key": "A",
+        "text": "生す"
+      },
+      {
+        "key": "B",
+        "text": "生いかす"
+      },
+      {
+        "key": "C",
+        "text": "生かしす"
+      },
+      {
+        "key": "D",
+        "text": "生かす"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "生かす",
+    "translation": "",
+    "explanation": "生かす，读作いかす，\"发挥、有效利用\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "subType": "kana-to-kanji",
+    "headword": "生かす",
+    "source": {
+      "file": "data/raw/japanese3/vocabulary-47-50.md",
+      "group": "第50课",
+      "position": 92,
+      "originalNumbers": [
+        "92"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  }
+]

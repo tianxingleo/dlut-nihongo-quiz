@@ -25,6 +25,7 @@ const BANKS = [
   'japanese3-homework-question-bank.json',
   'japanese3-classroom-words-question-bank.json',
   'japanese3-classroom-grammar-question-bank.json',
+  'japanese3-final-vocabulary-question-bank.json',
   'question-bank.json',
   'word-question-bank.json',
   'history-question-bank.json',

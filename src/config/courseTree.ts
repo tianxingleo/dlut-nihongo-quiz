@@ -236,6 +236,12 @@ export const COURSE_TREE: TreeNode[] = [
       },
       {
         type: 'leaf',
+        key: 'japanese3-final-vocabulary',
+        label: '期末单词（第47–50课，自编）',
+        category: 'japanese3-final-vocabulary',
+      },
+      {
+        type: 'leaf',
         key: 'jp-3-2022',
         label: '期末 2022',
         category: 'jp-3-2022',
