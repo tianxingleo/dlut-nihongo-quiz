@@ -62,7 +62,6 @@ const totalQuestions = ref(0)
 const loading = ref(true)
 const error = ref('')
 const currentYear = new Date().getFullYear()
-const coursesHeading = ref<HTMLElement>()
 const recent = ref<{
   key: string
   category: Category
@@ -70,10 +69,6 @@ const recent = ref<{
   index: number
   total: number
 }>()
-function focusCourses() {
-  coursesHeading.value?.scrollIntoView({ block: 'start' })
-  coursesHeading.value?.focus({ preventScroll: true })
-}
 
 async function refresh() {
   loading.value = true
@@ -177,9 +172,8 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
     <section v-else class="hero">
       <h1 class="hero-title">期末复习题库</h1>
       <p class="hero-sub">大连理工大学国际信息与软件学院</p>
-      <div class="hero-actions">
+      <div v-if="recent" class="hero-actions">
         <RouterLink
-          v-if="recent"
           class="btn btn-accent btn-lg"
           :to="{
             path: '/quiz',
@@ -187,13 +181,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
           }"
           >继续上次</RouterLink
         >
-        <button
-          class="btn btn-lg"
-          :class="recent ? 'btn-outline' : 'btn-accent'"
-          @click="focusCourses"
-        >
-          选课程
-        </button>
       </div>
       <p v-if="recent" class="resume-detail">
         {{ recent.label }} · 第 {{ recent.index }}/{{ recent.total }} 题
@@ -202,7 +189,7 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
 
     <!-- Subject cards -->
     <section class="subjects">
-      <h2 ref="coursesHeading" tabindex="-1">
+      <h2>
         {{ showingFolders ? '选择分类' : currentEntry ? '选择试卷' : '课程列表' }}
       </h2>
       <div class="subject-grid">
@@ -213,7 +200,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
             class="subject-card subject-link"
             :to="{ path: '/' + currentEntry.key, query: { group: folder.key } }"
           >
-            <div class="sc-icon">{{ currentEntry.icon }}</div>
             <div class="sc-body">
               <h3 class="sc-title">{{ folder.name }}</h3>
               <p class="sc-desc">{{ folder.papers.length }} 份题库</p>
@@ -222,7 +208,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
               </p>
             </div>
             <div class="sc-count">{{ loading || error ? '—' : folder.count }} 题</div>
-            <span class="sc-arrow">&rarr;</span>
           </RouterLink>
         </template>
         <!-- 入口卡：清单与顺序都由 src/config/entries.ts 决定 -->
@@ -233,7 +218,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
             class="subject-card subject-link"
             :to="`/${e.key}`"
           >
-            <div class="sc-icon">{{ e.icon }}</div>
             <div class="sc-body">
               <h3 class="sc-title">{{ e.name }}</h3>
               <p class="sc-desc">{{ e.desc }}</p>
@@ -242,7 +226,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
               </p>
             </div>
             <div class="sc-count">{{ loading || error ? '—' : e.questions }} 题</div>
-            <span class="sc-arrow">&rarr;</span>
           </RouterLink>
         </template>
         <RouterLink
@@ -251,7 +234,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
           class="subject-card subject-link"
           :to="{ path: '/home', query: { category: s.key } }"
         >
-          <div class="sc-icon">{{ s.icon }}</div>
           <div class="sc-body">
             <h3 class="sc-title">{{ s.title }}</h3>
             <p class="sc-desc">{{ s.desc }}</p>
@@ -275,16 +257,13 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
             </div>
           </div>
           <div class="sc-count">{{ counts[s.key] || '—' }} 题</div>
-          <span class="sc-arrow">&rarr;</span>
         </RouterLink>
         <RouterLink v-if="!currentEntry" class="subject-card subject-link" to="/calculus-notes">
-          <div class="sc-icon">微</div>
           <div class="sc-body">
             <h3 class="sc-title">微积分2</h3>
             <p class="sc-desc">第1–18课 · 级数至高斯公式 · 笔记整理</p>
           </div>
           <div class="sc-count">18 课</div>
-          <span class="sc-arrow">&rarr;</span>
         </RouterLink>
       </div>
       <p v-if="loading" role="status">正在读取题库目录…</p>
@@ -380,30 +359,26 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
 
 /* Hero */
 .hero {
-  text-align: center;
-  padding: 44px 0 32px;
+  padding: 24px 0 28px;
+  border-bottom: 1px solid var(--border);
 }
 .hero-title {
   font-family: var(--font-display);
-  font-size: 56px;
+  font-size: clamp(26px, 5vw, 40px);
   font-weight: 700;
-  letter-spacing: 8px;
   color: var(--text-primary);
-  margin-bottom: 20px;
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+  min-width: 0;
   line-height: 1.2;
 }
 .hero-sub {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 15px;
   color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 16px;
 }
 .hero-actions {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 16px;
 }
 
 .resume-detail {
@@ -454,74 +429,30 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 600;
-  text-align: center;
-  margin-bottom: 28px;
-  letter-spacing: 1px;
-  scroll-margin-top: 70px;
+  margin-block: 20px 4px;
 }
 .subject-grid {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 .subject-card {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 24px;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--border);
-  background: var(--bg-card);
-  cursor: pointer;
-  transition:
-    border-color 0.25s var(--ease-ink),
-    border-left-color 0.25s var(--ease-ink),
-    background 0.25s var(--ease-ink),
-    transform 0.25s var(--ease-ink);
-  position: relative;
-}
-.subject-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border: 1px solid transparent;
-  transition: border-color 0.3s var(--ease-ink);
-  pointer-events: none;
-  z-index: -1;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.18s var(--ease-ink);
 }
 .subject-card:hover {
-  border-color: var(--accent);
-  border-left-color: var(--accent);
-  transform: translateX(6px);
-  background: var(--bg-hover);
+  background-color: var(--bg-hover);
 }
-.subject-card:hover::before {
-  border-color: var(--accent);
-}
-.sc-icon {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 22px;
-  color: var(--accent);
-  border: 1px solid var(--border);
-  flex-shrink: 0;
-  transition:
-    border-color 0.25s var(--ease-ink),
-    background 0.25s var(--ease-ink);
-}
-.subject-card:hover .sc-icon {
-  border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 6%, transparent);
+.subject-card:focus-visible {
+  outline-offset: -2px;
 }
 .sc-body {
-  min-width: 0;
-  overflow-wrap: anywhere;
   flex: 1;
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 .sc-title {
   font-family: var(--font-display);
@@ -547,7 +478,6 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   height: 100%;
   background: var(--accent);
   border-radius: 2px;
-  transition: width 0.3s var(--ease-brush);
 }
 .sc-progress-text {
   font-size: 11px;
@@ -557,19 +487,9 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   font-size: 13px;
   color: var(--text-secondary);
   font-weight: 500;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
 }
-.sc-arrow {
-  color: var(--text-muted);
-  font-size: 18px;
-  transition:
-    transform 0.25s var(--ease-brush),
-    color 0.25s var(--ease-ink);
-}
-.subject-card:hover .sc-arrow {
-  transform: translateX(4px);
-  color: var(--accent);
-}
-
 /* Features */
 .features {
   margin-bottom: 72px;
@@ -647,14 +567,7 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
     padding-inline: 14px;
   }
   .hero {
-    padding: 28px 0 20px;
-  }
-  .hero-title {
-    font-size: clamp(26px, 8vw, 36px);
-    letter-spacing: 2px;
-  }
-  .hero-sub {
-    font-size: 15px;
+    padding: 16px 0 20px;
   }
   .stats-strip {
     flex-wrap: wrap;
@@ -668,13 +581,8 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
     display: none;
   }
   .subject-card {
-    padding: 12px;
-    gap: 10px;
-  }
-  .sc-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    padding-inline: 4px;
+    gap: 8px;
   }
   .feature-grid {
     grid-template-columns: 1fr;

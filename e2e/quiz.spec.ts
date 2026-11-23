@@ -166,16 +166,16 @@ test('新版等待用户确认，接管后保留旧题库和续刷进度', async
   }
 })
 
-test('手机首屏显示选课程和卡片，窄屏无横向溢出', async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 })
-  await page.goto('./')
-  const choose = page.getByRole('button', { name: '选课程' })
-  await expect(choose).toBeInViewport({ ratio: 1 })
-  await expect(page.locator('.subject-card').first()).toBeInViewport({ ratio: 1 })
-  await choose.click()
-  await expect(page.getByRole('heading', { name: '课程列表' })).toBeFocused()
+test('手机首屏可以直接进入课程，窄屏首页无横向溢出', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 844 })
+  await page.goto('./')
+  await expect(page.getByRole('heading', { name: '课程列表' })).toBeInViewport({ ratio: 1 })
+  const course = page.locator('.subject-card').first()
+  await expect(course).toBeInViewport({ ratio: 1 })
   await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBe(320)
+  await course.focus()
+  await page.keyboard.press('Enter')
+  await expect(page.getByRole('heading', { name: '综合日语1', exact: true })).toBeVisible()
 })
 
 test('窄屏课程先显示题单，且可直接开始指定题单', async ({ page }) => {
