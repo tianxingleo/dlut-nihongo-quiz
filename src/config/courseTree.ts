@@ -258,6 +258,25 @@ export const COURSE_TREE: TreeNode[] = [
         label: '学习通下半学期作业',
         category: 'japanese3-homework',
       },
+      {
+        type: 'group',
+        key: 'japanese3-classroom-tests',
+        label: '学习通下半学期课堂测试',
+        children: [
+          {
+            type: 'leaf',
+            key: 'japanese3-classroom-words',
+            label: '单词',
+            category: 'japanese3-classroom-words',
+          },
+          {
+            type: 'leaf',
+            key: 'japanese3-classroom-grammar',
+            label: '语法',
+            category: 'japanese3-classroom-grammar',
+          },
+        ],
+      },
     ],
   },
   {

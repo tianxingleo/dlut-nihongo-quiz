@@ -29,6 +29,8 @@ const banks = [
   { key: 'party', file: 'party-question-bank.json' },
   { key: 'military', file: 'military-question-bank.json' },
   ...[
+    'japanese3-classroom-words',
+    'japanese3-classroom-grammar',
     'computer-2021-final',
     'computer-2024-final',
     'computer-2026-midterm',

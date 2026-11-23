@@ -5,6 +5,8 @@ export type Category =
   | 'jp1-mid24'
   | 'japanese3'
   | 'japanese3-homework'
+  | 'japanese3-classroom-words'
+  | 'japanese3-classroom-grammar'
   | 'history'
   | 'party'
   | 'military'

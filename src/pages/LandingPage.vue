@@ -94,7 +94,7 @@ async function refresh() {
               !/^(math-|calculus1-|2019-a-7-)/.test(id) &&
               !id.startsWith('jp1-mid24-') &&
               !id.startsWith('japanese1-') &&
-              !id.startsWith('japanese3-homework-') &&
+              !id.startsWith('japanese3-') &&
               !/^w(?:3[7-9]|4[0-3])-/.test(id) &&
               !id.startsWith('creativity-')
             )

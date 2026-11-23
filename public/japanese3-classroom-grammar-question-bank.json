@@ -1,0 +1,2018 @@
+[
+  {
+    "id": "japanese3-classroom-grammar-test-1104-1",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 1,
+    "stem": "咳も出し、頭も痛い。どうも風邪を（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ひきそうだ"
+      },
+      {
+        "key": "B",
+        "text": "ひくようだ"
+      },
+      {
+        "key": "C",
+        "text": "ひくそうだ"
+      },
+      {
+        "key": "D",
+        "text": "ひいたようだ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ひいたようだ",
+    "translation": "",
+    "explanation": "本题考查样态助动词「そうだ」与推量助动词「ようだ」的区别。「どうも～ようだ」是固定搭配，表示说话人根据某种依据做出推测。已经出现咳嗽、头痛症状，属于对已发生事情的推测，所以要用过去式加「ようだ」。A 项「ひきそうだ」表示\"看起来快要感冒\"，与已有症状矛盾；B 项现在时加「ようだ」不自然；C 项动词原形直接加「そうだ」接续错误，样态「そう」应接动词ます形词干。",
+    "grammarPoints": [
+      "「そうだ / ようだ」辨析"
+    ],
+    "tags": [
+      "「そうだ / ようだ」辨析"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月4日",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1104-2",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 2,
+    "stem": "雷がなって、いまにも雨が（　）ですね。",
+    "options": [
+      {
+        "key": "A",
+        "text": "降るよう"
+      },
+      {
+        "key": "B",
+        "text": "降るそう"
+      },
+      {
+        "key": "C",
+        "text": "降るらしい"
+      },
+      {
+        "key": "D",
+        "text": "降りそう"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "降りそう",
+    "translation": "",
+    "explanation": "本题考查表示\"眼看就要发生\"的「いまにも～そうだ」句型。样态的「そうだ」接在动词ます形词干后，表示根据眼前样子判断某事即将发生，「降る」的词干是「降り」，故选 D。A 项缺少「だ」，且「よう」多表示主观推测，不如「そう」能表现紧迫感；B 项和 C 项都是传闻用法，表示\"听说要下雨\"，与亲眼看到打雷的场景不符。",
+    "grammarPoints": [
+      "样态「そうだ」"
+    ],
+    "tags": [
+      "样态「そうだ」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月4日",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1104-3",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 3,
+    "stem": "友達の話では、森さんは先週日本へ（　）そうです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "出張した"
+      },
+      {
+        "key": "B",
+        "text": "出張だ"
+      },
+      {
+        "key": "C",
+        "text": "出張する"
+      },
+      {
+        "key": "D",
+        "text": "出張しない"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "出張した",
+    "translation": "",
+    "explanation": "本题考查传闻助动词「そうだ」，表示\"听说……\"，前面接简体句。「友達の話では」表明是听朋友说的，时间是「先週」，所以要用过去式「出張したそうです」。B 项「出張だ」把动词「出張する」误作名词，接续不当；C 项现在时与「先週」矛盾；D 项否定含义在题干中没有依据。",
+    "grammarPoints": [
+      "传闻「そうだ」"
+    ],
+    "tags": [
+      "传闻「そうだ」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月4日",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1104-4",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 4,
+    "stem": "天気予報によると、明日は雨（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ようだ"
+      },
+      {
+        "key": "B",
+        "text": "そうだ"
+      },
+      {
+        "key": "C",
+        "text": "のようだ"
+      },
+      {
+        "key": "D",
+        "text": "だそうだ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "だそうだ",
+    "translation": "",
+    "explanation": "本题考查「～によると、～そうだ」表示引用消息来源的固定搭配。名词加传闻「そうだ」时中间要加「だ」，即「雨だそうだ」，表示\"据天气预报说明天有雨\"。B 项缺少「だ」，接续错误。A 项和 C 项「ようだ」表示说话人自己的推测，不能用于转述天气预报的内容。",
+    "grammarPoints": [
+      "传闻「そうだ」的接续"
+    ],
+    "tags": [
+      "传闻「そうだ」的接续"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月4日",
+      "position": 4,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1104-6",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 6,
+    "stem": "（医者が患者の顔を触って）熱が（　）ですね。体温を測ってみましょうか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ありそう"
+      },
+      {
+        "key": "B",
+        "text": "あるよう"
+      },
+      {
+        "key": "C",
+        "text": "あるらしい"
+      },
+      {
+        "key": "D",
+        "text": "あるそう"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ありそう",
+    "translation": "",
+    "explanation": "本题考查样态「そうだ」，表示根据看到、摸到的样子做出判断。医生摸了患者的脸后判断\"好像发烧了\"，「ある」的ます形词干是「あり」，加「そう」构成「ありそう」。B 项「あるよう」侧重主观推测，不如亲手触摸后的「ありそう」自然；C 项和 D 项都是传闻用法，表示\"听说发烧\"，与医生亲自检查的场景矛盾，且 D 项接续也不对，样态「そう」不能接原形「ある」。",
+    "grammarPoints": [
+      "样态「そうだ」"
+    ],
+    "tags": [
+      "样态「そうだ」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月4日",
+      "position": 5,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1104-7",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 7,
+    "stem": "（飲んでみて）「この牛乳、ちょっと腐っている（　）ですね。」「あ、賞味期限が切れていますね。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "そう"
+      },
+      {
+        "key": "B",
+        "text": "ばかり"
+      },
+      {
+        "key": "C",
+        "text": "よう"
+      },
+      {
+        "key": "D",
+        "text": "ところ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "よう",
+    "translation": "",
+    "explanation": "本题考查「～ているようだ」表示根据结果推测状态。喝了一口发现牛奶变质，属于对已经发生的状态的推测，要用「腐っているようだ」。A 项「そう」表示样态时应接动词词干，「腐りそう」是\"看起来快要变质\"，与已经变质的事实不符；B 项「ばかり」表示\"刚刚做完\"，D 项「ところ」表示\"正要、正在、刚要\"，都不合文意。",
+    "grammarPoints": [
+      "「～ているようだ」"
+    ],
+    "tags": [
+      "「～ているようだ」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月4日",
+      "position": 6,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1104-8",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 8,
+    "stem": "ピザがもうすぐ出来上がります。あと5分待ちなさい。新鮮な材料を使ったから、今日のピザは（　）ですよ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おいしくなり"
+      },
+      {
+        "key": "B",
+        "text": "おいしそう"
+      },
+      {
+        "key": "C",
+        "text": "おいしいはず"
+      },
+      {
+        "key": "D",
+        "text": "おいしいすぎ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "おいしいはず",
+    "translation": "",
+    "explanation": "本题考查「はずだ」表示有根据的自信推测。因为用了新鲜食材，所以断定\"今天的披萨肯定好吃\"，用「おいしいはずです」。B 项「おいしそう」需要亲眼看到披萨的样子才能说，但披萨还有 5 分钟才出炉，没有视觉依据；A 项「なり」不是完整结句形式，应为「なります」，且文意也不通；D 项接续错误，「すぎる」应接形容词词干，即「おいしすぎる」，而且\"太好吃了\"也不合语境。",
+    "grammarPoints": [
+      "「はずだ」"
+    ],
+    "tags": [
+      "「はずだ」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月4日",
+      "position": 7,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1104-9",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 9,
+    "stem": "電気が消えていますから、だれも（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いないそうです"
+      },
+      {
+        "key": "B",
+        "text": "いないのはずです"
+      },
+      {
+        "key": "C",
+        "text": "いるようです"
+      },
+      {
+        "key": "D",
+        "text": "いないようです"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "いないようです",
+    "translation": "",
+    "explanation": "本题考查「ようだ」表示根据状况进行推测，以及「だれも＋否定」的搭配。灯灭了，所以推测\"好像谁都不在\"，即「いないようです」。A 项是传闻\"听说不在\"，与亲眼看到灯灭的依据不符；B 项「のはず」接续多余，正确形式应为「いないはずです」；C 项肯定形式与「だれも」要求的否定形式冲突。",
+    "grammarPoints": [
+      "「ようだ」与「だれも＋否定」"
+    ],
+    "tags": [
+      "「ようだ」与「だれも＋否定」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月4日",
+      "position": 8,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-1",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 1,
+    "stem": "子供たちを静かに（　）方法がありますか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "させる"
+      },
+      {
+        "key": "B",
+        "text": "しない"
+      },
+      {
+        "key": "C",
+        "text": "される"
+      },
+      {
+        "key": "D",
+        "text": "します"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "させる",
+    "translation": "",
+    "explanation": "本题考查使役态。句意是\"有没有让孩子们安静下来的方法\"，需要使役动词「させる」（让……）与「子供たちを」搭配。B 项「しない」（不做）和 D 项「します」（做）都是普通动词，与宾语逻辑不通；C 项「される」是被动态，方向相反，故排除。",
+    "grammarPoints": [
+      "使役态"
+    ],
+    "tags": [
+      "使役态"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 9,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-2",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 2,
+    "stem": "昨日、私は課長にお酒を（　）、酔ってしまいました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "飲み"
+      },
+      {
+        "key": "B",
+        "text": "飲まれて"
+      },
+      {
+        "key": "C",
+        "text": "飲まされて"
+      },
+      {
+        "key": "D",
+        "text": "飲んで"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "飲まされて",
+    "translation": "",
+    "explanation": "本题考查使役被动态。句意是\"昨天我被科长灌酒，喝醉了\"，表示被迫做某事，要用使役被动「飲まされて」。A 项是连用形，不能接逗号后分句；B 项「飲まれて」是普通被动，表示\"酒被喝了\"，主语应是酒而非\"我\"；D 项「飲んで」是主动\"喝了酒\"，与\"被科长（灌）\"的语境矛盾。",
+    "grammarPoints": [
+      "使役被动态"
+    ],
+    "tags": [
+      "使役被动态"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 10,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-3",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 3,
+    "stem": "（会社の説明会で）会社の人「これで、わたしからの説明は終わりますが、質問がある人はいますか。」学生「はい、二つ、質問（　）いただけませんか。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "やって"
+      },
+      {
+        "key": "B",
+        "text": "させて"
+      },
+      {
+        "key": "C",
+        "text": "されて"
+      },
+      {
+        "key": "D",
+        "text": "して"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "させて",
+    "translation": "",
+    "explanation": "本题考查\"使役＋いただく\"表示请求许可的句型。「質問させていただけませんか」是固定表达，意为\"能允许我提两个问题吗\"。A 项和 D 项构成的「やっていただけませんか／していただけませんか」表示请求对方做某事（让对方提问），方向错误；C 项被动态「されて」不能与「いただく」搭配。",
+    "grammarPoints": [
+      "「させていただく」请求许可"
+    ],
+    "tags": [
+      "「させていただく」请求许可"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 11,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-4",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 4,
+    "stem": "体育の先生は子供たちを（　）ました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "走り"
+      },
+      {
+        "key": "B",
+        "text": "走れ"
+      },
+      {
+        "key": "C",
+        "text": "走らせ"
+      },
+      {
+        "key": "D",
+        "text": "走させ"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "走らせ",
+    "translation": "",
+    "explanation": "本题考查一类动词的使役形。句意是\"体育老师让孩子们跑步\"，走る的使役形是「走らせる」，其连用形为「走らせ」。A 项「走り」是连用形，表示老师自己跑，与宾语「子供たちを」冲突；B 项「走れ」是命令形，不能直接接ました；D 项「走させ」变形错误，一类动词词尾う段应变为あ段加せる。",
+    "grammarPoints": [
+      "一类动词使役形"
+    ],
+    "tags": [
+      "一类动词使役形"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 12,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-5",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 5,
+    "stem": "母は病気の子供に薬を（　）ました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "飲み"
+      },
+      {
+        "key": "B",
+        "text": "飲んで"
+      },
+      {
+        "key": "C",
+        "text": "飲まれ"
+      },
+      {
+        "key": "D",
+        "text": "飲ませ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "飲ませ",
+    "translation": "",
+    "explanation": "本题考查使役态。句意是\"妈妈让生病的孩子吃了药\"，主语是妈妈、服药的是孩子，要用使役形「飲ませました」。A 项「飲み」是连用形，缺少后续成分且语义变成妈妈自己吃；B 项「飲んで」同样表示妈妈自己喝，逻辑不通；C 项「飲まれ」是被动\"被喝\"，完全不符合语境。",
+    "grammarPoints": [
+      "使役态"
+    ],
+    "tags": [
+      "使役态"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 13,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-6",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 6,
+    "stem": "娘：「お母さん、私も一人で外国にいってもいい？」母：「そうねえ。あなたにも（　）あげたいけど、まだ心配だわ。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "行かせて"
+      },
+      {
+        "key": "B",
+        "text": "行かれて"
+      },
+      {
+        "key": "C",
+        "text": "行かされて"
+      },
+      {
+        "key": "D",
+        "text": "行って"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "行かせて",
+    "translation": "",
+    "explanation": "本题考查\"使役＋てあげる\"表示允许、施恩的句型。句意是\"妈妈也想让你一个人去外国，但是还不放心\"，「行かせてあげたい」即\"想让你去\"。B 项「行かれて」是被动（被去，不成立）；C 项「行かされて」是使役被动，表示被迫去，与母亲主动允许的语气矛盾；D 项「行ってあげたい」表示妈妈自己去，与「あなたにも」（也让你）冲突。",
+    "grammarPoints": [
+      "「使役＋てあげる」表允许"
+    ],
+    "tags": [
+      "「使役＋てあげる」表允许"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 14,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-7",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 7,
+    "stem": "私は歌手になりたくて頑張っているんだけど、母に言ったら絶対（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "やめてくれる"
+      },
+      {
+        "key": "B",
+        "text": "やめてもらう"
+      },
+      {
+        "key": "C",
+        "text": "やめてほしい"
+      },
+      {
+        "key": "D",
+        "text": "やめさせられる"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "やめさせられる",
+    "translation": "",
+    "explanation": "本题考查使役被动态。句意是\"我告诉妈妈想当歌手努力着，但妈妈知道后肯定会勒令我放弃\"，「やめさせられる」表示被迫放弃。A 项「やめてくれる」表示妈妈替我放弃，逻辑荒谬；B 项「やめてもらう」表示我让妈妈放弃，主客体颠倒；C 项「やめてほしい」表示我希望（妈妈）放弃，同样主客体错误。",
+    "grammarPoints": [
+      "使役被动态"
+    ],
+    "tags": [
+      "使役被动态"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 15,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-8",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 8,
+    "stem": "課長、ぜひこの仕事を私に（　）ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "やって"
+      },
+      {
+        "key": "B",
+        "text": "やらせて"
+      },
+      {
+        "key": "C",
+        "text": "やられて"
+      },
+      {
+        "key": "D",
+        "text": "やらされて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "やらせて",
+    "translation": "",
+    "explanation": "本题考查\"使役＋てください\"表示请求许可。句意是\"科长，请一定把这份工作交给我做\"，「やらせてください」即\"请让我做\"。A 项「やってください」是请求对方做（请科长做），与「私に」（让我）矛盾；C 项「やられて」是被动，不合语境；D 项「やらされて」同样是被动态，不能接ください构成请求。",
+    "grammarPoints": [
+      "「させてください」请求许可"
+    ],
+    "tags": [
+      "「させてください」请求许可"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 16,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-9",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 9,
+    "stem": "お客：「ちょっとここに車を（　）ください。」店長：「いいですよ。どうぞ。」",
+    "options": [
+      {
+        "key": "A",
+        "text": "とめて"
+      },
+      {
+        "key": "B",
+        "text": "とめさせて"
+      },
+      {
+        "key": "C",
+        "text": "とめれて"
+      },
+      {
+        "key": "D",
+        "text": "とめられて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "とめさせて",
+    "translation": "",
+    "explanation": "本题考查「てください」（请求对方做）与「させてください」（请求许可自己做）的区别。客人是请求店长允许自己停车，应用「とめさせてください」（请让我停一下车），店长回答\"好的，请便\"正是对许可请求的应答。若选 A 项「とめてください」，则变成让店长去停车，与店长的回答不匹配。C 项变形错误，D 项被动态不符合语境。",
+    "grammarPoints": [
+      "「てください」与「させてください」的区别"
+    ],
+    "tags": [
+      "「てください」与「させてください」的区别"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 17,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1111-10",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1111",
+    "groupTitle": "11月11日",
+    "numberInGroup": 10,
+    "stem": "彼はいつも冗談を言って、みんなを（　）ます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "笑い"
+      },
+      {
+        "key": "B",
+        "text": "笑って"
+      },
+      {
+        "key": "C",
+        "text": "笑われ"
+      },
+      {
+        "key": "D",
+        "text": "笑わせ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "笑わせ",
+    "translation": "",
+    "explanation": "本题考查使役态。句意是\"他总是讲笑话，把大家逗笑\"，「笑わせます」即\"让大家笑\"。A 项「笑い」是连用形不能直接接ます构成此意，且语义变成他自己笑；B 项「笑って」同样表示他自己笑，与宾语「みんなを」冲突；C 项「笑われ」是被动\"被笑\"，方向相反。",
+    "grammarPoints": [
+      "使役态"
+    ],
+    "tags": [
+      "使役态"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月11日",
+      "position": 18,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1113-2",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 2,
+    "stem": "お飲み物は何に（　）ますか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "なさり"
+      },
+      {
+        "key": "B",
+        "text": "なさ"
+      },
+      {
+        "key": "C",
+        "text": "したい"
+      },
+      {
+        "key": "D",
+        "text": "なさい"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "なさい",
+    "translation": "",
+    "explanation": "本题考查尊敬语。「何になさいますか」是\"您喝点什么\"的固定敬语表达，由「なさる」（\"做\"的尊敬语）的连用形「なさい」加「ます」构成。A 项「なさり」并非「なさる」的正确连用形（「なさる」按五段动词活用，接ます时用「なさい」）；B 项「なさ」是未然形，不能直接接ます；C 项「したい」是\"想做\"的第一人称表达，不能用于询问对方。",
+    "grammarPoints": [
+      "尊敬语「なさる」"
+    ],
+    "tags": [
+      "尊敬语「なさる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月13日",
+      "position": 19,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1113-7",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 7,
+    "stem": "資料はもう（　）になりましたか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ごらん"
+      },
+      {
+        "key": "B",
+        "text": "おらん"
+      },
+      {
+        "key": "C",
+        "text": "ごけん"
+      },
+      {
+        "key": "D",
+        "text": "おけん"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ごらん",
+    "translation": "",
+    "explanation": "本题考查尊敬语。「ご覧になる」是「見る」的尊敬语表达，用于询问对方\"您看了资料吗\"。B 项「おらん」和 D 项「おけん」不是正确的敬语形式；C 项「ごけん」对应的「ご見ん」并非规范日语，\"看\"的尊敬语固定为「ご覧になる」。",
+    "grammarPoints": [
+      "尊敬语「ご覧になる」"
+    ],
+    "tags": [
+      "尊敬语「ご覧になる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月13日",
+      "position": 20,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1113-8",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 8,
+    "stem": "先生は何を（　）か。",
+    "options": [
+      {
+        "key": "A",
+        "text": "めしあがります"
+      },
+      {
+        "key": "B",
+        "text": "さしあがります"
+      },
+      {
+        "key": "C",
+        "text": "さしあげます"
+      },
+      {
+        "key": "D",
+        "text": "めしあげます"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "めしあがります",
+    "translation": "",
+    "explanation": "本题考查尊敬语。「召し上がる」是「食べる・飲む」的尊敬语，用于描述老师等尊长者的饮食行为。B 项「さしあがります」是把「召し上がる」与「差し上げる」拼混而成的错误形式；C 项「さしあげます」即「差し上げる」，是\"给\"的自谦语，方向相反；D 项「めしあげます」同样是两者混淆后的错误形式。",
+    "grammarPoints": [
+      "尊敬语「召し上がる」"
+    ],
+    "tags": [
+      "尊敬语「召し上がる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月13日",
+      "position": 21,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1113-9",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 9,
+    "stem": "部長はもう戻って（　）ました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いらっしゃい"
+      },
+      {
+        "key": "B",
+        "text": "おっしゃい"
+      },
+      {
+        "key": "C",
+        "text": "おしゃい"
+      },
+      {
+        "key": "D",
+        "text": "いらしゃい"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "いらっしゃい",
+    "translation": "",
+    "explanation": "本题考查尊敬语。「いらっしゃる」是「いる・来る・帰る」的尊敬语，「戻っていらっしゃいました」表示\"部长已经回来了\"。B 项「おっしゃい」来自「おっしゃる」（\"说\"的尊敬语），意思不符；C 项「おしゃい」和 D 项「いらしゃい」都是拼写错误的非规范形式（正确促音写法为おっしゃい・いらっしゃい）。",
+    "grammarPoints": [
+      "尊敬语「いらっしゃる」"
+    ],
+    "tags": [
+      "尊敬语「いらっしゃる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月13日",
+      "position": 22,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-1",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 1,
+    "stem": "部下：課長は何か、スポーツを（　）か。課長：ええ、時々、テニスをします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いたします"
+      },
+      {
+        "key": "B",
+        "text": "なさいます"
+      },
+      {
+        "key": "C",
+        "text": "おっしゃいます"
+      },
+      {
+        "key": "D",
+        "text": "いらっしゃいます"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "なさいます",
+    "translation": "",
+    "explanation": "本题考查尊敬语。部下询问课长\"您做运动吗\"，「する」的尊敬语是「なさる」。A 项「いたします」是「する」的自谦语，用于说自己的行为，方向相反；C 项「おっしゃいます」（\"说\"的尊敬语）和 D 项「いらっしゃいます」（\"在/来/去\"的尊敬语）意思都不符合\"做运动\"的语境。",
+    "grammarPoints": [
+      "尊敬语「なさる」"
+    ],
+    "tags": [
+      "尊敬语「なさる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 23,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-2",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 2,
+    "stem": "先生は今度の試験は難しくないと（　）よ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "申されました"
+      },
+      {
+        "key": "B",
+        "text": "いらっしゃいました"
+      },
+      {
+        "key": "C",
+        "text": "なさいました"
+      },
+      {
+        "key": "D",
+        "text": "おっしゃいました"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "おっしゃいました",
+    "translation": "",
+    "explanation": "本题考查尊敬语。「おっしゃる」是「言う」的尊敬语，「とおっしゃいました」表示\"老师说……\"。A 项「申されました」中「申す」是\"说\"的自谦语，不能加尊敬助动词「される」来指老师的行为；B 项「いらっしゃいました」（在/来/去）和 C 项「なさいました」（做）意思均不符合\"说\"的语境。",
+    "grammarPoints": [
+      "尊敬语「おっしゃる」"
+    ],
+    "tags": [
+      "尊敬语「おっしゃる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 24,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-3",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 3,
+    "stem": "学生：先生、会場の場所は（　）。先生：はい。",
+    "options": [
+      {
+        "key": "A",
+        "text": "存じていますか"
+      },
+      {
+        "key": "B",
+        "text": "お知りになっていらっしゃいますか"
+      },
+      {
+        "key": "C",
+        "text": "存じてなさいますか"
+      },
+      {
+        "key": "D",
+        "text": "ご存じですか"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "ご存じですか",
+    "translation": "",
+    "explanation": "本题考查尊敬语。询问老师\"您知道会场在哪里吗\"，「知っている」的尊敬语固定表达是「ご存じですか」。A 项「存じていますか」中「存じる」是自谦语，用于说自己知道，不能用于问老师；B 项「お知りになっていらっしゃいますか」是双重敬语，累赘而不自然；C 项「存じてなさいますか」是自谦语与尊敬语混用的错误形式。",
+    "grammarPoints": [
+      "尊敬语「ご存じですか」"
+    ],
+    "tags": [
+      "尊敬语「ご存じですか」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 25,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-4",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 4,
+    "stem": "（電話で）森先生：はい、北山日本語学校です。リー：もしもし、中級クラスのリーですが、森先生は（　）か。森先生：あ、リーさん。森です。どうしましたか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ご存じです"
+      },
+      {
+        "key": "B",
+        "text": "なさいます"
+      },
+      {
+        "key": "C",
+        "text": "ご覧になります"
+      },
+      {
+        "key": "D",
+        "text": "いらっしゃいます"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "いらっしゃいます",
+    "translation": "",
+    "explanation": "本题考查尊敬语。打电话找人时问\"森老师在吗\"，「いる」的尊敬语是「いらっしゃる」。A 项「ご存じです」（知道）、B 项「なさいます」（做）、C 项「ご覧になります」（看）意思都与\"在不在\"的语境不符。",
+    "grammarPoints": [
+      "尊敬语「いらっしゃる」"
+    ],
+    "tags": [
+      "尊敬语「いらっしゃる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 26,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-5",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 5,
+    "stem": "どうぞご遠慮なく（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "召し上がってください"
+      },
+      {
+        "key": "B",
+        "text": "いただいてください"
+      },
+      {
+        "key": "C",
+        "text": "お食べしてください"
+      },
+      {
+        "key": "D",
+        "text": "お飲みしてください"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "召し上がってください",
+    "translation": "",
+    "explanation": "本题考查尊敬语。「どうぞご遠慮なく召し上がってください」是\"请不用客气，尽管吃\"的固定表达，「召し上がる」是「食べる」的尊敬语。B 项「いただいてください」中「いただく」是自谦语（自己吃才用），不能用于请对方吃；C 项和 D 项的「お食べしてください」「お飲みしてください」都是「お＋ます形＋してください」的误用，规范形式应为「お食べください」或直接用「召し上がってください」。\n\n题干备注：截图题干如此显示，完整应为「どうぞご遠慮なく（　）」，不影响答题",
+    "grammarPoints": [
+      "尊敬语固定表达"
+    ],
+    "tags": [
+      "尊敬语固定表达"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 27,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-6",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 6,
+    "stem": "間もなく出発しますので、どうぞ（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お乗りしていただけます"
+      },
+      {
+        "key": "B",
+        "text": "お乗りになりください"
+      },
+      {
+        "key": "C",
+        "text": "お乗りしてください"
+      },
+      {
+        "key": "D",
+        "text": "お乗りください"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "お乗りください",
+    "translation": "",
+    "explanation": "本题考查尊敬语的请求表达。「お乗りください」（请上车）是「お＋ます形＋ください」结构的规范用法，常用于乘务广播。A 项「お乗りしていただけます」把对方乘车说成\"为我而做\"，语义别扭且不合广播语体；B 项「お乗りになりください」混用了「お～になる」和「ください」，正确形式应为「お乗りになってください」；C 项「お乗りしてください」中「お～する」是自谦语结构，不能用于请求对方。",
+    "grammarPoints": [
+      "「お～ください」请求表达"
+    ],
+    "tags": [
+      "「お～ください」请求表达"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 28,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-7",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 7,
+    "stem": "山田：あ、課長、昨日はどうもごちそうさまでした。おいしい食べ物をたくさん（　）。課長：それはよかった。また家で食事しよう。",
+    "options": [
+      {
+        "key": "A",
+        "text": "召し上がっていました"
+      },
+      {
+        "key": "B",
+        "text": "いただきました"
+      },
+      {
+        "key": "C",
+        "text": "召し上がりました"
+      },
+      {
+        "key": "D",
+        "text": "差し上げました"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "いただきました",
+    "translation": "",
+    "explanation": "本题考查自谦语。山田感谢课长请客，说自己\"吃了好多好吃的\"，「食べる」的自谦语是「いただく」。A 项和 C 项的「召し上がる」是尊敬语，用于说尊长者吃，不能用于说自己；D 项「差し上げました」意为\"给了\"，与\"吃了美食\"的语义完全不符。",
+    "grammarPoints": [
+      "自谦语「いただく」"
+    ],
+    "tags": [
+      "自谦语「いただく」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 29,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-8",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 8,
+    "stem": "社長はいつも、アルバイトの私たちにも出張のおみやげを（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "差し上げます"
+      },
+      {
+        "key": "B",
+        "text": "いただきます"
+      },
+      {
+        "key": "C",
+        "text": "めしあがります"
+      },
+      {
+        "key": "D",
+        "text": "くださいます"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "くださいます",
+    "translation": "",
+    "explanation": "本题考查授受动词的敬语。社长（尊长）给\"我们\"土特产，「くれる」的尊敬语是「くださる」。A 项「差し上げます」是\"给\"的自谦语，主语应是自己一方，方向相反；B 项「いただきます」是\"得到\"的自谦语，主语应是\"我们\"而非社长；C 项「めしあがります」意为\"吃\"，语义不符。",
+    "grammarPoints": [
+      "授受动词敬语「くださる」"
+    ],
+    "tags": [
+      "授受动词敬语「くださる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 30,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-9",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 9,
+    "stem": "学生：先生、今朝の新聞、（　）。先生：ええ、もう読んだよ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ご覧にしましたか"
+      },
+      {
+        "key": "B",
+        "text": "なさいますか"
+      },
+      {
+        "key": "C",
+        "text": "お読みになりましたか"
+      },
+      {
+        "key": "D",
+        "text": "おっしゃいましたか"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "お読みになりましたか",
+    "translation": "",
+    "explanation": "本题考查尊敬语。学生问老师\"您读今早的报纸了吗\"，「読む」的尊敬语是「お読みになる」。A 项「ご覧にしましたか」混用了尊敬语「ご覧になる」与自谦语「する」，形式错误；B 项「なさいますか」是\"做\"的尊敬语现在时，既语义不合（应为\"读\"）时态也不对（应为过去时）；D 项「おっしゃいましたか」意为\"说了吗\"，语义不符。",
+    "grammarPoints": [
+      "尊敬语「お読みになる」"
+    ],
+    "tags": [
+      "尊敬语「お読みになる」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 31,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1116-10",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1116",
+    "groupTitle": "11月16日",
+    "numberInGroup": 10,
+    "stem": "タクシーを呼びますので、しばらく（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お待ちいたしてください"
+      },
+      {
+        "key": "B",
+        "text": "お待ちください"
+      },
+      {
+        "key": "C",
+        "text": "お待たせします"
+      },
+      {
+        "key": "D",
+        "text": "お待ちします"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "お待ちください",
+    "translation": "",
+    "explanation": "本题考查尊敬语的请求表达。\"我去叫出租车，请您稍等\"用「お待ちください」。A 项「お待ちいたしてください」是自谦语与请求混用的错误形式；C 项「お待たせします」（让您久等了）通常用于已经让人等待之后的致歉，不符合\"接下来请稍等\"的语境；D 项「お待ちします」是自谦语，表示\"我等待\"，说话主体方向错误。",
+    "grammarPoints": [
+      "「お待ちください」请求表达"
+    ],
+    "tags": [
+      "「お待ちください」请求表达"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月16日",
+      "position": 32,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-1",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 1,
+    "stem": "部長、山田製造の田中様が（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "参りました"
+      },
+      {
+        "key": "B",
+        "text": "伺われました"
+      },
+      {
+        "key": "C",
+        "text": "お見えです"
+      },
+      {
+        "key": "D",
+        "text": "見られました"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "お見えです",
+    "translation": "",
+    "explanation": "本题考查尊敬语。田中様是外公司来访的客人，向部长转述客人到来时，动词须用尊敬语；「お見えです」是「来る/いる」的尊敬语表达，符合语境。A 项「参りました」是谦逊语，只能用于说话人己方，不能用于客人；B 项「伺われました」不是规范敬语形式（「伺う」本身已是谦逊语，不可再加被动态表尊敬）；D 项「見られました」是「見る」的尊敬或被动形式，语义为\"被看见\"，与\"到来\"不符。",
+    "grammarPoints": [
+      "尊敬语「お見えです」"
+    ],
+    "tags": [
+      "尊敬语「お見えです」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 33,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-2",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 2,
+    "stem": "（靴屋で）客：すみません。この靴のもう一つ大きいサイズはありますか。店員：あ、はい、確認しますので、少々（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お待ちしております"
+      },
+      {
+        "key": "B",
+        "text": "お待ちしましょう"
+      },
+      {
+        "key": "C",
+        "text": "お待ちできます"
+      },
+      {
+        "key": "D",
+        "text": "お待ちください"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "お待ちください",
+    "translation": "",
+    "explanation": "本题考查对顾客的礼貌请求表达。「少々お待ちください」是\"请稍等片刻\"的固定句式。A 项「お待ちしております」表示\"我正在等着\"，动作方向完全相反；B 项「お待ちしましょう」是劝诱形\"让我们一起等吧\"，对顾客既失礼语义也不对；C 项「お待ちできます」不是规范敬语，且\"能够等待\"语义不通。",
+    "grammarPoints": [
+      "「お待ちください」固定句式"
+    ],
+    "tags": [
+      "「お待ちください」固定句式"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 34,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-3",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 3,
+    "stem": "先生：ホアさんが日本に留学すると言ったとき、ご両親は何と（　）。ホア：頑張れと応援してくれました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お聞きになりましたか"
+      },
+      {
+        "key": "B",
+        "text": "うかがいましたか"
+      },
+      {
+        "key": "C",
+        "text": "おっしゃいましたか"
+      },
+      {
+        "key": "D",
+        "text": "申し上げましたか"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "おっしゃいましたか",
+    "translation": "",
+    "explanation": "本题考查尊敬语动词辨析。老师询问小花的父母\"说了什么\"，父母属于对方相关人物，\"说\"须用尊敬语「おっしゃる」，故选 C。A 项「お聞きになる」是\"听、问\"的尊敬语，动词本身不对；B 项「うかがう」与 D 项「申し上げる」都是谦逊语，只能用于说话人自己，不能用于对方的父母。",
+    "grammarPoints": [
+      "尊敬语动词辨析"
+    ],
+    "tags": [
+      "尊敬语动词辨析"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 35,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-4",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 4,
+    "stem": "学生：すみません、そちらのアルバイトの募集についてちょっと（　）んですが。店の人：はい。どんなことでしょうか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いただきたい"
+      },
+      {
+        "key": "B",
+        "text": "御覧になりたい"
+      },
+      {
+        "key": "C",
+        "text": "伺いたい"
+      },
+      {
+        "key": "D",
+        "text": "お聞きになりたい"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "伺いたい",
+    "translation": "",
+    "explanation": "本题考查谦逊语。学生向店家打听招聘信息，\"想请教一下\"是自己的行为，须用谦逊语；「伺う」是「聞く/尋ねる」的谦逊语，「伺いたい」正确。A 项「いただきたい」意为\"想要得到\"，语义不符；B 项「御覧になりたい」与 D 项「お聞きになりたい」都是尊敬语，只能用于尊敬对方的行为，不能用于自己的\"询问\"。",
+    "grammarPoints": [
+      "谦逊语「伺う」"
+    ],
+    "tags": [
+      "谦逊语「伺う」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 36,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-5",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 5,
+    "stem": "（レストランで）店員：いらっしゃいませ。2名様ですか。客：はい。店員：こちらへどうぞ。お席にご案内（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いたします"
+      },
+      {
+        "key": "B",
+        "text": "伺います"
+      },
+      {
+        "key": "C",
+        "text": "なさいます"
+      },
+      {
+        "key": "D",
+        "text": "ございます"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "いたします",
+    "translation": "",
+    "explanation": "本题考查「ご～いたします」谦逊语型。店员为客人引座是己方服务对方的行为，须用谦逊语，「ご案内いたします」正确。B 项「伺います」意为\"拜访、请教\"，不能与「ご案内」搭配；C 项「なさいます」是尊敬语，用于对方行为，方向错误；D 项「ございます」是「ある」的礼貌语，不能接在「ご案内」后面。",
+    "grammarPoints": [
+      "「ご～いたします」谦逊语型"
+    ],
+    "tags": [
+      "「ご～いたします」谦逊语型"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 37,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-6",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 6,
+    "stem": "お客：靴売り場はどこですか。店の人：2階に（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いらっしゃいます"
+      },
+      {
+        "key": "B",
+        "text": "います"
+      },
+      {
+        "key": "C",
+        "text": "ございます"
+      },
+      {
+        "key": "D",
+        "text": "おります"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ございます",
+    "translation": "",
+    "explanation": "本题考查存在动词的礼貌语。说明卖场所在位置属于非生命场所的存在，对顾客应使用礼貌语「ございます」（「ある」的丁寧語）。A 项「いらっしゃいます」是用于人物的尊敬语存在动词，不能用于卖场；B 项「います」是普通体，对顾客失礼；D 项「おります」是谦逊语，只用于自谦己方人物，不能用于介绍店内设施。",
+    "grammarPoints": [
+      "存在动词礼貌语「ございます」"
+    ],
+    "tags": [
+      "存在动词礼貌语「ございます」"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 38,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-7",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 7,
+    "stem": "時間と場所が決まりましたら、（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ご連絡してください"
+      },
+      {
+        "key": "B",
+        "text": "ご連絡いたします"
+      },
+      {
+        "key": "C",
+        "text": "ご連絡していただけます"
+      },
+      {
+        "key": "D",
+        "text": "ご連絡いただけます"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ご連絡いたします",
+    "translation": "",
+    "explanation": "本题考查谦逊语与请求表达的辨析。说话人表示\"时间地点定下来后由我来联系您\"，是己方行为，须用「ご～いたします」谦逊语型。A 项「ご連絡してください」中「ご」与「してください」不可如此组合（正确请求说法应为「ご連絡ください」）；C 项「ご連絡していただけます」时态语义不通；D 项「ご連絡いただけます」是\"请您联系我\"的请求方向，与语境不符。",
+    "grammarPoints": [
+      "谦逊语与请求表达辨析"
+    ],
+    "tags": [
+      "谦逊语与请求表达辨析"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 39,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-8",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 8,
+    "stem": "わたしは佐藤先生（　）パーティー（　）ご招待したいと思います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "に/で"
+      },
+      {
+        "key": "B",
+        "text": "を/を"
+      },
+      {
+        "key": "C",
+        "text": "を/に"
+      },
+      {
+        "key": "D",
+        "text": "に/に"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "を/に",
+    "translation": "",
+    "explanation": "本题考查动词「招待する」的助词搭配。被邀请的人作宾语用「を」，邀请前往的活动或目的地用「に」，即「先生をパーティーに招待する」（邀请老师参加聚会）。A 项把邀请对象误用「に」；B 项把目的地误用「を」；D 项两处助词全部误用为「に」。",
+    "grammarPoints": [
+      "「招待する」的助词搭配"
+    ],
+    "tags": [
+      "「招待する」的助词搭配"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 40,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-9",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 9,
+    "stem": "先生、このみかん、姉が田舎から（　）。どうぞ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "持ってこられました"
+      },
+      {
+        "key": "B",
+        "text": "持って来てあげました"
+      },
+      {
+        "key": "C",
+        "text": "持っていらっしゃいました"
+      },
+      {
+        "key": "D",
+        "text": "持ってまいりました"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "持ってまいりました",
+    "translation": "",
+    "explanation": "本题考查谈及自家人时的内外关系敬语。学生对老师谈自己的姐姐，姐姐属于\"内\"即己方，须用谦逊语或普通语，绝不可用尊敬语；「持ってまいりました」是「持ってくる」的谦逊语，正确。A 项「持ってこられました」与 C 项「持っていらっしゃいました」都是尊敬语，不能用于自家人；B 项「持って来てあげました」中「あげる」的给予方向混乱（对老师给予应用「さしあげる」），且语义不符。",
+    "grammarPoints": [
+      "内外关系敬语"
+    ],
+    "tags": [
+      "内外关系敬语"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 41,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-grammar-test-1120-10",
+    "category": "japanese3-classroom-grammar",
+    "groupId": "test-1120",
+    "groupTitle": "11月20日",
+    "numberInGroup": 10,
+    "stem": "（電話で）店員：お電話ありがとうございます。さくら美容院（　）。客：すみません、今日予約したいんですが。店員：はい、ありがとうございます。何時ごろがよろしいでしょうか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "でございます"
+      },
+      {
+        "key": "B",
+        "text": "とおっしゃします"
+      },
+      {
+        "key": "C",
+        "text": "と申し上げます"
+      },
+      {
+        "key": "D",
+        "text": "でいらっしゃいます"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "でございます",
+    "translation": "",
+    "explanation": "本题考查电话中自报名号的礼貌表达。店员报出自家店名时用礼貌语「でございます」，即\"这里是樱美容院\"，是教材中的固定电话应对句式。B 项「とおっしゃします」把尊敬语「おっしゃいます」误加さ，形式错误；C 项「と申し上げます」一般用于报出人名（～と申します），用于店名不自然；D 项「でいらっしゃいます」是尊敬语，不能用于自家店铺。",
+    "grammarPoints": [
+      "电话自报名号的礼貌表达"
+    ],
+    "tags": [
+      "电话自报名号的礼貌表达"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/语法题整理.md",
+      "group": "11月20日",
+      "position": 42,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  }
+]

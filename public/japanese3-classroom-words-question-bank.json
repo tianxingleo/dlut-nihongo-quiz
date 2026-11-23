@@ -1,0 +1,1704 @@
+[
+  {
+    "id": "japanese3-classroom-words-test-1102-1",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 1,
+    "stem": "请选择划线部分的读音。\n\n彼とは何の<u>関係</u>もない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "かんけい"
+      },
+      {
+        "key": "B",
+        "text": "けんけい"
+      },
+      {
+        "key": "C",
+        "text": "けんけ"
+      },
+      {
+        "key": "D",
+        "text": "かんけ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "かんけい",
+    "translation": "",
+    "explanation": "かんけい，\"关系\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-2",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 2,
+    "stem": "请选择划线部分的汉字写法。\n\n<u>あいて</u>のないけんかはできない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "会手"
+      },
+      {
+        "key": "B",
+        "text": "相手"
+      },
+      {
+        "key": "C",
+        "text": "合手"
+      },
+      {
+        "key": "D",
+        "text": "对手"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "相手",
+    "translation": "",
+    "explanation": "相手，读作あいて，\"对方、对手\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-3",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 3,
+    "stem": "请选择划线部分的读音。\n\n平均寿命より5年<u>長生き</u>した。",
+    "options": [
+      {
+        "key": "A",
+        "text": "なかいき"
+      },
+      {
+        "key": "B",
+        "text": "ちゅういき"
+      },
+      {
+        "key": "C",
+        "text": "ながいき"
+      },
+      {
+        "key": "D",
+        "text": "ちょういき"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "ながいき",
+    "translation": "",
+    "explanation": "ながいき，\"长寿\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-4",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 4,
+    "stem": "请选择划线部分的读音。\n\n急病で<u>救急車</u>を呼んだ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きゅうきゅうしゃ"
+      },
+      {
+        "key": "B",
+        "text": "きゅうききゅしゃ"
+      },
+      {
+        "key": "C",
+        "text": "ききゅしゃ"
+      },
+      {
+        "key": "D",
+        "text": "きゅきゅうしゃ"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "きゅうきゅうしゃ",
+    "translation": "",
+    "explanation": "きゅうきゅうしゃ，\"救护车\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 4,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-5",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 5,
+    "stem": "请选择划线部分的汉字写法。\n\n火をつけたら簡単に<u>もえて</u>しまった。",
+    "options": [
+      {
+        "key": "A",
+        "text": "着えて"
+      },
+      {
+        "key": "B",
+        "text": "点えて"
+      },
+      {
+        "key": "C",
+        "text": "焼えて"
+      },
+      {
+        "key": "D",
+        "text": "燃えて"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "燃えて",
+    "translation": "",
+    "explanation": "燃えて，读作もえて，\"燃烧\"之意\n\n题干备注：整理稿写作「む_えて」，依参考答案「燃えて」的读音订正为「もえて」。",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 5,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-6",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 6,
+    "stem": "请选择划线部分的汉字写法。\n\nその考えには大<u>はんたい</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "反対"
+      },
+      {
+        "key": "B",
+        "text": "賛同"
+      },
+      {
+        "key": "C",
+        "text": "賛成"
+      },
+      {
+        "key": "D",
+        "text": "返対"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "反対",
+    "translation": "",
+    "explanation": "反対，读作はんたい，\"大反対\"表示\"强烈反对\"",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 6,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-7",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 7,
+    "stem": "请选择划线部分的读音。\n\n<u>人口</u>問題の解決に努力する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ひとくち"
+      },
+      {
+        "key": "B",
+        "text": "にんこう"
+      },
+      {
+        "key": "C",
+        "text": "にんくち"
+      },
+      {
+        "key": "D",
+        "text": "じんこう"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "じんこう",
+    "translation": "",
+    "explanation": "じんこう，\"人口\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 7,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-8",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 8,
+    "stem": "请选择划线部分的读音。\n\n友人の妹と<u>婚約</u>する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "こうよう"
+      },
+      {
+        "key": "B",
+        "text": "こんやく"
+      },
+      {
+        "key": "C",
+        "text": "こんよう"
+      },
+      {
+        "key": "D",
+        "text": "こうやく"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "こんやく",
+    "translation": "",
+    "explanation": "こんやく，\"订婚\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 8,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-9",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 9,
+    "stem": "请选择划线部分的汉字写法。\n\nデートのために念入りに<u>けしょう</u>をした。",
+    "options": [
+      {
+        "key": "A",
+        "text": "化牧"
+      },
+      {
+        "key": "B",
+        "text": "化妆"
+      },
+      {
+        "key": "C",
+        "text": "化庄"
+      },
+      {
+        "key": "D",
+        "text": "化粧"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "化粧",
+    "translation": "",
+    "explanation": "化粧，读作けしょう，\"化妆\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 9,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1102-10",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1102",
+    "groupTitle": "11月2日",
+    "numberInGroup": 10,
+    "stem": "请选择划线部分的读音。\n\n相手の態度は思ったより<u>厳しい</u>です。",
+    "options": [
+      {
+        "key": "A",
+        "text": "やさしい"
+      },
+      {
+        "key": "B",
+        "text": "きびしい"
+      },
+      {
+        "key": "C",
+        "text": "まずしい"
+      },
+      {
+        "key": "D",
+        "text": "さびしい"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "きびしい",
+    "translation": "",
+    "explanation": "きびしい，\"严格、严厉\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月2日",
+      "position": 10,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1104-5",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1104",
+    "groupTitle": "11月4日",
+    "numberInGroup": 5,
+    "stem": "何か燃えているようですね。変な（　）がします。",
+    "options": [
+      {
+        "key": "A",
+        "text": "あじ"
+      },
+      {
+        "key": "B",
+        "text": "かおり"
+      },
+      {
+        "key": "C",
+        "text": "くさい"
+      },
+      {
+        "key": "D",
+        "text": "におい"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "におい",
+    "translation": "",
+    "explanation": "におい，\"气味\"之意；\"変なにおいがする\"表示\"有股怪味\"",
+    "grammarPoints": [],
+    "tags": [
+      "词义"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月4日",
+      "position": 11,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-1",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 1,
+    "stem": "请选择划线部分的读音。\n\nこの船の荷物は上海で<u>下ろし</u>ます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "たろし"
+      },
+      {
+        "key": "B",
+        "text": "おろし"
+      },
+      {
+        "key": "C",
+        "text": "ふろし"
+      },
+      {
+        "key": "D",
+        "text": "かろし"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "おろし",
+    "translation": "",
+    "explanation": "おろし；下ろす意为\"卸下货物\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 12,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-2",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 2,
+    "stem": "请选择划线部分的读音。\n\nこのたび娘が<u>お世話</u>になり、ありがとうございました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "せは"
+      },
+      {
+        "key": "B",
+        "text": "せいは"
+      },
+      {
+        "key": "C",
+        "text": "せいわ"
+      },
+      {
+        "key": "D",
+        "text": "せわ"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "せわ",
+    "translation": "",
+    "explanation": "せわ；お世話になる意为\"受照顾、受关照\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 13,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-3",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 3,
+    "stem": "请选择划线部分的汉字写法。\n\nそれを聞くと彼は<u>いや</u>な顔をした。",
+    "options": [
+      {
+        "key": "A",
+        "text": "厭"
+      },
+      {
+        "key": "B",
+        "text": "頻"
+      },
+      {
+        "key": "C",
+        "text": "嫌"
+      },
+      {
+        "key": "D",
+        "text": "悪"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "嫌",
+    "translation": "",
+    "explanation": "嫌；嫌な顔意为\"不高兴的、厌恶的表情\"",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 14,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-4",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 4,
+    "stem": "请选择划线部分的读音。\n\n鳥の鳴き声を<u>録音</u>する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ろくおん"
+      },
+      {
+        "key": "B",
+        "text": "るくおと"
+      },
+      {
+        "key": "C",
+        "text": "ろくおと"
+      },
+      {
+        "key": "D",
+        "text": "るくおん"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ろくおん",
+    "translation": "",
+    "explanation": "ろくおん，\"录音\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 15,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-5",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 5,
+    "stem": "请选择划线部分的汉字写法。\n\n注文品をすぐ<u>とどけて</u>ください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "逓けて"
+      },
+      {
+        "key": "B",
+        "text": "届けて"
+      },
+      {
+        "key": "C",
+        "text": "発けて"
+      },
+      {
+        "key": "D",
+        "text": "送けて"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "届けて",
+    "translation": "",
+    "explanation": "届けて；届ける意为\"送到、送达\"",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 16,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-6",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 6,
+    "stem": "请选择划线部分的汉字写法。\n\nあの子の<u>おや</u>の顔が見たい。",
+    "options": [
+      {
+        "key": "A",
+        "text": "母"
+      },
+      {
+        "key": "B",
+        "text": "親"
+      },
+      {
+        "key": "C",
+        "text": "父"
+      },
+      {
+        "key": "D",
+        "text": "両親"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "親",
+    "translation": "",
+    "explanation": "親，读作おや，\"父母、双亲\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 17,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-7",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 7,
+    "stem": "请选择划线部分的读音。\n\nきれいな字を書くために、<u>習字</u>を習わせる。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しゅくし"
+      },
+      {
+        "key": "B",
+        "text": "しゅくじ"
+      },
+      {
+        "key": "C",
+        "text": "しゅうじ"
+      },
+      {
+        "key": "D",
+        "text": "しゅうし"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "しゅうじ",
+    "translation": "",
+    "explanation": "しゅうじ，\"书法、练字\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 18,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-8",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 8,
+    "stem": "请选择划线部分的读音。\n\n<u>営業</u>時間は朝10時から夜8時までです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "えいぎょう"
+      },
+      {
+        "key": "B",
+        "text": "えいきょう"
+      },
+      {
+        "key": "C",
+        "text": "えいぎゅう"
+      },
+      {
+        "key": "D",
+        "text": "えいきゅう"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "えいぎょう",
+    "translation": "",
+    "explanation": "えいぎょう；営業時間意为\"营业时间\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 19,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-9",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 9,
+    "stem": "请选择划线部分的读音。\n\n子供は週に3回<u>塾</u>に通っている。",
+    "options": [
+      {
+        "key": "A",
+        "text": "じょく"
+      },
+      {
+        "key": "B",
+        "text": "しゅく"
+      },
+      {
+        "key": "C",
+        "text": "しょく"
+      },
+      {
+        "key": "D",
+        "text": "じゅく"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "じゅく",
+    "translation": "",
+    "explanation": "じゅく，\"补习班、私塾\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 20,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1106-10",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1106",
+    "groupTitle": "11月6日",
+    "numberInGroup": 10,
+    "stem": "请选择划线部分的读音。\n\n他校の<u>生徒</u>とけんかをした。",
+    "options": [
+      {
+        "key": "A",
+        "text": "せいとう"
+      },
+      {
+        "key": "B",
+        "text": "せとう"
+      },
+      {
+        "key": "C",
+        "text": "せいと"
+      },
+      {
+        "key": "D",
+        "text": "せと"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "せいと",
+    "translation": "",
+    "explanation": "せいと，\"中小学学生\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月6日",
+      "position": 21,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1113-1",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 1,
+    "stem": "请选择划线部分的读音。\n\n休日を<u>利用</u>してパソコン教室に通う。",
+    "options": [
+      {
+        "key": "A",
+        "text": "りよう"
+      },
+      {
+        "key": "B",
+        "text": "りゅう"
+      },
+      {
+        "key": "C",
+        "text": "りょん"
+      },
+      {
+        "key": "D",
+        "text": "りゅん"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "りよう",
+    "translation": "",
+    "explanation": "りよう，\"利用\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月13日",
+      "position": 22,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1113-3",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 3,
+    "stem": "请选择划线部分的汉字写法。\n\n今年の4月から貿易会社に<u>つとめる</u>ことになった。",
+    "options": [
+      {
+        "key": "A",
+        "text": "努める"
+      },
+      {
+        "key": "B",
+        "text": "務める"
+      },
+      {
+        "key": "C",
+        "text": "働める"
+      },
+      {
+        "key": "D",
+        "text": "勤める"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "勤める",
+    "translation": "",
+    "explanation": "勤める，读作つとめる；\"在公司工作\"用「勤める」",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月13日",
+      "position": 23,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1113-4",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 4,
+    "stem": "请选择划线部分的读音。\n\n森さんの電話番号、<u>ご存知</u>ですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ごぞんち"
+      },
+      {
+        "key": "B",
+        "text": "ごぞんじ"
+      },
+      {
+        "key": "C",
+        "text": "ごそんじ"
+      },
+      {
+        "key": "D",
+        "text": "ごそんち"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "ごぞんじ",
+    "translation": "",
+    "explanation": "ごぞんじ；「ご存知」是\"知道\"的尊敬语表达",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月13日",
+      "position": 24,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1113-5",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 5,
+    "stem": "请选择划线部分的读音。\n\n彼女は最年少でグランプリを<u>受賞</u>した。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しゅしょ"
+      },
+      {
+        "key": "B",
+        "text": "しゅしょう"
+      },
+      {
+        "key": "C",
+        "text": "じゅしょ"
+      },
+      {
+        "key": "D",
+        "text": "じゅしょう"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "じゅしょう",
+    "translation": "",
+    "explanation": "じゅしょう，\"获奖\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月13日",
+      "position": 25,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1113-6",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 6,
+    "stem": "请选择划线部分的汉字写法。\n\n環境問題について<u>こうえん</u>する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "演講"
+      },
+      {
+        "key": "B",
+        "text": "口演"
+      },
+      {
+        "key": "C",
+        "text": "公演"
+      },
+      {
+        "key": "D",
+        "text": "講演"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "講演",
+    "translation": "",
+    "explanation": "講演；就环境问题发表演讲用「講演する」",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月13日",
+      "position": 26,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1113-10",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1113",
+    "groupTitle": "11月13日",
+    "numberInGroup": 10,
+    "stem": "请选择划线部分的读音。\n\n大学を<u>目指して</u>勉強する。",
+    "options": [
+      {
+        "key": "A",
+        "text": "もくざし"
+      },
+      {
+        "key": "B",
+        "text": "めさし"
+      },
+      {
+        "key": "C",
+        "text": "もくさし"
+      },
+      {
+        "key": "D",
+        "text": "めざし"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "めざし",
+    "translation": "",
+    "explanation": "めざし；目指す意为\"以……为目标\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月13日",
+      "position": 27,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-1",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 1,
+    "stem": "请选择划线部分的读音。\n\n料理は材料の味を<u>生かす</u>ことが大切だ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "はかす"
+      },
+      {
+        "key": "B",
+        "text": "きかす"
+      },
+      {
+        "key": "C",
+        "text": "いかす"
+      },
+      {
+        "key": "D",
+        "text": "せかす"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "いかす",
+    "translation": "",
+    "explanation": "いかす；生かす意为\"发挥、利用\"",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 28,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-2",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 2,
+    "stem": "请选择划线部分的汉字写法。\n\nご<u>めいわく</u>でなければぜひいらしてください。",
+    "options": [
+      {
+        "key": "A",
+        "text": "迷惑"
+      },
+      {
+        "key": "B",
+        "text": "困惑"
+      },
+      {
+        "key": "C",
+        "text": "誘惑"
+      },
+      {
+        "key": "D",
+        "text": "魅惑"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "迷惑",
+    "translation": "",
+    "explanation": "迷惑，读作めいわく，\"麻烦、打扰\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 29,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-3",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 3,
+    "stem": "请选择划线部分的读音。\n\nまさかの時の<u>用意</u>に保険に入る。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ようい"
+      },
+      {
+        "key": "B",
+        "text": "ゆうい"
+      },
+      {
+        "key": "C",
+        "text": "よんい"
+      },
+      {
+        "key": "D",
+        "text": "ゆんい"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ようい",
+    "translation": "",
+    "explanation": "ようい，\"准备\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 30,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-4",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 4,
+    "stem": "请选择划线部分的读音。\n\n<u>緊張</u>のあまり彼の足は震えていた。",
+    "options": [
+      {
+        "key": "A",
+        "text": "きんちょう"
+      },
+      {
+        "key": "B",
+        "text": "きんじょう"
+      },
+      {
+        "key": "C",
+        "text": "じんじょう"
+      },
+      {
+        "key": "D",
+        "text": "じんちょう"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "きんちょう",
+    "translation": "",
+    "explanation": "きんちょう，\"紧张\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 31,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-5",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 5,
+    "stem": "夏休みの（　）を立てる。",
+    "options": [
+      {
+        "key": "A",
+        "text": "メールアドレス"
+      },
+      {
+        "key": "B",
+        "text": "ミュンヘン"
+      },
+      {
+        "key": "C",
+        "text": "スケジュール"
+      },
+      {
+        "key": "D",
+        "text": "ノーベル"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "スケジュール",
+    "translation": "",
+    "explanation": "スケジュール，\"日程、计划\"之意；与立てる搭配表示\"制定计划\"",
+    "grammarPoints": [],
+    "tags": [
+      "外来语搭配"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 32,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-6",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 6,
+    "stem": "请选择划线部分的汉字写法。\n\n多年の願いが<u>かなって</u>こんなうれしいことはない。",
+    "options": [
+      {
+        "key": "A",
+        "text": "叶って"
+      },
+      {
+        "key": "B",
+        "text": "適って"
+      },
+      {
+        "key": "C",
+        "text": "現って"
+      },
+      {
+        "key": "D",
+        "text": "実って"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "叶って",
+    "translation": "",
+    "explanation": "叶って；願いが叶う意为\"愿望实现\"",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 33,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-7",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 7,
+    "stem": "请选择划线部分的汉字写法。\n\n犯人探しに100万ドルの<u>しょうきん</u>をかける。",
+    "options": [
+      {
+        "key": "A",
+        "text": "奨金"
+      },
+      {
+        "key": "B",
+        "text": "賞金"
+      },
+      {
+        "key": "C",
+        "text": "償金"
+      },
+      {
+        "key": "D",
+        "text": "募金"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "賞金",
+    "translation": "",
+    "explanation": "賞金，读作しょうきん，\"奖金、悬赏金\"之意",
+    "grammarPoints": [],
+    "tags": [
+      "汉字书写"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 34,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-8",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 8,
+    "stem": "请选择划线部分的读音。\n\nお手紙<u>拝見</u>いたしました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ばいげん"
+      },
+      {
+        "key": "B",
+        "text": "ばいけん"
+      },
+      {
+        "key": "C",
+        "text": "はいげん"
+      },
+      {
+        "key": "D",
+        "text": "はいけん"
+      }
+    ],
+    "answerKey": "D",
+    "answerText": "はいけん",
+    "translation": "",
+    "explanation": "はいけん；拝見是\"看\"的谦逊语",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 35,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-9",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 9,
+    "stem": "请选择划线部分的读音。\n\n2時ごろ<u>参る</u>予定ですが、よろしいでしょうか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "まつる"
+      },
+      {
+        "key": "B",
+        "text": "いれる"
+      },
+      {
+        "key": "C",
+        "text": "まいる"
+      },
+      {
+        "key": "D",
+        "text": "はいる"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "まいる",
+    "translation": "",
+    "explanation": "まいる；参る是\"来、去\"的谦逊语\n\n题干备注：原截图题干中\"ですが\"后疑多出一个\"が\"，应为原题笔误",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 36,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-classroom-words-test-1118-10",
+    "category": "japanese3-classroom-words",
+    "groupId": "test-1118",
+    "groupTitle": "11月18日",
+    "numberInGroup": 10,
+    "stem": "请选择划线部分的读音。\n\nもう一つ<u>伺いたい</u>ことがあります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "もらい"
+      },
+      {
+        "key": "B",
+        "text": "うかがい"
+      },
+      {
+        "key": "C",
+        "text": "ください"
+      },
+      {
+        "key": "D",
+        "text": "なさい"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "うかがい",
+    "translation": "",
+    "explanation": "うかがい，即うかがいたい；伺う是\"问、拜访、请教\"的谦逊语",
+    "grammarPoints": [],
+    "tags": [
+      "读音"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/classroom-tests/单词题整理.md",
+      "group": "11月18日",
+      "position": 37,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "questionType": "single",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  }
+]
