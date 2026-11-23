@@ -187,3 +187,27 @@ test('窄屏课程先显示题单，且可直接开始指定题单', async ({ pa
   await card.getByRole('button', { name: '顺序', exact: true }).click()
   await expect(page.locator('.q-stem')).toContainText(firstStem)
 })
+
+test('答题后先显示反馈，展开时解析位于下一题之前', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 })
+  await page.goto('#/quiz?category=history&group=t0')
+  await expect(page.locator('.quiz-info')).toContainText('顺序练习')
+  await page.getByRole('radio').last().click()
+  await page.getByRole('button', { name: '提交答案' }).click()
+  const next = page.getByRole('button', { name: '下一题', exact: true })
+  const result = page.locator('.q-result')
+  await expect(result).toContainText('错误')
+  await expect(result).toContainText('鸦片战争')
+  await page.getByRole('button', { name: '查看解析' }).click()
+  const explanation = page.locator('#explanation-panel')
+  await expect(explanation).toBeVisible()
+  await expect
+    .poll(async () => {
+      const panel = await explanation.boundingBox()
+      const button = await next.boundingBox()
+      return Boolean(panel && button && panel.y + panel.height <= button.y)
+    })
+    .toBe(true)
+  await next.click()
+  await expect(page.locator('.q-stem')).not.toHaveText(firstStem)
+})

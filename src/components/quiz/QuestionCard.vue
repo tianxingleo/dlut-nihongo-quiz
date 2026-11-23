@@ -28,7 +28,6 @@ const props = defineProps<{
   question: Question
   selectedKey: string
   submitted: boolean
-  mode: string
   questionIndex: number
   totalQuestions: number
   bookmarked: boolean
@@ -364,7 +363,6 @@ const dragOpacity = computed(() => {
       <span class="q-id">{{ question.id }}</span>
       <span class="q-group">{{ question.groupTitle }}</span>
       <span class="q-sub" v-if="subTypeLabel">{{ subTypeLabel }}</span>
-      <span class="q-mode">{{ mode }}</span>
     </div>
 
     <div class="q-stem" v-html="renderedStem" />
@@ -483,46 +481,6 @@ const dragOpacity = computed(() => {
         提交答案
       </button>
     </div>
-    <div class="q-actions" v-else>
-      <button v-if="questionIndex > 0" class="btn btn-ghost" @click="emit('prev')">
-        上一题（可修改）
-      </button>
-      <button class="btn btn-submit" @click="emit('next')">
-        {{ questionIndex >= totalQuestions - 1 ? '完成' : '下一题' }}
-      </button>
-      <button
-        class="btn btn-ghost"
-        :class="{ 'bookmark-active': bookmarked }"
-        @click="emit('bookmark')"
-      >
-        {{ bookmarked ? '已收藏' : '收藏' }}
-      </button>
-      <button
-        class="btn btn-ghost"
-        :aria-expanded="showExplanation"
-        aria-controls="explanation-panel"
-        @click="toggleExplanation"
-      >
-        {{ showExplanation ? '收起解析' : '查看解析' }}
-      </button>
-      <button class="btn btn-ghost" :title="`分享本题（复制链接）`" @click="handleShare">
-        {{
-          shareStatus === 'copied' ? '已复制' : shareStatus === 'unsupported' ? '不支持' : '分享'
-        }}
-      </button>
-      <button
-        v-if="aiEnabled"
-        class="btn btn-ghost ai-btn"
-        @click="openAIExplanation"
-        title="AI 详细解析"
-      >
-        AI 解析
-      </button>
-      <button v-if="aiEnabled" class="btn btn-ghost ai-btn" @click="openAIChat" title="AI 问答">
-        AI 问答
-      </button>
-    </div>
-
     <div class="q-result" v-if="submitted">
       <div class="result-line" :class="isCorrectOverall ? 'correct' : 'wrong'">
         <span class="result-badge">{{
@@ -554,6 +512,17 @@ const dragOpacity = computed(() => {
       </div>
     </div>
 
+    <div v-if="submitted" class="q-actions q-explanation-toggle">
+      <button
+        class="btn btn-outline"
+        :aria-expanded="showExplanation"
+        aria-controls="explanation-panel"
+        @click="toggleExplanation"
+      >
+        {{ showExplanation ? '收起解析' : '查看解析' }}
+      </button>
+    </div>
+
     <div
       id="explanation-panel"
       class="q-explanation"
@@ -578,12 +547,6 @@ const dragOpacity = computed(() => {
         <div v-if="technicalQuestion" class="exp-text" v-html="renderedTranslation" />
         <p v-else>{{ question.translation }}</p>
       </div>
-      <div class="exp-section" v-if="question.tags.length > 0">
-        <h4>{{ tagsSectionTitle }}</h4>
-        <div class="tag-list">
-          <TagBadge v-for="t in question.tags" :key="t" :tag="t" />
-        </div>
-      </div>
       <div class="exp-section">
         <h4>解析</h4>
         <div
@@ -595,6 +558,46 @@ const dragOpacity = computed(() => {
           "
         />
       </div>
+      <div class="exp-section" v-if="question.tags.length > 0">
+        <h4>{{ tagsSectionTitle }}</h4>
+        <div class="tag-list">
+          <TagBadge v-for="t in question.tags" :key="t" :tag="t" />
+        </div>
+      </div>
+    </div>
+
+    <div class="q-actions" v-if="submitted">
+      <button class="btn btn-submit" @click="emit('next')">
+        {{ questionIndex >= totalQuestions - 1 ? '完成' : '下一题' }}
+      </button>
+      <button v-if="questionIndex > 0" class="btn btn-ghost" @click="emit('prev')">
+        上一题（可修改）
+      </button>
+    </div>
+    <div v-if="submitted" class="q-actions q-secondary-actions">
+      <button
+        class="btn btn-ghost"
+        :class="{ 'bookmark-active': bookmarked }"
+        @click="emit('bookmark')"
+      >
+        {{ bookmarked ? '已收藏' : '收藏' }}
+      </button>
+      <button class="btn btn-ghost" :title="`分享本题（复制链接）`" @click="handleShare">
+        {{
+          shareStatus === 'copied' ? '已复制' : shareStatus === 'unsupported' ? '不支持' : '分享'
+        }}
+      </button>
+      <button
+        v-if="aiEnabled"
+        class="btn btn-ghost ai-btn"
+        @click="openAIExplanation"
+        title="AI 详细解析"
+      >
+        AI 解析
+      </button>
+      <button v-if="aiEnabled" class="btn btn-ghost ai-btn" @click="openAIChat" title="AI 问答">
+        AI 问答
+      </button>
     </div>
 
     <div class="swipe-hint" aria-hidden="true">
@@ -690,10 +693,6 @@ const dragOpacity = computed(() => {
   border: 1px solid var(--border);
   color: var(--text-secondary);
   font-size: 11px;
-}
-.q-mode {
-  color: var(--text-muted);
-  margin-left: auto;
 }
 
 /* Stem */
@@ -874,6 +873,16 @@ const dragOpacity = computed(() => {
   margin-top: 22px;
   flex-wrap: wrap;
 }
+.q-explanation-toggle,
+.q-secondary-actions {
+  margin-top: 12px;
+}
+.q-secondary-actions .btn {
+  color: var(--text-secondary);
+}
+.q-secondary-actions .bookmark-active {
+  color: var(--warning);
+}
 .btn-submit {
   padding: 9px 22px;
   border: 1px solid var(--border);
@@ -910,8 +919,6 @@ const dragOpacity = computed(() => {
 /* Result */
 .q-result {
   margin-top: 18px;
-  animation: fade-up 0.3s var(--ease-brush) both;
-  animation-delay: 0.05s;
 }
 .result-line {
   font-size: 15px;

@@ -61,6 +61,16 @@ const correctCount = ref(0)
 const wrongList = ref<string[]>([])
 const mode = ref('')
 const poolMode = ref<QuizMode>('sequential')
+const modeLabels: Record<string, string> = {
+  sequential: '顺序练习',
+  random: '随机练习',
+  weakness: '弱点突破',
+  exam: '模拟考试',
+  review: '待复习',
+  wrong: '错题练习',
+  untouched: '未做题练习',
+  tag: '按标签练习',
+}
 const startTime = ref(0)
 const finished = ref(false)
 const bookmarked = ref(false)
@@ -762,6 +772,13 @@ function cancelLeave() {
   showLeaveConfirm.value = false
   pendingNavigation = null
 }
+const practiceLabel = computed(() => {
+  if (mode.value.startsWith('tag: ')) return `按标签练习（${mode.value.slice(5)}）`
+
+  const parts = mode.value.split(' · ')
+  if (parts.length > 1 && parts[0] === currentQuestion.value?.groupTitle) parts.shift()
+  return parts.map((part) => modeLabels[part] ?? part).join(' · ')
+})
 </script>
 <template>
   <div class="quiz-page">
@@ -781,12 +798,14 @@ function cancelLeave() {
         @jump="jumpTo"
       />
       <div class="quiz-info">
-        <span>{{ mode }}</span>
+        <span>{{ practiceLabel }}</span>
         <span class="timer">{{ formattedTime }}</span>
         <span v-if="isExamMode" class="exam-timer" :class="{ 'time-warning': remainingTime < 300 }">
           剩余时间: {{ formattedRemainingTime }}
         </span>
-        <span>A/B/C/D 选择 · Enter 提交/下一题 · N 下一题 · P 上一题 · B 书签 · E 解析</span>
+        <span class="shortcut-hint">
+          A/B/C/D 选择，Enter 提交或下一题，N 下一题，P 上一题，B 收藏，E 解析
+        </span>
       </div>
       <!-- Sticky exam timer for long questions -->
       <div
@@ -802,7 +821,6 @@ function cancelLeave() {
         :question="currentQuestion"
         :selected-key="selectedKey"
         :submitted="submitted"
-        :mode="mode"
         :question-index="currentIndex"
         :total-questions="questions.length"
         :bookmarked="bookmarked"
@@ -1145,7 +1163,7 @@ function cancelLeave() {
   .quiz-info {
     font-size: 11px;
   }
-  .quiz-info span:nth-child(3) {
+  .quiz-info .shortcut-hint {
     display: none;
   }
   .finish-page {
