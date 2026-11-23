@@ -35,6 +35,7 @@ import PageSkeleton from '../components/ui/PageSkeleton.vue'
 import { renderMarkdown, stripMarkdown } from '../utils/renderMarkdown'
 import { truncate } from '../utils/text'
 import { useAI } from '../composables/useAI'
+import { hasCompleteFillAnswer } from '../utils/multiAnswer'
 import type { Question, QuizMode, Category } from '../types/question'
 
 const route = useRoute()
@@ -458,14 +459,15 @@ async function handleSubmit() {
   if (!selectedKey.value || !currentQuestion.value) return
   if (submitted.value) return
   if (currentQuestion.value.selfAssessment && !isSelfAssessmentVerdict(selectedKey.value)) return
+  const q = currentQuestion.value
+  if (q.fillSlots && !hasCompleteFillAnswer(selectedKey.value, q.fillSlots.length)) return
   submitted.value = true
 
-  const q = currentQuestion.value
   let isCorrect: boolean
   if (q.selfAssessment) {
     isCorrect = selectedKey.value === SELF_CORRECT
   } else if (q.questionType === 'fill') {
-    isCorrect = isFillAnswerCorrect(selectedKey.value, q.answerText)
+    isCorrect = isFillAnswerCorrect(selectedKey.value, q.answerText, q.fillSlots)
   } else if (q.multiAnswer) {
     isCorrect = isMultiAnswerCorrect(selectedKey.value, q.answerKey)
   } else {
@@ -627,7 +629,11 @@ watch(currentQuestion, (q) => {
 
 function onKeydown(e: KeyboardEvent) {
   if (finished.value) return
-  if (!submitted.value) {
+  if (e.isComposing || (e.target instanceof HTMLElement && e.target.closest('input, select')))
+    return
+  if (!submitted.value && currentQuestion.value?.questionType === 'fill') {
+    if (e.key === 'Enter' && selectedKey.value) handleSubmit()
+  } else if (!submitted.value) {
     const k = e.key.toUpperCase()
     if (['A', 'B', 'C', 'D', 'E'].includes(k)) {
       handleSelect(k)

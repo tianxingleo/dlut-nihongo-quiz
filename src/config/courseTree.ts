@@ -252,6 +252,12 @@ export const COURSE_TREE: TreeNode[] = [
         label: '学习通期中',
         category: 'jp-3',
       },
+      {
+        type: 'leaf',
+        key: 'japanese3-homework',
+        label: '学习通下半学期作业',
+        category: 'japanese3-homework',
+      },
     ],
   },
   {

@@ -1,0 +1,4493 @@
+[
+  {
+    "id": "japanese3-homework-lesson-47-1",
+    "category": "japanese3-homework",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课助词填空",
+    "numberInGroup": 1,
+    "questionType": "fill",
+    "stem": "変な味①しますね。塩②砂糖③間違えたようです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "が"
+        ]
+      },
+      {
+        "answers": [
+          "と"
+        ]
+      },
+      {
+        "answers": [
+          "を"
+        ]
+      }
+    ],
+    "answerKey": "が／と／を",
+    "answerText": "が／と／を",
+    "translation": "",
+    "explanation": "「味がする」表示尝起来有某种味道。「AとBを間違える」表示把A和B弄混，这里是把盐和糖弄混了。「ようです」根据味道作推测。",
+    "grammarPoints": [],
+    "tags": [
+      "第47课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第47课助词填空",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-47-2",
+    "category": "japanese3-homework",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课助词填空",
+    "numberInGroup": 2,
+    "questionType": "fill",
+    "stem": "私は彼①意見②賛成です。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "の"
+        ]
+      },
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "の／に",
+    "answerText": "の／に",
+    "translation": "",
+    "explanation": "「彼の意見」表示他的意见；「意見に賛成する／賛成です」表示赞成某种意见，赞成的对象用「に」。",
+    "grammarPoints": [],
+    "tags": [
+      "第47课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第47课助词填空",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-47-3",
+    "category": "japanese3-homework",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课助词填空",
+    "numberInGroup": 3,
+    "questionType": "fill",
+    "stem": "最近新しい論文をアメリカ①雑誌②読みました。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "の"
+        ]
+      },
+      {
+        "answers": [
+          "で"
+        ]
+      }
+    ],
+    "answerKey": "の／で",
+    "answerText": "の／で",
+    "translation": "",
+    "explanation": "「アメリカの雑誌」表示美国的杂志；「雑誌で読む」用「で」标记获取信息的媒介，即在杂志上读到。",
+    "grammarPoints": [],
+    "tags": [
+      "第47课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第47课助词填空",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-47-4",
+    "category": "japanese3-homework",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课助词填空",
+    "numberInGroup": 4,
+    "questionType": "fill",
+    "stem": "電気①消えていますから、だれ②いないようですね。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "が"
+        ]
+      },
+      {
+        "answers": [
+          "も"
+        ]
+      }
+    ],
+    "answerKey": "が／も",
+    "answerText": "が／も",
+    "translation": "",
+    "explanation": "「電気が消えています」中的「が」标记熄灭的主体。「だれも＋否定」表示谁也没有，因此是「だれもいない」。",
+    "grammarPoints": [],
+    "tags": [
+      "第47课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第47课助词填空",
+      "position": 4,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-47-5",
+    "category": "japanese3-homework",
+    "groupId": "lesson-47",
+    "groupTitle": "第47课助词填空",
+    "numberInGroup": 5,
+    "questionType": "fill",
+    "stem": "今日、午後２時に210教室①集まってください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "に",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「場所に集まる」表示聚集到某处，集合的落点用「に」；「210教室に集まってください」即请到210教室集合。",
+    "grammarPoints": [],
+    "tags": [
+      "第47课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第47课助词填空",
+      "position": 5,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-48-1",
+    "category": "japanese3-homework",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课助词填空",
+    "numberInGroup": 1,
+    "questionType": "fill",
+    "stem": "子供①好きなこと②させたい③思っている。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に"
+        ]
+      },
+      {
+        "answers": [
+          "を"
+        ]
+      },
+      {
+        "answers": [
+          "と"
+        ]
+      }
+    ],
+    "answerKey": "に／を／と",
+    "answerText": "に／を／と",
+    "translation": "",
+    "explanation": "「好きなことをする」中的「を」标记宾语。变为使役时，被使役者「子供」用「に」，形成「子供に好きなことをさせる」；「～たいと思っている」表示一直抱有想让孩子做喜欢的事的想法。",
+    "grammarPoints": [],
+    "tags": [
+      "第48课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第48课助词填空",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-48-2",
+    "category": "japanese3-homework",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课助词填空",
+    "numberInGroup": 2,
+    "questionType": "fill",
+    "stem": "わたし①電車②中③子供④立たせています。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "は"
+        ]
+      },
+      {
+        "answers": [
+          "の"
+        ]
+      },
+      {
+        "answers": [
+          "で"
+        ]
+      },
+      {
+        "answers": [
+          "を"
+        ]
+      }
+    ],
+    "answerKey": "は／の／で／を",
+    "answerText": "は／の／で／を",
+    "translation": "",
+    "explanation": "「わたしは」提出话题，「電車の中で」表示动作发生的场所。「立つ」是不及物动词，其使役形式「立たせる」在这里构成「子供を立たせる」，即让孩子站着。",
+    "grammarPoints": [],
+    "tags": [
+      "第48课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第48课助词填空",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-48-3",
+    "category": "japanese3-homework",
+    "groupId": "lesson-48",
+    "groupTitle": "第48课助词填空",
+    "numberInGroup": 3,
+    "questionType": "fill",
+    "stem": "先生は生徒①道②右側③歩かせます。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に"
+        ]
+      },
+      {
+        "answers": [
+          "の"
+        ]
+      },
+      {
+        "answers": [
+          "を"
+        ]
+      }
+    ],
+    "answerKey": "に／の／を",
+    "answerText": "に／の／を",
+    "translation": "",
+    "explanation": "「道の右側を歩く」中，「を」标记行经的路线。使役句保留路线的「を」，被使役者用「に」，避免两个不同作用的「を」连用，故为「生徒に道の右側を歩かせます」。",
+    "grammarPoints": [],
+    "tags": [
+      "第48课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第48课助词填空",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-49-1",
+    "category": "japanese3-homework",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课助词填空",
+    "numberInGroup": 1,
+    "questionType": "fill",
+    "stem": "足元①ご注意ください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "に",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「足元に注意する」表示注意脚下，注意的对象用「に」。「ご注意ください」是礼貌提醒。",
+    "grammarPoints": [],
+    "tags": [
+      "第49课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第49课助词填空",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-49-2",
+    "category": "japanese3-homework",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课助词填空",
+    "numberInGroup": 2,
+    "questionType": "fill",
+    "stem": "新しいマンション①引っ越されたそうですね。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に",
+          "へ"
+        ]
+      }
+    ],
+    "answerKey": "に",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「新しいマンションに／へ引っ越す」表示搬到新公寓，目的地可用「に」或「へ」。「引っ越された」在这里是尊敬表达，不是被动遭遇。",
+    "grammarPoints": [],
+    "tags": [
+      "第49课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第49课助词填空",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-49-3",
+    "category": "japanese3-homework",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课助词填空",
+    "numberInGroup": 3,
+    "questionType": "fill",
+    "stem": "明日は8時①にロビー②お集まりください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "まで"
+        ]
+      },
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "まで／に",
+    "answerText": "まで／に",
+    "translation": "",
+    "explanation": "题干第一个空后已有「に」，填「まで」后组成「8時までに」，表示最迟在8点前完成集合；第二空是集合地点「ロビーに」。不要在第一空再写「までに」。",
+    "grammarPoints": [],
+    "tags": [
+      "第49课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第49课助词填空",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-49-4",
+    "category": "japanese3-homework",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课助词填空",
+    "numberInGroup": 4,
+    "questionType": "fill",
+    "stem": "わたし①不在でしたら、社の者②お渡しください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "が"
+        ]
+      },
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "が／に",
+    "answerText": "が／に",
+    "translation": "",
+    "explanation": "「わたしが不在でしたら」表示如果我不在；「人に物を渡す」用「に」标记接收者，「社の者」指本公司的人。",
+    "grammarPoints": [],
+    "tags": [
+      "第49课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第49课助词填空",
+      "position": 4,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-49-5",
+    "category": "japanese3-homework",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课助词填空",
+    "numberInGroup": 5,
+    "questionType": "fill",
+    "stem": "これ①始まるコンサート②どうぞお楽しみください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "から"
+        ]
+      },
+      {
+        "answers": [
+          "を"
+        ]
+      }
+    ],
+    "answerKey": "から／を",
+    "answerText": "から／を",
+    "translation": "",
+    "explanation": "「これから」表示从现在起、接下来；「コンサートを楽しむ」中的「を」标记欣赏对象。「お楽しみください」是对听者的礼貌表达。",
+    "grammarPoints": [],
+    "tags": [
+      "第49课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第49课助词填空",
+      "position": 5,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-49-6",
+    "category": "japanese3-homework",
+    "groupId": "lesson-49",
+    "groupTitle": "第49课助词填空",
+    "numberInGroup": 6,
+    "questionType": "fill",
+    "stem": "森田先生はご都合①いらっしゃれないそうですが、みなさんによろしく② おっしゃっていましたよ。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "で"
+        ]
+      },
+      {
+        "answers": [
+          "と"
+        ]
+      }
+    ],
+    "answerKey": "で／と",
+    "answerText": "で／と",
+    "translation": "",
+    "explanation": "「ご都合で」中的「で」表示原因，即因时间或安排上的缘故；「よろしくとおっしゃっていました」用「と」标记转述内容，意思是他托我向各位问好。",
+    "grammarPoints": [],
+    "tags": [
+      "第49课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第49课助词填空",
+      "position": 6,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-50-1",
+    "category": "japanese3-homework",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课助词填空",
+    "numberInGroup": 1,
+    "questionType": "fill",
+    "stem": "あのう、進学のこと①、ちょっとご相談したいことがあるんですが...",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "で"
+        ]
+      }
+    ],
+    "answerKey": "で",
+    "answerText": "で",
+    "translation": "",
+    "explanation": "「進学のことで相談する」表示就升学这件事商量，「で」标记引出咨询的事情或缘由。填「について」组成「進学のことについて」在语法上也成立；但此前页面显示该填写被判错，因此本题建议填单个助词「で」。这是依据语境作出的参考答案，并非页面公开的标准答案。",
+    "grammarPoints": [],
+    "tags": [
+      "第50课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第50课助词填空",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-50-2",
+    "category": "japanese3-homework",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课助词填空",
+    "numberInGroup": 2,
+    "questionType": "fill",
+    "stem": "初めまして、王と申します。中国①まいりました。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "から"
+        ]
+      }
+    ],
+    "answerKey": "から",
+    "answerText": "から",
+    "translation": "",
+    "explanation": "「中国からまいりました」表示从中国来，「から」标记出发地。「まいる」是「来る／行く」的自谦表达。",
+    "grammarPoints": [],
+    "tags": [
+      "第50课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第50课助词填空",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-50-3",
+    "category": "japanese3-homework",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课助词填空",
+    "numberInGroup": 3,
+    "questionType": "fill",
+    "stem": "小野さんが試合①優勝したの②ご存じですか。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "で"
+        ]
+      },
+      {
+        "answers": [
+          "を"
+        ]
+      }
+    ],
+    "answerKey": "で／を",
+    "answerText": "で／を",
+    "translation": "",
+    "explanation": "「試合で優勝する」用「で」标记夺冠发生的比赛场合；「小野さんが試合で優勝したの」把整件事名词化，作为「ご存じです」的对象，用「を」。",
+    "grammarPoints": [],
+    "tags": [
+      "第50课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第50课助词填空",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-50-4",
+    "category": "japanese3-homework",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课助词填空",
+    "numberInGroup": 4,
+    "questionType": "fill",
+    "stem": "貴校の受験①希望している者ですが、来年度の入学案内②入試要項を送っていただけないでしょうか。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "を"
+        ]
+      },
+      {
+        "answers": [
+          "と"
+        ]
+      }
+    ],
+    "answerKey": "を／と",
+    "answerText": "を／と",
+    "translation": "",
+    "explanation": "「受験を希望する」中的「を」标记希望的内容；「入学案内と入試要項」用「と」并列两项材料。「送っていただけないでしょうか」是委婉请求对方寄送。",
+    "grammarPoints": [],
+    "tags": [
+      "第50课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第50课助词填空",
+      "position": 4,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-50-5",
+    "category": "japanese3-homework",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课助词填空",
+    "numberInGroup": 5,
+    "questionType": "fill",
+    "stem": "奨学金は何①お使いになりますか。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "に",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「何に使う」询问用途，即把奖学金用于什么。「お使いになる」是「使う」的尊敬形式。",
+    "grammarPoints": [],
+    "tags": [
+      "第50课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第50课助词填空",
+      "position": 5,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-50-6",
+    "category": "japanese3-homework",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课助词填空",
+    "numberInGroup": 6,
+    "questionType": "fill",
+    "stem": "お名前は何①おっしゃいますか。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "と"
+        ]
+      }
+    ],
+    "answerKey": "と",
+    "answerText": "と",
+    "translation": "",
+    "explanation": "「何とおっしゃいますか」询问怎么称呼；「と」标记说出的名称内容。「おっしゃる」是「言う」的尊敬表达。",
+    "grammarPoints": [],
+    "tags": [
+      "第50课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第50课助词填空",
+      "position": 6,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-lesson-50-7",
+    "category": "japanese3-homework",
+    "groupId": "lesson-50",
+    "groupTitle": "第50课助词填空",
+    "numberInGroup": 7,
+    "questionType": "fill",
+    "stem": "陳先生①卒業パーティー②ご招待したいと思います。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "を"
+        ]
+      },
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "を／に",
+    "answerText": "を／に",
+    "translation": "",
+    "explanation": "「人をパーティーに招待する」用「を」标记受邀者，用「に」标记受邀参加的活动。「ご招待する」是对邀请行为的自谦表达。",
+    "grammarPoints": [],
+    "tags": [
+      "第50课助词填空"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "第50课助词填空",
+      "position": 7,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-1",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 1,
+    "questionType": "fill",
+    "stem": "例：火事(の)場合は、すぐ 119番に 連絡して ください。  \n（１）変な におい①しますね。ごみ②燃えて いるようです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "が"
+        ]
+      },
+      {
+        "answers": [
+          "が"
+        ]
+      }
+    ],
+    "answerKey": "が／が",
+    "answerText": "が／が",
+    "translation": "",
+    "explanation": "「においがする」表示闻到某种气味；「ごみが燃えている」中的「が」标记燃烧的主体。闻到气味后用「ようです」推测垃圾正在燃烧。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-2",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 2,
+    "questionType": "fill",
+    "stem": "（２）息子は ことし 高校①卒業して、富士大学②入学しました。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "を"
+        ]
+      },
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "を／に",
+    "answerText": "を／に",
+    "translation": "",
+    "explanation": "「学校を卒業する」用「を」标记毕业离开的学校；「大学に入学する」用「に」标记进入的学校。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-3",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 3,
+    "questionType": "fill",
+    "stem": "（３）母は 妹①塾②通わせて います。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "を"
+        ]
+      },
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "を／に",
+    "answerText": "を／に",
+    "translation": "",
+    "explanation": "「妹を塾に通わせる」表示让妹妹去补习班。「通う」为不及物动词，常用「人を場所に通わせる」表示让某人长期前往某地。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-4",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 4,
+    "questionType": "fill",
+    "stem": "（４）わたしは 息子①犬の 世話②させました。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に"
+        ]
+      },
+      {
+        "answers": [
+          "を"
+        ]
+      }
+    ],
+    "answerKey": "に／を",
+    "answerText": "に／を",
+    "translation": "",
+    "explanation": "原句是「息子が犬の世話をする」；变成使役后，被使役者用「に」，原有宾语仍用「を」，即让儿子照顾狗。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 4,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-5",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 5,
+    "questionType": "fill",
+    "stem": "（５）どうぞ この いす①お掛け ください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "に",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「いすに掛ける」表示坐在椅子上，用「に」标记落座的位置。「お掛けください」表示请坐。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 5,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-6",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 6,
+    "questionType": "fill",
+    "stem": "（６）IMC①勤めて おります。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "に"
+        ]
+      }
+    ],
+    "answerKey": "に",
+    "answerText": "に",
+    "translation": "",
+    "explanation": "「会社に勤める」表示在某公司任职，任职单位用「に」。「勤めております」是「勤めています」的郑重、自谦表达。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 6,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-7",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 7,
+    "questionType": "fill",
+    "stem": "例：会社に「遅れます →（遅れる）」場合は、連絡して ください。  \n（１）小川さんの お母さんは ことし「80歳です →①」はずです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "80歳の"
+        ]
+      }
+    ],
+    "answerKey": "80歳の",
+    "answerText": "80歳の",
+    "translation": "",
+    "explanation": "「はず」是名词性质的形式名词，前接名词时用「名词＋の＋はず」。因此「80歳です」变为「80歳のはずです」，意为按理今年应当80岁。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 7,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-8",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 8,
+    "questionType": "fill",
+    "stem": "（２）彼は あした「暇です →①」はずです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "暇な"
+        ]
+      }
+    ],
+    "answerKey": "暇な",
+    "answerText": "暇な",
+    "translation": "",
+    "explanation": "形容动词修饰「はず」时用「な」，因此是「暇なはずです」，表示按理明天应该有空。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 8,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-9",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 9,
+    "questionType": "fill",
+    "stem": "（３）部長の 奥さんは「ダンスの先生です →①」そうです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "ダンスの先生だ"
+        ]
+      }
+    ],
+    "answerKey": "ダンスの先生だ",
+    "answerText": "ダンスの先生だ",
+    "translation": "",
+    "explanation": "传闻「そうです」接普通形。名词谓语的肯定普通形保留「だ」，故为「ダンスの先生だそうです」，即听说是舞蹈老师。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 9,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-10",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 10,
+    "questionType": "fill",
+    "stem": "（４）電気が 消えて いますね。林さんは「留守です →①」ようです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "留守の"
+        ]
+      }
+    ],
+    "answerKey": "留守の",
+    "answerText": "留守の",
+    "translation": "",
+    "explanation": "推测「ようです」前，名词要用「名词＋の」。因此为「留守のようです」，表示根据灯没亮推测林先生不在家。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 10,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-11",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 11,
+    "questionType": "fill",
+    "stem": "（５）どうも コピー機の 調子が「悪いです →①」ようです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "悪い"
+        ]
+      }
+    ],
+    "answerKey": "悪い",
+    "answerText": "悪い",
+    "translation": "",
+    "explanation": "形容词直接以普通形连接「ようです」，不加「だ／の」。故为「調子が悪いようです」，表示机器似乎状态不佳。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 11,
+      "originalNumbers": [
+        "11"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-12",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 12,
+    "questionType": "fill",
+    "stem": "（６）この 洗濯機は 古すぎて、修理するのは「無理です →①」ようです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "無理な"
+        ]
+      }
+    ],
+    "answerKey": "無理な",
+    "answerText": "無理な",
+    "translation": "",
+    "explanation": "形容动词接「ようです」时用「な」，故为「無理なようです」，意思是这台洗衣机太旧，似乎无法修理。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 12,
+      "originalNumbers": [
+        "12"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-13",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 13,
+    "questionType": "fill",
+    "stem": "（７）お名前を お「呼びます →①」しますので、しばらく あちらで お「待ちます →②」ください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "呼び"
+        ]
+      },
+      {
+        "answers": [
+          "待ち"
+        ]
+      }
+    ],
+    "answerKey": "呼び／待ち",
+    "answerText": "呼び／待ち",
+    "translation": "",
+    "explanation": "「お＋动词ます形词干＋します」用于自谦自己的动作；「お＋词干＋ください」用于礼貌请求对方。分别是「お呼びします」「お待ちください」。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 13,
+      "originalNumbers": [
+        "13"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-14",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 14,
+    "questionType": "fill",
+    "stem": "（８）ご主人は 何時ごろ お「戻ります →①」に なりますか。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "戻り"
+        ]
+      }
+    ],
+    "answerKey": "戻り",
+    "answerText": "戻り",
+    "translation": "",
+    "explanation": "尊敬句型为「お＋动词ます形词干＋になります」。去掉「戻ります」的「ます」，得到「お戻りになります」。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 14,
+      "originalNumbers": [
+        "14"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-15",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 15,
+    "questionType": "fill",
+    "stem": "（９）雑誌で 読んだんですが、1958年に インスタントラーメンが「発明します →①」そうですね。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "発明された"
+        ]
+      }
+    ],
+    "answerKey": "発明された",
+    "answerText": "発明された",
+    "translation": "",
+    "explanation": "方便面是被发明的事物，因此把「発明する」改为被动「発明される」；1958年是过去，变成「発明された」，再接传闻「そうです」。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 15,
+      "originalNumbers": [
+        "15"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-16",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 16,
+    "questionType": "fill",
+    "stem": "（１０）頭が 痛いので、「帰ります →①」て いただけませんか。  \n……いいですよ。お大事に。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "帰らせ"
+        ]
+      }
+    ],
+    "answerKey": "帰らせ",
+    "answerText": "帰らせ",
+    "translation": "",
+    "explanation": "请求允许自己做某事用「使役て形＋いただけませんか」。完整表达是「帰らせていただけませんか」。题干已有「て」，空内只填「帰らせ」。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 16,
+      "originalNumbers": [
+        "16"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-17",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 17,
+    "questionType": "fill",
+    "stem": "例１：故障の 原因は わかりましたか。  \n……いいえ。今「調べます →（調べているところ）」です。  \n例２：日本の 生活に もう 慣れましたか。  \n……いいえ。先月「来ます →（来たばかり）」ですから。  \n（１）いい アパートが 見つかりましたか。  \n……いいえ。今「探します →①」です。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "探しているところ"
+        ]
+      }
+    ],
+    "answerKey": "探しているところ",
+    "answerText": "探しているところ",
+    "translation": "",
+    "explanation": "「动词ている＋ところです」表示正在进行。题干有「今」，并说尚未找到公寓，故为正在寻找。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 17,
+      "originalNumbers": [
+        "17"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-18",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 18,
+    "questionType": "fill",
+    "stem": "（２）ちょっと お茶でも 飲みませんか。  \n……いいですね。たった今 仕事が「終わります →①」です。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "終わったところ"
+        ]
+      }
+    ],
+    "answerKey": "終わったところ",
+    "answerText": "終わったところ",
+    "translation": "",
+    "explanation": "「动词た形＋ところです」表示刚刚完成；「たった今」强调就在刚才，故为「仕事が終わったところです」。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 18,
+      "originalNumbers": [
+        "18"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-19",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 19,
+    "questionType": "fill",
+    "stem": "（３）大学は どうですか。  \n……「入学します →①」なので、まだ よく わかりません。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "入学したばかり"
+        ]
+      }
+    ],
+    "answerKey": "入学したばかり",
+    "answerText": "入学したばかり",
+    "translation": "",
+    "explanation": "「动词た形＋ばかり」表示说话人主观上认为刚发生不久。刚入学、还不了解学校情况，因此用「入学したばかり」。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 19,
+      "originalNumbers": [
+        "19"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-20",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 20,
+    "questionType": "fill",
+    "stem": "（４）試合は もう 始まりましたか。  \n……いいえ。ちょうど 今から「始まります →①」です。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "始まるところ"
+        ]
+      }
+    ],
+    "answerKey": "始まるところ",
+    "answerText": "始まるところ",
+    "translation": "",
+    "explanation": "「动词辞书形＋ところです」表示即将开始；「今から」表明比赛尚未开始、马上就要开始。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 20,
+      "originalNumbers": [
+        "20"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-21",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 21,
+    "questionType": "fill",
+    "stem": "（５）あの 方は どなたですか。  \n……すみません。さっき 名前を「聞きます →①」なのに、もう 忘れて しまいました。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "聞いたばかり"
+        ]
+      }
+    ],
+    "answerKey": "聞いたばかり",
+    "answerText": "聞いたばかり",
+    "translation": "",
+    "explanation": "「聞いたばかりなのに」表示明明刚听说却已经忘记，突出时间短与结果之间的反差。题干已有「なのに」，空内不再加「な」。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 21,
+      "originalNumbers": [
+        "21"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-22",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 22,
+    "questionType": "single",
+    "stem": "例：パンフレットに よると、金閣寺は １４世紀に（ⓐ建てられたそうです　ｂ建てられたようです）。  \n（１）朝 焼いた ケーキです。どうぞ。  \n……わあ、（　）ね。いただきます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "おいしそうです"
+      },
+      {
+        "key": "B",
+        "text": "おいしいそうです"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "おいしそうです",
+    "translation": "",
+    "explanation": "根据眼前蛋糕的外观判断好吃，用样态「おいしそうです」。B「おいしいそうです」表示听别人说很好吃，不符合刚看到蛋糕的语境。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 22,
+      "originalNumbers": [
+        "22"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-23",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 23,
+    "questionType": "single",
+    "stem": "（２）見て。もうすぐ 桜が（　）よ。  \n……そうですね。お花見が 楽しみですね。",
+    "options": [
+      {
+        "key": "A",
+        "text": "咲きそうです"
+      },
+      {
+        "key": "B",
+        "text": "咲くそうです"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "咲きそうです",
+    "translation": "",
+    "explanation": "「动词ます形词干＋そうです」可表示看起来即将发生。「もうすぐ」「見て」提示根据眼前花苞判断快开花；B是传闻。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 23,
+      "originalNumbers": [
+        "23"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-24",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 24,
+    "questionType": "single",
+    "stem": "（３）ミラーさん、ボタンが（　）よ。  \n……あ、ほうとうだ。",
+    "options": [
+      {
+        "key": "A",
+        "text": "とれそうです"
+      },
+      {
+        "key": "B",
+        "text": "とれるようです"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "とれそうです",
+    "translation": "",
+    "explanation": "「ボタンがとれそうです」表示扣子看起来快掉了，是对眼前征兆的判断。题干「ほうとうだ」疑为「ほんとうだ」的笔误，不影响选项。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 24,
+      "originalNumbers": [
+        "24"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-25",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 25,
+    "questionType": "single",
+    "stem": "（４）隣の 部屋で 音が します。  \n……そうですね。だれか（　）ね。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いるそうです"
+      },
+      {
+        "key": "B",
+        "text": "いるようです"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "いるようです",
+    "translation": "",
+    "explanation": "听到隔壁声音后推测有人在，用基于线索的「ようです」；A「いるそうです」是听别人说那里有人。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 25,
+      "originalNumbers": [
+        "25"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-26",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 26,
+    "questionType": "single",
+    "stem": "（５）荷物は いつ 届きますか。  \n……宅配便で 送りましたから、あした（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "届くようです"
+      },
+      {
+        "key": "B",
+        "text": "届くはずです"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "届くはずです",
+    "translation": "",
+    "explanation": "根据已用快递寄出的事实，判断明天按理应当到达，用「はずです」。重点是有根据的预期。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 26,
+      "originalNumbers": [
+        "26"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-27",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 27,
+    "questionType": "single",
+    "stem": "（６）パトカーが 止まって いますね。  \n……（　）ね。ちょっと 見て きます。",
+    "options": [
+      {
+        "key": "A",
+        "text": "事故の ようです"
+      },
+      {
+        "key": "B",
+        "text": "事故の はずです"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "事故の ようです",
+    "translation": "",
+    "explanation": "看到警车停着，推测可能发生了事故，用「名词＋のようです」。「はずです」强调按理应当如此，这里缺少这样的预先依据。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 27,
+      "originalNumbers": [
+        "27"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-28",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 28,
+    "questionType": "single",
+    "stem": "（７）雨ですね。息子に 駅まで 車で（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "送られます"
+      },
+      {
+        "key": "B",
+        "text": "送らせます"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "送らせます",
+    "translation": "",
+    "explanation": "「息子に送らせる」表示让儿子开车送自己，采用使役。A「送られます」是被动形式，不表达这里主动安排儿子送行的意思。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 28,
+      "originalNumbers": [
+        "28"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-29",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 29,
+    "questionType": "single",
+    "stem": "例：ワット先生は どちらですか。  \n……研究室に（aいます　ⓑいらっしゃいます）。  \n（１）先生は お酒を（　）か。  \n……いいえ、飲みません。",
+    "options": [
+      {
+        "key": "A",
+        "text": "いただきますか"
+      },
+      {
+        "key": "B",
+        "text": "召し上がります"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "召し上がります",
+    "translation": "",
+    "explanation": "谈及对方老师的饮酒行为，应使用尊敬表达「召し上がる」；「いただく」是自己一方吃喝的自谦表达。A还自带「か」，填入后会与题干的「か」重复。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 29,
+      "originalNumbers": [
+        "29"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-30",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 30,
+    "questionType": "single",
+    "stem": "（２）よく 映画を（　）か。  \n……ええ。特に フランス映画が 好きです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "ご覧に なります"
+      },
+      {
+        "key": "B",
+        "text": "拝見します"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "ご覧に なります",
+    "translation": "",
+    "explanation": "询问对方看电影的行为，用「見る」的尊敬表达「ご覧になる」；「拝見する」用于自谦自己看。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 30,
+      "originalNumbers": [
+        "30"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-31",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 31,
+    "questionType": "single",
+    "stem": "（３）部長は 小川さんを ご存じですか。  \n……はい、よく（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "存じて おります"
+      },
+      {
+        "key": "B",
+        "text": "ご存じです"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "存じて おります",
+    "translation": "",
+    "explanation": "回答者说明自己认识小川，应自谦地说「存じております」。题干「部長は～」是向部长提问；部长回答时也不能用「ご存じです」尊敬自己。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 31,
+      "originalNumbers": [
+        "31"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-review-l-32",
+    "category": "japanese3-homework",
+    "groupId": "review-l",
+    "groupTitle": "復習L",
+    "numberInGroup": 32,
+    "questionType": "single",
+    "stem": "（４）いつ 国へ（　）か。  \n……来月 帰ります。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お帰りします"
+      },
+      {
+        "key": "B",
+        "text": "お帰りに なります"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "お帰りに なります",
+    "translation": "",
+    "explanation": "询问对方何时回国，用尊敬句型「お＋ます形词干＋になる」。A「お帰りします」不是这里应使用的尊敬形式。",
+    "grammarPoints": [],
+    "tags": [
+      "復習L"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "復習L",
+      "position": 32,
+      "originalNumbers": [
+        "32"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-1",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 1,
+    "questionType": "single",
+    "stem": "例：この コーヒーは 濃すぎて、（a.飲みません　ⓑ飲めません　c.飲んで しまいました）。  \n（１）今にも 袋が（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "破れるそうです"
+      },
+      {
+        "key": "B",
+        "text": "破れそうです"
+      },
+      {
+        "key": "C",
+        "text": "破れるたようです"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "破れそうです",
+    "translation": "",
+    "explanation": "「今にも」表示眼看就要发生，搭配「ます形词干＋そうです」，即袋子眼看要破。A是传闻；C「破れるた」本身不合语法。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 1,
+      "originalNumbers": [
+        "1"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-2",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 2,
+    "questionType": "single",
+    "stem": "（２）体の 調子が 悪いので、きょうは（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "休んで くださいませんか。"
+      },
+      {
+        "key": "B",
+        "text": "休んで いただけませんか。"
+      },
+      {
+        "key": "C",
+        "text": "休ませて いただけませんか。"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "休ませて いただけませんか。",
+    "translation": "",
+    "explanation": "说话人身体不适，请求准许自己休息，用「使役て形＋いただけませんか」。A、B都是请求对方休息，不符合这里的意思。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 2,
+      "originalNumbers": [
+        "2"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-3",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 3,
+    "questionType": "single",
+    "stem": "（３）べりへ（　）、ダンスが 見たいです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "行けば"
+      },
+      {
+        "key": "B",
+        "text": "行ったら"
+      },
+      {
+        "key": "C",
+        "text": "行くと"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "行ったら",
+    "translation": "",
+    "explanation": "先到某地再想看舞蹈，后项是意愿，通常用「～たら」。本句前项是有意志的「行く」，后项又有「見たい」，本课通常不选「ば／と」。题干「べり」疑为地名笔误，按“去某地”理解。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 3,
+      "originalNumbers": [
+        "3"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-4",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 4,
+    "questionType": "single",
+    "stem": "（４）友達が 来るので、冷蔵庫に ビールを（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "入って います"
+      },
+      {
+        "key": "B",
+        "text": "入れて おきます"
+      },
+      {
+        "key": "C",
+        "text": "入れて しまいました"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "入れて おきます",
+    "translation": "",
+    "explanation": "因为朋友要来，提前把啤酒放进冰箱，是为将来作准备，用「ておく」。A把有宾语「ビールを」与不及物动词「入る」错误搭配；C侧重已做完，与这里的准备意图不合。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 4,
+      "originalNumbers": [
+        "4"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-5",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 5,
+    "questionType": "single",
+    "stem": "（５）歌舞伎に ついて 知りたいんですが、どんな 本を（　）いいですか。",
+    "options": [
+      {
+        "key": "A",
+        "text": "読んだ ほうが"
+      },
+      {
+        "key": "B",
+        "text": "読めば"
+      },
+      {
+        "key": "C",
+        "text": "読んでも"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "読めば",
+    "translation": "",
+    "explanation": "「疑问词＋条件形ば＋いいですか」表示询问该怎么做。「どんな本を読めばいいですか」即该读什么书才好。A侧重比较建议；此题是在征询书目。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 5,
+      "originalNumbers": [
+        "5"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-6",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 6,
+    "questionType": "single",
+    "stem": "（６）子どもの とき、よく 父に（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "しかりました"
+      },
+      {
+        "key": "B",
+        "text": "しかられました"
+      },
+      {
+        "key": "C",
+        "text": "しからせました"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "しかられました",
+    "translation": "",
+    "explanation": "「父にしかられる」表示被父亲责骂，「に」标记被动句中的动作发出者。小时候经常被父亲训斥，因此用过去被动态。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 6,
+      "originalNumbers": [
+        "6"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-7",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 7,
+    "questionType": "single",
+    "stem": "（７）重そうですね。わたしが（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "お持ちに なります"
+      },
+      {
+        "key": "B",
+        "text": "お持ち ください"
+      },
+      {
+        "key": "C",
+        "text": "お持ちします"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "お持ちします",
+    "translation": "",
+    "explanation": "说话人主动帮对方拿东西，谦逊地表达自己的动作，用「お＋词干＋します」。A是抬高别人动作，B是请别人拿。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 7,
+      "originalNumbers": [
+        "7"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-8",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 8,
+    "questionType": "single",
+    "stem": "（８）ミラーさんは いらっしゃいますか。  \n……ミラーさんは たった今（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "帰る ところです"
+      },
+      {
+        "key": "B",
+        "text": "帰って いる ところです"
+      },
+      {
+        "key": "C",
+        "text": "帰った ところです"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "帰った ところです",
+    "translation": "",
+    "explanation": "「たった今」表示就在刚才，接「た形＋ところです」说明已经刚刚离开。A是马上要走，B不能表达这个刚完成的意思。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 8,
+      "originalNumbers": [
+        "8"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-9",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 9,
+    "questionType": "single",
+    "stem": "（９）きのう 宅配便で 送りましたから、きょう（　）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "届く はずです"
+      },
+      {
+        "key": "B",
+        "text": "届くかも しれません"
+      },
+      {
+        "key": "C",
+        "text": "届くそうです"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "届く はずです",
+    "translation": "",
+    "explanation": "根据昨天已寄快递这一事实，推断今天应当到达，用「はずです」。B只是可能，C是听说，都不是这里最贴切的根据判断。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 9,
+      "originalNumbers": [
+        "9"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-10",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 10,
+    "questionType": "single",
+    "stem": "（１０）きょうは（　）お先に 失礼します。",
+    "options": [
+      {
+        "key": "A",
+        "text": "用事が あって"
+      },
+      {
+        "key": "B",
+        "text": "用事が あるので"
+      },
+      {
+        "key": "C",
+        "text": "用事が あると"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "用事が あるので",
+    "translation": "",
+    "explanation": "说明自己先告辞的原因，用「ので」较礼貌自然，后面可以接告辞、请求等表达。A的「て」可以连接原因，但本课对礼貌说明理由通常期待B；C「と」不适合连接这里的主动告辞。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 10,
+      "originalNumbers": [
+        "10"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-11",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 11,
+    "questionType": "single",
+    "stem": "（１１）傘を（　）出かけたので、ぬれて しまいました。",
+    "options": [
+      {
+        "key": "A",
+        "text": "持って"
+      },
+      {
+        "key": "B",
+        "text": "持たないで"
+      },
+      {
+        "key": "C",
+        "text": "持ちながら"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "持たないで",
+    "translation": "",
+    "explanation": "「动词ない形＋で」表示在不做某事的情况下做另一件事。「傘を持たないで出かけた」即没带伞出门，所以淋湿了。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 11,
+      "originalNumbers": [
+        "11"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-12",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 12,
+    "questionType": "single",
+    "stem": "（１２）窓が 開いて（　）ね。  \n……暑くて 気分が 悪いので、（第2空）んです。  \n注：本问填第1空。",
+    "options": [
+      {
+        "key": "A",
+        "text": "います"
+      },
+      {
+        "key": "B",
+        "text": "あります"
+      },
+      {
+        "key": "C",
+        "text": "おきます"
+      }
+    ],
+    "answerKey": "A",
+    "answerText": "います",
+    "translation": "",
+    "explanation": "「開く」是不及物动词，「窓が開いています」表示窗户处于开着的状态。「てあります」通常接表示人为动作的及物动词，如「開けてあります」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 12,
+      "originalNumbers": [
+        "12"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-13",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 13,
+    "questionType": "single",
+    "stem": "（１２）窓が 開いて（第1空）ね。  \n……暑くて 気分が 悪いので、（　）んです。  \n注：本问填第2空。",
+    "options": [
+      {
+        "key": "A",
+        "text": "開いて いる"
+      },
+      {
+        "key": "B",
+        "text": "開けて ある"
+      },
+      {
+        "key": "C",
+        "text": "閉めて おいた"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "開けて ある",
+    "translation": "",
+    "explanation": "解释因为热、身体不舒服，所以事先把窗打开并保持该状态，用「開けてあるんです」。A也是合语法的状态描述，但只重复“窗开着”，不如B突出有意打开的结果；C说关上，与上一句相矛盾。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 13,
+      "originalNumbers": [
+        "13"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-14",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 14,
+    "questionType": "single",
+    "stem": "（１３）きのう あんなに（　）、試験の 成績が 悪かったです。",
+    "options": [
+      {
+        "key": "A",
+        "text": "勉強しても"
+      },
+      {
+        "key": "B",
+        "text": "勉強したのに"
+      },
+      {
+        "key": "C",
+        "text": "勉強したので"
+      }
+    ],
+    "answerKey": "B",
+    "answerText": "勉強したのに",
+    "translation": "",
+    "explanation": "「のに」表示结果与预期相反：明明昨天那么用功，考试成绩却不好。A「しても」通常表示即使学习也……，不能贴合这里明确的过去事实。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 14,
+      "originalNumbers": [
+        "14"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-15",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 15,
+    "questionType": "single",
+    "stem": "（１４）わたしは 夏休みに 北海道へ（　）と 思って います。",
+    "options": [
+      {
+        "key": "A",
+        "text": "行く"
+      },
+      {
+        "key": "B",
+        "text": "行け"
+      },
+      {
+        "key": "C",
+        "text": "行こう"
+      }
+    ],
+    "answerKey": "C",
+    "answerText": "行こう",
+    "translation": "",
+    "explanation": "「意向形＋と思っています」表示已经有的打算。「行く」的意向形是「行こう」，即打算暑假去北海道。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 15,
+      "originalNumbers": [
+        "15"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-27",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 27,
+    "questionType": "fill",
+    "stem": "（１）日本語を（例：勉強する）ために、日本へ 来ました。  \n「みんなの 学校」で 勉強して います。先生は①のが 上手で、説明は とても②やすいです。「会話」は 本を③ないで 言えるように、何回も 練習します。  \n选词：勉強します（例句已使用）／見ます／わかります／教えます",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "教える"
+        ]
+      },
+      {
+        "answers": [
+          "わかり"
+        ]
+      },
+      {
+        "answers": [
+          "見"
+        ]
+      }
+    ],
+    "answerKey": "教える／わかり／見",
+    "answerText": "教える／わかり／見",
+    "translation": "",
+    "explanation": "第一空用「教えるのが上手」把教书这件事名词化；第二空「ます形词干＋やすい」为「わかりやすい」，表示容易理解；第三空题干已有「ないで」，「見ないで」表示不看书，所以只填「見」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 16,
+      "originalNumbers": [
+        "27"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-28",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 28,
+    "questionType": "fill",
+    "stem": "（２）小川さんに「ミラーさん、会話の 先生に①いただけませんか。」と②。6月に 日本語の 試験に③ので、教えて④と 思って います。お茶を⑤ながら、いろいろ⑥つもりです。  \n选词：あげます／合格します／頼みます／なります／飲みます／話します",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "なって"
+        ]
+      },
+      {
+        "answers": [
+          "頼まれました"
+        ]
+      },
+      {
+        "answers": [
+          "合格したい"
+        ]
+      },
+      {
+        "answers": [
+          "あげよう",
+          "あげたい"
+        ]
+      },
+      {
+        "answers": [
+          "飲み"
+        ]
+      },
+      {
+        "answers": [
+          "話す"
+        ]
+      }
+    ],
+    "answerKey": "なって／頼まれました／合格したい／あげよう／飲み／話す",
+    "answerText": "なって／頼まれました／合格したい／あげよう／飲み／話す",
+    "translation": "",
+    "explanation": "小川请米勒当会话老师，米勒转述为「小川さんに～と頼まれました」，故第二空用被动。第一空「なっていただけませんか」是请对方担任老师。第三空「合格したいので」说明小川想通过考试；第四空「教えてあげようと思っています」表示米勒打算教小川；第五空接「ながら」取词干「飲み」；第六空「つもり」前接辞书形「話す」。依上下文也可有「教えてあげたいと思っています」等表达；这里给出最符合意向句型练习的参考组合。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 17,
+      "originalNumbers": [
+        "28"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-29",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 29,
+    "questionType": "fill",
+    "stem": "（３）小川さんは 来月 大阪の 本社に①そうです。  \nご家族は 東京に②ようです。小川さんは 料理を③と 言って いました。  \n选词：転勤します／習います／残ります",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "転勤する"
+        ]
+      },
+      {
+        "answers": [
+          "残る"
+        ]
+      },
+      {
+        "answers": [
+          "習う",
+          "習いたい",
+          "習うつもりだ"
+        ]
+      }
+    ],
+    "answerKey": "転勤する／残る／習う",
+    "answerText": "転勤する／残る／習う",
+    "translation": "",
+    "explanation": "「転勤するそうです」用普通形接传闻，表示听说将调到大阪；「残るようです」表示家人似乎留在东京；「習うと言っていました」用普通形转述将学习做饭。末空也可依想表达的意思写「習いたい」「習うつもりだ」，但会加入原题未明示的愿望或打算，因此主答案选最直接的「習う」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 18,
+      "originalNumbers": [
+        "29"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-30",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 30,
+    "questionType": "fill",
+    "stem": "（４）日本料理が①ように なりたいです。それで、1週間に 2回 料理教室に②のに、なかなか 上手に なりません。どう③、上手に なりますか。  \n选词：通います／します／作ります",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "作れる"
+        ]
+      },
+      {
+        "answers": [
+          "通っている",
+          "通う"
+        ]
+      },
+      {
+        "answers": [
+          "すれば"
+        ]
+      }
+    ],
+    "answerKey": "作れる／通っている／すれば",
+    "answerText": "作れる／通っている／すれば",
+    "translation": "",
+    "explanation": "「作れるようになりたい」表示希望变得能够做日本菜，第一空用可能形。一直每周两次上课却不见进步，用「通っているのに」突出持续情况与结果的反差；「どうすれば」表示怎样做才会变好。第二空「通っている」是推荐答案；「通う」在表示习惯时也可成立。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 19,
+      "originalNumbers": [
+        "30"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-31",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 31,
+    "questionType": "fill",
+    "stem": "（５）あしたは シュミットさんの 送別会です。きょうは シュミットさんに あげる プレゼントを①来ました。会場には「シュミットさん、ありがとう。お元気で。」と②紙が③あります。シュミットさんが 好きな ビールを たくさん④おきましょう。  \n选词：買います／書きます／はります／冷やします",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "買って"
+        ]
+      },
+      {
+        "answers": [
+          "書いた"
+        ]
+      },
+      {
+        "answers": [
+          "はって"
+        ]
+      },
+      {
+        "answers": [
+          "冷やして"
+        ]
+      }
+    ],
+    "answerKey": "買って／書いた／はって／冷やして",
+    "answerText": "買って／書いた／はって／冷やして",
+    "translation": "",
+    "explanation": "「買って来ました」表示买了再带来；「～と書いた紙」是写着告别语的纸，「書いた」修饰「紙」；「紙がはってあります」表示纸已被贴好；「冷やしておきましょう」表示提前把啤酒冰好。第四空之后已有「おきましょう」，只填到「て」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 20,
+      "originalNumbers": [
+        "31"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-32",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 32,
+    "questionType": "fill",
+    "stem": "（６）今 空港に①ところです。松本部長は 課長を 駅まで 迎えに②と おっしゃいました。ですから、課長が 迎えに③くださって いる はずです。初めて IMCの 課長に お④します。上手に あいさつが⑤か どうか 心配です。  \n选词：行きます／来ます／着きます／できます／会います",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "着いた"
+        ]
+      },
+      {
+        "answers": [
+          "行かせる"
+        ]
+      },
+      {
+        "answers": [
+          "来て"
+        ]
+      },
+      {
+        "answers": [
+          "会い"
+        ]
+      },
+      {
+        "answers": [
+          "できる"
+        ]
+      }
+    ],
+    "answerKey": "着いた／行かせる／来て／会い／できる",
+    "answerText": "着いた／行かせる／来て／会い／できる",
+    "translation": "",
+    "explanation": "「着いたところ」表示刚到；部长说要安排课长去接人，用「課長を迎えに行かせる」，所以第二空是使役形。以被接者为视点，课长“来接我”用「来てくださっている」；「お会いします」是自谦的见面表达；「できるかどうか」表示能否顺利问候。题干先写空港、后写駅，地点不一致，疑为原题笔误，不影响这些变形。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 21,
+      "originalNumbers": [
+        "32"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-33",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 33,
+    "questionType": "fill",
+    "stem": "例：「暗いです → 暗く」なりましたから、電気を つけて ください。  \n（１）どうして パーティーに 行かないんですか。  \n……気分が「悪いです →①」んです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "悪い"
+        ]
+      }
+    ],
+    "answerKey": "悪い",
+    "answerText": "悪い",
+    "translation": "",
+    "explanation": "解释原因的「んです」前接普通形，形容词「悪い」保持原形。完整句是「気分が悪いんです」，即因为身体不舒服。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 22,
+      "originalNumbers": [
+        "33"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-34",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 34,
+    "questionType": "fill",
+    "stem": "（２）給料も「高いです →①」し、仕事も「楽です →②」し、ずっと この 会社で 働く つもりです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "高い"
+        ]
+      },
+      {
+        "answers": [
+          "楽だ"
+        ]
+      }
+    ],
+    "answerKey": "高い／楽だ",
+    "answerText": "高い／楽だ",
+    "translation": "",
+    "explanation": "列举理由的「し」接普通形；形容词用「高いし」，形容动词用「楽だし」。意思是工资高、工作又轻松，所以打算一直在这家公司工作。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 23,
+      "originalNumbers": [
+        "34"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-35",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 35,
+    "questionType": "fill",
+    "stem": "（３）国際会議は 5月の「初めごろです →①」予定です。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "初めごろの"
+        ]
+      }
+    ],
+    "answerKey": "初めごろの",
+    "answerText": "初めごろの",
+    "translation": "",
+    "explanation": "「予定」前的名词用「の」修饰，因此「初めごろです」改为「初めごろの予定です」。本句表示国际会议预计在5月初左右举行。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 24,
+      "originalNumbers": [
+        "35"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-36",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 36,
+    "questionType": "fill",
+    "stem": "（４）イーさんは 新年会が「楽しみです →①」と 言って いました。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "楽しみだ"
+        ]
+      }
+    ],
+    "answerKey": "楽しみだ",
+    "answerText": "楽しみだ",
+    "translation": "",
+    "explanation": "「と言っていました」前引用普通形。形容动词或名词性质的「楽しみです」在肯定普通形中用「楽しみだ」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 25,
+      "originalNumbers": [
+        "36"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-37",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 37,
+    "questionType": "fill",
+    "stem": "（５）空が 暗いですから、午後は「雨です →①」かも しれません。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "雨"
+        ]
+      }
+    ],
+    "answerKey": "雨",
+    "answerText": "雨",
+    "translation": "",
+    "explanation": "「かもしれません」前的名词不保留肯定判断的「だ」。因此是「雨かもしれません」，不是「雨だかもしれません」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 26,
+      "originalNumbers": [
+        "37"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-38",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 38,
+    "questionType": "fill",
+    "stem": "（６）いちばん「大切です →①」のは きれいな 水と 空気です。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "大切な"
+        ]
+      }
+    ],
+    "answerKey": "大切な",
+    "answerText": "大切な",
+    "translation": "",
+    "explanation": "「の」将前面的描述名词化；形容动词连接这个「の」时用「な」，所以「大切なの」表示重要的东西或事情。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 27,
+      "originalNumbers": [
+        "38"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-39",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 39,
+    "questionType": "fill",
+    "stem": "（７）この 説明書は「複雑です →①」、よく わかりません。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "複雑すぎて",
+          "複雑で"
+        ]
+      }
+    ],
+    "answerKey": "複雑すぎて",
+    "answerText": "複雑すぎて",
+    "translation": "",
+    "explanation": "「形容动词词干＋すぎる」表示过于……；再用「て」连接结果，形成「複雑すぎて、よくわかりません」，即说明书太复杂，所以看不懂。「複雑で」也能造出通顺句，但主答案按过度程度的练习意图处理。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 28,
+      "originalNumbers": [
+        "39"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-40",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 40,
+    "questionType": "fill",
+    "stem": "（８）「おいしいです →①」か どうか、食べて みます。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "おいしい"
+        ]
+      }
+    ],
+    "answerKey": "おいしい",
+    "answerText": "おいしい",
+    "translation": "",
+    "explanation": "「かどうか」表示是否，形容词直接用普通形「おいしい」连接；「食べてみます」表示吃一下试试，看看是否好吃。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 29,
+      "originalNumbers": [
+        "40"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-41",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 41,
+    "questionType": "fill",
+    "stem": "（９）こちらの かばんは いかがですか。  \n……これは 書類を 入れるのに「いいです →①」そうですね。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "よさ"
+        ]
+      }
+    ],
+    "answerKey": "よさ",
+    "answerText": "よさ",
+    "translation": "",
+    "explanation": "题干已经给出「そうですね」，空内只填「よさ」。「いい」连接样态「そうだ」时有特殊变化：いい→よさそうだ。不能再填「よさそう」，否则会重复「そう」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 30,
+      "originalNumbers": [
+        "41"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-42",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 42,
+    "questionType": "fill",
+    "stem": "（１０）この 薬は「苦いです →①」、飲めません。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "苦くて",
+          "苦すぎて"
+        ]
+      }
+    ],
+    "answerKey": "苦くて",
+    "answerText": "苦くて",
+    "translation": "",
+    "explanation": "形容词用「い→くて」连接原因与结果：「苦くて、飲めません」即太苦，喝不下。若强调“过于苦”，「苦すぎて」也可成立；此处选常规原因连接形式。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 31,
+      "originalNumbers": [
+        "42"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-43",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 43,
+    "questionType": "fill",
+    "stem": "（１１）山田さんは 中国に 住んで いましたから、中国語が「上手です →①」はずです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "上手な"
+        ]
+      }
+    ],
+    "answerKey": "上手な",
+    "answerText": "上手な",
+    "translation": "",
+    "explanation": "形容动词连接「はず」时用「な」：「上手なはずです」表示有在中国生活过的依据，按理中文应该很好。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 32,
+      "originalNumbers": [
+        "43"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-44",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 44,
+    "questionType": "fill",
+    "stem": "（１２）運動会は「中止です →①」ようです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "中止の"
+        ]
+      }
+    ],
+    "answerKey": "中止の",
+    "answerText": "中止の",
+    "translation": "",
+    "explanation": "名词接推测「ようです」时用「の」，因此为「中止のようです」，表示运动会似乎取消了。不要与传闻「中止だそうです」混淆。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 33,
+      "originalNumbers": [
+        "44"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-45",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 45,
+    "questionType": "fill",
+    "stem": "（１３）テレビの 音を「小さい →①」して ください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "小さく"
+        ]
+      }
+    ],
+    "answerKey": "小さく",
+    "answerText": "小さく",
+    "translation": "",
+    "explanation": "「形容词く形＋する」表示人为使某状态改变。「音を小さくする」即把声音调小。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 34,
+      "originalNumbers": [
+        "45"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-46",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 46,
+    "questionType": "fill",
+    "stem": "（１４）結婚したら、必ず 彼女を「幸せ →①」します。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "幸せに"
+        ]
+      }
+    ],
+    "answerKey": "幸せに",
+    "answerText": "幸せに",
+    "translation": "",
+    "explanation": "「形容动词词干＋に＋する」表示使某人或某物变成某状态。「彼女を幸せにします」即让她幸福。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 35,
+      "originalNumbers": [
+        "46"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-47",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 47,
+    "questionType": "fill",
+    "stem": "例：林さんは 一人で 着物を 着る ことが できますか。  \n……いいえ、できません。  \n→ 林さんは 一人で 着物が（着られません）。  \n（１）きのう お借リした 本、ありがとう ございました。  \n……えっ、もう 全部 読んだんですか。  \n→ きのう 借リた 本を もう 読んで①。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "しまったんですか"
+        ]
+      }
+    ],
+    "answerKey": "しまったんですか",
+    "answerText": "しまったんですか",
+    "translation": "",
+    "explanation": "原句表示惊讶地询问是否已全部读完，用「読んでしまったんですか」。题干已有「読んで」，只填后半部分；「てしまう」突出全部完成。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 36,
+      "originalNumbers": [
+        "47"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-48",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 48,
+    "questionType": "fill",
+    "stem": "（２）テレビの ニュースで 雪で 新幹線が 止まったと 言って いましたね。  \n……ええ、すごい 雪だそうですね。  \n→ ニュースに よると 雪で 新幹線が①。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "止まったそうです"
+        ]
+      }
+    ],
+    "answerKey": "止まったそうです",
+    "answerText": "止まったそうです",
+    "translation": "",
+    "explanation": "「ニュースによると」提示消息来源，后接传闻「普通形＋そうです」。过去停运用「止まった」，整句意为据新闻说新干线因雪停运了。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 37,
+      "originalNumbers": [
+        "48"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-49",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 49,
+    "questionType": "fill",
+    "stem": "（３）どう したんですか。服が 汚れて いますよ。  \n……子どもが わたしの 服を 汚して しまったんです。  \n→ わたしは 子どもに①。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "服を汚されてしまったんです",
+          "服を汚されてしまいました"
+        ]
+      }
+    ],
+    "answerKey": "服を汚されてしまったんです",
+    "answerText": "服を汚されてしまったんです",
+    "translation": "",
+    "explanation": "把「子どもがわたしの服を汚す」改为以受影响者「わたし」为主语的受害被动：「わたしは子どもに服を汚される」。用「てしまったんです」保留遗憾与解释语气。礼貌叙述也可写「服を汚されてしまいました」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 38,
+      "originalNumbers": [
+        "49"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-50",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 50,
+    "questionType": "fill",
+    "stem": "（４）日本へ 来た ばかりの とき、大変だったでしよう。  \n……ええ。でも、皆さんに 親切に して いただきました。  \n→ 皆さんが①。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "親切にしてくださいました"
+        ]
+      }
+    ],
+    "answerKey": "親切にしてくださいました",
+    "answerText": "親切にしてくださいました",
+    "translation": "",
+    "explanation": "「皆さんに～していただく」从受益者视点自谦地说承蒙帮助；改成以「皆さんが」为主语，就用「～してくださる」。过去形式为「親切にしてくださいました」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 39,
+      "originalNumbers": [
+        "50"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-51",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 51,
+    "questionType": "fill",
+    "stem": "（５）いつも この 店で 食べて いるんですか。  \n……ええ、味が いいんです。それに 値段も 安いんですよ。  \n→①し、いつも この 店で 食べて います。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "味がいいし、値段も安い"
+        ]
+      }
+    ],
+    "answerKey": "味がいいし、値段も安い",
+    "answerText": "味がいいし、値段も安い",
+    "translation": "",
+    "explanation": "用「し」并列两个常去这家店的理由。题干在空后已有「し」，因此第二个理由填到「安い」即可，完整为「味がいいし、値段も安いし」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 40,
+      "originalNumbers": [
+        "51"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-52",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 52,
+    "questionType": "fill",
+    "stem": "（６）いつも マンガを かいて いますね。  \n……ええ、好きなんです。子どもの ときから いつも かいて いました。  \n→ わたしは①が 好きです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "マンガをかくこと",
+          "マンガをかくの"
+        ]
+      }
+    ],
+    "answerKey": "マンガをかくこと",
+    "answerText": "マンガをかくこと",
+    "translation": "",
+    "explanation": "「辞书形＋こと」将画漫画这一动作名词化，再用「～が好きです」表示喜欢做这件事。「マンガをかくの」也可作同义表达；本题推荐「こと」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 41,
+      "originalNumbers": [
+        "52"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-53",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 53,
+    "questionType": "fill",
+    "stem": "（７）毎日 遅くまで 練習して いるんですね。  \n……ええ、優勝できるように、みんなで 頑張って いるんです。  \n→①ために、みんなで 毎日 練習して います。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "優勝する"
+        ]
+      }
+    ],
+    "answerKey": "優勝する",
+    "answerText": "優勝する",
+    "translation": "",
+    "explanation": "「ために」表示有意志的目的，前接辞书形。「優勝するために」表示为了夺冠；「優勝できるように」则侧重为了达到能够夺冠的状态。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 42,
+      "originalNumbers": [
+        "53"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-54",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 54,
+    "questionType": "fill",
+    "stem": "（８）鈴木さん、結婚なさるそうですね。いつですか。  \n……来年の 4月です。  \n→ 鈴木さんが①は 来年の 4月です。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "結婚なさるの"
+        ]
+      }
+    ],
+    "answerKey": "結婚なさるの",
+    "answerText": "結婚なさるの",
+    "translation": "",
+    "explanation": "用「の」把“铃木结婚”名词化，构成「鈴木さんが結婚なさるのは来年の4月です」，即铃木结婚是在明年4月。保留「なさる」的尊敬语气。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 43,
+      "originalNumbers": [
+        "54"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-55",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 55,
+    "questionType": "fill",
+    "stem": "（９）大郎、ちょっと 買い物に 行って 来て。  \n……はい、行って きます。  \n→ わたしは 太郎を 買い物に①。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "行かせます"
+        ]
+      }
+    ],
+    "answerKey": "行かせます",
+    "answerText": "行かせます",
+    "translation": "",
+    "explanation": "母亲让太郎出去买东西，把「太郎が買い物に行く」改为使役句「わたしは太郎を買い物に行かせます」。「行く」的使役形是「行かせる」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 44,
+      "originalNumbers": [
+        "55"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-56",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 56,
+    "questionType": "fill",
+    "stem": "（１０）火事が 起きたら、エレベーターは 使わないで ください。  \n……はい、わかりました。  \n→①場合は、エレベーターを 使っては いけません。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "火事が起きた"
+        ]
+      }
+    ],
+    "answerKey": "火事が起きた",
+    "answerText": "火事が起きた",
+    "translation": "",
+    "explanation": "「場合」前用普通形；「火事が起きた場合は」表示一旦发生火灾的情况。这里的「た」可表示条件成立，不一定指已经发生的过去事件。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 45,
+      "originalNumbers": [
+        "56"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-58",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 58,
+    "questionType": "fill",
+    "stem": "例：電気が（ⓐ消えて　ｂ．消して）いますから、留守のようです。  \n（１）子どもが 部屋の 壁を①ので、掃除させました。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "汚した"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "汚れた"
+          },
+          {
+            "key": "B",
+            "text": "汚した"
+          }
+        ]
+      }
+    ],
+    "answerKey": "汚した",
+    "answerText": "汚した",
+    "translation": "",
+    "explanation": "「壁を汚す」是把墙弄脏，宾语「壁を」要求及物动词「汚す」。「汚れる」是不及物动词，用于「壁が汚れる」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 46,
+      "originalNumbers": [
+        "58"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-59",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 59,
+    "questionType": "fill",
+    "stem": "（２）子どもが①ように、ドアに かぎを②おきます。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "入れない"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "入らない"
+          },
+          {
+            "key": "B",
+            "text": "入れない"
+          }
+        ]
+      },
+      {
+        "answers": [
+          "掛けて"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "掛かって"
+          },
+          {
+            "key": "B",
+            "text": "掛けて"
+          }
+        ]
+      }
+    ],
+    "answerKey": "入れない／掛けて",
+    "answerText": "入れない／掛けて",
+    "translation": "",
+    "explanation": "为了让孩子无法进入，用可能否定「入れないように」；「ドアにかぎを掛けておく」表示提前锁好门。「かぎを」要求及物动词「掛ける」，所以不是「掛かって」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 47,
+      "originalNumbers": [
+        "59"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-60",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 60,
+    "questionType": "fill",
+    "stem": "（３）かぎを①しまったので、捜しましたが、②。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "なくして"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "なくなって"
+          },
+          {
+            "key": "B",
+            "text": "なくして"
+          }
+        ]
+      },
+      {
+        "answers": [
+          "見つかりませんでした"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "見つかりませんでした"
+          },
+          {
+            "key": "B",
+            "text": "見つけませんでした"
+          }
+        ]
+      }
+    ],
+    "answerKey": "なくして／見つかりませんでした",
+    "answerText": "なくして／見つかりませんでした",
+    "translation": "",
+    "explanation": "「かぎをなくす」表示把钥匙弄丢，用及物动词；找了却没找到，自然说「見つかりませんでした」。此处第二项说明搜索没有结果，不是主动选择不找。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 48,
+      "originalNumbers": [
+        "60"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-61",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 61,
+    "questionType": "fill",
+    "stem": "（４）人が 大勢①いますね。  \n……ええ。今から お祭りが②ところです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "集まって"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "集まって"
+          },
+          {
+            "key": "B",
+            "text": "集めて"
+          }
+        ]
+      },
+      {
+        "answers": [
+          "始まる"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "始まる"
+          },
+          {
+            "key": "B",
+            "text": "始める"
+          }
+        ]
+      }
+    ],
+    "answerKey": "集まって／始まる",
+    "answerText": "集まって／始まる",
+    "translation": "",
+    "explanation": "「人が集まる」是人聚集，主语为人；「お祭りが始まる」是活动开始，主语为活动，二者都用不及物动词。「今から始まるところ」表示马上开始。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 49,
+      "originalNumbers": [
+        "61"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-62",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 62,
+    "questionType": "fill",
+    "stem": "（５）この バスは 新宿へ 行きますか。  \n……いいえ、あそこに①いる バスですよ。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "止まって"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "止まって"
+          },
+          {
+            "key": "B",
+            "text": "止めて"
+          }
+        ]
+      }
+    ],
+    "answerKey": "止まって",
+    "answerText": "止まって",
+    "translation": "",
+    "explanation": "「バスが止まっている」表示公交车停着的状态。「止める」是把某物停下的及物动词，不能直接用于这里描述公交车自身的状态。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 50,
+      "originalNumbers": [
+        "62"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-63",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 63,
+    "questionType": "fill",
+    "stem": "（６）危ないですから、バスの 窓から 顔や 手を①ように して ください。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "出さない"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "出ない"
+          },
+          {
+            "key": "B",
+            "text": "出さない"
+          }
+        ]
+      }
+    ],
+    "answerKey": "出さない",
+    "answerText": "出さない",
+    "translation": "",
+    "explanation": "「顔や手を出す」表示把脸或手伸出去，「を」标记宾语，需要及物动词。「出さないようにしてください」即请注意不要伸出去。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 51,
+      "originalNumbers": [
+        "63"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-64",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 64,
+    "questionType": "fill",
+    "stem": "（７）きのう 引っ越しの 荷物が①ばかりなので、荷物を②のに 時間が かかりそうです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "届いた"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "届いた"
+          },
+          {
+            "key": "B",
+            "text": "届けた"
+          }
+        ]
+      },
+      {
+        "answers": [
+          "片づける"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "片づく"
+          },
+          {
+            "key": "B",
+            "text": "片づける"
+          }
+        ]
+      }
+    ],
+    "answerKey": "届いた／片づける",
+    "answerText": "届いた／片づける",
+    "translation": "",
+    "explanation": "「荷物が届く」表示行李送到，故第一空用不及物动词的过去形；「荷物を片づける」表示整理行李，第二空有宾语「を」，用及物动词。「～のに時間がかかる」表示做某事需要时间。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 52,
+      "originalNumbers": [
+        "64"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-65",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 65,
+    "questionType": "fill",
+    "stem": "（８）ミラーさんは 何時ごろ①か。  \n……さあ、わかりません。会議が まだ②いますから。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "戻ります"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "戻ります"
+          },
+          {
+            "key": "B",
+            "text": "戻します"
+          }
+        ]
+      },
+      {
+        "answers": [
+          "続いて"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "続いて"
+          },
+          {
+            "key": "B",
+            "text": "続けて"
+          }
+        ]
+      }
+    ],
+    "answerKey": "戻ります／続いて",
+    "answerText": "戻ります／続いて",
+    "translation": "",
+    "explanation": "米勒自己回来，用「戻る」；会议还在继续，用「会議が続いている」。「戻す」「続ける」均需要施事者对其他对象实施动作，不符合本题主语。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 53,
+      "originalNumbers": [
+        "65"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-66",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 66,
+    "questionType": "fill",
+    "stem": "（９）庭の 木が①いますね。  \n……ええ。きのうの 台風は すごかったですね。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "折れて"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "折れて"
+          },
+          {
+            "key": "B",
+            "text": "折って"
+          }
+        ]
+      }
+    ],
+    "answerKey": "折れて",
+    "answerText": "折れて",
+    "translation": "",
+    "explanation": "「木が折れている」表示树折断后留下的状态，用不及物动词「折れる」；「木を折る」才表示人为把树折断。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 54,
+      "originalNumbers": [
+        "66"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-67",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 67,
+    "questionType": "fill",
+    "stem": "（１０）掃除機が①しまったので、新しいのを 買わなければ なりません。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "壊れて"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "壊れて"
+          },
+          {
+            "key": "B",
+            "text": "壊して"
+          }
+        ]
+      }
+    ],
+    "answerKey": "壊れて",
+    "answerText": "壊れて",
+    "translation": "",
+    "explanation": "「掃除機が壊れる」表示吸尘器坏了，用不及物动词；「壊して」表示有人把它弄坏，通常应说「掃除機を壊す」。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 55,
+      "originalNumbers": [
+        "67"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-68",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 68,
+    "questionType": "fill",
+    "stem": "（１１）掃除機を 探して いるんですが、どれが いいですか。  \n……こちらは 使いやすくて、今 いちばん①います。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "売れて"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "売れて"
+          },
+          {
+            "key": "B",
+            "text": "売って"
+          }
+        ]
+      }
+    ],
+    "answerKey": "売れて",
+    "answerText": "売れて",
+    "translation": "",
+    "explanation": "「売れている」表示商品畅销，焦点是商品的销售情况；「売っている」表示某人在卖，通常需要以卖家为主语，并把商品作为宾语。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 56,
+      "originalNumbers": [
+        "68"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  },
+  {
+    "id": "japanese3-homework-final-review-69",
+    "category": "japanese3-homework",
+    "groupId": "final-review",
+    "groupTitle": "総復習",
+    "numberInGroup": 69,
+    "questionType": "fill",
+    "stem": "（１２）いい においが しますね。  \n……今 パンを①いるんです。",
+    "options": [],
+    "fillSlots": [
+      {
+        "answers": [
+          "焼いて"
+        ],
+        "options": [
+          {
+            "key": "A",
+            "text": "焼けて"
+          },
+          {
+            "key": "B",
+            "text": "焼いて"
+          }
+        ]
+      }
+    ],
+    "answerKey": "焼いて",
+    "answerText": "焼いて",
+    "translation": "",
+    "explanation": "完整句是「今パンを焼いているんです」，表示正在烤面包。「パンを」是宾语，要求及物动词「焼く」；「パンが焼ける」才表示面包烤好。",
+    "grammarPoints": [],
+    "tags": [
+      "総復習"
+    ],
+    "source": {
+      "file": "data/raw/japanese3/homework-lessons-47-50.txt",
+      "group": "総復習",
+      "position": 57,
+      "originalNumbers": [
+        "69"
+      ]
+    },
+    "status": "ready",
+    "answerProvenance": "generated",
+    "explanationSource": "generated"
+  }
+]

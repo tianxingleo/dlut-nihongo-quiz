@@ -22,6 +22,7 @@ const BANKS = [
   'jp1-mid24-question-bank.json',
   'japanese2-question-bank.json',
   'japanese3-question-bank.json',
+  'japanese3-homework-question-bank.json',
   'question-bank.json',
   'word-question-bank.json',
   'history-question-bank.json',

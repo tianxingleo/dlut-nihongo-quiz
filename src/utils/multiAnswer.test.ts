@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest'
-import { toggleMultiSelect, isMultiAnswerCorrect } from './multiAnswer'
+import {
+  hasCompleteFillAnswer,
+  isFillAnswerCorrect,
+  isMultiAnswerCorrect,
+  toggleMultiSelect,
+} from './multiAnswer'
 
 describe('toggleMultiSelect', () => {
   it('adds a new key in sorted order', () => {
@@ -42,5 +47,25 @@ describe('isMultiAnswerCorrect', () => {
   it('handles single-answer keys', () => {
     expect(isMultiAnswerCorrect('A', 'A')).toBe(true)
     expect(isMultiAnswerCorrect('B', 'A')).toBe(false)
+  })
+})
+
+describe('按空位判分', () => {
+  const slots = [{ answers: ['に', 'へ'] }, { answers: ['８時'] }]
+
+  it('接受每空的参考表达及全半角差异，保留空位顺序', () => {
+    expect(isFillAnswerCorrect(' へ／8 時 ', 'に／８時', slots)).toBe(true)
+    expect(isFillAnswerCorrect('８時／に', 'に／８時', slots)).toBe(false)
+  })
+
+  it('拒绝有空缺或多填的答案', () => {
+    expect(hasCompleteFillAnswer('に／　', 2)).toBe(false)
+    expect(hasCompleteFillAnswer('に／8時／を', 2)).toBe(false)
+    expect(isFillAnswerCorrect('に', 'に／８時', slots)).toBe(false)
+  })
+
+  it('保留既有单输入框的答案比较规则', () => {
+    expect(isFillAnswerCorrect('  AB ', 'ab')).toBe(true)
+    expect(isFillAnswerCorrect('a b', 'ab')).toBe(false)
   })
 })

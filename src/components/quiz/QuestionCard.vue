@@ -6,6 +6,8 @@ import {
   toggleMultiSelect,
   isMultiAnswerCorrect,
   isFillAnswerCorrect,
+  hasCompleteFillAnswer,
+  FILL_SLOT_SEPARATOR,
 } from '../../utils/multiAnswer'
 import { renderExplanation } from '../../utils/renderExplanation'
 import { renderMarkdown } from '../../utils/renderMarkdown'
@@ -51,7 +53,8 @@ const showAIChat = ref(false)
 const aiExplanationRequest = ref<AIExplanationRequest | null>(null)
 
 // 填空题相关
-const fillAnswer = ref('')
+const fillAnswer = ref(props.selectedKey)
+const slotValues = computed(() => props.selectedKey.split(FILL_SLOT_SEPARATOR))
 /**
  * 题干/选项/答案/解析是否需要 KaTeX（公式）或代码块富渲染。
  * 模板里 5 处 `v-if="technicalQuestion"` 判的都是"要不要走 renderQuestionMarkdown"，
@@ -134,6 +137,7 @@ function isOnSelectableText(target: EventTarget | null): boolean {
 
 function onPointerDown(e: PointerEvent) {
   if (props.submitted) return
+  if (e.target instanceof HTMLElement && e.target.closest('input, select')) return
   if (e.pointerType === 'mouse' && e.button !== 0) return
   // 鼠标点击可选择文字区域时，跳过拖拽手势，让浏览器处理文字选择
   if (e.pointerType === 'mouse' && isOnSelectableText(e.target)) return
@@ -179,7 +183,8 @@ function onPointerUp(e: PointerEvent) {
 }
 
 async function handleShare() {
-  const url = `${location.origin}${location.pathname}#/quiz?ids=${props.question.id}`
+  const query = new URLSearchParams({ category: props.question.category, ids: props.question.id })
+  const url = `${location.origin}${location.pathname}#/quiz?${query}`
   try {
     if (navigator.share) {
       await navigator.share({ title: '题库 · 单题', text: props.question.stem.slice(0, 80), url })
@@ -214,6 +219,22 @@ function handleFillInput() {
   emit('select', fillAnswer.value.trim())
 }
 
+function updateFillSlot(index: number, event: Event) {
+  if (props.submitted || (event as InputEvent).isComposing) return
+  const slots = props.question.fillSlots ?? []
+  const value = (event.target as HTMLInputElement | HTMLSelectElement).value.replaceAll(
+    FILL_SLOT_SEPARATOR,
+    '/',
+  )
+  const answers = slots.map((_, i) => (i === index ? value : (slotValues.value[i] ?? '')))
+  emit('select', answers.some((answer) => answer.trim()) ? answers.join(FILL_SLOT_SEPARATOR) : '')
+}
+
+function submitFillOnEnter(event: KeyboardEvent) {
+  if (event.isComposing || event.keyCode === 229 || !canSubmit.value) return
+  emit('submit')
+}
+
 function selectAll() {
   if (props.submitted) return
   const allKeys = props.question.options.map((o) => o.key).join('')
@@ -241,11 +262,7 @@ function openAIExplanation() {
     explanation: q.explanation,
     category: props.category || 'japanese2',
     userSelectedKey: props.selectedKey || undefined,
-    isCorrect: props.selectedKey
-      ? q.multiAnswer
-        ? isMultiAnswerCorrect(props.selectedKey, q.answerKey)
-        : props.selectedKey === q.answerKey
-      : undefined,
+    isCorrect: props.selectedKey ? isCorrectOverall.value : undefined,
   }
   showAIExplanation.value = true
 }
@@ -283,6 +300,9 @@ function isMissedOption(key: string) {
 }
 
 const canSubmit = computed(() => {
+  if (props.question.fillSlots) {
+    return hasCompleteFillAnswer(props.selectedKey, props.question.fillSlots.length)
+  }
   if (isFillQuestion.value) {
     return fillAnswer.value.trim().length > 0
   }
@@ -295,8 +315,11 @@ const renderedStem = computed(() => highlightUnderlines(renderContent(props.ques
 const isCorrectOverall = computed(() => {
   if (props.question.selfAssessment) return props.selectedKey === SELF_CORRECT
   if (isFillQuestion.value) {
-    // 填空题：忽略大小写和首尾空格进行比较
-    return isFillAnswerCorrect(fillAnswer.value, props.question.answerText)
+    return isFillAnswerCorrect(
+      props.selectedKey,
+      props.question.answerText,
+      props.question.fillSlots,
+    )
   }
   if (props.question.multiAnswer) {
     return isMultiAnswerCorrect(props.selectedKey, props.question.answerKey)
@@ -356,10 +379,38 @@ const dragOpacity = computed(() => {
       </span>
     </div>
     <div class="q-hint" v-if="question.selfAssessment">请先在纸上作答，再对照参考解答自评。</div>
+    <div class="q-hint" v-else-if="question.fillSlots?.[0]?.options">请选择每空的答案</div>
     <div class="q-hint" v-else-if="isFillQuestion">填空题，请输入答案</div>
 
     <!-- 填空题输入框 -->
-    <div v-if="isFillQuestion && !question.selfAssessment" class="fill-input-container">
+    <div v-if="question.fillSlots" class="fill-input-container fill-slots">
+      <label v-for="(slot, index) in question.fillSlots" :key="index" class="fill-slot">
+        第{{ index + 1 }}空
+        <select
+          v-if="slot.options"
+          class="fill-input"
+          :value="slotValues[index] ?? ''"
+          :disabled="submitted"
+          @change="updateFillSlot(index, $event)"
+        >
+          <option value="" disabled>请选择</option>
+          <option v-for="option in slot.options" :key="option.key" :value="option.text">
+            {{ option.key }}. {{ option.text }}
+          </option>
+        </select>
+        <input
+          v-else
+          type="text"
+          class="fill-input"
+          :value="slotValues[index] ?? ''"
+          :disabled="submitted"
+          @input="updateFillSlot(index, $event)"
+          @compositionend="updateFillSlot(index, $event)"
+          @keydown.enter="submitFillOnEnter"
+        />
+      </label>
+    </div>
+    <div v-else-if="isFillQuestion && !question.selfAssessment" class="fill-input-container">
       <input
         v-model="fillAnswer"
         type="text"
@@ -368,7 +419,7 @@ const dragOpacity = computed(() => {
         aria-label="填空题答案输入"
         :disabled="submitted"
         @input="handleFillInput"
-        @keyup.enter="emit('submit')"
+        @keydown.enter="submitFillOnEnter"
       />
     </div>
 
@@ -487,7 +538,7 @@ const dragOpacity = computed(() => {
           答案：<strong v-if="technicalQuestion" v-html="renderedAnswer" />
           <strong v-else>{{ question.answerText }}</strong>
           <span v-if="!isCorrectOverall && !question.selfAssessment" class="your-answer"
-            >（你的答案：{{ fillAnswer }}）</span
+            >（你的答案：{{ selectedKey }}）</span
           >
         </template>
         <template v-else>
@@ -1008,6 +1059,15 @@ const dragOpacity = computed(() => {
 /* 填空题输入框 */
 .fill-input-container {
   margin: 16px 0;
+}
+.fill-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+  gap: 12px;
+}
+.fill-slot {
+  display: grid;
+  gap: 4px;
 }
 .fill-input {
   width: 100%;

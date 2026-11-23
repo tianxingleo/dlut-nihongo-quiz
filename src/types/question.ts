@@ -4,6 +4,7 @@ export type Category =
   | 'japanese2'
   | 'jp1-mid24'
   | 'japanese3'
+  | 'japanese3-homework'
   | 'history'
   | 'party'
   | 'military'
@@ -71,6 +72,7 @@ export interface Question {
   headword?: string
   multiAnswer?: boolean
   questionType?: 'single' | 'multi' | 'judgement' | 'fill'
+  fillSlots?: { answers: string[]; options?: { key: string; text: string }[] }[]
   /** Subjective mathematics: reveal reference, then record the learner's own assessment. */
   selfAssessment?: boolean
   /** 答案争议提示（status=needs_review 时由题库生成器写入，前端在题目/解析处展示） */

@@ -106,6 +106,7 @@ export const AI_SYSTEM_PROMPTS = {
     const categoryNames: Record<string, string> = {
       japanese2: '综合日语2',
       japanese3: '综合日语3',
+      'japanese3-homework': '综合日语3',
       history: '中国近现代史',
       party: '党史',
       military: '军事理论',
