@@ -456,7 +456,11 @@ const dragOpacity = computed(() => {
     </div>
 
     <div v-if="question.selfAssessment && !submitted" class="self-assessment">
-      <button v-if="!referenceVisible" class="btn btn-submit" @click="referenceVisible = true">
+      <button
+        v-if="!referenceVisible"
+        class="btn btn-accent btn-submit"
+        @click="referenceVisible = true"
+      >
         查看参考解答
       </button>
       <template v-else>
@@ -465,7 +469,7 @@ const dragOpacity = computed(() => {
           v-html="renderContent(question.answerText + '\n\n' + question.explanation)"
         />
         <div class="q-actions">
-          <button class="btn btn-submit" @click="assess(true)">自评：答对了</button>
+          <button class="btn btn-accent btn-submit" @click="assess(true)">自评：答对了</button>
           <button class="btn btn-ghost" @click="assess(false)">自评：还需练习</button>
         </div>
       </template>
@@ -474,7 +478,7 @@ const dragOpacity = computed(() => {
       <button v-if="questionIndex > 0" class="btn btn-ghost" @click="emit('prev')">上一题</button>
       <button
         v-if="!question.selfAssessment"
-        class="btn btn-submit"
+        class="btn btn-accent btn-submit"
         :disabled="!canSubmit"
         @click="emit('submit')"
       >
@@ -567,7 +571,7 @@ const dragOpacity = computed(() => {
     </div>
 
     <div class="q-actions" v-if="submitted">
-      <button class="btn btn-submit" @click="emit('next')">
+      <button class="btn btn-accent btn-submit" @click="emit('next')">
         {{ questionIndex >= totalQuestions - 1 ? '完成' : '下一题' }}
       </button>
       <button v-if="questionIndex > 0" class="btn btn-ghost" @click="emit('prev')">
@@ -885,26 +889,6 @@ const dragOpacity = computed(() => {
 }
 .btn-submit {
   padding: 9px 22px;
-  border: 1px solid var(--border);
-  font-size: 14px;
-  transition:
-    background 0.18s var(--ease-ink),
-    border-color 0.18s var(--ease-ink),
-    transform 0.18s var(--ease-ink),
-    opacity 0.18s var(--ease-ink);
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-}
-.btn-submit:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-.btn-submit:hover:not(:disabled) {
-  background: var(--accent-hover);
-}
-.btn-submit:active:not(:disabled) {
-  transform: scale(0.97);
 }
 .bookmark-active {
   color: var(--warning);

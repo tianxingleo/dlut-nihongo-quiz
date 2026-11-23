@@ -411,13 +411,7 @@ function handleResetGroup(groupId: string) {
 
 const meta = computed(() => getCategoryMeta(activeCategory.value))
 
-// 每日目标进度
-const dailyProgress = computed(() => {
-  const pct =
-    dailyGoal.value > 0 ? Math.min(100, Math.round((dailyDone.value / dailyGoal.value) * 100)) : 0
-  const color = pct >= 100 ? 'var(--correct)' : pct >= 60 ? 'var(--warning)' : 'var(--wrong)'
-  return { pct, color, done: dailyDone.value, goal: dailyGoal.value }
-})
+const dailyGoalReached = computed(() => dailyGoal.value > 0 && dailyDone.value >= dailyGoal.value)
 const activeSubBankKey = useActiveSubBankKey()
 const hasSubBanks = computed(() => {
   const sb = meta.value.subBanks
@@ -810,9 +804,9 @@ const groupViewHint = computed(() => {
 
     <section class="progress-summary" aria-label="练习进度">
       <div class="summary-item">
-        <span>今日目标</span>
-        <strong>{{ dailyProgress.done }} / {{ dailyProgress.goal }} 题</strong>
-        <span v-if="dailyProgress.pct >= 100">已达成</span>
+        <span>今日目标（跨学科）</span>
+        <strong>{{ dailyDone }} / {{ dailyGoal }} 题</strong>
+        <span v-if="dailyGoalReached">已达成</span>
       </div>
       <div class="summary-item">
         <span>总进度</span>
