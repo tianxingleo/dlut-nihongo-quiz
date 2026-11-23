@@ -188,7 +188,7 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
     </section>
 
     <!-- Subject cards -->
-    <section class="subjects">
+    <section class="subjects" :class="{ 'subjects-index': !currentEntry }">
       <h2>
         {{ showingFolders ? '选择分类' : currentEntry ? '选择试卷' : '课程列表' }}
       </h2>
@@ -382,8 +382,10 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
 }
 
 .resume-detail {
-  margin-block: 12px 0;
-  color: var(--text-secondary);
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
@@ -490,6 +492,24 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   flex-shrink: 0;
   font-variant-numeric: tabular-nums;
 }
+.subjects-index {
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+.subjects-index h2 {
+  margin-bottom: 8px;
+}
+.subjects-index .subject-card {
+  padding-block: 16px;
+}
+.subjects-index .sc-title {
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.subjects-index .sc-desc {
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
 /* Features */
 .features {
   margin-bottom: 72px;
@@ -583,6 +603,10 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
   .subject-card {
     padding-inline: 4px;
     gap: 8px;
+  }
+  .subjects-index .subject-card {
+    padding-block: 12px;
+    gap: 12px;
   }
   .feature-grid {
     grid-template-columns: 1fr;
