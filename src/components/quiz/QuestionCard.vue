@@ -650,6 +650,9 @@ const dragOpacity = computed(() => {
 }
 
 .question-card {
+  /* 生僻字可能在切题时才触发字体下载，用系统字体避免题面显示后换字形。 */
+  --font-body: 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  font-family: var(--font-body);
   background: var(--bg-card);
   border: 1px solid var(--border);
   padding: 28px;

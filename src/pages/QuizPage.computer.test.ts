@@ -194,6 +194,24 @@ describe('computer question bank uses the existing quiz flow', () => {
     expect(host.querySelector('.katex, b')).toBeNull()
   })
 
+  it('updates the question and its formatted content in the same render as navigation', async () => {
+    mocks.questions = [
+      sample({ questionType: 'fill', options: [] }),
+      sample({ id: 'computer-2021-final-002', stem: '**题目二** $2^{16}$' }),
+    ]
+    await mountQuiz()
+    host.querySelector<HTMLButtonElement>('.expand-btn')!.click()
+    await nextTick()
+    host.querySelectorAll<HTMLButtonElement>('.gcell')[1]!.click()
+    await nextTick()
+
+    expect(host.querySelector('.navigator .cur')?.textContent).toBe('2')
+    expect(host.querySelectorAll('.question-card')).toHaveLength(1)
+    expect(host.querySelector('.q-stem strong')?.textContent).toBe('题目二')
+    expect(host.querySelector('.q-stem .katex')).not.toBeNull()
+    expect(host.querySelector('.fill-input')).toBeNull()
+  })
+
   it('submits generated answers and records attempts using ordinary scoring', async () => {
     mocks.questions = [sample()]
     await mountQuiz()

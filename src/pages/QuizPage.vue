@@ -38,7 +38,7 @@ import QuestionCard from '../components/quiz/QuestionCard.vue'
 import QuestionNavigator from '../components/quiz/QuestionNavigator.vue'
 import ProgressBar from '../components/ui/ProgressBar.vue'
 import PageSkeleton from '../components/ui/PageSkeleton.vue'
-import { renderMarkdown, stripMarkdown } from '../utils/renderMarkdown'
+import { stripMarkdown } from '../utils/renderMarkdown'
 import { routeEntryKey } from '../utils/routeEntry'
 import { optionSignature, mapAnswer } from '../services/sessionAnswers'
 import { truncate } from '../utils/text'
@@ -79,7 +79,6 @@ const remainingTime = ref(0)
 const examTimerInterval = ref<ReturnType<typeof setInterval> | null>(null)
 const history = ref<Array<{ questionId: string; selectedKey: string; isCorrect: boolean }>>([])
 const drafts = ref<Map<number, string>>(new Map())
-const slideDirection = ref<'slide-left' | 'slide-right'>('slide-left')
 const showLeaveConfirm = ref(false)
 const showExplanation = ref(false)
 const loadError = ref('')
@@ -591,13 +590,6 @@ function saveCurrentDraft() {
 function jumpTo(i: number) {
   if (i === currentIndex.value || i < 0 || i >= questions.value.length) return
   saveCurrentDraft()
-  // Pre-render markdown before changing index so the new card's
-  // synchronous marked.parse() doesn't block the transition frames.
-  const target = questions.value[i]
-  if (target) {
-    renderMarkdown(target.stem)
-  }
-  slideDirection.value = i > currentIndex.value ? 'slide-left' : 'slide-right'
   currentIndex.value = i
   const h = history.value[i]
   submitted.value = false
@@ -613,13 +605,11 @@ function handleNext() {
     clearActiveSession(computePaperKey())
     return
   }
-  slideDirection.value = 'slide-left'
   jumpTo(currentIndex.value + 1)
 }
 
 function handlePrev() {
   if (currentIndex.value <= 0) return
-  slideDirection.value = 'slide-right'
   jumpTo(currentIndex.value - 1)
 }
 
@@ -814,28 +804,26 @@ function cancelLeave() {
         剩余时间: {{ formattedRemainingTime }}
       </div>
       <p v-if="reselectIds.has(currentQuestion.id)" role="status">原选项无法恢复，请重新选择。</p>
-      <Transition :name="slideDirection" mode="out-in">
-        <QuestionCard
-          :key="currentQuestion.id"
-          :question="currentQuestion"
-          :selected-key="selectedKey"
-          :submitted="submitted"
-          :mode="mode"
-          :question-index="currentIndex"
-          :total-questions="questions.length"
-          :bookmarked="bookmarked"
-          :show-explanation="showExplanation"
-          :category="activeCategory"
-          @select="handleSelect"
-          @submit="handleSubmit"
-          @next="handleNext"
-          @prev="handlePrev"
-          @bookmark="handleBookmark"
-          @swipe-prev="handleSwipePrev"
-          @swipe-next="handleSwipeNext"
-          @update:show-explanation="showExplanation = $event"
-        />
-      </Transition>
+      <QuestionCard
+        :key="currentQuestion.id"
+        :question="currentQuestion"
+        :selected-key="selectedKey"
+        :submitted="submitted"
+        :mode="mode"
+        :question-index="currentIndex"
+        :total-questions="questions.length"
+        :bookmarked="bookmarked"
+        :show-explanation="showExplanation"
+        :category="activeCategory"
+        @select="handleSelect"
+        @submit="handleSubmit"
+        @next="handleNext"
+        @prev="handlePrev"
+        @bookmark="handleBookmark"
+        @swipe-prev="handleSwipePrev"
+        @swipe-next="handleSwipeNext"
+        @update:show-explanation="showExplanation = $event"
+      />
     </template>
 
     <div v-else-if="finished" class="finish-page" aria-live="polite">
@@ -1001,49 +989,6 @@ function cancelLeave() {
   }
 }
 
-/* Slide transition — out-in mode with fast leave + smooth enter.
-   The leave is a barely-perceptible flicker (opacity only, no translate
-   jank). The enter slides in from the side. Cache warming in jumpTo()
-   ensures the new card's markdown is pre-parsed so mount is instant. */
-.slide-left-enter-active,
-.slide-right-enter-active {
-  transition:
-    transform 0.22s var(--ease-brush),
-    opacity 0.18s var(--ease-brush);
-}
-.slide-left-leave-active,
-.slide-right-leave-active {
-  transition: opacity 0.08s var(--ease-ink);
-}
-
-/* Enter: slide in from the side */
-.slide-left-enter-from {
-  transform: translateX(28px);
-  opacity: 0;
-}
-.slide-right-enter-from {
-  transform: translateX(-28px);
-  opacity: 0;
-}
-
-/* Leave: quick cross-fade, no translate (avoids the "freeze mid-slide" issue) */
-.slide-left-leave-to,
-.slide-right-leave-to {
-  opacity: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .slide-left-enter-active,
-  .slide-left-leave-active,
-  .slide-right-enter-active,
-  .slide-right-leave-active {
-    transition: opacity 0.12s ease;
-  }
-  .slide-left-enter-from,
-  .slide-right-enter-from {
-    transform: none;
-  }
-}
 .timer {
   font-family: var(--font-mono);
   color: var(--text-secondary);
