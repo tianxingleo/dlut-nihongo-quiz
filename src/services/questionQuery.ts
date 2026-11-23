@@ -28,6 +28,17 @@ export function getQuestionsByGroup(groupId: string, category: Category = 'japan
  * 默认只搜当前 category（~3000 题），传 undefined 搜全库（~12000 题）。
  */
 export function searchQuestions(keyword: string, category?: Category): Question[] {
+  const lists = category ? [getQuestions(category)] : CATEGORIES.map((c) => getQuestions(c.key))
+  return rankQuestions(lists.flat(), keyword, (q) => q.explanation)
+}
+
+type SearchFields = Pick<Question, 'stem' | 'headword' | 'tags' | 'grammarPoints' | 'translation'>
+
+export function rankQuestions<T extends SearchFields>(
+  questions: T[],
+  keyword: string,
+  explanation: (q: T) => string | undefined,
+): T[] {
   // 支持多关键词（空格分隔）
   const keywords = keyword
     .toLowerCase()
@@ -35,70 +46,64 @@ export function searchQuestions(keyword: string, category?: Category): Question[
     .filter((k) => k.length > 0)
   if (keywords.length === 0) return []
 
-  const lists: Question[][] = category
-    ? [getQuestions(category)]
-    : CATEGORIES.map((c) => getQuestions(c.key))
+  const scoredResults: Array<{ question: T; score: number }> = []
 
-  // 带评分的搜索结果
-  const scoredResults: Array<{ question: Question; score: number }> = []
+  for (const q of questions) {
+    const details = explanation(q)?.toLowerCase()
+    let score = 0
+    let allKeywordsMatch = true
 
-  for (const list of lists) {
-    for (const q of list) {
-      let score = 0
-      let allKeywordsMatch = true
+    for (const kw of keywords) {
+      let keywordMatch = false
+      let keywordScore = 0
 
-      for (const kw of keywords) {
-        let keywordMatch = false
-        let keywordScore = 0
-
-        // 题干匹配（最高权重）
-        if (q.stem.toLowerCase().includes(kw)) {
-          keywordMatch = true
-          keywordScore += 10
-          // 题干开头匹配额外加分
-          if (q.stem.toLowerCase().startsWith(kw)) keywordScore += 5
-        }
-
-        // 词条匹配
-        if (q.headword && q.headword.toLowerCase().includes(kw)) {
-          keywordMatch = true
-          keywordScore += 8
-        }
-
-        // 标签匹配
-        if (q.tags.some((t) => t.toLowerCase().includes(kw))) {
-          keywordMatch = true
-          keywordScore += 6
-        }
-
-        // 语法点匹配
-        if (q.grammarPoints.some((g) => g.toLowerCase().includes(kw))) {
-          keywordMatch = true
-          keywordScore += 6
-        }
-
-        // 翻译匹配
-        if (q.translation && q.translation.toLowerCase().includes(kw)) {
-          keywordMatch = true
-          keywordScore += 4
-        }
-
-        // 解析匹配（最低权重）
-        if (q.explanation && q.explanation.toLowerCase().includes(kw)) {
-          keywordMatch = true
-          keywordScore += 2
-        }
-
-        if (!keywordMatch) {
-          allKeywordsMatch = false
-          break
-        }
-        score += keywordScore
+      // 题干匹配（最高权重）
+      if (q.stem.toLowerCase().includes(kw)) {
+        keywordMatch = true
+        keywordScore += 10
+        // 题干开头匹配额外加分
+        if (q.stem.toLowerCase().startsWith(kw)) keywordScore += 5
       }
 
-      if (allKeywordsMatch) {
-        scoredResults.push({ question: q, score })
+      // 词条匹配
+      if (q.headword && q.headword.toLowerCase().includes(kw)) {
+        keywordMatch = true
+        keywordScore += 8
       }
+
+      // 标签匹配
+      if (q.tags.some((t) => t.toLowerCase().includes(kw))) {
+        keywordMatch = true
+        keywordScore += 6
+      }
+
+      // 语法点匹配
+      if (q.grammarPoints.some((g) => g.toLowerCase().includes(kw))) {
+        keywordMatch = true
+        keywordScore += 6
+      }
+
+      // 翻译匹配
+      if (q.translation && q.translation.toLowerCase().includes(kw)) {
+        keywordMatch = true
+        keywordScore += 4
+      }
+
+      // 解析匹配（最低权重）
+      if (details?.includes(kw)) {
+        keywordMatch = true
+        keywordScore += 2
+      }
+
+      if (!keywordMatch) {
+        allKeywordsMatch = false
+        break
+      }
+      score += keywordScore
+    }
+
+    if (allKeywordsMatch) {
+      scoredResults.push({ question: q, score })
     }
   }
 

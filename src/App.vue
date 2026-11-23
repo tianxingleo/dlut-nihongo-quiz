@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, nextTick, onMounted } from 'vue'
 import { useRouter, useRoute, RouterLink } from 'vue-router'
 import {
   useActiveCategory,
@@ -8,7 +8,6 @@ import {
   setActiveSubBankKey,
   useActiveSubBankKey,
 } from './services/categoryStore'
-import { getQuestionById } from './services/quizEngine'
 import { COURSE_TREE } from './config/courseTree'
 import { useHiddenSite } from './composables/useHiddenSite'
 import { useAI } from './composables/useAI'
@@ -98,7 +97,9 @@ function navigateTo(path: string) {
   router.push(path)
 }
 
-function openSearch() {
+let searchTrigger: HTMLElement | null = null
+function openSearch(event: MouseEvent) {
+  searchTrigger = event.currentTarget as HTMLElement
   searchOpen.value = true
   drawerOpen.value = false
 }
@@ -125,15 +126,17 @@ async function onSelectLeaf(payload: {
   router.push('/home')
 }
 
-async function handleSearchNavigate(questionId: string) {
+function closeSearch() {
   searchOpen.value = false
-  drawerOpen.value = false
-  const q = getQuestionById(questionId)
-  if (!q) return
-  if (q.category !== activeCategory.value) {
-    await setActiveCategory(q.category)
-  }
-  router.push({ path: '/quiz', query: { category: q.category, ids: questionId, fresh: '1' } })
+  void nextTick(() => {
+    if (searchTrigger?.offsetParent) searchTrigger.focus()
+    else document.querySelector<HTMLElement>('.nav-drawer-btn')?.focus()
+  })
+}
+
+function handleSearchNavigate(questionId: string, category: Category) {
+  closeSearch()
+  router.push({ path: '/quiz', query: { category, ids: questionId } })
 }
 </script>
 <template>
@@ -159,7 +162,7 @@ async function handleSearchNavigate(questionId: string) {
         <RouterLink v-for="l in navLinks" :key="l.to" :to="l.to" @click="navigateTo(l.to)">{{
           l.label
         }}</RouterLink>
-        <button class="search-trigger" @click="searchOpen = true">⌕ 搜索</button>
+        <button class="search-trigger" @click="openSearch">⌕ 搜索</button>
         <a
           class="github-star-btn"
           href="https://github.com/tianxingleo/dlut-nihongo-quiz"
@@ -175,7 +178,7 @@ async function handleSearchNavigate(questionId: string) {
         </a>
       </div>
       <div class="nav-right-mobile">
-        <button class="nav-search-icon" @click="searchOpen = true" aria-label="搜索">⌕</button>
+        <button class="nav-search-icon" @click="openSearch" aria-label="搜索">⌕</button>
         <a
           class="github-star-btn-mobile"
           href="https://github.com/tianxingleo/dlut-nihongo-quiz"
@@ -272,11 +275,7 @@ async function handleSearchNavigate(questionId: string) {
     </footer>
   </div>
 
-  <SearchOverlay
-    :visible="searchOpen"
-    @close="searchOpen = false"
-    @navigate="handleSearchNavigate"
-  />
+  <SearchOverlay :visible="searchOpen" @close="closeSearch" @navigate="handleSearchNavigate" />
   <ToastContainer />
 </template>
 <style scoped>

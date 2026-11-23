@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { loadCatalog } from '../services/questionCatalog'
 import { CATEGORIES } from '../config/categories'
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
@@ -120,11 +121,14 @@ function formatDate(dateStr: string): string {
   }
 }
 
-function goReview(questionId: string) {
+async function goReview(questionId: string) {
+  const banks = await loadCatalog().catch(() => [])
+  const bank = banks.find(({ questions }) => questions.some((q) => q.id === questionId))
   router.push({
     path: '/quiz',
     query: {
       category:
+        bank?.category ||
         getQuestionById(questionId)?.category ||
         attempts.value.find((a) => a.questionId === questionId)?.category ||
         activeCategory.value,

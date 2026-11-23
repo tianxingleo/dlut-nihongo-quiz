@@ -102,19 +102,25 @@ function showErrorToast(message: string) {
 // 避免静默拿到旧 SW 控制的页面，也避免不打招呼直接 reload 打断用户答题。
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    const swUrl = new URL('sw.js', location.href).href
+    const scope = new URL(import.meta.env.BASE_URL, location.href)
+    const swUrl = new URL('sw.js', scope).href
+    let accepted = false
+    const offer = (worker: ServiceWorker) =>
+      showUpdateToast(() => {
+        accepted = true
+        worker.postMessage('SKIP_WAITING')
+      })
     navigator.serviceWorker
       .register(swUrl)
       .then((reg) => {
+        if (reg.waiting && navigator.serviceWorker.controller) offer(reg.waiting)
         reg.addEventListener('updatefound', () => {
           const newWorker = reg.installing
           if (!newWorker) return
           newWorker.addEventListener('statechange', () => {
             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
               // 已有 controller 说明是「升级」，不是首次安装
-              showUpdateToast(() => {
-                newWorker.postMessage('SKIP_WAITING')
-              })
+              offer(newWorker)
             }
           })
         })
@@ -124,7 +130,7 @@ if (import.meta.env.PROD && 'serviceWorker' in navigator) {
     // SW 接管后自动刷新一次，让新资源生效
     let refreshing = false
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (refreshing) return
+      if (!accepted || refreshing) return
       refreshing = true
       window.location.reload()
     })

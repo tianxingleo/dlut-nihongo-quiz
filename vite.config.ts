@@ -1,7 +1,8 @@
 import { defineConfig, type Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { generateQuestionCatalog } from './scripts/generate-question-catalog'
 
 // 读取 package.json 的版本号
 const packageJson = JSON.parse(readFileSync(resolve(process.cwd(), 'package.json'), 'utf8'))
@@ -15,13 +16,44 @@ function swCacheVersionPlugin(): Plugin {
     apply: 'build',
     closeBundle() {
       const swPath = resolve(process.cwd(), 'dist/sw.js')
-      try {
-        const version = `${Date.now()}`
-        const src = readFileSync(swPath, 'utf8')
-        writeFileSync(swPath, src.replaceAll('__SW_CACHE_VERSION__', version))
-        console.log(`[sw] CACHE_VERSION bumped to ${version}`)
-      } catch {
-        console.warn('[sw] dist/sw.js not found, skipping version bump')
+      const version = `${Date.now()}`
+      const src = readFileSync(swPath, 'utf8')
+      const assets = readdirSync(resolve('dist/assets')).filter((file) =>
+        /\.(js|css|png|svg)$/.test(file),
+      )
+      writeFileSync(
+        swPath,
+        src
+          .replaceAll('__SW_CACHE_VERSION__', version)
+          .replace(
+            '/* __PRECACHE_ASSETS__ */',
+            assets.map((file) => JSON.stringify('assets/' + file) + ',').join('\n'),
+          ),
+      )
+
+      console.log(`[sw] CACHE_VERSION bumped to ${version}`)
+    },
+  }
+}
+
+function questionCatalogPlugin(): Plugin {
+  return {
+    name: 'question-catalog',
+    configureServer(server) {
+      let files = generateQuestionCatalog()
+      server.watcher.on('change', (file) => {
+        if (file.endsWith('-question-bank.json')) files = generateQuestionCatalog()
+      })
+      server.middlewares.use((req, res, next) => {
+        const name = req.url?.split('?')[0].slice(1)
+        if (!name || !Object.hasOwn(files, name)) return next()
+        res.setHeader('Content-Type', 'application/json; charset=utf-8')
+        res.end(files[name as keyof typeof files])
+      })
+    },
+    generateBundle() {
+      for (const [fileName, source] of Object.entries(generateQuestionCatalog())) {
+        this.emitFile({ type: 'asset', fileName, source })
       }
     },
   }
@@ -29,7 +61,7 @@ function swCacheVersionPlugin(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  plugins: [vue(), swCacheVersionPlugin()],
+  plugins: [vue(), questionCatalogPlugin(), swCacheVersionPlugin()],
   base: mode === 'production' ? '/dlut-nihongo-quiz/' : '/',
   server: {
     headers: {

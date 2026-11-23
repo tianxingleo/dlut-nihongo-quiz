@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { getCategoryCounts } from '../services/quizEngine'
+import { loadCatalog, summarizeProgress } from '../services/questionCatalog'
+import { useHiddenSite } from '../composables/useHiddenSite'
 import { loadActiveCategory, setActiveCategory } from '../services/categoryStore'
 import { CATEGORIES } from '../config/categories'
 import { ENTRIES, findEntry, entryOfCategory } from '../config/entries'
@@ -11,6 +12,7 @@ import type { CategoryMeta } from '../config/categories'
 
 const router = useRouter()
 const route = useRoute()
+const { isUnlocked } = useHiddenSite()
 /** 当前是不是某个入口的二级页（路由 `/<入口 key>`，入口清单在 src/config/entries.ts） */
 const currentEntry = computed(() => findEntry(route.params.entryKey as string | undefined))
 /** 该入口下的试卷，顺序就是 entries.ts 里 `papers` 的顺序 */
@@ -24,6 +26,7 @@ const folderCards = computed(() =>
   (currentEntry.value?.groups ?? []).map((g) => ({
     ...g,
     count: g.papers.reduce((sum, key) => sum + (counts.value[key] || 0), 0),
+    progress: aggregateProgress(g.papers),
   })),
 )
 const entryPapers = computed(() =>
@@ -42,13 +45,19 @@ const entryCards = computed(() =>
     icon: entry.icon,
     desc: entry.desc || `${entry.papers.length} 份试卷 · 按卷选择题单 · 答案解析`,
     questions: entry.papers.reduce((sum, key) => sum + (counts.value[key] || 0), 0),
+    progress: aggregateProgress(entry.papers),
   })),
 )
 
 const counts = ref<Record<Category, number>>({} as Record<Category, number>)
-const categoryProgress = ref<Record<Category, { done: number; rate: number }>>(
-  {} as Record<Category, { done: number; rate: number }>,
-)
+const categoryProgress = ref<Partial<Record<Category, ReturnType<typeof summarizeProgress>>>>({})
+function aggregateProgress(papers: Category[]) {
+  const stats = papers.map((key) => categoryProgress.value[key])
+  const done = stats.reduce((sum, item) => sum + (item?.done ?? 0), 0)
+  const correct = stats.reduce((sum, item) => sum + (item?.correct ?? 0), 0)
+  const attempts = stats.reduce((sum, item) => sum + (item?.attempts ?? 0), 0)
+  return { done, rate: attempts ? Math.round((correct / attempts) * 100) : 0 }
+}
 const totalDone = ref(0)
 const totalQuestions = ref(0)
 const loading = ref(true)
@@ -60,59 +69,20 @@ async function refresh() {
   error.value = ''
   try {
     await loadActiveCategory()
-    // 并发加载题库数量和答题记录
-    const [c, stats] = await Promise.all([getCategoryCounts(), db.questionStats.toArray()])
-    counts.value = c
-    totalQuestions.value = Object.values(c).reduce((a, b) => a + b, 0)
-    totalDone.value = stats.filter((s) => s.attemptCount > 0).length
-
-    // 计算每个学科的进度：根据 questionId 前缀判断所属 category
-    // japanese2 是排除法兜底（其 ID 前缀历史上不统一），新增学科前缀
-    // 必须同步加进排除列表，否则会被误算进 japanese2（如 creativity-）
-    const progress: Record<string, { done: number; rate: number }> = {}
-    for (const cat of CATEGORIES) {
-      // 按 category 过滤 stats
-      const catStats = stats.filter((s) => {
-        const id = s.questionId || ''
-        switch (cat.key) {
-          case 'history':
-            return id.startsWith('hist-') || id.startsWith('hist')
-          case 'party':
-            return id.startsWith('party-') || id.startsWith('party')
-          case 'military':
-            return id.startsWith('mil-') || id.startsWith('mil')
-          case 'japanese2':
-            // 综合日语2：排除其他学科前缀
-            return (
-              !id.startsWith('hist-') &&
-              !id.startsWith('hist') &&
-              !id.startsWith('party-') &&
-              !id.startsWith('party') &&
-              !id.startsWith('mil-') &&
-              !id.startsWith('mil') &&
-              !id.startsWith('computer-') &&
-              !/^(math-|calculus1-|2019-a-7-)/.test(id) &&
-              !id.startsWith('jp1-mid24-') &&
-              !id.startsWith('japanese1-') &&
-              !id.startsWith('japanese3-') &&
-              !/^w(?:3[7-9]|4[0-3])-/.test(id) &&
-              !id.startsWith('creativity-')
-            )
-          case 'japanese3':
-            return /^w(?:3[7-9]|4[0-3])-/.test(id)
-          default:
-            return id.startsWith(`${cat.key}-`)
-        }
-      })
-      const done = catStats.filter((s) => s.attemptCount > 0).length
-      const totalCorrect = catStats.reduce((sum, s) => sum + s.correctCount, 0)
-      const totalAttempts = catStats.reduce((sum, s) => sum + s.attemptCount, 0)
-      progress[cat.key] = {
-        done,
-        rate: totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0,
-      }
-    }
-    categoryProgress.value = progress as Record<Category, { done: number; rate: number }>
+    const [banks, stats] = await Promise.all([loadCatalog(), db.questionStats.toArray()])
+    const statsById = new Map(stats.map((s) => [s.questionId, s]))
+    const share = banks.map(({ category, questions }) => ({
+      category,
+      ids: questions.filter((q) => isUnlocked.value || !q.hidden).map((q) => q.id),
+    }))
+    counts.value = Object.fromEntries(
+      share.map(({ category, ids }) => [category, ids.length]),
+    ) as Record<Category, number>
+    categoryProgress.value = Object.fromEntries(
+      share.map(({ category, ids }) => [category, summarizeProgress(ids, statsById)]),
+    )
+    totalQuestions.value = share.reduce((sum, { ids }) => sum + ids.length, 0)
+    totalDone.value = Object.values(categoryProgress.value).reduce((sum, row) => sum + row.done, 0)
   } catch (e) {
     error.value = e instanceof Error ? e.message : '加载题库失败，请刷新页面重试'
   } finally {
@@ -121,6 +91,7 @@ async function refresh() {
 }
 
 onMounted(refresh)
+watch(isUnlocked, refresh)
 
 async function enterSubject(cat: Category) {
   await setActiveCategory(cat)
@@ -154,23 +125,7 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
 </script>
 
 <template>
-  <div v-if="loading" class="landing">
-    <section class="hero">
-      <div class="hero-badge">DLUT · 国际信息与软件学院</div>
-      <h1 class="hero-title">题库</h1>
-      <p class="hero-sub">加载中…</p>
-    </section>
-  </div>
-  <div v-else-if="error" class="landing">
-    <section class="hero">
-      <h1 class="hero-title">题库</h1>
-      <p class="hero-sub" style="color: var(--wrong)">{{ error }}</p>
-      <div class="hero-actions">
-        <button class="btn btn-accent btn-lg" @click="refresh">重试</button>
-      </div>
-    </section>
-  </div>
-  <div v-else class="landing">
+  <div class="landing">
     <!-- Hero -->
     <header v-if="currentEntry" class="paper-header">
       <RouterLink class="btn btn-ghost" :to="currentGroup ? '/' + currentEntry.key : '/'">{{
@@ -178,7 +133,7 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
       }}</RouterLink>
       <h1>{{ currentEntry.name }}{{ currentGroup ? ' · ' + currentGroup.name : '' }}</h1>
       <p>
-        {{ entryPapers.length }} 份试卷 · {{ entryQuestionCount }} 题，{{
+        {{ entryPapers.length }} 份试卷 · {{ loading || error ? '—' : entryQuestionCount }} 题，{{
           showingFolders ? '选择分类后查看试卷。' : '选择试卷后进入题单。'
         }}
       </p>
@@ -235,6 +190,11 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
       </div>
     </section>
 
+    <p v-if="loading" role="status">正在读取题库目录…</p>
+    <div v-else-if="error" role="status">
+      {{ error }} <button class="btn btn-outline" @click="refresh">重试</button>
+    </div>
+
     <!-- Subject cards -->
     <section class="subjects">
       <h2>
@@ -252,8 +212,11 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
             <div class="sc-body">
               <h3 class="sc-title">{{ folder.name }}</h3>
               <p class="sc-desc">{{ folder.papers.length }} 份题库</p>
+              <p v-if="folder.progress.done" class="sc-progress-text">
+                已做 {{ folder.progress.done }} 题 · 正确率 {{ folder.progress.rate }}%
+              </p>
             </div>
-            <div class="sc-count">{{ folder.count }} 题</div>
+            <div class="sc-count">{{ loading || error ? '—' : folder.count }} 题</div>
             <span class="sc-arrow">&rarr;</span>
           </RouterLink>
         </template>
@@ -278,8 +241,11 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
             <div class="sc-body">
               <h3 class="sc-title">{{ e.name }}</h3>
               <p class="sc-desc">{{ e.desc }}</p>
+              <p v-if="e.progress.done" class="sc-progress-text">
+                已做 {{ e.progress.done }} 题 · 正确率 {{ e.progress.rate }}%
+              </p>
             </div>
-            <div class="sc-count">{{ e.questions }} 题</div>
+            <div class="sc-count">{{ loading || error ? '—' : e.questions }} 题</div>
             <span class="sc-arrow">&rarr;</span>
           </RouterLink>
         </template>
@@ -294,14 +260,16 @@ const subjectCount = CATEGORIES.filter((c) => !entryOfCategory(c.key)).length + 
                   class="sc-progress-fill"
                   :style="{
                     width:
-                      Math.min(100, (categoryProgress[s.key].done / (counts[s.key] || 1)) * 100) +
-                      '%',
+                      Math.min(
+                        100,
+                        ((categoryProgress[s.key]?.done ?? 0) / (counts[s.key] || 1)) * 100,
+                      ) + '%',
                   }"
                 />
               </div>
               <span class="sc-progress-text">
-                已做 {{ categoryProgress[s.key].done }} 题 · 正确率
-                {{ categoryProgress[s.key].rate }}%
+                已做 {{ categoryProgress[s.key]?.done ?? 0 }} 题 · 正确率
+                {{ categoryProgress[s.key]?.rate }}%
               </span>
             </div>
           </div>

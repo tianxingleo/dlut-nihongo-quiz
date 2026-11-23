@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick, onUnmounted } from 'vue'
-import { searchQuestions } from '../../services/quizEngine'
+import { searchCatalog } from '../../services/questionCatalog'
+import { useHiddenSite } from '../../composables/useHiddenSite'
 import { useActiveCategory } from '../../services/categoryStore'
 import { getCategoryMeta } from '../../config/categories'
 import { UI } from '../../constants'
@@ -15,23 +16,43 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   close: []
-  navigate: [questionId: string]
+  navigate: [questionId: string, category: Question['category']]
 }>()
 
 const keyword = ref('')
-const results = ref<Question[]>([])
+const results = ref<Awaited<ReturnType<typeof searchCatalog>>['results']>([])
+const loading = ref(false)
+const partial = ref(false)
+const includeExplanations = ref(false)
+const { isUnlocked } = useHiddenSite()
+let revision = 0
 const inputRef = ref<HTMLInputElement | null>(null)
-const scopeAll = ref(false)
+const scopeAll = ref(true)
 const activeCategory = useActiveCategory()
 let debounceTimer: ReturnType<typeof setTimeout> | null = null
 
-function doSearch(val: string) {
+function doSearch() {
   if (debounceTimer) clearTimeout(debounceTimer)
-  debounceTimer = setTimeout(() => {
-    if (val.trim()) {
-      results.value = searchQuestions(val.trim(), scopeAll.value ? undefined : activeCategory.value)
-    } else {
-      results.value = []
+  const request = ++revision
+  const val = keyword.value.trim()
+  results.value = []
+  partial.value = false
+  loading.value = Boolean(val && props.visible)
+  if (!loading.value) return
+  debounceTimer = setTimeout(async () => {
+    try {
+      const data = await searchCatalog(val, {
+        unlocked: isUnlocked.value,
+        category: scopeAll.value ? undefined : activeCategory.value,
+        includeExplanations: includeExplanations.value,
+      })
+      if (revision !== request) return
+      results.value = data.results
+      partial.value = data.partial
+    } catch {
+      if (revision === request) partial.value = true
+    } finally {
+      if (revision === request) loading.value = false
     }
   }, UI.SEARCH_DEBOUNCE_MS)
 }
@@ -40,8 +61,7 @@ function handleKeydown(e: KeyboardEvent) {
   if (e.key === 'Escape') emit('close')
 }
 
-watch(keyword, (val) => doSearch(val))
-watch(scopeAll, () => doSearch(keyword.value))
+watch([keyword, scopeAll, includeExplanations, isUnlocked, activeCategory], doSearch)
 
 watch(
   () => props.visible,
@@ -52,18 +72,16 @@ watch(
     } else {
       document.removeEventListener('keydown', handleKeydown)
       keyword.value = ''
-      results.value = []
+      doSearch()
     }
   },
 )
 
 onUnmounted(() => {
   document.removeEventListener('keydown', handleKeydown)
+  revision++
+  if (debounceTimer) clearTimeout(debounceTimer)
 })
-
-function selectQuestion(id: string) {
-  emit('navigate', id)
-}
 
 function onBackdropClick(e: MouseEvent) {
   if ((e.target as HTMLElement).classList.contains('search-backdrop')) {
@@ -99,7 +117,7 @@ function highlightMatch(text: string, kw: string): string {
           :class="{ active: scopeAll }"
           :title="
             scopeAll
-              ? '当前在搜全部已加载学科，点击只搜当前学科'
+              ? '当前在搜全部可见题库，点击只搜当前学科'
               : '当前只搜 ' + scopeLabel() + '，点击切到全库'
           "
           @click="scopeAll = !scopeAll"
@@ -108,39 +126,41 @@ function highlightMatch(text: string, kw: string): string {
         </button>
         <button class="search-close-btn" aria-label="关闭搜索" @click="emit('close')">✕</button>
       </div>
+      <label class="search-options"
+        ><input v-model="includeExplanations" type="checkbox" /> 同时搜索解析</label
+      >
       <div class="search-body">
+        <div v-if="loading" class="search-empty" role="status">搜索索引加载中…</div>
+        <div v-if="partial" class="search-empty" role="status">索引暂不可用，仅搜索已缓存内容</div>
         <div
           v-if="results.length > 0"
           class="search-results"
-          role="listbox"
           aria-label="搜索结果"
           aria-live="polite"
           aria-atomic="true"
         >
-          <div
+          <button
             v-for="q in results"
+            type="button"
             :key="q.id"
             class="search-result-item"
-            role="option"
             :aria-label="`${q.groupTitle}：${q.stem.slice(0, 60)}`"
-            tabindex="0"
-            @click="selectQuestion(q.id)"
-            @keydown.enter="selectQuestion(q.id)"
+            @click="emit('navigate', q.id, q.category)"
           >
-            <div class="sr-id">{{ q.id }}</div>
-            <div class="sr-content">
+            <span class="sr-id">{{ q.id }}</span>
+            <span class="sr-content">
               <span class="sr-group">{{ q.groupTitle }}</span>
               <span
                 class="sr-stem"
                 v-html="highlightMatch(truncate(stripMarkdown(q.stem), 60), keyword)"
               ></span>
-            </div>
-          </div>
+            </span>
+          </button>
         </div>
-        <div v-else-if="keyword.trim() && results.length === 0" class="search-empty">
+        <div v-else-if="!loading && !partial && keyword.trim()" class="search-empty">
           未找到相关题目
         </div>
-        <div v-else class="search-hint">输入关键词搜索题目</div>
+        <div v-else-if="!keyword.trim()" class="search-hint">输入关键词搜索题目</div>
       </div>
     </div>
   </div>
@@ -156,6 +176,17 @@ function highlightMatch(text: string, kw: string): string {
   padding-top: 80px;
 }
 
+.search-options {
+  padding: 0 16px 12px;
+}
+.search-result-item {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+}
 .search-panel {
   width: 100%;
   max-width: 560px;

@@ -1,84 +1,86 @@
-// Service Worker 自动适应部署路径：所有路径基于 self.registration.scope 计算，
-// 项目部署在 /dlut-nihongo-quiz/ 子路径下也能正常注册和缓存。
-// CACHE_VERSION 由构建脚本写回（见 scripts/bump-sw-cache.mjs），每次发版自动 bump。
-const CACHE_VERSION = '__SW_CACHE_VERSION__'
-const CACHE_NAME = `quiz-cache-${CACHE_VERSION}`
-const SW_VERSION = CACHE_VERSION
-
-function withScope(path) {
-  if (!path) return path
-  // 绝对 URL 直接返回
-  if (/^https?:\/\//.test(path)) return path
-  const scope = self.registration.scope
-  const base = scope.endsWith('/') ? scope : scope + '/'
-  if (path === '/' || path === '') return base
-  // 去掉前导 /
-  const rel = path.startsWith('/') ? path.slice(1) : path
-  return base + rel
-}
-
-// 仅预缓存壳资源（~10KB）。题库 JSON 走动态缓存：首次 fetch 时由 fetch handler
-// 写入 CACHE_NAME。这样首次访问只拉 ~10KB，切到某学科才缓存对应 JSON（最大 4MB），
-// 弱网/移动数据用户体验好很多。
-const ASSETS_TO_CACHE = [
-  '',
+const VERSION = '__SW_CACHE_VERSION__'
+const scope = self.registration.scope
+const prefix = `quiz:${scope}:`
+const shellName = `${prefix}shell:${VERSION}`
+const bankName = `${prefix}banks`
+const indexName = `${prefix}index:${VERSION}`
+const scoped = (path) => new URL(path, scope).href
+const isBank = (url) => new URL(url).pathname.endsWith('-question-bank.json')
+const assets = [
   'index.html',
   'manifest.json',
   'favicon.svg',
-].map(withScope)
+  'question-catalog.json',
+  /* __PRECACHE_ASSETS__ */
+].map(scoped)
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      // 单个失败不影响其他资源
-      return Promise.allSettled(ASSETS_TO_CACHE.map((url) => cache.add(url)))
-    }),
-  )
-  self.skipWaiting()
+  event.waitUntil(caches.open(shellName).then((cache) => cache.addAll(assets)))
 })
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((names) => {
-      return Promise.all(
-        names.filter((n) => n !== CACHE_NAME).map((n) => caches.delete(n)),
+    (async () => {
+      const names = await caches.keys()
+      const banks = await caches.open(bankName)
+      for (const name of names.filter((name) => name.startsWith('quiz-cache-'))) {
+        const old = await caches.open(name)
+        for (const request of await old.keys()) {
+          if (!request.url.startsWith(scope) || !isBank(request.url)) continue
+          if (await banks.match(request)) continue
+          const response = await old.match(request)
+          if (response?.ok) await banks.put(request, response)
+        }
+      }
+      await Promise.all(
+        names
+          .filter(
+            (name) =>
+              (name.startsWith(prefix + 'shell:') && name !== shellName) ||
+              (name.startsWith(prefix + 'index:') && name !== indexName),
+          )
+          .map((name) => caches.delete(name)),
       )
-    }).then(() => self.clients.claim()),
+      await self.clients.claim()
+    })(),
   )
 })
 
-// 让前端可以主动触发 skipWaiting（配合「新版本可用，立即生效」按钮）
 self.addEventListener('message', (event) => {
   if (event.data === 'SKIP_WAITING') self.skipWaiting()
 })
 
+async function fetchBank(request) {
+  const cache = await caches.open(bankName)
+  try {
+    const response = await fetch(request)
+    if (response.ok) await cache.put(request, response.clone())
+    return response
+  } catch {
+    return (await cache.match(request)) || Response.error()
+  }
+}
+
+async function cachedResource(request, name) {
+  const cache = await caches.open(name)
+  const cached = await cache.match(request)
+  if (cached) return cached
+  const response = await fetch(request)
+  if (response.ok) await cache.put(request, response.clone())
+  return response
+}
+
 self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return
-
-  const url = new URL(event.request.url)
-  const isSameOrigin = url.origin === self.location.origin
-  if (!isSameOrigin) return
-
-  const isQuizBank = url.pathname.endsWith('-question-bank.json')
-  const isAsset = /\.(?:js|css|svg|woff2?)$/.test(url.pathname)
-  const isDocument = event.request.destination === 'document'
-
-  if (isQuizBank || isAsset || isDocument) {
-    event.respondWith(
-      caches.match(event.request).then((cached) => {
-        const network = fetch(event.request).then((response) => {
-          if (response && response.ok && response.type === 'basic') {
-            const clone = response.clone()
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone))
-          }
-          return response
-        }).catch(() => {
-          // 导航请求：无缓存时回退到 index.html（SPA 壳），保证离线可访问
-          if (isDocument) return cached || caches.match(withScope('index.html'))
-          return cached
-        })
-        return cached || network
-      }),
-    )
+  const request = event.request
+  if (request.method !== 'GET' || !request.url.startsWith(scope)) return
+  const path = new URL(request.url).pathname
+  if (request.mode === 'navigate') {
+    event.respondWith(caches.open(shellName).then((cache) => cache.match(scoped('index.html'))))
+  } else if (isBank(request.url)) {
+    event.respondWith(fetchBank(request))
+  } else if (/\/question-(?:search|explanations)\.json$/.test(path)) {
+    event.respondWith(cachedResource(request, indexName))
+  } else if (path.startsWith(new URL('assets/', scope).pathname) || assets.includes(request.url)) {
+    event.respondWith(cachedResource(request, shellName))
   }
 })

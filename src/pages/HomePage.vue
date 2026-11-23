@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { summarizeProgress } from '../services/questionCatalog'
+import { shallowRef } from 'vue'
 import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useHiddenSite } from '../composables/useHiddenSite'
@@ -54,10 +56,12 @@ const questions = ref<Question[]>([])
 const groupsWithFillQuestions = computed(
   () => new Set(questions.value.filter((q) => q.questionType === 'fill').map((q) => q.groupId)),
 )
-const totalQuestions = ref(0)
-const doneCount = ref(0)
-const totalAttempts = ref(0)
-const totalCorrect = ref(0)
+const totals = computed(() => {
+  const groupIds = currentSubBank.value && new Set(currentSubBank.value.groupOrder)
+  const ids = questions.value.filter((q) => !groupIds || groupIds.has(q.groupId)).map((q) => q.id)
+  return { total: ids.length, ...summarizeProgress(ids, progressStats.value) }
+})
+const progressStats = shallowRef(new Map<string, QuestionStats>())
 const wrongCount = ref(0)
 const recentCorrectRate = ref(0)
 const weakTags = ref<Recommendation[]>([])
@@ -191,7 +195,6 @@ async function refresh() {
     // 表站未解锁时，剔除里站专属 groupId（requireUnlock subBank），避免 tag、薄弱、掌握度被污染。
     const all = filterVisibleQuestions(rawAll, unlocked)
     questions.value = all
-    totalQuestions.value = all.length
 
     const validIds = new Set(all.map((q) => q.id))
     const statsMap = new Map<string, QuestionStats>()
@@ -202,14 +205,9 @@ async function refresh() {
       relevantStats.push(s)
     }
 
-    doneCount.value = 0
-    totalAttempts.value = 0
-    totalCorrect.value = 0
+    progressStats.value = statsMap
     wrongCount.value = 0
     for (const s of relevantStats) {
-      if (s.attemptCount > 0) doneCount.value++
-      totalAttempts.value += s.attemptCount
-      totalCorrect.value += s.correctCount
       if (s.wrongCount > 0) wrongCount.value++
     }
 
@@ -429,7 +427,7 @@ const titleText = computed(() => {
   return meta.value.long === '综合日语2' ? '综合日语2' : meta.value.long
 })
 const subtitleText = computed(() => {
-  const n = totalQuestions.value
+  const n = totals.value.total
   const k = activeCategory.value
   if (k === 'japanese2') {
     if (currentSubBank.value) {
@@ -466,10 +464,6 @@ const weakSectionTitle = computed(() => (isWordSubBank.value ? '薄弱课/标签
 
 function selectSubBank(key: string) {
   setActiveSubBankKey(key)
-  totalQuestions.value = questions.value.filter((q) => {
-    const sb = meta.value.subBanks?.find((s) => s.key === key)
-    return sb ? sb.groupOrder.includes(q.groupId) : true
-  }).length
 }
 
 function clearSubBank() {
@@ -556,6 +550,7 @@ const groupViewHint = computed(() => {
     <div class="error-box">
       <h2>加载失败</h2>
       <p>{{ error }}</p>
+      <RouterLink to="/">返回课程列表</RouterLink>
       <button class="btn btn-accent" @click="refresh">重试</button>
     </div>
   </div>
@@ -616,14 +611,11 @@ const groupViewHint = computed(() => {
     <div class="stats-row">
       <StatCard label="待复习" :value="reviewDueIds.length" sub="间隔重复到期" />
       <StatCard label="错题数" :value="wrongIds.length" sub="错题重刷优先" />
-      <StatCard label="总进度" :value="`${doneCount}/${totalQuestions}`" sub="已做 / 总题数" />
-      <StatCard
-        label="总正确率"
-        :value="totalAttempts ? Math.round((totalCorrect / totalAttempts) * 100) + '%' : '--'"
-      />
+      <StatCard label="总进度" :value="`${totals.done}/${totals.total}`" sub="已做 / 总题数" />
+      <StatCard label="总正确率" :value="totals.attempts ? totals.rate + '%' : '--'" />
       <StatCard
         label="近期正确率"
-        :value="doneCount ? recentCorrectRate + '%' : '--'"
+        :value="totals.done ? recentCorrectRate + '%' : '--'"
         sub="近30题"
       />
     </div>
